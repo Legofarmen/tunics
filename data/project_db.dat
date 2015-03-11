@@ -2,6 +2,10 @@ map{ id = "rooms/room1", description = "Room1" }
 map{ id = "dungeons/dungeon1", description = "Dungeon1" }
 map{ id = "components/door_north", description = "Door north" }
 map{ id = "components/door_south", description = "Door south" }
+map{ id = "components/entrance", description = "Entrance" }
+map{ id = "components/door_west", description = "Door west" }
+map{ id = "components/door_east", description = "Door east" }
+map{ id = "components/door_boss", description = "Door boss" }
 
 tileset{ id = "cave", description = "Cave" }
 tileset{ id = "dungeon_blue", description = "Dungeon (blue)" }
