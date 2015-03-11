@@ -9,3 +9,8 @@ font{
   size = 8,
 }
 
+font{
+  id = "alttp",
+  file = "text/alttp.png",
+}
+
