@@ -1,0 +1,41 @@
+dialog{
+  id = "_treasure.bomb.1",
+  text = [[
+Got the bomb.
+]]
+}
+
+dialog{
+  id = "_treasure.hookshot.1",
+  text = [[
+Got the hookshot.
+]]
+}
+
+dialog{
+  id = "_treasure.big_key.1",
+  text = [[
+Got the big key.
+]]
+}
+
+dialog{
+  id = "_treasure.compass.1",
+  text = [[
+Got the compass.
+]]
+}
+
+dialog{
+  id = "_treasure.map.1",
+  text = [[
+Got the map.
+]]
+}
+
+dialog{
+  id = "_treasure.small_key.1",
+  text = [[
+Got the small key.
+]]
+}

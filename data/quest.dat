@@ -8,8 +8,7 @@ quest{
   -- the engine. Its name should identify your quest, to avoid confusion with
   -- other Solarus quests that might also be installed on the user's machine.
   -- You must define it before you can use savegames or setting files.
-  -- Uncomment the line below and set its value to the name of that directory:
-  -- write_dir = "",
+  write_dir = "zentropy",
 
   -- Title of the window. You should probably put the title of your game here.
   title_bar = "A game made with Solarus. Edit quest.dat to change this title!",

@@ -1,26 +1,25 @@
--- This is the main Lua script of your project.
--- You will probably make a title screen and then start a game.
--- See the Lua API! http://www.solarus-games.org/solarus/documentation/
-
--- This is just an example of quest that shows the Solarus logo
--- and then does nothing.
--- Feel free to change this!
+sol.main.load_file('loadmap.lua')
 
 function sol.main:on_started()
-  -- This function is called when Solarus starts.
-  print("This is a sample quest for Solarus.")
-
-  -- Setting a language is useful to display text and dialogs.
   sol.language.set_language("en")
 
-  local solarus_logo = require("menus/solarus_logo")
-
-  -- Show the Solarus logo initially.
-  sol.menu.start(self, solarus_logo)
-  solarus_logo.on_finished = function()
-    -- Do whatever you want next, like showing your title screen
-    -- or starting a game.
+  local exists = sol.game.exists("zentropy1.dat")
+  local game = sol.game.load("zentropy1.dat")
+  if not exists then
+    game:set_max_life(12)
+    game:set_life(game:get_max_life())
   end
 
-end
+  require('lib/map_include.lua')
 
+  game:set_starting_location('dungeons/dungeon1')
+
+  function game:on_command_pressed(command)
+      if command == 'pause' and game:is_paused() then
+          game:save()
+          print("saved")
+      end
+  end
+
+  game:start()
+end

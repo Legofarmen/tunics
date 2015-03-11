@@ -1,0 +1,25 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 6400,
+  height = 4800,
+  tileset = "temple_green",
+  music = "same",
+}
+
+tile{
+  layer = 1,
+  x = 3192,
+  y = 2392,
+  width = 16,
+  height = 16,
+  pattern = "floor_small.6",
+}
+
+destination{
+  layer = 1,
+  x = 3200,
+  y = 2405,
+  direction = 3,
+}
+

@@ -1,3 +1,8 @@
+map{ id = "rooms/room1", description = "Room1" }
+map{ id = "dungeons/dungeon1", description = "Dungeon1" }
+map{ id = "components/door_north", description = "Door north" }
+map{ id = "components/door_south", description = "Door south" }
+
 tileset{ id = "cave", description = "Cave" }
 tileset{ id = "dungeon_blue", description = "Dungeon (blue)" }
 tileset{ id = "dungeon_grayblue", description = "Dungeon (gray-blue)" }
@@ -207,6 +212,15 @@ sound{ id = "warp", description = "warp" }
 sound{ id = "world_warp", description = "world_warp" }
 sound{ id = "wrong", description = "wrong" }
 sound{ id = "zora", description = "zora" }
+
+item{ id = "bomb", description = "Bomb" }
+item{ id = "hookshot", description = "Hookshot" }
+item{ id = "big_key", description = "Big key" }
+item{ id = "compass", description = "Compass" }
+item{ id = "map", description = "Map" }
+item{ id = "small_key", description = "Small key" }
+
+
 
 language{ id = "en", description = "English" }
 
