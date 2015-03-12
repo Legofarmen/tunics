@@ -7,7 +7,7 @@ for i, v in ipairs(items) do
         x=48 * i + 64,
         y=120,
         treasure_name=v.name,
-        treasure_savegame_variable=v.name .. '1'
+        treasure_savegame_variable=v.savegame_variable
     }
 end
 

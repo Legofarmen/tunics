@@ -19,8 +19,15 @@ local Room = Node:new{class='Room'}
 local Treasure = Node:new{class='Treasure', open='nothing'}
 local Enemy = Node:new{class='Enemy', see='nothing', reach='nothing', open='nothing'}
 
+function Treasure:new(o)
+    o = o or {}
+    o.savegame_variable = o.savegame_variable or new_id('treasure')
+    return Node.new(self, o)
+end
+
 function Room:new(o)
     o = o or {}
+    o.savegame_variable = o.savegame_variable or new_id('room')
     o.children = o.children or {}
     return Node.new(self, o)
 end
@@ -199,6 +206,11 @@ end
 
 
 
+local counters = {}
+function new_id(prefix)
+    counters[prefix] = (counters[prefix] or 0) + 1
+    return prefix .. counters[prefix]
+end
 
 function add_treasure(item_name)
     return function (root)
@@ -441,8 +453,11 @@ function LayoutVisitor:visit_room(room)
     local enemies = {}
     local old_nkids = self.nkids
 
+    local door_variable = room.savegame_variable:gsub('room', 'door')
+
     if self.doors then
         self.doors.north = filter_keys(room, {'see','reach','open'})
+        self.doors.north.savegame_variable = door_variable
     end
 
     self.nkids = 0
