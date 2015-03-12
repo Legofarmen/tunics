@@ -1,14 +1,21 @@
 local map, doors, items, enemies = ...
 
-for i, v in ipairs(items) do
-    print(v)
-    pickable{
+for i, item in ipairs(items) do
+    local my_item = {
         layer=1,
-        x=48 * i + 64,
+        x=48 * i + 32,
         y=120,
-        treasure_name=v.name,
-        treasure_savegame_variable=v.savegame_variable
+        treasure_name=item.name,
+        treasure_savegame_variable=item.savegame_variable
     }
+    if item.open == 'big_key' then
+        my_item.sprite = "entities/chest"
+        my_item.opening_method = "interaction_if_savegame_variable"
+        my_item.opening_condition = "big_key"
+        chest(my_item)
+    else
+        pickable(my_item)
+    end
 end
 
 if doors.east then

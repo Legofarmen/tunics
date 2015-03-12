@@ -31,6 +31,12 @@ function block(properties)
     map:create_block(properties)
 end
 
+function chest(properties)
+    properties.x = properties.x + x0
+    properties.y = properties.y + y0
+    map:create_chest(properties)
+end
+
 local floor = 'floor.1'
 
 function tile(properties)
