@@ -1,0 +1,49 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  tileset = "dungeon_blue",
+  music = "same",
+}
+
+tile{
+  layer = 1,
+  x = 104,
+  y = 32,
+  width = 112,
+  height = 64,
+  pattern = "hole",
+}
+
+tile{
+  layer = 1,
+  x = 120,
+  y = 32,
+  width = 80,
+  height = 48,
+  pattern = "floor_low.4",
+}
+
+block{
+  layer = 1,
+  x = 144,
+  y = 61,
+  direction = -1,
+  sprite = "entities/block",
+  pushable = false,
+  pullable = false,
+  maximum_moves = 0,
+}
+
+block{
+  layer = 1,
+  x = 176,
+  y = 125,
+  direction = -1,
+  sprite = "entities/block",
+  pushable = false,
+  pullable = false,
+  maximum_moves = 0,
+}
+

@@ -25,6 +25,12 @@ function door(properties)
     map:create_door(properties)
 end
 
+function block(properties)
+    properties.x = properties.x + x0
+    properties.y = properties.y + y0
+    map:create_block(properties)
+end
+
 local floor = 'floor.1'
 
 function tile(properties)

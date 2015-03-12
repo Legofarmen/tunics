@@ -20,6 +20,9 @@ if doors.north then
     else
         map:include(0, 0, 'components/door_north', doors.north)
     end
+    if doors.north.reach == 'hookshot' then
+        map:include(0, 0, 'components/moat_north')
+    end
 end
 if doors.west then
     map:include(0, 0, 'components/door_west', doors.west)
