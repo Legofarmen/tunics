@@ -97,6 +97,17 @@ tile{
   pattern = "floor.1",
 }
 
+door{
+  layer = 1,
+  x = 152,
+  y = 16,
+  direction = 1,
+  sprite = "entities/door_big_key",
+  savegame_variable = "door_boss",
+  opening_method = "interaction_if_savegame_variable",
+  opening_condition = "big_key1",
+}
+
 tile{
   layer = 2,
   x = 120,

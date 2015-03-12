@@ -15,11 +15,19 @@ if doors.east then
     map:include(0, 0, 'components/door_east', doors.east)
 end
 if doors.north then
-    map:include(0, 0, 'components/door_north', doors.north)
+    if doors.north.open == 'big_key' then
+        map:include(0, 0, 'components/door_boss', doors.north)
+    else
+        map:include(0, 0, 'components/door_north', doors.north)
+    end
 end
 if doors.west then
     map:include(0, 0, 'components/door_west', doors.west)
 end
 if doors.south then
-    map:include(0, 0, 'components/door_south', doors.south)
+    if doors.south.open == 'entrance' then
+        map:include(0, 0, 'components/entrance', doors.south)
+    else
+        map:include(0, 0, 'components/door_south', doors.south)
+    end
 end
