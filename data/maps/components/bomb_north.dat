@@ -1,0 +1,93 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  tileset = "dungeon_blue",
+  music = "same",
+}
+
+tile{
+  layer = 1,
+  x = 168,
+  y = 16,
+  width = 8,
+  height = 16,
+  pattern = "door_blast.1.support.2",
+}
+
+tile{
+  layer = 1,
+  x = 144,
+  y = 16,
+  width = 8,
+  height = 16,
+  pattern = "door_blast.1.support.1",
+}
+
+tile{
+  layer = 1,
+  x = 152,
+  y = 16,
+  width = 16,
+  height = 16,
+  pattern = "door_blast.1",
+}
+
+tile{
+  layer = 1,
+  x = 152,
+  y = -16,
+  width = 16,
+  height = 32,
+  pattern = "floor.1",
+}
+
+tile{
+  layer = 1,
+  x = 144,
+  y = -8,
+  width = 8,
+  height = 16,
+  pattern = "barrier.2",
+}
+
+tile{
+  layer = 1,
+  x = 168,
+  y = -8,
+  width = 8,
+  height = 16,
+  pattern = "barrier.2",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 144,
+  y = 8,
+  width = 32,
+  height = 24,
+  name = "${name}_closed",
+  pattern = "wall.1",
+  enabled_at_start = true,
+}
+
+door{
+  layer = 1,
+  x = 152,
+  y = 16,
+  name = "${name}",
+  direction = 1,
+  sprite = "entities/door_very_weak_wall",
+  opening_method = "explosion",
+}
+
+tile{
+  layer = 2,
+  x = 144,
+  y = 8,
+  width = 32,
+  height = 8,
+  pattern = "door_top.blast.1",
+}
+

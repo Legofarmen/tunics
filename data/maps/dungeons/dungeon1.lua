@@ -432,7 +432,7 @@ function LayoutVisitor:render_room(properties)
     local x0 = 200 - 160 + 320 * properties.x
     local y0 = 1400 - 216 + 240 * properties.y
 
-    map:include(x0, y0, 'rooms/room1', properties.doors, properties.items, properties.items, floor)
+    map:include(x0, y0, 'rooms/room1', filter_keys(properties, {'doors', 'items', 'enemies'}))
 end
 
 function LayoutVisitor:visit_enemy(enemy)
@@ -456,7 +456,7 @@ function LayoutVisitor:visit_room(room)
 
     if self.doors then
         self.doors.north = filter_keys(room, {'see','reach','open'})
-        self.doors.north.savegame_variable = door_variable
+        self.doors.north.name = door_variable
     end
 
     self.nkids = 0

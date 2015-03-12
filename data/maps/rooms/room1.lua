@@ -1,6 +1,6 @@
-local map, doors, items, enemies = ...
+local map, data = ...
 
-for i, item in ipairs(items) do
+for i, item in ipairs(data.items) do
     local my_item = {
         layer=1,
         x=48 * i + 32,
@@ -18,26 +18,28 @@ for i, item in ipairs(items) do
     end
 end
 
-if doors.east then
-    map:include(0, 0, 'components/door_east', doors.east)
+if data.doors.east then
+    map:include(0, 0, 'components/door_east', data.doors.east)
 end
-if doors.north then
-    if doors.north.open == 'big_key' then
-        map:include(0, 0, 'components/door_boss', doors.north)
+if data.doors.north then
+    if data.doors.north.open == 'big_key' then
+        map:include(0, 0, 'components/door_boss', data.doors.north)
+    elseif data.doors.north.open == 'bomb' then
+        map:include(0, 0, 'components/bomb_north', data.doors.north)
     else
-        map:include(0, 0, 'components/door_north', doors.north)
+        map:include(0, 0, 'components/door_north', data.doors.north)
     end
-    if doors.north.reach == 'hookshot' then
+    if data.doors.north.reach == 'hookshot' then
         map:include(0, 0, 'components/moat_north')
     end
 end
-if doors.west then
-    map:include(0, 0, 'components/door_west', doors.west)
+if data.doors.west then
+    map:include(0, 0, 'components/door_west', data.doors.west)
 end
-if doors.south then
-    if doors.south.open == 'entrance' then
-        map:include(0, 0, 'components/entrance', doors.south)
+if data.doors.south then
+    if data.doors.south.open == 'entrance' then
+        map:include(0, 0, 'components/entrance', data.doors.south)
     else
-        map:include(0, 0, 'components/door_south', doors.south)
+        map:include(0, 0, 'components/door_south', data.doors.south)
     end
 end

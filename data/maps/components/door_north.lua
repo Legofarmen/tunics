@@ -15,7 +15,7 @@ if properties.open then
         door(my_door)
     elseif properties.open == 'small_key' then
         my_door.sprite='entities/door_small_key'
-        my_door.savegame_variable=properties.savegame_variable
+        my_door.savegame_variable=properties.name
         my_door.opening_method='interaction_if_savegame_variable'
         my_door.opening_condition='small_key_amount'
         my_door.opening_condition_consumed=true

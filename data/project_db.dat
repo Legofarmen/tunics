@@ -7,6 +7,7 @@ map{ id = "components/door_west", description = "Door west" }
 map{ id = "components/door_east", description = "Door east" }
 map{ id = "components/door_boss", description = "Door boss" }
 map{ id = "components/moat_north", description = "Moat north" }
+map{ id = "components/bomb_north", description = "Bomb north" }
 
 tileset{ id = "cave", description = "Cave" }
 tileset{ id = "dungeon_blue", description = "Dungeon (blue)" }
