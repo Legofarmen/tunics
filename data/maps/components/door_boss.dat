@@ -105,7 +105,7 @@ door{
   sprite = "entities/door_big_key",
   savegame_variable = "door_boss",
   opening_method = "interaction_if_savegame_variable",
-  opening_condition = "big_key1",
+  opening_condition = "big_key",
 }
 
 tile{
