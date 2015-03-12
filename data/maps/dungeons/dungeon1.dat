@@ -1,16 +1,16 @@
 properties{
   x = 0,
   y = 0,
-  width = 6400,
-  height = 4800,
+  width = 3200,
+  height = 2400,
   tileset = "temple_green",
   music = "same",
 }
 
 tile{
   layer = 1,
-  x = 3192,
-  y = 2392,
+  x = 192,
+  y = 1392,
   width = 16,
   height = 16,
   pattern = "floor_small.6",
@@ -18,8 +18,8 @@ tile{
 
 destination{
   layer = 1,
-  x = 3200,
-  y = 2405,
+  x = 200,
+  y = 1405,
   direction = 3,
 }
 

@@ -1,0 +1,54 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  tileset = "dungeon_blue",
+  music = "same",
+}
+
+tile{
+  layer = 1,
+  x = 288,
+  y = 112,
+  width = 16,
+  height = 16,
+  pattern = "door_blast.4",
+}
+
+tile{
+  layer = 1,
+  x = 288,
+  y = 104,
+  width = 16,
+  height = 8,
+  pattern = "door.4.support.1",
+}
+
+tile{
+  layer = 1,
+  x = 288,
+  y = 128,
+  width = 16,
+  height = 8,
+  pattern = "door.4.support.2",
+}
+
+tile{
+  layer = 2,
+  x = 304,
+  y = 72,
+  width = 8,
+  height = 96,
+  pattern = "door_cache.4",
+}
+
+tile{
+  layer = 2,
+  x = 304,
+  y = 104,
+  width = 8,
+  height = 32,
+  pattern = "door_top.low.4",
+}
+
