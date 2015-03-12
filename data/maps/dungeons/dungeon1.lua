@@ -146,7 +146,6 @@ local TreasureCountVisitor = {}
 setmetatable(TreasureCountVisitor, TreasureCountVisitor)
 
 function TreasureCountVisitor:visit_room(room)
-    local total_items = 0
     local total_keys
     if room.open == 'small_key' then
         total_keys = -1
@@ -154,11 +153,11 @@ function TreasureCountVisitor:visit_room(room)
         total_keys = 0
     end
     room:each_child(function (key, child)
-        local items, keys = child:accept(self)
-        total_items = total_items + items
-        total_keys = total_keys + keys
+        if (not child.open or child.open == 'nothing') and (not child.reach or child.reach == 'nothing') and (not child.see or child.see == 'nothing') then
+            total_keys = total_keys + child:accept(self)
+        end
     end)
-    return total_items, total_keys
+    return total_keys
 end
 
 function TreasureCountVisitor:visit_treasure(treasure)
@@ -249,9 +248,9 @@ end
 function locked_door(root)
     function lockable_weight(node)
         if node.class == 'Room' then
-            local items, keys = node:accept(TreasureCountVisitor)
-            if items > 0 or keys > 1 then
-                return items + keys
+            local keys = node:accept(TreasureCountVisitor)
+            if keys > 1 then
+                return keys
             else
                 return 0
             end
