@@ -6,67 +6,19 @@ local Class = require 'lib/class.lua'
 local Tree = require 'lib/tree.lua'
 local TreeBuilder = require 'lib/treebuilder.lua'
 local List = require 'lib/list.lua'
+local Puzzle = require 'lib/puzzle.lua'
 
 math.randomseed(666)
 
 
-function max_heads(n)
-    return function (root)
-        while #root.children > n do
-            local fork = Tree.Room:new()
-            fork:merge_child(root:remove_child(root:random_child()))
-            fork:merge_child(root:remove_child(root:random_child()))
-            root:add_child(fork)
-        end
-    end
-end
-
-function compass_puzzle()
-    return {
-        TreeBuilder.hide_treasures,
-        TreeBuilder.add_treasure('compass'),
-    }
-end
-
-function map_puzzle()
-    local steps = {
-        TreeBuilder.add_treasure('bomb'),
-        TreeBuilder.add_treasure('map'),
-    }
-    List.shuffle(steps)
-    table.insert(steps, 1, TreeBuilder.bomb_doors)
-    return steps
-end
-
-function items_puzzle(item_names)
-    List.shuffle(item_names)
-    local steps = {}
-    for _, item_name in ipairs(item_names) do
-        table.insert(steps, TreeBuilder.hard_to_reach(item_name))
-        table.insert(steps, TreeBuilder.add_big_chest(item_name))
-    end
-    table.insert(steps, TreeBuilder.add_treasure('big_key'))
-    return steps
-end
-
-function lock_puzzle()
-    return {
-        function (root)
-            if TreeBuilder.locked_door(root) then
-                TreeBuilder.add_treasure('small_key')(root)
-            end
-        end,
-    }
-end
-
 function dungeon_puzzle(nkeys, item_names)
     local puzzles = {
-        items_puzzle(item_names),
-        map_puzzle(),
-        compass_puzzle(),
+        Puzzle.items_puzzle(item_names),
+        Puzzle.map_puzzle(),
+        Puzzle.compass_puzzle(),
     }
     for i = 1, nkeys do
-        table.insert(puzzles, lock_puzzle())
+        table.insert(puzzles, Puzzle.lock_puzzle())
     end
     List.shuffle(puzzles)
 
@@ -198,7 +150,7 @@ end
 local puzzle = dungeon_puzzle(3, {'hookshot'})
 local root = Tree.Room:new()
 for i, step in ipairs(puzzle) do
-    max_heads(3)(root)
+    Puzzle.max_heads(3)(root)
     step(root)
 end
 root:each_child(function (key, child)
