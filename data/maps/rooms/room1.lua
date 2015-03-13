@@ -40,6 +40,8 @@ end
 if data.doors.south then
     if data.doors.south.open == 'entrance' then
         map:include(0, 0, 'components/entrance', data.doors.south)
+    elseif data.doors.south.open == 'bomb' then
+        map:include(0, 0, 'components/bomb_south')
     else
         map:include(0, 0, 'components/door_south', data.doors.south)
     end
