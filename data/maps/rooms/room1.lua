@@ -9,12 +9,13 @@ for i, item in ipairs(data.items) do
         treasure_savegame_variable=item.savegame_variable
     }
     if item.open == 'big_key' then
-        my_item.sprite = "entities/chest"
+        my_item.sprite = "entities/big_chest"
         my_item.opening_method = "interaction_if_savegame_variable"
         my_item.opening_condition = "big_key"
         chest(my_item)
     else
-        pickable(my_item)
+        my_item.sprite = "entities/chest"
+        chest(my_item)
     end
 end
 
