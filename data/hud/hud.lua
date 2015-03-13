@@ -26,11 +26,9 @@ function game:initialize_hud()
   menu:set_dst_position(-104, 27)
   self.hud[#self.hud + 1] = menu
 
-  --[[
   menu = small_keys_builder:new(self)
   menu:set_dst_position(-36, -18)
   self.hud[#self.hud + 1] = menu
-  ]]
 
   menu = floor_builder:new(self)
   menu:set_dst_position(5, 70)

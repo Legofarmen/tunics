@@ -31,33 +31,30 @@ end
 
 function small_keys:check()
 
-  local need_rebuild = false
+    local need_rebuild = false
 
-  -- Check the number of small keys.
-  if self.game:are_small_keys_enabled() then
-    local nb_keys = self.game:get_num_small_keys()
+    -- Check the number of small keys.
+    local nb_keys = self.game:get_value('small_key_amount')
     local nb_keys_displayed = tonumber(self.digits_text:get_text())
     if nb_keys_displayed ~= nb_keys then
-      self.digits_text:set_text(nb_keys)
-      need_rebuild = true
+        self.digits_text:set_text(nb_keys)
+        need_rebuild = true
     end
-  end
 
-  local visible = self.game:are_small_keys_enabled()
-  if visible ~= self.visible then
-    self.visible = visible
-    need_rebuild = true
-  end
+    if not self.visible then
+        self.visible = true
+        need_rebuild = true
+    end
 
-  -- Redraw the surface is something has changed.
-  if need_rebuild then
-    self:rebuild_surface()
-  end
+    -- Redraw the surface is something has changed.
+    if need_rebuild then
+        self:rebuild_surface()
+    end
 
-  -- Schedule the next check.
-  sol.timer.start(self.game, 40, function()
-    self:check()
-  end)
+    -- Schedule the next check.
+    sol.timer.start(self.game, 40, function()
+        self:check()
+    end)
 end
 
 function small_keys:rebuild_surface()

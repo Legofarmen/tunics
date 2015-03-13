@@ -2,7 +2,7 @@ local map = ...
 local game = map:get_game()
 local entrance_x, entrance_y = map:get_entity('entrance'):get_position()
 
-math.randomseed(666)
+math.randomseed(109)
 
 local Class = {}
 
@@ -523,7 +523,7 @@ function map_room(x, y)
     game:set_value(string.format('room_%d_%d', x, y), true)
 end
 
---tree:accept(PrintVisitor:new{})
+tree:accept(PrintVisitor:new{})
 --tree:accept(LayoutVisitor:new{x=0, y=0,render=stdout_room})
 local separators = {}
 tree:accept(LayoutVisitor:new{x=0, y=9,render=solarus_room, separators=separators})
