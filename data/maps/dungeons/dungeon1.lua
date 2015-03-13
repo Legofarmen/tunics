@@ -5,44 +5,9 @@ local entrance_x, entrance_y = map:get_entity('entrance'):get_position()
 local Class = require 'lib/class.lua'
 local Tree = require 'lib/tree.lua'
 local TreeBuilder = require 'lib/treebuilder.lua'
+local List = require 'lib/list.lua'
 
 math.randomseed(666)
-
-
-
-
-function intermingle(a, b)
-    local result = {}
-    local i = 1
-    local j = 1
-    local total = #a + #b
-    while total > 0 do
-        if math.random(total) <= #a - i + 1 then
-            table.insert(result, a[i])
-            i = i + 1
-        else
-            table.insert(result, b[j])
-            j = j + 1
-        end
-        total = total - 1
-    end
-    return result
-end
-
-function concat(a, b)
-    for _, value in ipairs(b) do
-        table.insert(a, value)
-    end
-    return a
-end
-
-function shuffle(array)
-    for i, _ in ipairs(array) do
-        local j = math.random(#array)
-        array[i], array[j] = array[j], array[i]
-    end
-end
-
 
 
 function max_heads(n)
@@ -68,13 +33,13 @@ function map_puzzle()
         TreeBuilder.add_treasure('bomb'),
         TreeBuilder.add_treasure('map'),
     }
-    shuffle(steps)
+    List.shuffle(steps)
     table.insert(steps, 1, TreeBuilder.bomb_doors)
     return steps
 end
 
 function items_puzzle(item_names)
-    shuffle(item_names)
+    List.shuffle(item_names)
     local steps = {}
     for _, item_name in ipairs(item_names) do
         table.insert(steps, TreeBuilder.hard_to_reach(item_name))
@@ -103,15 +68,15 @@ function dungeon_puzzle(nkeys, item_names)
     for i = 1, nkeys do
         table.insert(puzzles, lock_puzzle())
     end
-    shuffle(puzzles)
+    List.shuffle(puzzles)
 
     local steps = {}
     for _, puzzle in ipairs(puzzles) do
         local n = math.random(2)
         if n == 1 then
-            steps = intermingle(steps, puzzle)
+            steps = List.intermingle(steps, puzzle)
         else
-            steps = concat(steps, puzzle)
+            steps = List.concat(steps, puzzle)
         end
     end
     table.insert(steps, 1, TreeBuilder.add_boss)
