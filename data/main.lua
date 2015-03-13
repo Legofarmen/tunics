@@ -1,12 +1,4 @@
-
-local Class = {}
-
-function Class:new(o)
-    o = o or {}
-    setmetatable(o, self)
-    self.__index = self
-    return o
-end
+local Class = require 'lib/class.lua'
 
 local MapMenu = Class:new()
 

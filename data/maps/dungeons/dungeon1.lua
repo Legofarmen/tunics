@@ -2,16 +2,9 @@ local map = ...
 local game = map:get_game()
 local entrance_x, entrance_y = map:get_entity('entrance'):get_position()
 
+local Class = require 'lib/class.lua'
+
 math.randomseed(109)
-
-local Class = {}
-
-function Class:new(o)
-    o = o or {}
-    setmetatable(o, self)
-    self.__index = self
-    return o
-end
 
 local Node = Class:new()
 
