@@ -3,117 +3,10 @@ local game = map:get_game()
 local entrance_x, entrance_y = map:get_entity('entrance'):get_position()
 
 local Class = require 'lib/class.lua'
+local Tree = require 'lib/tree.lua'
 
 math.randomseed(666)
 
-local Node = Class:new()
-
-local Room = Node:new{class='Room'}
-local Treasure = Node:new{class='Treasure', open='nothing'}
-local Enemy = Node:new{class='Enemy', see='nothing', reach='nothing', open='nothing'}
-
-function Treasure:new(o)
-    o = o or {}
-    o.savegame_variable = o.savegame_variable or new_id('treasure')
-    return Node.new(self, o)
-end
-
-function Room:new(o)
-    o = o or {}
-    o.savegame_variable = o.savegame_variable or new_id('room')
-    o.children = o.children or {}
-    return Node.new(self, o)
-end
-
-function Node:prop_string(keys)
-    local s = ''
-    local sep = ''
-    for _, key in ipairs(keys) do
-        local value = self[key] or ''
-        if value == 'nothing' then value = '' end
-        s = string.format('%s%s%s', s, sep, value)
-        sep = ','
-    end
-    return s
-end
-
-function Node:with_needs(needs)
-    for kind, need in pairs(needs) do
-        if self[kind] then
-            needs.children = {self}
-            return Room:new(needs)
-        end
-    end
-    for kind, need in pairs(needs) do
-        self[kind] = need
-    end
-    return self
-end
-
-function Room:__tostring()
-    return string.format("Room[%s]", self:prop_string{'see', 'reach', 'open'})
-end
-
-function Treasure:__tostring()
-    return string.format("Treasure:%s[%s]", self.name, self:prop_string{'see', 'reach', 'open'})
-end
-
-function Enemy:__tostring()
-    return string.format("Enemy:%s[]", self.name)
-end
-
-function Room:accept(visitor)
-    return visitor:visit_room(self)
-end
-
-function Treasure:accept(visitor)
-    return visitor:visit_treasure(self)
-end
-
-function Enemy:accept(visitor)
-    return visitor:visit_enemy(self)
-end
-
-function Room:add_child(node)
-    table.insert(self.children, node)
-end
-
-function Room:merge_child(node)
-    if node.class ~= 'Room' or node.see or node.reach or node.open then
-        self:add_child(node)
-    else
-        node:each_child(function (key, child)
-            self:add_child(child)
-        end)
-    end
-end
-
-function Room:update_child(key, node)
-    if self.children[key] then
-        self.children[key] = node
-    else
-        error('no such key: ' .. key)
-    end
-end
-
-function Room:remove_child(key)
-    if self.children[key] then
-        return table.remove(self.children, key)
-    else
-        error('no such key: ' .. key)
-    end
-end
-
-function Room:each_child(f)
-    for key, child in ipairs(self.children) do
-        f(key, child)
-    end
-end
-
-
-function Room:random_child(w)
-    return weighted_random_element(self.children, w)
-end
 
 
 
@@ -198,20 +91,14 @@ end
 
 
 
-local counters = {}
-function new_id(prefix)
-    counters[prefix] = (counters[prefix] or 0) + 1
-    return prefix .. counters[prefix]
-end
-
 function add_treasure(item_name)
     return function (root)
-        root:add_child(Treasure:new{name=item_name})
+        root:add_child(Tree.Treasure:new{name=item_name})
     end
 end
 
 function add_boss(root)
-    root:add_child(Enemy:new{name='boss'}:with_needs{open='big_key'})
+    root:add_child(Tree.Enemy:new{name='boss'}:with_needs{open='big_key'})
 end
 
 function hide_treasures(root)
@@ -228,7 +115,7 @@ end
 
 function add_big_chest(item_name)
     return function (root)
-        root:add_child(Treasure:new{name=item_name, open='big_key'})
+        root:add_child(Tree.Treasure:new{name=item_name, open='big_key'})
     end
 end
 
@@ -263,7 +150,7 @@ end
 function max_heads(n)
     return function (root)
         while #root.children > n do
-            local fork = Room:new()
+            local fork = Tree.Room:new()
             fork:merge_child(root:remove_child(root:random_child()))
             fork:merge_child(root:remove_child(root:random_child()))
             root:add_child(fork)
@@ -302,20 +189,6 @@ function shuffle(array)
         local j = math.random(#array)
         array[i], array[j] = array[j], array[i]
     end
-end
-
-function weighted_random_element(array, w)
-    local total = 0
-    local rkey, rchild
-    for key, elem in ipairs(array) do
-        local weight = w and w(elem) or 1
-        total = total + weight
-        if weight > math.random() * total then
-            rkey = key
-            rchild = elem
-        end
-    end
-    return rkey, rchild
 end
 
 
@@ -495,19 +368,19 @@ end
 
 
 local puzzle = dungeon_puzzle(3, {'hookshot'})
-local root = Room:new()
+local root = Tree.Room:new()
 for i, step in ipairs(puzzle) do
     max_heads(3)(root)
     step(root)
 end
 root:each_child(function (key, child)
     if child.class ~= 'Room' then
-        local room = Room:new()
+        local room = Tree.Room:new()
         room:add_child(child)
         root:update_child(key, room)
     end
 end)
-local tree = Room:new{open='entrance'}
+local tree = Tree.Room:new{open='entrance'}
 local tree = root
 tree.open = 'entrance'
 
@@ -516,7 +389,7 @@ function map_room(x, y)
     game:set_value(string.format('room_%d_%d', x, y), true)
 end
 
-tree:accept(PrintVisitor:new{})
+--tree:accept(PrintVisitor:new{})
 --tree:accept(LayoutVisitor:new{x=0, y=0,render=stdout_room})
 local separators = {}
 tree:accept(LayoutVisitor:new{x=0, y=9,render=solarus_room, separators=separators})
