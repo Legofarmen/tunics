@@ -35,7 +35,6 @@ function door(properties)
         end
         if properties.savegame_variable then
             properties.savegame_variable = properties.savegame_variable:gsub('${name}', data0.name)
-            print(properties.savegame_variable)
         end
     end
     map0:create_door(properties)
