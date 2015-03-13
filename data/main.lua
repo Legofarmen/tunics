@@ -37,12 +37,8 @@ end
 function sol.main:on_started()
     sol.language.set_language("en")
 
-    local exists = sol.game.exists("zentropy1.dat")
+    sol.game.delete("zentropy1.dat")
     local game = sol.game.load("zentropy1.dat")
-    if not exists then
-        game:set_max_life(12)
-        game:set_life(game:get_max_life())
-    end
 
     require('lib/map_include.lua')
 
