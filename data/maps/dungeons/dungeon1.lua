@@ -115,7 +115,22 @@ function LayoutVisitor:visit_room(room)
         child:accept(self)
     end)
 
+    x1 = math.max(x1, x0 + #items - 1, x0 + #enemies - 1)
+
+    local my_items = {}
+    local my_enemies = {}
     for x = x0, x1 do
+        if x - x0 < #items then
+            my_items[1] = items[x - x0 + 1]
+        else
+            my_items[1] = nil
+        end
+        if x - x0 < #enemies then
+            my_enemies[1] = enemies[x - x0 + 1]
+        else
+            my_enemies[1] = nil
+        end
+
         doors[x] = doors[x] or {}
         if x == x0 then doors[x].south = filter_keys(room, {'open'}) end
         if x < x1 then doors[x].east = {} end
@@ -127,22 +142,18 @@ function LayoutVisitor:visit_room(room)
             x=x,
             y=y,
             doors=doors[x],
-            items=items,
-            enemies=enemies,
+            items=my_items,
+            enemies=my_enemies,
         }
         local savegame_variable = room.savegame_variable .. '_' .. (x - x0)
         add_doorway(self.separators, x,   y+1, 'north', doors[x].south and savegame_variable or false)
         add_doorway(self.separators, x,   y,   'east',  doors[x].west  and savegame_variable or false)
         add_doorway(self.separators, x,   y,   'south', doors[x].north and savegame_variable or false)
         add_doorway(self.separators, x+1, y,   'west',  doors[x].east  and savegame_variable or false)
-
-        items = {}
-        enemies = {}
     end
 
-    if self.nkids == 0 then
-        self.x = self.x + 1
-    end
+    self.x = math.max(self.x, x0 + 1, x0 + #items, x0 + #enemies)
+
     self.nkids = self.old_nkids
 end
 
@@ -170,7 +181,7 @@ function map_room(x, y)
 end
 
 --tree:accept(Tree.PrintVisitor:new{})
---tree:accept(LayoutVisitor:new{x=0, y=0,render=stdout_room})
+--tree:accept(LayoutVisitor:new{x=0, y=9,render=stdout_room, separators={}})
 local separators = {}
 tree:accept(LayoutVisitor:new{x=0, y=9,render=solarus_room, separators=separators})
 map_room(0, 9)
