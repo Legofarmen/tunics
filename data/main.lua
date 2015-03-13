@@ -78,7 +78,7 @@ function MapMenu:draw_room(properties)
             end
         end
         local hero_x, hero_y = self.game:get_hero():get_position()
-        self.hero_point_sprite:draw(self.map_surface, 12 * (hero_x - 40) / 320, 12 * (hero_y - 40) / 240)
+        self.hero_point_sprite:draw(self.map_surface, 2 * math.floor(6 * (hero_x - 40) / 320), 2 * math.floor(6 * (hero_y - 40) / 240))
     end
 end
 
