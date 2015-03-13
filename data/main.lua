@@ -45,33 +45,37 @@ function MapMenu:draw_room(properties)
     local x = 12 * properties.x
     local y = 12 * properties.y
 
-    self.map_surface:fill_color(normal, x, y, 10, 10)
-    if properties.doors.north then
-        self.map_surface:fill_color(normal, x + 4, y - 2, 2, 2)
-    end
-    if properties.doors.south then
-        if properties.doors.south.open == 'entrance' then
-            self.map_surface:fill_color(highlight, x + 4, y + 8, 2, 4)
+    if self.game:get_value('map') then
+        self.map_surface:fill_color(normal, x, y, 10, 10)
+        if properties.doors.north then
+            self.map_surface:fill_color(normal, x + 4, y - 2, 2, 2)
         end
-    end
-    if properties.doors.west then
-        self.map_surface:fill_color(normal, x - 2, y + 4, 2, 2)
+        if properties.doors.south then
+            if properties.doors.south.open == 'entrance' then
+                self.map_surface:fill_color(highlight, x + 4, y + 8, 2, 4)
+            end
+        end
+        if properties.doors.west then
+            self.map_surface:fill_color(normal, x - 2, y + 4, 2, 2)
+        end
     end
 
-    for _, enemy in ipairs(properties.enemies) do
-        if enemy.name == 'boss' then
-            self.map_icons:draw_region(78, 0, 8, 8, self.map_surface, x + 1, y + 1)
+    if self.game:get_value('compass') then
+        for _, enemy in ipairs(properties.enemies) do
+            if enemy.name == 'boss' then
+                self.map_icons:draw_region(78, 0, 8, 8, self.map_surface, x + 1, y + 1)
+            end
         end
-    end
-    for _, item in ipairs(properties.items) do
-        if item.open == 'big_key' then
-            self.map_icons:draw_region(78, 12, 6, 4, self.map_surface, x + 2, y + 2)
-        else
-            self.map_icons:draw_region(78, 8, 4, 4, self.map_surface, x + 2, y + 2)
+        for _, item in ipairs(properties.items) do
+            if item.open == 'big_key' then
+                self.map_icons:draw_region(78, 12, 6, 4, self.map_surface, x + 2, y + 2)
+            else
+                self.map_icons:draw_region(78, 8, 4, 4, self.map_surface, x + 2, y + 2)
+            end
         end
+        local hero_x, hero_y = self.game:get_hero():get_position()
+        self.hero_point_sprite:draw(self.map_surface, 12 * (hero_x - 40) / 320, 12 * (hero_y - 40) / 240)
     end
-    local hero_x, hero_y = self.game:get_hero():get_position()
-    self.hero_point_sprite:draw(self.map_surface, 12 * (hero_x - 40) / 320, 12 * (hero_y - 40) / 240)
 end
 
 
