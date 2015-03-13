@@ -406,9 +406,8 @@ local function stdout_room(properties)
     print(string.format("Room %d;%d", properties.x, properties.y))
     for dir, door in pairs(properties.doors) do
         print(string.format("  Door %s", dir))
-        --print_access(door)
+        print_access(door)
     end
-    --[[
     for _, item in ipairs(properties.items) do
         print(string.format("  Item %s", item.name))
         print_access(item)
@@ -417,7 +416,6 @@ local function stdout_room(properties)
         print(string.format("  Enemy %s", enemy.name))
         print_access(enemy)
     end
-    ]]
     print()
 end
 
