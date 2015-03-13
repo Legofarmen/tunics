@@ -105,4 +105,5 @@ function sol.main:on_started()
     end
 
     game:start()
+    game:get_hero():set_walking_speed(160)
 end
