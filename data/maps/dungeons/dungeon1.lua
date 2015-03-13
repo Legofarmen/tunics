@@ -2,7 +2,7 @@ local map = ...
 local game = map:get_game()
 local entrance_x, entrance_y = map:get_entity('entrance'):get_position()
 
-math.randomseed(6)
+math.randomseed(666)
 
 local Class = {}
 
