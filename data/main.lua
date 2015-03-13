@@ -47,12 +47,11 @@ function MapMenu:draw_room(properties)
 
     if self.game:get_value('map') then
         self.map_surface:fill_color(normal, x, y, 10, 10)
-        if properties.doors.north then
-            self.map_surface:fill_color(normal, x + 4, y - 2, 2, 2)
-        end
         if properties.doors.south then
             if properties.doors.south.open == 'entrance' then
-                self.map_surface:fill_color(highlight, x + 4, y + 8, 2, 4)
+                self.map_surface:fill_color(highlight, x + 4, y + 10, 2, 4)
+            else
+                self.map_surface:fill_color(normal, x + 4, y + 10, 2, 2)
             end
         end
         if properties.doors.west then
@@ -62,6 +61,19 @@ function MapMenu:draw_room(properties)
 
     if self.game:get_value(string.format("room_%d_%d", properties.x, properties.y)) then
         self.map_surface:fill_color(normal, x, y, 10, 10)
+        if properties.doors.north then
+            if not properties.doors.north.see then
+                self.map_surface:fill_color(normal, x + 4, y - 2, 2, 2)
+            end
+        end
+        if properties.doors.south then
+            if properties.doors.south.open == 'entrance' then
+                self.map_surface:fill_color(highlight, x + 4, y + 8, 2, 4)
+            end
+        end
+        if properties.doors.east then
+            self.map_surface:fill_color(normal, x + 10, y + 4, 2, 2)
+        end
     end
 
     if self.game:get_value('compass') then
