@@ -3,6 +3,7 @@ properties{
   y = 0,
   width = 320,
   height = 240,
+  world = "https://github.com/christopho/zsdx.git",
   tileset = "dungeon_grayblue",
   music = "same",
 }
@@ -453,6 +454,16 @@ separator{
   y = 32,
   width = 16,
   height = 176,
+}
+
+enemy{
+  layer = 1,
+  x = 112,
+  y = 117,
+  name = "enemy_1",
+  direction = 3,
+  breed = "tentacle",
+  treasure_name = "bomb",
 }
 
 tile{

@@ -100,6 +100,7 @@ sprite{ id = "enemies/enemy_killed", description = "Enemy killed" }
 sprite{ id = "enemies/tentacle", description = "Enemy: Tentacle" }
 sprite{ id = "menus/hero_head", description = "Menu: hero head" }
 sprite{ id = "menus/hero_point", description = "Menu: Hero point" }
+sprite{ id = "entities/big_chest", description = "Big chest" }
 
 music{ id = "agahnim", description = "Agahnim theme" }
 music{ id = "beginning", description = "Beginning" }
@@ -226,7 +227,9 @@ item{ id = "big_key", description = "Big key" }
 item{ id = "compass", description = "Compass" }
 item{ id = "map", description = "Map" }
 item{ id = "small_key", description = "Small key" }
+item{ id = "sword", description = "Sword" }
 
+enemy{ id = "tentacle", description = "Tentacle" }
 
 
 language{ id = "en", description = "English" }

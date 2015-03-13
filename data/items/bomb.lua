@@ -3,8 +3,9 @@ local item = ...
 local game = item:get_game()
 
 function item:on_created()
-    item:set_savegame_variable('bomb')
-    item:set_assignable(true)
+    self:set_savegame_variable('bomb')
+    self:set_assignable(true)
+    self:set_brandish_when_picked(false)
 end
 
 function item:on_obtained()
@@ -37,4 +38,6 @@ function item:create_bomb()
     layer = layer
   }
 end
+
+ 
 

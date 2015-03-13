@@ -84,7 +84,7 @@ function sol.main:on_started()
 
     sol.game.delete("zentropy1.dat")
     local game = sol.game.load("zentropy1.dat")
-
+    game:set_ability("sword", 1)
     require('lib/map_include.lua')
 
     game:set_starting_location('dungeons/dungeon1')
