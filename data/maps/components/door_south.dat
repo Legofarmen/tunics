@@ -34,6 +34,15 @@ tile{
   pattern = "door.2.support.1",
 }
 
+wall{
+  layer = 1,
+  x = 152,
+  y = 208,
+  width = 16,
+  height = 16,
+  stops_enemies = true,
+}
+
 tile{
   layer = 2,
   x = 120,
@@ -51,3 +60,4 @@ tile{
   height = 8,
   pattern = "door_top.low.2",
 }
+

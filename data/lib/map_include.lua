@@ -8,6 +8,12 @@ local mapmeta = sol.main.get_metatable('map')
 function properties() end
 function destination() end
 
+function wall(properties)
+    properties.x = properties.x + x0
+    properties.y = properties.y + y0
+    map0:create_wall(properties)
+end
+
 function enemy(properties)
     properties.x = properties.x + x0
     properties.y = properties.y + y0

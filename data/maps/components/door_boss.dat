@@ -108,6 +108,15 @@ door{
   opening_condition = "big_key",
 }
 
+wall{
+  layer = 1,
+  x = 152,
+  y = 16,
+  width = 16,
+  height = 16,
+  stops_enemies = true,
+}
+
 tile{
   layer = 2,
   x = 120,

@@ -72,6 +72,15 @@ dynamic_tile{
   enabled_at_start = true,
 }
 
+wall{
+  layer = 1,
+  x = 152,
+  y = 16,
+  width = 16,
+  height = 16,
+  stops_enemies = true,
+}
+
 door{
   layer = 1,
   x = 152,
