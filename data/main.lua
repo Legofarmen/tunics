@@ -109,7 +109,10 @@ function sol.main:on_started()
     function game:on_unpaused()
         sol.menu.stop(map_menu)
     end
+    
+    function game:on_started()
+        game:get_hero():set_walking_speed(160)
+    end
 
     game:start()
-    game:get_hero():set_walking_speed(160)
 end
