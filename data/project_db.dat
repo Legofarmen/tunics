@@ -99,6 +99,7 @@ sprite{ id = "hud/gameover_fade", description = "HUD: Game-over fade" }
 sprite{ id = "enemies/enemy_killed", description = "Enemy killed" }
 sprite{ id = "enemies/tentacle", description = "Enemy: Tentacle" }
 sprite{ id = "menus/hero_head", description = "Menu: hero head" }
+sprite{ id = "menus/hero_point", description = "Menu: Hero point" }
 
 music{ id = "agahnim", description = "Agahnim theme" }
 music{ id = "beginning", description = "Beginning" }

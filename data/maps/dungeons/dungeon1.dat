@@ -9,8 +9,8 @@ properties{
 
 tile{
   layer = 1,
-  x = 192,
-  y = 1392,
+  x = 152,
+  y = 2384,
   width = 16,
   height = 16,
   pattern = "floor_small.6",
@@ -18,8 +18,9 @@ tile{
 
 destination{
   layer = 1,
-  x = 200,
-  y = 1405,
-  direction = 3,
+  x = 160,
+  y = 2397,
+  name = "entrance",
+  direction = 1,
 }
 

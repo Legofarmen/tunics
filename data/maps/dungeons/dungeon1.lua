@@ -422,8 +422,9 @@ local function stdout_room(properties)
 end
 
 local function solarus_room(properties)
-    local x0 = 200 - 160 + 320 * properties.x
-    local y0 = 1400 - 216 + 240 * properties.y
+    local entrance_x, entrance_y = map:get_entity('entrance'):get_position()
+    local x0 = entrance_x - 160 + 320 * properties.x
+    local y0 = entrance_y + 3 - 240 + 240 * properties.y
     map:include(x0, y0, 'rooms/room1', filter_keys(properties, {'doors', 'items', 'enemies'}))
 end
 
@@ -511,29 +512,10 @@ tree.open = 'entrance'
 --tree:accept(LayoutVisitor:new{x=0, y=0,render=stdout_room})
 tree:accept(LayoutVisitor:new{x=0, y=0,render=solarus_room})
 
-local function surface_room(properties, surface)
-    local normal = {255,255,255,216}
-    local highlight = {255,255,255}
-    local x = 12 * properties.x
-    local y = 12 * properties.y
-    surface:fill_color(normal, x, y, 10, 10)
-    if properties.doors.north then
-        surface:fill_color(normal, x + 4, y - 2, 2, 2)
-    end
-    if properties.doors.south then
-        if properties.doors.south.open == 'entrance' then
-            surface:fill_color(highlight, x + 4, y + 8, 2, 4)
-        end
-    end
-    if properties.doors.west then
-        surface:fill_color(normal, x - 2, y + 4, 2, 2)
-    end
-end
-
-function map:render_map(surface)
+function map:render_map(map_menu)
     local render = function (properties)
-        surface_room(properties, surface)
+        map_menu:draw_room(properties)
     end
-    surface:clear()
+    map_menu:clear_map()
     tree:accept(LayoutVisitor:new{x=0, y=9,render=render})
 end
