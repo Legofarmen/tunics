@@ -12,7 +12,6 @@ end
 local MapMenu = Class:new()
 
 function MapMenu:on_started()
-    print("MapMenu:on_started")
     local width, height = sol.video.get_quest_size()
     local center_x, center_y = width / 2, height / 2
     self.backgrounds = sol.surface.create("pause_submenus.png", true)
@@ -73,7 +72,6 @@ function MapMenu:draw_room(properties)
     end
     local hero_x, hero_y = self.game:get_hero():get_position()
     self.hero_point_sprite:draw(self.map_surface, 12 * (hero_x - 40) / 320, 12 * (hero_y - 40) / 240)
-    print(hero_x, hero_y)
 end
 
 
