@@ -4,65 +4,11 @@ local entrance_x, entrance_y = map:get_entity('entrance'):get_position()
 
 local Class = require 'lib/class.lua'
 local Tree = require 'lib/tree.lua'
+local TreeBuilder = require 'lib/treebuilder.lua'
 
 math.randomseed(666)
 
 
-
-
-local HideTreasuresVisitor = {}
-
-setmetatable(HideTreasuresVisitor, HideTreasuresVisitor)
-
-function HideTreasuresVisitor:visit_room(room)
-    room:each_child(function (key, child)
-        if child.class == 'Treasure' and child.open ~= 'big_key' then
-            room:update_child(key, child:with_needs{see='compass'})
-        end
-        child:accept(self)
-    end)
-end
-function HideTreasuresVisitor:visit_treasure(treasure)
-end
-function HideTreasuresVisitor:visit_enemy(enemy)
-end
-
-local TreasureCountVisitor = {}
-
-setmetatable(TreasureCountVisitor, TreasureCountVisitor)
-
-function TreasureCountVisitor:visit_room(room)
-    local total_keys
-    if room.open == 'small_key' then
-        total_keys = -1
-    else
-        total_keys = 0
-    end
-    room:each_child(function (key, child)
-        if (not child.open or child.open == 'nothing') and (not child.reach or child.reach == 'nothing') and (not child.see or child.see == 'nothing') then
-            total_keys = total_keys + child:accept(self)
-        end
-    end)
-    return total_keys
-end
-
-function TreasureCountVisitor:visit_treasure(treasure)
-    local keys
-    if treasure.open == 'small_key' then
-        keys = -1
-    else
-        keys = 0
-    end
-    if treasure.name == 'small_key' then
-        return 0, keys + 1
-    else
-        return 1, keys
-    end
-end
-
-function TreasureCountVisitor:visit_enemy(enemy)
-    return 0, 0
-end
 
 
 local PrintVisitor = {}
@@ -86,76 +32,6 @@ function PrintVisitor:visit_treasure(treasure)
 end
 function PrintVisitor:visit_enemy(enemy)
     print(self.prefix .. tostring(enemy))
-end
-
-
-
-
-function add_treasure(item_name)
-    return function (root)
-        root:add_child(Tree.Treasure:new{name=item_name})
-    end
-end
-
-function add_boss(root)
-    root:add_child(Tree.Enemy:new{name='boss'}:with_needs{open='big_key'})
-end
-
-function hide_treasures(root)
-    root:accept(HideTreasuresVisitor)
-end
-
-function hard_to_reach(item_name)
-    return function (root)
-        root:each_child(function (key, head)
-            root:update_child(key, head:with_needs{reach=item_name})
-        end)
-    end
-end
-
-function add_big_chest(item_name)
-    return function (root)
-        root:add_child(Tree.Treasure:new{name=item_name, open='big_key'})
-    end
-end
-
-function bomb_doors(root)
-    root:each_child(function (key, head)
-        root:update_child(key, head:with_needs{see='map',open='bomb'})
-    end)
-end
-
-function locked_door(root)
-    function lockable_weight(node)
-        if node.class == 'Room' then
-            local keys = node:accept(TreasureCountVisitor)
-            if keys > 1 then
-                return keys
-            else
-                return 0
-            end
-        else
-            return 0
-        end
-    end
-    local key, child = root:random_child(lockable_weight)
-    if key then
-        root:update_child(key, child:with_needs{open='small_key'})
-        return true
-    else
-        return false
-    end
-end
-
-function max_heads(n)
-    return function (root)
-        while #root.children > n do
-            local fork = Tree.Room:new()
-            fork:merge_child(root:remove_child(root:random_child()))
-            fork:merge_child(root:remove_child(root:random_child()))
-            root:add_child(fork)
-        end
-    end
 end
 
 
@@ -193,20 +69,31 @@ end
 
 
 
+function max_heads(n)
+    return function (root)
+        while #root.children > n do
+            local fork = Tree.Room:new()
+            fork:merge_child(root:remove_child(root:random_child()))
+            fork:merge_child(root:remove_child(root:random_child()))
+            root:add_child(fork)
+        end
+    end
+end
+
 function compass_puzzle()
     return {
-        hide_treasures,
-        add_treasure('compass'),
+        TreeBuilder.hide_treasures,
+        TreeBuilder.add_treasure('compass'),
     }
 end
 
 function map_puzzle()
     local steps = {
-        add_treasure('bomb'),
-        add_treasure('map'),
+        TreeBuilder.add_treasure('bomb'),
+        TreeBuilder.add_treasure('map'),
     }
     shuffle(steps)
-    table.insert(steps, 1, bomb_doors)
+    table.insert(steps, 1, TreeBuilder.bomb_doors)
     return steps
 end
 
@@ -214,18 +101,18 @@ function items_puzzle(item_names)
     shuffle(item_names)
     local steps = {}
     for _, item_name in ipairs(item_names) do
-        table.insert(steps, hard_to_reach(item_name))
-        table.insert(steps, add_big_chest(item_name))
+        table.insert(steps, TreeBuilder.hard_to_reach(item_name))
+        table.insert(steps, TreeBuilder.add_big_chest(item_name))
     end
-    table.insert(steps, add_treasure('big_key'))
+    table.insert(steps, TreeBuilder.add_treasure('big_key'))
     return steps
 end
 
 function lock_puzzle()
     return {
         function (root)
-            if locked_door(root) then
-                add_treasure('small_key')(root)
+            if TreeBuilder.locked_door(root) then
+                TreeBuilder.add_treasure('small_key')(root)
             end
         end,
     }
@@ -251,7 +138,7 @@ function dungeon_puzzle(nkeys, item_names)
             steps = concat(steps, puzzle)
         end
     end
-    table.insert(steps, 1, add_boss)
+    table.insert(steps, 1, TreeBuilder.add_boss)
     return steps
 end
 
