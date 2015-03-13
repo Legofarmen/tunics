@@ -80,6 +80,7 @@ door{
   direction = 1,
   sprite = "entities/door_very_weak_wall",
   opening_method = "explosion",
+  savegame_variable = "${name}",
 }
 
 tile{

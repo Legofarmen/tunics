@@ -452,12 +452,8 @@ function LayoutVisitor:visit_room(room)
     local enemies = {}
     local old_nkids = self.nkids
 
-    local door_variable = room.savegame_variable:gsub('room', 'door')
-
-
     if self.doors then
         self.doors.north = filter_keys(room, {'see','reach','open'})
-        self.doors.north.name = door_variable
     end
 
     self.nkids = 0
@@ -478,6 +474,9 @@ function LayoutVisitor:visit_room(room)
         if x == x0 then doors[x].south = filter_keys(room, {'open'}) end
         if x < x1 then doors[x].east = {} end
         if x > x0 then doors[x].west = {} end
+        if doors[x].north then
+            doors[x].north.name = string.format('door_%d_%d_n', x, y)
+        end
         self.render{
             x=x,
             y=y,
@@ -519,11 +518,16 @@ local tree = Room:new{open='entrance'}
 local tree = root
 tree.open = 'entrance'
 
+
+function map_room(x, y)
+    game:set_value(string.format('room_%d_%d', x, y), true)
+end
+
 --tree:accept(PrintVisitor:new{})
 --tree:accept(LayoutVisitor:new{x=0, y=0,render=stdout_room})
 local separators = {}
 tree:accept(LayoutVisitor:new{x=0, y=9,render=solarus_room, separators=separators})
-game:set_value('room_0_9', true)
+map_room(0, 9)
 
 
 for y, row in pairs(separators) do
@@ -541,7 +545,7 @@ for y, row in pairs(separators) do
                 function sep:on_activated(dir)
                     local my_y = (dir == DIRECTIONS.north) and y - 1 or y
                     local my_x = (dir == DIRECTIONS.west) and x - 1 or x
-                    game:set_value(string.format('room_%d_%d', my_x, my_y), true)
+                    map_room(my_x, my_y)
                 end
             end
         end
@@ -558,7 +562,7 @@ for y, row in pairs(separators) do
                 function sep:on_activated(dir)
                     local my_y = (dir == DIRECTIONS.north) and y - 1 or y
                     local my_x = (dir == DIRECTIONS.west) and x - 1 or x
-                    game:set_value(string.format('room_%d_%d', my_x, my_y), true)
+                    map_room(my_x, my_y)
                 end
             end
         end

@@ -29,8 +29,14 @@ end
 function door(properties)
     properties.x = properties.x + x0
     properties.y = properties.y + y0
-    if data0 and data0.name and properties.name then
-        properties.name = properties.name:gsub('${name}', data0.name)
+    if data0 and data0.name then
+        if properties.name then
+            properties.name = properties.name:gsub('${name}', data0.name)
+        end
+        if properties.savegame_variable then
+            properties.savegame_variable = properties.savegame_variable:gsub('${name}', data0.name)
+            print(properties.savegame_variable)
+        end
     end
     map0:create_door(properties)
 end

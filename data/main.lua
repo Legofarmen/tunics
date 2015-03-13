@@ -62,7 +62,7 @@ function MapMenu:draw_room(properties)
     if self.game:get_value(string.format("room_%d_%d", properties.x, properties.y)) then
         self.map_surface:fill_color(normal, x, y, 10, 10)
         if properties.doors.north then
-            if not properties.doors.north.see then
+            if not properties.doors.north.see or self.game:get_value(string.format("door_%d_%d_n", properties.x, properties.y)) then
                 self.map_surface:fill_color(normal, x + 4, y - 2, 2, 2)
             end
         end
