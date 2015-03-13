@@ -14,3 +14,7 @@ font{
   file = "text/alttp.png",
 }
 
+font{ 
+  id = "white_digits",
+  file = "text/white_digits.png",
+}

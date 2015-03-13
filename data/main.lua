@@ -1,4 +1,3 @@
-sol.main.load_file('loadmap.lua')
 
 local Class = {}
 
@@ -101,7 +100,11 @@ function sol.main:on_started()
     sol.game.delete("zentropy1.dat")
     local game = sol.game.load("zentropy1.dat")
     game:set_ability("sword", 1)
+    game:set_max_life(12)
+    game:set_life(12)
+
     require('lib/map_include.lua')
+    sol.main.load_file("hud/hud")(game)
 
     game:set_starting_location('dungeons/dungeon1')
 
@@ -116,14 +119,25 @@ function sol.main:on_started()
 
     function game:on_paused()
         sol.menu.start(self, map_menu, false)
+        self:hud_on_paused()
     end
 
     function game:on_unpaused()
         sol.menu.stop(map_menu)
+        self:hud_on_unpaused()
     end
     
     function game:on_started()
         game:get_hero():set_walking_speed(160)
+        self:initialize_hud()
+    end
+
+    function game:on_finished()
+        self:quit_hud()
+    end
+
+    function game:on_map_changed(map)
+        self:hud_on_map_changed(map)
     end
 
     game:start()
