@@ -1,4 +1,5 @@
 local map = ...
+math.randomseed(6)
 
 local game = map:get_game()
 
