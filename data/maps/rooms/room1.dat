@@ -447,7 +447,7 @@ enemy{
   name = "enemy_1",
   direction = 3,
   breed = "tentacle",
-  treasure_name = "bomb",
+  treasure_name = "heart",
 }
 
 tile{

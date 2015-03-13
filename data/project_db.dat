@@ -229,6 +229,7 @@ item{ id = "compass", description = "Compass" }
 item{ id = "map", description = "Map" }
 item{ id = "small_key", description = "Small key" }
 item{ id = "sword", description = "Sword" }
+item{ id = "heart", description = "Heart" }
 
 enemy{ id = "tentacle", description = "Tentacle" }
 
