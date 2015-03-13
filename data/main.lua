@@ -60,6 +60,10 @@ function MapMenu:draw_room(properties)
         end
     end
 
+    if self.game:get_value(string.format("room_%d_%d", properties.x, properties.y)) then
+        self.map_surface:fill_color(normal, x, y, 10, 10)
+    end
+
     if self.game:get_value('compass') then
         for _, enemy in ipairs(properties.enemies) do
             if enemy.name == 'boss' then

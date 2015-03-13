@@ -8,14 +8,6 @@ properties{
   music = "same",
 }
 
-separator{
-  layer = 0,
-  x = 32,
-  y = -8,
-  width = 256,
-  height = 16,
-}
-
 tile{
   layer = 1,
   x = 32,
@@ -446,14 +438,6 @@ tile{
   width = 8,
   height = 8,
   pattern = "wall_border.corner.2",
-}
-
-separator{
-  layer = 1,
-  x = -8,
-  y = 32,
-  width = 16,
-  height = 176,
 }
 
 enemy{

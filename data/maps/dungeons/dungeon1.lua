@@ -1,7 +1,8 @@
 local map = ...
-math.randomseed(6)
-
 local game = map:get_game()
+local entrance_x, entrance_y = map:get_entity('entrance'):get_position()
+
+math.randomseed(6)
 
 local Class = {}
 
@@ -420,9 +421,8 @@ local function stdout_room(properties)
 end
 
 local function solarus_room(properties)
-    local entrance_x, entrance_y = map:get_entity('entrance'):get_position()
     local x0 = entrance_x - 160 + 320 * properties.x
-    local y0 = entrance_y + 3 - 240 + 240 * properties.y
+    local y0 = entrance_y + 3 - 240 + 240 * (properties.y - 9)
     map:include(x0, y0, 'rooms/room1', filter_keys(properties, {'doors', 'items', 'enemies'}))
 end
 
@@ -436,6 +436,13 @@ function LayoutVisitor:visit_treasure(treasure)
     table.insert(self.items, treasure)
 end
 
+local DIRECTIONS = { east=0, north=1, west=2, south=3, }
+function add_doorway(separators, x, y, direction, savegame_variable)
+    separators[y] = separators[y] or {}
+    separators[y][x] = separators[y][x] or {}
+    separators[y][x][DIRECTIONS[direction]] = savegame_variable
+end
+
 function LayoutVisitor:visit_room(room)
     local y = self.y
     local x0 = self.x
@@ -446,6 +453,7 @@ function LayoutVisitor:visit_room(room)
     local old_nkids = self.nkids
 
     local door_variable = room.savegame_variable:gsub('room', 'door')
+
 
     if self.doors then
         self.doors.north = filter_keys(room, {'see','reach','open'})
@@ -477,6 +485,12 @@ function LayoutVisitor:visit_room(room)
             items=items,
             enemies=enemies,
         }
+        local savegame_variable = room.savegame_variable .. '_' .. (x - x0)
+        add_doorway(self.separators, x,   y+1, 'north', doors[x].south and savegame_variable or false)
+        add_doorway(self.separators, x,   y,   'east',  doors[x].west  and savegame_variable or false)
+        add_doorway(self.separators, x,   y,   'south', doors[x].north and savegame_variable or false)
+        add_doorway(self.separators, x+1, y,   'west',  doors[x].east  and savegame_variable or false)
+
         items = {}
         enemies = {}
     end
@@ -486,7 +500,6 @@ function LayoutVisitor:visit_room(room)
     end
     self.nkids = self.old_nkids
 end
-
 
 
 local puzzle = dungeon_puzzle(3, {'hookshot'})
@@ -508,12 +521,36 @@ tree.open = 'entrance'
 
 --tree:accept(PrintVisitor:new{})
 --tree:accept(LayoutVisitor:new{x=0, y=0,render=stdout_room})
-tree:accept(LayoutVisitor:new{x=0, y=0,render=solarus_room})
+local separators = {}
+tree:accept(LayoutVisitor:new{x=0, y=9,render=solarus_room, separators=separators})
+for y, row in pairs(separators) do
+    for x, room in pairs(row) do
+        if room[DIRECTIONS.north] ~= nil or room[DIRECTIONS.south] ~= nil then
+
+            local properties = {
+                x = entrance_x - 160 + 320 * x,
+                y = entrance_y + 3 - 240 + 240 * (y - 9) - 8,
+                layer = 1,
+                width = 320,
+                height = 16,
+            }
+            local sep = map:create_separator(properties, room[DIRECTIONS.north], room[DIRECTIONS.south])
+            if room[DIRECTIONS.north] then
+                function sep:on_activated(dir)
+                    local my_y = (dir == DIRECTIONS.north) and y - 1 or y
+                    local my_x = (dir == DIRECTIONS.west) and x - 1 or x
+                    game:set_value(string.format('room_%d_%d', my_x, my_y), true)
+                end
+            end
+        end
+
+    end
+end
 
 function map:render_map(map_menu)
     local render = function (properties)
         map_menu:draw_room(properties)
     end
     map_menu:clear_map()
-    tree:accept(LayoutVisitor:new{x=0, y=9,render=render})
+    tree:accept(LayoutVisitor:new{x=0, y=9,render=render, separators={}})
 end
