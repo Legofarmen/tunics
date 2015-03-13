@@ -523,6 +523,9 @@ tree.open = 'entrance'
 --tree:accept(LayoutVisitor:new{x=0, y=0,render=stdout_room})
 local separators = {}
 tree:accept(LayoutVisitor:new{x=0, y=9,render=solarus_room, separators=separators})
+game:set_value('room_0_9', true)
+
+
 for y, row in pairs(separators) do
     for x, room in pairs(row) do
         if room[DIRECTIONS.north] ~= nil or room[DIRECTIONS.south] ~= nil then
