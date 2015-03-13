@@ -4,7 +4,7 @@ local entrance_x, entrance_y = map:get_entity('entrance'):get_position()
 
 local Class = require 'lib/class.lua'
 
-math.randomseed(109)
+math.randomseed(666)
 
 local Node = Class:new()
 
