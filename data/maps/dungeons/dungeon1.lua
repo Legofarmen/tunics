@@ -11,30 +11,6 @@ math.randomseed(666)
 
 
 
-local PrintVisitor = {}
-PrintVisitor.__index = PrintVisitor
-function PrintVisitor:new(o)
-    o = o or {}
-    o.prefix = o.prefix or ''
-    setmetatable(o, PrintVisitor)
-    return o
-end
-function PrintVisitor:visit_room(room)
-    local child_prefix = self.prefix .. '  '
-    print(self.prefix .. tostring(room))
-    room:each_child(function (key, child)
-        self.prefix = child_prefix
-        child:accept(self)
-    end)
-end
-function PrintVisitor:visit_treasure(treasure)
-    print(self.prefix .. tostring(treasure))
-end
-function PrintVisitor:visit_enemy(enemy)
-    print(self.prefix .. tostring(enemy))
-end
-
-
 function intermingle(a, b)
     local result = {}
     local i = 1
@@ -276,7 +252,7 @@ function map_room(x, y)
     game:set_value(string.format('room_%d_%d', x, y), true)
 end
 
---tree:accept(PrintVisitor:new{})
+--tree:accept(Tree.PrintVisitor:new{})
 --tree:accept(LayoutVisitor:new{x=0, y=0,render=stdout_room})
 local separators = {}
 tree:accept(LayoutVisitor:new{x=0, y=9,render=solarus_room, separators=separators})

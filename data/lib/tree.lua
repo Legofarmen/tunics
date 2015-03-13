@@ -125,9 +125,36 @@ function Room:each_child(f)
     end
 end
 
-
 function Room:random_child(w)
     return weighted_random_element(self.children, w)
+end
+
+
+local PrintVisitor = {}
+PrintVisitor.__index = PrintVisitor
+
+function PrintVisitor:new(o)
+    o = o or {}
+    o.prefix = o.prefix or ''
+    setmetatable(o, PrintVisitor)
+    return o
+end
+
+function PrintVisitor:visit_room(room)
+    local child_prefix = self.prefix .. '  '
+    print(self.prefix .. tostring(room))
+    room:each_child(function (key, child)
+        self.prefix = child_prefix
+        child:accept(self)
+    end)
+end
+
+function PrintVisitor:visit_treasure(treasure)
+    print(self.prefix .. tostring(treasure))
+end
+
+function PrintVisitor:visit_enemy(enemy)
+    print(self.prefix .. tostring(enemy))
 end
 
 return {
@@ -135,4 +162,5 @@ return {
     Room=Room,
     Treasure=Treasure,
     Enemy=Enemy,
+    PrintVisitor=PrintVisitor,
 }
