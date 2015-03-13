@@ -2,8 +2,6 @@ local map = ...
 
 local game = map:get_game()
 
-
-
 local Class = {}
 
 function Class:new(o)
@@ -398,22 +396,13 @@ function filter_keys(table, keys)
     return result
 end
 
-
-local LayoutVisitor = Class:new()
-
-function LayoutVisitor:render_room(properties)
-
-    local floor = string.format('floor.%d',
-        (properties.x + 9 * properties.y) % 18 + 1
-    )
-
-
+local function stdout_room(properties)
     function print_access(thing)
         if thing.see and thing.see ~= 'nothing' then print(string.format("\t\tto see: %s", thing.see)) end
         if thing.reach and thing.reach ~= 'nothing' then print(string.format("\t\tto reach: %s", thing.reach)) end
         if thing.open and thing.open ~= 'nothing' then print(string.format("\t\tto open: %s", thing.open)) end
     end
-    print(string.format("Room %d;%d %s", properties.x, properties.y, floor))
+    print(string.format("Room %d;%d", properties.x, properties.y))
     for dir, door in pairs(properties.doors) do
         print(string.format("  Door %s", dir))
         --print_access(door)
@@ -429,11 +418,15 @@ function LayoutVisitor:render_room(properties)
     end
     ]]
     print()
+end
+
+local function solarus_room(properties)
     local x0 = 200 - 160 + 320 * properties.x
     local y0 = 1400 - 216 + 240 * properties.y
-
     map:include(x0, y0, 'rooms/room1', filter_keys(properties, {'doors', 'items', 'enemies'}))
 end
+
+local LayoutVisitor = Class:new()
 
 function LayoutVisitor:visit_enemy(enemy)
     table.insert(self.enemies, enemy)
@@ -477,7 +470,7 @@ function LayoutVisitor:visit_room(room)
         if x == x0 then doors[x].south = filter_keys(room, {'open'}) end
         if x < x1 then doors[x].east = {} end
         if x > x0 then doors[x].west = {} end
-        self:render_room{
+        self.render{
             x=x,
             y=y,
             doors=doors[x],
@@ -513,5 +506,33 @@ local tree = Room:new{open='entrance'}
 local tree = root
 tree.open = 'entrance'
 
-tree:accept(PrintVisitor:new{})
-tree:accept(LayoutVisitor:new{x=0, y=0})
+--tree:accept(PrintVisitor:new{})
+--tree:accept(LayoutVisitor:new{x=0, y=0,render=stdout_room})
+tree:accept(LayoutVisitor:new{x=0, y=0,render=solarus_room})
+
+local function surface_room(properties, surface)
+    local normal = {255,255,255,216}
+    local highlight = {255,255,255}
+    local x = 12 * properties.x
+    local y = 12 * properties.y
+    surface:fill_color(normal, x, y, 10, 10)
+    if properties.doors.north then
+        surface:fill_color(normal, x + 4, y - 2, 2, 2)
+    end
+    if properties.doors.south then
+        if properties.doors.south.open == 'entrance' then
+            surface:fill_color(highlight, x + 4, y + 8, 2, 4)
+        end
+    end
+    if properties.doors.west then
+        surface:fill_color(normal, x - 2, y + 4, 2, 2)
+    end
+end
+
+function map:render_map(surface)
+    local render = function (properties)
+        surface_room(properties, surface)
+    end
+    surface:clear()
+    tree:accept(LayoutVisitor:new{x=0, y=9,render=render})
+end

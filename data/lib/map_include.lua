@@ -26,10 +26,6 @@ function door(properties)
     if data0 and data0.name and properties.name then
         properties.name = properties.name:gsub('${name}', data0.name)
     end
-    if properties.name then
-        print("name:", properties.name)
-        print("data0.name:", data0.name)
-    end
     map0:create_door(properties)
 end
 
@@ -61,10 +57,6 @@ function dynamic_tile(properties)
     end
     if data0 and data0.name and properties.name then
         properties.name = properties.name:gsub('${name}', data0.name)
-    end
-    if properties.name then
-        print("name:", properties.name)
-        print("data0.name:", data0.name)
     end
     map0:create_dynamic_tile(properties)
 end
