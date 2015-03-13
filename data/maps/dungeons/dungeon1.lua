@@ -526,7 +526,6 @@ tree:accept(LayoutVisitor:new{x=0, y=9,render=solarus_room, separators=separator
 for y, row in pairs(separators) do
     for x, room in pairs(row) do
         if room[DIRECTIONS.north] ~= nil or room[DIRECTIONS.south] ~= nil then
-
             local properties = {
                 x = entrance_x - 160 + 320 * x,
                 y = entrance_y + 3 - 240 + 240 * (y - 9) - 8,
@@ -534,7 +533,7 @@ for y, row in pairs(separators) do
                 width = 320,
                 height = 16,
             }
-            local sep = map:create_separator(properties, room[DIRECTIONS.north], room[DIRECTIONS.south])
+            local sep = map:create_separator(properties)
             if room[DIRECTIONS.north] then
                 function sep:on_activated(dir)
                     local my_y = (dir == DIRECTIONS.north) and y - 1 or y
@@ -543,7 +542,23 @@ for y, row in pairs(separators) do
                 end
             end
         end
-
+        if room[DIRECTIONS.east] ~= nil or room[DIRECTIONS.west] ~= nil then
+            local properties = {
+                x = entrance_x - 160 + 320 * x - 8,
+                y = entrance_y + 3 - 240 + 240 * (y - 9),
+                layer = 1,
+                width = 16,
+                height = 240,
+            }
+            local sep = map:create_separator(properties)
+            if room[DIRECTIONS.west] then
+                function sep:on_activated(dir)
+                    local my_y = (dir == DIRECTIONS.north) and y - 1 or y
+                    local my_x = (dir == DIRECTIONS.west) and x - 1 or x
+                    game:set_value(string.format('room_%d_%d', my_x, my_y), true)
+                end
+            end
+        end
     end
 end
 
