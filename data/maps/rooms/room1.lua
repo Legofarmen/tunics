@@ -1,24 +1,5 @@
 local map, data = ...
 
-for i, item in ipairs(data.items) do
-    local my_item = {
-        layer=1,
-        x=48 * i + 32,
-        y=120,
-        treasure_name=item.name,
-        treasure_savegame_variable=item.savegame_variable
-    }
-    if item.open == 'big_key' then
-        my_item.sprite = "entities/big_chest"
-        my_item.opening_method = "interaction_if_savegame_variable"
-        my_item.opening_condition = "big_key"
-        chest(my_item)
-    else
-        my_item.sprite = "entities/chest"
-        chest(my_item)
-    end
-end
-
 if data.doors.east then
     map:include(0, 0, 'components/door_east', data.doors.east)
 end
@@ -46,3 +27,23 @@ if data.doors.south then
         map:include(0, 0, 'components/door_south', data.doors.south)
     end
 end
+
+for i, item in ipairs(data.items) do
+    local my_item = {
+        layer=1,
+        x=160,
+        y=120,
+        treasure_name=item.name,
+        treasure_savegame_variable=item.savegame_variable
+    }
+    if item.open == 'big_key' then
+        my_item.sprite = "entities/big_chest"
+        my_item.opening_method = "interaction_if_savegame_variable"
+        my_item.opening_condition = "big_key"
+        chest(my_item)
+    else
+        my_item.sprite = "entities/chest"
+        chest(my_item)
+    end
+end
+

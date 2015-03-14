@@ -2763,7 +2763,7 @@ tile_pattern{
   x = 32,
   y = 112,
   width = 16,
-  height = 16,
+  height = 8,
 }
 
 tile_pattern{
@@ -2773,7 +2773,7 @@ tile_pattern{
   x = 48,
   y = 96,
   width = 16,
-  height = 16,
+  height = 8,
 }
 
 tile_pattern{
