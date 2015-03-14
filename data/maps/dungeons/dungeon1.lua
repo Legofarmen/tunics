@@ -4,7 +4,6 @@ local entrance_x, entrance_y = map:get_entity('entrance'):get_position()
 
 local Class = require 'lib/class.lua'
 local Tree = require 'lib/tree.lua'
-local TreeBuilder = require 'lib/treebuilder.lua'
 local List = require 'lib/list.lua'
 local Puzzle = require 'lib/puzzle.lua'
 
@@ -31,7 +30,7 @@ function dungeon_puzzle(nkeys, item_names)
             steps = List.concat(steps, puzzle)
         end
     end
-    table.insert(steps, 1, TreeBuilder.add_boss)
+    table.insert(steps, 1, Puzzle.boss_step)
     return steps
 end
 
