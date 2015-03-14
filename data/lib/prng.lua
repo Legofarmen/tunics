@@ -4,7 +4,7 @@ local MWC = require 'lib/mwc_rng'
 local Prng = Class:new()
 
 function Prng.from_seed(seed)
-    return Prng:new{mwc=MWC.MakeGenerator(seed), seed=seed}
+    return Prng:new{mwc=MWC.MakeGenerator(nil, seed), seed=seed}
 end
 
 function Prng:random(a, b)

@@ -135,7 +135,7 @@ function mark_known_room(x, y)
 end
 
 
-local master_prng = Prng.from_seed(1)
+local master_prng = Prng.from_seed(8)
 local tree = Puzzle.alpha_dungeon(master_prng:create(), 3, {'hookshot'})
 --tree:accept(Tree.PrintVisitor:new{})
 local separators = {}

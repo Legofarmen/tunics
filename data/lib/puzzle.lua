@@ -172,7 +172,7 @@ function Puzzle.alpha_dungeon(rng, nkeys, item_names)
 
     local root = Tree.Room:new()
     for i, step in ipairs(steps) do
-        Puzzle.max_heads(rng:create(), 3)(root)
+        Puzzle.max_heads(rng:create(), 2)(root)
         step(root)
     end
     root:each_child(function (key, child)
