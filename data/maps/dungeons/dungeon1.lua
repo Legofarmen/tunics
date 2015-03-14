@@ -135,17 +135,17 @@ function mark_known_room(x, y)
 end
 
 
-local master_prng = Prng.from_seed(666)
-local rng = master_prng:create()
-Puzzle.alpha_dungeon(rng, 3, {'hookshot'}):accept(Tree.PrintVisitor:new{})
-
---[[
-
---local tree = Puzzle.alpha_dungeon(master_prng:create(), 3, {'hookshot'})
+local master_prng = Prng.from_seed(1)
+local tree = Puzzle.alpha_dungeon(master_prng:create(), 3, {'hookshot'})
 --tree:accept(Tree.PrintVisitor:new{})
---tree:accept(LayoutVisitor:new{x=0, y=9,render=stdout_room, separators={}})
 local separators = {}
-tree:accept(LayoutVisitor:new{x=0, y=9,render=solarus_room, separators=separators})
+tree:accept(LayoutVisitor:new{
+    x=0,
+    y=9,
+    render=solarus_room,
+    --render=stdout_room,
+    separators=separators,
+})
 
 mark_known_room(0, 9)
 for y, row in pairs(separators) do
@@ -194,4 +194,3 @@ function map:render_map(map_menu)
     map_menu:clear_map()
     tree:accept(LayoutVisitor:new{x=0, y=9,render=render, separators={}})
 end
-]]

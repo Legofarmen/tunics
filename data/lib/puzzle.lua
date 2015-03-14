@@ -23,25 +23,25 @@ local KeyDetectorVisitor = {}
 setmetatable(KeyDetectorVisitor, KeyDetectorVisitor)
 
 function KeyDetectorVisitor:visit_room(room)
-    local total_keys = 0
-    if (room.see or 'nothing') == 'nothing' and (room.reach or 'nothing') == 'nothing' and (room.open or 'nothing') == 'nothing' then
-        room:each_child(function (key, child)
-            total_keys = total_keys + child:accept(self)
-        end)
-    end
-    return total_keys
+    local has_keys = false
+    room:each_child(function (key, child)
+        if not has_keys then
+            has_keys = child:accept(self)
+        end
+    end)
+    return has_keys
 end
 
 function KeyDetectorVisitor:visit_treasure(treasure)
     if treasure.name == 'small_key' then
-        return 0
+        return true
     else
-        return 1
+        return false
     end
 end
 
 function KeyDetectorVisitor:visit_enemy(enemy)
-    return 0, 0
+    return false
 end
 
 local Puzzle = {}
@@ -82,11 +82,11 @@ end
 
 function Puzzle.locked_door_step(rng, root)
     function lockable_weight(node)
-        local keys = node:accept(KeyDetectorVisitor)
-        if keys == 0 then
-            return 1
-        else
+        local has_keys = node:accept(KeyDetectorVisitor)
+        if has_keys then
             return 0
+        else
+            return 1
         end
     end
     local key, child = root:random_child(rng, lockable_weight)
