@@ -90,20 +90,7 @@ function LayoutVisitor:visit_room(room)
 
     x1 = math.max(x1, x0 + #items - 1, x0 + #enemies - 1)
 
-    local my_items = {}
-    local my_enemies = {}
     for x = x0, x1 do
-        if x - x0 < #items then
-            my_items[1] = items[x - x0 + 1]
-        else
-            my_items[1] = nil
-        end
-        if x - x0 < #enemies then
-            my_enemies[1] = enemies[x - x0 + 1]
-        else
-            my_enemies[1] = nil
-        end
-
         doors[x] = doors[x] or {}
         if x == x0 then doors[x].south = filter_keys(room, {'open'}) end
         if x < x1 then doors[x].east = {} end
@@ -115,14 +102,16 @@ function LayoutVisitor:visit_room(room)
             x=x,
             y=y,
             doors=doors[x],
-            items=my_items,
-            enemies=my_enemies,
+            items=items,
+            enemies=enemies,
         }
         local savegame_variable = room.savegame_variable .. '_' .. (x - x0)
         add_doorway(self.separators, x,   y+1, 'north', doors[x].south and savegame_variable or false)
         add_doorway(self.separators, x,   y,   'east',  doors[x].west  and savegame_variable or false)
         add_doorway(self.separators, x,   y,   'south', doors[x].north and savegame_variable or false)
         add_doorway(self.separators, x+1, y,   'west',  doors[x].east  and savegame_variable or false)
+        items = {}
+        enemies = {}
     end
 
     self.x = math.max(self.x, x0 + 1, x0 + #items, x0 + #enemies)
