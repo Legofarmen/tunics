@@ -1,38 +1,10 @@
 local map = ...
-local game = map:get_game()
-local entrance_x, entrance_y = map:get_entity('entrance'):get_position()
 
 local Class = require 'lib/class.lua'
 local Tree = require 'lib/tree.lua'
-local List = require 'lib/list.lua'
 local Puzzle = require 'lib/puzzle.lua'
 
 math.randomseed(666)
-
-
-function dungeon_puzzle(nkeys, item_names)
-    local puzzles = {
-        Puzzle.items_puzzle(item_names),
-        Puzzle.map_puzzle(),
-        Puzzle.compass_puzzle(),
-    }
-    for i = 1, nkeys do
-        table.insert(puzzles, Puzzle.lock_puzzle())
-    end
-    List.shuffle(puzzles)
-
-    local steps = {}
-    for _, puzzle in ipairs(puzzles) do
-        local n = math.random(2)
-        if n == 1 then
-            steps = List.intermingle(steps, puzzle)
-        else
-            steps = List.concat(steps, puzzle)
-        end
-    end
-    table.insert(steps, 1, Puzzle.boss_step)
-    return steps
-end
 
 
 function filter_keys(table, keys)
@@ -64,6 +36,9 @@ local function stdout_room(properties)
     end
     print()
 end
+
+
+local entrance_x, entrance_y = map:get_entity('entrance'):get_position()
 
 local function solarus_room(properties)
     local x0 = entrance_x - 160 + 320 * properties.x
@@ -156,36 +131,18 @@ function LayoutVisitor:visit_room(room)
     self.nkids = self.old_nkids
 end
 
-
-local puzzle = dungeon_puzzle(3, {'hookshot'})
-local root = Tree.Room:new()
-for i, step in ipairs(puzzle) do
-    Puzzle.max_heads(3)(root)
-    step(root)
-end
-root:each_child(function (key, child)
-    if child.class ~= 'Room' then
-        local room = Tree.Room:new()
-        room:add_child(child)
-        root:update_child(key, room)
-    end
-end)
-local tree = Tree.Room:new{open='entrance'}
-local tree = root
-tree.open = 'entrance'
-
-
-function map_room(x, y)
-    game:set_value(string.format('room_%d_%d', x, y), true)
+function mark_known_room(x, y)
+    map:get_game():set_value(string.format('room_%d_%d', x, y), true)
 end
 
+
+local tree = Puzzle.alpha_dungeon(3, {'hookshot'})
 --tree:accept(Tree.PrintVisitor:new{})
 --tree:accept(LayoutVisitor:new{x=0, y=9,render=stdout_room, separators={}})
 local separators = {}
 tree:accept(LayoutVisitor:new{x=0, y=9,render=solarus_room, separators=separators})
-map_room(0, 9)
 
-
+mark_known_room(0, 9)
 for y, row in pairs(separators) do
     for x, room in pairs(row) do
         if room[DIRECTIONS.north] ~= nil or room[DIRECTIONS.south] ~= nil then
@@ -201,7 +158,7 @@ for y, row in pairs(separators) do
                 function sep:on_activated(dir)
                     local my_y = (dir == DIRECTIONS.north) and y - 1 or y
                     local my_x = (dir == DIRECTIONS.west) and x - 1 or x
-                    map_room(my_x, my_y)
+                    mark_known_room(my_x, my_y)
                 end
             end
         end
@@ -218,7 +175,7 @@ for y, row in pairs(separators) do
                 function sep:on_activated(dir)
                     local my_y = (dir == DIRECTIONS.north) and y - 1 or y
                     local my_x = (dir == DIRECTIONS.west) and x - 1 or x
-                    map_room(my_x, my_y)
+                    mark_known_room(my_x, my_y)
                 end
             end
         end

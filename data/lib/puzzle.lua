@@ -18,40 +18,28 @@ end
 function HideTreasuresVisitor:visit_enemy(enemy)
 end
 
-local TreasureCountVisitor = {}
+local KeyDetectorVisitor = {}
 
-setmetatable(TreasureCountVisitor, TreasureCountVisitor)
+setmetatable(KeyDetectorVisitor, KeyDetectorVisitor)
 
-function TreasureCountVisitor:visit_room(room)
-    local total_keys
-    if room.open == 'small_key' then
-        total_keys = -1
-    else
-        total_keys = 0
-    end
-    room:each_child(function (key, child)
-        if (not child.open or child.open == 'nothing') and (not child.reach or child.reach == 'nothing') and (not child.see or child.see == 'nothing') then
+function KeyDetectorVisitor:visit_room(room)
+    if (room.see or 'nothing') ~= 'nothing' and (room.reach or 'nothing') ~= 'nothing' and (room.open or 'nothing') ~= 'nothing' then
+        room:each_child(function (key, child)
             total_keys = total_keys + child:accept(self)
-        end
-    end)
+        end)
+    end
     return total_keys
 end
 
-function TreasureCountVisitor:visit_treasure(treasure)
-    local keys
-    if treasure.open == 'small_key' then
-        keys = -1
-    else
-        keys = 0
-    end
+function KeyDetectorVisitor:visit_treasure(treasure)
     if treasure.name == 'small_key' then
-        return 0, keys + 1
+        return 0
     else
-        return 1, keys
+        return 1
     end
 end
 
-function TreasureCountVisitor:visit_enemy(enemy)
+function KeyDetectorVisitor:visit_enemy(enemy)
     return 0, 0
 end
 
@@ -93,13 +81,9 @@ end
 
 function Puzzle.locked_door_step(root)
     function lockable_weight(node)
-        if node.class == 'Room' then
-            local keys = node:accept(TreasureCountVisitor)
-            if keys > 1 then
-                return keys
-            else
-                return 0
-            end
+        local keys = node:accept(KeyDetectorVisitor)
+        if keys == 0 then
+            return 1
         else
             return 0
         end
@@ -160,6 +144,44 @@ function Puzzle.lock_puzzle()
             end
         end,
     }
+end
+
+function Puzzle.alpha_dungeon(nkeys, item_names)
+    local puzzles = {
+        Puzzle.items_puzzle(item_names),
+        Puzzle.map_puzzle(),
+        Puzzle.compass_puzzle(),
+    }
+    for i = 1, nkeys do
+        table.insert(puzzles, Puzzle.lock_puzzle())
+    end
+    List.shuffle(puzzles)
+
+    local steps = {}
+    for _, puzzle in ipairs(puzzles) do
+        local n = math.random(2)
+        if n == 1 then
+            steps = List.intermingle(steps, puzzle)
+        else
+            steps = List.concat(steps, puzzle)
+        end
+    end
+    table.insert(steps, 1, Puzzle.boss_step)
+
+    local root = Tree.Room:new()
+    for i, step in ipairs(steps) do
+        Puzzle.max_heads(3)(root)
+        step(root)
+    end
+    root:each_child(function (key, child)
+        if child.class ~= 'Room' then
+            local room = Tree.Room:new()
+            room:add_child(child)
+            root:update_child(key, room)
+        end
+    end)
+    root.open = 'entrance'
+    return root
 end
 
 return Puzzle
