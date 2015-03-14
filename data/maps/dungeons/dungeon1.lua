@@ -69,13 +69,11 @@ function LayoutVisitor:visit_room(room)
     local doors = {}
     local items = {}
     local enemies = {}
-    local old_nkids = self.nkids
 
     if self.doors then
         self.doors.north = filter_keys(room, {'see','reach','open'})
     end
 
-    self.nkids = 0
     room:each_child(function (key, child)
         self.y = y - 1
         self.items = items
@@ -115,8 +113,6 @@ function LayoutVisitor:visit_room(room)
     end
 
     self.x = math.max(self.x, x0 + 1, x0 + #items, x0 + #enemies)
-
-    self.nkids = self.old_nkids
 end
 
 function mark_known_room(x, y)
