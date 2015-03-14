@@ -1,12 +1,12 @@
 local List = {}
 
-function List.intermingle(a, b)
+function List.intermingle(rng, a, b)
     local result = {}
     local i = 1
     local j = 1
     local total = #a + #b
     while total > 0 do
-        if math.random(total) <= #a - i + 1 then
+        if rng:random(total) <= #a - i + 1 then
             table.insert(result, a[i])
             i = i + 1
         else
@@ -25,9 +25,9 @@ function List.concat(a, b)
     return a
 end
 
-function List.shuffle(array)
+function List.shuffle(rng, array)
     for i, _ in ipairs(array) do
-        local j = math.random(#array)
+        local j = rng:random(#array)
         array[i], array[j] = array[j], array[i]
     end
 end

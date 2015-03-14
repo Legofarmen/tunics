@@ -80,7 +80,7 @@ function Puzzle.bomb_doors_step(root)
     end)
 end
 
-function Puzzle.locked_door_step(root)
+function Puzzle.locked_door_step(rng, root)
     function lockable_weight(node)
         local keys = node:accept(KeyDetectorVisitor)
         if keys == 0 then
@@ -89,7 +89,7 @@ function Puzzle.locked_door_step(root)
             return 0
         end
     end
-    local key, child = root:random_child(lockable_weight)
+    local key, child = root:random_child(rng, lockable_weight)
     if key then
         root:update_child(key, child:with_needs{open='small_key'})
         return true
@@ -98,12 +98,12 @@ function Puzzle.locked_door_step(root)
     end
 end
 
-function Puzzle.max_heads(n)
+function Puzzle.max_heads(rng, n)
     return function (root)
         while #root.children > n do
             local fork = Tree.Room:new()
-            fork:merge_child(root:remove_child(root:random_child()))
-            fork:merge_child(root:remove_child(root:random_child()))
+            fork:merge_child(root:remove_child(root:random_child(rng)))
+            fork:merge_child(root:remove_child(root:random_child(rng)))
             root:add_child(fork)
         end
     end
@@ -116,18 +116,18 @@ function Puzzle.compass_puzzle()
     }
 end
 
-function Puzzle.map_puzzle()
+function Puzzle.map_puzzle(rng)
     local steps = {
         Puzzle.treasure_step('bomb'),
         Puzzle.treasure_step('map'),
     }
-    List.shuffle(steps)
+    List.shuffle(rng, steps)
     table.insert(steps, 1, Puzzle.bomb_doors_step)
     return steps
 end
 
-function Puzzle.items_puzzle(item_names)
-    List.shuffle(item_names)
+function Puzzle.items_puzzle(rng, item_names)
+    List.shuffle(rng, item_names)
     local steps = {}
     for _, item_name in ipairs(item_names) do
         table.insert(steps, Puzzle.obstacle_step(item_name))
@@ -137,32 +137,33 @@ function Puzzle.items_puzzle(item_names)
     return steps
 end
 
-function Puzzle.lock_puzzle()
+function Puzzle.lock_puzzle(rng)
     return {
         function (root)
-            if Puzzle.locked_door_step(root) then
+            if Puzzle.locked_door_step(rng, root) then
                 Puzzle.treasure_step('small_key')(root)
             end
         end,
     }
 end
 
-function Puzzle.alpha_dungeon(nkeys, item_names)
+function Puzzle.alpha_dungeon(rng, nkeys, item_names)
     local puzzles = {
-        Puzzle.items_puzzle(item_names),
-        Puzzle.map_puzzle(),
+        Puzzle.items_puzzle(rng:create(), item_names),
+        Puzzle.map_puzzle(rng:create()),
         Puzzle.compass_puzzle(),
     }
     for i = 1, nkeys do
-        table.insert(puzzles, Puzzle.lock_puzzle())
+        table.insert(puzzles, Puzzle.lock_puzzle(rng:create()))
     end
-    List.shuffle(puzzles)
+    List.shuffle(rng:create(), puzzles)
 
+    local my_rng = rng:create()
     local steps = {}
     for _, puzzle in ipairs(puzzles) do
-        local n = math.random(2)
+        local n = my_rng:random(2)
         if n == 1 then
-            steps = List.intermingle(steps, puzzle)
+            steps = List.intermingle(rng:create(), steps, puzzle)
         else
             steps = List.concat(steps, puzzle)
         end
@@ -171,7 +172,7 @@ function Puzzle.alpha_dungeon(nkeys, item_names)
 
     local root = Tree.Room:new()
     for i, step in ipairs(steps) do
-        Puzzle.max_heads(3)(root)
+        Puzzle.max_heads(rng:create(), 3)(root)
         step(root)
     end
     root:each_child(function (key, child)

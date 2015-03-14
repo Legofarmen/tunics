@@ -1,12 +1,12 @@
 local Class = require 'lib/class'
 
-local function weighted_random_element(array, w)
+local function weighted_random_element(rng, array, w)
     local total = 0
     local rkey, rchild
     for key, elem in ipairs(array) do
         local weight = w and w(elem) or 1
         total = total + weight
-        if weight > math.random() * total then
+        if weight > rng:random() * total then
             rkey = key
             rchild = elem
         end
@@ -125,8 +125,8 @@ function Room:each_child(f)
     end
 end
 
-function Room:random_child(w)
-    return weighted_random_element(self.children, w)
+function Room:random_child(rng, w)
+    return weighted_random_element(rng, self.children, w)
 end
 
 
