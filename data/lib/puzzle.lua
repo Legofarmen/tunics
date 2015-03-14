@@ -23,7 +23,8 @@ local KeyDetectorVisitor = {}
 setmetatable(KeyDetectorVisitor, KeyDetectorVisitor)
 
 function KeyDetectorVisitor:visit_room(room)
-    if (room.see or 'nothing') ~= 'nothing' and (room.reach or 'nothing') ~= 'nothing' and (room.open or 'nothing') ~= 'nothing' then
+    local total_keys = 0
+    if (room.see or 'nothing') == 'nothing' and (room.reach or 'nothing') == 'nothing' and (room.open or 'nothing') == 'nothing' then
         room:each_child(function (key, child)
             total_keys = total_keys + child:accept(self)
         end)
