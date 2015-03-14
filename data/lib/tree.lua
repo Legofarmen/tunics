@@ -1,4 +1,4 @@
-local Class = require 'lib/class.lua'
+local Class = require 'lib/class'
 
 local function weighted_random_element(array, w)
     local total = 0

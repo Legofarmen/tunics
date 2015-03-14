@@ -1,5 +1,5 @@
-local Tree = require 'lib/tree.lua'
-local List = require 'lib/list.lua'
+local Tree = require 'lib/tree'
+local List = require 'lib/list'
 
 local HideTreasuresVisitor = {}
 
