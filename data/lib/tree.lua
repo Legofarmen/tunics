@@ -90,7 +90,25 @@ function Enemy:accept(visitor)
 end
 
 function Room:add_child(node)
+    if node.class ~= 'Room' then
+        local r, t, e = self:child_counts()
+        if (node.class == 'Treasure' and t > 0) or (node.class == 'Enemy' and e > 0) then
+            node = Room:new{children={node}}
+        end
+    end
     table.insert(self.children, node)
+end
+
+function Room:child_counts()
+    local counts = {
+        Room=0,
+        Treasure=0,
+        Enemy=0,
+    }
+    for k, child in ipairs(self.children) do
+        counts[child.class] = counts[child.class] + 1
+    end
+    return counts.Room, counts.Treasure, counts.Enemy
 end
 
 function Room:merge_child(node)
