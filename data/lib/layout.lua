@@ -1,4 +1,5 @@
 local Class = require 'lib/class'
+local Util = require 'lib/util'
 
 
 local Layout = {}
@@ -59,9 +60,9 @@ function BaseVisitor:visit_room(room)
 
     if self.doors then
         if is_eastward then
-            self.doors.east = filter_keys(room, {'see','reach','open'})
+            self.doors.east = Util.filter_keys(room, {'see','reach','open'})
         else
-            self.doors.north = filter_keys(room, {'see','reach','open'})
+            self.doors.north = Util.filter_keys(room, {'see','reach','open'})
         end
     end
 
@@ -107,9 +108,9 @@ function BaseVisitor:visit_room(room)
         doors[x] = doors[x] or {}
         if x == x0 then
             if is_eastward then
-                doors[x].west = filter_keys(room, {'open'})
+                doors[x].west = Util.filter_keys(room, {'open'})
             else
-                doors[x].south = filter_keys(room, {'open'})
+                doors[x].south = Util.filter_keys(room, {'open'})
             end
         end
         if x < x1 then doors[x].east = {} end

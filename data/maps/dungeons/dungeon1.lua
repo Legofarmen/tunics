@@ -4,15 +4,8 @@ local Tree = require 'lib/tree'
 local Puzzle = require 'lib/puzzle'
 local Prng = require 'lib/prng'
 local Layout = require 'lib/layout'
+local Util = require 'lib/util'
 
-
-function filter_keys(table, keys)
-    local result = {}
-    for _, key in ipairs(keys) do
-        if table[key] then result[key] = table[key] end
-    end
-    return result
-end
 
 local function stdout_room(properties)
     function print_access(thing)
@@ -42,10 +35,10 @@ local entrance_x, entrance_y = map:get_entity('entrance'):get_position()
 local function solarus_room(properties)
     local x0 = entrance_x - 160 + 320 * properties.x
     local y0 = entrance_y + 3 - 240 + 240 * (properties.y - 9)
-    map:include(x0, y0, 'rooms/room1', filter_keys(properties, {'doors', 'items', 'enemies'}))
+    map:include(x0, y0, 'rooms/room1', Util.filter_keys(properties, {'doors', 'items', 'enemies'}))
 end
 
-function mark_known_room(x, y)
+local function mark_known_room(x, y)
     map:get_game():set_value(string.format('room_%d_%d', x, y), true)
 end
 
