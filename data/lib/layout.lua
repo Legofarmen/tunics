@@ -118,15 +118,15 @@ function BaseVisitor:visit_room(room)
         if doors[x].north then
             doors[x].north.name = string.format('door_%d_%d_n', x, y)
         end
-        self.render{
+        self:render_room{
             x=x,
             y=y,
             doors=doors[x],
             items=items,
             enemies=enemies,
         }
+        local savegame_variable = room.savegame_variable .. '_' .. (x - x0)
         if self.separators then
-            local savegame_variable = room.savegame_variable .. '_' .. (x - x0)
             add_doorway(self.separators, x,   y+1, 'north', doors[x].south and savegame_variable or false)
             add_doorway(self.separators, x,   y,   'east',  doors[x].west  and savegame_variable or false)
             add_doorway(self.separators, x,   y,   'south', doors[x].north and savegame_variable or false)
@@ -136,6 +136,16 @@ function BaseVisitor:visit_room(room)
         enemies = {}
     end
 
+end
+
+function BaseVisitor:render(tree)
+    if self.on_start then
+        self:on_start()
+    end
+    tree:accept(self)
+    if self.on_finish then
+        self:on_finish()
+    end
 end
 
 
@@ -154,7 +164,7 @@ end
 
 function Layout.print_mixin(object)
 
-    function object.render(properties)
+    function object:render_room(properties)
         function print_access(thing)
             if thing.see and thing.see ~= 'nothing' then print(string.format("\t\tto see: %s", thing.see)) end
             if thing.reach and thing.reach ~= 'nothing' then print(string.format("\t\tto reach: %s", thing.reach)) end
@@ -182,8 +192,75 @@ end
 
 function Layout.minimap_mixin(object, map_menu)
 
-    function object.render(properties)
+    function object:render_room(properties)
         map_menu:draw_room(properties)
+    end
+
+    function object:on_start()
+        map_menu:clear_map()
+    end
+
+    return object
+end
+
+function Layout.solarus_mixin(object, map)
+
+    local entrance_x, entrance_y = map:get_entity('entrance'):get_position()
+
+    function mark_known_room(x, y)
+        map:get_game():set_value(string.format('room_%d_%d', x, y), true)
+    end
+
+    function object:on_start()
+        self.separators = {}
+    end
+
+    function object:render_room(properties)
+        local x0 = entrance_x - 160 + 320 * properties.x
+        local y0 = entrance_y + 3 - 240 + 240 * (properties.y - 9)
+        map:include(x0, y0, 'rooms/room1', Util.filter_keys(properties, {'doors', 'items', 'enemies'}))
+    end
+
+    function object:on_finish()
+        mark_known_room(0, 9)
+        for y, row in pairs(self.separators) do
+            for x, room in pairs(row) do
+                if room[Layout.DIRECTIONS.north] ~= nil or room[Layout.DIRECTIONS.south] ~= nil then
+                    local properties = {
+                        x = entrance_x - 160 + 320 * x,
+                        y = entrance_y + 3 - 240 + 240 * (y - 9) - 8,
+                        layer = 1,
+                        width = 320,
+                        height = 16,
+                    }
+                    local sep = map:create_separator(properties)
+                    if room[Layout.DIRECTIONS.north] then
+                        function sep:on_activated(dir)
+                            local my_y = (dir == Layout.DIRECTIONS.north) and y - 1 or y
+                            local my_x = (dir == Layout.DIRECTIONS.west) and x - 1 or x
+                            mark_known_room(my_x, my_y)
+                        end
+                    end
+                end
+                if room[Layout.DIRECTIONS.east] ~= nil or room[Layout.DIRECTIONS.west] ~= nil then
+                    local properties = {
+                        x = entrance_x - 160 + 320 * x - 8,
+                        y = entrance_y + 3 - 240 + 240 * (y - 9),
+                        layer = 1,
+                        width = 16,
+                        height = 240,
+                    }
+                    local sep = map:create_separator(properties)
+                    if room[Layout.DIRECTIONS.west] then
+                        function sep:on_activated(dir)
+                            local my_y = (dir == Layout.DIRECTIONS.north) and y - 1 or y
+                            local my_x = (dir == Layout.DIRECTIONS.west) and x - 1 or x
+                            mark_known_room(my_x, my_y)
+                        end
+                    end
+                end
+            end
+        end
     end
 
     return object
