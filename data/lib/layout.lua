@@ -105,7 +105,13 @@ function Layout.BetaVisitor:visit_room(room)
     end
     self.x = math.max(self.x, x0 + 1, x0 + #items, x0 + #enemies)
 
-    for x = x0, x1 do
+    if heavy_key then
+        self.y = y
+        self.is_heavy = true
+        room.children[heavy_key]:accept(self)
+    end
+
+    for x = x1, x0, -1 do
         doors[x] = doors[x] or {}
         if x == x0 then
             if is_heavy then
@@ -134,12 +140,6 @@ function Layout.BetaVisitor:visit_room(room)
         items = {}
         enemies = {}
     end
-    if heavy_key then
-        self.y = y
-        self.is_heavy = true
-        room.children[heavy_key]:accept(self)
-    end
-
 end
 
 
@@ -211,7 +211,7 @@ function Layout.AlphaVisitor:visit_room(room)
 
     self.x = math.max(self.x, x0 + 1)
 
-    for x = x0, x1 do
+    for x = x1, x0, -1 do
         doors[x] = doors[x] or {}
         if x == x0 then
             if is_eastward then
