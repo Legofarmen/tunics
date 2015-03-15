@@ -5,8 +5,8 @@ local Puzzle = require 'lib/puzzle'
 local Prng = require 'lib/prng'
 local Layout = require 'lib/layout'
 
-local master_prng = Prng.from_seed(8)
-local layout = Layout.NorthEastwardVisitor
+local master_prng = Prng.from_seed(13)
+local layout = Layout.NorthwardVisitor
 
 local puzzle = Puzzle.alpha_dungeon(master_prng:create(), 3, {'hookshot'})
 --puzzle:accept(Tree.PrintVisitor:new{})
