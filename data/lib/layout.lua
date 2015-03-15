@@ -204,20 +204,6 @@ function Layout.solarus_mixin(object, map)
         separators[y][x][Layout.DIRECTIONS[direction]] = savegame_variable
     end
 
-    function pairsByKeys (t, f)
-        local a = {}
-        for n in pairs(t) do table.insert(a, n) end
-        table.sort(a, f)
-        local i = 0      -- iterator variable
-        local iter = function ()   -- iterator function
-            i = i + 1
-            if a[i] == nil then return nil
-            else return a[i], t[a[i]]
-            end
-        end
-        return iter
-    end
-
     function object:on_start()
         self.separators = {}
         self.rooms = {}
@@ -239,8 +225,8 @@ function Layout.solarus_mixin(object, map)
 
     function object:on_finish()
 
-        for y, row in pairsByKeys(self.rooms) do
-            for x, properties in pairsByKeys(row) do
+        for y, row in Util.pairs_by_keys(self.rooms) do
+            for x, properties in Util.pairs_by_keys(row) do
                 map:include(x, y, 'rooms/room1', properties)
             end
         end
@@ -289,5 +275,102 @@ function Layout.solarus_mixin(object, map)
     return object
 end
 
+
+Layout.NorthWestwardVisitor = BaseVisitor:new{ x=9, y=9 }
+
+function Layout.NorthWestwardVisitor:get_heavy_child_properties(x, y)
+    return x + 1, y, true
+end
+
+function Layout.NorthWestwardVisitor:visit_room(room)
+    local y = self.y
+    local x0 = self.x
+    local is_heavy = self.is_heavy
+    local x1 = x0
+    local doors = {}
+    local items = {}
+    local enemies = {}
+    local dir_x = -1
+    local furthest_ew = math.min
+    local forward_ew = 'west'
+    local backward_ew = 'east'
+
+    print('start', y, x0, '', room)
+
+    if self.doors then
+        if is_heavy then
+            self.doors[forward_ew] = Util.filter_keys(room, {'see','reach','open'})
+        else
+            self.doors.north = Util.filter_keys(room, {'see','reach','open'})
+        end
+    end
+
+    local total_weight = 0
+    local heavy_weight = 0
+    local heavy_key = nil
+    room:each_child(function (key, child)
+        local child_weight = child:accept(WeightVisitor)
+        total_weight = total_weight + child_weight
+        if child_weight > heavy_weight then
+            heavy_weight = child_weight
+            heavy_key = key
+        end
+    end)
+    if total_weight == heavy_weight then
+        heavy_key = nil
+    end
+
+    self.is_heavy = false
+    room:each_child(function (key, child)
+        if key ~= heavy_key then
+            self.y = y - 1
+            self.items = items
+            self.enemies = enemies
+            if child.class == 'Room' then
+                x1 = self.x
+                doors[x1] = doors[x1] or {}
+                self.doors = doors[x1]
+            end
+            child:accept(self)
+        end
+    end)
+    self.x = furthest_ew(self.x, x0 + dir_x)
+
+    if heavy_key then
+        x1, self.y, self.is_heavy = self:get_heavy_child_properties(self.x, y)
+        doors[x1] = doors[x1] or {}
+        self.doors = doors[x1]
+        room.children[heavy_key]:accept(self)
+    end
+
+    for x = x0, x1, dir_x do
+        doors[x] = doors[x] or {}
+        if x == x0 then
+            if is_heavy then
+                doors[x][backward_ew] = Util.filter_keys(room, {'open'})
+            else
+                doors[x].south = Util.filter_keys(room, {'open'})
+            end
+        end
+        if x ~= x1 then doors[x][forward_ew] = {} end
+        if x ~= x0 then doors[x][backward_ew] = {} end
+        if doors[x].north then
+            doors[x].north.name = string.format('door_%d_%d_n', x, y)
+        end
+        self:render_room{
+            x=x,
+            y=y,
+            doors=doors[x],
+            items=items,
+            enemies=enemies,
+            savegame_variable = room.savegame_variable .. '_' .. (x - x0)
+        }
+        items = {}
+        enemies = {}
+    end
+
+    print('end', y, x0, x1, room)
+
+end
 
 return Layout

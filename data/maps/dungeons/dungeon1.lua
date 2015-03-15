@@ -6,7 +6,7 @@ local Prng = require 'lib/prng'
 local Layout = require 'lib/layout'
 
 local master_prng = Prng.from_seed(13)
-local layout = Layout.NorthwardVisitor
+local layout = Layout.NorthWestwardVisitor
 
 local puzzle = Puzzle.alpha_dungeon(master_prng:create(), 3, {'hookshot'})
 --puzzle:accept(Tree.PrintVisitor:new{})
@@ -22,5 +22,5 @@ Layout.solarus_mixin(layout:new(), map):render(puzzle)
 function map:on_started()
     local hero = map:get_hero()
     map:get_hero():set_direction(1)
-    map:get_hero():set_position(320 / 2, 240 * 10 - 8, 1)
+    map:get_hero():set_position(3200 - 320 / 2, 240 * 10 - 8, 1)
 end
