@@ -9,11 +9,11 @@ local master_prng = Prng.from_seed(8)
 local layout = Layout.NorthwardVisitor
 
 local puzzle = Puzzle.alpha_dungeon(master_prng:create(), 3, {'hookshot'})
-puzzle:accept(Tree.PrintVisitor:new{})
+--puzzle:accept(Tree.PrintVisitor:new{})
 
 function map:render_map(map_menu)
     Layout.minimap_mixin(layout:new(), map_menu):render(puzzle)
 end
 
 Layout.solarus_mixin(layout:new(), map):render(puzzle)
-Layout.print_mixin(layout:new()):render(puzzle)
+--Layout.print_mixin(layout:new()):render(puzzle)
