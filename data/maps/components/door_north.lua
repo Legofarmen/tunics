@@ -20,7 +20,5 @@ if data.open then
         my_door.opening_condition='small_key_amount'
         my_door.opening_condition_consumed=true
         map:create_door(my_door)
-    else
-        data.check_unhandled{'open'}
     end
 end
