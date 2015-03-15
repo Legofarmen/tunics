@@ -45,13 +45,15 @@ local function solarus_room(properties)
     map:include(x0, y0, 'rooms/room1', filter_keys(properties, {'doors', 'items', 'enemies'}))
 end
 
-local LayoutVisitor = Class:new()
+local Layout = {}
 
-function LayoutVisitor:visit_enemy(enemy)
+Layout.BetaVisitor = Class:new()
+
+function Layout.BetaVisitor:visit_enemy(enemy)
     table.insert(self.enemies, enemy)
 end
 
-function LayoutVisitor:visit_treasure(treasure)
+function Layout.BetaVisitor:visit_treasure(treasure)
     table.insert(self.items, treasure)
 end
 
@@ -85,7 +87,7 @@ function WeightVisitor:visit_enemy(enemy)
     return 0
 end
 
-function LayoutVisitor:visit_room(room)
+function Layout.BetaVisitor:visit_room(room)
     local y = self.y
     local x0 = self.x
     local x1 = x0
@@ -181,7 +183,7 @@ local master_prng = Prng.from_seed(8)
 local tree = Puzzle.alpha_dungeon(master_prng:create(), 3, {'hookshot'})
 tree:accept(Tree.PrintVisitor:new{})
 local separators = {}
-tree:accept(LayoutVisitor:new{
+tree:accept(Layout.BetaVisitor:new{
     x=0,
     y=9,
     render=solarus_room,
@@ -234,5 +236,5 @@ function map:render_map(map_menu)
         map_menu:draw_room(properties)
     end
     map_menu:clear_map()
-    tree:accept(LayoutVisitor:new{x=0, y=9,render=render, separators={}})
+    tree:accept(Layout.BetaVisitor:new{x=0, y=9,render=render, separators={}})
 end
