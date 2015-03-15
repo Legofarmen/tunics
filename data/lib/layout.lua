@@ -29,13 +29,6 @@ function WeightVisitor:visit_enemy(enemy)
 end
 
 
-function add_doorway(separators, x, y, direction, savegame_variable)
-    separators[y] = separators[y] or {}
-    separators[y][x] = separators[y][x] or {}
-    separators[y][x][Layout.DIRECTIONS[direction]] = savegame_variable
-end
-
-
 Layout.DIRECTIONS = { east=0, north=1, west=2, south=3, }
 
 
@@ -124,14 +117,8 @@ function BaseVisitor:visit_room(room)
             doors=doors[x],
             items=items,
             enemies=enemies,
+            savegame_variable = room.savegame_variable .. '_' .. (x - x0)
         }
-        local savegame_variable = room.savegame_variable .. '_' .. (x - x0)
-        if self.separators then
-            add_doorway(self.separators, x,   y+1, 'north', doors[x].south and savegame_variable or false)
-            add_doorway(self.separators, x,   y,   'east',  doors[x].west  and savegame_variable or false)
-            add_doorway(self.separators, x,   y,   'south', doors[x].north and savegame_variable or false)
-            add_doorway(self.separators, x+1, y,   'west',  doors[x].east  and savegame_variable or false)
-        end
         items = {}
         enemies = {}
     end
@@ -211,6 +198,12 @@ function Layout.solarus_mixin(object, map)
         map:get_game():set_value(string.format('room_%d_%d', x, y), true)
     end
 
+    function add_doorway(separators, x, y, direction, savegame_variable)
+        separators[y] = separators[y] or {}
+        separators[y][x] = separators[y][x] or {}
+        separators[y][x][Layout.DIRECTIONS[direction]] = savegame_variable
+    end
+
     function object:on_start()
         self.separators = {}
     end
@@ -221,6 +214,11 @@ function Layout.solarus_mixin(object, map)
         local room_properties = Util.filter_keys(properties, {'doors', 'items', 'enemies'})
         room_properties.name = string.format('room_%d_%d', properties.x, properties.y)
         map:include(x0, y0, 'rooms/room1', room_properties)
+
+        add_doorway(self.separators, properties.x,   properties.y+1, 'north', properties.doors.south and properties.savegame_variable or false)
+        add_doorway(self.separators, properties.x,   properties.y,   'east',  properties.doors.west  and properties.savegame_variable or false)
+        add_doorway(self.separators, properties.x,   properties.y,   'south', properties.doors.north and properties.savegame_variable or false)
+        add_doorway(self.separators, properties.x+1, properties.y,   'west',  properties.doors.east  and properties.savegame_variable or false)
     end
 
     function object:on_finish()
