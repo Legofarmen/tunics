@@ -48,13 +48,6 @@ function Layout.BetaVisitor:visit_treasure(treasure)
     table.insert(self.items, treasure)
 end
 
-Layout.DIRECTIONS = { east=0, north=1, west=2, south=3, }
-function add_doorway(separators, x, y, direction, savegame_variable)
-    separators[y] = separators[y] or {}
-    separators[y][x] = separators[y][x] or {}
-    separators[y][x][Layout.DIRECTIONS[direction]] = savegame_variable
-end
-
 function Layout.BetaVisitor:visit_room(room)
     local y = self.y
     local x0 = self.x
