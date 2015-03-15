@@ -15,12 +15,11 @@ function map:render_map(map_menu)
     Layout.minimap_mixin(layout:new(), map_menu):render(puzzle)
 end
 
-Layout.solarus_mixin(layout:new(), map):render(puzzle)
+local solarus_layout = Layout.solarus_mixin(layout:new(), map)
+solarus_layout:render(puzzle)
 --Layout.print_mixin(layout:new()):render(puzzle)
 
 
 function map:on_started()
-    local hero = map:get_hero()
-    map:get_hero():set_direction(1)
-    map:get_hero():set_position(3200 - 320 / 2, 240 * 10 - 8, 1)
+    solarus_layout:move_hero_to_start()
 end

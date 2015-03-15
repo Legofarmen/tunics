@@ -135,15 +135,20 @@ function BaseVisitor:render(tree)
     end
 end
 
+function BaseVisitor:on_start()
+    self.x = self.start_x
+    self.y = self.start_y
+end
 
-Layout.NorthwardVisitor = BaseVisitor:new{ x=0, y=9 }
+
+Layout.NorthwardVisitor = BaseVisitor:new{ start_x=0, start_y=9 }
 
 function Layout.NorthwardVisitor:get_heavy_child_properties(x, y)
     return x, y - 1, false
 end
 
 
-Layout.NorthEastwardVisitor = BaseVisitor:new{ x=0, y=9 }
+Layout.NorthEastwardVisitor = BaseVisitor:new{ start_x=0, start_y=9 }
 
 function Layout.NorthEastwardVisitor:get_heavy_child_properties(x, y)
     return x - 1, y, true
@@ -151,7 +156,7 @@ end
 
 function Layout.print_mixin(object)
 
-    function object:render_room(properties)
+    function object:rfinish_room(properties)
         function print_access(thing)
             if thing.see and thing.see ~= 'nothing' then print(string.format("\t\tto see: %s", thing.see)) end
             if thing.reach and thing.reach ~= 'nothing' then print(string.format("\t\tto reach: %s", thing.reach)) end
@@ -183,7 +188,12 @@ function Layout.minimap_mixin(object, map_menu)
         map_menu:draw_room(properties)
     end
 
+    local old_on_start = object.on_start
+
     function object:on_start()
+        if old_on_start then
+            old_on_start(self)
+        end
         map_menu:clear_map()
     end
 
@@ -204,9 +214,21 @@ function Layout.solarus_mixin(object, map)
         separators[y][x][Layout.DIRECTIONS[direction]] = savegame_variable
     end
 
+    function object:move_hero_to_start()
+        local hero = map:get_hero()
+        map:get_hero():set_position(320 * self.start_x + 320 / 2, 240 * self.start_y + 232, 1)
+        map:get_hero():set_direction(1)
+    end
+
+    local old_on_start = object.on_start
+    local old_on_finish = object.on_finish
+
     function object:on_start()
         self.separators = {}
         self.rooms = {}
+        if old_on_start then
+            old_on_start(self)
+        end
     end
 
     function object:render_room(properties)
@@ -224,6 +246,9 @@ function Layout.solarus_mixin(object, map)
     end
 
     function object:on_finish()
+        if old_on_finish then
+            old_on_finish(self)
+        end
 
         for y, row in Util.pairs_by_keys(self.rooms) do
             for x, properties in Util.pairs_by_keys(row) do
@@ -231,7 +256,7 @@ function Layout.solarus_mixin(object, map)
             end
         end
 
-        mark_known_room(0, 9)
+        mark_known_room(self.start_x, self.start_y)
         for y, row in pairs(self.separators) do
             for x, room in pairs(row) do
                 if room[Layout.DIRECTIONS.north] ~= nil or room[Layout.DIRECTIONS.south] ~= nil then
@@ -276,7 +301,7 @@ function Layout.solarus_mixin(object, map)
 end
 
 
-Layout.NorthWestwardVisitor = BaseVisitor:new{ x=9, y=9 }
+Layout.NorthWestwardVisitor = BaseVisitor:new{ start_x=9, start_y=9 }
 
 function Layout.NorthWestwardVisitor:get_heavy_child_properties(x, y)
     return x + 1, y, true
@@ -294,8 +319,6 @@ function Layout.NorthWestwardVisitor:visit_room(room)
     local furthest_ew = math.min
     local forward_ew = 'west'
     local backward_ew = 'east'
-
-    print('start', y, x0, '', room)
 
     if self.doors then
         if is_heavy then
@@ -368,8 +391,6 @@ function Layout.NorthWestwardVisitor:visit_room(room)
         items = {}
         enemies = {}
     end
-
-    print('end', y, x0, x1, room)
 
 end
 
