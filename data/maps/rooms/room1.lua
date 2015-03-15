@@ -42,7 +42,6 @@ if data.doors.north then
     end
 end
 if data.doors.west then
-    print('west', data.name, data.doors.west)
     map:include(0, 0, 'components/door_west', data.doors.west)
 end
 if data.doors.south then

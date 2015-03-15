@@ -45,15 +45,16 @@ end
 function BaseVisitor:visit_room(room)
     local y = self.y
     local x0 = self.x
-    local is_eastward = self.is_eastward
+    local is_heavy = self.is_heavy
     local x1 = x0
     local doors = {}
     local items = {}
     local enemies = {}
+    local dir_x, furthest_ew, forward_ew, backward_ew = self:get_directions()
 
     if self.doors then
-        if is_eastward then
-            self.doors.east = Util.filter_keys(room, {'see','reach','open'})
+        if is_heavy then
+            self.doors[forward_ew] = Util.filter_keys(room, {'see','reach','open'})
         else
             self.doors.north = Util.filter_keys(room, {'see','reach','open'})
         end
@@ -74,7 +75,7 @@ function BaseVisitor:visit_room(room)
         heavy_key = nil
     end
 
-    self.is_eastward = false
+    self.is_heavy = false
     room:each_child(function (key, child)
         if key ~= heavy_key then
             self.y = y - 1
@@ -88,26 +89,26 @@ function BaseVisitor:visit_room(room)
             child:accept(self)
         end
     end)
-    self.x = math.max(self.x, x0 + 1)
+    self.x = furthest_ew(self.x, x0 + dir_x)
 
     if heavy_key then
-        x1, self.y, self.is_eastward = self:get_heavy_child_properties(self.x, y)
+        x1, self.y, self.is_heavy = self:get_heavy_child_properties(self.x, y)
         doors[x1] = doors[x1] or {}
         self.doors = doors[x1]
         room.children[heavy_key]:accept(self)
     end
 
-    for x = x1, x0, -1 do
+    for x = x0, x1, dir_x do
         doors[x] = doors[x] or {}
         if x == x0 then
-            if is_eastward then
-                doors[x].west = Util.filter_keys(room, {'open'})
+            if is_heavy then
+                doors[x][backward_ew] = Util.filter_keys(room, {'open'})
             else
                 doors[x].south = Util.filter_keys(room, {'open'})
             end
         end
-        if x < x1 then doors[x].east = {} end
-        if x > x0 then doors[x].west = {} end
+        if x ~= x1 then doors[x][forward_ew] = {} end
+        if x ~= x0 then doors[x][backward_ew] = {} end
         if doors[x].north then
             doors[x].north.name = string.format('door_%d_%d_n', x, y)
         end
@@ -147,12 +148,32 @@ function Layout.NorthwardVisitor:get_heavy_child_properties(x, y)
     return x, y - 1, false
 end
 
+function Layout.NorthwardVisitor:get_directions()
+    return 1, math.max, 'east', 'west'
+end
+
 
 Layout.NorthEastwardVisitor = BaseVisitor:new{ start_x=0, start_y=9 }
 
 function Layout.NorthEastwardVisitor:get_heavy_child_properties(x, y)
     return x - 1, y, true
 end
+
+function Layout.NorthEastwardVisitor:get_directions()
+    return 1, math.max, 'east', 'west'
+end
+
+
+Layout.NorthWestwardVisitor = BaseVisitor:new{ start_x=9, start_y=9 }
+
+function Layout.NorthWestwardVisitor:get_heavy_child_properties(x, y)
+    return x + 1, y, true
+end
+
+function Layout.NorthWestwardVisitor:get_directions()
+    return -1, math.min, 'west', 'east'
+end
+
 
 function Layout.print_mixin(object)
 
@@ -300,98 +321,5 @@ function Layout.solarus_mixin(object, map)
     return object
 end
 
-
-Layout.NorthWestwardVisitor = BaseVisitor:new{ start_x=9, start_y=9 }
-
-function Layout.NorthWestwardVisitor:get_heavy_child_properties(x, y)
-    return x + 1, y, true
-end
-
-function Layout.NorthWestwardVisitor:visit_room(room)
-    local y = self.y
-    local x0 = self.x
-    local is_heavy = self.is_heavy
-    local x1 = x0
-    local doors = {}
-    local items = {}
-    local enemies = {}
-    local dir_x = -1
-    local furthest_ew = math.min
-    local forward_ew = 'west'
-    local backward_ew = 'east'
-
-    if self.doors then
-        if is_heavy then
-            self.doors[forward_ew] = Util.filter_keys(room, {'see','reach','open'})
-        else
-            self.doors.north = Util.filter_keys(room, {'see','reach','open'})
-        end
-    end
-
-    local total_weight = 0
-    local heavy_weight = 0
-    local heavy_key = nil
-    room:each_child(function (key, child)
-        local child_weight = child:accept(WeightVisitor)
-        total_weight = total_weight + child_weight
-        if child_weight > heavy_weight then
-            heavy_weight = child_weight
-            heavy_key = key
-        end
-    end)
-    if total_weight == heavy_weight then
-        heavy_key = nil
-    end
-
-    self.is_heavy = false
-    room:each_child(function (key, child)
-        if key ~= heavy_key then
-            self.y = y - 1
-            self.items = items
-            self.enemies = enemies
-            if child.class == 'Room' then
-                x1 = self.x
-                doors[x1] = doors[x1] or {}
-                self.doors = doors[x1]
-            end
-            child:accept(self)
-        end
-    end)
-    self.x = furthest_ew(self.x, x0 + dir_x)
-
-    if heavy_key then
-        x1, self.y, self.is_heavy = self:get_heavy_child_properties(self.x, y)
-        doors[x1] = doors[x1] or {}
-        self.doors = doors[x1]
-        room.children[heavy_key]:accept(self)
-    end
-
-    for x = x0, x1, dir_x do
-        doors[x] = doors[x] or {}
-        if x == x0 then
-            if is_heavy then
-                doors[x][backward_ew] = Util.filter_keys(room, {'open'})
-            else
-                doors[x].south = Util.filter_keys(room, {'open'})
-            end
-        end
-        if x ~= x1 then doors[x][forward_ew] = {} end
-        if x ~= x0 then doors[x][backward_ew] = {} end
-        if doors[x].north then
-            doors[x].north.name = string.format('door_%d_%d_n', x, y)
-        end
-        self:render_room{
-            x=x,
-            y=y,
-            doors=doors[x],
-            items=items,
-            enemies=enemies,
-            savegame_variable = room.savegame_variable .. '_' .. (x - x0)
-        }
-        items = {}
-        enemies = {}
-    end
-
-end
 
 return Layout
