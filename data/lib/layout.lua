@@ -149,16 +149,16 @@ function BaseVisitor:render(tree)
 end
 
 
-Layout.AlphaVisitor = BaseVisitor:new{ x=0, y=9 }
+Layout.NorthwardVisitor = BaseVisitor:new{ x=0, y=9 }
 
-function Layout.AlphaVisitor:get_heavy_child_properties(x, y)
+function Layout.NorthwardVisitor:get_heavy_child_properties(x, y)
     return x, y - 1, false
 end
 
 
-Layout.BetaVisitor = BaseVisitor:new{ x=0, y=9 }
+Layout.NorthEastwardVisitor = BaseVisitor:new{ x=0, y=9 }
 
-function Layout.BetaVisitor:get_heavy_child_properties(x, y)
+function Layout.NorthEastwardVisitor:get_heavy_child_properties(x, y)
     return x - 1, y, true
 end
 
