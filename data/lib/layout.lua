@@ -58,12 +58,13 @@ end
 function Layout.BetaVisitor:visit_room(room)
     local y = self.y
     local x0 = self.x
+    local is_eastward = self.is_eastward
     local x1 = x0
     local doors = {}
     local items = {}
     local enemies = {}
 
-    if self.doors and not self.is_heavy then
+    if self.doors and not is_eastward then
         self.doors.north = filter_keys(room, {'see','reach','open'})
     end
 
@@ -83,8 +84,7 @@ function Layout.BetaVisitor:visit_room(room)
         heavy_key = nil
     end
 
-    local is_heavy = self.is_heavy
-    self.is_heavy = false
+    self.is_eastward = false
     room:each_child(function (key, child)
         if key ~= heavy_key then
             self.y = y - 1
@@ -98,23 +98,21 @@ function Layout.BetaVisitor:visit_room(room)
             child:accept(self)
         end
     end)
+    self.x = math.max(self.x, x0 + 1)
 
     if heavy_key then
-        x1 = math.max(x1, self.x - 1)
+        x1 = self.x - 1
+        doors[x1] = doors[x1] or {}
         doors[x1].east = filter_keys(room.children[heavy_key], {'see','reach','open'})
-    end
-    self.x = math.max(self.x, x0 + 1, x0 + #items, x0 + #enemies)
-
-    if heavy_key then
         self.y = y
-        self.is_heavy = true
+        self.is_eastward = true
         room.children[heavy_key]:accept(self)
     end
 
     for x = x1, x0, -1 do
         doors[x] = doors[x] or {}
         if x == x0 then
-            if is_heavy then
+            if is_eastward then
                 doors[x].west = filter_keys(room, {'open'})
             else
                 doors[x].south = filter_keys(room, {'open'})
