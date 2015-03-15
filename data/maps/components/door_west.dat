@@ -34,6 +34,33 @@ tile{
   pattern = "door.3.support.2",
 }
 
+tile{
+  layer = 1,
+  x = -16,
+  y = 112,
+  width = 32,
+  height = 16,
+  pattern = "floor.1",
+}
+
+tile{
+  layer = 1,
+  x = -8,
+  y = 104,
+  width = 16,
+  height = 8,
+  pattern = "barrier.1",
+}
+
+tile{
+  layer = 1,
+  x = -8,
+  y = 128,
+  width = 16,
+  height = 8,
+  pattern = "barrier.1",
+}
+
 wall{
   layer = 1,
   x = 16,

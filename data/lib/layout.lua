@@ -204,16 +204,32 @@ function Layout.solarus_mixin(object, map)
         separators[y][x][Layout.DIRECTIONS[direction]] = savegame_variable
     end
 
+    function pairsByKeys (t, f)
+        local a = {}
+        for n in pairs(t) do table.insert(a, n) end
+        table.sort(a, f)
+        local i = 0      -- iterator variable
+        local iter = function ()   -- iterator function
+            i = i + 1
+            if a[i] == nil then return nil
+            else return a[i], t[a[i]]
+            end
+        end
+        return iter
+    end
+
     function object:on_start()
         self.separators = {}
+        self.rooms = {}
     end
 
     function object:render_room(properties)
-        local x0 = 320 * properties.x
-        local y0 = 240 * properties.y
+        local x = 320 * properties.x
+        local y = 240 * properties.y
         local room_properties = Util.filter_keys(properties, {'doors', 'items', 'enemies'})
         room_properties.name = string.format('room_%d_%d', properties.x, properties.y)
-        map:include(x0, y0, 'rooms/room1', room_properties)
+        self.rooms[y] = self.rooms[y] or {}
+        self.rooms[y][x] = room_properties
 
         add_doorway(self.separators, properties.x,   properties.y+1, 'north', properties.doors.south and properties.savegame_variable or false)
         add_doorway(self.separators, properties.x,   properties.y,   'east',  properties.doors.west  and properties.savegame_variable or false)
@@ -222,6 +238,13 @@ function Layout.solarus_mixin(object, map)
     end
 
     function object:on_finish()
+
+        for y, row in pairsByKeys(self.rooms) do
+            for x, properties in pairsByKeys(row) do
+                map:include(x, y, 'rooms/room1', properties)
+            end
+        end
+
         mark_known_room(0, 9)
         for y, row in pairs(self.separators) do
             for x, room in pairs(row) do
