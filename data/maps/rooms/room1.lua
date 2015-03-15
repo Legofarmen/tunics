@@ -1,11 +1,18 @@
 local map, data = ...
 
+local Util = require 'lib/util'
+
 
 local messages = {}
-local function data_messages(data, prefix)
+function data_messages(data, prefix)
     if type(data) == 'table' then
-        for key, value in pairs(data) do
+        local n = 0
+        for key, value in Util.pairs_by_keys(data) do
             data_messages(value, prefix .. '.' .. key)
+            n = n + 1
+        end
+        if n == 0 then
+            table.insert(messages, prefix .. ' = {}')
         end
     else
         table.insert(messages, prefix .. ' = ' .. data)
@@ -35,6 +42,7 @@ if data.doors.north then
     end
 end
 if data.doors.west then
+    print('west', data.name, data.doors.west)
     map:include(0, 0, 'components/door_west', data.doors.west)
 end
 if data.doors.south then
