@@ -125,11 +125,13 @@ function BaseVisitor:visit_room(room)
             items=items,
             enemies=enemies,
         }
-        local savegame_variable = room.savegame_variable .. '_' .. (x - x0)
-        add_doorway(self.separators, x,   y+1, 'north', doors[x].south and savegame_variable or false)
-        add_doorway(self.separators, x,   y,   'east',  doors[x].west  and savegame_variable or false)
-        add_doorway(self.separators, x,   y,   'south', doors[x].north and savegame_variable or false)
-        add_doorway(self.separators, x+1, y,   'west',  doors[x].east  and savegame_variable or false)
+        if self.separators then
+            local savegame_variable = room.savegame_variable .. '_' .. (x - x0)
+            add_doorway(self.separators, x,   y+1, 'north', doors[x].south and savegame_variable or false)
+            add_doorway(self.separators, x,   y,   'east',  doors[x].west  and savegame_variable or false)
+            add_doorway(self.separators, x,   y,   'south', doors[x].north and savegame_variable or false)
+            add_doorway(self.separators, x+1, y,   'west',  doors[x].east  and savegame_variable or false)
+        end
         items = {}
         enemies = {}
     end

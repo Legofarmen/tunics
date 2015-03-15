@@ -100,5 +100,5 @@ function map:render_map(map_menu)
         map_menu:draw_room(properties)
     end
     map_menu:clear_map()
-    tree:accept(Layout.BetaVisitor:new{x=0, y=9,render=render, separators={}})
+    tree:accept(Layout.BetaVisitor:new{x=0, y=9,render=render})
 end
