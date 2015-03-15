@@ -17,3 +17,10 @@ end
 
 Layout.solarus_mixin(layout:new(), map):render(puzzle)
 --Layout.print_mixin(layout:new()):render(puzzle)
+
+
+function map:on_started()
+    local hero = map:get_hero()
+    map:get_hero():set_direction(1)
+    map:get_hero():set_position(320 / 2, 240 * 10 - 8, 1)
+end

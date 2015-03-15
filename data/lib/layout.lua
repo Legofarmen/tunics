@@ -205,7 +205,7 @@ end
 
 function Layout.solarus_mixin(object, map)
 
-    local entrance_x, entrance_y = map:get_entity('entrance'):get_position()
+    local map_width, map_height = map:get_size()
 
     function mark_known_room(x, y)
         map:get_game():set_value(string.format('room_%d_%d', x, y), true)
@@ -216,8 +216,8 @@ function Layout.solarus_mixin(object, map)
     end
 
     function object:render_room(properties)
-        local x0 = entrance_x - 160 + 320 * properties.x
-        local y0 = entrance_y + 3 - 240 + 240 * (properties.y - 9)
+        local x0 = 320 * properties.x
+        local y0 = 240 * properties.y
         local room_properties = Util.filter_keys(properties, {'doors', 'items', 'enemies'})
         room_properties.name = string.format('room_%d_%d', properties.x, properties.y)
         map:include(x0, y0, 'rooms/room1', room_properties)
@@ -229,8 +229,8 @@ function Layout.solarus_mixin(object, map)
             for x, room in pairs(row) do
                 if room[Layout.DIRECTIONS.north] ~= nil or room[Layout.DIRECTIONS.south] ~= nil then
                     local properties = {
-                        x = entrance_x - 160 + 320 * x,
-                        y = entrance_y + 3 - 240 + 240 * (y - 9) - 8,
+                        x = 320 * x,
+                        y = 240 * y - 8,
                         layer = 1,
                         width = 320,
                         height = 16,
@@ -246,8 +246,8 @@ function Layout.solarus_mixin(object, map)
                 end
                 if room[Layout.DIRECTIONS.east] ~= nil or room[Layout.DIRECTIONS.west] ~= nil then
                     local properties = {
-                        x = entrance_x - 160 + 320 * x - 8,
-                        y = entrance_y + 3 - 240 + 240 * (y - 9),
+                        x = 320 * x - 8,
+                        y = 240 * y,
                         layer = 1,
                         width = 16,
                         height = 240,
