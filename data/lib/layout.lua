@@ -68,7 +68,6 @@ function Layout.BetaVisitor:visit_room(room)
         self.doors.north = filter_keys(room, {'see','reach','open'})
     end
 
-
     local total_weight = 0
     local heavy_weight = 0
     local heavy_key = nil
@@ -154,6 +153,7 @@ end
 function Layout.AlphaVisitor:visit_room(room)
     local y = self.y
     local x0 = self.x
+    local is_eastward = self.is_eastward
     local x1 = x0
     local doors = {}
     local items = {}
@@ -178,7 +178,6 @@ function Layout.AlphaVisitor:visit_room(room)
         heavy_key = nil
     end
 
-    local is_eastward = self.is_eastward
     self.is_eastward = false
     room:each_child(function (key, child)
         if key ~= heavy_key then
@@ -193,6 +192,7 @@ function Layout.AlphaVisitor:visit_room(room)
             child:accept(self)
         end
     end)
+    self.x = math.max(self.x, x0 + 1)
 
     if heavy_key then
         local child = room.children[heavy_key]
@@ -206,8 +206,6 @@ function Layout.AlphaVisitor:visit_room(room)
         end
         child:accept(self)
     end
-
-    self.x = math.max(self.x, x0 + 1)
 
     for x = x1, x0, -1 do
         doors[x] = doors[x] or {}

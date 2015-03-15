@@ -54,7 +54,7 @@ local master_prng = Prng.from_seed(8)
 local tree = Puzzle.alpha_dungeon(master_prng:create(), 3, {'hookshot'})
 tree:accept(Tree.PrintVisitor:new{})
 local separators = {}
-tree:accept(Layout.BetaVisitor:new{
+tree:accept(Layout.AlphaVisitor:new{
     x=0,
     y=9,
     render=solarus_room,
@@ -107,5 +107,5 @@ function map:render_map(map_menu)
         map_menu:draw_room(properties)
     end
     map_menu:clear_map()
-    tree:accept(Layout.BetaVisitor:new{x=0, y=9,render=render, separators={}})
+    tree:accept(Layout.AlphaVisitor:new{x=0, y=9,render=render, separators={}})
 end
