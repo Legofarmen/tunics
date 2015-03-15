@@ -139,17 +139,55 @@ function BaseVisitor:visit_room(room)
 end
 
 
-Layout.AlphaVisitor = BaseVisitor:new()
+Layout.AlphaVisitor = BaseVisitor:new{ x=0, y=9 }
 
 function Layout.AlphaVisitor:get_heavy_child_properties(x, y)
-    return x,     y - 1, false
+    return x, y - 1, false
 end
 
 
-Layout.BetaVisitor = BaseVisitor:new()
+Layout.BetaVisitor = BaseVisitor:new{ x=0, y=9 }
 
 function Layout.BetaVisitor:get_heavy_child_properties(x, y)
-    return x - 1, y,     true
+    return x - 1, y, true
 end
+
+function Layout.print_mixin(object)
+
+    function object.render(properties)
+        function print_access(thing)
+            if thing.see and thing.see ~= 'nothing' then print(string.format("\t\tto see: %s", thing.see)) end
+            if thing.reach and thing.reach ~= 'nothing' then print(string.format("\t\tto reach: %s", thing.reach)) end
+            if thing.open and thing.open ~= 'nothing' then print(string.format("\t\tto open: %s", thing.open)) end
+        end
+        print(string.format("Room %d;%d", properties.x, properties.y))
+        for dir, door in pairs(properties.doors) do
+            print(string.format("  Door %s", dir))
+            print_access(door)
+        end
+        for _, item in ipairs(properties.items) do
+            print(string.format("  Item %s", item.name))
+            print_access(item)
+        end
+        for _, enemy in ipairs(properties.enemies) do
+            print(string.format("  Enemy %s", enemy.name))
+            print_access(enemy)
+        end
+        print()
+    end
+
+
+    return object
+end
+
+function Layout.minimap_mixin(object, map_menu)
+
+    function object.render(properties)
+        map_menu:draw_room(properties)
+    end
+
+    return object
+end
+
 
 return Layout
