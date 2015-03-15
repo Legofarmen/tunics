@@ -2,6 +2,15 @@ local map, data = ...
 
 if data.doors.east then
     map:include(0, 0, 'components/door_east', data.doors.east)
+    if data.doors.east.see then
+        print('east', 'see', data.doors.east.see)
+    end
+    if data.doors.east.reach then
+        print('east', 'reach', data.doors.east.reach)
+    end
+    if data.doors.east.open then
+        print('east', 'open', data.doors.east.open)
+    end
 end
 if data.doors.north then
     if data.doors.north.open == 'big_key' then

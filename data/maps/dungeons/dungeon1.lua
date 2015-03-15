@@ -62,6 +62,29 @@ function add_doorway(separators, x, y, direction, savegame_variable)
     separators[y][x][DIRECTIONS[direction]] = savegame_variable
 end
 
+local WeightVisitor = {}
+setmetatable(WeightVisitor, WeightVisitor)
+
+function WeightVisitor:visit_room(room)
+    local weights = {
+        Room=0,
+        Treasure=0,
+        Enemy=0,
+    }
+    room:each_child(function (key, child)
+        weights[child.class] = weights[child.class] + child:accept(self)
+    end)
+    return math.max(1, weights.Room)
+end
+
+function WeightVisitor:visit_treasure(treasure)
+    return 0
+end
+
+function WeightVisitor:visit_enemy(enemy)
+    return 0
+end
+
 function LayoutVisitor:visit_room(room)
     local y = self.y
     local x0 = self.x
@@ -70,27 +93,57 @@ function LayoutVisitor:visit_room(room)
     local items = {}
     local enemies = {}
 
-    if self.doors then
+    if self.doors and not self.is_heavy then
         self.doors.north = filter_keys(room, {'see','reach','open'})
     end
 
+
+    local total_weight = 0
+    local heavy_weight = 0
+    local heavy_key = nil
     room:each_child(function (key, child)
-        self.y = y - 1
-        self.items = items
-        self.enemies = enemies
-        if child.class == 'Room' then
-            x1 = self.x
-            doors[x1] = doors[x1] or {}
-            self.doors = doors[x1]
+        local child_weight = child:accept(WeightVisitor)
+        total_weight = total_weight + child_weight
+        if child_weight > heavy_weight then
+            heavy_weight = child_weight
+            heavy_key = key
         end
-        child:accept(self)
+    end)
+    if total_weight == heavy_weight then
+        heavy_key = nil
+    end
+
+    local is_heavy = self.is_heavy
+    self.is_heavy = false
+    room:each_child(function (key, child)
+        if key ~= heavy_key then
+            self.y = y - 1
+            self.items = items
+            self.enemies = enemies
+            if child.class == 'Room' then
+                x1 = self.x
+                doors[x1] = doors[x1] or {}
+                self.doors = doors[x1]
+            end
+            child:accept(self)
+        end
     end)
 
-    x1 = math.max(x1, x0 + #items - 1, x0 + #enemies - 1)
+    if heavy_key then
+        x1 = math.max(x1, self.x - 1)
+        doors[x1].east = filter_keys(room.children[heavy_key], {'see','reach','open'})
+    end
+    self.x = math.max(self.x, x0 + 1, x0 + #items, x0 + #enemies)
 
     for x = x0, x1 do
         doors[x] = doors[x] or {}
-        if x == x0 then doors[x].south = filter_keys(room, {'open'}) end
+        if x == x0 then
+            if is_heavy then
+                doors[x].west = filter_keys(room, {'open'})
+            else
+                doors[x].south = filter_keys(room, {'open'})
+            end
+        end
         if x < x1 then doors[x].east = {} end
         if x > x0 then doors[x].west = {} end
         if doors[x].north then
@@ -111,8 +164,12 @@ function LayoutVisitor:visit_room(room)
         items = {}
         enemies = {}
     end
+    if heavy_key then
+        self.y = y
+        self.is_heavy = true
+        room.children[heavy_key]:accept(self)
+    end
 
-    self.x = math.max(self.x, x0 + 1, x0 + #items, x0 + #enemies)
 end
 
 function mark_known_room(x, y)
@@ -122,7 +179,7 @@ end
 
 local master_prng = Prng.from_seed(8)
 local tree = Puzzle.alpha_dungeon(master_prng:create(), 3, {'hookshot'})
---tree:accept(Tree.PrintVisitor:new{})
+tree:accept(Tree.PrintVisitor:new{})
 local separators = {}
 tree:accept(LayoutVisitor:new{
     x=0,
