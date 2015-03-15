@@ -218,7 +218,9 @@ function Layout.solarus_mixin(object, map)
     function object:render_room(properties)
         local x0 = entrance_x - 160 + 320 * properties.x
         local y0 = entrance_y + 3 - 240 + 240 * (properties.y - 9)
-        map:include(x0, y0, 'rooms/room1', Util.filter_keys(properties, {'doors', 'items', 'enemies'}))
+        local room_properties = Util.filter_keys(properties, {'doors', 'items', 'enemies'})
+        room_properties.name = string.format('room_%d_%d', properties.x, properties.y)
+        map:include(x0, y0, 'rooms/room1', room_properties)
     end
 
     function object:on_finish()

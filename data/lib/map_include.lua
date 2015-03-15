@@ -1,88 +1,88 @@
-local x0 = 0
-local y0 = 0
-local map0 = nil
-local data0 = nil
-
 local mapmeta = sol.main.get_metatable('map')
 
 function properties() end
 function destination() end
 
-function wall(properties)
-    properties.x = properties.x + x0
-    properties.y = properties.y + y0
-    map0:create_wall(properties)
-end
-
-function enemy(properties)
-    properties.x = properties.x + x0
-    properties.y = properties.y + y0
-    map0:create_enemy(properties)
-end
-
-function pickable(properties)
-    properties.x = properties.x + x0
-    properties.y = properties.y + y0
-    map0:create_pickable(properties)
-end
-
-function separator(properties)
-    properties.x = properties.x + x0
-    properties.y = properties.y + y0
-    map0:create_separator(properties)
-end
-
-function door(properties)
-    properties.x = properties.x + x0
-    properties.y = properties.y + y0
-    if data0 and data0.name then
-        if properties.name then
-            properties.name = properties.name:gsub('${name}', data0.name)
+function room_map(map, x, y, data)
+    local replace = function (field, properties)
+        if data and data.name and properties[field] then
+            properties[field] = properties[field]:gsub('${name}', data.name)
         end
-        if properties.savegame_variable then
-            properties.savegame_variable = properties.savegame_variable:gsub('${name}', data0.name)
+        return properties
+    end
+    local translate = function (properties)
+        local old_x, old_y = properties.x, properties.y
+        properties.x = properties.x + x
+        properties.y = properties.y + y
+        return properties
+    end
+    local o = {}
+    function o:get_userdata()
+        if map.get_userdata then
+            return map.get_userdata
+        else
+            return map
         end
     end
-    map0:create_door(properties)
-end
-
-function block(properties)
-    properties.x = properties.x + x0
-    properties.y = properties.y + y0
-    map0:create_block(properties)
-end
-
-function chest(properties)
-    properties.x = properties.x + x0
-    properties.y = properties.y + y0
-    map0:create_chest(properties)
-end
-
-function tile(properties)
-    properties.x = properties.x + x0
-    properties.y = properties.y + y0
-    if properties.enabled_at_start == nil then
-        properties.enabled_at_start = true
+    function o:create_chest(properties)
+        return map:create_chest(translate(properties))
     end
-    map0:create_dynamic_tile(properties)
-end
-function dynamic_tile(properties)
-    properties.x = properties.x + x0
-    properties.y = properties.y + y0
-    if properties.enabled_at_start == nil then
-        properties.enabled_at_start = true
+    function o:create_block(properties)
+        return map:create_block(translate(properties))
     end
-    if data0 and data0.name and properties.name then
-        properties.name = properties.name:gsub('${name}', data0.name)
+    function o:create_separator(properties)
+        return map:create_separator(translate(properties))
     end
-    map0:create_dynamic_tile(properties)
+    function o:create_pickable(properties)
+        return map:create_pickable(translate(properties))
+    end
+    function o:create_enemy(properties)
+        return map:create_enemy(translate(properties))
+    end
+    function o:create_wall(properties)
+        return map:create_wall(translate(properties))
+    end
+    function o:create_npc(properties)
+        return map:create_npc(replace('name', translate(properties)))
+    end
+    function o:create_door(properties)
+        map:create_door(translate(replace('savegame_variable', replace('name', properties))))
+    end
+    function o:create_dynamic_tile(properties)
+        if properties.enabled_at_start == nil then properties.enabled_at_start = true end
+        return map:create_dynamic_tile(translate(replace('name', properties)))
+    end
+    setmetatable(o, {
+        __index=function (table, key)
+            if key ~= 'include' and type(map[key]) == 'function' then
+                return function (self, ...)
+                    return map[key](o:get_userdata(), ...)
+                end
+            else
+                return map[key]
+            end
+        end
+    })
+    return o
 end
-
 
 function mapmeta:include(x, y, name, data)
-    local old_map0, old_data0, old_x0, old_y0 = map0, data0, x0, y0
-    map0, data0, x0, y0 = self, data, x0 + x, y0 + y
-    sol.main.load_file(string.format('maps/%s.dat', name))()
-    sol.main.load_file(string.format('maps/%s.lua', name))(self, data)
-    map0, data0, x0, y0 = old_map0, old_data0, old_x0, old_y0
+    local map = room_map(self, x, y, data)
+    local datf = sol.main.load_file(string.format('maps/%s.dat', name))
+    local env = setmetatable({}, {__index=function (table, key)
+        if key == 'properties' then
+            return function()end
+        end
+        local method
+        if key == 'tile' then
+            method = map.create_dynamic_tile
+        else
+            method = map['create_' .. key]
+        end
+        return function (properties)
+            method(map, properties)
+        end
+    end})
+    setfenv(datf, env)()
+    sol.main.load_file(string.format('maps/%s.lua', name))(map, data)
 end
