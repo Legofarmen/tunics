@@ -1,6 +1,47 @@
 local map, data = ...
 
+local Class = require 'lib/class.lua'
 local Util = require 'lib/util'
+
+local DialogBox = Class:new()
+
+function DialogBox:on_started()
+    self.lines = {}
+    local y = 0
+    for _, text in ipairs(self.text) do
+        local line = sol.text_surface.create{
+            text=text,
+            vertical_alignment="top",
+        }
+        line:set_xy(0, y)
+        local width, height = line:get_size()
+        y = y + height
+        table.insert(self.lines, line)
+    end
+    self.game:set_hud_enabled(false)
+    self.game:get_hero():freeze()
+end
+
+function DialogBox:on_finished()
+    self.game:set_hud_enabled(true)
+    self.game:get_hero():unfreeze()
+end
+
+function DialogBox:on_command_pressed(command)
+    if command == 'action' then
+        sol.menu.stop(self)
+    end
+    return true
+end
+
+function DialogBox:on_draw(dst_surface)
+    for _, line in ipairs(self.lines) do
+        line:draw(dst_surface)
+    end
+end
+
+
+
 
 
 local messages = {}
@@ -84,10 +125,8 @@ if #messages > 0 then
     }
 
     function sign:on_interaction(...)
-        print()
-        for _, message in ipairs(messages) do
-            print(message)
-        end
+        local dialog_box = DialogBox:new{text=messages, game=map:get_game()}
+        sol.menu.start(map:get_userdata(), dialog_box, true)
     end
 end
 
