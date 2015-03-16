@@ -9,6 +9,28 @@ map{ id = "components/door_boss", description = "Door boss" }
 map{ id = "components/moat_north", description = "Moat north" }
 map{ id = "components/bomb_north", description = "Bomb north" }
 map{ id = "components/bomb_south", description = "Bomb south" }
+map{ id = "components/filler_400", description = "Filler 400" }
+map{ id = "components/filler_100", description = "Filler 100" }
+map{ id = "components/filler_004", description = "Filler 004" }
+map{ id = "components/filler_001", description = "Filler 001" }
+map{ id = "components/filler_700", description = "Filler 700" }
+map{ id = "components/filler_007", description = "Filler 007" }
+map{ id = "components/filler_444", description = "Filler 444" }
+map{ id = "components/filler_111", description = "Filler 111" }
+map{ id = "components/big_chest_700", description = "Big chest 700" }
+map{ id = "components/big_chest_007", description = "Big chest 007" }
+map{ id = "components/big_chest_444", description = "Big chest 444" }
+map{ id = "components/big_chest_111", description = "Big chest 111" }
+map{ id = "components/big_chest_001", description = "Big chest 001" }
+map{ id = "components/big_chest_400", description = "Big chest 400" }
+map{ id = "components/big_chest_004", description = "Big chest 004" }
+map{ id = "components/big_chest_100", description = "Big chest 100" }
+map{ id = "components/big_chest_020", description = "Big chest 020" }
+map{ id = "components/chest_020", description = "Chest 020" }
+map{ id = "components/moat_700", description = "Moat 700" }
+map{ id = "rooms/room2", description = "Room 2" }
+map{ id = "components/moat_111", description = "Moat 111" }
+map{ id = "components/moat_444", description = "Moat 444" }
 
 tileset{ id = "cave", description = "Cave" }
 tileset{ id = "dungeon_blue", description = "Dungeon (blue)" }

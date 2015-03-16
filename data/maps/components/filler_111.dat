@@ -1,0 +1,81 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  tileset = "dungeon_blue",
+  music = "same",
+}
+
+tile{
+  layer = 1,
+  x = 184,
+  y = 32,
+  width = 24,
+  height = 176,
+  pattern = "wall.4",
+}
+
+tile{
+  layer = 1,
+  x = 224,
+  y = 112,
+  width = 16,
+  height = 16,
+  pattern = "floor.14",
+}
+
+tile{
+  layer = 1,
+  x = 184,
+  y = 8,
+  width = 24,
+  height = 24,
+  pattern = "wall.corner.2",
+}
+
+tile{
+  layer = 1,
+  x = 176,
+  y = 40,
+  width = 8,
+  height = 160,
+  pattern = "wall_border.4",
+}
+
+tile{
+  layer = 1,
+  x = 176,
+  y = 32,
+  width = 8,
+  height = 8,
+  pattern = "wall_border.corner.2",
+}
+
+tile{
+  layer = 1,
+  x = 176,
+  y = 200,
+  width = 8,
+  height = 8,
+  pattern = "wall_border.corner.4",
+}
+
+tile{
+  layer = 1,
+  x = 184,
+  y = 208,
+  width = 24,
+  height = 24,
+  pattern = "wall.corner.4",
+}
+
+tile{
+  layer = 2,
+  x = 208,
+  y = 0,
+  width = 112,
+  height = 240,
+  pattern = "ceiling",
+}
+

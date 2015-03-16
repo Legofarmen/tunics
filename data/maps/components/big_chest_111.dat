@@ -1,0 +1,63 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  tileset = "dungeon_grayblue",
+  music = "same",
+}
+
+tile{
+  layer = 1,
+  x = 216,
+  y = 112,
+  width = 16,
+  height = 16,
+  pattern = "floor.5",
+}
+
+tile{
+  layer = 1,
+  x = 208,
+  y = 40,
+  width = 48,
+  height = 160,
+  pattern = "door_main.2.floor.2",
+}
+
+tile{
+  layer = 1,
+  x = 200,
+  y = 40,
+  width = 8,
+  height = 160,
+  pattern = "floor_border.1",
+}
+
+tile{
+  layer = 1,
+  x = 256,
+  y = 40,
+  width = 8,
+  height = 160,
+  pattern = "floor_border.1",
+}
+
+tile{
+  layer = 1,
+  x = 216,
+  y = 104,
+  width = 32,
+  height = 24,
+  pattern = "barrier.1",
+}
+
+tile{
+  layer = 1,
+  x = -32,
+  y = 272,
+  width = 72,
+  height = 8,
+  pattern = "floor_small.1",
+}
+
