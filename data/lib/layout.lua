@@ -50,7 +50,7 @@ function BaseVisitor:visit_room(room)
     local doors = {}
     local items = {}
     local enemies = {}
-    local dir_x, furthest_ew, forward_ew, backward_ew = self:get_directions()
+    local forward_x, furthest_ew, forward_ew, backward_ew = self:get_directions()
 
     if self.doors then
         if is_heavy then
@@ -89,7 +89,7 @@ function BaseVisitor:visit_room(room)
             child:accept(self)
         end
     end)
-    self.x = furthest_ew(self.x, x0 + dir_x)
+    self.x = furthest_ew(self.x, x0 + forward_x)
 
     if heavy_key then
         x1, self.y, self.is_heavy = self:get_heavy_child_properties(self.x, y)
@@ -98,7 +98,7 @@ function BaseVisitor:visit_room(room)
         room.children[heavy_key]:accept(self)
     end
 
-    for x = x0, x1, dir_x do
+    for x = x0, x1, forward_x do
         doors[x] = doors[x] or {}
         if x == x0 then
             if is_heavy then
