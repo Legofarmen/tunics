@@ -43,6 +43,26 @@ function BaseVisitor:visit_treasure(treasure)
 end
 
 function BaseVisitor:visit_room(room)
+
+    function get_heavy_child_key(room)
+        local total_weight = 0
+        local heavy_weight = 0
+        local heavy_key = nil
+        room:each_child(function (key, child)
+            local child_weight = child:accept(WeightVisitor)
+            total_weight = total_weight + child_weight
+            if child_weight > heavy_weight then
+                heavy_weight = child_weight
+                heavy_key = key
+            end
+        end)
+        if total_weight == heavy_weight then
+            return nil
+        else
+            return heavy_key
+        end
+    end
+
     local y = self.y
     local x0 = self.x
     local is_heavy = self.is_heavy
@@ -60,20 +80,7 @@ function BaseVisitor:visit_room(room)
         end
     end
 
-    local total_weight = 0
-    local heavy_weight = 0
-    local heavy_key = nil
-    room:each_child(function (key, child)
-        local child_weight = child:accept(WeightVisitor)
-        total_weight = total_weight + child_weight
-        if child_weight > heavy_weight then
-            heavy_weight = child_weight
-            heavy_key = key
-        end
-    end)
-    if total_weight == heavy_weight then
-        heavy_key = nil
-    end
+    local heavy_key = get_heavy_child_key(room)
 
     self.is_heavy = false
     room:each_child(function (key, child)
