@@ -61,6 +61,11 @@ function data_messages(data, prefix)
 end
 data_messages(data, 'data')
 
+for k, v in ipairs(messages) do
+    print(v)
+end
+print()
+
 
 if data.doors.east then
     data.doors.east.name = data.name .. '_e'
@@ -95,7 +100,7 @@ if data.doors.south then
     end
 end
 
-for i, item in ipairs(data.items) do
+for i, item in ipairs(data.treasures) do
     local my_item = {
         layer=1,
         x=160,
@@ -109,6 +114,10 @@ for i, item in ipairs(data.items) do
         my_item.opening_condition = "big_key"
         map:create_chest(my_item)
     else
+        for k, v in pairs(my_item) do
+            print('my_item', k, v)
+        end
+        print()
         my_item.sprite = "entities/chest"
         map:create_chest(my_item)
     end

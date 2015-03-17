@@ -10,159 +10,197 @@ Layout.DIRECTIONS = { east=0, north=1, west=2, south=3, }
 
 local BaseVisitor = Class:new()
 
+function BaseVisitor:render(tree)
+    self.leaf = 0
+    self.depth = -1
+    self.dir = 'entrance'
+    self:on_start()
+    tree:accept(self)
+    self:on_finish()
+end
+
 function BaseVisitor:visit_enemy(enemy)
-    table.insert(self.enemies, enemy)
+    self:enemy(enemy, self.coord_transform(self.depth, self.leaf))
 end
 
 function BaseVisitor:visit_treasure(treasure)
-    table.insert(self.items, treasure)
+    self:treasure(treasure, self.coord_transform(self.depth, self.leaf))
 end
 
 function BaseVisitor:visit_room(room)
+    local my_depth = self.depth + 1
 
-    local y = self.y
-    local x0 = self.x
-    local is_heavy = self.is_heavy
-    local x1 = x0
-    local doors = {}
-    local items = {}
-    local enemies = {}
-    local forward_x, furthest_ew, forward_ew, backward_ew = self:get_directions()
+    while room do
+        local heavy_key, heavy_child = room:heavy_child()
 
-    if self.doors then
-        if is_heavy then
-            self.doors[forward_ew] = Util.filter_keys(room, {'see','reach','open'})
-        else
-            self.doors.north = Util.filter_keys(room, {'see','reach','open'})
+        self:room(room, self.coord_transform(my_depth, self.leaf, self.dir))
+        local my_x = self.leaf
+
+        room:each_child(function (key, child)
+            if key ~= heavy_key then
+
+                local leaf0 = self.leaf
+                self.depth = my_depth
+                self.dir = 'down'
+                child:accept(self)
+                for leaf = leaf0 + 1, self.leaf do
+                    self:room({}, self.coord_transform(my_depth, leaf, 'forward'))
+                end
+            end
+        end)
+
+        self.leaf = self.leaf + 1
+        room = heavy_child
+        self.dir = 'forward'
+    end
+end
+
+function BaseVisitor:on_start() end
+function BaseVisitor:on_finish() end
+
+
+function collect_mixin(object)
+
+    function object:collect_on_start() end
+    function object:collect_on_finish() end
+
+    function object:on_start()
+        self.rooms = {}
+        self:collect_on_start()
+    end
+
+    function object:on_finish()
+        self:collect_on_finish()
+    end
+
+    function object:has_room(x, y)
+        return self.rooms[y] and self.rooms[y][x]
+    end
+
+    function object:get_room(x, y)
+        self.rooms[y] = self.rooms[y] or {}
+        return self.rooms[y][x]
+    end
+
+    function object:new_room(x, y, info)
+        if self:has_room(x, y) then
+            error(string.format('room already exists: %d %d', x, y))
+        end
+        self.rooms[y] = self.rooms[y] or {}
+        self.rooms[y][x] = info
+    end
+
+    function object.reverse(dir)
+        local opposites = { east='west', north='south', south='north', west='east', }
+        return opposites[dir]
+    end
+
+    function object.step(x, y, dir)
+        local x_delta = { east=1, north=0, south=0, west=-1, }
+        local y_delta = { east=0, north=-1, south=1, west=0, }
+        return x + x_delta[dir], y + y_delta[dir]
+    end
+
+    function object:each_room(f)
+        for y, row in Util.pairs_by_keys(self.rooms) do
+            for x, info in Util.pairs_by_keys(row) do
+                f(x, y, info)
+            end
         end
     end
 
-    local heavy_key, heavy_child = room:heavy_child()
-
-    self.is_heavy = false
-    room:each_child(function (key, child)
-        if key ~= heavy_key then
-            self.y = y - 1
-            self.items = items
-            self.enemies = enemies
-            if child.class == 'Room' then
-                x1 = self.x
-                doors[x1] = doors[x1] or {}
-                self.doors = doors[x1]
-            end
-            child:accept(self)
-        end
-    end)
-    self.x = furthest_ew(self.x, x0 + forward_x)
-
-    if heavy_key then
-        x1, self.y, self.is_heavy = self:get_heavy_child_properties(self.x, y)
-        doors[x1] = doors[x1] or {}
-        self.doors = doors[x1]
-        heavy_child:accept(self)
+    function object:treasure(treasure, x, y)
+        local info = self:get_room(x, y)
+        table.insert(info.treasures, treasure)
     end
 
-    for x = x0, x1, forward_x do
-        doors[x] = doors[x] or {}
-        if x == x0 then
-            if is_heavy then
-                doors[x][backward_ew] = Util.filter_keys(room, {'open'})
-            else
-                doors[x].south = Util.filter_keys(room, {'open'})
-            end
-        end
-        if x ~= x1 then doors[x][forward_ew] = {} end
-        if x ~= x0 then doors[x][backward_ew] = {} end
-        if doors[x].north then
-            doors[x].north.name = string.format('door_%d_%d_n', x, y)
-        end
-        self:render_room{
-            x=x,
-            y=y,
-            doors=doors[x],
-            items=items,
-            enemies=enemies,
-            savegame_variable = room.savegame_variable .. '_' .. (x - x0)
+    function object:enemy(enemy, x, y)
+        local info = self:get_room(x, y)
+        table.insert(info.enemies, enemy)
+    end
+
+    function object.room_name(x, y)
+        return string.format('room_%d_%d', x, y)
+    end
+
+    function object:room(room, x, y, dir)
+        local from_dir = self.reverse(dir)
+        local parent_x, parent_y = self.step(x, y, from_dir)
+        local name = self.room_name(x, y)
+        local info = {
+            name=name,
+            doors={},
+            treasures={},
+            enemies={},
         }
-        items = {}
-        enemies = {}
+        self:new_room(x, y, info)
+        if self:has_room(parent_x, parent_y) then
+            self:get_room(parent_x, parent_y).doors[dir] = {
+                see=room.see,
+                reach=room.reach,
+                open=room.open,
+            }
+        end
+        self:get_room(x, y).doors[from_dir] = {
+            see=room.see,
+            open=room.open,
+        }
     end
 
-end
-
-function BaseVisitor:render(tree)
-    if self.on_start then
-        self:on_start()
-    end
-    tree:accept(self)
-    if self.on_finish then
-        self:on_finish()
-    end
-end
-
-function BaseVisitor:on_start()
-    self.x = self.start_x
-    self.y = self.start_y
+    return object
 end
 
 
-Layout.NorthwardVisitor = BaseVisitor:new{ start_x=0, start_y=9 }
+Layout.NorthEastwardVisitor = BaseVisitor:new{
+    coord_transform = function (depth, leaf, dir)
+        local dirs = {
+            entrance='north',
+            forward='east',
+            down='north',
+        }
+        return leaf, 9-depth, dirs[dir]
+    end,
+}
 
-function Layout.NorthwardVisitor:get_heavy_child_properties(x, y)
-    return x, y - 1, false
-end
-
-function Layout.NorthwardVisitor:get_directions()
-    return 1, math.max, 'east', 'west'
-end
-
-
-Layout.NorthEastwardVisitor = BaseVisitor:new{ start_x=0, start_y=9 }
-
-function Layout.NorthEastwardVisitor:get_heavy_child_properties(x, y)
-    return x - 1, y, true
-end
-
-function Layout.NorthEastwardVisitor:get_directions()
-    return 1, math.max, 'east', 'west'
-end
-
-
-Layout.NorthWestwardVisitor = BaseVisitor:new{ start_x=9, start_y=9 }
-
-function Layout.NorthWestwardVisitor:get_heavy_child_properties(x, y)
-    return x + 1, y, true
-end
-
-function Layout.NorthWestwardVisitor:get_directions()
-    return -1, math.min, 'west', 'east'
-end
+Layout.NorthWestwardVisitor = BaseVisitor:new{
+    coord_transform = function (depth, leaf, dir)
+        local dirs = {
+            entrance='north',
+            forward='west',
+            down='north',
+        }
+        return 9-leaf, 9-depth, dirs[dir]
+    end,
+}
 
 
 function Layout.print_mixin(object)
 
-    function object:rfinish_room(properties)
-        function print_access(thing)
-            if thing.see and thing.see ~= 'nothing' then print(string.format("\t\tto see: %s", thing.see)) end
-            if thing.reach and thing.reach ~= 'nothing' then print(string.format("\t\tto reach: %s", thing.reach)) end
-            if thing.open and thing.open ~= 'nothing' then print(string.format("\t\tto open: %s", thing.open)) end
-        end
-        print(string.format("Room %d;%d", properties.x, properties.y))
-        for dir, door in pairs(properties.doors) do
-            print(string.format("  Door %s", dir))
-            print_access(door)
-        end
-        for _, item in ipairs(properties.items) do
-            print(string.format("  Item %s", item.name))
-            print_access(item)
-        end
-        for _, enemy in ipairs(properties.enemies) do
-            print(string.format("  Enemy %s", enemy.name))
-            print_access(enemy)
-        end
-        print()
-    end
+    object = collect_mixin(object)
 
+    function object:collect_on_finish()
+        self:each_room(function (x, y, info)
+            function print_access(thing)
+                if thing.see and thing.see ~= 'nothing' then print(string.format("\t\tto see: %s", thing.see)) end
+                if thing.reach and thing.reach ~= 'nothing' then print(string.format("\t\tto reach: %s", thing.reach)) end
+                if thing.open and thing.open ~= 'nothing' then print(string.format("\t\tto open: %s", thing.open)) end
+            end
+            print(string.format("Room %d;%d", x, y))
+            for dir, door in pairs(info.doors) do
+                print(string.format("  Door %s", dir))
+                print_access(door)
+            end
+            for _, treasure in ipairs(info.treasures) do
+                print(string.format("  Item %s", treasure.name))
+                print_access(treasure)
+            end
+            for _, enemy in ipairs(info.enemies) do
+                print(string.format("  Enemy %s", enemy.name))
+                print_access(enemy)
+            end
+            print()
+        end)
+    end
 
     return object
 end
@@ -187,99 +225,71 @@ end
 
 function Layout.solarus_mixin(object, map)
 
+    object = collect_mixin(object)
+
     local map_width, map_height = map:get_size()
 
     function mark_known_room(x, y)
         map:get_game():set_value(string.format('room_%d_%d', x, y), true)
     end
 
-    function add_doorway(separators, x, y, direction, savegame_variable)
-        separators[y] = separators[y] or {}
-        separators[y][x] = separators[y][x] or {}
-        separators[y][x][Layout.DIRECTIONS[direction]] = savegame_variable
-    end
-
     function object:move_hero_to_start()
+        local start_x, start_y = self.coord_transform(0, 0)
         local hero = map:get_hero()
-        map:get_hero():set_position(320 * self.start_x + 320 / 2, 240 * self.start_y + 232, 1)
-        map:get_hero():set_direction(1)
+        hero:set_position(320 * start_x + 320 / 2, 240 * start_y + 232, 1)
+        hero:set_direction(1)
     end
 
-    local old_on_start = object.on_start
-    local old_on_finish = object.on_finish
-
-    function object:on_start()
+    function object:collect_on_start()
         self.separators = {}
-        self.rooms = {}
-        if old_on_start then
-            old_on_start(self)
+    end
+
+    function object:separator(map_x, map_y, dir)
+        local tag = string.format('%d_%d_%s', map_x, map_y, dir)
+        if not self.separators[tag] then
+            self.separators[tag] = true
+            if dir == 'north' then
+                local properties = {
+                    x = 320 * map_x,
+                    y = 240 * map_y - 8,
+                    layer = 1,
+                    width = 320,
+                    height = 16,
+                }
+                local sep = map:create_separator(properties)
+                function sep:on_activated(dir)
+                    local my_y = (dir == Layout.DIRECTIONS.north) and map_y - 1 or map_y
+                    local my_x = (dir == Layout.DIRECTIONS.west) and map_x - 1 or map_x
+                    mark_known_room(my_x, my_y)
+                end
+            elseif dir == 'west' then
+                local properties = {
+                    x = 320 * map_x - 8,
+                    y = 240 * map_y,
+                    layer = 1,
+                    width = 16,
+                    height = 240,
+                }
+                local sep = map:create_separator(properties)
+                function sep:on_activated(dir)
+                    local my_y = (dir == Layout.DIRECTIONS.north) and map_y - 1 or map_y
+                    local my_x = (dir == Layout.DIRECTIONS.west) and map_x - 1 or map_x
+                    mark_known_room(my_x, my_y)
+                end
+            else
+                error(string.format('unhandled dir: %s', dir))
+            end
         end
     end
 
-    function object:render_room(properties)
-        local x = 320 * properties.x
-        local y = 240 * properties.y
-        local room_properties = Util.filter_keys(properties, {'doors', 'items', 'enemies'})
-        room_properties.name = string.format('room_%d_%d', properties.x, properties.y)
-        self.rooms[y] = self.rooms[y] or {}
-        self.rooms[y][x] = room_properties
-
-        add_doorway(self.separators, properties.x,   properties.y+1, 'north', properties.doors.south and properties.savegame_variable or false)
-        add_doorway(self.separators, properties.x,   properties.y,   'east',  properties.doors.west  and properties.savegame_variable or false)
-        add_doorway(self.separators, properties.x,   properties.y,   'south', properties.doors.north and properties.savegame_variable or false)
-        add_doorway(self.separators, properties.x+1, properties.y,   'west',  properties.doors.east  and properties.savegame_variable or false)
-    end
-
-    function object:on_finish()
-        if old_on_finish then
-            old_on_finish(self)
-        end
-
-        for y, row in Util.pairs_by_keys(self.rooms) do
-            for x, properties in Util.pairs_by_keys(row) do
-                map:include(x, y, 'rooms/room1', properties)
-            end
-        end
-
-        mark_known_room(self.start_x, self.start_y)
-        for y, row in pairs(self.separators) do
-            for x, room in pairs(row) do
-                if room[Layout.DIRECTIONS.north] ~= nil or room[Layout.DIRECTIONS.south] ~= nil then
-                    local properties = {
-                        x = 320 * x,
-                        y = 240 * y - 8,
-                        layer = 1,
-                        width = 320,
-                        height = 16,
-                    }
-                    local sep = map:create_separator(properties)
-                    if room[Layout.DIRECTIONS.north] then
-                        function sep:on_activated(dir)
-                            local my_y = (dir == Layout.DIRECTIONS.north) and y - 1 or y
-                            local my_x = (dir == Layout.DIRECTIONS.west) and x - 1 or x
-                            mark_known_room(my_x, my_y)
-                        end
-                    end
-                end
-                if room[Layout.DIRECTIONS.east] ~= nil or room[Layout.DIRECTIONS.west] ~= nil then
-                    local properties = {
-                        x = 320 * x - 8,
-                        y = 240 * y,
-                        layer = 1,
-                        width = 16,
-                        height = 240,
-                    }
-                    local sep = map:create_separator(properties)
-                    if room[Layout.DIRECTIONS.west] then
-                        function sep:on_activated(dir)
-                            local my_y = (dir == Layout.DIRECTIONS.north) and y - 1 or y
-                            local my_x = (dir == Layout.DIRECTIONS.west) and x - 1 or x
-                            mark_known_room(my_x, my_y)
-                        end
-                    end
-                end
-            end
-        end
+    function object:collect_on_finish()
+        self:each_room(function (map_x, map_y, info)
+            self:separator(map_x, map_y, 'north')
+            self:separator(map_x, map_y, 'west')
+            self:separator(map_x, map_y+1, 'north')
+            self:separator(map_x+1, map_y, 'west')
+            map:include(320 * map_x, 240 * map_y, 'rooms/room1', info)
+        end)
     end
 
     return object

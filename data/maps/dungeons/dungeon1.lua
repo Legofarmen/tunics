@@ -6,13 +6,13 @@ local Prng = require 'lib/prng'
 local Layout = require 'lib/layout'
 
 local master_prng = Prng.from_seed(13)
-local layout = Layout.NorthWestwardVisitor
+local layout = Layout.NorthEastwardVisitor
 
 local puzzle = Puzzle.alpha_dungeon(master_prng:create(), 3, {'hookshot'})
---puzzle:accept(Tree.PrintVisitor:new{})
+puzzle:accept(Tree.PrintVisitor:new{})
 
 function map:render_map(map_menu)
-    Layout.minimap_mixin(layout:new(), map_menu):render(puzzle)
+    --Layout.minimap_mixin(layout:new(), map_menu):render(puzzle)
 end
 
 local solarus_layout = Layout.solarus_mixin(layout:new(), map)
