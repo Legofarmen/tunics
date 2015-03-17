@@ -1,0 +1,120 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  tileset = "dungeon_blue",
+  music = "same",
+}
+
+tile{
+  layer = 1,
+  x = 104,
+  y = 80,
+  width = 112,
+  height = 80,
+  pattern = "water_shallow",
+}
+
+tile{
+  layer = 1,
+  x = 216,
+  y = 72,
+  width = 8,
+  height = 8,
+  pattern = "water_shallow.corner_reverse.3",
+}
+
+tile{
+  layer = 1,
+  x = 216,
+  y = 80,
+  width = 8,
+  height = 80,
+  pattern = "water_shallow.4",
+}
+
+tile{
+  layer = 1,
+  x = 104,
+  y = 160,
+  width = 112,
+  height = 8,
+  pattern = "water_shallow.2",
+}
+
+tile{
+  layer = 1,
+  x = 216,
+  y = 160,
+  width = 8,
+  height = 8,
+  pattern = "water_shallow.corner.4",
+}
+
+tile{
+  layer = 1,
+  x = 216,
+  y = 72,
+  width = 8,
+  height = 8,
+  pattern = "water_shallow.corner.2",
+}
+
+tile{
+  layer = 1,
+  x = 104,
+  y = 72,
+  width = 112,
+  height = 8,
+  pattern = "water_shallow.1",
+}
+
+tile{
+  layer = 1,
+  x = 96,
+  y = 72,
+  width = 8,
+  height = 8,
+  pattern = "water_shallow.corner.1",
+}
+
+tile{
+  layer = 1,
+  x = 96,
+  y = 160,
+  width = 8,
+  height = 8,
+  pattern = "water_shallow.corner.3",
+}
+
+tile{
+  layer = 1,
+  x = 96,
+  y = 80,
+  width = 8,
+  height = 80,
+  pattern = "water_shallow.3",
+}
+
+pickable{
+  layer = 1,
+  x = 128,
+  y = 109,
+  treasure_name = "fairy",
+}
+
+pickable{
+  layer = 1,
+  x = 160,
+  y = 109,
+  treasure_name = "fairy",
+}
+
+pickable{
+  layer = 1,
+  x = 136,
+  y = 133,
+  treasure_name = "fairy",
+}
+

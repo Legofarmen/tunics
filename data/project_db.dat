@@ -31,6 +31,13 @@ map{ id = "components/moat_700", description = "Moat 700" }
 map{ id = "rooms/room2", description = "Room 2" }
 map{ id = "components/moat_111", description = "Moat 111" }
 map{ id = "components/moat_444", description = "Moat 444" }
+map{ id = "components/fairy_pond_700", description = "Fairy pond 700" }
+map{ id = "components/fairy_pond_777252", description = "Fairy pond 777252" }
+map{ id = "components/chest_hookshot_777202", description = "Chest hookshoot 777202" }
+map{ id = "components/moat_770252", description = "Moat 777252" }
+map{ id = "components/moat_north_777252", description = "Moat north 777252" }
+map{ id = "components/moat_west_777252", description = "Moat west 777252" }
+map{ id = "components/moat_east_777252", description = "Moat east 777252" }
 
 tileset{ id = "cave", description = "Cave" }
 tileset{ id = "dungeon_blue", description = "Dungeon (blue)" }
@@ -252,6 +259,7 @@ item{ id = "map", description = "Map" }
 item{ id = "small_key", description = "Small key" }
 item{ id = "sword", description = "Sword" }
 item{ id = "heart", description = "Heart" }
+item{ id = "fairy", description = "Fairy" }
 
 enemy{ id = "tentacle", description = "Tentacle" }
 
