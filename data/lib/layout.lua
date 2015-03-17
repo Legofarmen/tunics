@@ -5,30 +5,6 @@ local Util = require 'lib/util'
 local Layout = {}
 
 
-local WeightVisitor = {}
-setmetatable(WeightVisitor, WeightVisitor)
-
-function WeightVisitor:visit_room(room)
-    local weights = {
-        Room=0,
-        Treasure=0,
-        Enemy=0,
-    }
-    room:each_child(function (key, child)
-        weights[child.class] = weights[child.class] + child:accept(self)
-    end)
-    return math.max(1, weights.Room)
-end
-
-function WeightVisitor:visit_treasure(treasure)
-    return 0
-end
-
-function WeightVisitor:visit_enemy(enemy)
-    return 0
-end
-
-
 Layout.DIRECTIONS = { east=0, north=1, west=2, south=3, }
 
 
@@ -43,25 +19,6 @@ function BaseVisitor:visit_treasure(treasure)
 end
 
 function BaseVisitor:visit_room(room)
-
-    function get_heavy_child_key(room)
-        local total_weight = 0
-        local heavy_weight = 0
-        local heavy_key = nil
-        room:each_child(function (key, child)
-            local child_weight = child:accept(WeightVisitor)
-            total_weight = total_weight + child_weight
-            if child_weight > heavy_weight then
-                heavy_weight = child_weight
-                heavy_key = key
-            end
-        end)
-        if total_weight == heavy_weight then
-            return nil
-        else
-            return heavy_key
-        end
-    end
 
     local y = self.y
     local x0 = self.x
@@ -80,7 +37,7 @@ function BaseVisitor:visit_room(room)
         end
     end
 
-    local heavy_key = get_heavy_child_key(room)
+    local heavy_key, heavy_child = room:heavy_child()
 
     self.is_heavy = false
     room:each_child(function (key, child)
@@ -102,7 +59,7 @@ function BaseVisitor:visit_room(room)
         x1, self.y, self.is_heavy = self:get_heavy_child_properties(self.x, y)
         doors[x1] = doors[x1] or {}
         self.doors = doors[x1]
-        room.children[heavy_key]:accept(self)
+        heavy_child:accept(self)
     end
 
     for x = x0, x1, forward_x do

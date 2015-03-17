@@ -1,5 +1,30 @@
 local Class = require 'lib/class'
 
+
+local WeightVisitor = {}
+setmetatable(WeightVisitor, WeightVisitor)
+
+function WeightVisitor:visit_room(room)
+    local weights = {
+        Room=0,
+        Treasure=0,
+        Enemy=0,
+    }
+    room:each_child(function (key, child)
+        weights[child.class] = weights[child.class] + child:accept(self)
+    end)
+    return math.max(1, weights.Room)
+end
+
+function WeightVisitor:visit_treasure(treasure)
+    return 0
+end
+
+function WeightVisitor:visit_enemy(enemy)
+    return 0
+end
+
+
 local function weighted_random_element(rng, array, w)
     local total = 0
     local rkey, rchild
@@ -148,6 +173,32 @@ function Room:random_child(rng, w)
 end
 
 
+function Room:heavy_child()
+    local total_weight = 0
+    local heavy_weight = 0
+    local heavy_key = nil
+    local heavy_child = nil
+    self:each_child(function (key, child)
+        local child_weight = child:accept(WeightVisitor)
+        total_weight = total_weight + child_weight
+        if child_weight > heavy_weight then
+            heavy_weight = child_weight
+            heavy_key = key
+            heavy_child = child
+        end
+    end)
+    if total_weight == heavy_weight then
+        return nil
+    else
+        return heavy_key, heavy_child
+    end
+end
+
+
+
+
+
+
 local PrintVisitor = {}
 PrintVisitor.__index = PrintVisitor
 
@@ -174,6 +225,7 @@ end
 function PrintVisitor:visit_enemy(enemy)
     print(self.prefix .. tostring(enemy))
 end
+
 
 return {
     Node=Node,
