@@ -150,7 +150,7 @@ end
 function Puzzle.alpha_dungeon(rng, nkeys, item_names)
     local puzzles = {
         Puzzle.items_puzzle(rng:create(), item_names),
-        --Puzzle.map_puzzle(rng:create()),
+        Puzzle.map_puzzle(rng:create()),
         Puzzle.compass_puzzle(),
     }
     for i = 1, nkeys do
