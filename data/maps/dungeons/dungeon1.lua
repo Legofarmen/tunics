@@ -12,7 +12,7 @@ local puzzle = Puzzle.alpha_dungeon(master_prng:create(), 3, {'hookshot'})
 puzzle:accept(Tree.PrintVisitor:new{})
 
 function map:render_map(map_menu)
-    --Layout.minimap_mixin(layout:new(), map_menu):render(puzzle)
+    Layout.minimap_mixin(layout:new{ game=map:get_game() }, map_menu):render(puzzle)
 end
 
 local solarus_layout = Layout.solarus_mixin(layout:new(), map)

@@ -148,12 +148,24 @@ function collect_mixin(object)
         return string.format('room_%d_%d', x, y)
     end
 
+    function object.door_name(x, y, dir)
+        if dir == 'east' then
+            x = x + 1
+            dir = 'west'
+        elseif dir == 'south' then
+            y = y + 1
+            dir = 'north'
+        end
+        return string.format('room_%d_%d_%s', x, y, dir)
+    end
+
     function object:room(room, x, y, dir)
         local from_dir = self.reverse(dir)
         local parent_x, parent_y = self.step(x, y, from_dir)
-        local name = self.room_name(x, y)
+        local room_name = self.room_name(x, y)
+        local entrance_name = self.door_name(x, y, dir)
         local info = {
-            name=name,
+            name=room_name,
             doors={},
             treasures={},
             enemies={},
@@ -161,12 +173,14 @@ function collect_mixin(object)
         self:new_room(x, y, info)
         if self:has_room(parent_x, parent_y) then
             self:get_room(parent_x, parent_y).doors[dir] = {
+                name=entrance_name,
                 see=room.see,
                 reach=room.reach,
                 open=room.open,
             }
         end
         self:get_room(x, y).doors[from_dir] = {
+            name=entrance_name,
             see=room.see,
             open=room.open,
         }
@@ -232,17 +246,80 @@ end
 
 function Layout.minimap_mixin(object, map_menu)
 
-    function object:render_room(properties)
-        map_menu:draw_room(properties)
+    object = collect_mixin(object)
+
+    function object:collect_on_start()
+        self.has_map = self.game:get_value('map')
+        self.has_compass = self.game:get_value('compass')
     end
 
-    local old_on_start = object.on_start
-
-    function object:on_start()
-        if old_on_start then
-            old_on_start(self)
+    function object:room_perception(room_id)
+        if self.game:get_value(room_id) then
+            return 2
+        elseif self.has_map then
+            return 1
+        else
+            return 0
         end
-        map_menu:clear_map()
+    end
+
+    function object:collect_on_finish()
+        local doors = {}
+
+        self:each_room(function (x, y, info)
+            local room_perception = self:room_perception(self.room_name(x, y))
+
+            if room_perception > 0 then
+                map_menu:draw_room(x, y, room_perception)
+                for dir, door in pairs(info.doors) do
+                    local door_info = doors[door.name] or {}
+
+                    if dir == 'south' then
+                        door_info.dir = 'north'
+                        door_info.x = x
+                        door_info.y = y + 1
+                    elseif dir == 'east' then
+                        door_info.dir = 'west'
+                        door_info.x = x + 1
+                        door_info.y = y
+                    else
+                        door_info.dir = dir
+                        door_info.x = x
+                        door_info.y = y
+                    end
+                    door_info.is_entrance = (door.open == 'entrance')
+                    if not door.see or self.game:get_value(door.name) then
+                        door_info.perception = math.max(door_info.perception or 0, room_perception)
+                        doors[door.name] = door_info
+                    end
+                end
+            end
+
+            if self.has_compass then
+                for _, treasure in ipairs(info.treasures) do
+                    if treasure.open == 'big_key' then
+                        map_menu:draw_big_chest(x, y)
+                    else
+                        map_menu:draw_chest(x, y)
+                    end
+                end
+                for _, enemy in ipairs(info.enemies) do
+                    if enemy.name == 'boss' then
+                        map_menu:draw_boss(x, y)
+                    end
+                end
+            end
+        end)
+        for _, info in pairs(doors) do
+            if info.is_entrance then
+                map_menu:draw_entrance(info.x, info.y, info.dir)
+            else
+                map_menu:draw_door(info.x, info.y, info.dir, info.perception)
+            end
+        end
+        if self.has_compass then
+            map_menu:draw_hero_point()
+        end
     end
 
     return object
@@ -308,6 +385,7 @@ function Layout.solarus_mixin(object, map)
     end
 
     function object:collect_on_finish()
+        mark_known_room(self.coord_transform(0, 0))
         self:each_room(function (map_x, map_y, info)
             self:separator(map_x, map_y, 'north')
             self:separator(map_x, map_y, 'west')

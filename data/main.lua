@@ -1,6 +1,12 @@
 local Class = require 'lib/class.lua'
 
-local MapMenu = Class:new()
+local MapMenu = Class:new{
+    colors={
+        [1] = {150,150,150},
+        [2] = {200,200,200},
+        entrance = {255,255,255},
+    },
+}
 
 function MapMenu:on_started()
     local width, height = sol.video.get_quest_size()
@@ -30,61 +36,49 @@ function MapMenu:clear_map()
     self.map_surface:clear()
 end
 
-function MapMenu:draw_room(properties)
-    local normal = {255,255,255,216}
-    local highlight = {255,255,255}
-    local x = 12 * properties.x
-    local y = 12 * properties.y
-
-    if self.game:get_value('map') then
-        self.map_surface:fill_color(normal, x, y, 10, 10)
-        if properties.doors.south then
-            if properties.doors.south.open == 'entrance' then
-                self.map_surface:fill_color(highlight, x + 4, y + 10, 2, 4)
-            else
-                self.map_surface:fill_color(normal, x + 4, y + 10, 2, 2)
-            end
-        end
-        if properties.doors.west then
-            self.map_surface:fill_color(normal, x - 2, y + 4, 2, 2)
-        end
-    end
-
-    if self.game:get_value(string.format("room_%d_%d", properties.x, properties.y)) then
-        self.map_surface:fill_color(normal, x, y, 10, 10)
-        if properties.doors.north then
-            if not properties.doors.north.see or self.game:get_value(string.format("door_%d_%d_n", properties.x, properties.y)) then
-                self.map_surface:fill_color(normal, x + 4, y - 2, 2, 2)
-            end
-        end
-        if properties.doors.south then
-            if properties.doors.south.open == 'entrance' then
-                self.map_surface:fill_color(highlight, x + 4, y + 8, 2, 4)
-            end
-        end
-        if properties.doors.east then
-            self.map_surface:fill_color(normal, x + 10, y + 4, 2, 2)
-        end
-    end
-
-    if self.game:get_value('compass') then
-        for _, enemy in ipairs(properties.enemies) do
-            if enemy.name == 'boss' then
-                self.map_icons:draw_region(78, 0, 8, 8, self.map_surface, x + 1, y + 1)
-            end
-        end
-        for _, item in ipairs(properties.items) do
-            if item.open == 'big_key' then
-                self.map_icons:draw_region(78, 12, 6, 4, self.map_surface, x + 2, y + 2)
-            else
-                self.map_icons:draw_region(78, 8, 4, 4, self.map_surface, x + 2, y + 2)
-            end
-        end
-        local hero_x, hero_y = self.game:get_hero():get_position()
-        self.hero_point_sprite:draw(self.map_surface, 2 * math.floor(6 * (hero_x - 40) / 320), 2 * math.floor(6 * (hero_y - 40) / 240))
-    end
+function MapMenu:draw_room(map_x, map_y, perception)
+    local x = 12 * map_x
+    local y = 12 * map_y
+    self.map_surface:fill_color(self.colors[perception], x, y, 10, 10)
 end
 
+function MapMenu:draw_door(map_x, map_y, dir, perception)
+    local x = 12 * map_x
+    local y = 12 * map_y
+    if dir == 'north' then
+        self.map_surface:fill_color(self.colors[perception], x + 4, y - 2, 2, 2)
+    elseif dir == 'west' then
+        self.map_surface:fill_color(self.colors[perception], x - 2, y + 4, 2, 2)
+    end
+end
+function MapMenu:draw_entrance(map_x, map_y, dir)
+    local x = 12 * map_x
+    local y = 12 * map_y
+    if dir == 'north' then
+        self.map_surface:fill_color(self.colors.entrance, x + 4, y - 4, 2, 4)
+    elseif dir == 'west' then
+        self.map_surface:fill_color(self.colors.entrance, x - 4, y + 4, 4, 2)
+    end
+end
+function MapMenu:draw_chest(map_x, map_y)
+    local x = 12 * map_x
+    local y = 12 * map_y
+    self.map_icons:draw_region(78, 8, 4, 4, self.map_surface, x + 2, y + 2)
+end
+function MapMenu:draw_big_chest(map_x, map_y)
+    local x = 12 * map_x
+    local y = 12 * map_y
+    self.map_icons:draw_region(78, 12, 6, 4, self.map_surface, x + 2, y + 2)
+end
+function MapMenu:draw_boss(map_x, map_y)
+    local x = 12 * map_x
+    local y = 12 * map_y
+    self.map_icons:draw_region(78, 0, 8, 8, self.map_surface, x + 1, y + 1)
+end
+function MapMenu:draw_hero_point()
+    local hero_x, hero_y = self.game:get_hero():get_position()
+    self.hero_point_sprite:draw(self.map_surface, 2 * math.floor(6 * (hero_x - 40) / 320), 2 * math.floor(6 * (hero_y - 40) / 240))
+end
 
 function sol.main:on_started()
     sol.language.set_language("en")
