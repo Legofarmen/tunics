@@ -77,6 +77,11 @@ function door(data, dir)
         error('collision')
     end
     local component_name = string.format('components/door_%s_%s', data.open or 'normal', dir)
+    data.rewrite = {}
+    function data.rewrite.door(properties)
+        properties.savegame_variable = data.name
+        return properties
+    end
     map:include(0, 0, component_name, data)
 end
 
@@ -161,7 +166,15 @@ if #messages > 0 then
      sign({menu=DialogBox:new{text=messages, game=map:get_game()}})
 end
 
-if not data.doors.south or data.doors.south.open ~= 'entrance' then
+function is_special_room(data)
+    for dir, door in pairs(data.doors) do
+        if door.open == 'entrance' or door.open == 'big_key' then
+            return true
+        end
+    end
+end
+
+if not is_special_room(data) then
     for _, sections in ipairs{'111', '700', '444', '007', '100', '400', '004', '001'} do
         filler(Util.oct(sections))
     end

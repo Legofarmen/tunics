@@ -67,7 +67,7 @@ dynamic_tile{
   y = 8,
   width = 32,
   height = 24,
-  name = "${name}_closed",
+  name = "door_closed",
   pattern = "wall.1",
   enabled_at_start = true,
 }
@@ -85,11 +85,10 @@ door{
   layer = 1,
   x = 152,
   y = 16,
-  name = "${name}",
+  name = "door",
   direction = 1,
   sprite = "entities/door_very_weak_wall",
   opening_method = "explosion",
-  savegame_variable = "${name}",
 }
 
 tile{

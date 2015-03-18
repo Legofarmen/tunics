@@ -1,5 +1,8 @@
 local map, data = ...
 
+map.door.savegame_variable = data.name
+
+--[[
 map:create_door{
     layer=1,
     x=152,
@@ -11,3 +14,4 @@ map:create_door{
     opening_condition='small_key_amount',
     opening_condition_consumed=true,
 }
+]]
