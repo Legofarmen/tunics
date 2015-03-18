@@ -12,7 +12,7 @@ local BaseVisitor = Class:new()
 
 function BaseVisitor:render(tree)
     self.leaf = 0
-    self.depth = -1
+    self.depth = 0
     self.dir = 'entrance'
     self:on_start()
     tree:accept(self)
@@ -28,30 +28,55 @@ function BaseVisitor:visit_treasure(treasure)
 end
 
 function BaseVisitor:visit_room(room)
-    local my_depth = self.depth + 1
+    local my_depth = self.depth
+    local my_leaf = self.leaf
 
-    while room do
-        local heavy_key, heavy_child = room:heavy_child()
+    self:room(room, self.coord_transform(my_depth, my_leaf, self.dir))
 
-        self:room(room, self.coord_transform(my_depth, self.leaf, self.dir))
-        local my_x = self.leaf
+    self.depth = my_depth
+    room:each_child(function (key, child)
+        if child.class ~= 'Room' then
+            child:accept(self)
+        end
+    end)
 
-        room:each_child(function (key, child)
-            if key ~= heavy_key then
-
-                local leaf0 = self.leaf
-                self.depth = my_depth
+    local heavy_key = nil
+    local heavy_weight = 0
+    local light_count = 0
+    room:each_child(function (key, child)
+        if child.class == 'Room' then
+            if heavy_key then
+                local weight = child:get_weight()
+                if weight > heavy_weight then
+                    child = room.children[heavy_key]
+                    heavy_weight = weight
+                    heavy_key = key
+                end
+                while my_leaf < self.leaf do
+                    my_leaf = my_leaf + 1
+                    self:room({}, self.coord_transform(my_depth, my_leaf, 'forward'))
+                end
+                self.depth = my_depth + 1
                 self.dir = 'down'
                 child:accept(self)
-                for leaf = leaf0 + 1, self.leaf do
-                    self:room({}, self.coord_transform(my_depth, leaf, 'forward'))
-                end
+                light_count = light_count + 1
+            else
+                heavy_key = key
+                heavy_weight = child:get_weight()
             end
-        end)
-
+        end
+    end)
+    if heavy_key then
+        if light_count == 0 then
+            self.depth = my_depth + 1
+            self.dir = 'down'
+        else
+            self.depth = my_depth
+            self.dir = 'forward'
+        end
+        room.children[heavy_key]:accept(self)
+    else
         self.leaf = self.leaf + 1
-        room = heavy_child
-        self.dir = 'forward'
     end
 end
 

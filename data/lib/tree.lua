@@ -172,6 +172,9 @@ function Room:random_child(rng, w)
     return weighted_random_element(rng, self.children, w)
 end
 
+function Room:get_weight()
+    return self:accept(WeightVisitor)
+end
 
 function Room:heavy_child()
     local total_weight = 0
@@ -179,7 +182,7 @@ function Room:heavy_child()
     local heavy_key = nil
     local heavy_child = nil
     self:each_child(function (key, child)
-        local child_weight = child:accept(WeightVisitor)
+        local child_weight = child:get_weight()
         total_weight = total_weight + child_weight
         if child_weight > heavy_weight then
             heavy_weight = child_weight

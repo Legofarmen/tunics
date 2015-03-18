@@ -61,10 +61,12 @@ function data_messages(data, prefix)
 end
 data_messages(data, 'data')
 
+--[[
 for k, v in ipairs(messages) do
     print(v)
 end
 print()
+]]
 
 
 if data.doors.east then
@@ -114,10 +116,12 @@ for i, item in ipairs(data.treasures) do
         my_item.opening_condition = "big_key"
         map:create_chest(my_item)
     else
+        --[[
         for k, v in pairs(my_item) do
             print('my_item', k, v)
         end
         print()
+        ]]
         my_item.sprite = "entities/chest"
         map:create_chest(my_item)
     end
