@@ -1,13 +1,12 @@
 local map,data = ...
 
-local my_item = {
+map:create_chest{
+    sprite = "entities/big_chest",
+    opening_method = "interaction_if_savegame_variable",
+    opening_condition = "big_key",
     layer=1,
     x=160,
     y=125,
-    treasure_name=data.name,
-    treasure_savegame_variable=data.savegame_variable
+    treasure_name=data.item_name,
+    treasure_savegame_variable=data.name,
 }
-my_item.sprite = "entities/big_chest"
-my_item.opening_method = "interaction_if_savegame_variable"
-my_item.opening_condition = "big_key"
-map:create_chest(my_item)

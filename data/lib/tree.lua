@@ -39,12 +39,6 @@ local function weighted_random_element(rng, array, w)
     return rkey, rchild
 end
 
-local counters = {}
-local function new_id(prefix)
-    counters[prefix] = (counters[prefix] or 0) + 1
-    return prefix .. counters[prefix]
-end
-
 
 local Node = Class:new()
 
@@ -54,13 +48,11 @@ local Enemy = Node:new{class='Enemy', see='nothing', reach='nothing', open='noth
 
 function Treasure:new(o)
     o = o or {}
-    o.savegame_variable = o.savegame_variable or new_id('treasure')
     return Node.new(self, o)
 end
 
 function Room:new(o)
     o = o or {}
-    o.savegame_variable = o.savegame_variable or new_id('room')
     o.children = o.children or {}
     return Node.new(self, o)
 end
