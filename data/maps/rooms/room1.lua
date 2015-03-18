@@ -103,27 +103,10 @@ if data.doors.south then
 end
 
 for i, item in ipairs(data.treasures) do
-    local my_item = {
-        layer=1,
-        x=160,
-        y=120,
-        treasure_name=item.name,
-        treasure_savegame_variable=item.savegame_variable
-    }
     if item.open == 'big_key' then
-        my_item.sprite = "entities/big_chest"
-        my_item.opening_method = "interaction_if_savegame_variable"
-        my_item.opening_condition = "big_key"
-        map:create_chest(my_item)
+        map:include(0, 0, 'components/big_chest_020', item)
     else
-        --[[
-        for k, v in pairs(my_item) do
-            print('my_item', k, v)
-        end
-        print()
-        ]]
-        my_item.sprite = "entities/chest"
-        map:create_chest(my_item)
+        map:include(0, 0, 'components/chest_020', item)
     end
 end
 
