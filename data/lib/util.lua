@@ -22,5 +22,12 @@ function Util.pairs_by_keys (t, f)
     return iter
 end
 
+function Util.oct(s)
+    return tonumber(s, 8)
+end
+
+function Util.fromoct(n)
+    return string.sub(string.format("00%o", n), -3)
+end
 
 return Util

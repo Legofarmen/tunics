@@ -19,7 +19,7 @@ function room_map(map, x, y, data)
     local o = {}
     function o:get_userdata()
         if map.get_userdata then
-            return map.get_userdata
+            return map.get_userdata()
         else
             return map
         end
@@ -68,7 +68,7 @@ end
 
 function mapmeta:include(x, y, name, data)
     local map = room_map(self, x, y, data)
-    local datf = sol.main.load_file(string.format('maps/%s.dat', name))
+    local datf = assert(sol.main.load_file(string.format('maps/%s.dat', name)))
     local env = setmetatable({}, {__index=function (table, key)
         if key == 'properties' then
             return function()end

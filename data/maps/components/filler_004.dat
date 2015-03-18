@@ -9,60 +9,6 @@ properties{
 
 tile{
   layer = 1,
-  x = -128,
-  y = 56,
-  width = 24,
-  height = 24,
-  pattern = "wall.corner.3",
-}
-
-tile{
-  layer = 1,
-  x = -128,
-  y = 56,
-  width = 24,
-  height = 24,
-  pattern = "wall.corner.3",
-}
-
-tile{
-  layer = 1,
-  x = -128,
-  y = 56,
-  width = 24,
-  height = 24,
-  pattern = "wall.corner.3",
-}
-
-tile{
-  layer = 1,
-  x = -128,
-  y = 56,
-  width = 24,
-  height = 24,
-  pattern = "wall.corner.3",
-}
-
-tile{
-  layer = 1,
-  x = -128,
-  y = 56,
-  width = 24,
-  height = 24,
-  pattern = "wall.corner.3",
-}
-
-tile{
-  layer = 1,
-  x = 80,
-  y = 168,
-  width = 16,
-  height = 16,
-  pattern = "floor.14",
-}
-
-tile{
-  layer = 1,
   x = 56,
   y = 144,
   width = 16,
@@ -95,33 +41,6 @@ tile{
   width = 16,
   height = 16,
   pattern = "floor.14",
-}
-
-tile{
-  layer = 1,
-  x = 56,
-  y = 184,
-  width = 16,
-  height = 16,
-  pattern = "floor.14",
-}
-
-tile{
-  layer = 1,
-  x = 8,
-  y = 208,
-  width = 24,
-  height = 24,
-  pattern = "wall.corner.3",
-}
-
-tile{
-  layer = 1,
-  x = 32,
-  y = 200,
-  width = 8,
-  height = 8,
-  pattern = "wall_border.corner.3",
 }
 
 tile{

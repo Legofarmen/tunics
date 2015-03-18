@@ -137,13 +137,14 @@ function collect_mixin(object)
     function object:treasure(treasure, x, y)
         local info = self:get_room(x, y)
         local treasure_name = string.format("%s_treasure_%d", self.room_name(x, y), #info.treasures + 1)
-        table.insert(info.treasures, {
+        local data = {
             name=treasure_name,
             item_name=treasure.name,
-            see=treasure.see,
-            reach=treasure.reach,
-            open=treasure.open,
-        })
+        }
+        if treasure.see ~= 'nothing' then data.see=treasure.see end
+        if treasure.reach ~= 'nothing' then data.reach=treasure.reach end
+        if treasure.open ~= 'nothing' then data.open=treasure.open end
+        table.insert(info.treasures, data)
     end
 
     function object:enemy(enemy, x, y)

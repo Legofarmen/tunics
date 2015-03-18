@@ -1,5 +1,7 @@
 local map, data = ...
 
+bit32 = bit32 or bit
+
 local Class = require 'lib/class.lua'
 local Util = require 'lib/util'
 
@@ -40,10 +42,6 @@ function DialogBox:on_draw(dst_surface)
     end
 end
 
-
-
-
-
 local messages = {}
 function data_messages(data, prefix)
     if type(data) == 'table' then
@@ -61,68 +59,110 @@ function data_messages(data, prefix)
 end
 data_messages(data, 'data')
 
---[[
-for k, v in ipairs(messages) do
-    print(v)
-end
-print()
-]]
+
+local SECTIONS = {
+    east=Util.oct('010'),
+    north=Util.oct('200'),
+    west=Util.oct('040'),
+    south=Util.oct('002'),
+}
 
 
-if data.doors.east then
-    data.doors.east.name = data.name .. '_e'
-    map:include(0, 0, 'components/door_east', data.doors.east)
-end
-if data.doors.north then
-    if data.doors.north.open == 'big_key' then
-        map:include(0, 0, 'components/door_boss', data.doors.north)
-    elseif data.doors.north.open == 'bomb' then
-        map:include(0, 0, 'components/bomb_north', data.doors.north)
+local floor_mask = 0
+function door(data, dir)
+    if not data then return end
+    if bit32.band(floor_mask, SECTIONS[dir]) == 0 then
+        floor_mask = bit32.bor(floor_mask, SECTIONS[dir])
     else
-        if data.doors.north.open ~= 'small_key' then
+        error('collision')
+    end
+    local component_name = string.format('components/door_%s_%s', data.open or 'normal', dir)
+    map:include(0, 0, component_name, data)
+end
+
+function obstacle(data, dir, item)
+    if not data or not data[dir] or data[dir].reach ~= item then return end
+    local sections = Util.oct('777')
+    if bit32.band(floor_mask, sections) == 0 then
+        floor_mask = bit32.bor(floor_mask, sections)
+    else
+        error('collision')
+    end
+    local component_name = string.format('components/obstacle_%s_%s', item, dir)
+    map:include(0, 0, component_name, data)
+end
+
+function filler(sections)
+    if bit32.band(floor_mask, sections) == 0 then
+        floor_mask = bit32.bor(floor_mask, sections)
+        local component_name = string.format('components/filler_%03o', sections)
+        map:include(0, 0, component_name, data)
+    end
+end
+
+function treasure(data)
+    for _, section_string in ipairs{'400', '200', '100', '040', '020', '010', '004', '002', '001'} do
+        local section = Util.oct(section_string)
+        if bit32.band(floor_mask, section) == 0 then
+            local component_name = string.format('components/chest_%s', data.open or 'normal')
+            data.section = section
+            map:include(0, 0, component_name, data)
+            floor_mask = bit32.bor(floor_mask, section)
+            return
         end
-        map:include(0, 0, 'components/door_north', data.doors.north)
     end
-
-    if data.doors.north.reach == 'hookshot' then
-        map:include(0, 0, 'components/moat_north')
-    else
-    end
-end
-if data.doors.west then
-    map:include(0, 0, 'components/door_west', data.doors.west)
-end
-if data.doors.south then
-    if data.doors.south.open == 'entrance' then
-        map:include(0, 0, 'components/entrance', data.doors.south)
-    elseif data.doors.south.open == 'bomb' then
-        map:include(0, 0, 'components/bomb_south')
-    else
-        map:include(0, 0, 'components/door_south', data.doors.south)
-    end
+    error('out of floor space')
 end
 
-for i, item in ipairs(data.treasures) do
-    if item.open == 'big_key' then
-        map:include(0, 0, 'components/big_chest_020', item)
-    else
-        map:include(0, 0, 'components/chest_020', item)
+function enemy(data)
+    for _, section_string in ipairs{'400', '200', '100', '040', '020', '010', '004', '002', '001'} do
+        local section = Util.oct(section_string)
+        if bit32.band(floor_mask, section) == 0 then
+            local component_name = string.format('components/enemy')
+            data.section = section
+            map:include(0, 0, component_name, data)
+            floor_mask = bit32.bor(floor_mask, section)
+            return
+        end
     end
+    error('out of floor space')
+end
+
+function sign(data)
+    for _, section_string in ipairs{'400', '200', '100', '040', '020', '010', '004', '002', '001'} do
+        local section = Util.oct(section_string)
+        if bit32.band(floor_mask, section) == 0 then
+            local component_name = string.format('components/sign')
+            data.section = section
+            map:include(0, 0, component_name, data)
+            floor_mask = bit32.bor(floor_mask, section)
+            return
+        end
+    end
+    error('out of floor space')
+end
+
+
+
+for _, dir in ipairs{'east', 'north', 'west', 'south'} do
+    door(data.doors[dir], dir)
+    obstacle(data.doors[dir], dir, 'hookshot')
+end
+
+for _, data in ipairs(data.treasures) do
+    treasure(data)
+end
+
+for _, data in ipairs(data.enemies) do
+    enemy(data)
 end
 
 if #messages > 0 then
-    local sign = map:create_npc{
-        x=64,
-        y=164,
-        layer=1,
-        direction=3,
-        subtype=0,
-        sprite='entities/sign',
-    }
-
-    function sign:on_interaction(...)
-        local dialog_box = DialogBox:new{text=messages, game=map:get_game()}
-        sol.menu.start(map:get_userdata(), dialog_box, true)
-    end
+     sign({menu=DialogBox:new{text=messages, game=map:get_game()}})
 end
 
+if not data.doors.south or data.doors.south.open ~= 'entrance' then
+    for _, sections in ipairs{'111', '700', '444', '007', '100', '400', '004', '001'} do
+        filler(Util.oct(sections))
+    end
+end

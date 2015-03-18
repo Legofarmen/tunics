@@ -1,14 +1,14 @@
 map{ id = "rooms/room1", description = "Room1" }
 map{ id = "dungeons/dungeon1", description = "Dungeon1" }
-map{ id = "components/door_north", description = "Door north" }
-map{ id = "components/door_south", description = "Door south" }
-map{ id = "components/entrance", description = "Entrance" }
-map{ id = "components/door_west", description = "Door west" }
-map{ id = "components/door_east", description = "Door east" }
-map{ id = "components/door_boss", description = "Door boss" }
+map{ id = "components/door_normal_north", description = "Door normal north" }
+map{ id = "components/door_normal_south", description = "Door normal south" }
+map{ id = "components/door_entrance_south", description = "Door entrance south" }
+map{ id = "components/door_normal_west", description = "Door normal west" }
+map{ id = "components/door_normal_east", description = "Door normal east" }
+map{ id = "components/door_big_key_north", description = "Door big key north" }
 map{ id = "components/moat_north", description = "Moat north" }
-map{ id = "components/bomb_north", description = "Bomb north" }
-map{ id = "components/bomb_south", description = "Bomb south" }
+map{ id = "components/door_bomb_north", description = "Door bomb north" }
+map{ id = "components/door_bomb_south", description = "Door bomb south" }
 map{ id = "components/filler_400", description = "Filler 400" }
 map{ id = "components/filler_100", description = "Filler 100" }
 map{ id = "components/filler_004", description = "Filler 004" }
@@ -22,10 +22,10 @@ map{ id = "components/big_chest_007", description = "Big chest 007" }
 map{ id = "components/big_chest_444", description = "Big chest 444" }
 map{ id = "components/big_chest_111", description = "Big chest 111" }
 map{ id = "components/big_chest_001", description = "Big chest 001" }
-map{ id = "components/big_chest_400", description = "Big chest 400" }
+map{ id = "components/chest_big_key_400", description = "Chest big key 400" }
 map{ id = "components/big_chest_004", description = "Big chest 004" }
 map{ id = "components/big_chest_100", description = "Big chest 100" }
-map{ id = "components/big_chest_020", description = "Big chest 020" }
+map{ id = "components/chest_big_key", description = "Chest big key" }
 map{ id = "components/chest_020", description = "Chest 020" }
 map{ id = "components/moat_700", description = "Moat 700" }
 map{ id = "rooms/room2", description = "Room 2" }
@@ -34,10 +34,17 @@ map{ id = "components/moat_444", description = "Moat 444" }
 map{ id = "components/fairy_pond_700", description = "Fairy pond 700" }
 map{ id = "components/fairy_pond_777252", description = "Fairy pond 777252" }
 map{ id = "components/chest_hookshot_777202", description = "Chest hookshoot 777202" }
-map{ id = "components/moat_770252", description = "Moat 777252" }
 map{ id = "components/moat_north_777252", description = "Moat north 777252" }
 map{ id = "components/moat_west_777252", description = "Moat west 777252" }
 map{ id = "components/moat_east_777252", description = "Moat east 777252" }
+map{ id = "components/door_big_key_south", description = "Door big key south" }
+map{ id = "components/chest_normal", description = "Chest normal" }
+map{ id = "components/door_small_key_south", description = "Door small key south" }
+map{ id = "components/door_small_key_north", description = "Door small key north" }
+map{ id = "components/door_small_key_east", description = "Door small key east" }
+map{ id = "components/door_small_key_west", description = "Door small key west" }
+map{ id = "components/enemy", description = "Enemy" }
+map{ id = "components/sign", description = "Sign" }
 
 tileset{ id = "cave", description = "Cave" }
 tileset{ id = "dungeon_blue", description = "Dungeon (blue)" }
