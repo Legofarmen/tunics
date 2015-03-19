@@ -29,54 +29,84 @@ end
 local project = Project:new()
 project:init()
 
-local classes = {}
-function classes.obstacle(iterator)
+local components = {
+    obstacles = {},
+    treasures = {},
+    doors = {},
+    enemies = {},
+    fillers = {},
+}
+function components:obstacle(id, iterator)
     local item = iterator()
     local dir = iterator()
     local mask = iterator()
     local sequence = iterator()
-    print('obstacle', item, dir, mask, sequence)
+    self.obstacles[item] = self.obstacles[item] or {}
+    self.obstacles[item][dir] = self.obstacles[item][dir] or {}
+    self.obstacles[item][dir][sequence] = {
+        id=id,
+        mask=mask,
+    }
 end
 
-function classes.treasure(iterator)
+function components:treasure(id, iterator)
     local open = iterator()
     local mask = iterator()
     local sequence = iterator()
-    print('treasure', open, mask, sequence)
+    self.treasures[open] = self.treasures[open] or {}
+    self.treasures[open][sequence] = {
+        id=id,
+        mask=mask,
+    }
 end
 
-function classes.door(iterator)
+function components:door(id, iterator)
     local open = iterator()
     local dir = iterator()
     local mask = iterator()
     local sequence = iterator()
     print('door', open, dir, mask, sequence)
+    self.doors[open] = self.doors[open] or {}
+    self.doors[open][dir] = self.doors[open][dir] or {}
+    self.doors[open][dir][sequence] = {
+        id=id,
+        mask=mask,
+    }
 end
 
-function classes.enemy(iterator)
+function components:enemy(id, iterator)
     local mask = iterator()
     local sequence = iterator()
-    print('enemy', mask, sequence)
+    self.enemies[sequence] = {
+        id=id,
+        mask=mask,
+    }
 end
 
-function classes.filler(iterator)
+function components:filler(id, iterator)
     local mask = iterator()
     local sequence = iterator()
-    print('filler', mask, sequence)
+    self.fillers[sequence] = {
+        id=id,
+        mask=mask,
+    }
 end
 
-for k, v in pairs(project.entries.map) do
-    if string.sub(v.id, 0, 11) == 'components/' then
-        local parts = string.gmatch(string.sub(v.id, 12), '[^_]+')
-        local part = parts()
-        if classes[part] then
-            classes[part](parts)
-        else
-            print('ignoring', v.id)
+function components:parse_maps(maps)
+    for k, v in pairs(maps) do
+        if string.sub(v.id, 0, 11) == 'components/' then
+            local parts = string.gmatch(string.sub(v.id, 12), '[^_]+')
+            local part = parts()
+            if components[part] then
+                components[part](components, v.id, parts)
+            else
+                print('ignoring', v.id)
+            end
         end
     end
 end
 
+components:parse_maps(project.entries.map)
 
 local MapMenu = Class:new{
     colors={
