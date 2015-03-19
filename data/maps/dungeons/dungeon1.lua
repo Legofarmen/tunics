@@ -5,7 +5,7 @@ local Puzzle = require 'lib/puzzle'
 local Prng = require 'lib/prng'
 local Layout = require 'lib/layout'
 
-local master_prng = Prng.from_seed(23)
+local master_prng = Prng.from_seed(25)
 local layout = Layout.NorthEastwardVisitor
 
 local puzzle = Puzzle.alpha_dungeon(master_prng:create(), 3, {'hookshot'})

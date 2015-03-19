@@ -6,7 +6,6 @@ map{ id = "components/door_entrance_south", description = "Door entrance south" 
 map{ id = "components/door_normal_west", description = "Door normal west" }
 map{ id = "components/door_normal_east", description = "Door normal east" }
 map{ id = "components/door_big_key_north", description = "Door big key north" }
-map{ id = "components/moat_north", description = "Moat north" }
 map{ id = "components/door_bomb_north", description = "Door bomb north" }
 map{ id = "components/door_bomb_south", description = "Door bomb south" }
 map{ id = "components/filler_400", description = "Filler 400" }
@@ -26,7 +25,6 @@ map{ id = "components/chest_big_key_400", description = "Chest big key 400" }
 map{ id = "components/big_chest_004", description = "Big chest 004" }
 map{ id = "components/big_chest_100", description = "Big chest 100" }
 map{ id = "components/chest_big_key", description = "Chest big key" }
-map{ id = "components/chest_020", description = "Chest 020" }
 map{ id = "components/moat_700", description = "Moat 700" }
 map{ id = "rooms/room2", description = "Room 2" }
 map{ id = "components/moat_111", description = "Moat 111" }
@@ -35,7 +33,7 @@ map{ id = "components/fairy_pond_700", description = "Fairy pond 700" }
 map{ id = "components/fairy_pond_777252", description = "Fairy pond 777252" }
 map{ id = "components/chest_hookshot_777202", description = "Chest hookshoot 777202" }
 map{ id = "components/obstacle_hookshot_north", description = "Obstacle hookshot north" }
-map{ id = "components/moat_west_777252", description = "Moat west 777252" }
+map{ id = "components/obstacle_hookshot_west", description = "Obstacle hookshot west" }
 map{ id = "components/obstacle_hookshot_east", description = "Obstacel hookshot east" }
 map{ id = "components/door_big_key_south", description = "Door big key south" }
 map{ id = "components/chest_normal", description = "Chest normal" }
