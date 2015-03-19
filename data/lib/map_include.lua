@@ -1,8 +1,6 @@
 local mapmeta = sol.main.get_metatable('map')
 
-local counter = 0
-
-function room_map(map, x, y, data)
+function room_map(map, x, y, internal_prefix, data)
 
     local userdata
     if map.get_userdata then
@@ -10,10 +8,6 @@ function room_map(map, x, y, data)
     else
         userdata = map
     end
-
-    local internal_prefix = string.format('__include_%d_', counter)
-
-    counter = counter + 1
 
     local rewrite
     if data.rewrite then
@@ -75,21 +69,24 @@ function room_map(map, x, y, data)
                 return function (self, ...)
                     return map[key](userdata, ...)
                 end
-            elseif map[key] then
-                return map[key]
             else
-                return userdata:get_entity(internal_prefix .. key)
+                return map[key]
             end
         end
     })
     return o
 end
 
+
+local counter = 0
+
 function mapmeta:include(x, y, name, data)
-    local map = room_map(self, x, y, data)
-    print(name)
+    local internal_prefix = string.format('__include_%d_', counter)
+    counter = counter + 1
+
+    local map = room_map(self, x, y, internal_prefix, data)
     local datf = assert(sol.main.load_file(string.format('maps/%s.dat', name)))
-    local env = setmetatable({}, {__index=function (table, key)
+    local datenv = setmetatable({}, {__index=function (table, key)
         if key == 'properties' then
             return function()end
         end
@@ -103,6 +100,14 @@ function mapmeta:include(x, y, name, data)
             method(map, properties)
         end
     end})
-    setfenv(datf, env)()
-    sol.main.load_file(string.format('maps/%s.lua', name))(map, data)
+    setfenv(datf, datenv)()
+    local luaf = sol.main.load_file(string.format('maps/%s.lua', name))
+    local luaenv = setmetatable({}, {__index=function (table, key)
+        if _G[key] then
+            return _G[key]
+        else
+            return map:get_userdata():get_entity(internal_prefix .. key)
+        end
+    end})
+    setfenv(luaf, luaenv)(map, data)
 end

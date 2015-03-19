@@ -2,6 +2,8 @@ local map, data = ...
 
 local Util = require 'lib/util'
 
+bit32 = bit32 or bit
+
 local x
 local y
 

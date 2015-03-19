@@ -1,3 +1,3 @@
 local map, data = ...
 
-map.door.savegame_variable = data.name
+door.savegame_variable = data.name

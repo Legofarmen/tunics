@@ -61,17 +61,6 @@ tile{
   pattern = "barrier.2",
 }
 
-dynamic_tile{
-  layer = 1,
-  x = 144,
-  y = 8,
-  width = 32,
-  height = 24,
-  name = "door_closed",
-  pattern = "wall.1",
-  enabled_at_start = true,
-}
-
 wall{
   layer = 1,
   x = 152,
@@ -91,6 +80,17 @@ door{
   opening_method = "explosion",
 }
 
+dynamic_tile{
+  layer = 1,
+  x = 144,
+  y = 8,
+  width = 32,
+  height = 24,
+  name = "door_closed",
+  pattern = "wall.1",
+  enabled_at_start = true,
+}
+
 tile{
   layer = 2,
   x = 144,
@@ -98,5 +98,16 @@ tile{
   width = 32,
   height = 8,
   pattern = "door_top.blast.1",
+}
+
+dynamic_tile{
+  layer = 2,
+  x = 136,
+  y = 8,
+  width = 48,
+  height = 8,
+  name = "top_closed",
+  pattern = "door_cache.1",
+  enabled_at_start = true,
 }
 
