@@ -186,7 +186,9 @@ if #messages > 0 then
 end
 
 if not is_special_room(data) then
-    for _, sections in ipairs{'111', '700', '444', '007', '100', '400', '004', '001'} do
-        filler(Util.oct(sections))
+    local sections = {'111', '700', '444', '007', '100', '400', '004', '001'}
+    List.shuffle(rng:create(), sections)
+    for _, section_string in ipairs(sections) do
+        filler(Util.oct(section_string))
     end
 end
