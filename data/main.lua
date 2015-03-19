@@ -29,10 +29,51 @@ end
 local project = Project:new()
 project:init()
 
+local classes = {}
+function classes.obstacle(iterator)
+    local item = iterator()
+    local dir = iterator()
+    local mask = iterator()
+    local sequence = iterator()
+    print('obstacle', item, dir, mask, sequence)
+end
+
+function classes.treasure(iterator)
+    local open = iterator()
+    local mask = iterator()
+    local sequence = iterator()
+    print('treasure', open, mask, sequence)
+end
+
+function classes.door(iterator)
+    local open = iterator()
+    local dir = iterator()
+    local mask = iterator()
+    local sequence = iterator()
+    print('door', open, dir, mask, sequence)
+end
+
+function classes.enemy(iterator)
+    local mask = iterator()
+    local sequence = iterator()
+    print('enemy', mask, sequence)
+end
+
+function classes.filler(iterator)
+    local mask = iterator()
+    local sequence = iterator()
+    print('filler', mask, sequence)
+end
+
 for k, v in pairs(project.entries.map) do
     if string.sub(v.id, 0, 11) == 'components/' then
         local parts = string.gmatch(string.sub(v.id, 12), '[^_]+')
-        print(parts())
+        local part = parts()
+        if classes[part] then
+            classes[part](parts)
+        else
+            print('ignoring', v.id)
+        end
     end
 end
 
