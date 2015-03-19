@@ -75,7 +75,7 @@ function door(data, dir)
     if bit32.band(door_mask, SECTIONS[dir]) == 0 then
         door_mask = bit32.bor(door_mask, SECTIONS[dir])
     else
-        error('collision')
+        error('cannot fit door')
     end
     local component_name = string.format('components/door_%s_%s', data.open or 'normal', dir)
     data.rewrite = {}
@@ -92,7 +92,7 @@ function obstacle(data, dir, item)
     if bit32.band(floor_mask, sections) == 0 then
         floor_mask = bit32.bor(floor_mask, sections)
     else
-        error('collision')
+        error('cannot fit obstacle')
     end
     local component_name = string.format('components/obstacle_%s_%s', item, dir)
     map:include(0, 0, component_name, data)
@@ -117,7 +117,7 @@ function treasure(data)
             return
         end
     end
-    error('out of floor space')
+    error('cannot fit treasure')
 end
 
 function enemy(data)
@@ -131,7 +131,7 @@ function enemy(data)
             return
         end
     end
-    error('out of floor space')
+    error('cannot fit enemy')
 end
 
 function sign(data)
@@ -145,7 +145,15 @@ function sign(data)
             return
         end
     end
-    error('out of floor space')
+    error('cannot fit sign')
+end
+
+function is_special_room(data)
+    for dir, door in pairs(data.doors) do
+        if door.open == 'entrance' or door.open == 'big_key' then
+            return true
+        end
+    end
 end
 
 
@@ -167,14 +175,6 @@ end
 
 if #messages > 0 then
      sign({menu=DialogBox:new{text=messages, game=map:get_game()}})
-end
-
-function is_special_room(data)
-    for dir, door in pairs(data.doors) do
-        if door.open == 'entrance' or door.open == 'big_key' then
-            return true
-        end
-    end
 end
 
 if not is_special_room(data) then
