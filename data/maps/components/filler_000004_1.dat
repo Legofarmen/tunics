@@ -1,0 +1,108 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  tileset = "dungeon_blue",
+  music = "same",
+}
+
+tile{
+  layer = 1,
+  x = 16,
+  y = 144,
+  width = 112,
+  height = 24,
+  pattern = "wall.2",
+}
+
+tile{
+  layer = 1,
+  x = 8,
+  y = 144,
+  width = 24,
+  height = 24,
+  pattern = "wall.corner.3",
+}
+
+tile{
+  layer = 1,
+  x = 112,
+  y = 208,
+  width = 24,
+  height = 24,
+  pattern = "wall.corner.3",
+}
+
+tile{
+  layer = 1,
+  x = 112,
+  y = 160,
+  width = 24,
+  height = 48,
+  pattern = "wall.3",
+}
+
+tile{
+  layer = 1,
+  x = 112,
+  y = 144,
+  width = 24,
+  height = 24,
+  pattern = "wall.corner_reverse.3",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 136,
+  width = 8,
+  height = 8,
+  pattern = "wall_border.corner.3",
+}
+
+tile{
+  layer = 1,
+  x = 136,
+  y = 200,
+  width = 8,
+  height = 8,
+  pattern = "wall_border.corner.3",
+}
+
+tile{
+  layer = 1,
+  x = 136,
+  y = 136,
+  width = 8,
+  height = 64,
+  pattern = "wall_border.3",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 136,
+  width = 96,
+  height = 8,
+  pattern = "wall_border.2",
+}
+
+tile{
+  layer = 1,
+  x = 136,
+  y = 136,
+  width = 8,
+  height = 8,
+  pattern = "wall_border.corner_reverse.3",
+}
+
+tile{
+  layer = 2,
+  x = 0,
+  y = 168,
+  width = 112,
+  height = 72,
+  pattern = "ceiling",
+}
+
