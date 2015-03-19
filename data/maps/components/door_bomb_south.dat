@@ -43,6 +43,16 @@ wall{
   stops_enemies = true,
 }
 
+door{
+  layer = 1,
+  x = 152,
+  y = 208,
+  name = "door",
+  direction = 3,
+  sprite = "entities/door_weak_wall",
+  opening_method = "explosion",
+}
+
 tile{
   layer = 2,
   x = 144,

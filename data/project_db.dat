@@ -34,9 +34,9 @@ map{ id = "components/moat_444", description = "Moat 444" }
 map{ id = "components/fairy_pond_700", description = "Fairy pond 700" }
 map{ id = "components/fairy_pond_777252", description = "Fairy pond 777252" }
 map{ id = "components/chest_hookshot_777202", description = "Chest hookshoot 777202" }
-map{ id = "components/moat_north_777252", description = "Moat north 777252" }
+map{ id = "components/obstacle_hookshot_north", description = "Obstacle hookshot north" }
 map{ id = "components/moat_west_777252", description = "Moat west 777252" }
-map{ id = "components/moat_east_777252", description = "Moat east 777252" }
+map{ id = "components/obstacle_hookshot_east", description = "Obstacel hookshot east" }
 map{ id = "components/door_big_key_south", description = "Door big key south" }
 map{ id = "components/chest_normal", description = "Chest normal" }
 map{ id = "components/door_small_key_south", description = "Door small key south" }
@@ -45,6 +45,10 @@ map{ id = "components/door_small_key_east", description = "Door small key east" 
 map{ id = "components/door_small_key_west", description = "Door small key west" }
 map{ id = "components/enemy", description = "Enemy" }
 map{ id = "components/sign", description = "Sign" }
+map{ id = "components/door_bomb_east", description = "Door bomb east" }
+map{ id = "components/door_bomb_west", description = "Door bomb west" }
+map{ id = "components/door_big_key_west", description = "Door big key west" }
+map{ id = "components/door_big_key_east", description = "Door big key east" }
 
 tileset{ id = "cave", description = "Cave" }
 tileset{ id = "dungeon_blue", description = "Dungeon (blue)" }

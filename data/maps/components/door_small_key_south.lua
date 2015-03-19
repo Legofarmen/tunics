@@ -1,0 +1,3 @@
+local map, data = ...
+
+map.door.savegame_variable = data.name

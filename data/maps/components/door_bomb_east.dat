@@ -1,0 +1,66 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  tileset = "dungeon_blue",
+  music = "same",
+}
+
+tile{
+  layer = 1,
+  x = 288,
+  y = 104,
+  width = 16,
+  height = 8,
+  pattern = "door_blast.4.support.1",
+}
+
+tile{
+  layer = 1,
+  x = 288,
+  y = 128,
+  width = 16,
+  height = 8,
+  pattern = "door_blast.4.support.2",
+}
+
+tile{
+  layer = 1,
+  x = 288,
+  y = 112,
+  width = 16,
+  height = 16,
+  pattern = "door_blast.4",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 288,
+  y = 104,
+  width = 24,
+  height = 32,
+  name = "door_closed",
+  pattern = "wall.4",
+  enabled_at_start = true,
+}
+
+door{
+  layer = 1,
+  x = 288,
+  y = 112,
+  name = "door",
+  direction = 2,
+  sprite = "entities/door_weak_wall",
+  opening_method = "explosion",
+}
+
+tile{
+  layer = 2,
+  x = 304,
+  y = 104,
+  width = 8,
+  height = 32,
+  pattern = "door_top.blast.4",
+}
+

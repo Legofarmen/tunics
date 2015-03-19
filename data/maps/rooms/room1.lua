@@ -68,11 +68,12 @@ local SECTIONS = {
 }
 
 
+local door_mask = 0
 local floor_mask = 0
 function door(data, dir)
     if not data then return end
-    if bit32.band(floor_mask, SECTIONS[dir]) == 0 then
-        floor_mask = bit32.bor(floor_mask, SECTIONS[dir])
+    if bit32.band(door_mask, SECTIONS[dir]) == 0 then
+        door_mask = bit32.bor(door_mask, SECTIONS[dir])
     else
         error('collision')
     end
@@ -86,8 +87,8 @@ function door(data, dir)
 end
 
 function obstacle(data, dir, item)
-    if not data or not data[dir] or data[dir].reach ~= item then return end
-    local sections = Util.oct('777')
+    if not data or data.reach ~= item then return end
+    local sections = Util.oct('771')
     if bit32.band(floor_mask, sections) == 0 then
         floor_mask = bit32.bor(floor_mask, sections)
     else
@@ -153,6 +154,8 @@ for _, dir in ipairs{'east', 'north', 'west', 'south'} do
     door(data.doors[dir], dir)
     obstacle(data.doors[dir], dir, 'hookshot')
 end
+
+floor_mask = bit32.bor(floor_mask, door_mask)
 
 for _, data in ipairs(data.treasures) do
     treasure(data)
