@@ -26,6 +26,17 @@ function Project:init()
     setfenv(f, env)()
 end
 
+local project = Project:new()
+project:init()
+
+for k, v in pairs(project.entries.map) do
+    if string.sub(v.id, 0, 11) == 'components/' then
+        local parts = string.gmatch(string.sub(v.id, 12), '[^_]+')
+        print(parts())
+    end
+end
+
+
 local MapMenu = Class:new{
     colors={
         [1] = {150,150,150},
