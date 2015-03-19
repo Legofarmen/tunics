@@ -85,7 +85,11 @@ function mapmeta:include(x, y, name, data)
     counter = counter + 1
 
     local map = room_map(self, x, y, internal_prefix, data)
-    local datf = assert(sol.main.load_file(string.format('maps/%s.dat', name)))
+    local datfile = string.format('maps/%s.dat', name)
+    local datf = sol.main.load_file(datfile)
+    if not datf then
+        error("error: loading file: " .. datfile)
+    end
     local datenv = setmetatable({}, {__index=function (table, key)
         if key == 'properties' then
             return function()end
@@ -101,7 +105,11 @@ function mapmeta:include(x, y, name, data)
         end
     end})
     setfenv(datf, datenv)()
-    local luaf = sol.main.load_file(string.format('maps/%s.lua', name))
+    local luafile = string.format('maps/%s.lua', name)
+    local luaf = sol.main.load_file(luafile)
+    if not luaf then
+        error("error: loading file: " .. luafile)
+    end
     local luaenv = setmetatable({}, {__index=function (table, key)
         if _G[key] then
             return _G[key]
