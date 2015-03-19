@@ -9,100 +9,118 @@ properties{
 
 tile{
   layer = 1,
-  x = 184,
-  y = 208,
-  width = 24,
-  height = 24,
-  pattern = "wall.corner.4",
+  x = 272,
+  y = 144,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.border.4",
 }
 
 tile{
   layer = 1,
-  x = 184,
+  x = 264,
+  y = 152,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.border.4",
+}
+
+tile{
+  layer = 1,
+  x = 256,
   y = 160,
-  width = 24,
-  height = 48,
-  pattern = "wall.4",
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.border.4",
 }
 
 tile{
   layer = 1,
-  x = 200,
-  y = 144,
-  width = 96,
-  height = 24,
-  pattern = "wall.2",
+  x = 224,
+  y = 192,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.border.4",
 }
 
 tile{
   layer = 1,
-  x = 288,
-  y = 144,
-  width = 24,
-  height = 24,
-  pattern = "wall.corner.4",
+  x = 248,
+  y = 168,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.border.4",
 }
 
 tile{
   layer = 1,
-  x = 176,
-  y = 200,
-  width = 8,
-  height = 8,
-  pattern = "wall_border.corner.4",
+  x = 240,
+  y = 176,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.border.4",
+}
+
+tile{
+  layer = 1,
+  x = 232,
+  y = 184,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.border.4",
 }
 
 tile{
   layer = 1,
   x = 280,
-  y = 136,
-  width = 8,
-  height = 8,
-  pattern = "wall_border.corner.4",
+  y = 152,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.4",
 }
 
 tile{
   layer = 1,
-  x = 176,
-  y = 136,
-  width = 8,
-  height = 64,
-  pattern = "wall_border.4",
+  x = 272,
+  y = 160,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.4",
 }
 
 tile{
   layer = 1,
-  x = 184,
-  y = 136,
-  width = 96,
-  height = 8,
-  pattern = "wall_border.2",
-}
-
-tile{
-  layer = 1,
-  x = 176,
-  y = 136,
-  width = 8,
-  height = 8,
-  pattern = "wall_border.corner_reverse.4",
-}
-
-tile{
-  layer = 1,
-  x = 184,
-  y = 144,
-  width = 24,
-  height = 24,
-  pattern = "wall.corner_reverse.4",
-}
-
-tile{
-  layer = 2,
-  x = 208,
+  x = 264,
   y = 168,
-  width = 112,
-  height = 72,
-  pattern = "ceiling",
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.4",
+}
+
+tile{
+  layer = 1,
+  x = 256,
+  y = 176,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.4",
+}
+
+tile{
+  layer = 1,
+  x = 248,
+  y = 184,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.4",
+}
+
+tile{
+  layer = 1,
+  x = 240,
+  y = 192,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.4",
 }
 
