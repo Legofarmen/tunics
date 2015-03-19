@@ -65,7 +65,6 @@ function components:door(id, iterator)
     local dir = iterator()
     local mask = iterator()
     local sequence = iterator()
-    print('door', open, dir, mask, sequence)
     self.doors[open] = self.doors[open] or {}
     self.doors[open][dir] = self.doors[open][dir] or {}
     self.doors[open][dir][sequence] = {
@@ -98,6 +97,7 @@ function components:parse_maps(maps)
             local parts = string.gmatch(string.sub(v.id, 12), '[^_]+')
             local part = parts()
             if components[part] then
+                print(v.id)
                 components[part](components, v.id, parts)
             else
                 print('ignoring', v.id)
