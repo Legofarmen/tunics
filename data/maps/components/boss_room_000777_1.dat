@@ -7,6 +7,14 @@ properties{
   music = "same",
 }
 
+enemy{
+  layer = 0,
+  x = 160,
+  y = 133,
+  direction = 3,
+  breed = "agahnim",
+}
+
 tile{
   layer = 1,
   x = 248,
