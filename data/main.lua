@@ -1,5 +1,31 @@
 local Class = require 'lib/class.lua'
 
+local Project = Class:new()
+
+function Project:new(o)
+    o = o or {}
+    o.entries = o.entries or {}
+    return Class.new(self, o)
+end
+
+function Project:init()
+    local filename = 'project_db.dat'
+    local f = sol.main.load_file(filename)
+    if not f then
+        error("error: loading file: " .. filename)
+    end
+
+    local entries = self.entries
+    local env = setmetatable({}, {__index=function(t, key)
+        return function(properties)
+            entries[key] = entries[key] or {}
+            table.insert(entries[key], properties)
+        end
+    end})
+
+    setfenv(f, env)()
+end
+
 local MapMenu = Class:new{
     colors={
         [1] = {150,150,150},
