@@ -161,7 +161,7 @@ function Puzzle.alpha_dungeon(rng, nkeys, item_names)
     local my_rng = rng:create()
     local steps = {}
     for _, puzzle in ipairs(puzzles) do
-        local n = my_rng:random(2)
+        local n = my_rng:random(3)
         if n == 1 then
             steps = List.intermingle(rng:create(), steps, puzzle)
         else

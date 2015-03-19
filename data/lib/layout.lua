@@ -399,6 +399,7 @@ function Layout.solarus_mixin(object, map)
             self:separator(map_x, map_y, 'west')
             self:separator(map_x, map_y+1, 'north')
             self:separator(map_x+1, map_y, 'west')
+            info.rng = self.rng:biased(10 * map_y + map_x)
             map:include(320 * map_x, 240 * map_y, 'rooms/room1', info)
         end)
     end

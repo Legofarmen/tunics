@@ -1,9 +1,12 @@
 local map, data = ...
 
+local rng = data.rng
+
 bit32 = bit32 or bit
 
 local Class = require 'lib/class.lua'
 local Util = require 'lib/util'
+local List = require 'lib/list'
 
 local DialogBox = Class:new()
 
@@ -107,7 +110,10 @@ function filler(sections)
 end
 
 function treasure(data)
-    for _, section_string in ipairs{'400', '200', '100', '040', '020', '010', '004', '002', '001'} do
+    local sections = {'400', '200', '100', '040', '020', '010', '004', '002', '001'}
+    List.shuffle(rng:create(), sections)
+
+    for _, section_string in ipairs(sections) do
         local section = Util.oct(section_string)
         if bit32.band(floor_mask, section) == 0 then
             local component_name = string.format('components/chest_%s', data.open or 'normal')
@@ -121,7 +127,9 @@ function treasure(data)
 end
 
 function enemy(data)
-    for _, section_string in ipairs{'400', '200', '100', '040', '020', '010', '004', '002', '001'} do
+    local sections = {'400', '200', '100', '040', '020', '010', '004', '002', '001'}
+    List.shuffle(rng:create(), sections)
+    for _, section_string in ipairs(sections) do
         local section = Util.oct(section_string)
         if bit32.band(floor_mask, section) == 0 then
             local component_name = string.format('components/enemy')
