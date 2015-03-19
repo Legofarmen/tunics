@@ -31,7 +31,7 @@ function BaseVisitor:visit_room(room)
     local my_depth = self.depth
     local my_leaf = self.leaf
 
-    self:room(room, self.coord_transform(my_depth, my_leaf, self.dir))
+    self:room(room, my_depth, my_leaf, self.dir)
 
     self.depth = my_depth
     room:each_child(function (key, child)
@@ -54,7 +54,7 @@ function BaseVisitor:visit_room(room)
                 end
                 while my_leaf < self.leaf do
                     my_leaf = my_leaf + 1
-                    self:room({}, self.coord_transform(my_depth, my_leaf, 'forward'))
+                    self:room({}, my_depth, my_leaf, 'forward')
                 end
                 self.depth = my_depth + 1
                 self.dir = 'down'
@@ -167,27 +167,28 @@ function collect_mixin(object)
         return string.format('room_%d_%d_%s', x, y, dir)
     end
 
-    function object:room(room, x, y, dir)
-        local from_dir = self.reverse(dir)
-        local parent_x, parent_y = self.step(x, y, from_dir)
-        local room_name = self.room_name(x, y)
-        local entrance_name = self.door_name(x, y, dir)
+    function object:room(room, depth, leaf, dir)
+        local map_x, map_y, map_dir = self.coord_transform(depth, leaf, dir)
+        local from_dir = self.reverse(map_dir)
+        local parent_x, parent_y = self.step(map_x, map_y, from_dir)
+        local room_name = self.room_name(map_x, map_y)
+        local entrance_name = self.door_name(map_x, map_y, map_dir)
         local info = {
             name=room_name,
             doors={},
             treasures={},
             enemies={},
         }
-        self:new_room(x, y, info)
+        self:new_room(map_x, map_y, info)
         if self:has_room(parent_x, parent_y) then
-            self:get_room(parent_x, parent_y).doors[dir] = {
+            self:get_room(parent_x, parent_y).doors[map_dir] = {
                 name=entrance_name,
                 see=room.see,
                 reach=room.reach,
                 open=room.open,
             }
         end
-        self:get_room(x, y).doors[from_dir] = {
+        self:get_room(map_x, map_y).doors[from_dir] = {
             name=entrance_name,
             see=room.see,
             open=room.open,
