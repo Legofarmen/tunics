@@ -119,7 +119,7 @@ function treasure(data)
 
     data.section = component_mask
     data.rewrite = {}
-    function data.rewrite.door(properties)
+    function data.rewrite.chest(properties)
         properties.savegame_variable = data.name
         properties.treasure_name = data.item_name
         return properties

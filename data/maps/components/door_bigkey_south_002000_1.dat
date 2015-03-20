@@ -51,7 +51,7 @@ door{
   direction = 3,
   sprite = "entities/door_big_key",
   opening_method = "interaction_if_savegame_variable",
-  opening_condition = "big_key",
+  opening_condition = "bigkey",
 }
 
 tile{
