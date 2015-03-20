@@ -7,7 +7,7 @@ setmetatable(HideTreasuresVisitor, HideTreasuresVisitor)
 
 function HideTreasuresVisitor:visit_room(room)
     room:each_child(function (key, child)
-        if child.class == 'Treasure' and child.open ~= 'big_key' then
+        if child.class == 'Treasure' and child.open ~= 'bigkey' then
             room:update_child(key, child:with_needs{see='compass'})
         end
         child:accept(self)
@@ -53,7 +53,7 @@ function Puzzle.treasure_step(item_name)
 end
 
 function Puzzle.boss_step(root)
-    root:add_child(Tree.Enemy:new{name='boss'}:with_needs{open='big_key'})
+    root:add_child(Tree.Enemy:new{name='boss'}:with_needs{open='bigkey'})
 end
 
 function Puzzle.hide_treasures_step(root)
@@ -70,7 +70,7 @@ end
 
 function Puzzle.big_chest_step(item_name)
     return function (root)
-        root:add_child(Tree.Treasure:new{name=item_name, open='big_key'})
+        root:add_child(Tree.Treasure:new{name=item_name, open='bigkey'})
     end
 end
 
@@ -133,7 +133,7 @@ function Puzzle.items_puzzle(rng, item_names)
         table.insert(steps, Puzzle.obstacle_step(item_name))
         table.insert(steps, Puzzle.big_chest_step(item_name))
     end
-    table.insert(steps, Puzzle.treasure_step('big_key'))
+    table.insert(steps, Puzzle.treasure_step('bigkey'))
     return steps
 end
 

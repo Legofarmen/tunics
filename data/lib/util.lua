@@ -23,11 +23,12 @@ function Util.pairs_by_keys (t, f)
 end
 
 function Util.oct(s)
-    return tonumber(s, 8)
+    local i = tonumber(s, 8)
+    return i
 end
 
 function Util.fromoct(n)
-    return string.sub(string.format("00%o", n), -3)
+    return string.format("%06o", n)
 end
 
 return Util

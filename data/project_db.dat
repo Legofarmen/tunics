@@ -16,14 +16,14 @@ map{ id = "components/filler_200700_1", description = "Filler 700" }
 map{ id = "components/filler_002007_1", description = "Filler 007" }
 map{ id = "components/filler_040444_1", description = "Filler 444" }
 map{ id = "components/filler_010111_1", description = "Filler 111" }
-map{ id = "components/treasure_big_key_000700_1", description = "Big chest 700" }
-map{ id = "components/treasure_big_key_000007_1", description = "Big chest 007" }
-map{ id = "components/treasure_big_key_000444_1", description = "Big chest 444" }
-map{ id = "components/treasure_big_key_000111_1", description = "Big chest 111" }
-map{ id = "components/treasure_big_key_000001_1", description = "Big chest 001" }
-map{ id = "components/treasure_big_key_000400_1", description = "Big chest 400" }
-map{ id = "components/treasure_big_key_000004_1", description = "Big chest 004" }
-map{ id = "components/treasure_big_key_000100_1", description = "Big chest 100" }
+map{ id = "components/treasure_bigkey_000700_1", description = "Big chest 700" }
+map{ id = "components/treasure_bigkey_000007_1", description = "Big chest 007" }
+map{ id = "components/treasure_bigkey_000444_1", description = "Big chest 444" }
+map{ id = "components/treasure_bigkey_000111_1", description = "Big chest 111" }
+map{ id = "components/treasure_bigkey_000001_1", description = "Treasure bigkey 000001" }
+map{ id = "components/treasure_bigkey_000400_1", description = "Big chest 400" }
+map{ id = "components/treasure_bigkey_000004_1", description = "Big chest 004" }
+map{ id = "components/treasure_bigkey_000100_1", description = "Big chest 100" }
 map{ id = "rooms/room2", description = "Room 2" }
 map{ id = "components/treasure_fairy_000777_1", description = "Fairy pond 777252" }
 map{ id = "components/chest_hookshot_777202", description = "Chest hookshoot 777202" }
@@ -31,7 +31,7 @@ map{ id = "components/obstacle_hookshot_north_000700_1", description = "Obstacle
 map{ id = "components/obstacle_hookshot_west_000444_1", description = "Obstacle hookshot west 000444" }
 map{ id = "components/obstacle_hookshot_east_000111_1", description = "Obstacle hookshot east 000111" }
 map{ id = "components/door_bigkey_south_002000_1", description = "Door bigkey south" }
-map{ id = "components/chest_normal", description = "Chest normal" }
+map{ id = "components/treasure_open_any_1", description = "Treasure open any" }
 map{ id = "components/door_small_key_south_002000_1", description = "Door small key south" }
 map{ id = "components/door_small_key_north_200000_1", description = "Door small key north" }
 map{ id = "components/door_small_key_east_010000_1", description = "Door small key east" }
@@ -45,7 +45,7 @@ map{ id = "components/door_bigkey_east_010000_1", description = "Door bigkey eas
 map{ id = "components/obstacle_hookshot_south_000007_1", description = "Obstacle hookshot south 000007" }
 map{ id = "components/obstacle_hookshot_northwest_000711_1", description = "Obstacle hookshot northwest 000711" }
 map{ id = "components/obstacle_hookshot_northeast_000744_1", description = "Obstacle hookshot northeast 000744" }
-map{ id = "components/treasure_big_key_000020_1", description = "Treasure big key 020" }
+map{ id = "components/treasure_bigkey_000020_1", description = "Treasure big key 020" }
 map{ id = "components/filler000001_2", description = "Filler 000001 2" }
 
 tileset{ id = "cave", description = "Cave" }
