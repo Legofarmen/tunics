@@ -1,0 +1,270 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  tileset = "dungeon_blue",
+  music = "same",
+}
+
+tile{
+  layer = 1,
+  x = 216,
+  y = 40,
+  width = 48,
+  height = 160,
+  pattern = "floor.20",
+}
+
+tile{
+  layer = 1,
+  x = 56,
+  y = 40,
+  width = 48,
+  height = 160,
+  pattern = "floor.20",
+}
+
+tile{
+  layer = 1,
+  x = 144,
+  y = 232,
+  width = 32,
+  height = 16,
+  pattern = "lava",
+}
+
+tile{
+  layer = 1,
+  x = 152,
+  y = 208,
+  width = 16,
+  height = 16,
+  pattern = "door_main.2",
+}
+
+tile{
+  layer = 1,
+  x = 144,
+  y = 184,
+  width = 32,
+  height = 24,
+  pattern = "door_main.2.floor.1",
+}
+
+tile{
+  layer = 1,
+  x = 144,
+  y = 208,
+  width = 8,
+  height = 16,
+  pattern = "door_main.2.support.1",
+}
+
+tile{
+  layer = 1,
+  x = 168,
+  y = 208,
+  width = 8,
+  height = 16,
+  pattern = "door_main.2.support.2",
+}
+
+tile{
+  layer = 1,
+  x = 176,
+  y = 176,
+  width = 16,
+  height = 24,
+  pattern = "door_main.2.floor.3",
+}
+
+tile{
+  layer = 1,
+  x = 128,
+  y = 176,
+  width = 16,
+  height = 24,
+  pattern = "door_main.2.floor.2",
+}
+
+tile{
+  layer = 1,
+  x = 120,
+  y = 176,
+  width = 8,
+  height = 24,
+  pattern = "floor_border.2",
+}
+
+tile{
+  layer = 1,
+  x = 192,
+  y = 176,
+  width = 8,
+  height = 24,
+  pattern = "floor_border.2",
+}
+
+tile{
+  layer = 1,
+  x = 120,
+  y = 168,
+  width = 80,
+  height = 8,
+  pattern = "floor_border.2",
+}
+
+tile{
+  layer = 1,
+  x = 144,
+  y = 176,
+  width = 16,
+  height = 8,
+  pattern = "door_main.2.floor.2",
+}
+
+tile{
+  layer = 1,
+  x = 160,
+  y = 176,
+  width = 16,
+  height = 8,
+  pattern = "door_main.2.floor.3",
+}
+
+tile{
+  layer = 1,
+  x = 120,
+  y = 200,
+  width = 24,
+  height = 24,
+  pattern = "door_main.2.pillar.1.bottom",
+}
+
+tile{
+  layer = 1,
+  x = 176,
+  y = 200,
+  width = 24,
+  height = 24,
+  pattern = "door_main.2.pillar.2.bottom",
+}
+
+tile{
+  layer = 1,
+  x = 152,
+  y = 224,
+  width = 16,
+  height = 16,
+  pattern = "floor_small.2",
+}
+
+tile{
+  layer = 1,
+  x = 144,
+  y = 232,
+  width = 8,
+  height = 8,
+  pattern = "barrier.2",
+}
+
+tile{
+  layer = 1,
+  x = 168,
+  y = 232,
+  width = 8,
+  height = 8,
+  pattern = "barrier.2",
+}
+
+tile{
+  layer = 1,
+  x = 152,
+  y = 240,
+  width = 16,
+  height = 8,
+  pattern = "barrier.1",
+}
+
+tile{
+  layer = 1,
+  x = 64,
+  y = 64,
+  width = 32,
+  height = 32,
+  pattern = "statue_fairy",
+}
+
+tile{
+  layer = 1,
+  x = 64,
+  y = 144,
+  width = 32,
+  height = 32,
+  pattern = "statue_fairy",
+}
+
+tile{
+  layer = 1,
+  x = 224,
+  y = 64,
+  width = 32,
+  height = 32,
+  pattern = "statue_fairy",
+}
+
+tile{
+  layer = 1,
+  x = 224,
+  y = 144,
+  width = 32,
+  height = 32,
+  pattern = "statue_fairy",
+}
+
+wall{
+  layer = 1,
+  x = 152,
+  y = 208,
+  width = 16,
+  height = 16,
+  stops_enemies = true,
+}
+
+tile{
+  layer = 2,
+  x = 144,
+  y = 224,
+  width = 32,
+  height = 8,
+  pattern = "door_cache.2",
+}
+
+tile{
+  layer = 2,
+  x = 144,
+  y = 224,
+  width = 32,
+  height = 8,
+  pattern = "door_top.low.2",
+}
+
+tile{
+  layer = 2,
+  x = 120,
+  y = 224,
+  width = 24,
+  height = 8,
+  pattern = "door_main.2.pillar.1.top",
+}
+
+tile{
+  layer = 2,
+  x = 176,
+  y = 224,
+  width = 24,
+  height = 8,
+  pattern = "door_main.2.pillar.2.top",
+}
+

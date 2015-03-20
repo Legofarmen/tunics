@@ -18,7 +18,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 184,
+  x = 192,
   y = 208,
   width = 24,
   height = 24,
@@ -36,7 +36,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 184,
+  x = 192,
   y = 160,
   width = 24,
   height = 48,
@@ -45,7 +45,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 184,
+  x = 192,
   y = 144,
   width = 24,
   height = 24,
@@ -72,7 +72,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 176,
+  x = 184,
   y = 136,
   width = 8,
   height = 8,
@@ -81,7 +81,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 176,
+  x = 184,
   y = 144,
   width = 8,
   height = 64,
@@ -90,7 +90,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 176,
+  x = 184,
   y = 208,
   width = 8,
   height = 8,
@@ -99,7 +99,7 @@ tile{
 
 tile{
   layer = 2,
-  x = 208,
+  x = 216,
   y = 168,
   width = 112,
   height = 72,

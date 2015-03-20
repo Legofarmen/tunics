@@ -574,6 +574,15 @@ tile{
   pattern = "wall.4",
 }
 
+tile{
+  layer = 1,
+  x = 64,
+  y = 208,
+  width = 16,
+  height = 24,
+  pattern = "wall.2",
+}
+
 enemy{
   layer = 1,
   x = 176,

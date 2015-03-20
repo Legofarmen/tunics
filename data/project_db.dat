@@ -2,7 +2,7 @@ map{ id = "rooms/room1", description = "Room1" }
 map{ id = "dungeons/dungeon1", description = "Dungeon1" }
 map{ id = "components/door_open_north_200000_1", description = "Door open north 200000 1" }
 map{ id = "components/door_open_south_002000_1", description = "Door open south 002000 1" }
-map{ id = "components/door_entrance_south_002007_1", description = "Door entrance south 002007 1" }
+map{ id = "components/door_entrance_south_002777_1", description = "Door entrance south 002007 1" }
 map{ id = "components/door_open_west_040000_1", description = " Door open west 040000 1" }
 map{ id = "components/door_open_east_010000_1", description = "Door open east 010000 1" }
 map{ id = "components/door_bigkey_north_200700_1", description = "Door bigkey north 200700 1" }
@@ -57,6 +57,15 @@ map{ id = "components/door_smallkey_north_200000_1", description = "Door small k
 map{ id = "components/door_smallkey_south_002000_1", description = "Door small key south 002000 1" }
 map{ id = "components/door_smallkey_west_040000_1", description = "Door small key west 040000 1" }
 map{ id = "rooms/quest_start", description = "Quest start" }
+map{ id = "components/floor_1", description = "Floor 1" }
+map{ id = "components/floor_2", description = "Floor 2" }
+map{ id = "components/floor_3", description = "Floor 3" }
+map{ id = "components/floor_4", description = "Floor 4" }
+map{ id = "components/floor_5", description = "Floor 5" }
+map{ id = "components/floor_6", description = "Floor 6" }
+map{ id = "components/door_entrance_south_002777_2", description = "Door entrance south 002777 2" }
+map{ id = "components/door_entrance_south_002777_3", description = "Door entrance south 002777 3" }
+map{ id = "components/door_entrance_south_002777_4", description = "Door entrance south 002777 4" }
 
 tileset{ id = "dungeon_blue", description = "Dungeon (blue)" }
 tileset{ id = "dungeon_grayblue", description = "Dungeon (gray-blue)" }
