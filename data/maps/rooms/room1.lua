@@ -191,21 +191,28 @@ for dir, door_data in pairs(data.doors) do
     end
 end
 
-local dirs = {'north','east','south','west'}
+local dirs = {
+    [Util.oct('200000')]='north',
+    [Util.oct('040000')]='west',
+    [Util.oct('010000')]='east',
+    [Util.oct('002000')]='south',
+}
 List.shuffle(rng:create(), dirs)
 for item, item_treasures in pairs(obstacle_treasures) do
     for _, treasure_data in ipairs(item_treasures) do
         local ok = false
-        for _, dir in ipairs(dirs) do
-            local component_name, component_mask = Zentropy.components:get_obstacle(item, dir, mask, components_rng)
-            if component_name then
-                obstacle({treasure1 = treasure_data}, dir, item)
-                ok = true
-                break
+        for dir_mask, dir in pairs(dirs) do
+            if bit32.band(dir_mask, mask) == 0 then
+                local component_name, component_mask = Zentropy.components:get_obstacle(item, dir, mask, components_rng)
+                if component_name then
+                    obstacle({treasure1=treasure_data}, dir, item)
+                    ok = true
+                    break
+                end
             end
         end
         if not ok then
-            error('cannot fit treasure behind obstacle')
+            error(string.format('cannot fit treasure behind obstacle mask=%06o', mask))
         end
     end
 end
