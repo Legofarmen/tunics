@@ -5,7 +5,7 @@ local Puzzle = require 'lib/puzzle'
 local Prng = require 'lib/prng'
 local Layout = require 'lib/layout'
 
-local master_prng = Prng.from_seed(32)
+local master_prng = Prng.from_seed(39)
 local layout = Layout.NorthEastwardVisitor
 
 local puzzle_rng = master_prng:create()

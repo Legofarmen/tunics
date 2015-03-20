@@ -33,7 +33,7 @@ function KeyDetectorVisitor:visit_room(room)
 end
 
 function KeyDetectorVisitor:visit_treasure(treasure)
-    if treasure.name == 'small_key' then
+    if treasure.name == 'smallkey' then
         return true
     else
         return false
@@ -91,7 +91,7 @@ function Puzzle.locked_door_step(rng, root)
     end
     local key, child = root:random_child(rng, lockable_weight)
     if key then
-        root:update_child(key, child:with_needs{open='small_key'})
+        root:update_child(key, child:with_needs{open='smallkey'})
         return true
     else
         return false
@@ -141,7 +141,7 @@ function Puzzle.lock_puzzle(rng)
     return {
         function (root)
             if Puzzle.locked_door_step(rng, root) then
-                Puzzle.treasure_step('small_key')(root)
+                Puzzle.treasure_step('smallkey')(root)
             end
         end,
     }

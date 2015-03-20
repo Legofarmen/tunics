@@ -75,12 +75,11 @@ local SECTIONS = {
 
 
 local mask = 0
-local mask = 0
 function door(data, dir)
     if not data then return end
     local component_name, component_mask = Zentropy.components:get_door(data.open, dir, mask, components_rng)
     if not component_name then
-        error(string.format("door not found: open=%s dir=%s mask=%06o", open, dir, mask))
+        error(string.format("door not found: open=%s dir=%s mask=%06o", data.open, dir, mask))
     end
     mask = bit32.bor(mask, component_mask)
     data.rewrite = {}
