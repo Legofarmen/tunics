@@ -150,11 +150,11 @@ end
 function Puzzle.alpha_dungeon(rng, nkeys, item_names)
     local puzzles = {
         Puzzle.items_puzzle(rng:create(), item_names),
-        Puzzle.map_puzzle(rng:create()),
-        Puzzle.compass_puzzle(),
+        --Puzzle.map_puzzle(rng:create()),
+        --Puzzle.compass_puzzle(),
     }
     for i = 1, nkeys do
-        table.insert(puzzles, Puzzle.lock_puzzle(rng:create()))
+        --table.insert(puzzles, Puzzle.lock_puzzle(rng:create()))
     end
     List.shuffle(rng:create(), puzzles)
 

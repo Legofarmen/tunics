@@ -7,15 +7,6 @@ properties{
   music = "same",
 }
 
-enemy{
-  layer = 0,
-  x = 176,
-  y = 141,
-  direction = 3,
-  breed = "green_knight_soldier",
-  rank = 2,
-}
-
 tile{
   layer = 1,
   x = 248,
@@ -581,6 +572,15 @@ tile{
   width = 24,
   height = 16,
   pattern = "wall.4",
+}
+
+enemy{
+  layer = 1,
+  x = 176,
+  y = 141,
+  direction = 3,
+  breed = "green_knight_soldier",
+  rank = 2,
 }
 
 tile{
