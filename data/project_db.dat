@@ -35,7 +35,6 @@ map{ id = "components/treasure_open_any_1", description = "Treasure open any" }
 map{ id = "components/door_small_key_south_002000_1", description = "Door small key south" }
 map{ id = "components/door_small_key_north_200000_1", description = "Door small key north" }
 map{ id = "components/door_small_key_east_010000_1", description = "Door small key east" }
-map{ id = "components/door_small_key_west_040000_1", description = "Door small key west" }
 map{ id = "components/enemy_any_1", description = "Enemy any" }
 map{ id = "components/sign", description = "Sign" }
 map{ id = "components/door_bomb_east_010000_1", description = "Door bomb east" }
@@ -58,6 +57,11 @@ map{ id = "components/filler_002007_2", description = "Filler 002007 2" }
 map{ id = "components/filler_010111_2", description = "Filler 010111 2" }
 map{ id = "components/filler_040444_2", description = "Filler 040444 2" }
 map{ id = "components/filler_200200_1", description = "Filler 200200 1" }
+map{ id = "components/door_smallkey_east_010000_1", description = "Door small key east 010000 1" }
+map{ id = "components/door_smallkey_north_200000_1", description = "Door small key north 200000 1" }
+map{ id = "components/door_smallkey_south_002000_1", description = "Door small key 002000 1" }
+map{ id = "components/door_smallkey_west_0400000_1", description = "Door small key west 040000 1" }
+map{ id = "components/door_smallkey_west_040000_1", description = "Door small key west 040000 1" }
 
 tileset{ id = "dungeon_blue", description = "Dungeon (blue)" }
 tileset{ id = "dungeon_grayblue", description = "Dungeon (gray-blue)" }
@@ -285,6 +289,9 @@ item{ id = "fairy", description = "Fairy" }
 
 enemy{ id = "tentacle", description = "Tentacle" }
 enemy{ id = "green_knight_soldier", description = "Green knight soldier" }
+enemy{ id = "generic_soldier", description = "Generic soldier" }
+enemy{ id = "generic_towards_hero", description = "Generic towards hero" }
+enemy{ id = "generic_waiting_for_hero", description = "Generic waiting for hero" }
 
 
 language{ id = "en", description = "English" }
