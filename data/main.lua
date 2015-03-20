@@ -97,7 +97,6 @@ function components:parse_maps(maps)
             local parts = string.gmatch(string.sub(v.id, 12), '[^_]+')
             local part = parts()
             if components[part] then
-                print(v.id)
                 components[part](components, v.id, parts)
             else
                 print('ignoring', v.id)

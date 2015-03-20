@@ -1,21 +1,21 @@
 map{ id = "rooms/room1", description = "Room1" }
 map{ id = "dungeons/dungeon1", description = "Dungeon1" }
-map{ id = "components/door_open_north_200000_1", description = "Door normal north" }
-map{ id = "components/door_open_south_002000_1", description = "Door normal south" }
+map{ id = "components/door_open_north_200000_1", description = "Door open north" }
+map{ id = "components/door_open_south_002000_1", description = "Door open south" }
 map{ id = "components/door_entrance_south_002007_1", description = "Door entrance south" }
-map{ id = "components/door_open_west_040000.1", description = "Door normal west" }
-map{ id = "components/door_open_east_010000_1", description = "Door normal east" }
-map{ id = "components/door_big_key_north_200700_1", description = "Door big key north" }
+map{ id = "components/door_open_west_040000_1", description = "Door open west" }
+map{ id = "components/door_open_east_010000_1", description = "Door open east" }
+map{ id = "components/door_bigkey_north_200700_1", description = "Door bigkey north" }
 map{ id = "components/door_bomb_north_200000_1", description = "Door bomb north" }
 map{ id = "components/door_bomb_south_002000_1", description = "Door bomb south" }
-map{ id = "components/filler_000400_1", description = "Filler 000400 1 " }
-map{ id = "components/filler_000100_1", description = "Filler 000100 1" }
-map{ id = "components/filler_000004_1", description = "Filler 000004 1" }
-map{ id = "components/filler_000001_1", description = "Filler 000001 1" }
-map{ id = "components/filler_200700_1", description = "Filler 200700 1" }
-map{ id = "components/filler_002007_1", description = "Filler 002007 1" }
-map{ id = "components/filler_040444_1", description = "Filler 040444 1" }
-map{ id = "components/filler_010111_1", description = "Filler 010111 1" }
+map{ id = "components/filler_000400_1", description = "Filler 400" }
+map{ id = "components/filler_000100_1", description = "Filler 100" }
+map{ id = "components/filler_000004_1", description = "Filler 004" }
+map{ id = "components/filler_000001_1", description = "Filler 001" }
+map{ id = "components/filler_200700_1", description = "Filler 700" }
+map{ id = "components/filler_002007_1", description = "Filler 007" }
+map{ id = "components/filler_040444_1", description = "Filler 444" }
+map{ id = "components/filler_010111_1", description = "Filler 111" }
 map{ id = "components/treasure_big_key_000700_1", description = "Big chest 700" }
 map{ id = "components/treasure_big_key_000007_1", description = "Big chest 007" }
 map{ id = "components/treasure_big_key_000444_1", description = "Big chest 444" }
@@ -30,43 +30,32 @@ map{ id = "components/chest_hookshot_777202", description = "Chest hookshoot 777
 map{ id = "components/obstacle_hookshot_north_000700_1", description = "Obstacle hookshot north 000700" }
 map{ id = "components/obstacle_hookshot_west_000444_1", description = "Obstacle hookshot west 000444" }
 map{ id = "components/obstacle_hookshot_east_000111_1", description = "Obstacle hookshot east 000111" }
-map{ id = "components/door_big_key_south", description = "Door big key south" }
+map{ id = "components/door_bigkey_south_002000_1", description = "Door bigkey south" }
 map{ id = "components/chest_normal", description = "Chest normal" }
 map{ id = "components/door_small_key_south_002000_1", description = "Door small key south" }
 map{ id = "components/door_small_key_north_200000_1", description = "Door small key north" }
 map{ id = "components/door_small_key_east_010000_1", description = "Door small key east" }
 map{ id = "components/door_small_key_west_040000_1", description = "Door small key west" }
-map{ id = "components/enemy", description = "Enemy" }
+map{ id = "components/enemy_any_1", description = "Enemy any" }
 map{ id = "components/sign", description = "Sign" }
 map{ id = "components/door_bomb_east_010000_1", description = "Door bomb east" }
 map{ id = "components/door_bomb_west_040000_1", description = "Door bomb west" }
-map{ id = "components/door_big_key_west", description = "Door big key west" }
-map{ id = "components/door_big_key_east", description = "Door big key east" }
+map{ id = "components/door_bigkey_west_040000_1", description = "Door bigkey west" }
+map{ id = "components/door_bigkey_east_010000_1", description = "Door bigkey east" }
 map{ id = "components/obstacle_hookshot_south_000007_1", description = "Obstacle hookshot south 000007" }
 map{ id = "components/obstacle_hookshot_northwest_000711_1", description = "Obstacle hookshot northwest 000711" }
 map{ id = "components/obstacle_hookshot_northeast_000744_1", description = "Obstacle hookshot northeast 000744" }
 map{ id = "components/treasure_big_key_000020_1", description = "Treasure big key 020" }
-map{ id = "components/filler_000001_2", description = "Filler 000001 2" }
-map{ id = "components/filler_000100_2", description = "Filler 000100 2" }
-map{ id = "components/filler_000400_2", description = "Filler 000400 2" }
-map{ id = "components/filler_000004_2", description = "Filler 000004 2" }
-map{ id = "components/filler_200200_1", description = "Filler 200200 1" }
-map{ id = "components/filler_002002_1", description = "Filler 002002 1" }
-map{ id = "components/filler_002007_2", description = "Filler 002007 2" }
-map{ id = "components/filler_200700_2", description = "Filler 200700 2" }
-map{ id = "components/filler_040444_2", description = "Filler 040444 2" }
-map{ id = "components/filler_010111_2", description = "Filler 010111 2" }
-map{ id = "components/boss_room_000777_1", description = "Boss room 000777 1" }
-map{ id = "rooms/quest_start", description = "Quest start" }
+map{ id = "components/filler000001_2", description = "Filler 000001 2" }
 
+tileset{ id = "cave", description = "Cave" }
 tileset{ id = "dungeon_blue", description = "Dungeon (blue)" }
+tileset{ id = "dungeon_grayblue", description = "Dungeon (gray-blue)" }
+tileset{ id = "dungeon_graybrown", description = "Dungeon (gray-brown)" }
+tileset{ id = "house", description = "House" }
+tileset{ id = "ice_brightblue", description = "Ice (bright blue)" }
 tileset{ id = "light_world", description = "Light World" }
-tileset{ id = "dungeon_green", description = "Dungeon (green)" }
-tileset{ id = "dungeon_ice", description = "Dungeon (ice)" }
-tileset{ id = "dungeon_house", description = "Dungeon (house)" }
-tileset{ id = "dungeon_grayblue", description = "Dungeon (grayblue)" }
-tileset{ id = "dungeon_graybrown", description = "Dungeon (graybrown)" }
-tileset{ id = "dungeon_cave", description = "Dungeon (cave)" }
+tileset{ id = "temple_green", description = "Temple (green)" }
 
 sprite{ id = "entities/block", description = "Block" }
 sprite{ id = "entities/chest", description = "Chest" }
@@ -151,7 +140,6 @@ sprite{ id = "enemies/tentacle", description = "Enemy: Tentacle" }
 sprite{ id = "menus/hero_head", description = "Menu: hero head" }
 sprite{ id = "menus/hero_point", description = "Menu: Hero point" }
 sprite{ id = "entities/big_chest", description = "Big chest" }
-sprite{ id = "enemies/agahnim", description = "agahnim" }
 
 music{ id = "agahnim", description = "Agahnim theme" }
 music{ id = "beginning", description = "Beginning" }
@@ -283,7 +271,6 @@ item{ id = "heart", description = "Heart" }
 item{ id = "fairy", description = "Fairy" }
 
 enemy{ id = "tentacle", description = "Tentacle" }
-enemy{ id = "agahnim", description = "Agahnim" }
 
 
 language{ id = "en", description = "English" }
