@@ -59,14 +59,14 @@ map{ id = "components/filler_010111_2", description = "Filler 010111 2" }
 map{ id = "components/filler_040444_2", description = "Filler 040444 2" }
 map{ id = "components/filler_200200_1", description = "Filler 200200 1" }
 
-tileset{ id = "cave", description = "Cave" }
 tileset{ id = "dungeon_blue", description = "Dungeon (blue)" }
 tileset{ id = "dungeon_grayblue", description = "Dungeon (gray-blue)" }
 tileset{ id = "dungeon_graybrown", description = "Dungeon (gray-brown)" }
-tileset{ id = "house", description = "House" }
-tileset{ id = "ice_brightblue", description = "Ice (bright blue)" }
 tileset{ id = "light_world", description = "Light World" }
-tileset{ id = "temple_green", description = "Temple (green)" }
+tileset{ id = "dungeon_ice", description = "Dungeon (ice)" }
+tileset{ id = "dungeon_green", description = "Dungeon (green)" }
+tileset{ id = "dungeon_house", description = "Dungeon (house)" }
+tileset{ id = "dungeon_cave", description = "Dungeon (cave)" }
 
 sprite{ id = "entities/block", description = "Block" }
 sprite{ id = "entities/chest", description = "Chest" }
