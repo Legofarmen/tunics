@@ -154,7 +154,7 @@ function Puzzle.alpha_dungeon(rng, nkeys, item_names)
         Puzzle.compass_puzzle(),
     }
     for i = 1, nkeys do
-        --table.insert(puzzles, Puzzle.lock_puzzle(rng:create()))
+        table.insert(puzzles, Puzzle.lock_puzzle(rng:create()))
     end
     List.shuffle(rng:create(), puzzles)
 
