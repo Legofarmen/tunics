@@ -75,12 +75,11 @@ local SECTIONS = {
 
 
 local mask = 0
-local mask = 0
 function door(data, dir)
     if not data then return end
     local component_name, component_mask = Zentropy.components:get_door(data.open, dir, mask, components_rng)
     if not component_name then
-        error(string.format("door not found: open=%s dir=%s mask=%06o", open, dir, mask))
+        error(string.format("door not found: open=%s dir=%s mask=%06o", data.open, dir, mask))
     end
     mask = bit32.bor(mask, component_mask)
     data.rewrite = {}
@@ -92,14 +91,12 @@ function door(data, dir)
 end
 
 function obstacle(data, dir, item)
-    if not data or data.reach ~= item then return end
-    local sections = Util.oct('771')
-    if bit32.band(mask, sections) == 0 then
-        mask = bit32.bor(mask, sections)
-    else
-        error('cannot fit obstacle')
+    if not data then return end
+    local component_name, component_mask = Zentropy.components:get_obstacle(item, dir, mask, components_rng)
+    if not component_name then
+        error(string.format("obstacle not found: item=%s dir=%s mask=%06o", item, dir, mask))
     end
-    local component_name = string.format('components/obstacle_%s_%s', item, dir)
+    mask = bit32.bor(mask, component_mask)
     map:include(0, 0, component_name, data)
 end
 
@@ -121,6 +118,12 @@ function treasure(data)
     mask = bit32.bor(mask, component_mask)
 
     data.section = component_mask
+    data.rewrite = {}
+    function data.rewrite.door(properties)
+        properties.savegame_variable = data.name
+        properties.treasure_name = data.item_name
+        return properties
+    end
     map:include(0, 0, component_name, data)
 end
 
@@ -156,15 +159,20 @@ end
 
 function is_special_room(data)
     for dir, door in pairs(data.doors) do
-        if door.open == 'entrance' or door.open == 'big_key' then
+        if door.open == 'entrance' or door.open == 'bigkey' then
             return true
         end
     end
 end
 
-for _, dir in ipairs{'east', 'north', 'west', 'south'} do
-    door(data.doors[dir], dir)
-    obstacle(data.doors[dir], dir, 'hookshot')
+for dir, door_data in pairs(data.doors) do
+    door({open=door_data.open, name=door_data.name}, dir)
+end
+
+for dir, door_data in pairs(data.doors) do
+    if door_data.reach then
+        obstacle({}, dir, door_data.reach)
+    end
 end
 
 for _, data in ipairs(data.treasures) do

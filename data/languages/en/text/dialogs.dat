@@ -13,7 +13,7 @@ Got the hookshot.
 }
 
 dialog{
-  id = "_treasure.big_key.1",
+  id = "_treasure.bigkey.1",
   text = [[
 Got the big key.
 ]]
@@ -34,7 +34,7 @@ Got the map.
 }
 
 dialog{
-  id = "_treasure.small_key.1",
+  id = "_treasure.smallkey.1",
   text = [[
 Got the small key.
 ]]
