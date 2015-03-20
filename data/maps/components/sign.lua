@@ -18,7 +18,7 @@ end
 if bit32.band(data.section, Util.oct('444')) ~= 0 then
     x = 72
 elseif bit32.band(data.section, Util.oct('222')) ~= 0 then
-    x = 160
+    x = 192
 elseif bit32.band(data.section, Util.oct('111')) ~= 0 then
     x = 248
 end

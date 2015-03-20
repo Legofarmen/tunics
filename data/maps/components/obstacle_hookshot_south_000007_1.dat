@@ -124,25 +124,25 @@ tile{
   pattern = "wall_torch.2",
 }
 
-block{
+dynamic_tile{
   layer = 1,
-  x = 112,
-  y = 165,
-  direction = -1,
-  sprite = "entities/block",
-  pushable = false,
-  pullable = false,
-  maximum_moves = 1,
+  x = 104,
+  y = 152,
+  width = 16,
+  height = 16,
+  name = "placeholder1",
+  pattern = "floor_small.2",
+  enabled_at_start = true,
 }
 
-block{
+dynamic_tile{
   layer = 1,
-  x = 264,
-  y = 189,
-  direction = -1,
-  sprite = "entities/block",
-  pushable = false,
-  pullable = false,
-  maximum_moves = 1,
+  x = 256,
+  y = 176,
+  width = 16,
+  height = 16,
+  name = "placeholder2",
+  pattern = "floor_small.2",
+  enabled_at_start = true,
 }
 

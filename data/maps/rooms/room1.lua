@@ -165,22 +165,57 @@ function is_special_room(data)
     end
 end
 
+local obstacle_treasures = {}
+local normal_treasures = {}
+for _, data in ipairs(data.treasures) do
+    if data.reach then
+        obstacle_treasures[data.reach] = obstacle_treasures[data.reach] or {}
+        table.insert(obstacle_treasures[data.reach], data)
+    else
+        table.insert(normal_treasures, data)
+    end
+end
+
+
 for dir, door_data in pairs(data.doors) do
     door({open=door_data.open, name=door_data.name}, dir)
 end
 
 for dir, door_data in pairs(data.doors) do
     if door_data.reach then
-        obstacle({}, dir, door_data.reach)
+        local obstacle_data = {}
+        if obstacle_treasures[door_data.reach] then
+            obstacle_data.treasure1 = table.remove(obstacle_treasures)
+        end
+        obstacle(obstacle_data, dir, door_data.reach)
     end
 end
 
-for _, data in ipairs(data.treasures) do
-    treasure(data)
+local dirs = {'north','east','south','west'}
+List.shuffle(rng:create(), dirs)
+for item, item_treasures in pairs(obstacle_treasures) do
+    for _, treasure_data in ipairs(item_treasures) do
+        local ok = false
+        for _, dir in ipairs(dirs) do
+            local component_name, component_mask = Zentropy.components:get_obstacle(item, dir, mask, components_rng)
+            if component_name then
+                obstacle({treasure1 = treasure_data}, dir, item)
+                ok = true
+                break
+            end
+        end
+        if not ok then
+            error('cannot fit treasure behind obstacle')
+        end
+    end
 end
 
-for _, data in ipairs(data.enemies) do
-    enemy(data)
+for _, treasure_data in ipairs(normal_treasures) do
+    treasure(treasure_data)
+end
+
+for _, enemy_data in ipairs(data.enemies) do
+    enemy(enemy_data)
 end
 
 if #messages > 0 then

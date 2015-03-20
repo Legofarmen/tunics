@@ -16,14 +16,19 @@ function room_map(map, x, y, internal_prefix, data)
                 if data.rewrite[properties.name] then
                     properties = data.rewrite[properties.name](properties)
                 end
-                if properties.name then
+                if properties.name and string.sub(properties.name, 0, 2) ~= '__' then
                     properties.name = internal_prefix .. properties.name
                 end
             end
             return properties
         end
     else
-        rewrite = function (properties) return properties end
+        rewrite = function (properties)
+            if properties.name and string.sub(properties.name, 0, 2) ~= '__' then
+                properties.name = internal_prefix .. properties.name
+            end
+            return properties
+        end
     end
     local translate = function (properties)
         local old_x, old_y = properties.x, properties.y
@@ -36,7 +41,8 @@ function room_map(map, x, y, internal_prefix, data)
         return userdata
     end
     function o:create_chest(properties)
-        return map:create_chest(translate(rewrite(properties)))
+        translate(rewrite(properties))
+        return map:create_chest(properties)
     end
     function o:create_block(properties)
         return map:create_block(translate(rewrite(properties)))
@@ -62,6 +68,13 @@ function room_map(map, x, y, internal_prefix, data)
     function o:create_dynamic_tile(properties)
         if properties.enabled_at_start == nil then properties.enabled_at_start = true end
         return map:create_dynamic_tile(translate(rewrite(properties)))
+    end
+    function o:translate(real_x, real_y)
+        if map.translate then
+            return map:translate(real_x - x, real_y - y)
+        else
+            return real_x - x, real_y - y
+        end
     end
     setmetatable(o, {
         __index=function (table, key)
