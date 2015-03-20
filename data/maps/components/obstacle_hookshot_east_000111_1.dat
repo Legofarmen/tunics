@@ -187,24 +187,24 @@ tile{
   pattern = "wall_hole.2",
 }
 
-block{
-  layer = 1,
-  x = 184,
-  y = 189,
-  direction = -1,
-  sprite = "entities/block",
-  pushable = false,
-  pullable = false,
-  maximum_moves = 1,
-}
-
 dynamic_tile{
   layer = 1,
   x = 256,
   y = 48,
   width = 16,
   height = 16,
-  name = "placeholder",
+  name = "placeholder1",
+  pattern = "floor_small.2",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 176,
+  y = 176,
+  width = 16,
+  height = 16,
+  name = "placeholder2",
   pattern = "floor_small.2",
   enabled_at_start = true,
 }

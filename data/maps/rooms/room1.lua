@@ -226,7 +226,7 @@ for _, enemy_data in ipairs(data.enemies) do
 end
 
 if #messages > 0 then
-     sign({menu=DialogBox:new{text=messages, game=map:get_game()}})
+     --sign({menu=DialogBox:new{text=messages, game=map:get_game()}})
 end
 
 if not is_special_room(data) then
