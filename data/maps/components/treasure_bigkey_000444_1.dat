@@ -52,3 +52,13 @@ tile{
   pattern = "barrier.1",
 }
 
+chest{
+  layer = 1,
+  x = 88,
+  y = 125,
+  name = "chest",
+  sprite = "entities/big_chest",
+  opening_method = "interaction_if_savegame_variable",
+  opening_condition = "bigkey",
+}
+
