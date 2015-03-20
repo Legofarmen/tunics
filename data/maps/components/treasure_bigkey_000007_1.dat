@@ -286,6 +286,16 @@ tile{
   pattern = "wall_torch.2",
 }
 
+chest{
+  layer = 1,
+  x = 160,
+  y = 173,
+  name = "chest",
+  sprite = "entities/big_chest",
+  opening_method = "interaction_if_savegame_variable",
+  opening_condition = "bigkey",
+}
+
 tile{
   layer = 2,
   x = 264,

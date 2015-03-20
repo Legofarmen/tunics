@@ -306,7 +306,7 @@ function Layout.minimap_mixin(object, map_menu)
 
             if self.has_compass then
                 for _, treasure in ipairs(info.treasures) do
-                    if treasure.open == 'big_key' then
+                    if treasure.open == 'bigkey' then
                         map_menu:draw_big_chest(x, y)
                     else
                         map_menu:draw_chest(x, y)

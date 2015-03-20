@@ -138,8 +138,8 @@ tile{
   x = 120,
   y = 200,
   width = 24,
-  height = 32,
-  pattern = "door_main.2.pillar.1",
+  height = 24,
+  pattern = "door_main.2.pillar.1.bottom",
 }
 
 tile{
@@ -147,8 +147,8 @@ tile{
   x = 176,
   y = 200,
   width = 24,
-  height = 32,
-  pattern = "door_main.2.pillar.2",
+  height = 24,
+  pattern = "door_main.2.pillar.2.bottom",
 }
 
 wall{
@@ -167,5 +167,23 @@ tile{
   width = 32,
   height = 8,
   pattern = "door_top.low.2",
+}
+
+tile{
+  layer = 2,
+  x = 120,
+  y = 224,
+  width = 24,
+  height = 8,
+  pattern = "door_main.2.pillar.1.top",
+}
+
+tile{
+  layer = 2,
+  x = 176,
+  y = 224,
+  width = 24,
+  height = 8,
+  pattern = "door_main.2.pillar.2.top",
 }
 

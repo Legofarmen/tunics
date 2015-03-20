@@ -118,6 +118,12 @@ function treasure(data)
     mask = bit32.bor(mask, component_mask)
 
     data.section = component_mask
+    data.rewrite = {}
+    function data.rewrite.door(properties)
+        properties.savegame_variable = data.name
+        properties.treasure_name = data.item_name
+        return properties
+    end
     map:include(0, 0, component_name, data)
 end
 
@@ -153,15 +159,20 @@ end
 
 function is_special_room(data)
     for dir, door in pairs(data.doors) do
-        if door.open == 'entrance' or door.open == 'big_key' then
+        if door.open == 'entrance' or door.open == 'bigkey' then
             return true
         end
     end
 end
 
-for _, dir in ipairs{'east', 'north', 'west', 'south'} do
-    door(data.doors[dir], dir)
-    obstacle(data.doors[dir], dir, 'hookshot')
+for dir, door_data in pairs(data.doors) do
+    door({open=door_data.open, name=door_data.name}, dir)
+end
+
+for dir, door_data in pairs(data.doors) do
+    if door_data.reach then
+        obstacle({}, dir, door_data.reach)
+    end
 end
 
 for _, data in ipairs(data.treasures) do
