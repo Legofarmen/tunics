@@ -9,10 +9,11 @@ properties{
 
 enemy{
   layer = 0,
-  x = 160,
-  y = 133,
+  x = 176,
+  y = 141,
   direction = 3,
-  breed = "agahnim",
+  breed = "green_knight_soldier",
+  rank = 2,
 }
 
 tile{

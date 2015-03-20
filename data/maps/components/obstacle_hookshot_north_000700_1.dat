@@ -137,7 +137,7 @@ block{
 
 block{
   layer = 1,
-  x = 264,
+  x = 208,
   y = 61,
   direction = -1,
   sprite = "entities/block",

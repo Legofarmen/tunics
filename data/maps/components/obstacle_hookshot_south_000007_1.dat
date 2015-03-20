@@ -126,7 +126,7 @@ tile{
 
 block{
   layer = 1,
-  x = 56,
+  x = 112,
   y = 165,
   direction = -1,
   sprite = "entities/block",
