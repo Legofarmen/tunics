@@ -17,7 +17,7 @@ Zentropy = Zentropy or {
                 Util.oct('000100'),
                 Util.oct('000200'),
                 Util.oct('000400'),
-            }
+            },
         },
     },
 }
@@ -61,71 +61,60 @@ function Zentropy.db.Components:obstacle(id, iterator)
     local item = iterator()
     local dir = iterator()
     local mask = iterator()
-    local sequence = iterator()
     self.obstacles[item] = self.obstacles[item] or {}
     self.obstacles[item][dir] = self.obstacles[item][dir] or {}
-    self.obstacles[item][dir][sequence] = {
+    table.insert(self.obstacles[item][dir], {
         id=id,
         mask=mask,
-    }
+    })
 end
 
 function Zentropy.db.Components:treasure(id, iterator)
     local open = iterator()
     local mask = iterator()
-    local sequence = iterator()
     if mask ~= 'any' then
         mask = Util.oct(mask)
     end
     self.treasures[open] = self.treasures[open] or {}
-    self.treasures[open][sequence] = {
+    table.insert(self.treasures[open], {
         id=id,
         mask=mask,
-    }
-    local mask_string
-    if mask == 'any' then
-        mask_string = mask
-    else
-        mask_string = Util.fromoct(mask)
-    end
-    print(string.format('added treasure %s %d %s', open, sequence, mask_string))
+    })
+    print('added treasure', id)
 end
 
 function Zentropy.db.Components:door(id, iterator)
     local open = iterator()
     local dir = iterator()
     local mask = iterator()
-    local sequence = iterator()
     self.doors[open] = self.doors[open] or {}
     self.doors[open][dir] = self.doors[open][dir] or {}
-    self.doors[open][dir][sequence] = {
+    table.insert(self.doors[open][dir], {
         id=id,
         mask=mask,
-    }
+    })
 end
 
 function Zentropy.db.Components:enemy(id, iterator)
     local mask = iterator()
-    local sequence = iterator()
     if mask ~= 'any' then
         mask = Util.oct(mask)
     end
-    self.enemies[sequence] = {
+    table.insert(self.enemies, {
         id=id,
         mask=mask,
-    }
+    })
 end
 
 function Zentropy.db.Components:filler(id, iterator)
     local mask = iterator()
-    local sequence = iterator()
     if mask ~= 'any' then
         mask = Util.oct(mask)
     end
-    self.fillers[sequence] = {
+    table.insert(self.fillers, {
         id=id,
         mask=mask,
-    }
+    })
 end
 
 function Zentropy.db.Components:parse(maps)
@@ -167,6 +156,27 @@ function Zentropy.db.Components:get_door(open, dir, mask, rng)
     return entry.id, entry.mask
 end
 
+function Zentropy.db.Components:get_obstacle(item, dir, mask, rng)
+    open = open or 'open'
+    if not self.obstacles[item] then
+        return
+    end
+    if not self.obstacles[item][dir] then
+        return
+    end
+    local entries = {}
+    for _, entry in pairs(self.obstacles[item][dir]) do
+        if bit32.band(mask, entry.mask) == 0 then
+            table.insert(entries, entry)
+        end
+    end
+    if #entries == 0 then
+        return
+    end
+    local entry = entries[rng:random(#entries)]
+    return entry.id, entry.mask
+end
+
 function Zentropy.db.Components:get_filler(mask, rng)
     local entries = {}
     for _, entry in pairs(self.fillers) do
@@ -183,18 +193,11 @@ end
 
 function Zentropy.db.Components:get_treasure(open, mask, rng)
     open = open or 'open'
-    print(string.format('get_treasure %s %06o', open, mask))
     if not self.treasures[open] then
-        print('treasure no open ' .. open)
         return
     end
     local entries = {}
     for _, entry in pairs(self.treasures[open]) do
-        if entry.mask == 'any' then
-            print(string.format('  check mask %s', entry.mask))
-        else
-            print(string.format('  check mask %06o', entry.mask))
-        end
         if entry.mask == 'any' then
             for _, section in ipairs(self.SECTION_MASKS) do
                 if bit32.band(mask, section) == 0 then

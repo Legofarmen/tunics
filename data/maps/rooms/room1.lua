@@ -92,14 +92,12 @@ function door(data, dir)
 end
 
 function obstacle(data, dir, item)
-    if not data or data.reach ~= item then return end
-    local sections = Util.oct('771')
-    if bit32.band(mask, sections) == 0 then
-        mask = bit32.bor(mask, sections)
-    else
-        error('cannot fit obstacle')
+    if not data then return end
+    local component_name, component_mask = Zentropy.components:get_obstacle(item, dir, mask, components_rng)
+    if not component_name then
+        error(string.format("obstacle not found: item=%s dir=%s mask=%06o", item, dir, mask))
     end
-    local component_name = string.format('components/obstacle_%s_%s', item, dir)
+    mask = bit32.bor(mask, component_mask)
     map:include(0, 0, component_name, data)
 end
 
