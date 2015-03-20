@@ -44,7 +44,6 @@ map{ id = "components/door_bigkey_east_010000_1", description = "Door bigkey eas
 map{ id = "components/obstacle_hookshot_south_000007_1", description = "Obstacle hookshot south 000007" }
 map{ id = "components/obstacle_hookshot_northwest_000711_1", description = "Obstacle hookshot northwest 000711" }
 map{ id = "components/obstacle_hookshot_northeast_000744_1", description = "Obstacle hookshot northeast 000744" }
-map{ id = "components/treasure_bigkey_000020_1", description = "Treasure big key 020" }
 map{ id = "components/filler_200700_2", description = "Filler 200700 2" }
 map{ id = "components/boss_room_000777_1", description = "Boss room 000777 1" }
 map{ id = "components/filler_000001_2", description = "Filler 000001 2" }
