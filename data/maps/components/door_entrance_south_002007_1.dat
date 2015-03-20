@@ -9,15 +9,6 @@ properties{
 
 tile{
   layer = 1,
-  x = 112,
-  y = 224,
-  width = 96,
-  height = 8,
-  pattern = "door_cache.2",
-}
-
-tile{
-  layer = 1,
   x = 144,
   y = 176,
   width = 16,
@@ -151,6 +142,42 @@ tile{
   pattern = "door_main.2.pillar.2.bottom",
 }
 
+tile{
+  layer = 1,
+  x = 152,
+  y = 224,
+  width = 16,
+  height = 16,
+  pattern = "floor_small.2",
+}
+
+tile{
+  layer = 1,
+  x = 144,
+  y = 232,
+  width = 8,
+  height = 8,
+  pattern = "barrier.2",
+}
+
+tile{
+  layer = 1,
+  x = 168,
+  y = 232,
+  width = 8,
+  height = 8,
+  pattern = "barrier.2",
+}
+
+tile{
+  layer = 1,
+  x = 152,
+  y = 240,
+  width = 16,
+  height = 8,
+  pattern = "barrier.1",
+}
+
 wall{
   layer = 1,
   x = 152,
@@ -158,6 +185,15 @@ wall{
   width = 16,
   height = 16,
   stops_enemies = true,
+}
+
+tile{
+  layer = 2,
+  x = 144,
+  y = 224,
+  width = 32,
+  height = 8,
+  pattern = "door_cache.2",
 }
 
 tile{
