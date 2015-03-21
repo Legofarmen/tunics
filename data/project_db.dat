@@ -66,6 +66,9 @@ map{ id = "components/floor_6", description = "Floor 6" }
 map{ id = "components/door_entrance_south_002777_2", description = "Door entrance south 002777 2" }
 map{ id = "components/door_entrance_south_002777_3", description = "Door entrance south 002777 3" }
 map{ id = "components/door_entrance_south_002777_4", description = "Door entrance south 002777 4" }
+map{ id = "rooms/intro", description = "Intro" }
+map{ id = "rooms/3", description = "3" }
+map{ id = "rooms/cut_scene", description = "Cut scene" }
 
 tileset{ id = "dungeon_blue", description = "Dungeon (blue)" }
 tileset{ id = "dungeon_grayblue", description = "Dungeon (gray-blue)" }
@@ -290,6 +293,7 @@ item{ id = "smallkey", description = "Small key" }
 item{ id = "sword", description = "Sword" }
 item{ id = "heart", description = "Heart" }
 item{ id = "fairy", description = "Fairy" }
+item{ id = "tunic", description = "Tunic" }
 
 enemy{ id = "tentacle", description = "Tentacle" }
 enemy{ id = "green_knight_soldier", description = "Green knight soldier" }
