@@ -1,0 +1,414 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  tileset = "dungeon_graybrown",
+  music = "same",
+}
+
+tile{
+  layer = 1,
+  x = 224,
+  y = 40,
+  width = 56,
+  height = 40,
+  pattern = "hole",
+}
+
+tile{
+  layer = 1,
+  x = 224,
+  y = 40,
+  width = 8,
+  height = 8,
+  pattern = "hole.corner.1",
+}
+
+tile{
+  layer = 1,
+  x = 224,
+  y = 48,
+  width = 8,
+  height = 24,
+  pattern = "hole.3",
+}
+
+tile{
+  layer = 1,
+  x = 224,
+  y = 72,
+  width = 8,
+  height = 8,
+  pattern = "hole.corner.3",
+}
+
+tile{
+  layer = 1,
+  x = 232,
+  y = 72,
+  width = 40,
+  height = 8,
+  pattern = "hole.2",
+}
+
+tile{
+  layer = 1,
+  x = 272,
+  y = 72,
+  width = 8,
+  height = 8,
+  pattern = "hole.corner.4",
+}
+
+tile{
+  layer = 1,
+  x = 272,
+  y = 40,
+  width = 8,
+  height = 8,
+  pattern = "hole.corner.2",
+}
+
+tile{
+  layer = 1,
+  x = 232,
+  y = 40,
+  width = 40,
+  height = 8,
+  pattern = "hole.1",
+}
+
+tile{
+  layer = 1,
+  x = 272,
+  y = 48,
+  width = 8,
+  height = 24,
+  pattern = "hole.4",
+}
+
+tile{
+  layer = 1,
+  x = 104,
+  y = 8,
+  width = 16,
+  height = 32,
+  pattern = "wall_pillar.1",
+}
+
+tile{
+  layer = 1,
+  x = 200,
+  y = 8,
+  width = 16,
+  height = 32,
+  pattern = "wall_pillar.1",
+}
+
+tile{
+  layer = 1,
+  x = 104,
+  y = 200,
+  width = 16,
+  height = 32,
+  pattern = "wall_pillar.2",
+}
+
+tile{
+  layer = 1,
+  x = 200,
+  y = 200,
+  width = 16,
+  height = 32,
+  pattern = "wall_pillar.2",
+}
+
+tile{
+  layer = 1,
+  x = 280,
+  y = 136,
+  width = 32,
+  height = 16,
+  pattern = "wall_pillar.4",
+}
+
+tile{
+  layer = 1,
+  x = 280,
+  y = 88,
+  width = 32,
+  height = 16,
+  pattern = "wall_pillar.4",
+}
+
+tile{
+  layer = 1,
+  x = 8,
+  y = 136,
+  width = 32,
+  height = 16,
+  pattern = "wall_pillar.3",
+}
+
+tile{
+  layer = 1,
+  x = 8,
+  y = 88,
+  width = 32,
+  height = 16,
+  pattern = "wall_pillar.3",
+}
+
+tile{
+  layer = 1,
+  x = 224,
+  y = 160,
+  width = 56,
+  height = 40,
+  pattern = "hole",
+}
+
+tile{
+  layer = 1,
+  x = 224,
+  y = 160,
+  width = 8,
+  height = 8,
+  pattern = "hole.corner.1",
+}
+
+tile{
+  layer = 1,
+  x = 224,
+  y = 168,
+  width = 8,
+  height = 24,
+  pattern = "hole.3",
+}
+
+tile{
+  layer = 1,
+  x = 224,
+  y = 192,
+  width = 8,
+  height = 8,
+  pattern = "hole.corner.3",
+}
+
+tile{
+  layer = 1,
+  x = 232,
+  y = 192,
+  width = 40,
+  height = 8,
+  pattern = "hole.2",
+}
+
+tile{
+  layer = 1,
+  x = 272,
+  y = 192,
+  width = 8,
+  height = 8,
+  pattern = "hole.corner.4",
+}
+
+tile{
+  layer = 1,
+  x = 272,
+  y = 160,
+  width = 8,
+  height = 8,
+  pattern = "hole.corner.2",
+}
+
+tile{
+  layer = 1,
+  x = 232,
+  y = 160,
+  width = 40,
+  height = 8,
+  pattern = "hole.1",
+}
+
+tile{
+  layer = 1,
+  x = 272,
+  y = 168,
+  width = 8,
+  height = 24,
+  pattern = "hole.4",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 160,
+  width = 56,
+  height = 40,
+  pattern = "hole",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 160,
+  width = 8,
+  height = 8,
+  pattern = "hole.corner.1",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 168,
+  width = 8,
+  height = 24,
+  pattern = "hole.3",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 192,
+  width = 8,
+  height = 8,
+  pattern = "hole.corner.3",
+}
+
+tile{
+  layer = 1,
+  x = 48,
+  y = 192,
+  width = 40,
+  height = 8,
+  pattern = "hole.2",
+}
+
+tile{
+  layer = 1,
+  x = 88,
+  y = 192,
+  width = 8,
+  height = 8,
+  pattern = "hole.corner.4",
+}
+
+tile{
+  layer = 1,
+  x = 88,
+  y = 160,
+  width = 8,
+  height = 8,
+  pattern = "hole.corner.2",
+}
+
+tile{
+  layer = 1,
+  x = 48,
+  y = 160,
+  width = 40,
+  height = 8,
+  pattern = "hole.1",
+}
+
+tile{
+  layer = 1,
+  x = 88,
+  y = 168,
+  width = 8,
+  height = 24,
+  pattern = "hole.4",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 40,
+  width = 56,
+  height = 40,
+  pattern = "hole",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 40,
+  width = 8,
+  height = 8,
+  pattern = "hole.corner.1",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 48,
+  width = 8,
+  height = 24,
+  pattern = "hole.3",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 72,
+  width = 8,
+  height = 8,
+  pattern = "hole.corner.3",
+}
+
+tile{
+  layer = 1,
+  x = 48,
+  y = 72,
+  width = 40,
+  height = 8,
+  pattern = "hole.2",
+}
+
+tile{
+  layer = 1,
+  x = 88,
+  y = 72,
+  width = 8,
+  height = 8,
+  pattern = "hole.corner.4",
+}
+
+tile{
+  layer = 1,
+  x = 88,
+  y = 40,
+  width = 8,
+  height = 8,
+  pattern = "hole.corner.2",
+}
+
+tile{
+  layer = 1,
+  x = 48,
+  y = 40,
+  width = 40,
+  height = 8,
+  pattern = "hole.1",
+}
+
+tile{
+  layer = 1,
+  x = 88,
+  y = 48,
+  width = 8,
+  height = 24,
+  pattern = "hole.4",
+}
+
+enemy{
+  layer = 1,
+  x = 176,
+  y = 141,
+  direction = 3,
+  breed = "green_knight_soldier",
+  rank = 2,
+}
+

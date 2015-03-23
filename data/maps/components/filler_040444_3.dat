@@ -1,0 +1,405 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  tileset = "dungeon_graybrown",
+  music = "same",
+}
+
+tile{
+  layer = 1,
+  x = 88,
+  y = 8,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.1",
+}
+
+tile{
+  layer = 1,
+  x = 56,
+  y = 40,
+  width = 8,
+  height = 160,
+  pattern = "wall_border.3",
+}
+
+tile{
+  layer = 1,
+  x = 88,
+  y = 104,
+  width = 32,
+  height = 32,
+  pattern = "statue_fairy",
+}
+
+tile{
+  layer = 1,
+  x = 48,
+  y = 176,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.3",
+}
+
+tile{
+  layer = 1,
+  x = 56,
+  y = 184,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.3",
+}
+
+tile{
+  layer = 1,
+  x = 64,
+  y = 192,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.3",
+}
+
+tile{
+  layer = 1,
+  x = 72,
+  y = 200,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.3",
+}
+
+tile{
+  layer = 1,
+  x = 80,
+  y = 208,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.3",
+}
+
+tile{
+  layer = 1,
+  x = 88,
+  y = 216,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.3",
+}
+
+tile{
+  layer = 1,
+  x = 96,
+  y = 208,
+  width = 16,
+  height = 24,
+  pattern = "wall.2",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 168,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.3",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 160,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.3",
+}
+
+tile{
+  layer = 1,
+  x = 96,
+  y = 8,
+  width = 16,
+  height = 24,
+  pattern = "wall.1",
+}
+
+tile{
+  layer = 1,
+  x = 80,
+  y = 16,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.1",
+}
+
+tile{
+  layer = 1,
+  x = 72,
+  y = 24,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.1",
+}
+
+tile{
+  layer = 1,
+  x = 64,
+  y = 32,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.1",
+}
+
+tile{
+  layer = 1,
+  x = 56,
+  y = 40,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.1",
+}
+
+tile{
+  layer = 1,
+  x = 48,
+  y = 48,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.1",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 56,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.1",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 64,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.1",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 72,
+  width = 24,
+  height = 96,
+  pattern = "wall.3",
+}
+
+tile{
+  layer = 1,
+  x = 56,
+  y = 56,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.border.1",
+}
+
+tile{
+  layer = 1,
+  x = 64,
+  y = 48,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.border.1",
+}
+
+tile{
+  layer = 1,
+  x = 72,
+  y = 40,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.border.1",
+}
+
+tile{
+  layer = 1,
+  x = 80,
+  y = 32,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.border.1",
+}
+
+tile{
+  layer = 1,
+  x = 56,
+  y = 168,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.border.3",
+}
+
+tile{
+  layer = 1,
+  x = 64,
+  y = 176,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.border.3",
+}
+
+tile{
+  layer = 1,
+  x = 72,
+  y = 184,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.border.3",
+}
+
+tile{
+  layer = 1,
+  x = 80,
+  y = 192,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.border.3",
+}
+
+tile{
+  layer = 2,
+  x = 8,
+  y = 8,
+  width = 80,
+  height = 8,
+  pattern = "ceiling",
+}
+
+tile{
+  layer = 2,
+  x = 8,
+  y = 16,
+  width = 72,
+  height = 8,
+  pattern = "ceiling",
+}
+
+tile{
+  layer = 2,
+  x = 8,
+  y = 24,
+  width = 64,
+  height = 8,
+  pattern = "ceiling",
+}
+
+tile{
+  layer = 2,
+  x = 8,
+  y = 32,
+  width = 56,
+  height = 8,
+  pattern = "ceiling",
+}
+
+tile{
+  layer = 2,
+  x = 8,
+  y = 40,
+  width = 48,
+  height = 8,
+  pattern = "ceiling",
+}
+
+tile{
+  layer = 2,
+  x = 8,
+  y = 48,
+  width = 40,
+  height = 8,
+  pattern = "ceiling",
+}
+
+tile{
+  layer = 2,
+  x = 8,
+  y = 56,
+  width = 32,
+  height = 8,
+  pattern = "ceiling",
+}
+
+tile{
+  layer = 2,
+  x = 8,
+  y = 64,
+  width = 24,
+  height = 112,
+  pattern = "ceiling",
+}
+
+tile{
+  layer = 2,
+  x = 8,
+  y = 176,
+  width = 32,
+  height = 8,
+  pattern = "ceiling",
+}
+
+tile{
+  layer = 2,
+  x = 8,
+  y = 184,
+  width = 40,
+  height = 8,
+  pattern = "ceiling",
+}
+
+tile{
+  layer = 2,
+  x = 8,
+  y = 192,
+  width = 48,
+  height = 8,
+  pattern = "ceiling",
+}
+
+tile{
+  layer = 2,
+  x = 8,
+  y = 200,
+  width = 56,
+  height = 8,
+  pattern = "ceiling",
+}
+
+tile{
+  layer = 2,
+  x = 8,
+  y = 208,
+  width = 64,
+  height = 8,
+  pattern = "ceiling",
+}
+
+tile{
+  layer = 2,
+  x = 8,
+  y = 216,
+  width = 72,
+  height = 8,
+  pattern = "ceiling",
+}
+
+tile{
+  layer = 2,
+  x = 8,
+  y = 224,
+  width = 80,
+  height = 8,
+  pattern = "ceiling",
+}
+

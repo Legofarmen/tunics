@@ -10,7 +10,7 @@ properties{
 tile{
   layer = 0,
   x = 56,
-  y = 536,
+  y = 528,
   width = 64,
   height = 48,
   pattern = "water_shallow",
@@ -19,7 +19,7 @@ tile{
 tile{
   layer = 0,
   x = 8,
-  y = 88,
+  y = 80,
   width = 8,
   height = 16,
   pattern = "grass.tree.roots.4",
@@ -28,25 +28,7 @@ tile{
 tile{
   layer = 0,
   x = 40,
-  y = 56,
-  width = 48,
-  height = 16,
-  pattern = "grass.tree.roots.1",
-}
-
-tile{
-  layer = 0,
-  x = 136,
-  y = 56,
-  width = 48,
-  height = 16,
-  pattern = "grass.tree.roots.1",
-}
-
-tile{
-  layer = 0,
-  x = 184,
-  y = 56,
+  y = 48,
   width = 48,
   height = 16,
   pattern = "grass.tree.roots.1",
@@ -55,7 +37,7 @@ tile{
 tile{
   layer = 0,
   x = 280,
-  y = 56,
+  y = 48,
   width = 48,
   height = 16,
   pattern = "grass.tree.roots.1",
@@ -64,7 +46,7 @@ tile{
 tile{
   layer = 0,
   x = 304,
-  y = 56,
+  y = 48,
   width = 48,
   height = 16,
   pattern = "grass.tree.roots.1",
@@ -73,7 +55,7 @@ tile{
 tile{
   layer = 0,
   x = 16,
-  y = 104,
+  y = 96,
   width = 48,
   height = 16,
   pattern = "grass.tree.roots.1",
@@ -82,15 +64,6 @@ tile{
 tile{
   layer = 0,
   x = 64,
-  y = 96,
-  width = 8,
-  height = 16,
-  pattern = "grass.tree.roots.4",
-}
-
-tile{
-  layer = 0,
-  x = 296,
   y = 88,
   width = 8,
   height = 16,
@@ -99,8 +72,17 @@ tile{
 
 tile{
   layer = 0,
+  x = 296,
+  y = 80,
+  width = 8,
+  height = 16,
+  pattern = "grass.tree.roots.4",
+}
+
+tile{
+  layer = 0,
   x = 256,
-  y = 104,
+  y = 96,
   width = 48,
   height = 16,
   pattern = "grass.tree.roots.1",
@@ -109,7 +91,7 @@ tile{
 tile{
   layer = 0,
   x = 248,
-  y = 96,
+  y = 88,
   width = 8,
   height = 16,
   pattern = "grass.tree.roots.3",
@@ -118,7 +100,7 @@ tile{
 tile{
   layer = 0,
   x = -8,
-  y = 152,
+  y = 144,
   width = 48,
   height = 16,
   pattern = "grass.tree.roots.1",
@@ -127,7 +109,7 @@ tile{
 tile{
   layer = 0,
   x = 40,
-  y = 144,
+  y = 136,
   width = 8,
   height = 16,
   pattern = "grass.tree.roots.4",
@@ -136,7 +118,7 @@ tile{
 tile{
   layer = 0,
   x = 16,
-  y = 192,
+  y = 184,
   width = 8,
   height = 16,
   pattern = "grass.tree.roots.4",
@@ -145,7 +127,7 @@ tile{
 tile{
   layer = 0,
   x = -8,
-  y = 248,
+  y = 240,
   width = 48,
   height = 16,
   pattern = "grass.tree.roots.1",
@@ -154,7 +136,7 @@ tile{
 tile{
   layer = 0,
   x = 40,
-  y = 240,
+  y = 232,
   width = 8,
   height = 16,
   pattern = "grass.tree.roots.4",
@@ -163,7 +145,7 @@ tile{
 tile{
   layer = 0,
   x = 232,
-  y = 56,
+  y = 48,
   width = 48,
   height = 16,
   pattern = "grass.tree.roots.1",
@@ -172,7 +154,7 @@ tile{
 tile{
   layer = 0,
   x = 272,
-  y = 144,
+  y = 136,
   width = 8,
   height = 16,
   pattern = "grass.tree.roots.3",
@@ -181,7 +163,7 @@ tile{
 tile{
   layer = 0,
   x = 280,
-  y = 152,
+  y = 144,
   width = 48,
   height = 16,
   pattern = "grass.tree.roots.1",
@@ -189,26 +171,8 @@ tile{
 
 tile{
   layer = 0,
-  x = 136,
-  y = 72,
-  width = 48,
-  height = 8,
-  pattern = "grass.tree.roots.2",
-}
-
-tile{
-  layer = 0,
-  x = 184,
-  y = 72,
-  width = 48,
-  height = 8,
-  pattern = "grass.tree.roots.2",
-}
-
-tile{
-  layer = 0,
   x = 40,
-  y = 72,
+  y = 64,
   width = 48,
   height = 8,
   pattern = "grass.tree.roots.2",
@@ -216,8 +180,8 @@ tile{
 
 tile{
   layer = 0,
-  x = 232,
-  y = 72,
+  x = 216,
+  y = 64,
   width = 48,
   height = 8,
   pattern = "grass.tree.roots.2",
@@ -226,7 +190,7 @@ tile{
 tile{
   layer = 0,
   x = 256,
-  y = 120,
+  y = 112,
   width = 48,
   height = 8,
   pattern = "grass.tree.roots.2",
@@ -235,7 +199,7 @@ tile{
 tile{
   layer = 0,
   x = 8,
-  y = 120,
+  y = 112,
   width = 48,
   height = 8,
   pattern = "grass.tree.roots.2",
@@ -244,7 +208,7 @@ tile{
 tile{
   layer = 0,
   x = -8,
-  y = 168,
+  y = 160,
   width = 48,
   height = 8,
   pattern = "grass.tree.roots.2",
@@ -253,7 +217,7 @@ tile{
 tile{
   layer = 0,
   x = 280,
-  y = 168,
+  y = 160,
   width = 48,
   height = 8,
   pattern = "grass.tree.roots.2",
@@ -262,7 +226,7 @@ tile{
 tile{
   layer = 0,
   x = -8,
-  y = 264,
+  y = 256,
   width = 48,
   height = 8,
   pattern = "grass.tree.roots.2",
@@ -271,7 +235,7 @@ tile{
 tile{
   layer = 0,
   x = 272,
-  y = 240,
+  y = 232,
   width = 8,
   height = 16,
   pattern = "grass.tree.roots.3",
@@ -280,7 +244,7 @@ tile{
 tile{
   layer = 0,
   x = 280,
-  y = 248,
+  y = 240,
   width = 48,
   height = 16,
   pattern = "grass.tree.roots.1",
@@ -289,7 +253,7 @@ tile{
 tile{
   layer = 0,
   x = 280,
-  y = 264,
+  y = 256,
   width = 48,
   height = 8,
   pattern = "grass.tree.roots.2",
@@ -298,7 +262,7 @@ tile{
 tile{
   layer = 0,
   x = 16,
-  y = 288,
+  y = 280,
   width = 8,
   height = 16,
   pattern = "grass.tree.roots.4",
@@ -307,7 +271,7 @@ tile{
 tile{
   layer = 0,
   x = -8,
-  y = 344,
+  y = 336,
   width = 48,
   height = 16,
   pattern = "grass.tree.roots.1",
@@ -316,7 +280,7 @@ tile{
 tile{
   layer = 0,
   x = 40,
-  y = 336,
+  y = 328,
   width = 8,
   height = 16,
   pattern = "grass.tree.roots.4",
@@ -325,7 +289,7 @@ tile{
 tile{
   layer = 0,
   x = -8,
-  y = 360,
+  y = 352,
   width = 48,
   height = 8,
   pattern = "grass.tree.roots.2",
@@ -334,7 +298,7 @@ tile{
 tile{
   layer = 0,
   x = 272,
-  y = 336,
+  y = 328,
   width = 8,
   height = 16,
   pattern = "grass.tree.roots.3",
@@ -343,7 +307,7 @@ tile{
 tile{
   layer = 0,
   x = 280,
-  y = 344,
+  y = 336,
   width = 48,
   height = 16,
   pattern = "grass.tree.roots.1",
@@ -352,7 +316,7 @@ tile{
 tile{
   layer = 0,
   x = 280,
-  y = 360,
+  y = 352,
   width = 48,
   height = 8,
   pattern = "grass.tree.roots.2",
@@ -361,7 +325,7 @@ tile{
 tile{
   layer = 0,
   x = 16,
-  y = 384,
+  y = 376,
   width = 8,
   height = 16,
   pattern = "grass.tree.roots.4",
@@ -370,7 +334,7 @@ tile{
 tile{
   layer = 0,
   x = -8,
-  y = 440,
+  y = 432,
   width = 48,
   height = 16,
   pattern = "grass.tree.roots.1",
@@ -379,7 +343,7 @@ tile{
 tile{
   layer = 0,
   x = -8,
-  y = 456,
+  y = 448,
   width = 48,
   height = 8,
   pattern = "grass.tree.roots.2",
@@ -388,7 +352,7 @@ tile{
 tile{
   layer = 0,
   x = 272,
-  y = 432,
+  y = 424,
   width = 8,
   height = 16,
   pattern = "grass.tree.roots.3",
@@ -397,7 +361,7 @@ tile{
 tile{
   layer = 0,
   x = 280,
-  y = 440,
+  y = 432,
   width = 48,
   height = 16,
   pattern = "grass.tree.roots.1",
@@ -406,7 +370,7 @@ tile{
 tile{
   layer = 0,
   x = 280,
-  y = 456,
+  y = 448,
   width = 48,
   height = 8,
   pattern = "grass.tree.roots.2",
@@ -415,7 +379,7 @@ tile{
 tile{
   layer = 0,
   x = 56,
-  y = 608,
+  y = 600,
   width = 16,
   height = 16,
   pattern = "grass.weed_big",
@@ -424,7 +388,7 @@ tile{
 tile{
   layer = 0,
   x = 208,
-  y = 560,
+  y = 552,
   width = 16,
   height = 16,
   pattern = "grass.weed_big",
@@ -433,7 +397,7 @@ tile{
 tile{
   layer = 0,
   x = 96,
-  y = 512,
+  y = 504,
   width = 16,
   height = 16,
   pattern = "grass.weed_big",
@@ -442,7 +406,7 @@ tile{
 tile{
   layer = 0,
   x = 72,
-  y = 200,
+  y = 192,
   width = 16,
   height = 16,
   pattern = "grass.weed_big",
@@ -451,7 +415,7 @@ tile{
 tile{
   layer = 0,
   x = 240,
-  y = 216,
+  y = 208,
   width = 16,
   height = 16,
   pattern = "grass.weed_big",
@@ -460,7 +424,7 @@ tile{
 tile{
   layer = 0,
   x = 48,
-  y = 352,
+  y = 344,
   width = 16,
   height = 16,
   pattern = "grass.weed_big",
@@ -469,7 +433,7 @@ tile{
 tile{
   layer = 0,
   x = 176,
-  y = 400,
+  y = 392,
   width = 16,
   height = 16,
   pattern = "grass.weed_big",
@@ -478,7 +442,7 @@ tile{
 tile{
   layer = 0,
   x = 192,
-  y = 280,
+  y = 272,
   width = 16,
   height = 16,
   pattern = "grass.weed_big",
@@ -487,7 +451,7 @@ tile{
 tile{
   layer = 0,
   x = 80,
-  y = 424,
+  y = 416,
   width = 16,
   height = 16,
   pattern = "grass.weed_big",
@@ -496,7 +460,7 @@ tile{
 tile{
   layer = 0,
   x = 72,
-  y = 392,
+  y = 384,
   width = 32,
   height = 32,
   pattern = "grass.tree_small.green.1",
@@ -504,26 +468,8 @@ tile{
 
 tile{
   layer = 0,
-  x = 88,
-  y = 56,
-  width = 48,
-  height = 16,
-  pattern = "grass.tree.roots.1",
-}
-
-tile{
-  layer = 0,
-  x = 88,
-  y = 72,
-  width = 48,
-  height = 8,
-  pattern = "grass.tree.roots.2",
-}
-
-tile{
-  layer = 0,
   x = 200,
-  y = 392,
+  y = 384,
   width = 48,
   height = 16,
   pattern = "grass.tree.roots.1",
@@ -532,7 +478,7 @@ tile{
 tile{
   layer = 0,
   x = 200,
-  y = 408,
+  y = 400,
   width = 48,
   height = 8,
   pattern = "grass.tree.roots.2",
@@ -541,7 +487,7 @@ tile{
 tile{
   layer = 0,
   x = 192,
-  y = 384,
+  y = 376,
   width = 8,
   height = 16,
   pattern = "grass.tree.roots.3",
@@ -550,7 +496,7 @@ tile{
 tile{
   layer = 0,
   x = 248,
-  y = 384,
+  y = 376,
   width = 8,
   height = 16,
   pattern = "grass.tree.roots.4",
@@ -559,7 +505,7 @@ tile{
 tile{
   layer = 0,
   x = 112,
-  y = 488,
+  y = 480,
   width = 48,
   height = 16,
   pattern = "grass.tree.roots.1",
@@ -568,7 +514,7 @@ tile{
 tile{
   layer = 0,
   x = 112,
-  y = 504,
+  y = 496,
   width = 48,
   height = 8,
   pattern = "grass.tree.roots.2",
@@ -577,7 +523,7 @@ tile{
 tile{
   layer = 0,
   x = 104,
-  y = 480,
+  y = 472,
   width = 8,
   height = 16,
   pattern = "grass.tree.roots.3",
@@ -586,7 +532,7 @@ tile{
 tile{
   layer = 0,
   x = 160,
-  y = 480,
+  y = 472,
   width = 8,
   height = 16,
   pattern = "grass.tree.roots.4",
@@ -595,7 +541,7 @@ tile{
 tile{
   layer = 0,
   x = 80,
-  y = 272,
+  y = 264,
   width = 48,
   height = 16,
   pattern = "grass.tree.roots.1",
@@ -604,7 +550,7 @@ tile{
 tile{
   layer = 0,
   x = 80,
-  y = 288,
+  y = 280,
   width = 48,
   height = 8,
   pattern = "grass.tree.roots.2",
@@ -613,7 +559,7 @@ tile{
 tile{
   layer = 0,
   x = 72,
-  y = 264,
+  y = 256,
   width = 8,
   height = 16,
   pattern = "grass.tree.roots.3",
@@ -622,7 +568,7 @@ tile{
 tile{
   layer = 0,
   x = 128,
-  y = 264,
+  y = 256,
   width = 8,
   height = 16,
   pattern = "grass.tree.roots.4",
@@ -631,7 +577,7 @@ tile{
 tile{
   layer = 0,
   x = 144,
-  y = 208,
+  y = 200,
   width = 16,
   height = 16,
   pattern = "grass.under_bush",
@@ -640,7 +586,7 @@ tile{
 tile{
   layer = 0,
   x = 120,
-  y = 344,
+  y = 336,
   width = 16,
   height = 16,
   pattern = "grass.flower",
@@ -649,7 +595,7 @@ tile{
 tile{
   layer = 0,
   x = 136,
-  y = 360,
+  y = 352,
   width = 16,
   height = 16,
   pattern = "grass.flower",
@@ -658,7 +604,7 @@ tile{
 tile{
   layer = 0,
   x = 152,
-  y = 304,
+  y = 296,
   width = 16,
   height = 16,
   pattern = "grass.flower_double",
@@ -667,7 +613,7 @@ tile{
 tile{
   layer = 0,
   x = 184,
-  y = 216,
+  y = 208,
   width = 16,
   height = 16,
   pattern = "grass.flower_double",
@@ -676,7 +622,7 @@ tile{
 tile{
   layer = 0,
   x = 168,
-  y = 88,
+  y = 80,
   width = 16,
   height = 16,
   pattern = "grass.flower_double",
@@ -685,7 +631,7 @@ tile{
 tile{
   layer = 0,
   x = 208,
-  y = 128,
+  y = 120,
   width = 16,
   height = 16,
   pattern = "grass.flower_double",
@@ -694,7 +640,7 @@ tile{
 tile{
   layer = 0,
   x = 88,
-  y = 88,
+  y = 80,
   width = 16,
   height = 16,
   pattern = "grass.flower_double",
@@ -703,6 +649,42 @@ tile{
 tile{
   layer = 0,
   x = 224,
+  y = 464,
+  width = 16,
+  height = 16,
+  pattern = "grass.flower_double",
+}
+
+tile{
+  layer = 0,
+  x = 168,
+  y = 528,
+  width = 16,
+  height = 16,
+  pattern = "grass.flower_double",
+}
+
+tile{
+  layer = 0,
+  x = 144,
+  y = 608,
+  width = 16,
+  height = 16,
+  pattern = "grass.flower_double",
+}
+
+tile{
+  layer = 0,
+  x = 192,
+  y = 496,
+  width = 16,
+  height = 16,
+  pattern = "grass.flower_double",
+}
+
+tile{
+  layer = 0,
+  x = 56,
   y = 472,
   width = 16,
   height = 16,
@@ -711,44 +693,8 @@ tile{
 
 tile{
   layer = 0,
-  x = 168,
-  y = 536,
-  width = 16,
-  height = 16,
-  pattern = "grass.flower_double",
-}
-
-tile{
-  layer = 0,
   x = 144,
-  y = 616,
-  width = 16,
-  height = 16,
-  pattern = "grass.flower_double",
-}
-
-tile{
-  layer = 0,
-  x = 192,
-  y = 504,
-  width = 16,
-  height = 16,
-  pattern = "grass.flower_double",
-}
-
-tile{
-  layer = 0,
-  x = 56,
-  y = 480,
-  width = 16,
-  height = 16,
-  pattern = "grass.flower_double",
-}
-
-tile{
-  layer = 0,
-  x = 144,
-  y = 568,
+  y = 560,
   width = 16,
   height = 16,
   pattern = "grass.weed_big",
@@ -757,7 +703,7 @@ tile{
 tile{
   layer = 0,
   x = 80,
-  y = 656,
+  y = 648,
   width = 16,
   height = 16,
   pattern = "grass.flower_double",
@@ -766,7 +712,7 @@ tile{
 tile{
   layer = 0,
   x = 224,
-  y = 592,
+  y = 584,
   width = 16,
   height = 16,
   pattern = "grass.weed_big",
@@ -775,7 +721,7 @@ tile{
 tile{
   layer = 0,
   x = 192,
-  y = 448,
+  y = 440,
   width = 16,
   height = 16,
   pattern = "grass.weed_big",
@@ -784,7 +730,7 @@ tile{
 tile{
   layer = 0,
   x = 240,
-  y = 264,
+  y = 256,
   width = 16,
   height = 16,
   pattern = "grass.weed_big",
@@ -793,7 +739,7 @@ tile{
 tile{
   layer = 0,
   x = 216,
-  y = 88,
+  y = 80,
   width = 16,
   height = 16,
   pattern = "grass.weed_big",
@@ -802,7 +748,7 @@ tile{
 tile{
   layer = 0,
   x = 168,
-  y = 248,
+  y = 240,
   width = 16,
   height = 16,
   pattern = "grass.weed_big",
@@ -811,7 +757,7 @@ tile{
 tile{
   layer = 0,
   x = 208,
-  y = 240,
+  y = 232,
   width = 16,
   height = 16,
   pattern = "grass.under_bush",
@@ -820,7 +766,7 @@ tile{
 tile{
   layer = 0,
   x = 224,
-  y = 528,
+  y = 520,
   width = 16,
   height = 16,
   pattern = "grass.under_bush",
@@ -829,7 +775,7 @@ tile{
 tile{
   layer = 0,
   x = 200,
-  y = 664,
+  y = 656,
   width = 32,
   height = 32,
   pattern = "grass.tree_small.green.1",
@@ -838,7 +784,7 @@ tile{
 tile{
   layer = 0,
   x = 104,
-  y = 328,
+  y = 320,
   width = 32,
   height = 32,
   pattern = "grass.stump",
@@ -847,7 +793,7 @@ tile{
 tile{
   layer = 0,
   x = 48,
-  y = 528,
+  y = 520,
   width = 16,
   height = 16,
   pattern = "water_shallow.to_grass.diag.1",
@@ -856,7 +802,7 @@ tile{
 tile{
   layer = 0,
   x = 64,
-  y = 528,
+  y = 520,
   width = 48,
   height = 8,
   pattern = "water_shallow.to_grass.1",
@@ -865,7 +811,7 @@ tile{
 tile{
   layer = 0,
   x = 16,
-  y = 480,
+  y = 472,
   width = 8,
   height = 16,
   pattern = "grass.tree.roots.4",
@@ -874,7 +820,7 @@ tile{
 tile{
   layer = 0,
   x = -8,
-  y = 536,
+  y = 528,
   width = 48,
   height = 16,
   pattern = "grass.tree.roots.1",
@@ -883,7 +829,7 @@ tile{
 tile{
   layer = 0,
   x = -8,
-  y = 552,
+  y = 544,
   width = 48,
   height = 8,
   pattern = "grass.tree.roots.2",
@@ -892,7 +838,7 @@ tile{
 tile{
   layer = 0,
   x = 16,
-  y = 576,
+  y = 568,
   width = 8,
   height = 16,
   pattern = "grass.tree.roots.4",
@@ -901,7 +847,7 @@ tile{
 tile{
   layer = 0,
   x = -8,
-  y = 632,
+  y = 624,
   width = 48,
   height = 16,
   pattern = "grass.tree.roots.1",
@@ -910,7 +856,7 @@ tile{
 tile{
   layer = 0,
   x = -8,
-  y = 648,
+  y = 640,
   width = 48,
   height = 8,
   pattern = "grass.tree.roots.2",
@@ -919,7 +865,7 @@ tile{
 tile{
   layer = 0,
   x = 48,
-  y = 544,
+  y = 536,
   width = 8,
   height = 24,
   pattern = "water_shallow.to_grass.3",
@@ -928,7 +874,7 @@ tile{
 tile{
   layer = 0,
   x = 112,
-  y = 528,
+  y = 520,
   width = 16,
   height = 16,
   pattern = "water_shallow.to_grass.diag.2",
@@ -937,7 +883,7 @@ tile{
 tile{
   layer = 0,
   x = 120,
-  y = 544,
+  y = 536,
   width = 8,
   height = 32,
   pattern = "water_shallow.to_grass.4",
@@ -946,7 +892,7 @@ tile{
 tile{
   layer = 0,
   x = 48,
-  y = 568,
+  y = 560,
   width = 16,
   height = 16,
   pattern = "water_shallow.to_grass.diag.3",
@@ -955,7 +901,7 @@ tile{
 tile{
   layer = 0,
   x = 72,
-  y = 584,
+  y = 576,
   width = 48,
   height = 8,
   pattern = "water_shallow.to_grass.2",
@@ -964,7 +910,7 @@ tile{
 tile{
   layer = 0,
   x = 16,
-  y = 672,
+  y = 664,
   width = 8,
   height = 16,
   pattern = "grass.tree.roots.4",
@@ -973,7 +919,7 @@ tile{
 tile{
   layer = 0,
   x = -8,
-  y = 728,
+  y = 720,
   width = 48,
   height = 16,
   pattern = "grass.tree.roots.1",
@@ -982,7 +928,7 @@ tile{
 tile{
   layer = 0,
   x = -8,
-  y = 744,
+  y = 736,
   width = 48,
   height = 8,
   pattern = "grass.tree.roots.2",
@@ -991,16 +937,16 @@ tile{
 tile{
   layer = 0,
   x = 272,
+  y = 520,
+  width = 8,
+  height = 16,
+  pattern = "grass.tree.roots.3",
+}
+
+tile{
+  layer = 0,
+  x = 280,
   y = 528,
-  width = 8,
-  height = 16,
-  pattern = "grass.tree.roots.3",
-}
-
-tile{
-  layer = 0,
-  x = 280,
-  y = 536,
   width = 48,
   height = 16,
   pattern = "grass.tree.roots.1",
@@ -1009,7 +955,7 @@ tile{
 tile{
   layer = 0,
   x = 280,
-  y = 552,
+  y = 544,
   width = 48,
   height = 8,
   pattern = "grass.tree.roots.2",
@@ -1018,16 +964,16 @@ tile{
 tile{
   layer = 0,
   x = 272,
+  y = 616,
+  width = 8,
+  height = 16,
+  pattern = "grass.tree.roots.3",
+}
+
+tile{
+  layer = 0,
+  x = 280,
   y = 624,
-  width = 8,
-  height = 16,
-  pattern = "grass.tree.roots.3",
-}
-
-tile{
-  layer = 0,
-  x = 280,
-  y = 632,
   width = 48,
   height = 16,
   pattern = "grass.tree.roots.1",
@@ -1036,7 +982,7 @@ tile{
 tile{
   layer = 0,
   x = 280,
-  y = 648,
+  y = 640,
   width = 48,
   height = 8,
   pattern = "grass.tree.roots.2",
@@ -1045,7 +991,7 @@ tile{
 tile{
   layer = 0,
   x = 272,
-  y = 720,
+  y = 712,
   width = 8,
   height = 16,
   pattern = "grass.tree.roots.3",
@@ -1054,7 +1000,7 @@ tile{
 tile{
   layer = 0,
   x = 280,
-  y = 728,
+  y = 720,
   width = 48,
   height = 16,
   pattern = "grass.tree.roots.1",
@@ -1063,7 +1009,7 @@ tile{
 tile{
   layer = 0,
   x = 280,
-  y = 744,
+  y = 736,
   width = 48,
   height = 8,
   pattern = "grass.tree.roots.2",
@@ -1072,7 +1018,7 @@ tile{
 tile{
   layer = 0,
   x = 80,
-  y = 704,
+  y = 696,
   width = 32,
   height = 32,
   pattern = "grass.tree_small.green.1",
@@ -1081,7 +1027,7 @@ tile{
 tile{
   layer = 0,
   x = 168,
-  y = 568,
+  y = 560,
   width = 32,
   height = 32,
   pattern = "grass.stump",
@@ -1090,7 +1036,7 @@ tile{
 tile{
   layer = 0,
   x = 16,
-  y = 768,
+  y = 760,
   width = 8,
   height = 16,
   pattern = "grass.tree.roots.4",
@@ -1099,34 +1045,7 @@ tile{
 tile{
   layer = 0,
   x = 152,
-  y = 768,
-  width = 16,
-  height = 8,
-  pattern = "trunk.entrance.2",
-}
-
-tile{
-  layer = 0,
-  x = 136,
-  y = 768,
-  width = 16,
-  height = 8,
-  pattern = "trunk.entrance.2.border.1",
-}
-
-tile{
-  layer = 0,
-  x = 168,
-  y = 768,
-  width = 16,
-  height = 8,
-  pattern = "trunk.entrance.2.border.2",
-}
-
-tile{
-  layer = 0,
-  x = 152,
-  y = 736,
+  y = 728,
   width = 16,
   height = 16,
   pattern = "dirt.soil",
@@ -1135,7 +1054,7 @@ tile{
 tile{
   layer = 0,
   x = 152,
-  y = 704,
+  y = 696,
   width = 32,
   height = 32,
   pattern = "dirt.soil",
@@ -1144,7 +1063,7 @@ tile{
 tile{
   layer = 0,
   x = 144,
-  y = 704,
+  y = 696,
   width = 16,
   height = 16,
   pattern = "dirt.soil",
@@ -1153,7 +1072,7 @@ tile{
 tile{
   layer = 0,
   x = 160,
-  y = 704,
+  y = 696,
   width = 16,
   height = 16,
   pattern = "dirt.soil",
@@ -1162,7 +1081,7 @@ tile{
 tile{
   layer = 0,
   x = 144,
-  y = 680,
+  y = 672,
   width = 32,
   height = 32,
   pattern = "dirt.soil",
@@ -1171,7 +1090,7 @@ tile{
 tile{
   layer = 0,
   x = 152,
-  y = 680,
+  y = 672,
   width = 16,
   height = 8,
   pattern = "grass.soil.2",
@@ -1180,7 +1099,7 @@ tile{
 tile{
   layer = 0,
   x = 176,
-  y = 704,
+  y = 696,
   width = 8,
   height = 32,
   pattern = "grass.soil.3",
@@ -1189,7 +1108,7 @@ tile{
 tile{
   layer = 0,
   x = 168,
-  y = 688,
+  y = 680,
   width = 8,
   height = 8,
   pattern = "grass.soil.3",
@@ -1198,7 +1117,7 @@ tile{
 tile{
   layer = 0,
   x = 168,
-  y = 744,
+  y = 736,
   width = 8,
   height = 8,
   pattern = "grass.soil.3",
@@ -1207,7 +1126,7 @@ tile{
 tile{
   layer = 0,
   x = 136,
-  y = 696,
+  y = 688,
   width = 8,
   height = 24,
   pattern = "grass.soil.4",
@@ -1216,7 +1135,7 @@ tile{
 tile{
   layer = 0,
   x = 144,
-  y = 728,
+  y = 720,
   width = 8,
   height = 24,
   pattern = "grass.soil.4",
@@ -1224,17 +1143,8 @@ tile{
 
 tile{
   layer = 0,
-  x = 152,
-  y = 752,
-  width = 16,
-  height = 8,
-  pattern = "grass.soil.1",
-}
-
-tile{
-  layer = 0,
   x = 168,
-  y = 696,
+  y = 688,
   width = 8,
   height = 8,
   pattern = "grass.soil.diag.3",
@@ -1242,8 +1152,8 @@ tile{
 
 tile{
   layer = 0,
-  x = 144,
-  y = 752,
+  x = 136,
+  y = 712,
   width = 8,
   height = 8,
   pattern = "grass.soil.diag.2b",
@@ -1252,16 +1162,7 @@ tile{
 tile{
   layer = 0,
   x = 136,
-  y = 720,
-  width = 8,
-  height = 8,
-  pattern = "grass.soil.diag.2b",
-}
-
-tile{
-  layer = 0,
-  x = 136,
-  y = 688,
+  y = 680,
   width = 8,
   height = 8,
   pattern = "grass.soil.diag.4b",
@@ -1270,7 +1171,7 @@ tile{
 tile{
   layer = 0,
   x = 168,
-  y = 736,
+  y = 728,
   width = 8,
   height = 8,
   pattern = "grass.soil.diag.1",
@@ -1278,17 +1179,8 @@ tile{
 
 tile{
   layer = 0,
-  x = 168,
-  y = 752,
-  width = 8,
-  height = 8,
-  pattern = "grass.soil.diag.1b",
-}
-
-tile{
-  layer = 0,
   x = 176,
-  y = 736,
+  y = 728,
   width = 8,
   height = 8,
   pattern = "grass.soil.diag.1b",
@@ -1297,7 +1189,7 @@ tile{
 tile{
   layer = 0,
   x = 168,
-  y = 680,
+  y = 672,
   width = 8,
   height = 8,
   pattern = "grass.soil.diag.3b",
@@ -1306,7 +1198,7 @@ tile{
 tile{
   layer = 0,
   x = 176,
-  y = 696,
+  y = 688,
   width = 8,
   height = 8,
   pattern = "grass.soil.diag.3b",
@@ -1315,7 +1207,7 @@ tile{
 tile{
   layer = 0,
   x = 144,
-  y = 688,
+  y = 680,
   width = 8,
   height = 8,
   pattern = "grass.soil.diag.4",
@@ -1324,7 +1216,7 @@ tile{
 tile{
   layer = 0,
   x = 144,
-  y = 680,
+  y = 672,
   width = 8,
   height = 8,
   pattern = "grass.soil.diag.4b",
@@ -1333,7 +1225,7 @@ tile{
 tile{
   layer = 0,
   x = 144,
-  y = 720,
+  y = 712,
   width = 8,
   height = 8,
   pattern = "grass.soil.diag.2",
@@ -1342,7 +1234,7 @@ tile{
 tile{
   layer = 0,
   x = 56,
-  y = 576,
+  y = 568,
   width = 16,
   height = 16,
   pattern = "water_shallow.to_grass.diag.3",
@@ -1351,7 +1243,7 @@ tile{
 tile{
   layer = 0,
   x = 112,
-  y = 576,
+  y = 568,
   width = 16,
   height = 16,
   pattern = "water_shallow.to_grass.diag.4",
@@ -1360,7 +1252,7 @@ tile{
 tile{
   layer = 0,
   x = 88,
-  y = 544,
+  y = 536,
   width = 16,
   height = 16,
   pattern = "water.rock",
@@ -1369,7 +1261,7 @@ tile{
 tile{
   layer = 0,
   x = 200,
-  y = 640,
+  y = 632,
   width = 16,
   height = 16,
   pattern = "grass.flower_double",
@@ -1378,7 +1270,7 @@ tile{
 tile{
   layer = 0,
   x = 104,
-  y = 624,
+  y = 616,
   width = 16,
   height = 16,
   pattern = "grass.flower",
@@ -1387,7 +1279,7 @@ tile{
 tile{
   layer = 0,
   x = 72,
-  y = 360,
+  y = 352,
   width = 16,
   height = 16,
   pattern = "grass.flower",
@@ -1396,7 +1288,7 @@ tile{
 tile{
   layer = 0,
   x = 232,
-  y = 288,
+  y = 280,
   width = 16,
   height = 16,
   pattern = "grass.flower",
@@ -1405,7 +1297,7 @@ tile{
 tile{
   layer = 0,
   x = 160,
-  y = 184,
+  y = 176,
   width = 16,
   height = 16,
   pattern = "grass.flower",
@@ -1414,7 +1306,7 @@ tile{
 tile{
   layer = 0,
   x = 56,
-  y = 160,
+  y = 152,
   width = 16,
   height = 16,
   pattern = "grass.flower",
@@ -1423,7 +1315,7 @@ tile{
 tile{
   layer = 0,
   x = 192,
-  y = 168,
+  y = 160,
   width = 16,
   height = 8,
   pattern = "grass.weed",
@@ -1432,7 +1324,7 @@ tile{
 tile{
   layer = 0,
   x = 176,
-  y = 320,
+  y = 312,
   width = 16,
   height = 8,
   pattern = "grass.weed",
@@ -1441,7 +1333,7 @@ tile{
 tile{
   layer = 0,
   x = 128,
-  y = 656,
+  y = 648,
   width = 16,
   height = 8,
   pattern = "grass.weed",
@@ -1450,7 +1342,7 @@ tile{
 tile{
   layer = 0,
   x = 208,
-  y = 720,
+  y = 712,
   width = 16,
   height = 8,
   pattern = "grass.weed",
@@ -1459,7 +1351,7 @@ tile{
 tile{
   layer = 0,
   x = 248,
-  y = 616,
+  y = 608,
   width = 16,
   height = 8,
   pattern = "grass.weed",
@@ -1468,7 +1360,7 @@ tile{
 tile{
   layer = 0,
   x = 128,
-  y = 400,
+  y = 392,
   width = 16,
   height = 8,
   pattern = "grass.weed",
@@ -1477,7 +1369,7 @@ tile{
 tile{
   layer = 0,
   x = 240,
-  y = 432,
+  y = 424,
   width = 16,
   height = 8,
   pattern = "grass.weed",
@@ -1486,7 +1378,7 @@ tile{
 tile{
   layer = 0,
   x = 216,
-  y = 200,
+  y = 192,
   width = 16,
   height = 16,
   pattern = "grass.flower",
@@ -1495,7 +1387,7 @@ tile{
 tile{
   layer = 0,
   x = 72,
-  y = 632,
+  y = 624,
   width = 16,
   height = 16,
   pattern = "grass.under_bush",
@@ -1504,7 +1396,7 @@ tile{
 tile{
   layer = 0,
   x = 40,
-  y = 432,
+  y = 424,
   width = 8,
   height = 16,
   pattern = "grass.tree.roots.4",
@@ -1513,7 +1405,7 @@ tile{
 tile{
   layer = 0,
   x = 40,
-  y = 528,
+  y = 520,
   width = 8,
   height = 16,
   pattern = "grass.tree.roots.4",
@@ -1522,7 +1414,7 @@ tile{
 tile{
   layer = 1,
   x = -32,
-  y = 64,
+  y = 56,
   width = 48,
   height = 40,
   pattern = "tree.green.1",
@@ -1531,7 +1423,7 @@ tile{
 tile{
   layer = 1,
   x = -8,
-  y = 16,
+  y = 8,
   width = 48,
   height = 40,
   pattern = "tree.green.1",
@@ -1540,7 +1432,7 @@ tile{
 tile{
   layer = 1,
   x = 40,
-  y = 16,
+  y = 8,
   width = 48,
   height = 40,
   pattern = "tree.green.1",
@@ -1549,7 +1441,7 @@ tile{
 tile{
   layer = 1,
   x = 40,
-  y = 0,
+  y = -8,
   width = 48,
   height = 16,
   pattern = "tree.green.2",
@@ -1558,43 +1450,7 @@ tile{
 tile{
   layer = 1,
   x = -8,
-  y = 0,
-  width = 48,
-  height = 16,
-  pattern = "tree.green.2",
-}
-
-tile{
-  layer = 1,
-  x = 136,
-  y = 16,
-  width = 48,
-  height = 40,
-  pattern = "tree.green.1",
-}
-
-tile{
-  layer = 1,
-  x = 136,
-  y = 0,
-  width = 48,
-  height = 16,
-  pattern = "tree.green.2",
-}
-
-tile{
-  layer = 1,
-  x = 184,
-  y = 16,
-  width = 48,
-  height = 40,
-  pattern = "tree.green.1",
-}
-
-tile{
-  layer = 1,
-  x = 184,
-  y = 0,
+  y = -8,
   width = 48,
   height = 16,
   pattern = "tree.green.2",
@@ -1603,7 +1459,7 @@ tile{
 tile{
   layer = 1,
   x = 232,
-  y = 16,
+  y = 8,
   width = 48,
   height = 40,
   pattern = "tree.green.1",
@@ -1612,7 +1468,7 @@ tile{
 tile{
   layer = 1,
   x = 232,
-  y = 0,
+  y = -8,
   width = 48,
   height = 16,
   pattern = "tree.green.2",
@@ -1621,7 +1477,7 @@ tile{
 tile{
   layer = 1,
   x = 280,
-  y = 16,
+  y = 8,
   width = 48,
   height = 40,
   pattern = "tree.green.1",
@@ -1630,7 +1486,7 @@ tile{
 tile{
   layer = 1,
   x = 280,
-  y = 0,
+  y = -8,
   width = 48,
   height = 16,
   pattern = "tree.green.2",
@@ -1639,7 +1495,7 @@ tile{
 tile{
   layer = 1,
   x = 16,
-  y = 64,
+  y = 56,
   width = 48,
   height = 40,
   pattern = "tree.green.1",
@@ -1648,7 +1504,7 @@ tile{
 tile{
   layer = 1,
   x = 16,
-  y = 48,
+  y = 40,
   width = 48,
   height = 16,
   pattern = "tree.green.2",
@@ -1657,7 +1513,7 @@ tile{
 tile{
   layer = 1,
   x = 64,
-  y = 56,
+  y = 48,
   width = 8,
   height = 40,
   pattern = "tree.green.4",
@@ -1666,7 +1522,7 @@ tile{
 tile{
   layer = 1,
   x = -32,
-  y = 48,
+  y = 40,
   width = 48,
   height = 16,
   pattern = "tree.green.2",
@@ -1675,7 +1531,7 @@ tile{
 tile{
   layer = 1,
   x = 256,
-  y = 64,
+  y = 56,
   width = 48,
   height = 40,
   pattern = "tree.green.1",
@@ -1684,7 +1540,7 @@ tile{
 tile{
   layer = 1,
   x = 304,
-  y = 48,
+  y = 40,
   width = 48,
   height = 16,
   pattern = "tree.green.2",
@@ -1693,7 +1549,34 @@ tile{
 tile{
   layer = 1,
   x = 256,
+  y = 40,
+  width = 48,
+  height = 16,
+  pattern = "tree.green.2",
+}
+
+tile{
+  layer = 1,
+  x = 248,
   y = 48,
+  width = 8,
+  height = 40,
+  pattern = "tree.green.3",
+}
+
+tile{
+  layer = 1,
+  x = -8,
+  y = 104,
+  width = 48,
+  height = 40,
+  pattern = "tree.green.1",
+}
+
+tile{
+  layer = 1,
+  x = -8,
+  y = 88,
   width = 48,
   height = 16,
   pattern = "tree.green.2",
@@ -1701,17 +1584,98 @@ tile{
 
 tile{
   layer = 1,
-  x = 248,
+  x = 40,
+  y = 96,
+  width = 8,
+  height = 40,
+  pattern = "tree.green.4",
+}
+
+tile{
+  layer = 1,
+  x = -32,
+  y = 152,
+  width = 48,
+  height = 40,
+  pattern = "tree.green.1",
+}
+
+tile{
+  layer = 1,
+  x = 16,
+  y = 144,
+  width = 8,
+  height = 40,
+  pattern = "tree.green.4",
+}
+
+tile{
+  layer = 1,
+  x = -32,
+  y = 136,
+  width = 48,
+  height = 16,
+  pattern = "tree.green.2",
+}
+
+tile{
+  layer = 1,
+  x = -32,
+  y = 248,
+  width = 48,
+  height = 40,
+  pattern = "tree.green.1",
+}
+
+tile{
+  layer = 1,
+  x = -8,
+  y = 200,
+  width = 48,
+  height = 40,
+  pattern = "tree.green.1",
+}
+
+tile{
+  layer = 1,
+  x = -8,
+  y = 184,
+  width = 48,
+  height = 16,
+  pattern = "tree.green.2",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 192,
+  width = 8,
+  height = 40,
+  pattern = "tree.green.4",
+}
+
+tile{
+  layer = 1,
+  x = 16,
+  y = 240,
+  width = 8,
+  height = 40,
+  pattern = "tree.green.4",
+}
+
+tile{
+  layer = 1,
+  x = -32,
+  y = 232,
+  width = 48,
+  height = 16,
+  pattern = "tree.green.2",
+}
+
+tile{
+  layer = 1,
+  x = 304,
   y = 56,
-  width = 8,
-  height = 40,
-  pattern = "tree.green.3",
-}
-
-tile{
-  layer = 1,
-  x = -8,
-  y = 112,
   width = 48,
   height = 40,
   pattern = "tree.green.1",
@@ -1719,8 +1683,8 @@ tile{
 
 tile{
   layer = 1,
-  x = -8,
-  y = 96,
+  x = 280,
+  y = 88,
   width = 48,
   height = 16,
   pattern = "tree.green.2",
@@ -1728,17 +1692,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 40,
+  x = 280,
   y = 104,
-  width = 8,
-  height = 40,
-  pattern = "tree.green.4",
-}
-
-tile{
-  layer = 1,
-  x = -32,
-  y = 160,
   width = 48,
   height = 40,
   pattern = "tree.green.1",
@@ -1746,107 +1701,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 16,
-  y = 152,
-  width = 8,
-  height = 40,
-  pattern = "tree.green.4",
-}
-
-tile{
-  layer = 1,
-  x = -32,
-  y = 144,
-  width = 48,
-  height = 16,
-  pattern = "tree.green.2",
-}
-
-tile{
-  layer = 1,
-  x = -32,
-  y = 256,
-  width = 48,
-  height = 40,
-  pattern = "tree.green.1",
-}
-
-tile{
-  layer = 1,
-  x = -8,
-  y = 208,
-  width = 48,
-  height = 40,
-  pattern = "tree.green.1",
-}
-
-tile{
-  layer = 1,
-  x = -8,
-  y = 192,
-  width = 48,
-  height = 16,
-  pattern = "tree.green.2",
-}
-
-tile{
-  layer = 1,
-  x = 40,
-  y = 200,
-  width = 8,
-  height = 40,
-  pattern = "tree.green.4",
-}
-
-tile{
-  layer = 1,
-  x = 16,
-  y = 248,
-  width = 8,
-  height = 40,
-  pattern = "tree.green.4",
-}
-
-tile{
-  layer = 1,
-  x = -32,
-  y = 240,
-  width = 48,
-  height = 16,
-  pattern = "tree.green.2",
-}
-
-tile{
-  layer = 1,
-  x = 304,
-  y = 64,
-  width = 48,
-  height = 40,
-  pattern = "tree.green.1",
-}
-
-tile{
-  layer = 1,
-  x = 280,
+  x = 272,
   y = 96,
-  width = 48,
-  height = 16,
-  pattern = "tree.green.2",
-}
-
-tile{
-  layer = 1,
-  x = 280,
-  y = 112,
-  width = 48,
-  height = 40,
-  pattern = "tree.green.1",
-}
-
-tile{
-  layer = 1,
-  x = 272,
-  y = 104,
   width = 8,
   height = 40,
   pattern = "tree.green.3",
@@ -1855,7 +1711,7 @@ tile{
 tile{
   layer = 1,
   x = 304,
-  y = 144,
+  y = 136,
   width = 48,
   height = 16,
   pattern = "tree.green.2",
@@ -1864,16 +1720,16 @@ tile{
 tile{
   layer = 1,
   x = 304,
-  y = 160,
-  width = 48,
-  height = 40,
-  pattern = "tree.green.1",
-}
-
-tile{
-  layer = 1,
-  x = 296,
   y = 152,
+  width = 48,
+  height = 40,
+  pattern = "tree.green.1",
+}
+
+tile{
+  layer = 1,
+  x = 296,
+  y = 144,
   width = 8,
   height = 40,
   pattern = "tree.green.3",
@@ -1882,7 +1738,7 @@ tile{
 tile{
   layer = 1,
   x = 280,
-  y = 192,
+  y = 184,
   width = 48,
   height = 16,
   pattern = "tree.green.2",
@@ -1891,16 +1747,16 @@ tile{
 tile{
   layer = 1,
   x = 280,
-  y = 208,
-  width = 48,
-  height = 40,
-  pattern = "tree.green.1",
-}
-
-tile{
-  layer = 1,
-  x = 272,
   y = 200,
+  width = 48,
+  height = 40,
+  pattern = "tree.green.1",
+}
+
+tile{
+  layer = 1,
+  x = 272,
+  y = 192,
   width = 8,
   height = 40,
   pattern = "tree.green.3",
@@ -1909,7 +1765,7 @@ tile{
 tile{
   layer = 1,
   x = 304,
-  y = 240,
+  y = 232,
   width = 48,
   height = 16,
   pattern = "tree.green.2",
@@ -1918,115 +1774,7 @@ tile{
 tile{
   layer = 1,
   x = 304,
-  y = 256,
-  width = 48,
-  height = 40,
-  pattern = "tree.green.1",
-}
-
-tile{
-  layer = 1,
-  x = 296,
   y = 248,
-  width = 8,
-  height = 40,
-  pattern = "tree.green.3",
-}
-
-tile{
-  layer = 1,
-  x = -32,
-  y = 352,
-  width = 48,
-  height = 40,
-  pattern = "tree.green.1",
-}
-
-tile{
-  layer = 1,
-  x = -8,
-  y = 304,
-  width = 48,
-  height = 40,
-  pattern = "tree.green.1",
-}
-
-tile{
-  layer = 1,
-  x = -8,
-  y = 288,
-  width = 48,
-  height = 16,
-  pattern = "tree.green.2",
-}
-
-tile{
-  layer = 1,
-  x = 40,
-  y = 296,
-  width = 8,
-  height = 40,
-  pattern = "tree.green.4",
-}
-
-tile{
-  layer = 1,
-  x = 16,
-  y = 344,
-  width = 8,
-  height = 40,
-  pattern = "tree.green.4",
-}
-
-tile{
-  layer = 1,
-  x = -32,
-  y = 336,
-  width = 48,
-  height = 16,
-  pattern = "tree.green.2",
-}
-
-tile{
-  layer = 1,
-  x = 280,
-  y = 288,
-  width = 48,
-  height = 16,
-  pattern = "tree.green.2",
-}
-
-tile{
-  layer = 1,
-  x = 280,
-  y = 304,
-  width = 48,
-  height = 40,
-  pattern = "tree.green.1",
-}
-
-tile{
-  layer = 1,
-  x = 272,
-  y = 296,
-  width = 8,
-  height = 40,
-  pattern = "tree.green.3",
-}
-
-tile{
-  layer = 1,
-  x = 304,
-  y = 336,
-  width = 48,
-  height = 16,
-  pattern = "tree.green.2",
-}
-
-tile{
-  layer = 1,
-  x = 304,
-  y = 352,
   width = 48,
   height = 40,
   pattern = "tree.green.1",
@@ -2035,7 +1783,7 @@ tile{
 tile{
   layer = 1,
   x = 296,
-  y = 344,
+  y = 240,
   width = 8,
   height = 40,
   pattern = "tree.green.3",
@@ -2044,7 +1792,7 @@ tile{
 tile{
   layer = 1,
   x = -32,
-  y = 448,
+  y = 344,
   width = 48,
   height = 40,
   pattern = "tree.green.1",
@@ -2053,7 +1801,7 @@ tile{
 tile{
   layer = 1,
   x = -8,
-  y = 400,
+  y = 296,
   width = 48,
   height = 40,
   pattern = "tree.green.1",
@@ -2062,7 +1810,7 @@ tile{
 tile{
   layer = 1,
   x = -8,
-  y = 384,
+  y = 280,
   width = 48,
   height = 16,
   pattern = "tree.green.2",
@@ -2071,7 +1819,7 @@ tile{
 tile{
   layer = 1,
   x = 40,
-  y = 392,
+  y = 288,
   width = 8,
   height = 40,
   pattern = "tree.green.4",
@@ -2080,7 +1828,7 @@ tile{
 tile{
   layer = 1,
   x = 16,
-  y = 440,
+  y = 336,
   width = 8,
   height = 40,
   pattern = "tree.green.4",
@@ -2089,7 +1837,7 @@ tile{
 tile{
   layer = 1,
   x = -32,
-  y = 432,
+  y = 328,
   width = 48,
   height = 16,
   pattern = "tree.green.2",
@@ -2098,7 +1846,7 @@ tile{
 tile{
   layer = 1,
   x = 280,
-  y = 384,
+  y = 280,
   width = 48,
   height = 16,
   pattern = "tree.green.2",
@@ -2107,7 +1855,7 @@ tile{
 tile{
   layer = 1,
   x = 280,
-  y = 400,
+  y = 296,
   width = 48,
   height = 40,
   pattern = "tree.green.1",
@@ -2116,7 +1864,7 @@ tile{
 tile{
   layer = 1,
   x = 272,
-  y = 392,
+  y = 288,
   width = 8,
   height = 40,
   pattern = "tree.green.3",
@@ -2125,7 +1873,7 @@ tile{
 tile{
   layer = 1,
   x = 304,
-  y = 432,
+  y = 328,
   width = 48,
   height = 16,
   pattern = "tree.green.2",
@@ -2134,7 +1882,7 @@ tile{
 tile{
   layer = 1,
   x = 304,
-  y = 448,
+  y = 344,
   width = 48,
   height = 40,
   pattern = "tree.green.1",
@@ -2143,7 +1891,7 @@ tile{
 tile{
   layer = 1,
   x = 296,
-  y = 440,
+  y = 336,
   width = 8,
   height = 40,
   pattern = "tree.green.3",
@@ -2151,8 +1899,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 88,
-  y = 16,
+  x = -32,
+  y = 440,
   width = 48,
   height = 40,
   pattern = "tree.green.1",
@@ -2160,17 +1908,107 @@ tile{
 
 tile{
   layer = 1,
-  x = 88,
-  y = 0,
+  x = -8,
+  y = 392,
+  width = 48,
+  height = 40,
+  pattern = "tree.green.1",
+}
+
+tile{
+  layer = 1,
+  x = -8,
+  y = 376,
   width = 48,
   height = 16,
   pattern = "tree.green.2",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 384,
+  width = 8,
+  height = 40,
+  pattern = "tree.green.4",
+}
+
+tile{
+  layer = 1,
+  x = 16,
+  y = 432,
+  width = 8,
+  height = 40,
+  pattern = "tree.green.4",
+}
+
+tile{
+  layer = 1,
+  x = -32,
+  y = 424,
+  width = 48,
+  height = 16,
+  pattern = "tree.green.2",
+}
+
+tile{
+  layer = 1,
+  x = 280,
+  y = 376,
+  width = 48,
+  height = 16,
+  pattern = "tree.green.2",
+}
+
+tile{
+  layer = 1,
+  x = 280,
+  y = 392,
+  width = 48,
+  height = 40,
+  pattern = "tree.green.1",
+}
+
+tile{
+  layer = 1,
+  x = 272,
+  y = 384,
+  width = 8,
+  height = 40,
+  pattern = "tree.green.3",
+}
+
+tile{
+  layer = 1,
+  x = 304,
+  y = 424,
+  width = 48,
+  height = 16,
+  pattern = "tree.green.2",
+}
+
+tile{
+  layer = 1,
+  x = 304,
+  y = 440,
+  width = 48,
+  height = 40,
+  pattern = "tree.green.1",
+}
+
+tile{
+  layer = 1,
+  x = 296,
+  y = 432,
+  width = 8,
+  height = 40,
+  pattern = "tree.green.3",
 }
 
 tile{
   layer = 1,
   x = 200,
-  y = 352,
+  y = 344,
   width = 48,
   height = 40,
   pattern = "tree.green.1",
@@ -2179,7 +2017,7 @@ tile{
 tile{
   layer = 1,
   x = 200,
-  y = 336,
+  y = 328,
   width = 48,
   height = 16,
   pattern = "tree.green.2",
@@ -2188,7 +2026,7 @@ tile{
 tile{
   layer = 1,
   x = 248,
-  y = 344,
+  y = 336,
   width = 8,
   height = 40,
   pattern = "tree.green.4",
@@ -2197,7 +2035,7 @@ tile{
 tile{
   layer = 1,
   x = 192,
-  y = 344,
+  y = 336,
   width = 8,
   height = 40,
   pattern = "tree.green.3",
@@ -2206,7 +2044,7 @@ tile{
 tile{
   layer = 1,
   x = 112,
-  y = 448,
+  y = 440,
   width = 48,
   height = 40,
   pattern = "tree.green.1",
@@ -2215,7 +2053,7 @@ tile{
 tile{
   layer = 1,
   x = 112,
-  y = 432,
+  y = 424,
   width = 48,
   height = 16,
   pattern = "tree.green.2",
@@ -2224,7 +2062,7 @@ tile{
 tile{
   layer = 1,
   x = 160,
-  y = 440,
+  y = 432,
   width = 8,
   height = 40,
   pattern = "tree.green.4",
@@ -2233,7 +2071,7 @@ tile{
 tile{
   layer = 1,
   x = 104,
-  y = 440,
+  y = 432,
   width = 8,
   height = 40,
   pattern = "tree.green.3",
@@ -2242,7 +2080,7 @@ tile{
 tile{
   layer = 1,
   x = 80,
-  y = 232,
+  y = 224,
   width = 48,
   height = 40,
   pattern = "tree.green.1",
@@ -2251,7 +2089,7 @@ tile{
 tile{
   layer = 1,
   x = 80,
-  y = 216,
+  y = 208,
   width = 48,
   height = 16,
   pattern = "tree.green.2",
@@ -2260,7 +2098,7 @@ tile{
 tile{
   layer = 1,
   x = 128,
-  y = 224,
+  y = 216,
   width = 8,
   height = 40,
   pattern = "tree.green.4",
@@ -2269,7 +2107,7 @@ tile{
 tile{
   layer = 1,
   x = 72,
-  y = 224,
+  y = 216,
   width = 8,
   height = 40,
   pattern = "tree.green.3",
@@ -2278,7 +2116,7 @@ tile{
 tile{
   layer = 1,
   x = -32,
-  y = 544,
+  y = 536,
   width = 48,
   height = 40,
   pattern = "tree.green.1",
@@ -2287,7 +2125,7 @@ tile{
 tile{
   layer = 1,
   x = -8,
-  y = 496,
+  y = 488,
   width = 48,
   height = 40,
   pattern = "tree.green.1",
@@ -2296,7 +2134,7 @@ tile{
 tile{
   layer = 1,
   x = -8,
-  y = 480,
+  y = 472,
   width = 48,
   height = 16,
   pattern = "tree.green.2",
@@ -2305,7 +2143,7 @@ tile{
 tile{
   layer = 1,
   x = 40,
-  y = 488,
+  y = 480,
   width = 8,
   height = 40,
   pattern = "tree.green.4",
@@ -2314,7 +2152,7 @@ tile{
 tile{
   layer = 1,
   x = 16,
-  y = 536,
+  y = 528,
   width = 8,
   height = 40,
   pattern = "tree.green.4",
@@ -2323,7 +2161,7 @@ tile{
 tile{
   layer = 1,
   x = -32,
-  y = 528,
+  y = 520,
   width = 48,
   height = 16,
   pattern = "tree.green.2",
@@ -2332,7 +2170,7 @@ tile{
 tile{
   layer = 1,
   x = -32,
-  y = 640,
+  y = 632,
   width = 48,
   height = 40,
   pattern = "tree.green.1",
@@ -2341,7 +2179,7 @@ tile{
 tile{
   layer = 1,
   x = -8,
-  y = 592,
+  y = 584,
   width = 48,
   height = 40,
   pattern = "tree.green.1",
@@ -2350,7 +2188,7 @@ tile{
 tile{
   layer = 1,
   x = -8,
-  y = 576,
+  y = 568,
   width = 48,
   height = 16,
   pattern = "tree.green.2",
@@ -2359,7 +2197,7 @@ tile{
 tile{
   layer = 1,
   x = 40,
-  y = 584,
+  y = 576,
   width = 8,
   height = 40,
   pattern = "tree.green.4",
@@ -2368,7 +2206,7 @@ tile{
 tile{
   layer = 1,
   x = 16,
-  y = 632,
+  y = 624,
   width = 8,
   height = 40,
   pattern = "tree.green.4",
@@ -2377,7 +2215,7 @@ tile{
 tile{
   layer = 1,
   x = -32,
-  y = 624,
+  y = 616,
   width = 48,
   height = 16,
   pattern = "tree.green.2",
@@ -2386,7 +2224,7 @@ tile{
 tile{
   layer = 1,
   x = -32,
-  y = 736,
+  y = 728,
   width = 48,
   height = 40,
   pattern = "tree.green.1",
@@ -2395,160 +2233,52 @@ tile{
 tile{
   layer = 1,
   x = -8,
-  y = 688,
-  width = 48,
-  height = 40,
-  pattern = "tree.green.1",
-}
-
-tile{
-  layer = 1,
-  x = -8,
-  y = 672,
-  width = 48,
-  height = 16,
-  pattern = "tree.green.2",
-}
-
-tile{
-  layer = 1,
-  x = -32,
-  y = 720,
-  width = 48,
-  height = 16,
-  pattern = "tree.green.2",
-}
-
-tile{
-  layer = 1,
-  x = 280,
-  y = 480,
-  width = 48,
-  height = 16,
-  pattern = "tree.green.2",
-}
-
-tile{
-  layer = 1,
-  x = 280,
-  y = 496,
-  width = 48,
-  height = 40,
-  pattern = "tree.green.1",
-}
-
-tile{
-  layer = 1,
-  x = 272,
-  y = 488,
-  width = 8,
-  height = 40,
-  pattern = "tree.green.3",
-}
-
-tile{
-  layer = 1,
-  x = 304,
-  y = 528,
-  width = 48,
-  height = 16,
-  pattern = "tree.green.2",
-}
-
-tile{
-  layer = 1,
-  x = 304,
-  y = 544,
-  width = 48,
-  height = 40,
-  pattern = "tree.green.1",
-}
-
-tile{
-  layer = 1,
-  x = 296,
-  y = 536,
-  width = 8,
-  height = 40,
-  pattern = "tree.green.3",
-}
-
-tile{
-  layer = 1,
-  x = 280,
-  y = 576,
-  width = 48,
-  height = 16,
-  pattern = "tree.green.2",
-}
-
-tile{
-  layer = 1,
-  x = 280,
-  y = 592,
-  width = 48,
-  height = 40,
-  pattern = "tree.green.1",
-}
-
-tile{
-  layer = 1,
-  x = 272,
-  y = 584,
-  width = 8,
-  height = 40,
-  pattern = "tree.green.3",
-}
-
-tile{
-  layer = 1,
-  x = 304,
-  y = 624,
-  width = 48,
-  height = 16,
-  pattern = "tree.green.2",
-}
-
-tile{
-  layer = 1,
-  x = 304,
-  y = 640,
-  width = 48,
-  height = 40,
-  pattern = "tree.green.1",
-}
-
-tile{
-  layer = 1,
-  x = 296,
-  y = 632,
-  width = 8,
-  height = 40,
-  pattern = "tree.green.3",
-}
-
-tile{
-  layer = 1,
-  x = 280,
-  y = 672,
-  width = 48,
-  height = 16,
-  pattern = "tree.green.2",
-}
-
-tile{
-  layer = 1,
-  x = 280,
-  y = 688,
-  width = 48,
-  height = 40,
-  pattern = "tree.green.1",
-}
-
-tile{
-  layer = 1,
-  x = 272,
   y = 680,
+  width = 48,
+  height = 40,
+  pattern = "tree.green.1",
+}
+
+tile{
+  layer = 1,
+  x = -8,
+  y = 664,
+  width = 48,
+  height = 16,
+  pattern = "tree.green.2",
+}
+
+tile{
+  layer = 1,
+  x = -32,
+  y = 712,
+  width = 48,
+  height = 16,
+  pattern = "tree.green.2",
+}
+
+tile{
+  layer = 1,
+  x = 280,
+  y = 472,
+  width = 48,
+  height = 16,
+  pattern = "tree.green.2",
+}
+
+tile{
+  layer = 1,
+  x = 280,
+  y = 488,
+  width = 48,
+  height = 40,
+  pattern = "tree.green.1",
+}
+
+tile{
+  layer = 1,
+  x = 272,
+  y = 480,
   width = 8,
   height = 40,
   pattern = "tree.green.3",
@@ -2557,7 +2287,7 @@ tile{
 tile{
   layer = 1,
   x = 304,
-  y = 720,
+  y = 520,
   width = 48,
   height = 16,
   pattern = "tree.green.2",
@@ -2566,7 +2296,115 @@ tile{
 tile{
   layer = 1,
   x = 304,
-  y = 736,
+  y = 536,
+  width = 48,
+  height = 40,
+  pattern = "tree.green.1",
+}
+
+tile{
+  layer = 1,
+  x = 296,
+  y = 528,
+  width = 8,
+  height = 40,
+  pattern = "tree.green.3",
+}
+
+tile{
+  layer = 1,
+  x = 280,
+  y = 568,
+  width = 48,
+  height = 16,
+  pattern = "tree.green.2",
+}
+
+tile{
+  layer = 1,
+  x = 280,
+  y = 584,
+  width = 48,
+  height = 40,
+  pattern = "tree.green.1",
+}
+
+tile{
+  layer = 1,
+  x = 272,
+  y = 576,
+  width = 8,
+  height = 40,
+  pattern = "tree.green.3",
+}
+
+tile{
+  layer = 1,
+  x = 304,
+  y = 616,
+  width = 48,
+  height = 16,
+  pattern = "tree.green.2",
+}
+
+tile{
+  layer = 1,
+  x = 304,
+  y = 632,
+  width = 48,
+  height = 40,
+  pattern = "tree.green.1",
+}
+
+tile{
+  layer = 1,
+  x = 296,
+  y = 624,
+  width = 8,
+  height = 40,
+  pattern = "tree.green.3",
+}
+
+tile{
+  layer = 1,
+  x = 280,
+  y = 664,
+  width = 48,
+  height = 16,
+  pattern = "tree.green.2",
+}
+
+tile{
+  layer = 1,
+  x = 280,
+  y = 680,
+  width = 48,
+  height = 40,
+  pattern = "tree.green.1",
+}
+
+tile{
+  layer = 1,
+  x = 272,
+  y = 672,
+  width = 8,
+  height = 40,
+  pattern = "tree.green.3",
+}
+
+tile{
+  layer = 1,
+  x = 304,
+  y = 712,
+  width = 48,
+  height = 16,
+  pattern = "tree.green.2",
+}
+
+tile{
+  layer = 1,
+  x = 304,
+  y = 728,
   width = 48,
   height = 40,
   pattern = "tree.green.1",
@@ -2575,7 +2413,7 @@ tile{
 tile{
   layer = 1,
   x = 16,
-  y = 736,
+  y = 728,
   width = 48,
   height = 40,
   pattern = "tree.green.1",
@@ -2584,7 +2422,7 @@ tile{
 tile{
   layer = 1,
   x = 16,
-  y = 720,
+  y = 712,
   width = 48,
   height = 16,
   pattern = "tree.green.2",
@@ -2593,7 +2431,7 @@ tile{
 tile{
   layer = 1,
   x = 256,
-  y = 736,
+  y = 728,
   width = 48,
   height = 40,
   pattern = "tree.green.1",
@@ -2602,7 +2440,7 @@ tile{
 tile{
   layer = 1,
   x = 256,
-  y = 720,
+  y = 712,
   width = 48,
   height = 16,
   pattern = "tree.green.2",
@@ -2611,7 +2449,7 @@ tile{
 tile{
   layer = 1,
   x = 248,
-  y = 728,
+  y = 720,
   width = 8,
   height = 40,
   pattern = "tree.green.3",
@@ -2620,7 +2458,7 @@ tile{
 tile{
   layer = 1,
   x = 64,
-  y = 728,
+  y = 720,
   width = 8,
   height = 40,
   pattern = "tree.green.4",
@@ -2629,7 +2467,7 @@ tile{
 tile{
   layer = 1,
   x = -8,
-  y = 784,
+  y = 776,
   width = 48,
   height = 40,
   pattern = "tree.green.1",
@@ -2638,7 +2476,7 @@ tile{
 tile{
   layer = 1,
   x = -8,
-  y = 768,
+  y = 760,
   width = 48,
   height = 16,
   pattern = "tree.green.2",
@@ -2647,7 +2485,7 @@ tile{
 tile{
   layer = 1,
   x = 280,
-  y = 768,
+  y = 760,
   width = 48,
   height = 16,
   pattern = "tree.green.2",
@@ -2656,7 +2494,7 @@ tile{
 tile{
   layer = 1,
   x = 280,
-  y = 784,
+  y = 776,
   width = 48,
   height = 40,
   pattern = "tree.green.1",
@@ -2665,7 +2503,7 @@ tile{
 tile{
   layer = 1,
   x = 232,
-  y = 768,
+  y = 760,
   width = 48,
   height = 16,
   pattern = "tree.green.2",
@@ -2674,115 +2512,34 @@ tile{
 tile{
   layer = 1,
   x = 232,
-  y = 784,
-  width = 48,
-  height = 40,
-  pattern = "tree.green.1",
-}
-
-tile{
-  layer = 1,
-  x = 40,
-  y = 768,
-  width = 48,
-  height = 16,
-  pattern = "tree.green.2",
-}
-
-tile{
-  layer = 1,
-  x = 40,
-  y = 784,
-  width = 48,
-  height = 40,
-  pattern = "tree.green.1",
-}
-
-tile{
-  layer = 1,
-  x = 136,
-  y = 784,
-  width = 48,
-  height = 16,
-  pattern = "trunk.top.1",
-}
-
-tile{
-  layer = 1,
-  x = 136,
   y = 776,
   width = 48,
-  height = 8,
-  pattern = "trunk.entrance.2.top",
-}
-
-tile{
-  layer = 1,
-  x = 184,
-  y = 768,
-  width = 48,
-  height = 16,
-  pattern = "tree.green.2",
-}
-
-tile{
-  layer = 1,
-  x = 184,
-  y = 784,
-  width = 48,
   height = 40,
   pattern = "tree.green.1",
-}
-
-tile{
-  layer = 1,
-  x = 88,
-  y = 768,
-  width = 48,
-  height = 16,
-  pattern = "tree.green.2",
-}
-
-tile{
-  layer = 1,
-  x = 88,
-  y = 784,
-  width = 48,
-  height = 40,
-  pattern = "tree.green.1",
-}
-
-tile{
-  layer = 1,
-  x = 176,
-  y = 776,
-  width = 8,
-  height = 40,
-  pattern = "tree.green.3",
-}
-
-tile{
-  layer = 1,
-  x = 136,
-  y = 784,
-  width = 8,
-  height = 40,
-  pattern = "tree.green.4",
-}
-
-tile{
-  layer = 1,
-  x = 136,
-  y = 800,
-  width = 48,
-  height = 16,
-  pattern = "trunk.top.1",
 }
 
 tile{
   layer = 1,
   x = 40,
-  y = 680,
+  y = 760,
+  width = 48,
+  height = 16,
+  pattern = "tree.green.2",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 776,
+  width = 48,
+  height = 40,
+  pattern = "tree.green.1",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 672,
   width = 8,
   height = 40,
   pattern = "tree.green.4",

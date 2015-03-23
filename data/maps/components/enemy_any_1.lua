@@ -3,7 +3,7 @@ local map, data = ...
 local Util = require 'lib/util'
 
 if data.name == 'boss' then
-    map:include(0, 0, 'components/boss_room_000777_1', data)
+    map:include(0, 0, 'components/bossroom_000777_1', data)
 else
 
     bit32 = bit32 or bit
