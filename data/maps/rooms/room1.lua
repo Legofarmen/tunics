@@ -50,11 +50,11 @@ function DialogBox:on_draw(dst_surface)
 end
 
 local messages = {}
-function data_messages(data, prefix)
+function data_messages(prefix, data)
     if type(data) == 'table' then
         local n = 0
         for key, value in Util.pairs_by_keys(data) do
-            data_messages(value, prefix .. '.' .. key)
+            data_messages(prefix .. '.' .. key, value)
             n = n + 1
         end
         if n == 0 then
@@ -64,7 +64,7 @@ function data_messages(data, prefix)
         table.insert(messages, prefix .. ' = ' .. data)
     end
 end
-data_messages(data, 'data')
+data_messages('data', data)
 
 
 local mask = 0
@@ -72,6 +72,7 @@ function door(data, dir)
     if not data then return end
     local component_name, component_mask = Zentropy.components:get_door(data.open, dir, mask, components_rng)
     if not component_name then
+        for _, msg in ipairs(messages) do print(msg) end
         error(string.format("door not found: open=%s dir=%s mask=%06o", data.open, dir, mask))
     end
     mask = bit32.bor(mask, component_mask)
@@ -81,16 +82,19 @@ function door(data, dir)
         return properties
     end
     map:include(0, 0, component_name, data)
+    data_messages('component', component_name)
 end
 
 function obstacle(data, dir, item)
     if not data then return end
     local component_name, component_mask = Zentropy.components:get_obstacle(item, dir, mask, components_rng)
     if not component_name then
+        for _, msg in ipairs(messages) do print(msg) end
         error(string.format("obstacle not found: item=%s dir=%s mask=%06o", item, dir, mask))
     end
     mask = bit32.bor(mask, component_mask)
     map:include(0, 0, component_name, data)
+    data_messages('component', component_name)
 end
 
 function filler()
@@ -98,6 +102,7 @@ function filler()
     if component_name then
         mask = bit32.bor(mask, component_mask)
         map:include(0, 0, component_name, data)
+        data_messages('component', component_name)
         return true
     end
     return false
@@ -106,6 +111,7 @@ end
 function treasure(data)
     local component_name, component_mask = Zentropy.components:get_treasure(data.open, mask, components_rng)
     if not component_name then
+        for _, msg in ipairs(messages) do print(msg) end
         error(string.format("treasure not found: open=%s mask=%06o", data.open, mask))
     end
     mask = bit32.bor(mask, component_mask)
@@ -118,6 +124,7 @@ function treasure(data)
         return properties
     end
     map:include(0, 0, component_name, data)
+    data_messages('component', component_name)
 end
 
 function enemy(data)
@@ -129,10 +136,12 @@ function enemy(data)
             local component_name = string.format('components/enemy_any_1')
             data.section = section
             map:include(0, 0, component_name, data)
+            data_messages('component', component_name)
             mask = bit32.bor(mask, section)
             return
         end
     end
+    for _, msg in ipairs(messages) do print(msg) end
     error('cannot fit enemy')
 end
 
@@ -143,10 +152,12 @@ function sign(data)
             local component_name = string.format('components/sign')
             data.section = section
             map:include(0, 0, component_name, data)
+            data_messages('component', component_name)
             mask = bit32.bor(mask, section)
             return
         end
     end
+    for _, msg in ipairs(messages) do print(msg) end
     error('cannot fit sign')
 end
 
