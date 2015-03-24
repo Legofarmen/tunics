@@ -217,46 +217,34 @@ end
 if obstacle_mask ~= 0 then
 
     local OBSTACLE_MAP = {
-        [Util.oct('200000')] = { dir1='north' },
-        [Util.oct('010000')] = { dir1='east' },
-        [Util.oct('002000')] = { dir1='south' },
-        [Util.oct('040000')] = { dir1='west' },
-        [Util.oct('202000')] = { dir1='north', dir2='south' },
-        [Util.oct('210000')] = { dir1='northeast' },
-        [Util.oct('240000')] = { dir1='northwest' },
-        [Util.oct('012000')] = { dir1='northwest', flip=true },
-        [Util.oct('042000')] = { dir1='northwest', flip=true },
-        [Util.oct('050000')] = { dir1='east', dir2='west' },
-        [Util.oct('212000')] = { dir1='west', flip=true },
-        [Util.oct('250000')] = { dir1='south', flip=true },
-        [Util.oct('242000')] = { dir1='east', flip=true },
-        [Util.oct('052000')] = { dir1='north', flip=true },
+        [Util.oct('200000')] = { dir='north' },
+        [Util.oct('010000')] = { dir='east' },
+        [Util.oct('002000')] = { dir='south' },
+        [Util.oct('040000')] = { dir='west' },
+        [Util.oct('202000')] = { dir='northsouth' },
+        [Util.oct('210000')] = { dir='northeast' },
+        [Util.oct('240000')] = { dir='northwest' },
+        [Util.oct('012000')] = { dir='northwest', flip=true },
+        [Util.oct('042000')] = { dir='northwest', flip=true },
+        [Util.oct('050000')] = { dir='eastwest' },
+        [Util.oct('212000')] = { dir='west', flip=true },
+        [Util.oct('250000')] = { dir='south', flip=true },
+        [Util.oct('242000')] = { dir='east', flip=true },
+        [Util.oct('052000')] = { dir='north', flip=true },
     }
 
     local info = OBSTACLE_MAP[obstacle_mask]
-    local obstacles = {}
-    obstacles[info.dir1] = {}
-    if info.dir2 then
-        obstacles[info.dir2] = {}
-    end
+    local obstacle_data = {}
 
     if obstacle_treasure then
-        local treasure_obstacle
-        if info.dir2 and room_rng:random(2) == 2 then
-            treasure_obstacle = obstacles[info.dir2]
-        else
-            treasure_obstacle = obstacles[info.dir1]
-        end
         if info.flip then
-            treasure_obstacle.treasure2 = obstacle_treasure
+            obstacle_data.treasure2 = obstacle_treasure
         else
-            treasure_obstacle.treasure1 = obstacle_treasure
+            obstacle_data.treasure1 = obstacle_treasure
         end
     end
 
-    for dir, obstacle_data in pairs(obstacles) do
-        obstacle(obstacle_data, dir, obstacle_item)
-    end
+    obstacle(obstacle_data, info.dir, obstacle_item)
 
     if info.flip then
         mask = bit32.bor(mask, Util.oct('000777'))
