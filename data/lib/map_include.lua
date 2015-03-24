@@ -40,31 +40,16 @@ function room_map(map, x, y, internal_prefix, data)
     function o:get_userdata()
         return userdata
     end
-    function o:create_chest(properties)
-        translate(rewrite(properties))
-        return map:create_chest(properties)
-    end
-    function o:create_block(properties)
-        return map:create_block(translate(rewrite(properties)))
-    end
-    function o:create_separator(properties)
-        return map:create_separator(translate(rewrite(properties)))
-    end
-    function o:create_pickable(properties)
-        return map:create_pickable(translate(rewrite(properties)))
-    end
-    function o:create_enemy(properties)
-        return map:create_enemy(translate(rewrite(properties)))
-    end
-    function o:create_wall(properties)
-        return map:create_wall(translate(rewrite(properties)))
-    end
-    function o:create_npc(properties)
-        return map:create_npc(translate(rewrite(properties)))
-    end
-    function o:create_door(properties)
-        return map:create_door(translate(rewrite(properties)))
-    end
+    function o:create_block(properties) return map:create_block(translate(rewrite(properties))) end
+    function o:create_chest(properties) return map:create_chest(translate(rewrite(properties))) end
+    function o:create_destructible(properties) return map:create_destructible(translate(rewrite(properties))) end
+    function o:create_door(properties) return map:create_door(translate(rewrite(properties))) end
+    function o:create_enemy(properties) return map:create_enemy(translate(rewrite(properties))) end
+    function o:create_npc(properties) return map:create_npc(translate(rewrite(properties))) end
+    function o:create_pickable(properties) return map:create_pickable(translate(rewrite(properties))) end
+    function o:create_separator(properties) return map:create_separator(translate(rewrite(properties))) end
+    function o:create_wall(properties) return map:create_wall(translate(rewrite(properties))) end
+
     function o:create_dynamic_tile(properties)
         if properties.enabled_at_start == nil then properties.enabled_at_start = true end
         return map:create_dynamic_tile(translate(rewrite(properties)))
