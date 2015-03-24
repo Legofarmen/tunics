@@ -334,7 +334,7 @@ function Layout.minimap_mixin(object, map_menu)
     return object
 end
 
-function Layout.solarus_mixin(object, map)
+function Layout.solarus_mixin(object, map, floors)
 
     object = collect_mixin(object)
 
@@ -401,7 +401,12 @@ function Layout.solarus_mixin(object, map)
             self:separator(map_x, map_y+1, 'north')
             self:separator(map_x+1, map_y, 'west')
             info.rng = self.rng:biased(10 * map_y + map_x)
-            map:include(320 * map_x, 240 * map_y, 'rooms/room1', info)
+            local floor_rng = self.rng:biased(10 * map_y + map_x)
+
+            local x, y = 320 * map_x, 240 * map_y
+
+            map:include(x, y, floors[floor_rng:random(#floors)], {})
+            map:include(x, y, 'rooms/room1', info)
         end)
     end
 
