@@ -162,6 +162,50 @@ enemy{
   treasure_name = "heart",
 }
 
+dynamic_tile{
+  layer = 1,
+  x = 152,
+  y = 16,
+  width = 16,
+  height = 16,
+  name = "crack_north",
+  pattern = "crack_north",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 288,
+  y = 112,
+  width = 16,
+  height = 16,
+  name = "crack_east",
+  pattern = "crack_east",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 152,
+  y = 208,
+  width = 16,
+  height = 16,
+  name = "crack_south",
+  pattern = "crack_south",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 16,
+  y = 112,
+  width = 16,
+  height = 16,
+  name = "crack_west",
+  pattern = "crack_west",
+  enabled_at_start = false,
+}
+
 tile{
   layer = 2,
   x = 0,

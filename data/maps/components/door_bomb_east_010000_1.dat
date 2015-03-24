@@ -34,14 +34,13 @@ tile{
   pattern = "door_blast.4",
 }
 
-door{
+wall{
   layer = 1,
   x = 288,
   y = 112,
-  name = "door",
-  direction = 2,
-  sprite = "entities/door_weak_wall",
-  opening_method = "explosion",
+  width = 16,
+  height = 16,
+  stops_enemies = true,
 }
 
 dynamic_tile{
@@ -53,6 +52,16 @@ dynamic_tile{
   name = "door_closed",
   pattern = "wall.4",
   enabled_at_start = true,
+}
+
+door{
+  layer = 1,
+  x = 288,
+  y = 112,
+  name = "door",
+  direction = 2,
+  sprite = "entities/door_weak_wall",
+  opening_method = "explosion",
 }
 
 tile{
