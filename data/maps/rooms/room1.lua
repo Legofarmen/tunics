@@ -191,6 +191,12 @@ for dir_mask, dir in pairs(DIRS) do
     end
 end
 
+for _, dir_mask in ipairs(walls) do
+    if room_rng:random(2) == 2 then
+        map:get_entity('crack_' .. DIRS[dir_mask]):set_enabled(true)
+    end
+end
+
 
 
 local obstacle_treasure = nil

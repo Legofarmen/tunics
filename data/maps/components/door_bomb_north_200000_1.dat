@@ -70,16 +70,6 @@ wall{
   stops_enemies = true,
 }
 
-door{
-  layer = 1,
-  x = 152,
-  y = 16,
-  name = "door",
-  direction = 1,
-  sprite = "entities/door_weak_wall",
-  opening_method = "explosion",
-}
-
 dynamic_tile{
   layer = 1,
   x = 144,
@@ -89,6 +79,16 @@ dynamic_tile{
   name = "door_closed",
   pattern = "wall.1",
   enabled_at_start = true,
+}
+
+door{
+  layer = 1,
+  x = 152,
+  y = 16,
+  name = "door",
+  direction = 1,
+  sprite = "entities/door_weak_wall",
+  opening_method = "explosion",
 }
 
 tile{

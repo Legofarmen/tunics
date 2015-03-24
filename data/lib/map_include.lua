@@ -76,6 +76,9 @@ function room_map(map, x, y, internal_prefix, data)
             return real_x - x, real_y - y
         end
     end
+    function o:get_entity(key)
+        return userdata:get_entity(internal_prefix .. key) or userdata:get_entity(key)
+    end
     setmetatable(o, {
         __index=function (table, key)
             if key ~= 'include' and type(map[key]) == 'function' then
@@ -85,7 +88,7 @@ function room_map(map, x, y, internal_prefix, data)
             else
                 return map[key]
             end
-        end
+        end,
     })
     return o
 end
@@ -127,7 +130,7 @@ function mapmeta:include(x, y, name, data)
         if _G[key] then
             return _G[key]
         else
-            return map:get_userdata():get_entity(internal_prefix .. key)
+            return map:get_entity(key)
         end
     end})
     setfenv(luaf, luaenv)(map, data)
