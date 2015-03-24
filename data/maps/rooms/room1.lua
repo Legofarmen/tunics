@@ -3,6 +3,7 @@ local map, data = ...
 local rng = data.rng
 
 local components_rng = rng:create()
+local room_rng = rng:create()
 
 bit32 = bit32 or bit
 
@@ -64,14 +65,6 @@ function data_messages(data, prefix)
     end
 end
 data_messages(data, 'data')
-
-
-local SECTIONS = {
-    east=Util.oct('010'),
-    north=Util.oct('200'),
-    west=Util.oct('040'),
-    south=Util.oct('002'),
-}
 
 
 local mask = 0
@@ -165,55 +158,87 @@ function is_special_room(data)
     end
 end
 
-local obstacle_treasures = {}
-local normal_treasures = {}
-for _, data in ipairs(data.treasures) do
-    if data.reach then
-        obstacle_treasures[data.reach] = obstacle_treasures[data.reach] or {}
-        table.insert(obstacle_treasures[data.reach], data)
-    else
-        table.insert(normal_treasures, data)
-    end
-end
 
-
-for dir, door_data in pairs(data.doors) do
-    door({open=door_data.open, name=door_data.name}, dir)
-end
-
-for dir, door_data in pairs(data.doors) do
-    if door_data.reach then
-        local obstacle_data = {}
-        if obstacle_treasures[door_data.reach] then
-            obstacle_data.treasure1 = table.remove(obstacle_treasures)
-        end
-        obstacle(obstacle_data, dir, door_data.reach)
-    end
-end
-
-local dirs = {
+local DIRS = {
     [Util.oct('200000')]='north',
     [Util.oct('040000')]='west',
     [Util.oct('010000')]='east',
     [Util.oct('002000')]='south',
 }
-List.shuffle(rng:create(), dirs)
-for item, item_treasures in pairs(obstacle_treasures) do
-    for _, treasure_data in ipairs(item_treasures) do
-        local ok = false
-        for dir_mask, dir in pairs(dirs) do
-            if bit32.band(dir_mask, mask) == 0 then
-                local component_name, component_mask = Zentropy.components:get_obstacle(item, dir, mask, components_rng)
-                if component_name then
-                    obstacle({treasure1=treasure_data}, dir, item)
-                    ok = true
-                    break
-                end
-            end
+
+local obstacle_mask = 0
+local walls = {}
+for dir_mask, dir in pairs(DIRS) do
+    if data.doors[dir] then
+        door({open=data.doors[dir].open, name=data.doors[dir].name}, dir)
+        if data.doors[dir].reach then
+            obstacle_mask = bit32.bor(obstacle_mask, dir_mask)
+            obstacle_item = data.doors[dir].reach
         end
-        if not ok then
-            error(string.format('cannot fit treasure behind obstacle mask=%06o', mask))
+    else
+        table.insert(walls, dir_mask)
+    end
+end
+
+
+
+local obstacle_treasure = nil
+local normal_treasures = {}
+for _, data in ipairs(data.treasures) do
+    if data.reach then
+        obstacle_treasure = data
+    else
+        table.insert(normal_treasures, data)
+    end
+end
+
+if obstacle_treasure and obstacle_mask == 0 then
+    obstacle_mask = walls[room_rng:random(#walls)]
+    obstacle_item = obstacle_treasure.reach
+end
+
+if obstacle_mask ~= 0 then
+
+    local OBSTACLE_MAP = {
+        [Util.oct('200000')] = { dir1='north' },
+        [Util.oct('010000')] = { dir1='east' },
+        [Util.oct('002000')] = { dir1='south' },
+        [Util.oct('040000')] = { dir1='west' },
+        [Util.oct('202000')] = { dir1='north', dir2='south' },
+        [Util.oct('210000')] = { dir1='northeast' },
+        [Util.oct('240000')] = { dir1='northwest' },
+        [Util.oct('012000')] = { dir1='northwest', flip=true },
+        [Util.oct('042000')] = { dir1='northwest', flip=true },
+        [Util.oct('050000')] = { dir1='east', dir2='west' },
+        [Util.oct('212000')] = { dir1='west', flip=true },
+        [Util.oct('250000')] = { dir1='south', flip=true },
+        [Util.oct('242000')] = { dir1='east', flip=true },
+        [Util.oct('052000')] = { dir1='north', flip=true },
+    }
+
+    local info = OBSTACLE_MAP[obstacle_mask]
+    local obstacles = {}
+    obstacles[info.dir1] = {}
+    if info.dir2 then
+        obstacles[info.dir2] = {}
+    end
+
+    if obstacle_treasure then
+        local treasure_obstacle
+        if info.dir2 and room_rng:random(2) == 2 then
+            treasure_obstacle = obstacles[info.dir2]
+        else
+            treasure_obstacle = obstacles[info.dir1]
         end
+        if info.flip then
+            treasure_obstacle.treasure2 = obstacle_treasure
+        else
+            treasure_obstacle.treasure1 = obstacle_treasure
+        end
+    end
+
+    for dir, obstacle_data in pairs(obstacles) do
+        obstacle(obstacle_data, dir, obstacle_item)
     end
 end
 
