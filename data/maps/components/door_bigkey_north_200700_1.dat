@@ -8,24 +8,6 @@ properties{
 }
 
 tile{
-  layer = 0,
-  x = 64,
-  y = 56,
-  width = 32,
-  height = 32,
-  pattern = "statue_fairy",
-}
-
-tile{
-  layer = 0,
-  x = 224,
-  y = 56,
-  width = 32,
-  height = 32,
-  pattern = "statue_fairy",
-}
-
-tile{
   layer = 1,
   x = 128,
   y = 40,
@@ -169,5 +151,23 @@ tile{
   width = 32,
   height = 8,
   pattern = "door_top.closed.1",
+}
+
+tile{
+  layer = 2,
+  x = 64,
+  y = 56,
+  width = 32,
+  height = 32,
+  pattern = "statue_fairy",
+}
+
+tile{
+  layer = 2,
+  x = 224,
+  y = 56,
+  width = 32,
+  height = 32,
+  pattern = "statue_fairy",
 }
 
