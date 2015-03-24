@@ -101,12 +101,11 @@ end
 function Puzzle.max_heads(rng, n)
     local p = function (metric)
         if not metric.is_mergeable then return false end
-        --if metric.doors > 3 then return false end
         if metric.treasures > 2 then return false end
         if metric.hidden_treasures > 1 then return false end
         if metric.bigkey_treasures > 1 then return false end
         if metric.obstacle_treasures > 1 then return false end
-        if metric.bigkey_treasures > 0 and (metric.obstacle_doors > 0 or metric.normal_treasures > 0) then return false end
+        if metric.bigkey_treasures > 0 and (metric.obstacle_doors > 0 or metric.obstacle_treasures > 0 or metric.normal_treasures > 0) then return false end
         return true
     end
     return function (root)
