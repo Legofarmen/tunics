@@ -105,7 +105,10 @@ function Puzzle.max_heads(rng, n)
         if metric.hidden_treasures > 1 then return false end
         if metric.bigkey_treasures > 1 then return false end
         if metric.obstacle_treasures > 1 then return false end
-        if metric.bigkey_treasures > 0 and (metric.obstacle_doors > 0 or metric.obstacle_treasures > 0 or metric.normal_treasures > 0) then return false end
+        if metric.bigkey_treasures > 0 and metric:get_obstacles() > 0 then return false end
+        if metric.bigkey_treasures > 0 and metric.normal_treasures > 0 then return false end
+        if metric.hidden_treasures > 0 and metric:get_obstacles() > 1 then return false end
+        if metric:get_obstacles() > 0 and metric.treasures - metric.hidden_treasures > 1 then return false end
         return true
     end
     return function (root)

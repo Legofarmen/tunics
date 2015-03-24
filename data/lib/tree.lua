@@ -217,6 +217,10 @@ function tree.Metric.__add(lhs, rhs)
     return metric
 end
 
+function tree.Metric:get_obstacles()
+    return math.max(self.obstacle_doors, self.obstacle_treasures)
+end
+
 function Room:get_node_metric()
     local metric = tree.Metric:new()
     metric.is_mergeable = true
