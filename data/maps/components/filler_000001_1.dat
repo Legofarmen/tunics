@@ -91,7 +91,7 @@ tile{
 tile{
   layer = 1,
   x = 184,
-  y = 208,
+  y = 200,
   width = 8,
   height = 8,
   pattern = "wall_border.corner.4",

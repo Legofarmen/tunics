@@ -27,7 +27,7 @@ map{ id = "components/treasure_bigkey_000100_1", description = "Treasure big key
 map{ id = "rooms/room2", description = "Room 2" }
 map{ id = "components/treasure_fairy_000777_1", description = "Treasure fairy 000777 1 " }
 map{ id = "components/chest_hookshot_777202", description = "Chest hookshoot 777202 " }
-map{ id = "components/obstacle_hookshot_north_000700_1", description = "Obstacle hookshot north 000700 2" }
+map{ id = "components/obstacle_hookshot_north_000700_1", description = "Obstacle hookshot north 000700 1" }
 map{ id = "components/obstacle_hookshot_west_000444_1", description = "Obstacle hookshot west 000444 1" }
 map{ id = "components/obstacle_hookshot_east_000111_1", description = "Obstacle hookshot east 000111 1" }
 map{ id = "components/door_bigkey_south_002000_1", description = "Door bigkey south 002000 1" }
@@ -42,7 +42,7 @@ map{ id = "components/obstacle_hookshot_south_000007_1", description = "Obstacle
 map{ id = "components/obstacle_hookshot_northeast_000711_1", description = "Obstacle hookshot northeast 000711 1" }
 map{ id = "components/obstacle_hookshot_northwest_000744_1", description = "Obstacle hookshot northwest 000744 1" }
 map{ id = "components/filler_200700_2", description = "Filler 200700 2" }
-map{ id = "components/boss_room_000777_1", description = "Boss room 000777 1" }
+map{ id = "components/bossroom_000777_1", description = "Boss room 000777 1" }
 map{ id = "components/filler_000001_2", description = "Filler 000001 2" }
 map{ id = "components/filler_000004_2", description = "Filler 000004 2" }
 map{ id = "components/filler_000100_2", description = "Filler 000100 2" }
@@ -56,7 +56,7 @@ map{ id = "components/door_smallkey_east_010000_1", description = "Door small ke
 map{ id = "components/door_smallkey_north_200000_1", description = "Door small key north 200000 1" }
 map{ id = "components/door_smallkey_south_002000_1", description = "Door small key south 002000 1" }
 map{ id = "components/door_smallkey_west_040000_1", description = "Door small key west 040000 1" }
-map{ id = "rooms/quest_start", description = "Quest start" }
+map{ id = "rooms/intro_2", description = "Intro 2" }
 map{ id = "components/floor_1", description = "Floor 1" }
 map{ id = "components/floor_2", description = "Floor 2" }
 map{ id = "components/floor_3", description = "Floor 3" }
@@ -66,6 +66,17 @@ map{ id = "components/floor_6", description = "Floor 6" }
 map{ id = "components/door_entrance_south_002777_2", description = "Door entrance south 002777 2" }
 map{ id = "components/door_entrance_south_002777_3", description = "Door entrance south 002777 3" }
 map{ id = "components/door_entrance_south_002777_4", description = "Door entrance south 002777 4" }
+map{ id = "rooms/intro_1", description = "Intro 1" }
+map{ id = "rooms/cut_scene", description = "Cut scene" }
+map{ id = "rooms/title", description = "Title" }
+map{ id = "components/filler_200200_2", description = "Filler 200200 2" }
+map{ id = "components/filler_002002_2", description = "Filler 002002 2" }
+map{ id = "components/filler_200700_3", description = "Filler 200700 3" }
+map{ id = "components/filler_040444_3", description = "Filler 040444 3" }
+map{ id = "components/filler_010111_3", description = "Filler 010111 3" }
+map{ id = "components/filler_002007_3", description = "Filler 002007 3" }
+map{ id = "components/bossroom_000777_2", description = "Boss room 000777 2" }
+map{ id = "rooms/tileset_test", description = "Tileset test" }
 
 tileset{ id = "dungeon_blue", description = "Dungeon (blue)" }
 tileset{ id = "dungeon_grayblue", description = "Dungeon (gray-blue)" }
@@ -75,6 +86,12 @@ tileset{ id = "dungeon_ice", description = "Dungeon (ice)" }
 tileset{ id = "dungeon_green", description = "Dungeon (green)" }
 tileset{ id = "dungeon_house", description = "Dungeon (house)" }
 tileset{ id = "dungeon_cave", description = "Dungeon (cave)" }
+tileset{ id = "dungeon_desert", description = "Dungeon (desert)" }
+tileset{ id = "dungeon_green_2", description = "Dungeon (green 2)" }
+tileset{ id = "dungeon_ganon", description = "Dungeon (ganon)" }
+tileset{ id = "dungeon_pink", description = "Dungeon (pink)" }
+tileset{ id = "dungeon_gray", description = "Dungeon (gray)" }
+tileset{ id = "dungeon_gold", description = "Dungeon (gold)" }
 
 sprite{ id = "entities/block", description = "Block" }
 sprite{ id = "entities/chest", description = "Chest" }
@@ -290,6 +307,7 @@ item{ id = "smallkey", description = "Small key" }
 item{ id = "sword", description = "Sword" }
 item{ id = "heart", description = "Heart" }
 item{ id = "fairy", description = "Fairy" }
+item{ id = "tunic", description = "Tunic" }
 
 enemy{ id = "tentacle", description = "Tentacle" }
 enemy{ id = "green_knight_soldier", description = "Green knight soldier" }
