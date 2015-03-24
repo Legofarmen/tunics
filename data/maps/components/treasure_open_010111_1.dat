@@ -1,0 +1,80 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  tileset = "dungeon_blue",
+  music = "same",
+}
+
+tile{
+  layer = 1,
+  x = 184,
+  y = 40,
+  width = 96,
+  height = 160,
+  pattern = "floor_small.2",
+}
+
+tile{
+  layer = 1,
+  x = 176,
+  y = 40,
+  width = 8,
+  height = 160,
+  pattern = "floor_border.1",
+}
+
+tile{
+  layer = 1,
+  x = 248,
+  y = 112,
+  width = 16,
+  height = 16,
+  pattern = "tongue",
+}
+
+tile{
+  layer = 1,
+  x = 248,
+  y = 168,
+  width = 16,
+  height = 16,
+  pattern = "tongue",
+}
+
+tile{
+  layer = 1,
+  x = 208,
+  y = 112,
+  width = 16,
+  height = 16,
+  pattern = "tongue",
+}
+
+tile{
+  layer = 1,
+  x = 208,
+  y = 168,
+  width = 16,
+  height = 16,
+  pattern = "tongue",
+}
+
+tile{
+  layer = 1,
+  x = 208,
+  y = 56,
+  width = 16,
+  height = 16,
+  pattern = "tongue",
+}
+
+chest{
+  layer = 1,
+  x = 256,
+  y = 69,
+  name = "chest",
+  sprite = "entities/chest",
+}
+

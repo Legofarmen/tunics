@@ -1,0 +1,134 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  tileset = "dungeon_blue",
+  music = "same",
+}
+
+tile{
+  layer = 1,
+  x = 112,
+  y = 64,
+  width = 96,
+  height = 56,
+  pattern = "floor_small.2",
+}
+
+tile{
+  layer = 1,
+  x = 96,
+  y = 48,
+  width = 16,
+  height = 16,
+  pattern = "stage_big.corner.1",
+}
+
+tile{
+  layer = 1,
+  x = 96,
+  y = 120,
+  width = 16,
+  height = 16,
+  pattern = "stage_big.corner.3",
+}
+
+tile{
+  layer = 1,
+  x = 96,
+  y = 64,
+  width = 16,
+  height = 56,
+  pattern = "stage_big.3",
+}
+
+tile{
+  layer = 1,
+  x = 208,
+  y = 48,
+  width = 16,
+  height = 16,
+  pattern = "stage_big.corner.2",
+}
+
+tile{
+  layer = 1,
+  x = 208,
+  y = 120,
+  width = 16,
+  height = 16,
+  pattern = "stage_big.corner.4",
+}
+
+tile{
+  layer = 1,
+  x = 208,
+  y = 64,
+  width = 16,
+  height = 56,
+  pattern = "stage_big.4",
+}
+
+tile{
+  layer = 1,
+  x = 112,
+  y = 120,
+  width = 16,
+  height = 16,
+  pattern = "stage_big.2",
+}
+
+tile{
+  layer = 1,
+  x = 192,
+  y = 120,
+  width = 16,
+  height = 16,
+  pattern = "stage_big.2",
+}
+
+tile{
+  layer = 1,
+  x = 112,
+  y = 48,
+  width = 96,
+  height = 16,
+  pattern = "stage_big.1",
+}
+
+tile{
+  layer = 1,
+  x = 128,
+  y = 120,
+  width = 64,
+  height = 16,
+  pattern = "stage_big.steps",
+}
+
+tile{
+  layer = 1,
+  x = 128,
+  y = 120,
+  width = 8,
+  height = 16,
+  pattern = "stage_big.steps_border.1",
+}
+
+tile{
+  layer = 1,
+  x = 184,
+  y = 120,
+  width = 8,
+  height = 16,
+  pattern = "stage_big.steps_border.2",
+}
+
+chest{
+  layer = 1,
+  x = 160,
+  y = 93,
+  name = "chest_2",
+  sprite = "entities/chest",
+}
+

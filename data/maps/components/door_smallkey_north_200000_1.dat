@@ -97,6 +97,6 @@ tile{
   y = 8,
   width = 32,
   height = 8,
-  pattern = "door_top.low.1",
+  pattern = "door_top.closed.1",
 }
 

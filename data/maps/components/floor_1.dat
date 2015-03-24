@@ -13,6 +13,6 @@ tile{
   y = 32,
   width = 256,
   height = 176,
-  pattern = "floor.11",
+  pattern = "floor.1",
 }
 

@@ -1,0 +1,265 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  tileset = "dungeon_blue",
+  music = "same",
+}
+
+tile{
+  layer = 1,
+  x = 80,
+  y = 120,
+  width = 64,
+  height = 88,
+  pattern = "hole",
+}
+
+tile{
+  layer = 1,
+  x = 144,
+  y = 120,
+  width = 112,
+  height = 48,
+  pattern = "hole",
+}
+
+tile{
+  layer = 1,
+  x = 200,
+  y = 144,
+  width = 88,
+  height = 64,
+  pattern = "hole",
+}
+
+tile{
+  layer = 1,
+  x = 240,
+  y = 120,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.corner.2",
+}
+
+tile{
+  layer = 1,
+  x = 144,
+  y = 152,
+  width = 56,
+  height = 16,
+  pattern = "wall_hole.2",
+}
+
+tile{
+  layer = 1,
+  x = 216,
+  y = 192,
+  width = 56,
+  height = 16,
+  pattern = "wall_hole.2",
+}
+
+tile{
+  layer = 1,
+  x = 200,
+  y = 192,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.corner.3",
+}
+
+tile{
+  layer = 1,
+  x = 96,
+  y = 120,
+  width = 144,
+  height = 16,
+  pattern = "wall_hole.1",
+}
+
+tile{
+  layer = 1,
+  x = 288,
+  y = 160,
+  width = 24,
+  height = 32,
+  pattern = "wall_statue.4",
+}
+
+tile{
+  layer = 1,
+  x = 200,
+  y = 152,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.corner_reverse.3",
+}
+
+tile{
+  layer = 1,
+  x = 200,
+  y = 168,
+  width = 16,
+  height = 24,
+  pattern = "wall_hole.3",
+}
+
+tile{
+  layer = 1,
+  x = 272,
+  y = 192,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.corner.4",
+}
+
+tile{
+  layer = 1,
+  x = 272,
+  y = 160,
+  width = 16,
+  height = 32,
+  pattern = "wall_hole.4",
+}
+
+tile{
+  layer = 1,
+  x = 240,
+  y = 144,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.corner_reverse.2",
+}
+
+tile{
+  layer = 1,
+  x = 272,
+  y = 144,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.corner.2",
+}
+
+tile{
+  layer = 1,
+  x = 256,
+  y = 144,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.1",
+}
+
+tile{
+  layer = 1,
+  x = 128,
+  y = 152,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.corner_reverse.4",
+}
+
+tile{
+  layer = 1,
+  x = 128,
+  y = 168,
+  width = 16,
+  height = 24,
+  pattern = "wall_hole.4",
+}
+
+tile{
+  layer = 1,
+  x = 128,
+  y = 192,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.corner.4",
+}
+
+tile{
+  layer = 1,
+  x = 96,
+  y = 192,
+  width = 32,
+  height = 16,
+  pattern = "wall_hole.2",
+}
+
+tile{
+  layer = 1,
+  x = 80,
+  y = 136,
+  width = 16,
+  height = 56,
+  pattern = "wall_hole.3",
+}
+
+tile{
+  layer = 1,
+  x = 80,
+  y = 192,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.corner.3",
+}
+
+tile{
+  layer = 1,
+  x = 240,
+  y = 136,
+  width = 16,
+  height = 8,
+  pattern = "wall_hole.4",
+}
+
+tile{
+  layer = 1,
+  x = 80,
+  y = 120,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.corner.1",
+}
+
+tile{
+  layer = 1,
+  x = 96,
+  y = 216,
+  width = 32,
+  height = 16,
+  pattern = "wall_torch.2",
+}
+
+tile{
+  layer = 1,
+  x = 192,
+  y = 216,
+  width = 32,
+  height = 16,
+  pattern = "wall_torch.2",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 176,
+  y = 176,
+  width = 16,
+  height = 16,
+  name = "placeholder1",
+  pattern = "floor_small.2",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 48,
+  y = 176,
+  width = 16,
+  height = 16,
+  name = "placeholder2",
+  pattern = "floor_small.2",
+  enabled_at_start = false,
+}
+

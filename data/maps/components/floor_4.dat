@@ -11,26 +11,8 @@ tile{
   layer = 1,
   x = 32,
   y = 32,
-  width = 8,
-  height = 16,
-  pattern = "wall_border.3",
-}
-
-tile{
-  layer = 1,
-  x = 32,
-  y = 32,
-  width = 16,
-  height = 8,
-  pattern = "wall_border.2",
-}
-
-tile{
-  layer = 1,
-  x = 32,
-  y = 32,
   width = 256,
   height = 176,
-  pattern = "floor.1",
+  pattern = "floor.4",
 }
 
