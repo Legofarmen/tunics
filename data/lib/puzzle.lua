@@ -99,11 +99,44 @@ function Puzzle.locked_door_step(rng, root)
 end
 
 function Puzzle.max_heads(rng, n)
+    local p = function (metric)
+        if not metric.is_mergeable then return false end
+        --if metric.doors > 3 then return false end
+        if metric.treasures > 2 then return false end
+        if metric.hidden_treasures > 1 then return false end
+        if metric.bigkey_treasures > 1 then return false end
+        if metric.obstacle_treasures > 1 then return false end
+        if metric.bigkey_treasures > 0 and (metric.obstacle_doors > 0 or metric.normal_treasures > 0) then return false end
+        return true
+    end
     return function (root)
         while #root.children > n do
+            local node1 = root:remove_child(root:random_child(rng))
+            local node2 = root:remove_child(root:random_child(rng))
+
             local fork = Tree.Room:new()
-            fork:merge_child(root:remove_child(root:random_child(rng)))
-            fork:merge_child(root:remove_child(root:random_child(rng)))
+            local n1 = node1:get_node_metric()
+            local n2 = node2:get_node_metric()
+            local c1 = node1:get_children_metric()
+            local c2 = node2:get_children_metric()
+            if p(c1 + c2) then
+                fork:merge_children(node1)
+                fork:merge_children(node2)
+            elseif p(c1 + n2) then
+                fork:merge_children(node1)
+                fork:add_child(node2)
+            elseif p(n1 + c2) then
+                fork:add_child(node1)
+                fork:merge_children(node2)
+            elseif p(n1 + n2) then
+                fork:add_child(node1)
+                fork:add_child(node2)
+            else
+                local node2wrapped = Tree.Room:new()
+                node2wrapped:add_child(node2)
+                fork:add_child(node1)
+                fork:add_child(node2wrapped)
+            end
             root:add_child(fork)
         end
     end
@@ -172,11 +205,11 @@ function Puzzle.alpha_dungeon(rng, nkeys, item_names)
 
     local root = Tree.Room:new()
     for i, step in ipairs(steps) do
-        Puzzle.max_heads(rng:create(), 3)(root)
+        Puzzle.max_heads(rng:create(), 4)(root)
         step(root)
     end
     root:each_child(function (key, child)
-        if child.class ~= 'Room' then
+        if child.class ~= 'Room' or child.reach or child.open == 'bigkey' then
             local room = Tree.Room:new()
             room:add_child(child)
             root:update_child(key, room)

@@ -1,5 +1,7 @@
 local Class = require 'lib/class'
 
+local tree = {}
+
 
 local WeightVisitor = {}
 setmetatable(WeightVisitor, WeightVisitor)
@@ -128,14 +130,10 @@ function Room:child_counts()
     return counts.Room, counts.Treasure, counts.Enemy
 end
 
-function Room:merge_child(node)
-    if node.class ~= 'Room' or node.see or node.reach or node.open then
-        self:add_child(node)
-    else
-        node:each_child(function (key, child)
-            self:add_child(child)
-        end)
-    end
+function Room:merge_children(node)
+    node:each_child(function (key, child)
+        self:add_child(child)
+    end)
 end
 
 function Room:update_child(key, node)
@@ -190,7 +188,89 @@ function Room:heavy_child()
 end
 
 
+tree.Metric = Class:new()
 
+function tree.Metric:new(o)
+    o = o or {}
+    o.is_mergeable = o.is_mergeable or false
+    o.doors = o.doors or 0
+    o.hidden_doors = o.hidden_doors or 0
+    o.obstacle_doors = o.obstacle_doors or 0
+    o.bigkey_doors = o.bigkey_doors or 0
+    o.treasures = o.treasures or 0
+    o.normal_treasures = o.normal_treasures or 0
+    o.hidden_treasures = o.hidden_treasures or 0
+    o.obstacle_treasures = o.obstacle_treasures or 0
+    o.bigkey_treasures = o.bigkey_treasures or 0
+    return Node.new(self, o)
+end
+
+function tree.Metric.__add(lhs, rhs)
+    local metric = tree.Metric:new()
+    for key, value in pairs(lhs) do
+        if type(value) == 'number' then
+            metric[key] = value + rhs[key]
+        else
+            metric[key] = value and rhs[key]
+        end
+    end
+    return metric
+end
+
+function Room:get_node_metric()
+    local metric = tree.Metric:new()
+    metric.is_mergeable = true
+    metric.doors = 1
+    if self.see then metric.hidden_doors = 1 end
+    if self.reach then metric.obstacle_doors = 1 end
+    if self.open == 'bigkey' then metric.bigkey_doors = 1 end
+    return metric
+end
+
+function Treasure:get_node_metric()
+    local metric = tree.Metric:new()
+    metric.is_mergeable = true
+    metric.treasures = 1
+    if self.see then metric.hidden_treasures = 1 end
+    if self.reach then metric.obstacle_treasures = 1 end
+    if self.open == 'bigkey' then metric.bigkey_treasures = 1 end
+    if not (self.see or self.reach or self.open) then metric.normal_treasures = 1 end
+    return metric
+end
+
+function Enemy:get_node_metric()
+    local metric = tree.Metric:new()
+    metric.is_mergeable = true
+    return metric
+end
+
+function Room:get_children_metric()
+    local metric = tree.Metric:new()
+    metric.is_mergeable = not (self.see or self.reach or self.open)
+    self:each_child(function (key, child)
+        metric = metric + child:get_node_metric()
+    end)
+    return metric
+end
+
+function Treasure:get_children_metric()
+    local metric = tree.Metric:new()
+    metric.is_mergeable = false
+    return metric
+end
+
+function Enemy:get_children_metric()
+    local metric = tree.Metric:new()
+    metric.is_mergeable = false
+    return metric
+end
+
+function tree.Metric:__tostring()
+    return string.format('M:%-5s D:%d (%d,%d,%d) T:%d (%d,%d,%d)',
+    self.is_mergeable,
+    self.doors,     self.hidden_doors,     self.obstacle_doors,     self.bigkey_doors,
+    self.treasures, self.hidden_treasures, self.obstacle_treasures, self.bigkey_treasures)
+end
 
 
 
@@ -222,10 +302,9 @@ function PrintVisitor:visit_enemy(enemy)
 end
 
 
-return {
-    Node=Node,
-    Room=Room,
-    Treasure=Treasure,
-    Enemy=Enemy,
-    PrintVisitor=PrintVisitor,
-}
+tree.Node=Node
+tree.Room=Room
+tree.Treasure=Treasure
+tree.Enemy=Enemy
+tree.PrintVisitor=PrintVisitor
+return tree
