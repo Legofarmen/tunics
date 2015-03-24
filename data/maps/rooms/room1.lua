@@ -257,6 +257,10 @@ if obstacle_mask ~= 0 then
     for dir, obstacle_data in pairs(obstacles) do
         obstacle(obstacle_data, dir, obstacle_item)
     end
+
+    if info.flip then
+        mask = bit32.bor(mask, Util.oct('000777'))
+    end
 end
 
 for _, treasure_data in ipairs(normal_treasures) do
