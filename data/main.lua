@@ -91,6 +91,7 @@ function sol.main:on_started()
     game:set_ability("sword", 1)
     game:set_max_life(12)
     game:set_life(12)
+    game:set_value('small_key_amount', 0)
 
     require('lib/map_include.lua')
     sol.main.load_file("hud/hud")(game)
