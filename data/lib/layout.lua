@@ -142,20 +142,9 @@ function collect_mixin(object)
                         open=native_door.open,
                     }
                 end
-                local map_treasures = {}
-                for n, native_treasure in ipairs(native_room.treasures) do
-                    table.insert(map_treasures, {
-                        name=self.treasure_name(depth, leaf, n),
-                        item_name=native_treasure.item_name,
-                        see=native_treasure.see,
-                        reach=native_treasure.reach,
-                        open=native_treasure.open,
-                    })
-                end
                 local map_info = {
-                    name = self.room_name(depth, leaf),
                     doors=map_doors,
-                    treasures=map_treasures,
+                    treasures=native_room.treasures,
                     enemies=native_room.enemies,
                 }
                 f(depth, leaf, map_info)
@@ -281,8 +270,9 @@ function Layout.print_mixin(object)
                 print(string.format("  Door %s", dir))
                 print_access(door)
             end
-            for _, treasure in ipairs(info.treasures) do
-                print(string.format("  Item %s", treasure.name))
+
+            for n, treasure in ipairs(info.treasures) do
+                print(string.format("  Item %s", self.treasure_name(depth, leaf, n)))
                 print_access(treasure)
             end
             for _, enemy in ipairs(info.enemies) do
@@ -350,7 +340,8 @@ function Layout.minimap_mixin(object, map_menu)
             end
 
             if self.has_compass then
-                for _, treasure in ipairs(info.treasures) do
+                for n, treasure in ipairs(info.treasures) do
+                    local treasure_name = self.treasure_name(depth, leaf, n)
                     if treasure.open == 'bigkey' then
                         map_menu:draw_big_chest(x, y)
                     else
@@ -449,15 +440,24 @@ function Layout.solarus_mixin(object, map, floors)
             self:separator(map_x+1, map_y, 'west')
 
             local map_info = {
-                name=info.name,
+                name=self.room_name(depth, leaf),
                 doors={},
-                treasures=info.treasures,
+                treasures={},
                 enemies=info.enemies,
                 rng=self.rng:biased(10 * map_y + map_x),
             }
             local doors = {}
             for native_dir, door in pairs(info.doors) do
                 map_info.doors[self.dir_from_native(native_dir)] = door
+            end
+            for n, treasure in ipairs(info.treasures) do
+                table.insert(map_info.treasures, {
+                    name=self.treasure_name(depth, leaf, n),
+                    item_name=treasure.item_name,
+                    see=treasure.see,
+                    reach=treasure.reach,
+                    open=treasure.open,
+                })
             end
 
             local floor_rng = self.rng:biased(10 * map_y + map_x)
