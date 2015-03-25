@@ -13,12 +13,25 @@ local puzzle_rng = master_prng:create()
 local layout_rng = master_prng:create()
 local presentation_rng = master_prng:create()
 
-local puzzle = Puzzle.alpha_dungeon(puzzle_rng, 3, {'hookshot'})
---puzzle:accept(Tree.PrintVisitor:new{})
+local on_started_handlers = {}
+
+function map:add_on_started(f)
+    table.insert(on_started_handlers, f)
+end
+
+function map:on_started()
+    for _, f in ipairs(on_started_handlers) do
+        f()
+    end
+end
 
 function map:render_map(map_menu)
     Layout.minimap_mixin(layout:new{ game=map:get_game() }, map_menu):render(puzzle)
 end
+
+
+local puzzle = Puzzle.alpha_dungeon(puzzle_rng, 3, {'hookshot'})
+--puzzle:accept(Tree.PrintVisitor:new{})
 
 local floor1, floor2 = zentropy.components:get_floors(presentation_rng)
 
@@ -27,6 +40,6 @@ solarus_layout:render(puzzle)
 --Layout.print_mixin(layout:new()):render(puzzle)
 
 
-function map:on_started()
+map:add_on_started(function ()
     solarus_layout:move_hero_to_start()
-end
+end)

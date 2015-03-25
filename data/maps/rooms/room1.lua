@@ -4,6 +4,7 @@ local rng = data.rng
 
 local components_rng = rng:create()
 local room_rng = rng:create()
+local treasures_rng = rng:create()
 
 bit32 = bit32 or bit
 
@@ -109,10 +110,10 @@ function filler()
 end
 
 function treasure(data)
-    local component_name, component_mask = Zentropy.components:get_treasure(data.open, mask, components_rng)
+    local component_name, component_mask = Zentropy.components:get_treasure(data.open or data.see, mask, components_rng)
     if not component_name then
         for _, msg in ipairs(messages) do print(msg) end
-        error(string.format("treasure not found: open=%s mask=%06o", data.open, mask))
+        error(string.format("treasure not found: open=%s mask=%06o", data.open or data.see, mask))
     end
     mask = bit32.bor(mask, component_mask)
 
@@ -123,6 +124,7 @@ function treasure(data)
         properties.treasure_name = data.item_name
         return properties
     end
+    data.rng = treasures_rng:biased(component_mask)
     map:include(0, 0, component_name, data)
     data_messages('component', component_name)
 end
@@ -208,11 +210,11 @@ end
 
 local obstacle_treasure = nil
 local normal_treasures = {}
-for _, data in ipairs(data.treasures) do
-    if data.reach then
-        obstacle_treasure = data
+for _, treasure_data in ipairs(data.treasures) do
+    if treasure_data.reach then
+        obstacle_treasure = treasure_data
     else
-        table.insert(normal_treasures, data)
+        table.insert(normal_treasures, treasure_data)
     end
 end
 
