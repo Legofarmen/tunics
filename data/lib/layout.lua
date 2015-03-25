@@ -13,7 +13,7 @@ local BaseVisitor = Class:new()
 function BaseVisitor:render(tree)
     self.leaf = 0
     self.depth = 0
-    self.dir = self.inwards
+    self.dir = self.entrance_dir
     self:on_start()
     tree:accept(self)
     self:on_finish()
@@ -207,7 +207,7 @@ end
 
 
 Layout.NorthEastwardVisitor = BaseVisitor:new{
-    inwards='down',
+    entrance_dir='down',
     pos_from_native = function (depth, leaf)
         return leaf, 9-depth
     end,
@@ -223,7 +223,7 @@ Layout.NorthEastwardVisitor = BaseVisitor:new{
 }
 
 Layout.NorthWestwardVisitor = BaseVisitor:new{
-    inwards='down',
+    entrance_dir='down',
     pos_from_native = function (depth, leaf)
         return 9-leaf, 9-depth
     end,
