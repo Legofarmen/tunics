@@ -7,8 +7,8 @@ setmetatable(HideTreasuresVisitor, HideTreasuresVisitor)
 
 function HideTreasuresVisitor:visit_room(room)
     room:each_child(function (key, child)
-        if child.class == 'Treasure' and child.open ~= 'bigkey' then
-            room:update_child(key, child:with_needs{see='compass'})
+        if child.class == 'Treasure' and child:is_reachable() and child:is_open() then
+            room:update_child(key, child:with_needs{see='compass',reach='nothing',open='nothing'})
         end
         child:accept(self)
     end)

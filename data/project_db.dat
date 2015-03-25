@@ -94,6 +94,7 @@ map{ id = "components/treasure_open_200770_1", description = "Treasure open 2007
 map{ id = "components/treasure_open_250777_1", description = "Treasure open 250777 1" }
 map{ id = "components/door_bigkey_north_250777_1", description = "Door bigkey north 250777 1" }
 map{ id = "components/treasure_compass_000004_1", description = "Treasure compass 000004 1" }
+map{ id = "components/treasure_compass_000001_1", description = "Treasure compass 000001 1" }
 
 tileset{ id = "dungeon_blue", description = "Dungeon (blue)" }
 tileset{ id = "dungeon_grayblue", description = "Dungeon (gray-blue)" }
