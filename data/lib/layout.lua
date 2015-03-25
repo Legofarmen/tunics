@@ -142,10 +142,17 @@ function collect_mixin(object)
                         open=native_door.open,
                     }
                 end
+                local map_treasures = {}
+                for n, native_treasure in ipairs(native_room.treasures) do
+                    table.insert(map_treasures, {
+                        name=self.treasure_name(x, y, n),
+                        item_name=native_treasure.item_name,
+                    })
+                end
                 local map_info = {
                     name = self.room_name(self.coord_transform(native_room.native_pos.depth, native_room.native_pos.leaf)),
                     doors=map_doors,
-                    treasures=native_room.treasures,
+                    treasures=map_treasures,
                     enemies=native_room.enemies,
                 }
                 f(x, y, map_info)
@@ -157,7 +164,6 @@ function collect_mixin(object)
         local x, y = self.coord_transform(depth, leaf)
         local info = self:get_room(x, y)
         local data = {
-            name = self.treasure_name(x, y, #info.treasures + 1),
             item_name = treasure.name,
         }
         if treasure.see ~= 'nothing' then data.see=treasure.see end
