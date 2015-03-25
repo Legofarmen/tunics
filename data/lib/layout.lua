@@ -139,7 +139,7 @@ function collect_mixin(object)
                     local door_map_x, door_map_y = self.pos_from_native(native_door.native_pos.depth, native_door.native_pos.leaf)
                     local door_map_dir = self.dir_from_native(native_door.native_pos.dir)
                     map_doors[self.dir_from_native(dir)] = {
-                        name=self.door_name(door_map_x, door_map_y, door_map_dir),
+                        name=self.door_name(native_door.native_pos.depth, native_door.native_pos.leaf, native_door.native_pos.dir),
                         see=native_door.see,
                         reach=native_door.reach,
                         open=native_door.open,
@@ -190,15 +190,17 @@ function collect_mixin(object)
         return string.format('room_%d_%d', x, y)
     end
 
-    function object.door_name(x, y, dir)
-        if dir == 'east' then
-            x = x + 1
-            dir = 'west'
-        elseif dir == 'south' then
-            y = y + 1
-            dir = 'north'
+    function object.door_name(depth, leaf, native_dir)
+        local map_x, map_y = object.pos_from_native(depth, leaf)
+        local map_dir = object.dir_from_native(native_dir)
+        if map_dir == 'east' then
+            map_x = map_x + 1
+            map_dir = 'west'
+        elseif map_dir == 'south' then
+            map_y = map_y + 1
+            map_dir = 'north'
         end
-        return string.format('room_%d_%d_%s', x, y, dir)
+        return string.format('room_%d_%d_%s', map_x, map_y, dir)
     end
 
     function object:room(room, depth, leaf, native_dir)
