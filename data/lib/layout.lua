@@ -173,7 +173,7 @@ function collect_mixin(object)
             map_y = map_y + 1
             map_dir = 'north'
         end
-        return string.format('room_%d_%d_%s', map_x, map_y, dir)
+        return string.format('room_%d_%d_%s', map_x, map_y, map_dir)
     end
 
     function object:room(room, depth, leaf, native_dir)
