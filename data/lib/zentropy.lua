@@ -7,15 +7,10 @@ zentropy = zentropy or {
     db = {
         Project = {},
         Components = Class:new{
-            SECTION_MASKS = {
+            CORNER_SECTION_MASKS = {
                 Util.oct('000001'),
-                Util.oct('000002'),
                 Util.oct('000004'),
-                Util.oct('000010'),
-                Util.oct('000020'),
-                Util.oct('000040'),
                 Util.oct('000100'),
-                Util.oct('000200'),
                 Util.oct('000400'),
             },
         },
@@ -163,11 +158,9 @@ end
 function zentropy.db.Components:get_door(open, dir, mask, rng)
     open = open or 'open'
     if not self.doors[open] then
-        print('first', open, dir)
         return
     end
     if not self.doors[open][dir] then
-        print('second')
         return
     end
     local entries = {}
@@ -226,7 +219,7 @@ function zentropy.db.Components:get_treasure(open, mask, rng)
     local entries = {}
     for _, entry in pairs(self.treasures[open]) do
         if entry.mask == 'any' then
-            for _, section in ipairs(self.SECTION_MASKS) do
+            for _, section in ipairs(self.CORNER_SECTION_MASKS) do
                 if bit32.band(mask, section) == 0 then
                     table.insert(entries, {mask=section, id=entry.id})
                 end
