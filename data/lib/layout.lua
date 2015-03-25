@@ -111,7 +111,6 @@ function collect_mixin(object)
         if self:has_room(depth, leaf) then
             error(string.format('room already exists: %d %d', depth, leaf))
         end
-        assert(info.native_pos)
         for dir, door_info in pairs(info.doors) do
             assert(door_info.native_pos)
         end
@@ -132,9 +131,9 @@ function collect_mixin(object)
     end
 
     function object:each_room(f)
-        for y, row in Util.pairs_by_keys(self.rooms) do
-            for x, native_room in Util.pairs_by_keys(row) do
-                local map_x, map_y = self.pos_from_native(native_room.native_pos.depth, native_room.native_pos.leaf)
+        for depth, row in Util.pairs_by_keys(self.rooms) do
+            for leaf, native_room in Util.pairs_by_keys(row) do
+                local map_x, map_y = self.pos_from_native(depth, leaf)
                 local map_doors = {}
                 for dir, native_door in pairs(native_room.doors) do
                     local door_map_x, door_map_y = self.pos_from_native(native_door.native_pos.depth, native_door.native_pos.leaf)
@@ -207,7 +206,6 @@ function collect_mixin(object)
         local parent_depth, parent_leaf = self.step(depth, leaf, from_dir)
         local native_pos = { depth=depth, leaf=leaf, dir=native_dir }
         local info = {
-            native_pos=native_pos,
             doors={
                 [from_dir]={
                     native_pos=native_pos,
