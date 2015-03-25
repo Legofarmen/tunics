@@ -169,24 +169,6 @@ tile{
   pattern = "wall_hole.corner.3",
 }
 
-tile{
-  layer = 1,
-  x = 192,
-  y = 8,
-  width = 32,
-  height = 24,
-  pattern = "wall_statue.1",
-}
-
-tile{
-  layer = 1,
-  x = 192,
-  y = 208,
-  width = 32,
-  height = 24,
-  pattern = "wall_statue.2",
-}
-
 dynamic_tile{
   layer = 1,
   x = 256,
@@ -207,5 +189,23 @@ dynamic_tile{
   name = "placeholder2",
   pattern = "floor_small.2",
   enabled_at_start = false,
+}
+
+tile{
+  layer = 2,
+  x = 192,
+  y = 208,
+  width = 32,
+  height = 24,
+  pattern = "wall_statue.2",
+}
+
+tile{
+  layer = 2,
+  x = 192,
+  y = 8,
+  width = 32,
+  height = 24,
+  pattern = "wall_statue.1",
 }
 
