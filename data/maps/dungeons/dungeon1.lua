@@ -25,11 +25,6 @@ function map:on_started()
     end
 end
 
-function map:render_map(map_menu)
-    Layout.minimap_mixin(layout:new{ game=map:get_game() }, map_menu):render(puzzle)
-end
-
-
 local puzzle = Puzzle.alpha_dungeon(puzzle_rng, 3, {'hookshot'})
 --puzzle:accept(Tree.PrintVisitor:new{})
 
@@ -39,6 +34,10 @@ local solarus_layout = Layout.solarus_mixin(layout:new{rng=layout_rng}, map, {fl
 solarus_layout:render(puzzle)
 --Layout.print_mixin(layout:new()):render(puzzle)
 
+
+function map:render_map(map_menu)
+    Layout.minimap_mixin(layout:new{ game=map:get_game() }, map_menu):render(puzzle)
+end
 
 map:add_on_started(function ()
     solarus_layout:move_hero_to_start()
