@@ -98,36 +98,37 @@ function collect_mixin(object)
         self:collect_on_finish()
     end
 
-    function object:has_room(x, y)
-        return self.rooms[y] and self.rooms[y][x]
+    function object:has_room(depth, leaf)
+        return self.rooms[depth] and self.rooms[depth][leaf]
     end
 
-    function object:get_room(x, y)
-        self.rooms[y] = self.rooms[y] or {}
-        return self.rooms[y][x]
+    function object:get_room(depth, leaf)
+        self.rooms[depth] = self.rooms[depth] or {}
+        return self.rooms[depth][leaf]
     end
 
-    function object:new_room(x, y, info)
-        if self:has_room(x, y) then
-            error(string.format('room already exists: %d %d', x, y))
+    function object:new_room(depth, leaf, info)
+        if self:has_room(depth, leaf) then
+            error(string.format('room already exists: %d %d', depth, leaf))
         end
         assert(info.native_pos)
         for dir, door_info in pairs(info.doors) do
             assert(door_info.native_pos)
         end
-        self.rooms[y] = self.rooms[y] or {}
-        self.rooms[y][x] = info
+        self.rooms[depth] = self.rooms[depth] or {}
+        self.rooms[depth][leaf] = info
+        return info
     end
 
-    function object.reverse(dir)
-        local opposites = { east='west', north='south', south='north', west='east', }
-        return opposites[dir]
+    function object.reverse(native_dir)
+        local opposites = { forward='backward', up='down', down='up', backward='forward', }
+        return opposites[native_dir]
     end
 
-    function object.step(x, y, dir)
-        local x_delta = { east=1, north=0, south=0, west=-1, }
-        local y_delta = { east=0, north=-1, south=1, west=0, }
-        return x + x_delta[dir], y + y_delta[dir]
+    function object.step(depth, leaf, native_dir)
+        local depth_delta = { forward=0, up=-1, down=1, backward=0, }
+        local leaf_delta = { forward=1, up=0, down=0, backward=-1, }
+        return depth + depth_delta[native_dir], leaf + leaf_delta[native_dir]
     end
 
     function object:each_room(f)
@@ -138,7 +139,7 @@ function collect_mixin(object)
                 for dir, native_door in pairs(native_room.doors) do
                     local door_map_x, door_map_y = self.pos_from_native(native_door.native_pos.depth, native_door.native_pos.leaf)
                     local door_map_dir = self.dir_from_native(native_door.native_pos.dir)
-                    map_doors[dir] = {
+                    map_doors[self.dir_from_native(dir)] = {
                         name=self.door_name(door_map_x, door_map_y, door_map_dir),
                         see=native_door.see,
                         reach=native_door.reach,
@@ -150,6 +151,9 @@ function collect_mixin(object)
                     table.insert(map_treasures, {
                         name=self.treasure_name(map_x, map_y, n),
                         item_name=native_treasure.item_name,
+                        see=native_treasure.see,
+                        reach=native_treasure.reach,
+                        open=native_treasure.open,
                     })
                 end
                 local map_info = {
@@ -164,8 +168,7 @@ function collect_mixin(object)
     end
 
     function object:treasure(treasure, depth, leaf)
-        local x, y = self.pos_from_native(depth, leaf)
-        local info = self:get_room(x, y)
+        local info = self:get_room(depth, leaf)
         local data = {
             item_name = treasure.name,
         }
@@ -176,8 +179,7 @@ function collect_mixin(object)
     end
 
     function object:enemy(enemy, depth, leaf)
-        local x, y = self.pos_from_native(depth, leaf)
-        local info = self:get_room(x, y)
+        local info = self:get_room(depth, leaf)
         table.insert(info.enemies, enemy)
     end
 
@@ -200,32 +202,31 @@ function collect_mixin(object)
         return string.format('room_%d_%d_%s', x, y, dir)
     end
 
-    function object:room(room, depth, leaf, dir)
-        local map_x, map_y = self.pos_from_native(depth, leaf)
-        local map_dir = self.dir_from_native(dir)
-        local from_dir = self.reverse(map_dir)
-        local parent_x, parent_y = self.step(map_x, map_y, from_dir)
-        local native_pos = { depth=depth, leaf=leaf, dir=dir }
+    function object:room(room, depth, leaf, native_dir)
+        local from_dir = self.reverse(native_dir)
+        local parent_depth, parent_leaf = self.step(depth, leaf, from_dir)
+        local native_pos = { depth=depth, leaf=leaf, dir=native_dir }
         local info = {
             native_pos=native_pos,
-            doors={},
+            doors={
+                [from_dir]={
+                    native_pos=native_pos,
+                    see=room.see,
+                    open=room.open,
+                },
+            },
             treasures={},
             enemies={},
         }
-        self:new_room(map_x, map_y, info)
-        if self:has_room(parent_x, parent_y) then
-            self:get_room(parent_x, parent_y).doors[map_dir] = {
+        self:new_room(depth, leaf, info)
+        if self:has_room(parent_depth, parent_leaf) then
+            self:get_room(parent_depth, parent_leaf).doors[native_dir] = {
                 native_pos=native_pos,
                 see=room.see,
                 reach=room.reach,
                 open=room.open,
             }
         end
-        self:get_room(map_x, map_y).doors[from_dir] = {
-            native_pos=native_pos,
-            see=room.see,
-            open=room.open,
-        }
     end
 
     return object
@@ -241,6 +242,8 @@ Layout.NorthEastwardVisitor = BaseVisitor:new{
         local dirs = {
             forward='east',
             down='north',
+            up='south',
+            backward='west',
         }
         return dirs[dir]
     end,
@@ -255,6 +258,8 @@ Layout.NorthWestwardVisitor = BaseVisitor:new{
         local dirs = {
             forward='west',
             down='north',
+            up='south',
+            backward='east',
         }
         return dirs[dir]
     end,
@@ -407,6 +412,7 @@ function Layout.solarus_mixin(object, map, floors)
                     height = 16,
                 }
                 local sep = map:create_separator(properties)
+
                 function sep:on_activated(dir)
                     local my_y = (dir == Layout.DIRECTIONS.north) and map_y - 1 or map_y
                     local my_x = (dir == Layout.DIRECTIONS.west) and map_x - 1 or map_x

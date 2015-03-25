@@ -37,27 +37,27 @@ tile{
 tile{
   layer = 1,
   x = 152,
-  y = -16,
+  y = 0,
   width = 16,
-  height = 32,
+  height = 16,
   pattern = "floor.1",
 }
 
 tile{
   layer = 1,
   x = 144,
-  y = -8,
+  y = 0,
   width = 8,
-  height = 16,
+  height = 8,
   pattern = "barrier.2",
 }
 
 tile{
   layer = 1,
   x = 168,
-  y = -8,
+  y = 0,
   width = 8,
-  height = 16,
+  height = 8,
   pattern = "barrier.2",
 }
 

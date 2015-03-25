@@ -34,6 +34,33 @@ tile{
   pattern = "door_blast.2",
 }
 
+tile{
+  layer = 1,
+  x = 144,
+  y = 232,
+  width = 8,
+  height = 8,
+  pattern = "barrier.2",
+}
+
+tile{
+  layer = 1,
+  x = 168,
+  y = 232,
+  width = 8,
+  height = 8,
+  pattern = "barrier.2",
+}
+
+tile{
+  layer = 1,
+  x = 152,
+  y = 224,
+  width = 16,
+  height = 16,
+  pattern = "floor.1",
+}
+
 wall{
   layer = 1,
   x = 152,
