@@ -331,10 +331,12 @@ function Layout.minimap_mixin(object, map_menu)
             if self.has_compass then
                 for n, treasure in ipairs(info.treasures) do
                     local treasure_name = self.treasure_name(depth, leaf, n)
-                    if treasure.open == 'bigkey' then
-                        map_menu:draw_big_chest(x, y)
-                    else
-                        map_menu:draw_chest(x, y)
+                    if not self.game:get_value(treasure_name) then
+                        if treasure.open == 'bigkey' then
+                            map_menu:draw_big_chest(x, y)
+                        else
+                            map_menu:draw_chest(x, y)
+                        end
                     end
                 end
                 for _, enemy in ipairs(info.enemies) do
