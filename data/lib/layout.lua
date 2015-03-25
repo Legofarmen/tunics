@@ -133,21 +133,7 @@ function collect_mixin(object)
     function object:each_room(f)
         for depth, row in Util.pairs_by_keys(self.rooms) do
             for leaf, native_room in Util.pairs_by_keys(row) do
-                local map_doors = {}
-                for native_dir, native_door in pairs(native_room.doors) do
-                    map_doors[native_dir] = {
-                        name=self.door_name(native_door.native_pos.depth, native_door.native_pos.leaf, native_door.native_pos.dir),
-                        see=native_door.see,
-                        reach=native_door.reach,
-                        open=native_door.open,
-                    }
-                end
-                local map_info = {
-                    doors=map_doors,
-                    treasures=native_room.treasures,
-                    enemies=native_room.enemies,
-                }
-                f(depth, leaf, map_info)
+                f(depth, leaf, native_room)
             end
         end
     end
@@ -315,8 +301,11 @@ function Layout.minimap_mixin(object, map_menu)
             if room_perception > 0 then
                 map_menu:draw_room(x, y, room_perception)
                 for native_dir, door in pairs(info.doors) do
+
+                    local door_name = self.door_name(door.native_pos.depth, door.native_pos.leaf, door.native_pos.dir)
+
                     local dir = self.dir_from_native(native_dir)
-                    local door_info = doors[door.name] or {}
+                    local door_info = doors[door_name] or {}
 
                     if dir == 'south' then
                         door_info.dir = 'north'
@@ -332,9 +321,9 @@ function Layout.minimap_mixin(object, map_menu)
                         door_info.y = y
                     end
                     door_info.is_entrance = (door.open == 'entrance')
-                    if not door.see or self.game:get_value(door.name) then
+                    if not door.see or self.game:get_value(door_name) then
                         door_info.perception = math.max(door_info.perception or 0, room_perception)
-                        doors[door.name] = door_info
+                        doors[door_name] = door_info
                     end
                 end
             end
@@ -447,8 +436,13 @@ function Layout.solarus_mixin(object, map, floors)
                 rng=self.rng:biased(10 * map_y + map_x),
             }
             local doors = {}
-            for native_dir, door in pairs(info.doors) do
-                map_info.doors[self.dir_from_native(native_dir)] = door
+            for native_dir, native_door in pairs(info.doors) do
+                map_info.doors[self.dir_from_native(native_dir)] = {
+                    name=self.door_name(native_door.native_pos.depth, native_door.native_pos.leaf, native_door.native_pos.dir),
+                    see=native_door.see,
+                    reach=native_door.reach,
+                    open=native_door.open,
+                }
             end
             for n, treasure in ipairs(info.treasures) do
                 table.insert(map_info.treasures, {
