@@ -207,8 +207,8 @@ function Room:get_node_metric()
     local metric = tree.Metric:new()
     metric.is_mergeable = true
     metric.doors = 1
-    if self.see then metric.hidden_doors = 1 end
-    if self.reach then metric.obstacle_doors = 1 end
+    if self.see and self.see ~= 'nothing' then metric.hidden_doors = 1 end
+    if self.reach and self.reach ~= 'nothing' then metric.obstacle_doors = 1 end
     if self.open == 'bigkey' then metric.bigkey_doors = 1 end
     return metric
 end
@@ -217,8 +217,8 @@ function Treasure:get_node_metric()
     local metric = tree.Metric:new()
     metric.is_mergeable = true
     metric.treasures = 1
-    if self.see then metric.hidden_treasures = 1 end
-    if self.reach then metric.obstacle_treasures = 1 end
+    if self.see and self.see ~= 'nothing' then metric.hidden_treasures = 1 end
+    if self.reach and self.reach ~= 'nothing' then metric.obstacle_treasures = 1 end
     if self.open == 'bigkey' then metric.bigkey_treasures = 1 end
     if not (self.see or self.reach or self.open) then metric.normal_treasures = 1 end
     return metric
