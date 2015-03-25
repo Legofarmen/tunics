@@ -63,7 +63,7 @@ end
 function Puzzle.obstacle_step(item_name)
     return function (root)
         root:each_child(function (key, head)
-            root:update_child(key, head:with_needs{reach=item_name})
+            root:update_child(key, head:with_needs{see='nothing',reach=item_name})
         end)
     end
 end
