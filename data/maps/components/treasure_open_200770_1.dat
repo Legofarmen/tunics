@@ -128,7 +128,7 @@ chest{
   layer = 1,
   x = 160,
   y = 93,
-  name = "chest_2",
+  name = "chest",
   sprite = "entities/chest",
 }
 
