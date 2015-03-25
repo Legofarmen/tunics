@@ -111,6 +111,10 @@ function collect_mixin(object)
         if self:has_room(x, y) then
             error(string.format('room already exists: %d %d', x, y))
         end
+        assert(info.native_pos)
+        for dir, door_info in pairs(info.doors) do
+            assert(door_info.native_pos)
+        end
         self.rooms[y] = self.rooms[y] or {}
         self.rooms[y][x] = info
     end
@@ -128,8 +132,23 @@ function collect_mixin(object)
 
     function object:each_room(f)
         for y, row in Util.pairs_by_keys(self.rooms) do
-            for x, info in Util.pairs_by_keys(row) do
-                f(x, y, info)
+            for x, native_room in Util.pairs_by_keys(row) do
+                local map_doors = {}
+                for dir, native_door in pairs(native_room.doors) do
+                    map_doors[dir] = {
+                        name=self.door_name(self.coord_transform(native_door.native_pos.depth, native_door.native_pos.leaf, native_door.native_pos.dir)),
+                        see=native_door.see,
+                        reach=native_door.reach,
+                        open=native_door.open,
+                    }
+                end
+                local map_info = {
+                    name = self.room_name(self.coord_transform(native_room.native_pos.depth, native_room.native_pos.leaf)),
+                    doors=map_doors,
+                    treasures=native_room.treasures,
+                    enemies=native_room.enemies,
+                }
+                f(x, y, map_info)
             end
         end
     end
@@ -176,24 +195,24 @@ function collect_mixin(object)
         local map_x, map_y, map_dir = self.coord_transform(depth, leaf, dir)
         local from_dir = self.reverse(map_dir)
         local parent_x, parent_y = self.step(map_x, map_y, from_dir)
-        local entrance_name = self.door_name(map_x, map_y, map_dir)
+        local native_pos = { depth=depth, leaf=leaf, dir=dir }
         local info = {
-            name = self.room_name(map_x, map_y),
-            doors = {},
-            treasures = {},
-            enemies = {},
+            native_pos=native_pos,
+            doors={},
+            treasures={},
+            enemies={},
         }
         self:new_room(map_x, map_y, info)
         if self:has_room(parent_x, parent_y) then
             self:get_room(parent_x, parent_y).doors[map_dir] = {
-                name=entrance_name,
+                native_pos=native_pos,
                 see=room.see,
                 reach=room.reach,
                 open=room.open,
             }
         end
         self:get_room(map_x, map_y).doors[from_dir] = {
-            name=entrance_name,
+            native_pos=native_pos,
             see=room.see,
             open=room.open,
         }
