@@ -133,11 +133,8 @@ function collect_mixin(object)
     function object:each_room(f)
         for depth, row in Util.pairs_by_keys(self.rooms) do
             for leaf, native_room in Util.pairs_by_keys(row) do
-                local map_x, map_y = self.pos_from_native(depth, leaf)
                 local map_doors = {}
                 for dir, native_door in pairs(native_room.doors) do
-                    local door_map_x, door_map_y = self.pos_from_native(native_door.native_pos.depth, native_door.native_pos.leaf)
-                    local door_map_dir = self.dir_from_native(native_door.native_pos.dir)
                     map_doors[self.dir_from_native(dir)] = {
                         name=self.door_name(native_door.native_pos.depth, native_door.native_pos.leaf, native_door.native_pos.dir),
                         see=native_door.see,
@@ -148,7 +145,7 @@ function collect_mixin(object)
                 local map_treasures = {}
                 for n, native_treasure in ipairs(native_room.treasures) do
                     table.insert(map_treasures, {
-                        name=self.treasure_name(map_x, map_y, n),
+                        name=self.treasure_name(depth, leaf, n),
                         item_name=native_treasure.item_name,
                         see=native_treasure.see,
                         reach=native_treasure.reach,
@@ -156,12 +153,12 @@ function collect_mixin(object)
                     })
                 end
                 local map_info = {
-                    name = self.room_name(map_x, map_y),
+                    name = self.room_name(depth, leaf),
                     doors=map_doors,
                     treasures=map_treasures,
                     enemies=native_room.enemies,
                 }
-                f(map_x, map_y, map_info)
+                f(depth, leaf, map_info)
             end
         end
     end
@@ -182,12 +179,13 @@ function collect_mixin(object)
         table.insert(info.enemies, enemy)
     end
 
-    function object.treasure_name(x, y, n)
-        return string.format("%s_treasure_%d", object.room_name(x, y), n)
+    function object.treasure_name(depth, leaf, n)
+        return string.format("%s_treasure_%d", object.room_name(depth, leaf), n)
     end
 
-    function object.room_name(x, y)
-        return string.format('room_%d_%d', x, y)
+    function object.room_name(depth, leaf)
+        local map_x, map_y = object.pos_from_native(depth, leaf)
+        return string.format('room_%d_%d', map_x, map_y)
     end
 
     function object.door_name(depth, leaf, native_dir)
@@ -271,7 +269,8 @@ function Layout.print_mixin(object)
     object = collect_mixin(object)
 
     function object:collect_on_finish()
-        self:each_room(function (x, y, info)
+        self:each_room(function (depth, leaf, info)
+            local map_x, map_y = self.pos_from_native(depth, leaf)
             function print_access(thing)
                 if thing.see and thing.see ~= 'nothing' then print(string.format("\t\tto see: %s", thing.see)) end
                 if thing.reach and thing.reach ~= 'nothing' then print(string.format("\t\tto reach: %s", thing.reach)) end
@@ -319,8 +318,9 @@ function Layout.minimap_mixin(object, map_menu)
     function object:collect_on_finish()
         local doors = {}
 
-        self:each_room(function (x, y, info)
-            local room_perception = self:room_perception(self.room_name(x, y))
+        self:each_room(function (depth, leaf, info)
+            local room_perception = self:room_perception(self.room_name(depth, leaf))
+            local x, y = self.pos_from_native(depth, leaf)
 
             if room_perception > 0 then
                 map_menu:draw_room(x, y, room_perception)
@@ -440,7 +440,8 @@ function Layout.solarus_mixin(object, map, floors)
 
     function object:collect_on_finish()
         mark_known_room(self.pos_from_native(0, 0))
-        self:each_room(function (map_x, map_y, info)
+        self:each_room(function (depth, leaf, info)
+            local map_x, map_y = self.pos_from_native(depth, leaf)
             self:separator(map_x, map_y, 'north')
             self:separator(map_x, map_y, 'west')
             self:separator(map_x, map_y+1, 'north')
