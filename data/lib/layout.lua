@@ -137,10 +137,9 @@ function collect_mixin(object)
     function object:treasure(treasure, depth, leaf)
         local x, y = self.coord_transform(depth, leaf)
         local info = self:get_room(x, y)
-        local treasure_name = string.format("%s_treasure_%d", self.room_name(x, y), #info.treasures + 1)
         local data = {
-            name=treasure_name,
-            item_name=treasure.name,
+            name = self.treasure_name(x, y, #info.treasures + 1),
+            item_name = treasure.name,
         }
         if treasure.see ~= 'nothing' then data.see=treasure.see end
         if treasure.reach ~= 'nothing' then data.reach=treasure.reach end
@@ -152,6 +151,10 @@ function collect_mixin(object)
         local x, y = self.coord_transform(depth, leaf)
         local info = self:get_room(x, y)
         table.insert(info.enemies, enemy)
+    end
+
+    function object.treasure_name(x, y, n)
+        return string.format("%s_treasure_%d", object.room_name(x, y), n)
     end
 
     function object.room_name(x, y)
@@ -173,13 +176,12 @@ function collect_mixin(object)
         local map_x, map_y, map_dir = self.coord_transform(depth, leaf, dir)
         local from_dir = self.reverse(map_dir)
         local parent_x, parent_y = self.step(map_x, map_y, from_dir)
-        local room_name = self.room_name(map_x, map_y)
         local entrance_name = self.door_name(map_x, map_y, map_dir)
         local info = {
-            name=room_name,
-            doors={},
-            treasures={},
-            enemies={},
+            name = self.room_name(map_x, map_y),
+            doors = {},
+            treasures = {},
+            enemies = {},
         }
         self:new_room(map_x, map_y, info)
         if self:has_room(parent_x, parent_y) then
