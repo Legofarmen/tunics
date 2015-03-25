@@ -53,7 +53,7 @@ function Puzzle.treasure_step(item_name)
 end
 
 function Puzzle.boss_step(root)
-    root:add_child(Tree.Enemy:new{name='boss'}:with_needs{open='bigkey'})
+    root:add_child(Tree.Enemy:new{name='boss'}:with_needs{open='bigkey',reach='nothing'})
 end
 
 function Puzzle.hide_treasures_step(root)
@@ -63,11 +63,6 @@ end
 function Puzzle.obstacle_step(item_name)
     return function (root)
         root:each_child(function (key, head)
-            if head.open == 'bigkey' then
-                local wrapper = Tree.Room:new()
-                wrapper:add_child(head)
-                head = wrapper
-            end
             root:update_child(key, head:with_needs{reach=item_name})
         end)
     end

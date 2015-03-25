@@ -193,12 +193,13 @@ function collect_mixin(object)
         }
         self:new_room(depth, leaf, info)
         if self:has_room(parent_depth, parent_leaf) then
-            self:get_room(parent_depth, parent_leaf).doors[native_dir] = {
+            local data = {
                 native_pos=native_pos,
-                see=room.see,
-                reach=room.reach,
-                open=room.open,
             }
+            if room.see ~= 'nothing' then data.see = room.see end
+            if room.reach ~= 'nothing' then data.reach = room.reach end
+            if room.open ~= 'nothing' then data.open = room.open end
+            self:get_room(parent_depth, parent_leaf).doors[native_dir] = data
         end
     end
 
