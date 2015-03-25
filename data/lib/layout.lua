@@ -134,8 +134,8 @@ function collect_mixin(object)
         for depth, row in Util.pairs_by_keys(self.rooms) do
             for leaf, native_room in Util.pairs_by_keys(row) do
                 local map_doors = {}
-                for dir, native_door in pairs(native_room.doors) do
-                    map_doors[self.dir_from_native(dir)] = {
+                for native_dir, native_door in pairs(native_room.doors) do
+                    map_doors[native_dir] = {
                         name=self.door_name(native_door.native_pos.depth, native_door.native_pos.leaf, native_door.native_pos.dir),
                         see=native_door.see,
                         reach=native_door.reach,
@@ -324,7 +324,8 @@ function Layout.minimap_mixin(object, map_menu)
 
             if room_perception > 0 then
                 map_menu:draw_room(x, y, room_perception)
-                for dir, door in pairs(info.doors) do
+                for native_dir, door in pairs(info.doors) do
+                    local dir = self.dir_from_native(native_dir)
                     local door_info = doors[door.name] or {}
 
                     if dir == 'south' then
@@ -446,13 +447,23 @@ function Layout.solarus_mixin(object, map, floors)
             self:separator(map_x, map_y, 'west')
             self:separator(map_x, map_y+1, 'north')
             self:separator(map_x+1, map_y, 'west')
-            info.rng = self.rng:biased(10 * map_y + map_x)
+
+            local map_info = {
+                name=info.name,
+                doors={},
+                treasures=info.treasures,
+                enemies=info.enemies,
+                rng=self.rng:biased(10 * map_y + map_x),
+            }
+            local doors = {}
+            for native_dir, door in pairs(info.doors) do
+                map_info.doors[self.dir_from_native(native_dir)] = door
+            end
+
             local floor_rng = self.rng:biased(10 * map_y + map_x)
-
             local x, y = 320 * map_x, 240 * map_y
-
             map:include(x, y, floors[floor_rng:random(#floors)], {})
-            map:include(x, y, 'rooms/room1', info)
+            map:include(x, y, 'rooms/room1', map_info)
         end)
     end
 
