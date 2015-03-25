@@ -133,10 +133,13 @@ function collect_mixin(object)
     function object:each_room(f)
         for y, row in Util.pairs_by_keys(self.rooms) do
             for x, native_room in Util.pairs_by_keys(row) do
+                local map_x, map_y = self.pos_from_native(native_room.native_pos.depth, native_room.native_pos.leaf)
                 local map_doors = {}
                 for dir, native_door in pairs(native_room.doors) do
+                    local door_map_x, door_map_y = self.pos_from_native(native_door.native_pos.depth, native_door.native_pos.leaf)
+                    local door_map_dir = self.dir_from_native(native_door.native_pos.dir)
                     map_doors[dir] = {
-                        name=self.door_name(self.coord_transform(native_door.native_pos.depth, native_door.native_pos.leaf, native_door.native_pos.dir)),
+                        name=self.door_name(door_map_x, door_map_y, door_map_dir),
                         see=native_door.see,
                         reach=native_door.reach,
                         open=native_door.open,
@@ -145,23 +148,23 @@ function collect_mixin(object)
                 local map_treasures = {}
                 for n, native_treasure in ipairs(native_room.treasures) do
                     table.insert(map_treasures, {
-                        name=self.treasure_name(x, y, n),
+                        name=self.treasure_name(map_x, map_y, n),
                         item_name=native_treasure.item_name,
                     })
                 end
                 local map_info = {
-                    name = self.room_name(self.coord_transform(native_room.native_pos.depth, native_room.native_pos.leaf)),
+                    name = self.room_name(map_x, map_y),
                     doors=map_doors,
                     treasures=map_treasures,
                     enemies=native_room.enemies,
                 }
-                f(x, y, map_info)
+                f(map_x, map_y, map_info)
             end
         end
     end
 
     function object:treasure(treasure, depth, leaf)
-        local x, y = self.coord_transform(depth, leaf)
+        local x, y = self.pos_from_native(depth, leaf)
         local info = self:get_room(x, y)
         local data = {
             item_name = treasure.name,
@@ -173,7 +176,7 @@ function collect_mixin(object)
     end
 
     function object:enemy(enemy, depth, leaf)
-        local x, y = self.coord_transform(depth, leaf)
+        local x, y = self.pos_from_native(depth, leaf)
         local info = self:get_room(x, y)
         table.insert(info.enemies, enemy)
     end
@@ -198,7 +201,8 @@ function collect_mixin(object)
     end
 
     function object:room(room, depth, leaf, dir)
-        local map_x, map_y, map_dir = self.coord_transform(depth, leaf, dir)
+        local map_x, map_y = self.pos_from_native(depth, leaf)
+        local map_dir = self.dir_from_native(dir)
         local from_dir = self.reverse(map_dir)
         local parent_x, parent_y = self.step(map_x, map_y, from_dir)
         local native_pos = { depth=depth, leaf=leaf, dir=dir }
@@ -230,23 +234,29 @@ end
 
 Layout.NorthEastwardVisitor = BaseVisitor:new{
     inwards='down',
-    coord_transform = function (depth, leaf, dir)
+    pos_from_native = function (depth, leaf)
+        return leaf, 9-depth
+    end,
+    dir_from_native = function (dir)
         local dirs = {
             forward='east',
             down='north',
         }
-        return leaf, 9-depth, dirs[dir]
+        return dirs[dir]
     end,
 }
 
 Layout.NorthWestwardVisitor = BaseVisitor:new{
     inwards='down',
-    coord_transform = function (depth, leaf, dir)
+    pos_from_native = function (depth, leaf)
+        return 9-leaf, 9-depth
+    end,
+    dir_from_native = function (dir)
         local dirs = {
             forward='west',
             down='north',
         }
-        return 9-leaf, 9-depth, dirs[dir]
+        return dirs[dir]
     end,
 }
 
@@ -374,7 +384,7 @@ function Layout.solarus_mixin(object, map, floors)
     end
 
     function object:move_hero_to_start()
-        local start_x, start_y = self.coord_transform(0, 0)
+        local start_x, start_y = self.pos_from_native(0, 0)
         local hero = map:get_hero()
         hero:set_position(320 * start_x + 320 / 2, 240 * start_y + 232, 1)
         hero:set_direction(1)
@@ -423,7 +433,7 @@ function Layout.solarus_mixin(object, map, floors)
     end
 
     function object:collect_on_finish()
-        mark_known_room(self.coord_transform(0, 0))
+        mark_known_room(self.pos_from_native(0, 0))
         self:each_room(function (map_x, map_y, info)
             self:separator(map_x, map_y, 'north')
             self:separator(map_x, map_y, 'west')
