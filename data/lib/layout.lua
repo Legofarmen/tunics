@@ -20,11 +20,11 @@ function BaseVisitor:render(tree)
 end
 
 function BaseVisitor:visit_enemy(enemy)
-    self:enemy(enemy, self.coord_transform(self.depth, self.leaf))
+    self:enemy(enemy, self.depth, self.leaf)
 end
 
 function BaseVisitor:visit_treasure(treasure)
-    self:treasure(treasure, self.coord_transform(self.depth, self.leaf))
+    self:treasure(treasure, self.depth, self.leaf)
 end
 
 function BaseVisitor:visit_room(room)
@@ -134,7 +134,8 @@ function collect_mixin(object)
         end
     end
 
-    function object:treasure(treasure, x, y)
+    function object:treasure(treasure, depth, leaf)
+        local x, y = self.coord_transform(depth, leaf)
         local info = self:get_room(x, y)
         local treasure_name = string.format("%s_treasure_%d", self.room_name(x, y), #info.treasures + 1)
         local data = {
@@ -147,7 +148,8 @@ function collect_mixin(object)
         table.insert(info.treasures, data)
     end
 
-    function object:enemy(enemy, x, y)
+    function object:enemy(enemy, depth, leaf)
+        local x, y = self.coord_transform(depth, leaf)
         local info = self:get_room(x, y)
         table.insert(info.enemies, enemy)
     end
