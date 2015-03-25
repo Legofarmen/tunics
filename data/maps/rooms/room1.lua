@@ -128,21 +128,28 @@ function treasure(data)
 end
 
 function enemy(data)
-    local sections = {'400', '200', '100', '040', '020', '010', '004', '002', '001'}
-    List.shuffle(rng:create(), sections)
-    for _, section_string in ipairs(sections) do
-        local section = Util.oct(section_string)
-        if bit32.band(mask, section) == 0 then
-            local component_name = string.format('components/enemy_any_1')
-            data.section = section
-            map:include(0, 0, component_name, data)
-            data_messages('component', component_name)
-            mask = bit32.bor(mask, section)
-            return
+    if data.name == 'boss' then
+        local component_name, component_mask = zentropy.components:get_bossroom(mask, components_rng)
+        map:include(0, 0, component_name, data)
+    else
+        local sections = {'400', '200', '100', '040', '020', '010', '004', '002', '001'}
+        List.shuffle(rng:create(), sections)
+        for _, section_string in ipairs(sections) do
+            local section = Util.oct(section_string)
+            if bit32.band(mask, section) == 0 then
+                local component_name = string.format('components/enemy_any_1')
+                data.section = section
+                data.rng = components_rng
+                map:include(0, 0, component_name, data)
+                data_messages('component', component_name)
+                mask = bit32.bor(mask, section)
+                return
+
+            end
         end
+        for _, msg in ipairs(messages) do print(msg) end
+        error('cannot fit enemy')
     end
-    for _, msg in ipairs(messages) do print(msg) end
-    error('cannot fit enemy')
 end
 
 function sign(data)

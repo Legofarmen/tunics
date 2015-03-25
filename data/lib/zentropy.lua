@@ -55,6 +55,7 @@ function zentropy.db.Components:new(o)
     o.doors = o.doors or {}
     o.enemies = o.enemies or {}
     o.fillers = o.fillers or {}
+    o.bossrooms = o.bossrooms or {}
     return Class.new(self, o)
 end
 
@@ -127,6 +128,15 @@ function zentropy.db.Components:filler(id, iterator)
         mask = Util.oct(mask_string)
     end
     table.insert(self.fillers, {
+        id=id,
+        mask=mask,
+    })
+end
+
+function zentropy.db.Components:bossroom(id, iterator)
+    local mask_string = iterator()
+    local mask = Util.oct(mask_string)
+    table.insert(self.bossrooms, {
         id=id,
         mask=mask,
     })
@@ -239,6 +249,20 @@ function zentropy.db.Components:get_floors(rng)
         j = j + 1
     end
     return self.floors[i], self.floors[j]
+end
+
+function zentropy.db.Components:get_bossroom(mask, rng)
+    local entries = {}
+    for _, entry in pairs(self.bossrooms) do
+        if bit32.band(mask, entry.mask) == 0 then
+            table.insert(entries, entry)
+        end
+    end
+    if #entries == 0 then
+        return
+    end
+    local entry = entries[rng:random(#entries)]
+    return entry.id, entry.mask
 end
 
 
