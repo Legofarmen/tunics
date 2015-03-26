@@ -92,7 +92,7 @@ map{ id = "components/treasure_open_200700_1", description = "Treasure open 2007
 map{ id = "components/treasure_open_010111_1", description = "Treasure open 010111 1" }
 map{ id = "components/treasure_open_200770_1", description = "Treasure open 200770 1" }
 map{ id = "components/treasure_open_250777_1", description = "Treasure open 250777 1" }
-map{ id = "components/door_bigkey_north_250777_1", description = "Door bigkey north 250777 1" }
+map{ id = "components/door_bigkey_north_200777_1", description = "Door bigkey north 250777 1" }
 map{ id = "components/treasure_compass_000004_1", description = "Treasure compass 000004 1" }
 map{ id = "components/treasure_compass_000001_1", description = "Treasure compass 000001 1" }
 
