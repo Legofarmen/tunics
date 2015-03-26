@@ -193,19 +193,19 @@ function Puzzle.alpha_dungeon(rng, nkeys, item_names)
     end
     table.insert(steps, 1, Puzzle.boss_step)
 
-    local root = Tree.Room:new()
+    local heads = Tree.Room:new()
     for i, step in ipairs(steps) do
-        Puzzle.max_heads(rng:create(), 4)(root)
-        step(root)
+        Puzzle.max_heads(rng:create(), 4)(heads)
+        step(heads)
     end
-    root:each_child(function (key, child)
-        if child.class ~= 'Room' or child.reach or child.open == 'bigkey' then
-            local room = Tree.Room:new()
-            room:add_child(child)
-            root:update_child(key, room)
+    local root = Tree.Room:new{ open='root' }
+    heads:each_child(function (key, child)
+        if child.class == 'Room' and child:is_reachable() and child:is_open() then
+            root:add_child(child)
+        else
+            root:add_child(Tree.Room:new{ children={child} })
         end
     end)
-    root.open = 'entrance'
     return root
 end
 
