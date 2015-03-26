@@ -73,7 +73,7 @@ end
 
 function Node:with_needs(needs)
     for kind, need in pairs(needs) do
-        if self[kind] then
+        if self[kind] and self[kind] ~= need then
             needs.children = {self}
             return Room:new(needs)
         end
@@ -82,6 +82,18 @@ function Node:with_needs(needs)
         self[kind] = need
     end
     return self
+end
+
+function Node:is_visible()
+    return not self.see or self.see == 'nothing'
+end
+
+function Node:is_reachable()
+    return not self.reach or self.reach == 'nothing'
+end
+
+function Node:is_open()
+    return not self.open or self.open == 'nothing'
 end
 
 function Room:__tostring()
@@ -207,8 +219,8 @@ function Room:get_node_metric()
     local metric = tree.Metric:new()
     metric.is_mergeable = true
     metric.doors = 1
-    if self.see then metric.hidden_doors = 1 end
-    if self.reach then metric.obstacle_doors = 1 end
+    if not self:is_visible() then metric.hidden_doors = 1 end
+    if not self:is_reachable() then metric.obstacle_doors = 1 end
     if self.open == 'bigkey' then metric.bigkey_doors = 1 end
     return metric
 end
@@ -217,10 +229,10 @@ function Treasure:get_node_metric()
     local metric = tree.Metric:new()
     metric.is_mergeable = true
     metric.treasures = 1
-    if self.see then metric.hidden_treasures = 1 end
-    if self.reach then metric.obstacle_treasures = 1 end
+    if self:is_visible() then metric.hidden_treasures = 1 end
+    if self:is_reachable() then metric.obstacle_treasures = 1 end
     if self.open == 'bigkey' then metric.bigkey_treasures = 1 end
-    if not (self.see or self.reach or self.open) then metric.normal_treasures = 1 end
+    if self:is_visible() and self:is_reachable() and self:is_open() then metric.normal_treasures = 1 end
     return metric
 end
 

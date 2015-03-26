@@ -48,6 +48,7 @@ function room_map(map, x, y, internal_prefix, data)
     function o:create_npc(properties) return map:create_npc(translate(rewrite(properties))) end
     function o:create_pickable(properties) return map:create_pickable(translate(rewrite(properties))) end
     function o:create_separator(properties) return map:create_separator(translate(rewrite(properties))) end
+    function o:create_switch(properties) return map:create_switch(translate(rewrite(properties))) end
     function o:create_wall(properties) return map:create_wall(translate(rewrite(properties))) end
 
     function o:create_dynamic_tile(properties)
