@@ -8,7 +8,7 @@ properties{
 }
 
 tile{
-  layer = 0,
+  layer = 1,
   x = 128,
   y = 136,
   width = 64,
