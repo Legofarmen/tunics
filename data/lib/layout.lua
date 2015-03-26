@@ -266,9 +266,9 @@ function Layout.print_mixin(object)
     function object:collect_on_finish()
         self:each_room(function (depth, leaf, info)
             function print_access(thing)
-                if thing.see and thing.see ~= 'nothing' then print(string.format("\t\tto see: %s", thing.see)) end
-                if thing.reach and thing.reach ~= 'nothing' then print(string.format("\t\tto reach: %s", thing.reach)) end
-                if thing.open and thing.open ~= 'nothing' then print(string.format("\t\tto open: %s", thing.open)) end
+                if not thing:is_visible() then print(string.format("\t\tto see: %s", thing.see)) end
+                if not thing:is_reachable() then print(string.format("\t\tto reach: %s", thing.reach)) end
+                if not thing:is_open() then print(string.format("\t\tto open: %s", thing.open)) end
             end
             print(string.format("Room %d;%d", x, y))
             for dir, door in pairs(info.doors) do
