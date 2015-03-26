@@ -99,18 +99,6 @@ function Puzzle.locked_door_step(rng, root)
 end
 
 function Puzzle.max_heads(rng, n)
-    local p = function (metric)
-        if not metric.is_mergeable then return false end
-        if metric.treasures > 2 then return false end
-        if metric.hidden_treasures > 1 then return false end
-        if metric.bigkey_treasures > 1 then return false end
-        if metric.obstacle_treasures > 1 then return false end
-        if metric.bigkey_treasures > 0 and metric:get_obstacles() > 0 then return false end
-        if metric.bigkey_treasures > 0 and metric.normal_treasures > 0 then return false end
-        if metric.hidden_treasures > 0 and metric:get_obstacles() > 1 then return false end
-        if metric:get_obstacles() > 0 and metric.treasures - metric.hidden_treasures > 1 then return false end
-        return true
-    end
     return function (root)
         while #root.children > n do
             local node1 = root:remove_child(root:random_child(rng))
@@ -119,18 +107,18 @@ function Puzzle.max_heads(rng, n)
             local fork = Tree.Room:new()
             local n1 = node1:get_node_metric()
             local n2 = node2:get_node_metric()
-            local c1 = node1:get_children_metric()
-            local c2 = node2:get_children_metric()
-            if p(c1 + c2) then
+            local c1 = node1.class == 'Room' and node1:is_normal() and node1:get_children_metric()
+            local c2 = node2.class == 'Room' and node2:is_normal() and node2:get_children_metric()
+            if c1 and c2 and (c1 + c2):is_valid() then
                 fork:merge_children(node1)
                 fork:merge_children(node2)
-            elseif p(c1 + n2) then
+            elseif c1 and (c1 + n2):is_valid() then
                 fork:merge_children(node1)
                 fork:add_child(node2)
-            elseif p(n1 + c2) then
+            elseif c2 and (n1 + c2):is_valid() then
                 fork:add_child(node1)
                 fork:merge_children(node2)
-            elseif p(n1 + n2) then
+            elseif (n1 + n2):is_valid() then
                 fork:add_child(node1)
                 fork:add_child(node2)
             else

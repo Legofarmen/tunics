@@ -96,6 +96,10 @@ function Node:is_open()
     return not self.open or self.open == 'nothing'
 end
 
+function Node:is_normal()
+    return self:is_visible() and self:is_reachable() and self:is_open()
+end
+
 function Room:__tostring()
     return string.format("Room[%s]", self:prop_string{'see', 'reach', 'open'})
 end
@@ -132,6 +136,9 @@ end
 
 function Room:update_child(key, node)
     if self.children[key] then
+        if not (self:get_children_metric() - self.children[key]:get_node_metric() + node:get_node_metric()):is_valid() then
+            node = Room:new{ children={node} }
+        end
         self.children[key] = node
     else
         error('no such key: ' .. key)
@@ -186,7 +193,6 @@ tree.Metric = Class:new()
 
 function tree.Metric:new(o)
     o = o or {}
-    o.is_mergeable = o.is_mergeable or false
     o.doors = o.doors or 0
     o.hidden_doors = o.hidden_doors or 0
     o.obstacle_doors = o.obstacle_doors or 0
@@ -202,11 +208,15 @@ end
 function tree.Metric.__add(lhs, rhs)
     local metric = tree.Metric:new()
     for key, value in pairs(lhs) do
-        if type(value) == 'number' then
-            metric[key] = value + rhs[key]
-        else
-            metric[key] = value and rhs[key]
-        end
+        metric[key] = value + rhs[key]
+    end
+    return metric
+end
+
+function tree.Metric.__sub(lhs, rhs)
+    local metric = tree.Metric:new()
+    for key, value in pairs(lhs) do
+        metric[key] = value - rhs[key]
     end
     return metric
 end
@@ -217,7 +227,6 @@ end
 
 function Room:get_node_metric()
     local metric = tree.Metric:new()
-    metric.is_mergeable = true
     metric.doors = 1
     if not self:is_visible() then metric.hidden_doors = 1 end
     if not self:is_reachable() then metric.obstacle_doors = 1 end
@@ -227,24 +236,21 @@ end
 
 function Treasure:get_node_metric()
     local metric = tree.Metric:new()
-    metric.is_mergeable = true
     metric.treasures = 1
-    if self:is_visible() then metric.hidden_treasures = 1 end
-    if self:is_reachable() then metric.obstacle_treasures = 1 end
+    if not self:is_visible() then metric.hidden_treasures = 1 end
+    if not self:is_reachable() then metric.obstacle_treasures = 1 end
     if self.open == 'bigkey' then metric.bigkey_treasures = 1 end
-    if self:is_visible() and self:is_reachable() and self:is_open() then metric.normal_treasures = 1 end
+    if self:is_normal() then metric.normal_treasures = 1 end
     return metric
 end
 
 function Enemy:get_node_metric()
     local metric = tree.Metric:new()
-    metric.is_mergeable = true
     return metric
 end
 
 function Room:get_children_metric()
     local metric = tree.Metric:new()
-    metric.is_mergeable = not (self.see or self.reach or self.open)
     self:each_child(function (key, child)
         metric = metric + child:get_node_metric()
     end)
@@ -253,23 +259,31 @@ end
 
 function Treasure:get_children_metric()
     local metric = tree.Metric:new()
-    metric.is_mergeable = false
     return metric
 end
 
 function Enemy:get_children_metric()
     local metric = tree.Metric:new()
-    metric.is_mergeable = false
     return metric
 end
 
 function tree.Metric:__tostring()
-    return string.format('M:%-5s D:%d (%d,%d,%d) T:%d (%d,%d,%d)',
-    self.is_mergeable,
+    return string.format('D:%d (%d,%d,%d) T:%d (%d,%d,%d)',
     self.doors,     self.hidden_doors,     self.obstacle_doors,     self.bigkey_doors,
     self.treasures, self.hidden_treasures, self.obstacle_treasures, self.bigkey_treasures)
 end
 
+function tree.Metric:is_valid()
+    if self.treasures > 2 then return false end
+    if self.hidden_treasures > 1 then return false end
+    if self.bigkey_treasures > 1 then return false end
+    if self.obstacle_treasures > 1 then return false end
+    if self.bigkey_treasures > 0 and self:get_obstacles() > 0 then return false end
+    if self.bigkey_treasures > 0 and self.normal_treasures > 0 then return false end
+    if self.hidden_treasures > 0 and self:get_obstacles() > 0 then return false end
+    if self:get_obstacles() > 0 and self.treasures - self.hidden_treasures > 1 then return false end
+    return true
+end
 
 
 local PrintVisitor = {}
