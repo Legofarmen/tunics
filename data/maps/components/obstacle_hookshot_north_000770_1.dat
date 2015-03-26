@@ -243,7 +243,7 @@ tile{
 dynamic_tile{
   layer = 1,
   x = 176,
-  y = 48,
+  y = 40,
   width = 16,
   height = 16,
   name = "placeholder1",

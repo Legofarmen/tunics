@@ -95,6 +95,9 @@ map{ id = "components/treasure_open_250777_1", description = "Treasure open 2507
 map{ id = "components/door_bigkey_north_200777_1", description = "Door bigkey north 250777 1" }
 map{ id = "components/treasure_compass_000004_1", description = "Treasure compass 000004 1" }
 map{ id = "components/treasure_compass_000001_1", description = "Treasure compass 000001 1" }
+map{ id = "rooms/puzzles", description = "Puzzles" }
+map{ id = "components/treasure_open_000444_1", description = "Treasure open 000444 1" }
+map{ id = "components/puzzle_000700_1", description = "Puzzle 000700 1" }
 
 tileset{ id = "dungeon_blue", description = "Dungeon (blue)" }
 tileset{ id = "dungeon_grayblue", description = "Dungeon (gray-blue)" }
@@ -110,6 +113,7 @@ tileset{ id = "dungeon_ganon", description = "Dungeon (ganon)" }
 tileset{ id = "dungeon_pink", description = "Dungeon (pink)" }
 tileset{ id = "dungeon_gray", description = "Dungeon (gray)" }
 tileset{ id = "dungeon_gold", description = "Dungeon (gold)" }
+tileset{ id = "dungeon_brick_gray_1", description = "Dungeon brick gray 1" }
 
 sprite{ id = "entities/block", description = "Block" }
 sprite{ id = "entities/chest", description = "Chest" }
