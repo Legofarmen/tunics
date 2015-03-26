@@ -109,23 +109,39 @@ function filler()
     return false
 end
 
-function treasure(data)
-    local component_name, component_mask = Zentropy.components:get_treasure(data.open or data.see, mask, components_rng)
+function treasure(treasure_data)
+    local component_name, component_mask
+    local component_type
+    if treasure_data.see then
+        component_name, component_mask = Zentropy.components:get_puzzle(mask, components_rng)
+        component_type = 'puzzle'
+    else
+        component_name, component_mask = Zentropy.components:get_treasure(treasure_data.open, mask, components_rng)
+        component_type = 'treasure'
+    end
     if not component_name then
         for _, msg in ipairs(messages) do print(msg) end
-        error(string.format("treasure not found: open=%s mask=%06o", data.open or data.see, mask))
+        error(string.format("%s not found: open=%s mask=%06o", component_type, treasure_data.open, mask))
     end
     mask = bit32.bor(mask, component_mask)
 
-    data.section = component_mask
-    data.rewrite = {}
-    function data.rewrite.chest(properties)
-        properties.treasure_savegame_variable = data.name
-        properties.treasure_name = data.item_name
+    treasure_data.section = component_mask
+    treasure_data.rewrite = {}
+    function treasure_data.rewrite.chest(properties)
+        properties.treasure_savegame_variable = treasure_data.name
+        properties.treasure_name = treasure_data.item_name
         return properties
     end
-    data.rng = treasures_rng:biased(component_mask)
-    map:include(0, 0, component_name, data)
+    if components_rng:random() < 0.5 then
+        for dir, door_data in pairs(data.doors) do
+            if not door_data.open then
+                treasure_data.doors = treasure_data.doors or {}
+                table.insert(treasure_data.doors, dir)
+            end
+        end
+    end
+    treasure_data.rng = treasures_rng:biased(component_mask)
+    map:include(0, 0, component_name, treasure_data)
     data_messages('component', component_name)
 end
 

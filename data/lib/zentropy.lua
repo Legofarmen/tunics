@@ -51,6 +51,7 @@ function zentropy.db.Components:new(o)
     o.enemies = o.enemies or {}
     o.fillers = o.fillers or {}
     o.bossrooms = o.bossrooms or {}
+    o.puzzles = o.puzzles or {}
     return Class.new(self, o)
 end
 
@@ -82,6 +83,16 @@ function zentropy.db.Components:treasure(id, iterator)
     end
     self.treasures[open] = self.treasures[open] or {}
     table.insert(self.treasures[open], {
+        id=id,
+        mask=mask,
+    })
+end
+
+function zentropy.db.Components:puzzle(id, iterator)
+    local mask_string = iterator()
+    local mask
+    mask = Util.oct(mask_string)
+    table.insert(self.puzzles, {
         id=id,
         mask=mask,
     })
@@ -235,6 +246,18 @@ function zentropy.db.Components:get_treasure(open, mask, rng)
     return entry.id, entry.mask
 end
 
+function zentropy.db.Components:get_puzzle(mask, rng)
+    local entries = {}
+    for _, entry in pairs(self.puzzles) do
+        table.insert(entries, entry)
+    end
+    if #entries == 0 then
+        return
+    end
+    local entry = entries[rng:random(#entries)]
+    return entry.id, entry.mask
+end
+
 function zentropy.db.Components:get_floors(rng)
     local i = rng:random(#self.floors)
     local j = rng:random(#self.floors - 1)
@@ -257,8 +280,5 @@ function zentropy.db.Components:get_bossroom(mask, rng)
     local entry = entries[rng:random(#entries)]
     return entry.id, entry.mask
 end
-
-
-
 
 return zentropy

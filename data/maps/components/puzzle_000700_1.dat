@@ -247,7 +247,7 @@ block{
   layer = 1,
   x = 248,
   y = 93,
-  name = "block_"",
+  name = "block_2",
   direction = -1,
   sprite = "entities/block",
   pushable = false,
