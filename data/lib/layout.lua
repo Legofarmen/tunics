@@ -67,6 +67,10 @@ function BaseVisitor:visit_room(room)
         end
     end)
     if heavy_key then
+        while my_leaf < self.leaf - 1 do
+            my_leaf = my_leaf + 1
+            self:room({}, my_depth, my_leaf, 'forward')
+        end
         if light_count == 0 then
             self.depth = my_depth + 1
             self.dir = 'down'
