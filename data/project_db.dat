@@ -114,6 +114,7 @@ tileset{ id = "dungeon_pink", description = "Dungeon (pink)" }
 tileset{ id = "dungeon_gray", description = "Dungeon (gray)" }
 tileset{ id = "dungeon_gold", description = "Dungeon (gold)" }
 tileset{ id = "dungeon_brick_gray_1", description = "Dungeon brick gray 1" }
+tileset{ id = "dungeon_ganon_brown_1", description = "Dungeon ganon brown 1" }
 
 sprite{ id = "entities/block", description = "Block" }
 sprite{ id = "entities/chest", description = "Chest" }
