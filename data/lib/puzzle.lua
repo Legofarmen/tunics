@@ -198,7 +198,7 @@ function Puzzle.alpha_dungeon(rng, nkeys, item_names)
         Puzzle.max_heads(rng:create(), 4)(heads)
         step(heads)
     end
-    local root = Tree.Room:new{ open='root' }
+    local root = Tree.Room:new{ open='entrance' }
     heads:each_child(function (key, child)
         if child.class == 'Room' and child:is_reachable() and child:is_open() then
             root:add_child(child)
