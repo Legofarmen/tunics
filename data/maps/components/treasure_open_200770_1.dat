@@ -12,13 +12,13 @@ tile{
   x = 112,
   y = 64,
   width = 96,
-  height = 56,
+  height = 40,
   pattern = "floor_small.2",
 }
 
 tile{
   layer = 1,
-  x = 96,
+  x = 104,
   y = 48,
   width = 16,
   height = 16,
@@ -27,8 +27,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 96,
-  y = 120,
+  x = 104,
+  y = 104,
   width = 16,
   height = 16,
   pattern = "stage_big.corner.3",
@@ -36,16 +36,16 @@ tile{
 
 tile{
   layer = 1,
-  x = 96,
+  x = 104,
   y = 64,
   width = 16,
-  height = 56,
+  height = 40,
   pattern = "stage_big.3",
 }
 
 tile{
   layer = 1,
-  x = 208,
+  x = 200,
   y = 48,
   width = 16,
   height = 16,
@@ -54,8 +54,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 208,
-  y = 120,
+  x = 200,
+  y = 104,
   width = 16,
   height = 16,
   pattern = "stage_big.corner.4",
@@ -63,17 +63,17 @@ tile{
 
 tile{
   layer = 1,
-  x = 208,
+  x = 200,
   y = 64,
   width = 16,
-  height = 56,
+  height = 40,
   pattern = "stage_big.4",
 }
 
 tile{
   layer = 1,
-  x = 112,
-  y = 120,
+  x = 120,
+  y = 104,
   width = 16,
   height = 16,
   pattern = "stage_big.2",
@@ -81,8 +81,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 192,
-  y = 120,
+  x = 184,
+  y = 104,
   width = 16,
   height = 16,
   pattern = "stage_big.2",
@@ -90,26 +90,26 @@ tile{
 
 tile{
   layer = 1,
-  x = 112,
+  x = 120,
   y = 48,
-  width = 96,
+  width = 80,
   height = 16,
   pattern = "stage_big.1",
 }
 
 tile{
   layer = 1,
-  x = 128,
-  y = 120,
-  width = 64,
+  x = 144,
+  y = 104,
+  width = 32,
   height = 16,
   pattern = "stage_big.steps",
 }
 
 tile{
   layer = 1,
-  x = 128,
-  y = 120,
+  x = 136,
+  y = 104,
   width = 8,
   height = 16,
   pattern = "stage_big.steps_border.1",
@@ -117,8 +117,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 184,
-  y = 120,
+  x = 176,
+  y = 104,
   width = 8,
   height = 16,
   pattern = "stage_big.steps_border.2",
@@ -127,7 +127,7 @@ tile{
 chest{
   layer = 1,
   x = 160,
-  y = 93,
+  y = 85,
   name = "chest",
   sprite = "entities/chest",
 }

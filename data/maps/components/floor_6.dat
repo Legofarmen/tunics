@@ -9,10 +9,10 @@ properties{
 
 tile{
   layer = 1,
-  x = 32,
-  y = 32,
-  width = 256,
-  height = 176,
+  x = 40,
+  y = 40,
+  width = 240,
+  height = 160,
   pattern = "floor.6",
 }
 
