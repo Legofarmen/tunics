@@ -10,7 +10,7 @@ properties{
 tile{
   layer = 1,
   x = 344,
-  y = 32,
+  y = 40,
   width = 256,
   height = 176,
   pattern = "floor.18",
@@ -3859,78 +3859,6 @@ tile{
   pattern = "lava",
 }
 
-tile{
-  layer = 1,
-  x = 360,
-  y = 48,
-  width = 16,
-  height = 16,
-  pattern = "floor_pot",
-}
-
-tile{
-  layer = 1,
-  x = 376,
-  y = 48,
-  width = 16,
-  height = 16,
-  pattern = "floor_pot",
-}
-
-tile{
-  layer = 1,
-  x = 424,
-  y = 48,
-  width = 16,
-  height = 16,
-  pattern = "floor_pot",
-}
-
-tile{
-  layer = 1,
-  x = 408,
-  y = 48,
-  width = 16,
-  height = 16,
-  pattern = "floor_pot",
-}
-
-tile{
-  layer = 1,
-  x = 504,
-  y = 48,
-  width = 16,
-  height = 16,
-  pattern = "floor_pot",
-}
-
-tile{
-  layer = 1,
-  x = 520,
-  y = 48,
-  width = 16,
-  height = 16,
-  pattern = "floor_pot",
-}
-
-tile{
-  layer = 1,
-  x = 552,
-  y = 48,
-  width = 16,
-  height = 16,
-  pattern = "floor_pot",
-}
-
-tile{
-  layer = 1,
-  x = 568,
-  y = 48,
-  width = 16,
-  height = 16,
-  pattern = "floor_pot",
-}
-
 chest{
   layer = 1,
   x = 400,
@@ -4204,10 +4132,197 @@ chest{
   sprite = "entities/chest",
 }
 
+dynamic_tile{
+  layer = 1,
+  x = 360,
+  y = 48,
+  width = 16,
+  height = 16,
+  name = "pot_1",
+  pattern = "floor_small.2",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 376,
+  y = 48,
+  width = 16,
+  height = 16,
+  name = "pot_6",
+  pattern = "floor_small.2",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 408,
+  y = 48,
+  width = 16,
+  height = 16,
+  name = "pot_3",
+  pattern = "floor_small.2",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 424,
+  y = 48,
+  width = 16,
+  height = 16,
+  name = "pot_4",
+  pattern = "floor_small.2",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 504,
+  y = 48,
+  width = 16,
+  height = 16,
+  name = "pot_2",
+  pattern = "floor_small.2",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 520,
+  y = 48,
+  width = 16,
+  height = 16,
+  name = "pot_5",
+  pattern = "floor_small.2",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 552,
+  y = 48,
+  width = 16,
+  height = 16,
+  name = "pot_7",
+  pattern = "floor_small.2",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 568,
+  y = 48,
+  width = 16,
+  height = 16,
+  name = "pot_8",
+  pattern = "floor_small.2",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 568,
+  y = 80,
+  width = 16,
+  height = 16,
+  name = "block_1",
+  pattern = "floor_small.2",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 552,
+  y = 80,
+  width = 16,
+  height = 16,
+  name = "block_2",
+  pattern = "floor_small.2",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 536,
+  y = 80,
+  width = 16,
+  height = 16,
+  name = "block_3",
+  pattern = "floor_small.2",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 504,
+  y = 80,
+  width = 16,
+  height = 16,
+  name = "block_4",
+  pattern = "floor_small.2",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 424,
+  y = 80,
+  width = 16,
+  height = 16,
+  name = "block_5",
+  pattern = "floor_small.2",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 392,
+  y = 80,
+  width = 16,
+  height = 16,
+  name = "block_6",
+  pattern = "floor_small.2",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 376,
+  y = 80,
+  width = 16,
+  height = 16,
+  name = "block_7",
+  pattern = "floor_small.2",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 360,
+  y = 80,
+  width = 16,
+  height = 16,
+  name = "block_8",
+  pattern = "floor_small.2",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 464,
+  y = 80,
+  width = 16,
+  height = 16,
+  name = "chest",
+  pattern = "floor_small.2",
+  enabled_at_start = true,
+}
+
 block{
   layer = 1,
   x = 368,
-  y = 85,
+  y = 93,
   direction = -1,
   sprite = "entities/block",
   pushable = true,
@@ -4218,7 +4333,7 @@ block{
 block{
   layer = 1,
   x = 384,
-  y = 85,
+  y = 93,
   direction = -1,
   sprite = "entities/block",
   pushable = true,
@@ -4229,7 +4344,7 @@ block{
 block{
   layer = 1,
   x = 400,
-  y = 85,
+  y = 93,
   direction = -1,
   sprite = "entities/block",
   pushable = true,
@@ -4240,7 +4355,7 @@ block{
 block{
   layer = 1,
   x = 432,
-  y = 85,
+  y = 93,
   direction = -1,
   sprite = "entities/block",
   pushable = true,
@@ -4251,7 +4366,7 @@ block{
 block{
   layer = 1,
   x = 576,
-  y = 85,
+  y = 93,
   direction = -1,
   sprite = "entities/block",
   pushable = true,
@@ -4262,7 +4377,7 @@ block{
 block{
   layer = 1,
   x = 560,
-  y = 85,
+  y = 93,
   direction = -1,
   sprite = "entities/block",
   pushable = true,
@@ -4273,7 +4388,7 @@ block{
 block{
   layer = 1,
   x = 544,
-  y = 85,
+  y = 93,
   direction = -1,
   sprite = "entities/block",
   pushable = true,
@@ -4284,7 +4399,7 @@ block{
 block{
   layer = 1,
   x = 512,
-  y = 85,
+  y = 93,
   direction = -1,
   sprite = "entities/block",
   pushable = true,
@@ -4292,11 +4407,11 @@ block{
   maximum_moves = 1,
 }
 
-chest{
+destructible{
   layer = 1,
-  x = 472,
-  y = 85,
-  sprite = "entities/chest",
+  x = 368,
+  y = 61,
+  sprite = "entities/vase",
 }
 
 tile{
