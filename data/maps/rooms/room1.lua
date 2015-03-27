@@ -270,12 +270,12 @@ if obstacle_mask ~= 0 then
     local info = OBSTACLE_MAP[obstacle_mask]
     local obstacle_data = {}
 
-    if obstacle_treasure then
-        if info.flip then
-            obstacle_data.treasure2 = obstacle_treasure
-        else
-            obstacle_data.treasure1 = obstacle_treasure
-        end
+    if info.flip then
+        obstacle_data.treasure1 = table.remove(normal_treasures)
+        obstacle_data.treasure2 = obstacle_treasure
+    else
+        obstacle_data.treasure1 = obstacle_treasure
+        obstacle_data.treasure2 = table.remove(normal_treasures)
     end
 
     obstacle(obstacle_data, info.dir, obstacle_item)
