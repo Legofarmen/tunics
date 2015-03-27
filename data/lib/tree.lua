@@ -73,7 +73,7 @@ end
 
 function Node:with_needs(needs)
     for kind, need in pairs(needs) do
-        if self[kind] and self[kind] ~= need then
+        if self[kind] and not (self[kind] == 'nothing' and need == 'nothing') then
             needs.children = {self}
             return Room:new(needs)
         end
