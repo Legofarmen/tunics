@@ -28,7 +28,10 @@ end
 local puzzle = Puzzle.alpha_dungeon(puzzle_rng, 3, {'hookshot'})
 --puzzle:accept(Tree.PrintVisitor:new{})
 
+local tileset = zentropy.tilesets.dungeon[presentation_rng:random(#zentropy.tilesets.dungeon)]
 local floor1, floor2 = zentropy.components:get_floors(presentation_rng)
+
+map:set_tileset(tileset)
 
 local solarus_layout = Layout.solarus_mixin(layout:new{rng=layout_rng}, map, {floor1, floor2})
 solarus_layout:render(puzzle)
