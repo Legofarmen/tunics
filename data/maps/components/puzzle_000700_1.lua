@@ -21,6 +21,8 @@ if data.item_name or next(data.doors) then
     local block = map:get_entity('block_' .. hideout:get_name())
     if block then
         block:set_pushable(true)
+        local x, y = block:get_position()
+        block:set_position(x, y-1)
     end
 
     sensor_north:get_userdata().on_activated = sensor_activated

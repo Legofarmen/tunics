@@ -14,13 +14,16 @@ zentropy = zentropy or {
                 Util.oct('000400'),
             },
         },
+        Tilesets = Class:new{},
     },
 }
 
 zentropy.db.Project.__index = zentropy.db.Project
 
 function zentropy.init()
-    zentropy.components = zentropy.db.Components:new():parse()
+    entries = zentropy.db.Project:parse()
+    zentropy.components = zentropy.db.Components:new():parse(entries.map)
+    zentropy.tilesets = zentropy.db.Tilesets:new():parse(entries.tileset)
 end
 
 function zentropy.db.Project:parse()
@@ -284,6 +287,28 @@ function zentropy.db.Components:get_bossroom(mask, rng)
     end
     local entry = entries[rng:random(#entries)]
     return entry.id, entry.mask
+end
+
+function zentropy.db.Tilesets:new(o)
+    o = o or {}
+    o.dungeon = o.dungeon or {}
+    return Class.new(self, o)
+end
+
+function zentropy.db.Tilesets:parse(tilesets)
+    tilesets = tilesets or zentropy.db.Project:parse().tileset
+
+    for k, v in pairs(tilesets) do
+        local parts = string.gmatch(v.id, '[^_]+')
+        local part = parts()
+        if self[part] then
+            table.insert(self[part], v.id)
+        else
+            print('ignoring tileset: ', v.id)
+        end
+    end
+
+    return self
 end
 
 return zentropy
