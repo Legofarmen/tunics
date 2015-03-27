@@ -227,8 +227,8 @@ end
 Layout.NorthEastwardVisitor = collect_mixin(BaseVisitor:new{ entrance_dir='down' })
 Layout.NorthEastwardVisitor = coord_mixin(Layout.NorthEastwardVisitor, {
     pos_from_native = function (self, depth, leaf)
-        local left = math.floor((9 - self.leaf) / 2)
-        local bottom = math.floor((9 - self.max_depth) / 2)
+        local left = math.floor((10 - self.leaf) / 2)
+        local bottom = math.floor((10 - self.max_depth) / 2)
         return left + leaf, 10 - bottom - depth
     end,
     dir_from_native = function (self, dir)
@@ -245,8 +245,8 @@ Layout.NorthEastwardVisitor = coord_mixin(Layout.NorthEastwardVisitor, {
 Layout.NorthWestwardVisitor = collect_mixin(BaseVisitor:new{ entrance_dir='down' })
 Layout.NorthWestwardVisitor = coord_mixin(Layout.NorthWestwardVisitor, {
     pos_from_native = function (depth, leaf)
-        local right = math.floor((9 - self.leaf) / 2)
-        local bottom = math.floor((9 - self.max_depth) / 2)
+        local right = math.floor((10 - self.leaf) / 2)
+        local bottom = math.floor((10 - self.max_depth) / 2)
         return 10 - right - leaf, 10 - bottom - depth
     end,
     dir_from_native = function (dir)
