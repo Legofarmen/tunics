@@ -1,6 +1,8 @@
 local map, data = ...
 
-function door:on_opened()
+local door_u = door:get_userdata()
+
+function door_u:on_opened()
     door_closed:set_enabled(false)
-    top_closed:set_enabled(false)
+    top_open:set_enabled(true)
 end
