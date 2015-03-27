@@ -39,6 +39,13 @@ function BaseVisitor:forward(my_depth, child)
     child:accept(self)
 end
 
+function BaseVisitor:catch_up(my_depth, my_leaf, leaf_max)
+    while my_leaf < leaf_max do
+        my_leaf = my_leaf + 1
+        self:room({}, my_depth, my_leaf, 'forward')
+    end
+end
+
 function BaseVisitor:visit_room(room)
     local my_depth = self.depth
     local my_leaf = self.leaf
@@ -64,10 +71,8 @@ function BaseVisitor:visit_room(room)
                     heavy_weight = weight
                     heavy_key = key
                 end
-                while my_leaf < self.leaf do
-                    my_leaf = my_leaf + 1
-                    self:room({}, my_depth, my_leaf, 'forward')
-                end
+                self:catch_up(my_depth, my_leaf, self.leaf)
+                my_leaf = self.leaf
                 self:down(my_depth, child)
                 light_count = light_count + 1
             else
@@ -77,10 +82,7 @@ function BaseVisitor:visit_room(room)
         end
     end)
     if heavy_key then
-        while my_leaf < self.leaf - 1 do
-            my_leaf = my_leaf + 1
-            self:room({}, my_depth, my_leaf, 'forward')
-        end
+        self:catch_up(my_depth, my_leaf, self.leaf - 1)
         local child = room.children[heavy_key]
         if light_count == 0 then
             self:down(my_depth, child)
