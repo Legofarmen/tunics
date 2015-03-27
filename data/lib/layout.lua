@@ -27,6 +27,25 @@ function BaseVisitor:visit_treasure(treasure)
     self:treasure(treasure, self.depth, self.leaf)
 end
 
+function BaseVisitor:down(my_depth, child)
+    self.depth = my_depth + 1
+    self.dir = 'down'
+    child:accept(self)
+end
+
+function BaseVisitor:forward(my_depth, child)
+    self.depth = my_depth
+    self.dir = 'forward'
+    child:accept(self)
+end
+
+function BaseVisitor:catch_up(my_depth, my_leaf, leaf_max)
+    while my_leaf < leaf_max do
+        my_leaf = my_leaf + 1
+        self:room({}, my_depth, my_leaf, 'forward')
+    end
+end
+
 function BaseVisitor:visit_room(room)
     local my_depth = self.depth
     local my_leaf = self.leaf
@@ -52,13 +71,9 @@ function BaseVisitor:visit_room(room)
                     heavy_weight = weight
                     heavy_key = key
                 end
-                while my_leaf < self.leaf do
-                    my_leaf = my_leaf + 1
-                    self:room({}, my_depth, my_leaf, 'forward')
-                end
-                self.depth = my_depth + 1
-                self.dir = 'down'
-                child:accept(self)
+                self:catch_up(my_depth, my_leaf, self.leaf)
+                my_leaf = self.leaf
+                self:down(my_depth, child)
                 light_count = light_count + 1
             else
                 heavy_key = key
@@ -67,18 +82,13 @@ function BaseVisitor:visit_room(room)
         end
     end)
     if heavy_key then
-        while my_leaf < self.leaf - 1 do
-            my_leaf = my_leaf + 1
-            self:room({}, my_depth, my_leaf, 'forward')
-        end
+        self:catch_up(my_depth, my_leaf, self.leaf - 1)
+        local child = room.children[heavy_key]
         if light_count == 0 then
-            self.depth = my_depth + 1
-            self.dir = 'down'
+            self:down(my_depth, child)
         else
-            self.depth = my_depth
-            self.dir = 'forward'
+            self:forward(my_depth, child)
         end
-        room.children[heavy_key]:accept(self)
     else
         self.leaf = self.leaf + 1
     end

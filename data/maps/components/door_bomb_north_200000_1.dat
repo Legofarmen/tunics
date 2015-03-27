@@ -93,21 +93,21 @@ door{
 
 tile{
   layer = 2,
-  x = 144,
+  x = 120,
   y = 8,
-  width = 32,
+  width = 80,
   height = 8,
-  pattern = "door_top.blast.1",
+  pattern = "door_cache.1",
 }
 
 dynamic_tile{
   layer = 2,
-  x = 136,
+  x = 144,
   y = 8,
-  width = 48,
+  width = 32,
   height = 8,
-  name = "top_closed",
-  pattern = "door_cache.1",
-  enabled_at_start = true,
+  name = "top_open",
+  pattern = "door_top.blast.1",
+  enabled_at_start = false,
 }
 
