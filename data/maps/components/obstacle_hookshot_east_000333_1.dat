@@ -3,7 +3,7 @@ properties{
   y = 0,
   width = 320,
   height = 240,
-  tileset = "dungeon_blue",
+  tileset = "dungeon_brick_gray_1",
   music = "same",
 }
 
@@ -194,18 +194,18 @@ dynamic_tile{
 tile{
   layer = 2,
   x = 192,
-  y = 208,
+  y = 8,
   width = 32,
   height = 24,
-  pattern = "wall_statue.2",
+  pattern = "wall_statue.6.1",
 }
 
 tile{
   layer = 2,
   x = 192,
-  y = 8,
+  y = 208,
   width = 32,
   height = 24,
-  pattern = "wall_statue.1",
+  pattern = "wall_statue.6.2",
 }
 

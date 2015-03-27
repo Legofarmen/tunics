@@ -3,7 +3,7 @@ properties{
   y = 0,
   width = 320,
   height = 240,
-  tileset = "dungeon_ice",
+  tileset = "dungeon_brick_gray_1",
   music = "same",
 }
 
@@ -14,24 +14,6 @@ tile{
   width = 32,
   height = 32,
   pattern = "hole",
-}
-
-tile{
-  layer = 1,
-  x = 88,
-  y = 160,
-  width = 32,
-  height = 32,
-  pattern = "statue_ugly",
-}
-
-tile{
-  layer = 1,
-  x = 200,
-  y = 160,
-  width = 32,
-  height = 32,
-  pattern = "statue_ugly",
 }
 
 tile{
@@ -392,6 +374,24 @@ tile{
   width = 16,
   height = 24,
   pattern = "wall.2",
+}
+
+tile{
+  layer = 1,
+  x = 88,
+  y = 160,
+  width = 32,
+  height = 32,
+  pattern = "statue.1",
+}
+
+tile{
+  layer = 1,
+  x = 200,
+  y = 160,
+  width = 32,
+  height = 32,
+  pattern = "statue.1",
 }
 
 tile{

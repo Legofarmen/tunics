@@ -3,7 +3,7 @@ properties{
   y = 0,
   width = 320,
   height = 240,
-  tileset = "dungeon_blue",
+  tileset = "dungeon_brick_gray_1",
   music = "same",
 }
 
@@ -23,15 +23,6 @@ tile{
   width = 16,
   height = 16,
   pattern = "stage_big.corner.1",
-}
-
-tile{
-  layer = 1,
-  x = 104,
-  y = 104,
-  width = 16,
-  height = 16,
-  pattern = "stage_big.corner.3",
 }
 
 tile{
@@ -112,7 +103,16 @@ tile{
   y = 104,
   width = 8,
   height = 16,
-  pattern = "stage_big.steps_border.1",
+  pattern = "stage_big.end.2",
+}
+
+tile{
+  layer = 1,
+  x = 104,
+  y = 104,
+  width = 16,
+  height = 16,
+  pattern = "stage_big.corner.3",
 }
 
 tile{
@@ -121,7 +121,7 @@ tile{
   y = 104,
   width = 8,
   height = 16,
-  pattern = "stage_big.steps_border.2",
+  pattern = "stage_big.end.1",
 }
 
 chest{

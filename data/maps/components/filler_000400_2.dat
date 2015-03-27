@@ -3,7 +3,7 @@ properties{
   y = 0,
   width = 320,
   height = 240,
-  tileset = "dungeon_house",
+  tileset = "dungeon_brick_gray_1",
   music = "same",
 }
 
@@ -149,15 +149,6 @@ tile{
   width = 16,
   height = 16,
   pattern = "wall_diag.border.1",
-}
-
-tile{
-  layer = 1,
-  x = 32,
-  y = 80,
-  width = 8,
-  height = 16,
-  pattern = "wall_border.3",
 }
 
 tile{

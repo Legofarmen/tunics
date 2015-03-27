@@ -3,7 +3,7 @@ properties{
   y = 0,
   width = 320,
   height = 240,
-  tileset = "dungeon_blue",
+  tileset = "dungeon_brick_gray_1",
   music = "same",
 }
 
@@ -14,24 +14,6 @@ tile{
   width = 48,
   height = 64,
   pattern = "hole",
-}
-
-tile{
-  layer = 1,
-  x = 32,
-  y = 136,
-  width = 192,
-  height = 8,
-  pattern = "barrier.1",
-}
-
-tile{
-  layer = 1,
-  x = 224,
-  y = 136,
-  width = 8,
-  height = 8,
-  pattern = "barrier.border",
 }
 
 tile{
@@ -122,6 +104,24 @@ tile{
   width = 32,
   height = 16,
   pattern = "wall_torch.2",
+}
+
+tile{
+  layer = 1,
+  x = 224,
+  y = 136,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 136,
+  width = 192,
+  height = 8,
+  pattern = "barrier.1.1",
 }
 
 dynamic_tile{

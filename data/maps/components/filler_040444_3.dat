@@ -3,7 +3,7 @@ properties{
   y = 0,
   width = 320,
   height = 240,
-  tileset = "dungeon_graybrown",
+  tileset = "dungeon_brick_gray_1",
   music = "same",
 }
 
@@ -23,15 +23,6 @@ tile{
   width = 8,
   height = 160,
   pattern = "wall_border.3",
-}
-
-tile{
-  layer = 1,
-  x = 88,
-  y = 104,
-  width = 32,
-  height = 32,
-  pattern = "statue_fairy",
 }
 
 tile{
@@ -266,6 +257,15 @@ tile{
   width = 16,
   height = 16,
   pattern = "wall_diag.border.3",
+}
+
+tile{
+  layer = 1,
+  x = 80,
+  y = 104,
+  width = 32,
+  height = 32,
+  pattern = "statue.2",
 }
 
 tile{

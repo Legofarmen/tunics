@@ -3,7 +3,7 @@ properties{
   y = 0,
   width = 320,
   height = 240,
-  tileset = "dungeon_blue",
+  tileset = "dungeon_brick_gray_1",
   music = "same",
 }
 
@@ -250,15 +250,6 @@ tile{
   pattern = "wall_hole.1",
 }
 
-tile{
-  layer = 1,
-  x = 288,
-  y = 160,
-  width = 24,
-  height = 32,
-  pattern = "wall_statue.4",
-}
-
 dynamic_tile{
   layer = 1,
   x = 144,
@@ -279,5 +270,14 @@ dynamic_tile{
   name = "placeholder1",
   pattern = "floor_small.2",
   enabled_at_start = false,
+}
+
+tile{
+  layer = 2,
+  x = 288,
+  y = 160,
+  width = 24,
+  height = 32,
+  pattern = "wall_statue.6.4",
 }
 

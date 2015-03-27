@@ -3,7 +3,7 @@ properties{
   y = 0,
   width = 320,
   height = 240,
-  tileset = "dungeon_blue",
+  tileset = "dungeon_brick_gray_1",
   music = "same",
 }
 
@@ -49,7 +49,7 @@ tile{
   y = 104,
   width = 8,
   height = 8,
-  pattern = "barrier.1",
+  pattern = "barrier.1.1",
 }
 
 tile{
@@ -58,7 +58,7 @@ tile{
   y = 128,
   width = 8,
   height = 8,
-  pattern = "barrier.1",
+  pattern = "barrier.1.1",
 }
 
 wall{
