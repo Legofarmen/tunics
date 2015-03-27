@@ -102,13 +102,14 @@ end
 local open_doors = {}
 
 function filler()
-    local filler_data = {}
+    local filler_data = {
+        rng=puzzle_rng,
+    }
     local component_name, component_mask = Zentropy.components:get_filler(mask, components_rng)
     if component_name then
         mask = bit32.bor(mask, component_mask)
         if puzzle_rng:random() < 0.5 then
             filler_data.doors = open_doors
-            filler_data.rng = puzzle_rng
             open_doors = {}
         else
             filler_data.doors = {}
@@ -127,6 +128,7 @@ function treasure(treasure_data)
         component_name, component_mask = Zentropy.components:get_puzzle(mask, components_rng)
         component_type = 'puzzle'
         treasure_data.doors = {}
+        treasure_data.rng = puzzle_rng
     else
         component_name, component_mask = Zentropy.components:get_treasure(treasure_data.open, mask, components_rng)
         component_type = 'treasure'
