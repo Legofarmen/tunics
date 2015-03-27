@@ -38,8 +38,9 @@ if data.item_name or next(data.doors) then
         for dir, _ in pairs(data.doors) do
             map:open_doors('door_' .. dir)
         end
-    end
-
+    end
+else
+	switch:set_enabled(false)
 end
 
 map:add_on_started(function ()

@@ -1,0 +1,224 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  tileset = "dungeon_smoothbrick_green_1",
+  music = "same",
+}
+
+tile{
+  layer = 1,
+  x = 136,
+  y = 136,
+  width = 48,
+  height = 48,
+  pattern = "floor_small.2",
+}
+
+tile{
+  layer = 1,
+  x = 136,
+  y = 144,
+  width = 8,
+  height = 40,
+  pattern = "floor_border.2",
+}
+
+tile{
+  layer = 1,
+  x = 144,
+  y = 176,
+  width = 40,
+  height = 8,
+  pattern = "floor_border.2",
+}
+
+tile{
+  layer = 1,
+  x = 136,
+  y = 136,
+  width = 48,
+  height = 8,
+  pattern = "floor_border.2",
+}
+
+tile{
+  layer = 1,
+  x = 176,
+  y = 144,
+  width = 8,
+  height = 32,
+  pattern = "floor_border.2",
+}
+
+chest{
+  layer = 1,
+  x = 160,
+  y = 165,
+  name = "chest",
+  sprite = "entities/chest",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 104,
+  y = 152,
+  width = 16,
+  height = 16,
+  name = "placeholder_8",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 200,
+  y = 152,
+  width = 16,
+  height = 16,
+  name = "placeholder_2",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 216,
+  y = 136,
+  width = 16,
+  height = 16,
+  name = "placeholder_3",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 232,
+  y = 152,
+  width = 16,
+  height = 16,
+  name = "placeholder_4",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+destructible{
+  layer = 1,
+  x = 224,
+  y = 181,
+  sprite = "entities/vase",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 88,
+  y = 136,
+  width = 16,
+  height = 16,
+  name = "placeholder_5",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 72,
+  y = 152,
+  width = 16,
+  height = 16,
+  name = "placeholder_6",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 88,
+  y = 168,
+  width = 16,
+  height = 16,
+  name = "placeholder_7",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 216,
+  y = 168,
+  width = 16,
+  height = 16,
+  name = "placeholder_1",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+switch{
+  layer = 1,
+  x = 0,
+  y = 0,
+  name = "switch",
+  subtype = "walkable",
+  sprite = "entities/switch",
+  needs_block = false,
+  inactivate_when_leaving = false,
+}
+
+destructible{
+  layer = 1,
+  x = 112,
+  y = 165,
+  sprite = "entities/vase",
+}
+
+destructible{
+  layer = 1,
+  x = 208,
+  y = 165,
+  sprite = "entities/vase",
+}
+
+destructible{
+  layer = 1,
+  x = 96,
+  y = 149,
+  sprite = "entities/vase",
+}
+
+destructible{
+  layer = 1,
+  x = 80,
+  y = 165,
+  sprite = "entities/vase",
+}
+
+destructible{
+  layer = 1,
+  x = 96,
+  y = 181,
+  sprite = "entities/vase",
+}
+
+destructible{
+  layer = 1,
+  x = 224,
+  y = 181,
+  sprite = "entities/vase",
+}
+
+destructible{
+  layer = 1,
+  x = 224,
+  y = 149,
+  sprite = "entities/vase",
+}
+
+destructible{
+  layer = 1,
+  x = 240,
+  y = 165,
+  sprite = "entities/vase",
+}
+
