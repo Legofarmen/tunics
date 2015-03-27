@@ -47,6 +47,7 @@ function BaseVisitor:catch_up(my_depth, my_leaf, leaf_max)
 end
 
 function BaseVisitor:visit_room(room)
+    assert(self.dir)
     local my_depth = self.depth
     local my_leaf = self.leaf
 
@@ -105,6 +106,7 @@ function collect_mixin(object)
 
     function object:on_start()
         self.rooms = {}
+        self.min_depth = nil
         self.max_depth = nil
         self:collect_on_start()
     end
@@ -131,6 +133,7 @@ function collect_mixin(object)
         end
         self.rooms[depth] = self.rooms[depth] or {}
         self.rooms[depth][leaf] = info
+        self.min_depth = math.min(self.min_depth or 0, depth)
         self.max_depth = math.max(self.max_depth or 0, depth)
         return info
     end
@@ -141,6 +144,7 @@ function collect_mixin(object)
     end
 
     function object.step(depth, leaf, native_dir)
+        assert(native_dir)
         local depth_delta = { forward=0, up=-1, down=1, backward=0, }
         local leaf_delta = { forward=1, up=0, down=0, backward=-1, }
         return depth + depth_delta[native_dir], leaf + leaf_delta[native_dir]
@@ -155,6 +159,7 @@ function collect_mixin(object)
     end
 
     function object:treasure(treasure, depth, leaf)
+        assert(treasure)
         local info = self:get_room(depth, leaf)
         local data = {
             item_name = treasure.name,
@@ -171,6 +176,7 @@ function collect_mixin(object)
     end
 
     function object:room(room, depth, leaf, native_dir)
+        assert(native_dir)
         local from_dir = self.reverse(native_dir)
         local parent_depth, parent_leaf = self.step(depth, leaf, from_dir)
         local native_pos = { depth=depth, leaf=leaf, dir=native_dir }
@@ -254,12 +260,12 @@ Layout.NorthEastwardVisitor = coord_mixin(Layout.NorthEastwardVisitor, {
 
 Layout.NorthWestwardVisitor = collect_mixin(BaseVisitor:new{ entrance_dir='down' })
 Layout.NorthWestwardVisitor = coord_mixin(Layout.NorthWestwardVisitor, {
-    pos_from_native = function (depth, leaf)
+    pos_from_native = function (self, depth, leaf)
         local right = math.floor((10 - self.leaf) / 2)
         local bottom = math.floor((10 - self.max_depth) / 2)
         return 10 - right - leaf, 10 - bottom - depth
     end,
-    dir_from_native = function (dir)
+    dir_from_native = function (self, dir)
         local dirs = {
             forward='west',
             down='north',
@@ -269,6 +275,73 @@ Layout.NorthWestwardVisitor = coord_mixin(Layout.NorthWestwardVisitor, {
         return dirs[dir]
     end,
 })
+
+
+Layout.BidiVisitor = collect_mixin(BaseVisitor:new{ entrance_dir='forward' })
+Layout.BidiVisitor = coord_mixin(Layout.BidiVisitor, {
+    pos_from_native = function (self, depth, leaf)
+        local left = math.floor((10 - (self.max_depth - self.min_depth)) / 2) - self.min_depth
+        local bottom = math.floor((10 - math.max(self.left.leaf, self.right.leaf, self.leaf)) / 2)
+        return left + depth, 10 - bottom - leaf
+    end,
+    dir_from_native = function (self, dir)
+        local dirs = {
+            forward='north',
+            down='east',
+            up='west',
+            backward='south',
+        }
+        return dirs[dir]
+    end,
+})
+
+function Layout.BidiVisitor:new(o)
+    o = o or {}
+    local left_dir = {
+        forward='forward',
+        down='up',
+    }
+    o.left = BaseVisitor:new{
+        entrance_dir='down',
+        room = function (self, room, depth, leaf, dir)
+            assert(dir)
+            o:room(room, -(depth + 1), leaf, left_dir[dir])
+        end,
+        enemy = function (self, enemy, depth, leaf) o:enemy(room, -(depth + 1), leaf, left_dir[dir]) end,
+        treasure = function (self, treasure, depth, leaf) o:treasure(treasure, -(depth + 1), leaf, left_dir[dir]) end,
+    }
+    o.right = BaseVisitor:new{
+        entrance_dir='down',
+        room = function (self, room, depth, leaf, dir)
+            o:room(room, depth + 1, leaf, dir)
+        end,
+        enemy = function (self, enemy, depth, leaf) o:enemy(room, depth + 1, leaf, dir) end,
+        treasure = function (self, treasure, depth, leaf) o:treasure(treasure, depth + 1, leaf, dir) end,
+    }
+    return BaseVisitor.new(self, o)
+end
+
+function Layout.BidiVisitor:down(my_depth, child)
+    assert(self.left.dir)
+    assert(self.right.dir)
+    if self.left.leaf <= self.right.leaf then
+        child:accept(self.left)
+    else
+        child:accept(self.right)
+    end
+    self.leaf = math.min(self.left.leaf, self.right.leaf)
+end
+
+local old_on_start = Layout.BidiVisitor.on_start
+function Layout.BidiVisitor:on_start()
+    self.left.leaf = 0
+    self.left.depth = 0
+    self.left.dir = self.left.entrance_dir
+    self.right.leaf = 0
+    self.right.depth = 0
+    self.right.dir = self.right.entrance_dir
+    old_on_start(self)
+end
 
 
 function Layout.print_mixin(object)

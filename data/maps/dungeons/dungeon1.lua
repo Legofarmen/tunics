@@ -6,8 +6,8 @@ local Prng = require 'lib/prng'
 local Layout = require 'lib/layout'
 local zentropy = require 'lib/zentropy'
 
-local master_prng = Prng.from_seed(59)
-local layout = Layout.NorthEastwardVisitor
+local master_prng = Prng.from_seed(61)
+local layout = Layout.BidiVisitor
 
 local puzzle_rng = master_prng:create()
 local layout_rng = master_prng:create()
