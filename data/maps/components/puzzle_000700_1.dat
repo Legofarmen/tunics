@@ -7,332 +7,15 @@ properties{
   music = "same",
 }
 
-dynamic_tile{
+switch{
   layer = 1,
-  x = 48,
-  y = 48,
-  width = 16,
-  height = 16,
-  name = "pot_1_switch",
-  pattern = "floor_small.2",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 64,
-  y = 48,
-  width = 16,
-  height = 16,
-  name = "pot_2_switch",
-  pattern = "floor_small.2",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 96,
-  y = 48,
-  width = 16,
-  height = 16,
-  name = "pot_3_switch",
-  pattern = "floor_small.2",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 112,
-  y = 48,
-  width = 16,
-  height = 16,
-  name = "pot_4_switch",
-  pattern = "floor_small.2",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 192,
-  y = 48,
-  width = 16,
-  height = 16,
-  name = "pot_5_switch",
-  pattern = "floor_small.2",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 208,
-  y = 48,
-  width = 16,
-  height = 16,
-  name = "pot_6_switch",
-  pattern = "floor_small.2",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 240,
-  y = 48,
-  width = 16,
-  height = 16,
-  name = "pot_7_switch",
-  pattern = "floor_small.2",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 256,
-  y = 48,
-  width = 16,
-  height = 16,
-  name = "pot_8_switch",
-  pattern = "floor_small.2",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 256,
-  y = 80,
-  width = 16,
-  height = 16,
-  name = "block_1_switch",
-  pattern = "floor_small.2",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 240,
-  y = 80,
-  width = 16,
-  height = 16,
-  name = "block_2_switch",
-  pattern = "floor_small.2",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 224,
-  y = 80,
-  width = 16,
-  height = 16,
-  name = "block_3_switch",
-  pattern = "floor_small.2",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 192,
-  y = 80,
-  width = 16,
-  height = 16,
-  name = "block_4_switch",
-  pattern = "floor_small.2",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 112,
-  y = 80,
-  width = 16,
-  height = 16,
-  name = "block_5_switch",
-  pattern = "floor_small.2",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 80,
-  y = 80,
-  width = 16,
-  height = 16,
-  name = "block_6_switch",
-  pattern = "floor_small.2",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 64,
-  y = 80,
-  width = 16,
-  height = 16,
-  name = "block_7_switch",
-  pattern = "floor_small.2",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 48,
-  y = 80,
-  width = 16,
-  height = 16,
-  name = "block_8_switch",
-  pattern = "floor_small.2",
-  enabled_at_start = true,
-}
-
-block{
-  layer = 1,
-  x = 56,
-  y = 93,
-  name = "block_8",
-  direction = -1,
-  sprite = "entities/block",
-  pushable = false,
-  pullable = false,
-  maximum_moves = 1,
-}
-
-block{
-  layer = 1,
-  x = 72,
-  y = 93,
-  name = "block_7",
-  direction = 1,
-  sprite = "entities/block",
-  pushable = false,
-  pullable = false,
-  maximum_moves = 1,
-}
-
-block{
-  layer = 1,
-  x = 88,
-  y = 93,
-  name = "block_6",
-  direction = -1,
-  sprite = "entities/block",
-  pushable = false,
-  pullable = false,
-  maximum_moves = 1,
-}
-
-block{
-  layer = 1,
-  x = 120,
-  y = 93,
-  name = "block_5",
-  direction = -1,
-  sprite = "entities/block",
-  pushable = false,
-  pullable = false,
-  maximum_moves = 1,
-}
-
-block{
-  layer = 1,
-  x = 264,
-  y = 93,
-  name = "block_1",
-  direction = -1,
-  sprite = "entities/block",
-  pushable = false,
-  pullable = false,
-  maximum_moves = 1,
-}
-
-block{
-  layer = 1,
-  x = 248,
-  y = 93,
-  name = "block_2",
-  direction = -1,
-  sprite = "entities/block",
-  pushable = false,
-  pullable = false,
-  maximum_moves = 1,
-}
-
-block{
-  layer = 1,
-  x = 232,
-  y = 93,
-  name = "block_3",
-  direction = -1,
-  sprite = "entities/block",
-  pushable = false,
-  pullable = false,
-  maximum_moves = 1,
-}
-
-block{
-  layer = 1,
-  x = 200,
-  y = 93,
-  name = "block_4",
-  direction = -1,
-  sprite = "entities/block",
-  pushable = false,
-  pullable = false,
-  maximum_moves = 1,
-}
-
-destructible{
-  layer = 1,
-  x = 72,
-  y = 61,
-  sprite = "entities/vase",
-}
-
-destructible{
-  layer = 1,
-  x = 56,
-  y = 61,
-  sprite = "entities/vase",
-}
-
-destructible{
-  layer = 1,
-  x = 104,
-  y = 61,
-  sprite = "entities/vase",
-}
-
-destructible{
-  layer = 1,
-  x = 120,
-  y = 61,
-  sprite = "entities/vase",
-}
-
-destructible{
-  layer = 1,
-  x = 200,
-  y = 61,
-  sprite = "entities/vase",
-}
-
-destructible{
-  layer = 1,
-  x = 216,
-  y = 61,
-  sprite = "entities/vase",
-}
-
-destructible{
-  layer = 1,
-  x = 248,
-  y = 61,
-  sprite = "entities/vase",
-}
-
-destructible{
-  layer = 1,
-  x = 264,
-  y = 61,
-  sprite = "entities/vase",
+  x = 0,
+  y = 0,
+  name = "switch",
+  subtype = "walkable",
+  sprite = "entities/switch",
+  needs_block = false,
+  inactivate_when_leaving = false,
 }
 
 door{
@@ -416,6 +99,334 @@ chest{
 }
 
 dynamic_tile{
+  layer = 1,
+  x = 48,
+  y = 48,
+  width = 16,
+  height = 16,
+  name = "placeholder_1",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 64,
+  y = 48,
+  width = 16,
+  height = 16,
+  name = "placeholder_2",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 96,
+  y = 48,
+  width = 16,
+  height = 16,
+  name = "placeholder_3",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 112,
+  y = 48,
+  width = 16,
+  height = 16,
+  name = "placeholder_4",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 192,
+  y = 48,
+  width = 16,
+  height = 16,
+  name = "placeholder_5",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 208,
+  y = 48,
+  width = 16,
+  height = 16,
+  name = "placeholder_6",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 240,
+  y = 48,
+  width = 16,
+  height = 16,
+  name = "placeholder_7",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 256,
+  y = 48,
+  width = 16,
+  height = 16,
+  name = "placeholder_8",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 48,
+  y = 80,
+  width = 16,
+  height = 16,
+  name = "placeholder_9",
+  pattern = "floor_small.2",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 64,
+  y = 80,
+  width = 16,
+  height = 16,
+  name = "placeholder_10",
+  pattern = "floor_small.2",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 80,
+  y = 80,
+  width = 16,
+  height = 16,
+  name = "placeholder_11",
+  pattern = "floor_small.2",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 112,
+  y = 80,
+  width = 16,
+  height = 16,
+  name = "placeholder_12",
+  pattern = "floor_small.2",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 192,
+  y = 80,
+  width = 16,
+  height = 16,
+  name = "placeholder_13",
+  pattern = "floor_small.2",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 224,
+  y = 80,
+  width = 16,
+  height = 16,
+  name = "placeholder_14",
+  pattern = "floor_small.2",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 240,
+  y = 80,
+  width = 16,
+  height = 16,
+  name = "placeholder_15",
+  pattern = "floor_small.2",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 256,
+  y = 80,
+  width = 16,
+  height = 16,
+  name = "placeholder_16",
+  pattern = "floor_small.2",
+  enabled_at_start = false,
+}
+
+destructible{
+  layer = 1,
+  x = 72,
+  y = 61,
+  sprite = "entities/vase",
+}
+
+destructible{
+  layer = 1,
+  x = 56,
+  y = 61,
+  sprite = "entities/vase",
+}
+
+destructible{
+  layer = 1,
+  x = 104,
+  y = 61,
+  sprite = "entities/vase",
+}
+
+destructible{
+  layer = 1,
+  x = 120,
+  y = 61,
+  sprite = "entities/vase",
+}
+
+destructible{
+  layer = 1,
+  x = 200,
+  y = 61,
+  sprite = "entities/vase",
+}
+
+destructible{
+  layer = 1,
+  x = 216,
+  y = 61,
+  sprite = "entities/vase",
+}
+
+destructible{
+  layer = 1,
+  x = 248,
+  y = 61,
+  sprite = "entities/vase",
+}
+
+destructible{
+  layer = 1,
+  x = 264,
+  y = 61,
+  sprite = "entities/vase",
+}
+
+block{
+  layer = 1,
+  x = 56,
+  y = 93,
+  name = "block_placeholder_9",
+  direction = -1,
+  sprite = "entities/block",
+  pushable = false,
+  pullable = false,
+  maximum_moves = 1,
+}
+
+block{
+  layer = 1,
+  x = 72,
+  y = 93,
+  name = "block_placeholder_10",
+  direction = -1,
+  sprite = "entities/block",
+  pushable = false,
+  pullable = false,
+  maximum_moves = 1,
+}
+
+block{
+  layer = 1,
+  x = 88,
+  y = 93,
+  name = "block_placeholder_11",
+  direction = -1,
+  sprite = "entities/block",
+  pushable = false,
+  pullable = false,
+  maximum_moves = 1,
+}
+
+block{
+  layer = 1,
+  x = 120,
+  y = 93,
+  name = "block_placeholder_12",
+  direction = -1,
+  sprite = "entities/block",
+  pushable = false,
+  pullable = false,
+  maximum_moves = 1,
+}
+
+block{
+  layer = 1,
+  x = 200,
+  y = 93,
+  name = "block_placeholder_13",
+  direction = -1,
+  sprite = "entities/block",
+  pushable = false,
+  pullable = false,
+  maximum_moves = 1,
+}
+
+block{
+  layer = 1,
+  x = 232,
+  y = 93,
+  name = "block_placeholder_14",
+  direction = -1,
+  sprite = "entities/block",
+  pushable = false,
+  pullable = false,
+  maximum_moves = 1,
+}
+
+block{
+  layer = 1,
+  x = 248,
+  y = 93,
+  name = "block_placeholder_15",
+  direction = -1,
+  sprite = "entities/block",
+  pushable = false,
+  pullable = false,
+  maximum_moves = 1,
+}
+
+block{
+  layer = 1,
+  x = 264,
+  y = 93,
+  name = "block_placeholder_16",
+  direction = -1,
+  sprite = "entities/block",
+  pushable = false,
+  pullable = false,
+  maximum_moves = 1,
+}
+
+dynamic_tile{
   layer = 2,
   x = 144,
   y = 8,
@@ -423,7 +434,7 @@ dynamic_tile{
   height = 8,
   name = "door_north_top",
   pattern = "door_top.closed.1",
-  enabled_at_start = true,
+  enabled_at_start = false,
 }
 
 dynamic_tile{
@@ -434,7 +445,7 @@ dynamic_tile{
   height = 8,
   name = "door_south_top",
   pattern = "door_top.closed.2",
-  enabled_at_start = true,
+  enabled_at_start = false,
 }
 
 dynamic_tile{
@@ -445,7 +456,7 @@ dynamic_tile{
   height = 32,
   name = "door_west_top",
   pattern = "door_top.closed.3",
-  enabled_at_start = true,
+  enabled_at_start = false,
 }
 
 dynamic_tile{
@@ -456,6 +467,6 @@ dynamic_tile{
   height = 32,
   name = "door_east_top",
   pattern = "door_top.closed.4",
-  enabled_at_start = true,
+  enabled_at_start = false,
 }
 

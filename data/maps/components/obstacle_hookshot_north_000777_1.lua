@@ -1,7 +1,7 @@
 local map, data = ...
 
 function replace(placeholder, data)
-    local x, y = map:translate(placeholder:get_position())
+    local x, y = placeholder:get_position()
     x, y = x + 8, y + 13
     if data then
         map:create_chest{

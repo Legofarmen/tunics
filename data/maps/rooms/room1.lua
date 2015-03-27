@@ -133,10 +133,10 @@ function treasure(treasure_data)
         return properties
     end
     if components_rng:random() < 0.5 then
+        treasure_data.doors = {}
         for dir, door_data in pairs(data.doors) do
             if not door_data.open then
-                treasure_data.doors = treasure_data.doors or {}
-                table.insert(treasure_data.doors, dir)
+                treasure_data.doors[dir] = true
             end
         end
     end
