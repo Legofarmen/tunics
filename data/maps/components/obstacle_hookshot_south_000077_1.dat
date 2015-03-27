@@ -232,6 +232,15 @@ tile{
   pattern = "wall_torch.2",
 }
 
+tile{
+  layer = 1,
+  x = 288,
+  y = 160,
+  width = 24,
+  height = 32,
+  pattern = "wall_statue.6.4",
+}
+
 dynamic_tile{
   layer = 1,
   x = 176,
@@ -252,14 +261,5 @@ dynamic_tile{
   name = "placeholder2",
   pattern = "floor_small.2",
   enabled_at_start = false,
-}
-
-tile{
-  layer = 2,
-  x = 288,
-  y = 160,
-  width = 24,
-  height = 32,
-  pattern = "wall_statue.6.4",
 }
 

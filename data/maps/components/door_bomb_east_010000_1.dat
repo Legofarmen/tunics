@@ -3,7 +3,7 @@ properties{
   y = 0,
   width = 320,
   height = 240,
-  tileset = "dungeon_brick_gray_1",
+  tileset = "dungeon_smoothbrick_green_1",
   music = "same",
 }
 
@@ -103,9 +103,9 @@ tile{
 dynamic_tile{
   layer = 2,
   x = 304,
-  y = 104,
+  y = 88,
   width = 8,
-  height = 32,
+  height = 64,
   name = "top_closed",
   pattern = "door_cache.4",
   enabled_at_start = true,

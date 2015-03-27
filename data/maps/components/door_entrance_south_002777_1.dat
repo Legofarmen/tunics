@@ -232,6 +232,24 @@ tile{
   pattern = "door_main.2.floor.1",
 }
 
+tile{
+  layer = 1,
+  x = 64,
+  y = 8,
+  width = 32,
+  height = 24,
+  pattern = "wall_statue.1.1",
+}
+
+tile{
+  layer = 1,
+  x = 224,
+  y = 8,
+  width = 32,
+  height = 24,
+  pattern = "wall_statue.1.1",
+}
+
 wall{
   layer = 1,
   x = 152,
@@ -257,24 +275,6 @@ tile{
   width = 32,
   height = 8,
   pattern = "door_top.low.2",
-}
-
-tile{
-  layer = 2,
-  x = 64,
-  y = 8,
-  width = 32,
-  height = 24,
-  pattern = "wall_statue.1.1",
-}
-
-tile{
-  layer = 2,
-  x = 224,
-  y = 8,
-  width = 32,
-  height = 24,
-  pattern = "wall_statue.1.1",
 }
 
 tile{

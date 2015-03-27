@@ -43,6 +43,15 @@ tile{
   pattern = "door_main.2.floor.2",
 }
 
+tile{
+  layer = 1,
+  x = 216,
+  y = 104,
+  width = 32,
+  height = 24,
+  pattern = "barrier.1.1",
+}
+
 chest{
   layer = 1,
   x = 232,

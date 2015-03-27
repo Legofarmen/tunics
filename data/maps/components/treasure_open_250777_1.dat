@@ -367,6 +367,15 @@ tile{
   pattern = "wall_hole.3",
 }
 
+tile{
+  layer = 1,
+  x = 144,
+  y = 8,
+  width = 32,
+  height = 24,
+  pattern = "wall_statue.1.1",
+}
+
 chest{
   layer = 1,
   x = 136,
@@ -409,14 +418,5 @@ tile{
   width = 16,
   height = 16,
   pattern = "torch_big.top",
-}
-
-tile{
-  layer = 2,
-  x = 144,
-  y = 8,
-  width = 32,
-  height = 24,
-  pattern = "wall_statue.1.1",
 }
 

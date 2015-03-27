@@ -1,0 +1,252 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  tileset = "dungeon_smoothbrick_green_1",
+  music = "same",
+}
+
+switch{
+  layer = 1,
+  x = 0,
+  y = 0,
+  name = "switch",
+  subtype = "walkable",
+  sprite = "entities/switch",
+  needs_block = false,
+  inactivate_when_leaving = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 56,
+  y = 56,
+  width = 16,
+  height = 16,
+  name = "placeholder_1",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+destructible{
+  layer = 1,
+  x = 64,
+  y = 69,
+  sprite = "entities/vase",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 72,
+  y = 56,
+  width = 16,
+  height = 16,
+  name = "placeholder_2",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+destructible{
+  layer = 1,
+  x = 80,
+  y = 69,
+  sprite = "entities/vase",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 56,
+  y = 72,
+  width = 16,
+  height = 16,
+  name = "placeholder_3",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+destructible{
+  layer = 1,
+  x = 64,
+  y = 85,
+  sprite = "entities/vase",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 72,
+  y = 72,
+  width = 16,
+  height = 16,
+  name = "placeholder_4",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+destructible{
+  layer = 1,
+  x = 80,
+  y = 85,
+  sprite = "entities/vase",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 88,
+  y = 56,
+  width = 16,
+  height = 16,
+  name = "placeholder_5",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+destructible{
+  layer = 1,
+  x = 96,
+  y = 69,
+  sprite = "entities/vase",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 88,
+  y = 72,
+  width = 16,
+  height = 16,
+  name = "placeholder_6",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+destructible{
+  layer = 1,
+  x = 96,
+  y = 85,
+  sprite = "entities/vase",
+}
+
+door{
+  layer = 1,
+  x = 152,
+  y = 16,
+  name = "door_north",
+  direction = 1,
+  sprite = "entities/door_normal",
+}
+
+sensor{
+  layer = 1,
+  x = 160,
+  y = 205,
+  width = 16,
+  height = 16,
+  name = "sensor_south",
+}
+
+sensor{
+  layer = 1,
+  x = 160,
+  y = 45,
+  width = 16,
+  height = 16,
+  name = "sensor_north",
+}
+
+door{
+  layer = 1,
+  x = 16,
+  y = 112,
+  name = "door_west",
+  direction = 2,
+  sprite = "entities/door_normal",
+}
+
+door{
+  layer = 1,
+  x = 152,
+  y = 208,
+  name = "door_south",
+  direction = 3,
+  sprite = "entities/door_normal",
+}
+
+sensor{
+  layer = 1,
+  x = 40,
+  y = 125,
+  width = 16,
+  height = 16,
+  name = "sensor_west",
+}
+
+door{
+  layer = 1,
+  x = 288,
+  y = 112,
+  name = "door_east",
+  direction = 0,
+  sprite = "entities/door_normal",
+}
+
+sensor{
+  layer = 1,
+  x = 280,
+  y = 125,
+  width = 16,
+  height = 16,
+  name = "sensor_east",
+}
+
+chest{
+  layer = 1,
+  x = 128,
+  y = 77,
+  name = "chest",
+  sprite = "entities/chest",
+}
+
+dynamic_tile{
+  layer = 2,
+  x = 144,
+  y = 8,
+  width = 32,
+  height = 8,
+  name = "door_north_top",
+  pattern = "door_top.closed.1",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 2,
+  x = 144,
+  y = 224,
+  width = 32,
+  height = 8,
+  name = "door_south_top",
+  pattern = "door_top.closed.2",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 2,
+  x = 8,
+  y = 104,
+  width = 8,
+  height = 32,
+  name = "door_west_top",
+  pattern = "door_top.closed.3",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 2,
+  x = 304,
+  y = 104,
+  width = 8,
+  height = 32,
+  name = "door_east_top",
+  pattern = "door_top.closed.4",
+  enabled_at_start = false,
+}
+

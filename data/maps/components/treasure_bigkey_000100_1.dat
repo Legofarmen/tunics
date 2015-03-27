@@ -52,6 +52,15 @@ tile{
   pattern = "floor_small.2",
 }
 
+tile{
+  layer = 1,
+  x = 224,
+  y = 64,
+  width = 32,
+  height = 24,
+  pattern = "barrier.1.1",
+}
+
 chest{
   layer = 1,
   x = 240,

@@ -493,6 +493,24 @@ tile{
   pattern = "wall_torch.1",
 }
 
+tile{
+  layer = 1,
+  x = 288,
+  y = 160,
+  width = 24,
+  height = 32,
+  pattern = "wall_statue.1.4",
+}
+
+tile{
+  layer = 1,
+  x = 8,
+  y = 48,
+  width = 24,
+  height = 32,
+  pattern = "wall_statue.1.3",
+}
+
 dynamic_tile{
   layer = 1,
   x = 48,
@@ -535,23 +553,5 @@ block{
   pushable = false,
   pullable = false,
   maximum_moves = 1,
-}
-
-tile{
-  layer = 2,
-  x = 8,
-  y = 48,
-  width = 24,
-  height = 32,
-  pattern = "wall_statue.2.3",
-}
-
-tile{
-  layer = 2,
-  x = 288,
-  y = 160,
-  width = 24,
-  height = 32,
-  pattern = "wall_statue.2.4",
 }
 
