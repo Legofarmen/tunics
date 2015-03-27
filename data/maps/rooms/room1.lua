@@ -5,6 +5,7 @@ local rng = data.rng
 local components_rng = rng:create()
 local room_rng = rng:create()
 local treasures_rng = rng:create()
+local puzzle_rng = rng:create()
 
 bit32 = bit32 or bit
 
@@ -98,11 +99,21 @@ function obstacle(data, dir, item)
     data_messages('component', component_name)
 end
 
+local open_doors = {}
+
 function filler()
+    local filler_data = {}
     local component_name, component_mask = Zentropy.components:get_filler(mask, components_rng)
     if component_name then
         mask = bit32.bor(mask, component_mask)
-        map:include(0, 0, component_name, data)
+        if puzzle_rng:random() < 0.5 then
+            filler_data.doors = open_doors
+            filler_data.rng = puzzle_rng
+            open_doors = {}
+        else
+            filler_data.doors = {}
+        end
+        map:include(0, 0, component_name, filler_data)
         data_messages('component', component_name)
         return true
     end
@@ -115,6 +126,7 @@ function treasure(treasure_data)
     if treasure_data.see then
         component_name, component_mask = Zentropy.components:get_puzzle(mask, components_rng)
         component_type = 'puzzle'
+        treasure_data.doors = {}
     else
         component_name, component_mask = Zentropy.components:get_treasure(treasure_data.open, mask, components_rng)
         component_type = 'treasure'
@@ -131,14 +143,6 @@ function treasure(treasure_data)
         properties.treasure_savegame_variable = treasure_data.name
         properties.treasure_name = treasure_data.item_name
         return properties
-    end
-    if components_rng:random() < 0.5 then
-        treasure_data.doors = {}
-        for dir, door_data in pairs(data.doors) do
-            if not door_data.open then
-                treasure_data.doors[dir] = true
-            end
-        end
     end
     treasure_data.rng = treasures_rng:biased(component_mask)
     map:include(0, 0, component_name, treasure_data)
@@ -207,6 +211,9 @@ local walls = {}
 for dir_mask, dir in pairs(DIRS) do
     if data.doors[dir] then
         door({open=data.doors[dir].open, name=data.doors[dir].name}, dir)
+        if data.doors[dir].open then
+            open_doors[dir] = true
+        end
         if data.doors[dir].reach then
             obstacle_mask = bit32.bor(obstacle_mask, dir_mask)
             obstacle_item = data.doors[dir].reach

@@ -12,7 +12,7 @@ function Prng:random(a, b)
         self.mode = 'number'
         self.mwc = MWC.MakeGenerator(nil, self.seed)
     elseif self.mode ~= 'number' then
-        error('illegal state')
+        error('cannot call random from state ' .. self.mode)
     end
 
     local bits = self.mwc()
@@ -32,7 +32,7 @@ function Prng:create()
         self.mode = 'factory'
         self.mwc = MWC.MakeGenerator(nil, self.seed)
     elseif self.mode ~= 'factory' then
-        error('illegal state')
+        error('cannot call create from state ' .. self.mode)
     end
     local bits = self.mwc()
     return Prng.from_seed(bits)
@@ -42,7 +42,7 @@ function Prng:biased(bias)
     if not self.mode then
         self.mode = 'biased'
     elseif self.mode ~= 'biased' then
-        error('illegal state')
+        error('cannot call biased from state ' .. self.mode)
     end
     return Prng.from_seed(self.seed + bias)
 end

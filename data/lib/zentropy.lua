@@ -215,6 +215,11 @@ function zentropy.db.Components:get_filler(mask, rng)
             table.insert(entries, entry)
         end
     end
+    for _, entry in pairs(self.puzzles) do
+        if bit32.band(mask, entry.mask) == 0 then
+            table.insert(entries, entry)
+        end
+    end
     if #entries == 0 then
         return
     end
