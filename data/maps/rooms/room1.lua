@@ -129,6 +129,7 @@ function treasure(treasure_data)
         component_type = 'puzzle'
         treasure_data.doors = {}
         treasure_data.rng = puzzle_rng
+        open_doors = {}
     else
         component_name, component_mask = Zentropy.components:get_treasure(treasure_data.open, mask, components_rng)
         component_type = 'treasure'
