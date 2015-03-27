@@ -83,11 +83,13 @@ function BaseVisitor:visit_room(room)
         end
     end)
     if heavy_key then
-        self:catch_up(my_depth, my_leaf, self.leaf - 1)
         local child = room.children[heavy_key]
         if light_count == 0 then
+            self:catch_up(my_depth, my_leaf, self.leaf - 1)
             self:down(my_depth, child)
         else
+            self:catch_up(my_depth, my_leaf, self.leaf - 1)
+            self.leaf = math.max(my_leaf + 1, self.leaf)
             self:forward(my_depth, child)
         end
     else
@@ -307,7 +309,7 @@ function Layout.BidiVisitor:new(o)
             assert(dir)
             o:room(room, -(depth + 1), leaf, left_dir[dir])
         end,
-        enemy = function (self, enemy, depth, leaf) o:enemy(room, -(depth + 1), leaf, left_dir[dir]) end,
+        enemy = function (self, enemy, depth, leaf) o:enemy(enemy, -(depth + 1), leaf, left_dir[dir]) end,
         treasure = function (self, treasure, depth, leaf) o:treasure(treasure, -(depth + 1), leaf, left_dir[dir]) end,
     }
     o.right = BaseVisitor:new{
@@ -315,18 +317,20 @@ function Layout.BidiVisitor:new(o)
         room = function (self, room, depth, leaf, dir)
             o:room(room, depth + 1, leaf, dir)
         end,
-        enemy = function (self, enemy, depth, leaf) o:enemy(room, depth + 1, leaf, dir) end,
+        enemy = function (self, enemy, depth, leaf) o:enemy(enemy, depth + 1, leaf, dir) end,
         treasure = function (self, treasure, depth, leaf) o:treasure(treasure, depth + 1, leaf, dir) end,
     }
     return BaseVisitor.new(self, o)
 end
 
 function Layout.BidiVisitor:down(my_depth, child)
-    assert(self.left.dir)
-    assert(self.right.dir)
     if self.left.leaf <= self.right.leaf then
+        self.left.depth = 0
+        self.left.dir = self.left.entrance_dir
         child:accept(self.left)
     else
+        self.right.depth = 0
+        self.right.dir = self.right.entrance_dir
         child:accept(self.right)
     end
     self.leaf = math.min(self.left.leaf, self.right.leaf)
@@ -336,10 +340,8 @@ local old_on_start = Layout.BidiVisitor.on_start
 function Layout.BidiVisitor:on_start()
     self.left.leaf = 0
     self.left.depth = 0
-    self.left.dir = self.left.entrance_dir
     self.right.leaf = 0
     self.right.depth = 0
-    self.right.dir = self.right.entrance_dir
     old_on_start(self)
 end
 
