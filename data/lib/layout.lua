@@ -27,6 +27,18 @@ function BaseVisitor:visit_treasure(treasure)
     self:treasure(treasure, self.depth, self.leaf)
 end
 
+function BaseVisitor:down(my_depth, child)
+    self.depth = my_depth + 1
+    self.dir = 'down'
+    child:accept(self)
+end
+
+function BaseVisitor:forward(my_depth, child)
+    self.depth = my_depth
+    self.dir = 'forward'
+    child:accept(self)
+end
+
 function BaseVisitor:visit_room(room)
     local my_depth = self.depth
     local my_leaf = self.leaf
@@ -56,9 +68,7 @@ function BaseVisitor:visit_room(room)
                     my_leaf = my_leaf + 1
                     self:room({}, my_depth, my_leaf, 'forward')
                 end
-                self.depth = my_depth + 1
-                self.dir = 'down'
-                child:accept(self)
+                self:down(my_depth, child)
                 light_count = light_count + 1
             else
                 heavy_key = key
@@ -71,14 +81,12 @@ function BaseVisitor:visit_room(room)
             my_leaf = my_leaf + 1
             self:room({}, my_depth, my_leaf, 'forward')
         end
+        local child = room.children[heavy_key]
         if light_count == 0 then
-            self.depth = my_depth + 1
-            self.dir = 'down'
+            self:down(my_depth, child)
         else
-            self.depth = my_depth
-            self.dir = 'forward'
+            self:forward(my_depth, child)
         end
-        room.children[heavy_key]:accept(self)
     else
         self.leaf = self.leaf + 1
     end
