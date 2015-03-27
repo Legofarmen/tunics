@@ -4,7 +4,7 @@ properties{
   width = 320,
   height = 240,
   world = "https://github.com/christopho/zsdx.git",
-  tileset = "dungeon_grayblue",
+  tileset = "dungeon_brick_gray_1",
   music = "same",
 }
 
