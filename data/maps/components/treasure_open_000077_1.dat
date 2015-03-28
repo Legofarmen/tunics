@@ -104,13 +104,6 @@ dynamic_tile{
   enabled_at_start = true,
 }
 
-destructible{
-  layer = 1,
-  x = 224,
-  y = 181,
-  sprite = "entities/vase",
-}
-
 dynamic_tile{
   layer = 1,
   x = 88,
