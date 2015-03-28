@@ -53,7 +53,7 @@ function zentropy.db.Components:new(o)
     o.doors = o.doors or {}
     o.enemies = o.enemies or {}
     o.fillers = o.fillers or {}
-    o.bossrooms = o.bossrooms or {}
+    o.enemies = o.enemies or {}
     o.puzzles = o.puzzles or {}
     return Class.new(self, o)
 end
@@ -142,10 +142,12 @@ function zentropy.db.Components:filler(id, iterator)
     })
 end
 
-function zentropy.db.Components:bossroom(id, iterator)
+function zentropy.db.Components:enemy(id, iterator)
+    local name = iterator()
     local mask_string = iterator()
     local mask = Util.oct(mask_string)
-    table.insert(self.bossrooms, {
+    self.enemies[name] = self.enemies[name] or {}
+    table.insert(self.enemies[name], {
         id=id,
         mask=mask,
     })
@@ -275,9 +277,12 @@ function zentropy.db.Components:get_floors(rng)
     return self.floors[i], self.floors[j]
 end
 
-function zentropy.db.Components:get_bossroom(mask, rng)
+function zentropy.db.Components:get_enemy(name, mask, rng)
+    if not self.enemies[name] then
+        return
+    end
     local entries = {}
-    for _, entry in pairs(self.bossrooms) do
+    for _, entry in pairs(self.enemies[name]) do
         if bit32.band(mask, entry.mask) == 0 then
             table.insert(entries, entry)
         end
