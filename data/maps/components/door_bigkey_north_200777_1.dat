@@ -522,3 +522,21 @@ tile{
   pattern = "door_top.closed.1",
 }
 
+tile{
+  layer = 2,
+  x = 128,
+  y = 8,
+  width = 16,
+  height = 32,
+  pattern = "door_boss.1.pillar.1",
+}
+
+tile{
+  layer = 2,
+  x = 176,
+  y = 8,
+  width = 16,
+  height = 32,
+  pattern = "door_boss.1.pillar.2",
+}
+

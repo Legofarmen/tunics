@@ -96,15 +96,18 @@ map{ id = "dev/puzzles", description = "Puzzles" }
 map{ id = "components/treasure_open_000444_1", description = "Treasure open 000444 1" }
 map{ id = "components/puzzle_000700_1", description = "Puzzle 000700 1" }
 map{ id = "dev/obstacles", description = "Obstacles" }
-map{ id = "components/puzzle_000400_1", description = "Puzzle 000400 1" }
-map{ id = "components/puzzle_000100_1", description = "Puzzle 000100 1 " }
+map{ id = "components/puzzle_000600_1", description = "Puzzle 000600 1" }
+map{ id = "components/puzzle_000300_1", description = "Puzzle 000100 1 " }
 map{ id = "components/puzzle_000111_1", description = "Puzzle 000111 1" }
 map{ id = "components/treasure_open_000770_1", description = "Treasure open 000770 1" }
 map{ id = "components/treasure_open_000077_1", description = "Treasure open 000077 1" }
+map{ id = "components/treasure_open_200770_2", description = "Treasure open 200770 2" }
 
 tileset{ id = "light_world", description = "Light World" }
 tileset{ id = "dungeon_brick_gray_1", description = "Dungeon brick gray 1" }
 tileset{ id = "dungeon_smoothbrick_green_1", description = "Dungeon smoothbrick green 1" }
+tileset{ id = "dungeon_smoothbrick_desert_1", description = "Dungeon smoothbrick desert 1" }
+tileset{ id = "dungeon_ganon_brown_1", description = "Dungeon ganon brown 1" }
 
 sprite{ id = "entities/block", description = "Block" }
 sprite{ id = "entities/chest", description = "Chest" }

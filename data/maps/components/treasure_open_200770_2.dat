@@ -117,6 +117,24 @@ tile{
 
 tile{
   layer = 1,
+  x = 56,
+  y = 72,
+  width = 16,
+  height = 16,
+  pattern = "torch_big.bottom",
+}
+
+tile{
+  layer = 1,
+  x = 248,
+  y = 72,
+  width = 16,
+  height = 16,
+  pattern = "torch_big.bottom",
+}
+
+tile{
+  layer = 1,
   x = 136,
   y = 64,
   width = 8,
@@ -196,11 +214,148 @@ tile{
   pattern = "stage_big_fill",
 }
 
+tile{
+  layer = 1,
+  x = 56,
+  y = 56,
+  width = 16,
+  height = 16,
+  pattern = "torch_big.top",
+}
+
+tile{
+  layer = 1,
+  x = 248,
+  y = 56,
+  width = 16,
+  height = 16,
+  pattern = "torch_big.top",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 88,
+  y = 56,
+  width = 16,
+  height = 16,
+  name = "placeholder_1",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
 chest{
   layer = 1,
   x = 160,
   y = 85,
   name = "chest",
   sprite = "entities/chest",
+}
+
+switch{
+  layer = 1,
+  x = 0,
+  y = 0,
+  name = "switch",
+  subtype = "walkable",
+  sprite = "entities/switch",
+  needs_block = false,
+  inactivate_when_leaving = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 88,
+  y = 72,
+  width = 16,
+  height = 16,
+  name = "placeholder_2",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 88,
+  y = 88,
+  width = 16,
+  height = 16,
+  name = "placeholder_3",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 216,
+  y = 56,
+  width = 16,
+  height = 16,
+  name = "placeholder_4",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 216,
+  y = 72,
+  width = 16,
+  height = 16,
+  name = "placeholder_5",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 216,
+  y = 88,
+  width = 16,
+  height = 16,
+  name = "placeholder_6",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+destructible{
+  layer = 1,
+  x = 224,
+  y = 101,
+  sprite = "entities/vase",
+}
+
+destructible{
+  layer = 1,
+  x = 224,
+  y = 85,
+  sprite = "entities/vase",
+}
+
+destructible{
+  layer = 1,
+  x = 224,
+  y = 69,
+  sprite = "entities/vase",
+}
+
+destructible{
+  layer = 1,
+  x = 96,
+  y = 69,
+  sprite = "entities/vase",
+}
+
+destructible{
+  layer = 1,
+  x = 96,
+  y = 85,
+  sprite = "entities/vase",
+}
+
+destructible{
+  layer = 1,
+  x = 96,
+  y = 101,
+  sprite = "entities/vase",
 }
 

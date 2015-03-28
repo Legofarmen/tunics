@@ -173,7 +173,7 @@ sensor{
 
 chest{
   layer = 1,
-  x = 192,
+  x = 160,
   y = 85,
   name = "chest",
   sprite = "entities/chest",

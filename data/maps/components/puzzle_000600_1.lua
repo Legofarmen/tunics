@@ -37,6 +37,7 @@ if data.item_name or next(data.doors) then
         end
         for dir, _ in pairs(data.doors) do
             map:open_doors('door_' .. dir)
+			sol.audio.play_sound('secret')
         end
     end
 else

@@ -200,10 +200,46 @@ sensor{
 
 chest{
   layer = 1,
-  x = 128,
+  x = 160,
   y = 77,
   name = "chest",
   sprite = "entities/chest",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 104,
+  y = 56,
+  width = 16,
+  height = 16,
+  name = "placeholder_7",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+destructible{
+  layer = 1,
+  x = 112,
+  y = 69,
+  sprite = "entities/vase",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 104,
+  y = 72,
+  width = 16,
+  height = 16,
+  name = "placeholder_8",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+destructible{
+  layer = 1,
+  x = 112,
+  y = 85,
+  sprite = "entities/vase",
 }
 
 dynamic_tile{
