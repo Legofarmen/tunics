@@ -25,7 +25,7 @@ function map:on_started()
     end
 end
 
-local puzzle = Puzzle.alpha_dungeon(puzzle_rng, 3, 1, {'hookshot'})
+local puzzle = Puzzle.alpha_dungeon(puzzle_rng, 3, 1, 3, {'hookshot'})
 --puzzle:accept(Tree.PrintVisitor:new{})
 
 local tileset = zentropy.tilesets.dungeon[presentation_rng:random(#zentropy.tilesets.dungeon)]

@@ -23,25 +23,26 @@ local KeyDetectorVisitor = {}
 setmetatable(KeyDetectorVisitor, KeyDetectorVisitor)
 
 function KeyDetectorVisitor:visit_room(room)
-    local has_keys = false
+    local is_lockable = nil
+    local has_treasures = nil
     room:each_child(function (key, child)
-        if not has_keys then
-            has_keys = child:accept(self)
+        if is_lockable ~= false then
+            is_lockable = is_lockable or child:accept(self)
         end
     end)
-    return has_keys
+    return is_lockable
 end
 
 function KeyDetectorVisitor:visit_treasure(treasure)
     if treasure.name == 'smallkey' then
-        return true
-    else
         return false
+    else
+        return true
     end
 end
 
 function KeyDetectorVisitor:visit_enemy(enemy)
-    return false
+    return nil
 end
 
 local Puzzle = {}
@@ -58,6 +59,10 @@ end
 
 function Puzzle.fairy_step(root)
     root:add_child(Tree.Enemy:new{name='fairy'}:with_needs{open='bomb',see='map'})
+end
+
+function Puzzle.culdesac_step(root)
+    root:add_child(Tree.Room:new{})
 end
 
 function Puzzle.hide_treasures_step(root)
@@ -86,11 +91,11 @@ end
 
 function Puzzle.locked_door_step(rng, root)
     function lockable_weight(node)
-        local has_keys = node:accept(KeyDetectorVisitor)
-        if has_keys then
-            return 0
-        else
+        local is_lockable = node:accept(KeyDetectorVisitor)
+        if is_lockable then
             return 1
+        else
+            return 0
         end
     end
     local key, child = root:random_child(rng, lockable_weight)
@@ -167,6 +172,12 @@ function Puzzle.items_puzzle(rng, item_names)
     return steps
 end
 
+function Puzzle.culdesac_puzzle()
+    return {
+        Puzzle.culdesac_step
+    }
+end
+
 function Puzzle.lock_puzzle(rng)
     return {
         function (root)
@@ -177,7 +188,7 @@ function Puzzle.lock_puzzle(rng)
     }
 end
 
-function Puzzle.alpha_dungeon(rng, nkeys, nfairies, item_names)
+function Puzzle.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, item_names)
     local puzzles = {
         Puzzle.items_puzzle(rng:create(), item_names),
         Puzzle.map_puzzle(rng:create(), nfairies),
@@ -185,6 +196,9 @@ function Puzzle.alpha_dungeon(rng, nkeys, nfairies, item_names)
     }
     for i = 1, nkeys do
         table.insert(puzzles, Puzzle.lock_puzzle(rng:create()))
+    end
+    for i = 1, nculdesacs do
+        table.insert(puzzles, Puzzle.culdesac_puzzle())
     end
     List.shuffle(rng:create(), puzzles)
 
