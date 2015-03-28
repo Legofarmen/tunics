@@ -171,28 +171,6 @@ function Room:get_weight()
     return self:accept(WeightVisitor)
 end
 
-function Room:heavy_child()
-    local total_weight = 0
-    local heavy_weight = 0
-    local heavy_key = nil
-    local heavy_child = nil
-    self:each_child(function (key, child)
-        local child_weight = child:get_weight()
-        total_weight = total_weight + child_weight
-        if child_weight > heavy_weight then
-            heavy_weight = child_weight
-            heavy_key = key
-            heavy_child = child
-        end
-    end)
-    if total_weight == heavy_weight then
-        return nil
-    else
-        return heavy_key, heavy_child
-    end
-end
-
-
 tree.Metric = Class:new()
 
 function tree.Metric:new(o)
