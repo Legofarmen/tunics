@@ -56,6 +56,10 @@ function Puzzle.boss_step(root)
     root:add_child(Tree.Enemy:new{name='boss'}:with_needs{open='bigkey',reach='nothing',dir='north'})
 end
 
+function Puzzle.fairy_step(root)
+    root:add_child(Tree.Enemy:new{name='fairy'}:with_needs{open='bomb',see='map'})
+end
+
 function Puzzle.hide_treasures_step(root)
     root:accept(HideTreasuresVisitor)
 end
@@ -139,11 +143,14 @@ function Puzzle.compass_puzzle()
     }
 end
 
-function Puzzle.map_puzzle(rng)
+function Puzzle.map_puzzle(rng, nfairies)
     local steps = {
         Puzzle.treasure_step('bomb'),
         Puzzle.treasure_step('map'),
     }
+    for i = 1, nfairies do
+        table.insert(steps, Puzzle.fairy_step)
+    end
     List.shuffle(rng, steps)
     table.insert(steps, 1, Puzzle.bomb_doors_step)
     return steps
@@ -170,10 +177,10 @@ function Puzzle.lock_puzzle(rng)
     }
 end
 
-function Puzzle.alpha_dungeon(rng, nkeys, item_names)
+function Puzzle.alpha_dungeon(rng, nkeys, nfairies, item_names)
     local puzzles = {
         Puzzle.items_puzzle(rng:create(), item_names),
-        Puzzle.map_puzzle(rng:create()),
+        Puzzle.map_puzzle(rng:create(), nfairies),
         Puzzle.compass_puzzle(),
     }
     for i = 1, nkeys do

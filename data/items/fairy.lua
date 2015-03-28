@@ -5,7 +5,6 @@ local item = ...
 function item:on_created()
 
   self:set_shadow(nil)
-  self:set_can_disappear(true)
   self:set_brandish_when_picked(false)
 end
 

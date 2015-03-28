@@ -101,6 +101,7 @@ pickable{
   layer = 1,
   x = 128,
   y = 109,
+  name = "fairy1",
   treasure_name = "fairy",
 }
 
@@ -108,6 +109,7 @@ pickable{
   layer = 1,
   x = 160,
   y = 109,
+  name = "fairy2",
   treasure_name = "fairy",
 }
 
@@ -115,6 +117,7 @@ pickable{
   layer = 1,
   x = 136,
   y = 133,
+  name = "fairy3",
   treasure_name = "fairy",
 }
 

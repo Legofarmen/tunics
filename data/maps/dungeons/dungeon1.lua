@@ -6,7 +6,7 @@ local Prng = require 'lib/prng'
 local Layout = require 'lib/layout'
 local zentropy = require 'lib/zentropy'
 
-local master_prng = Prng.from_seed(61)
+local master_prng = Prng.from_seed(62)
 local layout = Layout.BidiVisitor
 
 local puzzle_rng = master_prng:create()
@@ -25,7 +25,7 @@ function map:on_started()
     end
 end
 
-local puzzle = Puzzle.alpha_dungeon(puzzle_rng, 3, {'hookshot'})
+local puzzle = Puzzle.alpha_dungeon(puzzle_rng, 3, 1, {'hookshot'})
 --puzzle:accept(Tree.PrintVisitor:new{})
 
 local tileset = zentropy.tilesets.dungeon[presentation_rng:random(#zentropy.tilesets.dungeon)]
