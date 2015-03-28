@@ -192,6 +192,7 @@ function Puzzle.lock_puzzle(rng, n)
 end
 
 function Puzzle.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, item_names)
+    -- A bunch of puzzles in no particular order
     local puzzles = {
         Puzzle.items_puzzle(rng:create(), item_names),
         Puzzle.map_puzzle(rng:create(), nfairies),
@@ -201,23 +202,28 @@ function Puzzle.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, item_names)
     }
     List.shuffle(rng:create(), puzzles)
 
+    -- Combine discrete steps of puzzles in some order
     local my_rng = rng:create()
     local steps = {}
     for _, puzzle in ipairs(puzzles) do
-        local n = my_rng:random(3)
-        if n == 1 then
+        if my_rng:random() < 0.33 then
             steps = List.intermingle(rng:create(), steps, puzzle)
         else
             steps = List.concat(steps, puzzle)
         end
     end
+
+    -- Insert boss as the deepest puzzle step
     table.insert(steps, 1, Puzzle.boss_step)
 
+    -- Build puzzle tree using the sequence of steps
     local heads = Tree.Room:new()
     for i, step in ipairs(steps) do
         Puzzle.max_heads(rng:create(), 4)(heads)
         step(heads)
     end
+
+    -- Put entrance room at the the tree root
     local root = Tree.Room:new{ open='entrance' }
     heads:each_child(function (key, child)
         if child.class == 'Room' and child:is_reachable() and child:is_open() then
@@ -226,6 +232,7 @@ function Puzzle.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, item_names)
             root:add_child(Tree.Room:new{ children={child} })
         end
     end)
+
     return root
 end
 
