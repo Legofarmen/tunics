@@ -100,8 +100,12 @@ function Node:is_normal()
     return self:is_visible() and self:is_reachable() and self:is_open()
 end
 
+function Node:is_directional()
+    return self.dir
+end
+
 function Room:__tostring()
-    return string.format("Room[%s]", self:prop_string{'see', 'reach', 'open'})
+    return string.format("Room[%s]", self:prop_string{'see', 'reach', 'open', 'dir'})
 end
 
 function Treasure:__tostring()
@@ -197,6 +201,7 @@ function tree.Metric:new(o)
     o.hidden_doors = o.hidden_doors or 0
     o.obstacle_doors = o.obstacle_doors or 0
     o.bigkey_doors = o.bigkey_doors or 0
+    o.directional_doors = o.directional_doors or 0
     o.treasures = o.treasures or 0
     o.normal_treasures = o.normal_treasures or 0
     o.hidden_treasures = o.hidden_treasures or 0
@@ -268,14 +273,15 @@ function Enemy:get_children_metric()
 end
 
 function tree.Metric:__tostring()
-    return string.format('D:%d (%d,%d,%d) T:%d (%d,%d,%d)',
-    self.doors,     self.hidden_doors,     self.obstacle_doors,     self.bigkey_doors,
-    self.treasures, self.hidden_treasures, self.obstacle_treasures, self.bigkey_treasures)
+    return string.format('D:%d (%d,%d,%d,%d) T:%d (%d,%d,%d,%d)',
+    self.doors,     self.hidden_doors,     self.obstacle_doors,     self.bigkey_doors,     self.directional_doors,
+    self.treasures, self.hidden_treasures, self.obstacle_treasures, self.bigkey_treasures, self.normal_treasures)
 end
 
 function tree.Metric:is_valid()
-    if self.treasures > 2 then return false end
+    if self.directional_doors > 1 then return false end
 
+    if self.treasures > 2 then return false end
     if self.normal_treasures > 1 then return false end
     if self.hidden_treasures > 1 then return false end
     if self.bigkey_treasures > 1 then return false end

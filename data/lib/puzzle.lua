@@ -53,7 +53,7 @@ function Puzzle.treasure_step(item_name)
 end
 
 function Puzzle.boss_step(root)
-    root:add_child(Tree.Enemy:new{name='boss'}:with_needs{open='bigkey',reach='nothing'})
+    root:add_child(Tree.Enemy:new{name='boss'}:with_needs{open='bigkey',reach='nothing',dir='north'})
 end
 
 function Puzzle.hide_treasures_step(root)

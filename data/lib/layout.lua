@@ -46,6 +46,20 @@ function BaseVisitor:catch_up(my_depth, my_leaf, leaf_max)
     end
 end
 
+function BaseVisitor:get_weight(child)
+    if child.dir then
+        if child.dir == self.forward_dir then
+            return math.huge
+        elseif child.dir == self.down_dir then
+            return -1
+        else
+            error('cannot satisfy room with direction ' .. child.dir)
+        end
+    else
+        return child:get_weight()
+    end
+end
+
 function BaseVisitor:visit_room(room)
     assert(self.dir)
     local my_depth = self.depth
@@ -65,8 +79,11 @@ function BaseVisitor:visit_room(room)
     local light_count = 0
     room:each_child(function (key, child)
         if child.class == 'Room' then
-            if heavy_key then
-                local weight = child:get_weight()
+            local weight = self:get_weight(child)
+            if weight > 0 and not heavy_key then
+                heavy_key = key
+                heavy_weight = child:get_weight()
+            else
                 if weight > heavy_weight then
                     child = room.children[heavy_key]
                     heavy_weight = weight
@@ -76,15 +93,12 @@ function BaseVisitor:visit_room(room)
                 my_leaf = self.leaf
                 self:down(my_depth, child)
                 light_count = light_count + 1
-            else
-                heavy_key = key
-                heavy_weight = child:get_weight()
             end
         end
     end)
     if heavy_key then
         local child = room.children[heavy_key]
-        if light_count == 0 then
+        if light_count == 0 and not child.dir then
             self:catch_up(my_depth, my_leaf, self.leaf - 1)
             self:down(my_depth, child)
         else
@@ -242,7 +256,11 @@ function coord_mixin(object, transforms)
 end
 
 
-Layout.NorthEastwardVisitor = collect_mixin(BaseVisitor:new{ entrance_dir='down' })
+Layout.NorthEastwardVisitor = collect_mixin(BaseVisitor:new{
+    entrance_dir='down',
+    forward_dir='east',
+    down_dir='north',
+})
 Layout.NorthEastwardVisitor = coord_mixin(Layout.NorthEastwardVisitor, {
     pos_from_native = function (self, depth, leaf)
         local left = math.floor((10 - self.leaf) / 2)
@@ -260,7 +278,11 @@ Layout.NorthEastwardVisitor = coord_mixin(Layout.NorthEastwardVisitor, {
     end,
 })
 
-Layout.NorthWestwardVisitor = collect_mixin(BaseVisitor:new{ entrance_dir='down' })
+Layout.NorthWestwardVisitor = collect_mixin(BaseVisitor:new{
+    entrance_dir='down',
+    forward_dir='west',
+    down_dir='north',
+})
 Layout.NorthWestwardVisitor = coord_mixin(Layout.NorthWestwardVisitor, {
     pos_from_native = function (self, depth, leaf)
         local right = math.floor((10 - self.leaf) / 2)
@@ -279,7 +301,10 @@ Layout.NorthWestwardVisitor = coord_mixin(Layout.NorthWestwardVisitor, {
 })
 
 
-Layout.BidiVisitor = collect_mixin(BaseVisitor:new{ entrance_dir='forward' })
+Layout.BidiVisitor = collect_mixin(BaseVisitor:new{
+    entrance_dir='forward',
+    forward_dir='north',
+})
 Layout.BidiVisitor = coord_mixin(Layout.BidiVisitor, {
     pos_from_native = function (self, depth, leaf)
         local left = math.floor((10 - (self.max_depth - self.min_depth)) / 2) - self.min_depth
@@ -305,6 +330,8 @@ function Layout.BidiVisitor:new(o)
     }
     o.left = BaseVisitor:new{
         entrance_dir='down',
+        forward_dir='north',
+        down_dir='west',
         room = function (self, room, depth, leaf, dir)
             assert(dir)
             o:room(room, -(depth + 1), leaf, left_dir[dir])
@@ -314,6 +341,8 @@ function Layout.BidiVisitor:new(o)
     }
     o.right = BaseVisitor:new{
         entrance_dir='down',
+        forward_dir='north',
+        down_dir='east',
         room = function (self, room, depth, leaf, dir)
             o:room(room, depth + 1, leaf, dir)
         end,
