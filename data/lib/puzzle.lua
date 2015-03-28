@@ -173,13 +173,11 @@ function Puzzle.items_puzzle(rng, item_names)
 end
 
 function Puzzle.culdesac_puzzle(n)
-    return {
-        function (root)
-            for i = 1, n do
-                Puzzle.culdesac_step(root)
-            end
-        end,
-    }
+    local steps = {}
+    for i = 1, n do
+        table.insert(steps, Puzzle.culdesac_step)
+    end
+    return steps
 end
 
 function Puzzle.lock_puzzle(rng, n)
