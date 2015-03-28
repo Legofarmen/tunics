@@ -35,8 +35,6 @@ map{ id = "components/enemy_any_1", description = "Enemy any" }
 map{ id = "components/sign", description = "Sign" }
 map{ id = "components/door_bomb_east_010000_1", description = "Door bomb east 010000 1" }
 map{ id = "components/door_bomb_west_040000_1", description = "Door bomb west 040000 1" }
-map{ id = "components/door_bigkey_west_040000_1", description = "Door bigkey west 040000 1" }
-map{ id = "components/door_bigkey_east_010000_1", description = "Door bigkey east 010000 1" }
 map{ id = "components/obstacle_hookshot_south_000007_1", description = "Obstacle hookshot south 000007 1" }
 map{ id = "components/obstacle_hookshot_northeast_000711_1", description = "Obstacle hookshot northeast 000711 1" }
 map{ id = "components/obstacle_hookshot_northwest_000744_1", description = "Obstacle hookshot northwest 000744 1" }
