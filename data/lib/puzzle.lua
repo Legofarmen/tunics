@@ -172,16 +172,21 @@ function Puzzle.items_puzzle(rng, item_names)
     return steps
 end
 
-function Puzzle.culdesac_puzzle()
+function Puzzle.culdesac_puzzle(n)
     return {
-        Puzzle.culdesac_step
+        function (root)
+            for i = 1, n do
+                Puzzle.culdesac_step(root)
+            end
+        end,
     }
 end
 
-function Puzzle.lock_puzzle(rng)
+function Puzzle.lock_puzzle(rng, n)
     return {
         function (root)
-            if Puzzle.locked_door_step(rng, root) then
+            for i = 1, n do
+                if not Puzzle.locked_door_step(rng, root) then break end
                 Puzzle.treasure_step('smallkey')(root)
             end
         end,
@@ -193,13 +198,9 @@ function Puzzle.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, item_names)
         Puzzle.items_puzzle(rng:create(), item_names),
         Puzzle.map_puzzle(rng:create(), nfairies),
         Puzzle.compass_puzzle(),
+        Puzzle.lock_puzzle(rng:create(), nkeys),
+        Puzzle.culdesac_puzzle(nculdesacs),
     }
-    for i = 1, nkeys do
-        table.insert(puzzles, Puzzle.lock_puzzle(rng:create()))
-    end
-    for i = 1, nculdesacs do
-        table.insert(puzzles, Puzzle.culdesac_puzzle())
-    end
     List.shuffle(rng:create(), puzzles)
 
     local my_rng = rng:create()
