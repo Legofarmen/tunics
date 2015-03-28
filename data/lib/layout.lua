@@ -284,7 +284,7 @@ Layout.BidiVisitor = coord_mixin(Layout.BidiVisitor, {
     pos_from_native = function (self, depth, leaf)
         local left = math.floor((10 - (self.max_depth - self.min_depth)) / 2) - self.min_depth
         local bottom = math.floor((10 - math.max(self.left.leaf, self.right.leaf, self.leaf)) / 2)
-        return left + depth, 10 - bottom - leaf
+        return left + depth, 9 - bottom - leaf
     end,
     dir_from_native = function (self, dir)
         local dirs = {
