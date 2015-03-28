@@ -21,6 +21,13 @@ function MapMenu:on_started()
     self.map_overlay:set_xy(center_x - 112, center_y - 61)
     self.map_surface = sol.surface.create(118, 120)
     self.map_surface:set_xy(center_x - 15, center_y - 55)
+    self.small_keys_text = sol.text_surface.create{
+      font = "white_digits",
+      horizontal_alignment = "right",
+      vertical_alignment = "top",
+      text = self.game:get_value('small_key_amount')
+    }
+    self.small_keys_text:set_xy(center_x - 20, center_y + 60)
 end
 
 function MapMenu:on_command_pressed(command)
@@ -33,6 +40,32 @@ function MapMenu:on_draw(dst_surface)
     self.backgrounds:draw_region(320, 0, 320, 240, dst_surface, (width - 320) / 2, (height - 240) / 2)
     self.map_overlay:draw(dst_surface)
     self.map_surface:draw(dst_surface)
+    self:draw_dungeon_items(dst_surface)
+end
+
+function MapMenu:draw_dungeon_items(dst_surface)
+
+  local width, height = sol.video.get_quest_size()
+  local x, y = width / 2 - 110, height / 2 + 48
+
+  -- Map.
+  if self.game:get_value('map') then
+    self.map_icons:draw_region(0, 0, 17, 17, dst_surface, x, y)
+  end
+
+  -- Compass.
+  if self.game:get_value('compass') then
+    self.map_icons:draw_region(17, 0, 17, 17, dst_surface, x + 19, y)
+  end
+
+  -- Big key.
+  if self.game:get_value('bigkey') then
+    self.map_icons:draw_region(34, 0, 17, 17, dst_surface, x + 38, y)
+  end
+
+  -- Small keys.
+  self.map_icons:draw_region(68, 0, 9, 17, dst_surface, x + 76, y)
+  self.small_keys_text:draw(dst_surface)
 end
 
 function MapMenu:clear_map()
