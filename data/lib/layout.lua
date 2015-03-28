@@ -336,6 +336,15 @@ function Layout.BidiVisitor:down(my_depth, child)
     self.leaf = math.min(self.left.leaf, self.right.leaf)
 end
 
+function Layout.BidiVisitor:forward(my_depth, child)
+    self.left.leaf = math.max(self.left.leaf, self.leaf)
+    self.right.leaf = math.max(self.right.leaf, self.leaf)
+    self.depth = my_depth
+    self.dir = 'forward'
+    child:accept(self)
+end
+
+
 local old_on_start = Layout.BidiVisitor.on_start
 function Layout.BidiVisitor:on_start()
     self.left.leaf = 0
