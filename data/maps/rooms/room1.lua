@@ -129,11 +129,11 @@ function treasure(treasure_data)
         component_type = 'puzzle'
         treasure_data.doors = {}
         treasure_data.rng = puzzle_rng
-        open_doors = {}
     else
         component_name, component_mask = Zentropy.components:get_treasure(treasure_data.open, mask, components_rng)
         component_type = 'treasure'
     end
+    open_doors = {}
     if not component_name then
         for _, msg in ipairs(messages) do print(msg) end
         error(string.format("%s not found: open=%s mask=%06o", component_type, treasure_data.open, mask))
