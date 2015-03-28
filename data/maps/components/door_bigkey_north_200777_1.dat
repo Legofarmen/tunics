@@ -484,6 +484,24 @@ tile{
   pattern = "barrier.1.2",
 }
 
+tile{
+  layer = 1,
+  x = 128,
+  y = 16,
+  width = 16,
+  height = 24,
+  pattern = "door_boss.1.pillar.1",
+}
+
+tile{
+  layer = 1,
+  x = 176,
+  y = 16,
+  width = 16,
+  height = 24,
+  pattern = "door_boss.1.pillar.2",
+}
+
 wall{
   layer = 1,
   x = 152,
@@ -527,8 +545,8 @@ tile{
   x = 128,
   y = 8,
   width = 16,
-  height = 32,
-  pattern = "door_boss.1.pillar.1",
+  height = 8,
+  pattern = "door_boss.1.pillar.1.top",
 }
 
 tile{
@@ -536,7 +554,7 @@ tile{
   x = 176,
   y = 8,
   width = 16,
-  height = 32,
-  pattern = "door_boss.1.pillar.2",
+  height = 8,
+  pattern = "door_boss.1.pillar.2.top",
 }
 

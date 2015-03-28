@@ -385,42 +385,6 @@ tile{
   pattern = "wall_diag.border.2",
 }
 
-tile{
-  layer = 1,
-  x = 56,
-  y = 152,
-  width = 32,
-  height = 32,
-  pattern = "statue.2",
-}
-
-tile{
-  layer = 1,
-  x = 56,
-  y = 56,
-  width = 32,
-  height = 32,
-  pattern = "statue.2",
-}
-
-tile{
-  layer = 1,
-  x = 232,
-  y = 56,
-  width = 32,
-  height = 32,
-  pattern = "statue.2",
-}
-
-tile{
-  layer = 1,
-  x = 232,
-  y = 152,
-  width = 32,
-  height = 32,
-  pattern = "statue.2",
-}
-
 pickable{
   layer = 1,
   x = 128,

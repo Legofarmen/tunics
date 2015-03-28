@@ -1124,9 +1124,19 @@ tile_pattern{
   ground = "wall",
   default_layer = 1,
   x = 448,
+  y = 256,
+  width = 16,
+  height = 24,
+}
+
+tile_pattern{
+  id = "door_boss.1.pillar.1.top",
+  ground = "wall",
+  default_layer = 2,
+  x = 448,
   y = 248,
   width = 16,
-  height = 32,
+  height = 8,
 }
 
 tile_pattern{
@@ -1134,9 +1144,19 @@ tile_pattern{
   ground = "wall",
   default_layer = 1,
   x = 464,
+  y = 256,
+  width = 16,
+  height = 24,
+}
+
+tile_pattern{
+  id = "door_boss.1.pillar.2.top",
+  ground = "wall",
+  default_layer = 2,
+  x = 464,
   y = 248,
   width = 16,
-  height = 32,
+  height = 8,
 }
 
 tile_pattern{
