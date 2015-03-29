@@ -1,5 +1,6 @@
 local Tree = require 'lib/tree'
 local List = require 'lib/list'
+local Class = require 'lib/class'
 
 local HideTreasuresVisitor = {}
 
@@ -241,69 +242,79 @@ function Puzzle.sequence(rng, elements)
     return result
 end
 
-function Puzzle.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, item_names)
-    local result = {}
+Puzzle.Dependencies = Class:new()
 
-    local step = function (name, step)
-        result[name] = { step=step, deps={}, rdeps={} }
-    end
-    local dep = function (deep_name, shallow_name)
-        result[deep_name].deps[shallow_name] = true
-        result[shallow_name].rdeps[deep_name] = true
-    end
-    local multiple = function (name, count, element)
-        local first = nil
-        local last = nil
-        for i = 1, count do
-            local current = string.format('%s_%d', name, i)
-            step(current, element)
-            if last then
-                dep(last, current)
-            end
-            first = first or current
-            last = current
+function Puzzle.Dependencies:new(o)
+    o = o or {}
+    o.result = o.result or {}
+    return Class.new(self, o)
+end
+
+function Puzzle.Dependencies:single(name, element)
+    self.result[name] = { step=element, deps={}, rdeps={} }
+end
+
+function Puzzle.Dependencies:dependency(deep_name, shallow_name)
+    self.result[deep_name].deps[shallow_name] = true
+    self.result[shallow_name].rdeps[deep_name] = true
+end
+
+function Puzzle.Dependencies:multiple(name, count, element)
+    local first = nil
+    local last = nil
+    for i = 1, count do
+        local current = string.format('%s_%d', name, i)
+        self:single(current, element)
+        if last then
+            self:dependency(last, current)
         end
-        return first, last
+        first = first or current
+        last = current
     end
+    return first, last
+end
 
-    step('boss', Puzzle.boss_step)
-    step('bigkey', Puzzle.treasure_step('bigkey'))
+function Puzzle.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, item_names)
+    local d = Puzzle.Dependencies:new()
+
+    d:single('boss', Puzzle.boss_step)
+    d:single('bigkey', Puzzle.treasure_step('bigkey'))
     for _, item_name in ipairs(item_names) do
         local obstacle_name = string.format('obstacle_%s', item_name)
         local bigchest_name = string.format('bigchest_%s', item_name)
-        step(obstacle_name, Puzzle.obstacle_step(item_name))
-        step(bigchest_name, Puzzle.big_chest_step(item_name))
-        dep('boss', obstacle_name)
-        dep(obstacle_name, bigchest_name)
-        dep(bigchest_name, 'bigkey')
+        d:single(obstacle_name, Puzzle.obstacle_step(item_name))
+        d:single(bigchest_name, Puzzle.big_chest_step(item_name))
+        d:dependency('boss', obstacle_name)
+        d:dependency(obstacle_name, bigchest_name)
+        d:dependency(bigchest_name, 'bigkey')
     end
 
-    step('bomb', Puzzle.treasure_step('bomb'))
-    step('map', Puzzle.treasure_step('map'))
-    step('bombdoors', Puzzle.bomb_doors_step)
-    dep('bombdoors', 'bomb')
-    dep('bombdoors', 'map')
-    multiple('fairy', nfairies, Puzzle.fairy_step)
+    d:single('bomb', Puzzle.treasure_step('bomb'))
+    d:single('map', Puzzle.treasure_step('map'))
+    d:single('bombdoors', Puzzle.bomb_doors_step)
+    d:dependency('bombdoors', 'bomb')
+    d:dependency('bombdoors', 'map')
+    d:multiple('fairy', nfairies, Puzzle.fairy_step)
 
-    step('hidetreasures', Puzzle.hide_treasures_step)
-    step('compass', Puzzle.treasure_step('compass'))
-    dep('hidetreasures', 'compass')
+    d:single('hidetreasures', Puzzle.hide_treasures_step)
+    d:single('compass', Puzzle.treasure_step('compass'))
+    d:dependency('hidetreasures', 'compass')
 
 
     local lockeddoors_rng = rng:create()
-    step('lockeddoors', function (root)
+    d:single('lockeddoors', function (root)
         for i = 1, nkeys do
             if not Puzzle.locked_door_step(lockeddoors_rng, root) then break end
             Puzzle.treasure_step('smallkey')(root)
         end
     end)
-    dep('bigkey', 'lockeddoors')
-    dep('compass', 'lockeddoors')
-    dep('map', 'lockeddoors')
+    d:dependency('bigkey', 'lockeddoors')
+    d:dependency('compass', 'lockeddoors')
+    d:dependency('map', 'lockeddoors')
 
-    multiple('culdesac', nculdesacs, Puzzle.culdesac_step)
+    d:multiple('culdesac', nculdesacs, Puzzle.culdesac_step)
 
-    local steps = Puzzle.sequence(rng:create(), result)
+    local steps = Puzzle.sequence(rng:create(), d.result)
 
     -- Build puzzle tree using the sequence of steps
     local heads = Tree.Room:new()
