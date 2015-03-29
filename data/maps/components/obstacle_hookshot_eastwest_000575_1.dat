@@ -7,17 +7,6 @@ properties{
   music = "same",
 }
 
-block{
-  layer = 0,
-  x = 56,
-  y = 197,
-  direction = -1,
-  sprite = "entities/block",
-  pushable = true,
-  pullable = false,
-  maximum_moves = 1,
-}
-
 tile{
   layer = 1,
   x = 80,
@@ -236,5 +225,16 @@ dynamic_tile{
   name = "placeholder2",
   pattern = "floor_small.2",
   enabled_at_start = false,
+}
+
+block{
+  layer = 1,
+  x = 56,
+  y = 197,
+  direction = -1,
+  sprite = "entities/block",
+  pushable = true,
+  pullable = false,
+  maximum_moves = 1,
 }
 
