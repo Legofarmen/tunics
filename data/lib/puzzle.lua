@@ -90,7 +90,7 @@ function Puzzle.bomb_doors_step(root)
     end)
 end
 
-function Puzzle.locked_door_step(rng, root)
+function Puzzle.locked_door_step(rng, blackboard)
     function lockable_weight(node)
         local is_lockable = node:accept(KeyDetectorVisitor)
         if is_lockable then
@@ -99,12 +99,15 @@ function Puzzle.locked_door_step(rng, root)
             return 0
         end
     end
-    local key, child = root:random_child(rng, lockable_weight)
-    if key then
-        root:update_child(key, child:with_needs{open='smallkey'})
-        return true
-    else
-        return false
+    return function (root)
+        local key, child = root:random_child(rng, lockable_weight)
+        if key then
+            root:update_child(key, child:with_needs{open='smallkey'})
+            blackboard.smallkeys = (blackboard.smallkeys or 0) + 1
+            return true
+        else
+            return false
+        end
     end
 end
 
@@ -300,17 +303,19 @@ function Puzzle.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, item_names)
     d:single('compass', Puzzle.treasure_step('compass'))
     d:dependency('hidetreasures', 'compass')
 
-
+    local blackboard = {}
     local lockeddoors_rng = rng:create()
-    d:single('lockeddoors', function (root)
-        for i = 1, nkeys do
-            if not Puzzle.locked_door_step(lockeddoors_rng, root) then break end
+    local first_lock, last_lock = d:multiple('lockeddoor', nkeys, Puzzle.locked_door_step(lockeddoors_rng, blackboard))
+    d:dependency('bigkey', first_lock)
+    d:dependency('compass', first_lock)
+    d:dependency('map', first_lock)
+    local first_key, last_key = d:multiple('smallkey', nkeys, function (root)
+        if blackboard.smallkeys > 0 then
             Puzzle.treasure_step('smallkey')(root)
+            blackboard.smallkeys = blackboard.smallkeys - 1
         end
     end)
-    d:dependency('bigkey', 'lockeddoors')
-    d:dependency('compass', 'lockeddoors')
-    d:dependency('map', 'lockeddoors')
+    d:dependency(last_lock, first_key)
 
     d:multiple('culdesac', nculdesacs, Puzzle.culdesac_step)
 
