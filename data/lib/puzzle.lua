@@ -154,56 +154,6 @@ function Puzzle.max_heads(rng, n)
     end
 end
 
-function Puzzle.compass_puzzle()
-    return {
-        Puzzle.hide_treasures_step,
-        Puzzle.treasure_step('compass'),
-    }
-end
-
-function Puzzle.map_puzzle(rng, nfairies)
-    local steps = {
-        Puzzle.treasure_step('bomb'),
-        Puzzle.treasure_step('map'),
-    }
-    for i = 1, nfairies do
-        table.insert(steps, Puzzle.fairy_step)
-    end
-    List.shuffle(rng, steps)
-    table.insert(steps, 1, Puzzle.bomb_doors_step)
-    return steps
-end
-
-function Puzzle.items_puzzle(rng, item_names)
-    List.shuffle(rng, item_names)
-    local steps = {}
-    for _, item_name in ipairs(item_names) do
-        table.insert(steps, Puzzle.obstacle_step(item_name))
-        table.insert(steps, Puzzle.big_chest_step(item_name))
-    end
-    table.insert(steps, Puzzle.treasure_step('bigkey'))
-    return steps
-end
-
-function Puzzle.culdesac_puzzle(n)
-    local steps = {}
-    for i = 1, n do
-        table.insert(steps, Puzzle.culdesac_step)
-    end
-    return steps
-end
-
-function Puzzle.lock_puzzle(rng, n)
-    return {
-        function (root)
-            for i = 1, n do
-                if not Puzzle.locked_door_step(rng, root) then break end
-                Puzzle.treasure_step('smallkey')(root)
-            end
-        end,
-    }
-end
-
 function Puzzle.sequence(rng, elements)
 
     function calc_weight(element)
