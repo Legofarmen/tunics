@@ -111,6 +111,15 @@ function Puzzle.locked_door_step(rng, blackboard)
     end
 end
 
+function Puzzle.smallkey_step(blackboard)
+    return function (root)
+        if blackboard.smallkeys > 0 then
+            Puzzle.treasure_step('smallkey')(root)
+            blackboard.smallkeys = blackboard.smallkeys - 1
+        end
+    end
+end
+
 function Puzzle.max_heads(rng, n)
     return function (root)
         while #root.children > n do
@@ -309,12 +318,7 @@ function Puzzle.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, item_names)
     d:dependency('bigkey', first_lock)
     d:dependency('compass', first_lock)
     d:dependency('map', first_lock)
-    local first_key, last_key = d:multiple('smallkey', nkeys, function (root)
-        if blackboard.smallkeys > 0 then
-            Puzzle.treasure_step('smallkey')(root)
-            blackboard.smallkeys = blackboard.smallkeys - 1
-        end
-    end)
+    local first_key, last_key = d:multiple('smallkey', nkeys, Puzzle.smallkey_step(blackboard))
     d:dependency(last_lock, first_key)
 
     d:multiple('culdesac', nculdesacs, Puzzle.culdesac_step)
