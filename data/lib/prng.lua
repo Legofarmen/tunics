@@ -10,7 +10,7 @@ end
 function Prng:random(a, b)
     if not self.mode then
         self.mode = 'number'
-        self.mwc = MWC.MakeGenerator(nil, self.seed)
+        self.mwc = MWC.MakeGenerator(self.seed, self.seed)
     elseif self.mode ~= 'number' then
         error('cannot call random from state ' .. self.mode)
     end
@@ -30,7 +30,7 @@ end
 function Prng:create()
     if not self.mode then
         self.mode = 'factory'
-        self.mwc = MWC.MakeGenerator(nil, self.seed)
+        self.mwc = MWC.MakeGenerator(self.seed, self.seed)
     elseif self.mode ~= 'factory' then
         error('cannot call create from state ' .. self.mode)
     end
