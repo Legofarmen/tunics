@@ -103,6 +103,7 @@ map{ id = "components/enemy_fairy_000777_2", description = "Enemy fairy 000777 2
 map{ id = "components/puzzle_000777_1", description = "Puzzle 000777 1" }
 map{ id = "components/puzzle_000006_1", description = "Puzzle 000006 1" }
 map{ id = "components/puzzle_000003_1", description = "Puzzle 000003 1 " }
+map{ id = "components/obstacle_lantern_any_000700_1", description = "Obstacle lantern any 00700 1" }
 
 tileset{ id = "light_world", description = "Light World" }
 tileset{ id = "dungeon_brick_gray_1", description = "Dungeon brick gray 1" }
