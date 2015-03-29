@@ -94,12 +94,15 @@ map{ id = "components/treasure_open_000444_1", description = "Treasure open 0004
 map{ id = "components/puzzle_000700_1", description = "Puzzle 000700 1" }
 map{ id = "dev/obstacles", description = "Obstacles" }
 map{ id = "components/puzzle_000600_1", description = "Puzzle 000600 1" }
-map{ id = "components/puzzle_000300_1", description = "Puzzle 000100 1 " }
+map{ id = "components/puzzle_000300_1", description = "Puzzle 000300 1 " }
 map{ id = "components/puzzle_000111_1", description = "Puzzle 000111 1" }
 map{ id = "components/treasure_open_000770_1", description = "Treasure open 000770 1" }
 map{ id = "components/treasure_open_000077_1", description = "Treasure open 000077 1" }
 map{ id = "components/treasure_open_200770_2", description = "Treasure open 200770 2" }
 map{ id = "components/enemy_fairy_000777_2", description = "Enemy fairy 000777 2" }
+map{ id = "components/puzzle_000777_1", description = "Puzzle 000777 1" }
+map{ id = "components/puzzle_000006_1", description = "Puzzle 000006 1" }
+map{ id = "components/puzzle_000003_1", description = "Puzzle 000003 1 " }
 
 tileset{ id = "light_world", description = "Light World" }
 tileset{ id = "dungeon_brick_gray_1", description = "Dungeon brick gray 1" }
