@@ -325,6 +325,10 @@ function Puzzle.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, item_names)
 
     local steps = Puzzle.sequence(rng:create(), d.result)
 
+    return Puzzle.render_steps(rng, steps)
+end
+
+function Puzzle.render_steps(rng, steps)
     -- Build puzzle tree using the sequence of steps
     local heads = Tree.Room:new()
     for name, element in ipairs(steps) do
