@@ -191,36 +191,125 @@ function Puzzle.lock_puzzle(rng, n)
     }
 end
 
-function Puzzle.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, item_names)
-    -- A bunch of puzzles in no particular order
-    local puzzles = {
-        Puzzle.items_puzzle(rng:create(), item_names),
-        Puzzle.map_puzzle(rng:create(), nfairies),
-        Puzzle.compass_puzzle(),
-        Puzzle.lock_puzzle(rng:create(), nkeys),
-        Puzzle.culdesac_puzzle(nculdesacs),
-    }
-    List.shuffle(rng:create(), puzzles)
+function Puzzle.sequence(rng, elements)
 
-    -- Combine discrete steps of puzzles in some order
-    local my_rng = rng:create()
-    local steps = {}
-    for _, puzzle in ipairs(puzzles) do
-        if my_rng:random() < 0.33 then
-            steps = List.intermingle(rng:create(), steps, puzzle)
-        else
-            steps = List.concat(steps, puzzle)
+    function calc_weight(element)
+        if not element.weight then
+            element.weight = 1
+            for dep in pairs(element.deps) do
+                element.weight = element.weight + calc_weight(elements[dep])
+            end
         end
+        return element.weight
     end
 
-    -- Insert boss as the deepest puzzle step
-    table.insert(steps, 1, Puzzle.boss_step)
+    local total_weight = 0
+    for name, element in pairs(elements) do
+        total_weight = total_weight + calc_weight(element)
+    end
+
+    -- Pick something with no rdeps.
+    -- Selection is weighted according to element weight.
+    function pick(elements)
+        local result = nil
+        local n = 0
+        for name, element in pairs(elements) do
+            if next(element.rdeps) == nil then
+                n = n + element.weight
+                local r = rng:random()
+                if rng:random(n) <= element.weight then
+                    result = name
+                end
+            end
+        end
+        return result
+    end
+
+    local result = {}
+    while next(elements) do
+        local name = pick(elements)
+        local element = elements[name]
+        for dep in pairs(element.deps) do
+            elements[dep].rdeps[name] = nil
+        end
+        element.name = name
+        element.deps = nil
+        element.rdeps = nil
+        table.insert(result, element)
+        elements[name] = nil
+    end
+    return result
+end
+
+function Puzzle.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, item_names)
+    local result = {}
+
+    local step = function (name, step)
+        result[name] = { step=step, deps={}, rdeps={} }
+    end
+    local dep = function (deep_name, shallow_name)
+        result[deep_name].deps[shallow_name] = true
+        result[shallow_name].rdeps[deep_name] = true
+    end
+    local multiple = function (name, count, element)
+        local first = nil
+        local last = nil
+        for i = 1, count do
+            local current = string.format('%s_%d', name, i)
+            step(current, element)
+            if last then
+                dep(last, current)
+            end
+            first = first or current
+            last = current
+        end
+        return first, last
+    end
+
+    step('boss', Puzzle.boss_step)
+    step('bigkey', Puzzle.treasure_step('bigkey'))
+    for _, item_name in ipairs(item_names) do
+        local obstacle_name = string.format('obstacle_%s', item_name)
+        local bigchest_name = string.format('bigchest_%s', item_name)
+        step(obstacle_name, Puzzle.obstacle_step(item_name))
+        step(bigchest_name, Puzzle.big_chest_step(item_name))
+        dep('boss', obstacle_name)
+        dep(obstacle_name, bigchest_name)
+        dep(bigchest_name, 'bigkey')
+    end
+
+    step('bomb', Puzzle.treasure_step('bomb'))
+    step('map', Puzzle.treasure_step('map'))
+    step('bombdoors', Puzzle.bomb_doors_step)
+    dep('bombdoors', 'bomb')
+    dep('bombdoors', 'map')
+    multiple('fairy', nfairies, Puzzle.fairy_step)
+
+    step('hidetreasures', Puzzle.hide_treasures_step)
+    step('compass', Puzzle.treasure_step('compass'))
+    dep('hidetreasures', 'compass')
+
+
+    local lockeddoors_rng = rng:create()
+    step('lockeddoors', function (root)
+        for i = 1, nkeys do
+            if not Puzzle.locked_door_step(lockeddoors_rng, root) then break end
+            Puzzle.treasure_step('smallkey')(root)
+        end
+    end)
+    dep('bigkey', 'lockeddoors')
+    dep('compass', 'lockeddoors')
+    dep('map', 'lockeddoors')
+
+    multiple('culdesac', nculdesacs, Puzzle.culdesac_step)
+
+    local steps = Puzzle.sequence(rng:create(), result)
 
     -- Build puzzle tree using the sequence of steps
     local heads = Tree.Room:new()
-    for i, step in ipairs(steps) do
+    for name, element in ipairs(steps) do
         Puzzle.max_heads(rng:create(), 4)(heads)
-        step(heads)
+        element.step(heads)
     end
 
     -- Put entrance room at the the tree root
