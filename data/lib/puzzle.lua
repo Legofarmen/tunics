@@ -237,30 +237,41 @@ function Puzzle.Dependencies:multiple(name, count, element)
 end
 
 function Puzzle.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, item_names)
+
+    function get_item_obstacle(item_name)
+        if item_name == 'bomb' then
+            return Puzzle.bomb_doors_step
+        else
+            return Puzzle.obstacle_step(item_name)
+        end
+    end
+
     local d = Puzzle.Dependencies:new()
 
     d:single('boss', Puzzle.boss_step)
     d:single('bigkey', Puzzle.treasure_step('bigkey'))
+    d:dependency('boss', 'bigkey')
+
+    d:single('map', Puzzle.treasure_step('map'))
+
+    d:single('hidetreasures', Puzzle.hide_treasures_step)
+    d:single('compass', Puzzle.treasure_step('compass'))
+    d:dependency('hidetreasures', 'compass')
+
     for _, item_name in ipairs(item_names) do
+        print(item_name)
         local obstacle_name = string.format('obstacle_%s', item_name)
         local bigchest_name = string.format('bigchest_%s', item_name)
-        d:single(obstacle_name, Puzzle.obstacle_step(item_name))
+        d:single(obstacle_name, get_item_obstacle(item_name))
         d:single(bigchest_name, Puzzle.big_chest_step(item_name))
         d:dependency('boss', obstacle_name)
         d:dependency(obstacle_name, bigchest_name)
         d:dependency(bigchest_name, 'bigkey')
     end
 
-    d:single('bomb', Puzzle.treasure_step('bomb'))
-    d:single('map', Puzzle.treasure_step('map'))
-    d:single('bombdoors', Puzzle.bomb_doors_step)
-    d:dependency('bombdoors', 'bomb')
-    d:dependency('bombdoors', 'map')
-    d:multiple('fairy', nfairies, Puzzle.fairy_step)
-
-    d:single('hidetreasures', Puzzle.hide_treasures_step)
-    d:single('compass', Puzzle.treasure_step('compass'))
-    d:dependency('hidetreasures', 'compass')
+    if d.result.obstacle_bomb then
+        d:dependency('obstacle_bomb', 'map')
+    end
 
     local blackboard = {}
     local lockeddoors_rng = rng:create()
@@ -272,6 +283,7 @@ function Puzzle.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, item_names)
     d:dependency(last_lock, first_key)
 
     d:multiple('culdesac', nculdesacs, Puzzle.culdesac_step)
+    d:multiple('fairy', nfairies, Puzzle.fairy_step)
 
     local steps = Puzzle.sequence(rng:create(), d.result)
 
