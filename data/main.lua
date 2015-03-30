@@ -166,5 +166,7 @@ function sol.main:on_started()
         self:hud_on_map_changed(map)
     end
 
+    game:set_value('seed', 65)
+    game:set_value('tier', 8)
     game:start()
 end

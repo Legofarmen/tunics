@@ -1,4 +1,5 @@
 local map = ...
+local game = map:get_game()
 
 local Tree = require 'lib/tree'
 local Puzzle = require 'lib/puzzle'
@@ -6,7 +7,7 @@ local Prng = require 'lib/prng'
 local Layout = require 'lib/layout'
 local zentropy = require 'lib/zentropy'
 
-local master_prng = Prng.from_seed(63)
+local master_prng = Prng.from_seed(game:get_value('tier'), game:get_value('seed'))
 local layout = Layout.BidiVisitor
 
 local puzzle_rng = master_prng:create()
@@ -39,7 +40,7 @@ solarus_layout:render(puzzle)
 
 
 function map:render_map(map_menu)
-    Layout.minimap_mixin(layout:new{ game=map:get_game() }, map_menu):render(puzzle)
+    Layout.minimap_mixin(layout:new{ game=game }, map_menu):render(puzzle)
 end
 
 map:add_on_started(function ()
