@@ -19,31 +19,25 @@ end
 function HideTreasuresVisitor:visit_enemy(enemy)
 end
 
-local KeyDetectorVisitor = {}
+local BigKeyDetectorVisitor = {}
 
-setmetatable(KeyDetectorVisitor, KeyDetectorVisitor)
+setmetatable(BigKeyDetectorVisitor, BigKeyDetectorVisitor)
 
-function KeyDetectorVisitor:visit_room(room)
-    local is_lockable = nil
-    local has_treasures = nil
+function BigKeyDetectorVisitor:visit_room(room)
     room:each_child(function (key, child)
-        if is_lockable ~= false then
-            is_lockable = is_lockable or child:accept(self)
+        if not child.open == 'smallkey' and child:accept(self) then
+            return true
         end
     end)
-    return is_lockable
+    return false
 end
 
-function KeyDetectorVisitor:visit_treasure(treasure)
-    if treasure.name == 'smallkey' then
-        return false
-    else
-        return true
-    end
+function BigKeyDetectorVisitor:visit_treasure(treasure)
+    return treasure.name == 'bigkey'
 end
 
-function KeyDetectorVisitor:visit_enemy(enemy)
-    return nil
+function BigKeyDetectorVisitor:visit_enemy(enemy)
+    return false
 end
 
 local Puzzle = {}
@@ -91,22 +85,28 @@ function Puzzle.bomb_doors_step(root)
 end
 
 function Puzzle.locked_door_step(rng, blackboard)
-    function lockable_weight(node)
-        local is_lockable = node:accept(KeyDetectorVisitor)
-        if is_lockable then
-            return 1
-        else
-            return 0
-        end
-    end
     return function (root)
-        local key, child = root:random_child(rng, lockable_weight)
-        if key then
-            root:update_child(key, child:with_needs{open='smallkey'})
+        local bigkey_found = false
+        local chosen_key = nil
+        local chosen_child = nil
+        local n = 1
+        root:each_child(function (key, child)
+            if not bigkey_found then
+                if rng:random(n) == 1 then
+                    chosen_key = key
+                    chosen_child = child
+                end
+                n = n + 1
+                if child:accept(BigKeyDetectorVisitor) then
+                    bigkey_found = true
+                    chosen_key = key
+                    chosen_child = child
+                end
+            end
+        end)
+        if chosen_key then
+            root:update_child(chosen_key, chosen_child:with_needs{open='smallkey'})
             blackboard.smallkeys = (blackboard.smallkeys or 0) + 1
-            return true
-        else
-            return false
         end
     end
 end
