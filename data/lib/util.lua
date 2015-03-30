@@ -1,5 +1,17 @@
 local util = {}
 
+local wdebug_path = "wdebug.txt"
+function util.wdebug_truncate()
+	local f = io.open(wdebug_path, "w")
+	f:close()
+end
+function util.wdebug(message)
+	
+	local f = io.open( wdebug_path, "a")
+	f:write(message .. "\n")
+	f:close()
+end
+
 function util.filter_keys(table, keys)
     local result = {}
     for _, key in ipairs(keys) do

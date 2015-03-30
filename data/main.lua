@@ -1,7 +1,10 @@
 local Class = require 'lib/class'
 local Zentropy = require 'lib/zentropy'
+local util = require 'lib/util'
 
 Zentropy.init()
+
+util.wdebug_truncate()
 
 local MapMenu = Class:new{
     colors={
