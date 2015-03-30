@@ -103,7 +103,7 @@ map{ id = "components/enemy_fairy_000777_2", description = "Enemy fairy 000777 2
 map{ id = "components/puzzle_000777_1", description = "Puzzle 000777 1" }
 map{ id = "components/puzzle_000006_1", description = "Puzzle 000006 1" }
 map{ id = "components/puzzle_000003_1", description = "Puzzle 000003 1 " }
-map{ id = "components/obstacle_lantern_any_000700_1", description = "Obstacle lantern any 00700 1" }
+map{ id = "components/obstacle_lamp_any_000700_1", description = "Obstacle lamp any 00700 1" }
 
 tileset{ id = "light_world", description = "Light World" }
 tileset{ id = "dungeon_brick_gray_1", description = "Dungeon brick gray 1" }
@@ -196,6 +196,7 @@ sprite{ id = "menus/hero_point", description = "Menu: Hero point" }
 sprite{ id = "entities/big_chest", description = "Big chest" }
 sprite{ id = "enemies/green_knight_soldier", description = "Green knight soldier" }
 sprite{ id = "enemies/green_knight_soldier_sword", description = "Green knight soldier (sword)" }
+sprite{ id = "entities/torch", description = "Torch" }
 
 music{ id = "agahnim", description = "Agahnim theme" }
 music{ id = "beginning", description = "Beginning" }
@@ -326,6 +327,11 @@ item{ id = "sword", description = "Sword" }
 item{ id = "heart", description = "Heart" }
 item{ id = "fairy", description = "Fairy" }
 item{ id = "tunic", description = "Tunic" }
+item{ id = "lamp", description = "Lamp" }
+item{ id = "magic_bar", description = "Magic bar" }
+item{ id = "bow", description = "Bow" }
+item{ id = "quiver", description = "Quiver" }
+item{ id = "arrow", description = "Arrow" }
 
 enemy{ id = "tentacle", description = "Tentacle" }
 enemy{ id = "green_knight_soldier", description = "Green knight soldier" }
@@ -333,6 +339,7 @@ enemy{ id = "generic_soldier", description = "Generic soldier" }
 enemy{ id = "generic_towards_hero", description = "Generic towards hero" }
 enemy{ id = "generic_waiting_for_hero", description = "Generic waiting for hero" }
 
+entity{ id = "torch", description = "Torch" }
 
 language{ id = "en", description = "English" }
 
