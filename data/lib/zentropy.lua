@@ -60,12 +60,14 @@ end
 
 function zentropy.db.Components:floor(id, iterator)
     table.insert(self.floors, id)
+    return true
 end
 
 function zentropy.db.Components:obstacle(id, iterator)
     local item = iterator()
     local dir = iterator()
     local mask_string = iterator()
+    if mask_string == nil then return false end
     local mask = Util.oct(mask_string)
     self.obstacles[item] = self.obstacles[item] or {}
     self.obstacles[item][dir] = self.obstacles[item][dir] or {}
@@ -73,11 +75,13 @@ function zentropy.db.Components:obstacle(id, iterator)
         id=id,
         mask=mask,
     })
+    return true
 end
 
 function zentropy.db.Components:treasure(id, iterator)
     local open = iterator()
     local mask_string = iterator()
+    if mask_string == nil then return false end
     local mask
     if mask_string == 'any' then
         mask = mask_string
@@ -89,22 +93,26 @@ function zentropy.db.Components:treasure(id, iterator)
         id=id,
         mask=mask,
     })
+    return true
 end
 
 function zentropy.db.Components:puzzle(id, iterator)
     local mask_string = iterator()
+    if mask_string == nil then return false end
     local mask
     mask = Util.oct(mask_string)
     table.insert(self.puzzles, {
         id=id,
         mask=mask,
     })
+    return true
 end
 
 function zentropy.db.Components:door(id, iterator)
     local open = iterator()
     local dir = iterator()
     local mask_string = iterator()
+    if mask_string == nil then return false end
     local mask = Util.oct(mask_string)
     self.doors[open] = self.doors[open] or {}
     self.doors[open][dir] = self.doors[open][dir] or {}
@@ -112,10 +120,12 @@ function zentropy.db.Components:door(id, iterator)
         id=id,
         mask=mask,
     })
+    return true
 end
 
 function zentropy.db.Components:enemy(id, iterator)
     local mask_string = iterator()
+    if mask_string == nil then return false end
     local mask
     if mask_string == 'any' then
         mask = mask_string
@@ -126,10 +136,12 @@ function zentropy.db.Components:enemy(id, iterator)
         id=id,
         mask=mask,
     })
+    return true
 end
 
 function zentropy.db.Components:filler(id, iterator)
     local mask_string = iterator()
+    if mask_string == nil then return false end
     local mask
     if mask_string == 'any' then
         mask = mask_string
@@ -140,17 +152,20 @@ function zentropy.db.Components:filler(id, iterator)
         id=id,
         mask=mask,
     })
+    return true
 end
 
 function zentropy.db.Components:enemy(id, iterator)
     local name = iterator()
     local mask_string = iterator()
+    if mask_string == nil then return false end
     local mask = Util.oct(mask_string)
     self.enemies[name] = self.enemies[name] or {}
     table.insert(self.enemies[name], {
         id=id,
         mask=mask,
     })
+    return true
 end
 
 function zentropy.db.Components:parse(maps)
@@ -160,9 +175,9 @@ function zentropy.db.Components:parse(maps)
         if string.sub(v.id, 0, 11) == 'components/' then
             local parts = string.gmatch(string.sub(v.id, 12), '[^_]+')
             local part = parts()
-            if self[part] then
-                self[part](self, v.id, parts)
-            else
+            if not self[part] then
+                print('ignoring component: ', v.id)
+            elseif not self[part](self, v.id, parts) then
                 print('ignoring component: ', v.id)
             end
         end
