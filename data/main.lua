@@ -122,12 +122,18 @@ end
 function sol.main:on_started()
     sol.language.set_language("en")
 
+    local old_game = sol.game.load("zentropy1.dat")
+    local seed = old_game:get_value('seed') or 1
+    local tier = old_game:get_value('tier') or 1
     sol.game.delete("zentropy1.dat")
     local game = sol.game.load("zentropy1.dat")
     game:set_ability("sword", 1)
     game:set_max_life(12)
     game:set_life(12)
     game:set_value('small_key_amount', 0)
+    game:set_value('seed', seed)
+    game:set_value('tier', tier)
+    game:save()
 
     require('lib/map_include.lua')
     sol.main.load_file("hud/hud")(game)
@@ -166,7 +172,5 @@ function sol.main:on_started()
         self:hud_on_map_changed(map)
     end
 
-    game:set_value('seed', 65)
-    game:set_value('tier', 8)
     game:start()
 end
