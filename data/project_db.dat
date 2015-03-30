@@ -104,6 +104,21 @@ map{ id = "components/puzzle_000777_1", description = "Puzzle 000777 1" }
 map{ id = "components/puzzle_000006_1", description = "Puzzle 000006 1" }
 map{ id = "components/puzzle_000003_1", description = "Puzzle 000003 1 " }
 map{ id = "components/obstacle_lamp_any_000700_1", description = "Obstacle lamp any 00700 1" }
+map{ id = "components/obstacle_bomb/obstacle_bomb", description = "Obstacle bomb" }
+map{ id = "components/obstacle_bomb/obstacle_bomb_north_000700_1", description = "obstacle_bomb_north_000700_1" }
+map{ id = "components/obstacle_bomb/obstacle_bomb_northeast_000700_1", description = "obstacle_bomb_northeast_000700_1" }
+map{ id = "components/obstacle_bomb/obstacle_bomb_northwest_000700_1", description = "obstacle_bomb_northwest_000700_1" }
+map{ id = "components/obstacle_bomb/obstacle_bomb_northeastwest_000700_1", description = "obstacle_bomb_northeastwest_000700_1" }
+map{ id = "components/obstacle_bomb/obstacle_bomb_south_000007_1", description = "obstacle_bomb_south_00007_1" }
+map{ id = "components/obstacle_bomb/obstacle_bomb_southeast_000007_1", description = "obstacle_bomb_southeast_00007_1" }
+map{ id = "components/obstacle_bomb/obstacle_bomb_southwest_000007_1", description = "obstacle_bomb_southwest_00007_1" }
+map{ id = "components/obstacle_bomb/obstacle_bomb_southeastwest_000007_1", description = "obstacle_bomb_southeastwest_00007_1" }
+map{ id = "components/obstacle_bomb/obstacle_bomb_northsoutheast_000111_1", description = "obstacle_bomb_northsoutheast_000111_1" }
+map{ id = "components/obstacle_bomb/obstacle_bomb_northsouthwest_000444_1", description = "obstacle_bomb_northsouthwest_000111_1" }
+map{ id = "components/obstacle_bomb/obstacle_bomb_eastwest_000444_1", description = "obstacle_bomb_eastwest_000444_1" }
+map{ id = "components/obstacle_bomb/obstacle_bomb_northsouth_000700_1", description = "obstacle_bomb_northsouth_000700_1" }
+map{ id = "components/obstacle_bomb/obstacle_bomb_east_000111_1", description = "obstacle_bomb_east_000111_1" }
+map{ id = "components/obstacle_bomb/obstacle_bomb_west_000444_1", description = "obstacle_bomb_west_000444_1" }
 
 tileset{ id = "light_world", description = "Light World" }
 tileset{ id = "dungeon_brick_gray_1", description = "Dungeon brick gray 1" }
