@@ -8,15 +8,6 @@ properties{
 }
 
 tile{
-  layer = 0,
-  x = 8,
-  y = 56,
-  width = 24,
-  height = 32,
-  pattern = "wall_statue.1.3",
-}
-
-tile{
   layer = 1,
   x = 128,
   y = 176,
@@ -356,6 +347,15 @@ tile{
   width = 24,
   height = 32,
   pattern = "wall_statue.1.4",
+}
+
+tile{
+  layer = 1,
+  x = 8,
+  y = 56,
+  width = 24,
+  height = 32,
+  pattern = "wall_statue.1.3",
 }
 
 wall{
