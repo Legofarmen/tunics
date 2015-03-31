@@ -439,6 +439,15 @@ tile{
   pattern = "stage_big_fill",
 }
 
+tile{
+  layer = 1,
+  x = 144,
+  y = 8,
+  width = 32,
+  height = 24,
+  pattern = "wall.1",
+}
+
 dynamic_tile{
   layer = 1,
   x = 88,
@@ -553,6 +562,14 @@ chest{
   y = 85,
   name = "chest",
   sprite = "entities/chest",
+}
+
+door{
+  layer = 1,
+  x = 152,
+  y = 16,
+  direction = 1,
+  sprite = "entities/door_weak_wall",
 }
 
 tile{

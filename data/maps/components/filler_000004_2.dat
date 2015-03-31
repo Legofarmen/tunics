@@ -3,8 +3,48 @@ properties{
   y = 0,
   width = 320,
   height = 240,
-  tileset = "dungeon_brick_gray_1",
+  tileset = "dungeon_cave_brown_1",
   music = "same",
+}
+
+door{
+  layer = 0,
+  x = 152,
+  y = 80,
+  direction = 1,
+  sprite = "entities/door_weak_wall",
+}
+
+door{
+  layer = 0,
+  x = 96,
+  y = 88,
+  direction = 2,
+  sprite = "entities/door_weak_wall",
+}
+
+door{
+  layer = 0,
+  x = 120,
+  y = 120,
+  direction = 3,
+  sprite = "entities/door_weak_wall",
+}
+
+door{
+  layer = 0,
+  x = 152,
+  y = 128,
+  direction = 1,
+  sprite = "entities/door_weak_wall",
+}
+
+door{
+  layer = 0,
+  x = 152,
+  y = 128,
+  direction = 0,
+  sprite = "entities/door_weak_wall",
 }
 
 tile{
