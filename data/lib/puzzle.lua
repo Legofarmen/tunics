@@ -53,7 +53,7 @@ function Puzzle.boss_step(root)
 end
 
 function Puzzle.fairy_step(root)
-    root:add_child(Tree.Enemy:new{name='fairy'}:with_needs{open='bomb',see='map'})
+    root:add_child(Tree.Enemy:new{name='fairy'}:with_needs{reach='bomb',see='map'})
 end
 
 function Puzzle.culdesac_step(root)
@@ -80,7 +80,7 @@ end
 
 function Puzzle.bomb_doors_step(root)
     root:each_child(function (key, head)
-        root:update_child(key, head:with_needs{see='map',open='bomb'})
+        root:update_child(key, head:with_needs{see='map',reach='bomb'})
     end)
 end
 
@@ -239,11 +239,7 @@ end
 function Puzzle.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, item_names)
 
     function get_item_obstacle(item_name)
-        if item_name == 'bomb' then
-            return Puzzle.bomb_doors_step
-        else
-            return Puzzle.obstacle_step(item_name)
-        end
+        return Puzzle.obstacle_step(item_name)
     end
 
     local d = Puzzle.Dependencies:new()

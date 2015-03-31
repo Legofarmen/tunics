@@ -22,7 +22,7 @@ function bomb.init(map, data, directions)
             treasure_savegame_variable=data.treasure1.name,
         }
 	else
-		map:set_enities_enabled('treasure_obstacle_', false)
+		map:set_entities_enabled('treasure_obstacle_', false)
 	end
 
 	if data.treasure2 then
@@ -37,7 +37,7 @@ function bomb.init(map, data, directions)
             treasure_savegame_variable=data.treasure2.name,
         }
 	else
-		map:set_enities_enabled('treasure_open_', false)
+		map:set_entities_enabled('treasure_open_', false)
 	end
 end
 

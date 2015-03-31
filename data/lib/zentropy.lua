@@ -173,7 +173,7 @@ function zentropy.db.Components:parse(maps)
 
     for k, v in pairs(maps) do
         if string.sub(v.id, 0, 11) == 'components/' then
-            local parts = string.gmatch(string.sub(v.id, 12), '[^_]+')
+            local parts = string.gmatch(string.gsub(v.id, '.*/', ''), '[^_]+')
             local part = parts()
             if not self[part] then
                 print('ignoring component: ', v.id)
