@@ -78,33 +78,39 @@ end
 
 
 
-local DIRS = {
-    [Util.oct('200000')]='north',
-    [Util.oct('040000')]='west',
-    [Util.oct('010000')]='east',
-    [Util.oct('002000')]='south',
-}
-
 local obstacle_mask = 0
 local walls = {}
-for dir_mask, dir in pairs(DIRS) do
+for _, dir in pairs{'north','south','east','west'} do
     if data.doors[dir] then
         room:door({open=data.doors[dir].open, name=data.doors[dir].name}, dir)
         if not data.doors[dir].open and data.doors[dir].reach ~= 'bomb' then
             room.open_doors[dir] = true
         end
         if data.doors[dir].reach then
-            obstacle_mask = bit32.bor(obstacle_mask, dir_mask)
             obstacle_item = data.doors[dir].reach
         end
     else
-        table.insert(walls, dir_mask)
+        table.insert(walls, dir)
     end
 end
 
-for _, dir_mask in ipairs(walls) do
+local obstacle_dir = nil
+if data.doors.north and data.doors.north.reach then
+    obstacle_dir = (obstacle_dir or '') .. 'north'
+end
+if data.doors.south and data.doors.south.reach then
+    obstacle_dir = (obstacle_dir or '') .. 'south'
+end
+if data.doors.east and data.doors.east.reach then
+    obstacle_dir = (obstacle_dir or '') .. 'east'
+end
+if data.doors.west and data.doors.west.reach then
+    obstacle_dir = (obstacle_dir or '') .. 'west'
+end
+
+for _, dir in ipairs(walls) do
     if room_rng:random(2) == 2 then
-        map:get_entity('crack_' .. DIRS[dir_mask]):set_enabled(true)
+        map:get_entity('crack_' .. dir):set_enabled(true)
     end
 end
 
@@ -121,36 +127,18 @@ for _, treasure_data in ipairs(data.treasures) do
 end
 
 if obstacle_treasure and obstacle_mask == 0 then
-    obstacle_mask = walls[room_rng:random(#walls)]
+    obstacle_dir = walls[room_rng:random(#walls)]
     obstacle_item = obstacle_treasure.reach
 end
 
-if obstacle_mask ~= 0 then
+if obstacle_dir then
 
-    local OBSTACLE_MAP = {
-        [Util.oct('200000')] = { dir='north' },
-        [Util.oct('010000')] = { dir='east' },
-        [Util.oct('002000')] = { dir='south' },
-        [Util.oct('040000')] = { dir='west' },
-        [Util.oct('202000')] = { dir='northsouth' },
-        [Util.oct('210000')] = { dir='northeast' },
-        [Util.oct('240000')] = { dir='northwest' },
-        [Util.oct('012000')] = { dir='southeast' },
-        [Util.oct('042000')] = { dir='southwest' },
-        [Util.oct('050000')] = { dir='eastwest' },
-        [Util.oct('212000')] = { dir='northsoutheast' },
-        [Util.oct('250000')] = { dir='northeastwest' },
-        [Util.oct('242000')] = { dir='northsouthwest' },
-        [Util.oct('052000')] = { dir='southeastwest' },
-    }
-
-    local info = OBSTACLE_MAP[obstacle_mask]
     local obstacle_data = {}
 
     obstacle_data.treasure1 = obstacle_treasure
     obstacle_data.treasure2 = table.remove(normal_treasures)
 
-    room:obstacle(obstacle_data, info.dir, obstacle_item)
+    room:obstacle(obstacle_data, obstacle_dir, obstacle_item)
 end
 
 for _, treasure_data in ipairs(normal_treasures) do
