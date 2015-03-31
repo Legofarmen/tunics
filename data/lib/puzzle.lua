@@ -53,7 +53,7 @@ function Puzzle.boss_step(root)
 end
 
 function Puzzle.fairy_step(root)
-    root:add_child(Tree.Enemy:new{name='fairy'}:with_needs{reach='bomb',see='map'})
+    root:add_child(Tree.Enemy:new{name='fairy'}:with_needs{see='map',reach='bomb'})
 end
 
 function Puzzle.culdesac_step(root)
@@ -74,7 +74,7 @@ end
 
 function Puzzle.big_chest_step(item_name)
     return function (root)
-        root:add_child(Tree.Treasure:new{name=item_name, open='bigkey'})
+        root:add_child(Tree.Treasure:new{name=item_name, see='nothing', reach='nothing', open='bigkey'})
     end
 end
 
@@ -263,10 +263,9 @@ function Puzzle.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, item_names)
         d:dependency('boss', obstacle_name)
         d:dependency(obstacle_name, bigchest_name)
         d:dependency(bigchest_name, 'bigkey')
-    end
-
-    if d.result.obstacle_bomb then
-        d:dependency('obstacle_bomb', 'map')
+        if item_name == 'bomb' then
+            d:dependency(obstacle_name, 'map')
+        end
     end
 
     local blackboard = {}

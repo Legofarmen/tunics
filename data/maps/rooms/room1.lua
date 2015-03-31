@@ -195,7 +195,7 @@ local walls = {}
 for dir_mask, dir in pairs(DIRS) do
     if data.doors[dir] then
         door({open=data.doors[dir].open, name=data.doors[dir].name}, dir)
-        if not data.doors[dir].open then
+        if not data.doors[dir].open and data.doors[dir].reach ~= 'bomb' then
             open_doors[dir] = true
         end
         if data.doors[dir].reach then
