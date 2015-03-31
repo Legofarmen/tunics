@@ -237,7 +237,7 @@ function coord_mixin(object, transforms)
 
     function object:door_name(depth, leaf, native_dir)
         local map_x, map_y = self:pos_from_native(depth, leaf)
-        local map_dir = transforms.dir_from_native(native_dir)
+        local map_dir = self:dir_from_native(native_dir)
         if map_dir == 'east' then
             map_x = map_x + 1
             map_dir = 'west'
