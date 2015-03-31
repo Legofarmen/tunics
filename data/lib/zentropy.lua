@@ -349,8 +349,8 @@ function zentropy.Room:door(data, dir)
     if not data then return end
     local component_name, component_mask = zentropy.components:get_door(data.open, dir, self.mask, self.component_rng)
     if not component_name then
-        for _, msg in ipairs(messages) do print(msg) end
-        error(string.format("door not found: open=%s dir=%s mask=%06o", data.open, dir, self.mask))
+        self.data_messages('error', string.format("door not found: open=%s dir=%s mask=%06o", data.open, dir, self.mask))
+        return false
     end
     self.mask = bit32.bor(self.mask, component_mask)
     data.rewrite = {}
@@ -360,18 +360,20 @@ function zentropy.Room:door(data, dir)
     end
     self.map:include(0, 0, component_name, data)
     self.data_messages('component', component_name)
+    return true
 end
 
 function zentropy.Room:obstacle(data, dir, item)
     if not data then return end
     local component_name, component_mask = zentropy.components:get_obstacle(item, dir, self.mask, self.component_rng)
     if not component_name then
-        for _, msg in ipairs(messages) do print(msg) end
-        error(string.format("obstacle not found: item=%s dir=%s mask=%06o", item, dir, self.mask))
+        self.data_messages('error', string.format("obstacle not found: item=%s dir=%s mask=%06o", item, dir, self.mask))
+        return false
     end
     self.mask = bit32.bor(self.mask, component_mask)
     self.map:include(0, 0, component_name, data)
     self.data_messages('component', component_name)
+    return true
 end
 
 function zentropy.Room:filler()
@@ -408,8 +410,8 @@ function zentropy.Room:treasure(treasure_data)
     end
     self.open_doors = {}
     if not component_name then
-        for _, msg in ipairs(messages) do print(msg) end
-        error(string.format("%s not found: open=%s mask=%06o", component_type, treasure_data.open, self.mask))
+        self.data_messages('error', string.format("%s not found: open=%s mask=%06o", component_type, treasure_data.open, self.mask))
+        return false
     end
     self.mask = bit32.bor(self.mask, component_mask)
 
@@ -423,12 +425,14 @@ function zentropy.Room:treasure(treasure_data)
     treasure_data.rng = self.treasure_rng:biased(component_mask)
     self.map:include(0, 0, component_name, treasure_data)
     self.data_messages('component', component_name)
+    return true
 end
 
 function zentropy.Room:enemy(data)
     local component_name, component_mask = zentropy.components:get_enemy(data.name, self.mask, self.component_rng)
     self.map:include(0, 0, component_name, data)
     self.mask = bit32.bor(self.mask, component_mask)
+    return true
 end
 
 function zentropy.Room:sign(data)
@@ -440,11 +444,12 @@ function zentropy.Room:sign(data)
             self.map:include(0, 0, component_name, data)
             self.data_messages('component', component_name)
             self.mask = bit32.bor(self.mask, section)
-            return
+            return true
         end
     end
     for _, msg in ipairs(messages) do print(msg) end
-    error('cannot fit sign')
+    self.data_messages('error', 'cannot fit sign')
+    return true
 end
 
 return zentropy

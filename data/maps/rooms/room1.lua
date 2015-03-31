@@ -82,7 +82,10 @@ local obstacle_mask = 0
 local walls = {}
 for _, dir in pairs{'north','south','east','west'} do
     if data.doors[dir] then
-        room:door({open=data.doors[dir].open, name=data.doors[dir].name}, dir)
+        if not room:door({open=data.doors[dir].open, name=data.doors[dir].name}, dir) then
+            for _, msg in ipairs(messages) do print(msg) end
+            error('')
+        end
         if not data.doors[dir].open and data.doors[dir].reach ~= 'bomb' then
             room.open_doors[dir] = true
         end
@@ -138,19 +141,33 @@ if obstacle_dir then
     obstacle_data.treasure1 = obstacle_treasure
     obstacle_data.treasure2 = table.remove(normal_treasures)
 
-    room:obstacle(obstacle_data, obstacle_dir, obstacle_item)
+    if not room:obstacle(obstacle_data, obstacle_dir, obstacle_item) then
+        for _, msg in ipairs(messages) do print(msg) end
+        error('')
+    end
 end
 
 for _, treasure_data in ipairs(normal_treasures) do
-    room:treasure(treasure_data)
+    if not room:treasure(treasure_data) then
+        for _, msg in ipairs(messages) do print(msg) end
+        error('')
+    end
 end
 
 for _, enemy_data in ipairs(data.enemies) do
-    room:enemy(enemy_data)
+    if not room:enemy(enemy_data) then
+        for _, msg in ipairs(messages) do print(msg) end
+        error('')
+    end
 end
 
 if #messages > 0 then
-     --room:sign({menu=DialogBox:new{text=messages, game=map:get_game()}})
+    --[[
+     if not room:sign({menu=DialogBox:new{text=messages, game=map:get_game()}}) then
+        for _, msg in ipairs(messages) do print(msg) end
+        error('')
+    end
+    ]]
 end
 
 if not is_special_room(data) then
