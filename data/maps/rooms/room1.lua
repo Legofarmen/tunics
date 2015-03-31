@@ -135,31 +135,22 @@ if obstacle_mask ~= 0 then
         [Util.oct('202000')] = { dir='northsouth' },
         [Util.oct('210000')] = { dir='northeast' },
         [Util.oct('240000')] = { dir='northwest' },
-        [Util.oct('012000')] = { dir='northwest', flip=true },
-        [Util.oct('042000')] = { dir='northwest', flip=true },
+        [Util.oct('012000')] = { dir='southeast' },
+        [Util.oct('042000')] = { dir='southwest' },
         [Util.oct('050000')] = { dir='eastwest' },
-        [Util.oct('212000')] = { dir='west', flip=true },
-        [Util.oct('250000')] = { dir='south', flip=true },
-        [Util.oct('242000')] = { dir='east', flip=true },
-        [Util.oct('052000')] = { dir='north', flip=true },
+        [Util.oct('212000')] = { dir='northsoutheast' },
+        [Util.oct('250000')] = { dir='northeastwest' },
+        [Util.oct('242000')] = { dir='northsouthwest' },
+        [Util.oct('052000')] = { dir='southeastwest' },
     }
 
     local info = OBSTACLE_MAP[obstacle_mask]
     local obstacle_data = {}
 
-    if info.flip then
-        obstacle_data.treasure1 = table.remove(normal_treasures)
-        obstacle_data.treasure2 = obstacle_treasure
-    else
-        obstacle_data.treasure1 = obstacle_treasure
-        obstacle_data.treasure2 = table.remove(normal_treasures)
-    end
+    obstacle_data.treasure1 = obstacle_treasure
+    obstacle_data.treasure2 = table.remove(normal_treasures)
 
     room:obstacle(obstacle_data, info.dir, obstacle_item)
-
-    if info.flip then
-        mask = bit32.bor(mask, Util.oct('000777'))
-    end
 end
 
 for _, treasure_data in ipairs(normal_treasures) do
