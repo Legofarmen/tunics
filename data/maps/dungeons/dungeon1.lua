@@ -7,12 +7,19 @@ local Prng = require 'lib/prng'
 local Layout = require 'lib/layout'
 local zentropy = require 'lib/zentropy'
 
-local master_prng = Prng.from_seed(game:get_value('tier'), game:get_value('seed'))
-local layout = Layout.BidiVisitor
+local tier = game:get_value('tier')
+local seed = game:get_value('seed')
+local nkeys = game:get_value('override_keys') or 3
+local nfairies = game:get_value('override_fairies') or 1
+local nculdesacs = game:get_value('override_culdesacs') or 3
+local tileset_override = game:get_value('override_tileset')
 
+local master_prng = Prng.from_seed(tier, seed)
 local puzzle_rng = master_prng:create()
 local layout_rng = master_prng:create()
 local presentation_rng = master_prng:create()
+
+local layout = Layout.BidiVisitor
 
 local on_started_handlers = {}
 
@@ -26,13 +33,12 @@ function map:on_started()
     end
 end
 
-local puzzle = Puzzle.alpha_dungeon(puzzle_rng, 3, 1, 3, {'hookshot', 'bomb'})
+local puzzle = Puzzle.alpha_dungeon(puzzle_rng, nkeys, nfairies, nculdesacs, {'hookshot', 'bomb'})
 --puzzle:accept(Tree.PrintVisitor:new{})
 
-local tileset = zentropy.tilesets.dungeon[presentation_rng:random(#zentropy.tilesets.dungeon)]
 local floor1, floor2 = zentropy.components:get_floors(presentation_rng)
 
-map:set_tileset(tileset)
+map:set_tileset(tileset_override or zentropy.tilesets.dungeon[presentation_rng:random(#zentropy.tilesets.dungeon)])
 
 local solarus_layout = Layout.solarus_mixin(layout:new{rng=layout_rng}, map, {floor1, floor2})
 solarus_layout:render(puzzle)

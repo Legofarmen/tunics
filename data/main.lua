@@ -123,16 +123,24 @@ function sol.main:on_started()
     sol.language.set_language("en")
 
     local old_game = sol.game.load("zentropy1.dat")
-    local seed = old_game:get_value('seed') or 1
-    local tier = old_game:get_value('tier') or 1
+    local old_values = {}
+    for _, name in pairs{'seed', 'tier', 'override_tileset', 'override_keys', 'override_fairies', 'override_culdesacs'} do
+        old_values[name] = old_game:get_value(name)
+    end
+    old_values.seed = old_values.seed or 1
+    old_values.tier = old_values.tier or 1
+
     sol.game.delete("zentropy1.dat")
     local game = sol.game.load("zentropy1.dat")
     game:set_ability("sword", 1)
     game:set_max_life(12)
     game:set_life(12)
     game:set_value('small_key_amount', 0)
-    game:set_value('seed', seed)
-    game:set_value('tier', tier)
+
+    for name, value in pairs(old_values) do
+        game:set_value(name, value)
+    end
+
     game:save()
 
     require('lib/map_include.lua')
