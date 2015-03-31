@@ -104,7 +104,6 @@ map{ id = "components/puzzle_000777_1", description = "Puzzle 000777 1" }
 map{ id = "components/puzzle_000006_1", description = "Puzzle 000006 1" }
 map{ id = "components/puzzle_000003_1", description = "Puzzle 000003 1 " }
 map{ id = "components/obstacle_lamp_any_000700_1", description = "Obstacle lamp any 00700 1" }
-map{ id = "components/obstacle_bomb/obstacle_bomb", description = "Obstacle bomb" }
 map{ id = "components/obstacle_bomb/obstacle_bomb_north_000700_1", description = "obstacle_bomb_north_000700_1" }
 map{ id = "components/obstacle_bomb/obstacle_bomb_northeast_000700_1", description = "obstacle_bomb_northeast_000700_1" }
 map{ id = "components/obstacle_bomb/obstacle_bomb_northwest_000700_1", description = "obstacle_bomb_northwest_000700_1" }
@@ -119,12 +118,15 @@ map{ id = "components/obstacle_bomb/obstacle_bomb_eastwest_000444_1", descriptio
 map{ id = "components/obstacle_bomb/obstacle_bomb_northsouth_000700_1", description = "obstacle_bomb_northsouth_000700_1" }
 map{ id = "components/obstacle_bomb/obstacle_bomb_east_000111_1", description = "obstacle_bomb_east_000111_1" }
 map{ id = "components/obstacle_bomb/obstacle_bomb_west_000444_1", description = "obstacle_bomb_west_000444_1" }
+map{ id = "components/filler_202777_1", description = "Filler 202777 1" }
 
 tileset{ id = "light_world", description = "Light World" }
 tileset{ id = "dungeon_brick_gray_1", description = "Dungeon brick gray 1" }
 tileset{ id = "dungeon_smoothbrick_green_1", description = "Dungeon smoothbrick green 1" }
 tileset{ id = "dungeon_smoothbrick_desert_1", description = "Dungeon smoothbrick desert 1" }
 tileset{ id = "dungeon_ganon_brown_1", description = "Dungeon ganon brown 1" }
+tileset{ id = "dungeon_brick_blue_1", description = "Dungeon brick blue 1" }
+tileset{ id = "dungeon_cave_brown_1", description = "Dungeon cave brown 1" }
 
 sprite{ id = "entities/block", description = "Block" }
 sprite{ id = "entities/chest", description = "Chest" }

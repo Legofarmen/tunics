@@ -9,17 +9,8 @@ properties{
 
 tile{
   layer = 1,
-  x = 40,
-  y = 208,
-  width = 240,
-  height = 8,
-  pattern = "wall_border.2",
-}
-
-tile{
-  layer = 1,
   x = 32,
-  y = 208,
+  y = 200,
   width = 8,
   height = 8,
   pattern = "wall_border.corner.3",
@@ -28,7 +19,7 @@ tile{
 tile{
   layer = 1,
   x = 280,
-  y = 208,
+  y = 200,
   width = 8,
   height = 8,
   pattern = "wall_border.corner.4",
@@ -39,7 +30,7 @@ tile{
   x = 32,
   y = 144,
   width = 256,
-  height = 72,
+  height = 64,
   pattern = "hole",
 }
 
@@ -55,7 +46,7 @@ tile{
 tile{
   layer = 1,
   x = 32,
-  y = 200,
+  y = 192,
   width = 16,
   height = 16,
   pattern = "wall_hole.corner.3",
@@ -64,7 +55,7 @@ tile{
 tile{
   layer = 1,
   x = 272,
-  y = 200,
+  y = 192,
   width = 16,
   height = 16,
   pattern = "wall_hole.corner.4",
@@ -91,7 +82,7 @@ tile{
 tile{
   layer = 1,
   x = 48,
-  y = 200,
+  y = 192,
   width = 32,
   height = 16,
   pattern = "wall_hole.2",
@@ -102,7 +93,7 @@ tile{
   x = 272,
   y = 160,
   width = 16,
-  height = 40,
+  height = 32,
   pattern = "wall_hole.4",
 }
 
@@ -111,14 +102,14 @@ tile{
   x = 32,
   y = 160,
   width = 16,
-  height = 40,
+  height = 32,
   pattern = "wall_hole.3",
 }
 
 tile{
   layer = 1,
   x = 96,
-  y = 184,
+  y = 176,
   width = 16,
   height = 16,
   pattern = "wall_hole.2",
@@ -127,7 +118,7 @@ tile{
 tile{
   layer = 1,
   x = 80,
-  y = 200,
+  y = 192,
   width = 16,
   height = 16,
   pattern = "wall_hole.corner.4",
@@ -136,7 +127,7 @@ tile{
 tile{
   layer = 1,
   x = 80,
-  y = 184,
+  y = 176,
   width = 16,
   height = 16,
   pattern = "wall_hole.corner_reverse.4",
@@ -145,7 +136,7 @@ tile{
 tile{
   layer = 1,
   x = 112,
-  y = 184,
+  y = 176,
   width = 16,
   height = 16,
   pattern = "wall_hole.corner_reverse.3",
@@ -154,7 +145,7 @@ tile{
 tile{
   layer = 1,
   x = 112,
-  y = 200,
+  y = 192,
   width = 16,
   height = 16,
   pattern = "wall_hole.corner.3",
@@ -163,7 +154,7 @@ tile{
 tile{
   layer = 1,
   x = 208,
-  y = 184,
+  y = 176,
   width = 16,
   height = 16,
   pattern = "wall_hole.2",
@@ -172,7 +163,7 @@ tile{
 tile{
   layer = 1,
   x = 192,
-  y = 200,
+  y = 192,
   width = 16,
   height = 16,
   pattern = "wall_hole.corner.4",
@@ -181,7 +172,7 @@ tile{
 tile{
   layer = 1,
   x = 192,
-  y = 184,
+  y = 176,
   width = 16,
   height = 16,
   pattern = "wall_hole.corner_reverse.4",
@@ -190,7 +181,7 @@ tile{
 tile{
   layer = 1,
   x = 224,
-  y = 184,
+  y = 176,
   width = 16,
   height = 16,
   pattern = "wall_hole.corner_reverse.3",
@@ -199,7 +190,7 @@ tile{
 tile{
   layer = 1,
   x = 224,
-  y = 200,
+  y = 192,
   width = 16,
   height = 16,
   pattern = "wall_hole.corner.3",
@@ -208,7 +199,7 @@ tile{
 tile{
   layer = 1,
   x = 240,
-  y = 200,
+  y = 192,
   width = 32,
   height = 16,
   pattern = "wall_hole.2",
@@ -217,7 +208,7 @@ tile{
 tile{
   layer = 1,
   x = 128,
-  y = 200,
+  y = 192,
   width = 64,
   height = 16,
   pattern = "wall_hole.2",
@@ -226,7 +217,7 @@ tile{
 tile{
   layer = 1,
   x = 96,
-  y = 200,
+  y = 192,
   width = 16,
   height = 16,
   pattern = "tongue",
@@ -235,7 +226,7 @@ tile{
 tile{
   layer = 1,
   x = 208,
-  y = 200,
+  y = 192,
   width = 16,
   height = 16,
   pattern = "tongue",
