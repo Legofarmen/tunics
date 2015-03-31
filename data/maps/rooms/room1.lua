@@ -1,18 +1,34 @@
 local map, data = ...
 
 local rng = data.rng
-
-local components_rng = rng:create()
 local room_rng = rng:create()
-local treasures_rng = rng:create()
-local puzzle_rng = rng:create()
+
 
 bit32 = bit32 or bit
 
 local Class = require 'lib/class.lua'
 local Util = require 'lib/util'
 local List = require 'lib/list'
-local Zentropy = require 'lib/zentropy'
+local zentropy = require 'lib/zentropy'
+
+local messages = {}
+function data_messages(prefix, data)
+    if type(data) == 'table' then
+        local n = 0
+        for key, value in Util.pairs_by_keys(data) do
+            data_messages(prefix .. '.' .. key, value)
+            n = n + 1
+        end
+        if n == 0 then
+            table.insert(messages, prefix .. ' = {}')
+        end
+    elseif type(data) ~= 'function' then
+        table.insert(messages, prefix .. ' = ' .. data)
+    end
+end
+data_messages('data', data)
+
+local room = zentropy.Room:new{rng=rng:create(), map=map, data_messages=data_messages}
 
 local DialogBox = Class:new()
 
@@ -51,128 +67,6 @@ function DialogBox:on_draw(dst_surface)
     end
 end
 
-local messages = {}
-function data_messages(prefix, data)
-    if type(data) == 'table' then
-        local n = 0
-        for key, value in Util.pairs_by_keys(data) do
-            data_messages(prefix .. '.' .. key, value)
-            n = n + 1
-        end
-        if n == 0 then
-            table.insert(messages, prefix .. ' = {}')
-        end
-    elseif type(data) ~= 'function' then
-        table.insert(messages, prefix .. ' = ' .. data)
-    end
-end
-data_messages('data', data)
-
-
-local mask = 0
-function door(data, dir)
-    if not data then return end
-    local component_name, component_mask = Zentropy.components:get_door(data.open, dir, mask, components_rng)
-    if not component_name then
-        for _, msg in ipairs(messages) do print(msg) end
-        error(string.format("door not found: open=%s dir=%s mask=%06o", data.open, dir, mask))
-    end
-    mask = bit32.bor(mask, component_mask)
-    data.rewrite = {}
-    function data.rewrite.door(properties)
-        properties.savegame_variable = data.name
-        return properties
-    end
-    map:include(0, 0, component_name, data)
-    data_messages('component', component_name)
-end
-
-function obstacle(data, dir, item)
-    if not data then return end
-    local component_name, component_mask = Zentropy.components:get_obstacle(item, dir, mask, components_rng)
-    if not component_name then
-        for _, msg in ipairs(messages) do print(msg) end
-        error(string.format("obstacle not found: item=%s dir=%s mask=%06o", item, dir, mask))
-    end
-    mask = bit32.bor(mask, component_mask)
-    map:include(0, 0, component_name, data)
-    data_messages('component', component_name)
-end
-
-local open_doors = {}
-
-function filler()
-    local filler_data = {
-        rng=puzzle_rng,
-    }
-    local component_name, component_mask = Zentropy.components:get_filler(mask, components_rng)
-    if component_name then
-        mask = bit32.bor(mask, component_mask)
-        if puzzle_rng:random() < 0.5 then
-            filler_data.doors = open_doors
-            open_doors = {}
-        else
-            filler_data.doors = {}
-        end
-        map:include(0, 0, component_name, filler_data)
-        data_messages('component', component_name)
-        return true
-    end
-    return false
-end
-
-function treasure(treasure_data)
-    local component_name, component_mask
-    local component_type
-    if treasure_data.see then
-        component_name, component_mask = Zentropy.components:get_puzzle(mask, components_rng)
-        component_type = 'puzzle'
-        treasure_data.doors = {}
-        treasure_data.rng = puzzle_rng
-    else
-        component_name, component_mask = Zentropy.components:get_treasure(treasure_data.open, mask, components_rng)
-        component_type = 'treasure'
-    end
-    open_doors = {}
-    if not component_name then
-        for _, msg in ipairs(messages) do print(msg) end
-        error(string.format("%s not found: open=%s mask=%06o", component_type, treasure_data.open, mask))
-    end
-    mask = bit32.bor(mask, component_mask)
-
-    treasure_data.section = component_mask
-    treasure_data.rewrite = {}
-    function treasure_data.rewrite.chest(properties)
-        properties.treasure_savegame_variable = treasure_data.name
-        properties.treasure_name = treasure_data.item_name
-        return properties
-    end
-    treasure_data.rng = treasures_rng:biased(component_mask)
-    map:include(0, 0, component_name, treasure_data)
-    data_messages('component', component_name)
-end
-
-function enemy(data)
-    local component_name, component_mask = zentropy.components:get_enemy(data.name, mask, components_rng)
-    map:include(0, 0, component_name, data)
-    mask = bit32.bor(mask, component_mask)
-end
-
-function sign(data)
-    for _, section_string in ipairs{'400', '200', '100', '040', '020', '010', '004', '002', '001'} do
-        local section = Util.oct(section_string)
-        if bit32.band(mask, section) == 0 then
-            local component_name = string.format('components/sign')
-            data.section = section
-            map:include(0, 0, component_name, data)
-            data_messages('component', component_name)
-            mask = bit32.bor(mask, section)
-            return
-        end
-    end
-    for _, msg in ipairs(messages) do print(msg) end
-    error('cannot fit sign')
-end
 
 function is_special_room(data)
     for dir, door in pairs(data.doors) do
@@ -181,6 +75,7 @@ function is_special_room(data)
         end
     end
 end
+
 
 
 local DIRS = {
@@ -194,9 +89,9 @@ local obstacle_mask = 0
 local walls = {}
 for dir_mask, dir in pairs(DIRS) do
     if data.doors[dir] then
-        door({open=data.doors[dir].open, name=data.doors[dir].name}, dir)
+        room:door({open=data.doors[dir].open, name=data.doors[dir].name}, dir)
         if not data.doors[dir].open and data.doors[dir].reach ~= 'bomb' then
-            open_doors[dir] = true
+            room.open_doors[dir] = true
         end
         if data.doors[dir].reach then
             obstacle_mask = bit32.bor(obstacle_mask, dir_mask)
@@ -260,7 +155,7 @@ if obstacle_mask ~= 0 then
         obstacle_data.treasure2 = table.remove(normal_treasures)
     end
 
-    obstacle(obstacle_data, info.dir, obstacle_item)
+    room:obstacle(obstacle_data, info.dir, obstacle_item)
 
     if info.flip then
         mask = bit32.bor(mask, Util.oct('000777'))
@@ -268,19 +163,19 @@ if obstacle_mask ~= 0 then
 end
 
 for _, treasure_data in ipairs(normal_treasures) do
-    treasure(treasure_data)
+    room:treasure(treasure_data)
 end
 
 for _, enemy_data in ipairs(data.enemies) do
-    enemy(enemy_data)
+    room:enemy(enemy_data)
 end
 
 if #messages > 0 then
-     --sign({menu=DialogBox:new{text=messages, game=map:get_game()}})
+     --room:sign({menu=DialogBox:new{text=messages, game=map:get_game()}})
 end
 
 if not is_special_room(data) then
     local sections = {'111', '700', '444', '007', '100', '400', '004', '001'}
     List.shuffle(rng:create(), sections)
-    repeat until not filler()
+    repeat until not room:filler()
 end

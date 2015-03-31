@@ -331,4 +331,120 @@ function zentropy.db.Tilesets:parse(tilesets)
     return self
 end
 
+zentropy.Room = Class:new()
+
+function zentropy.Room:new(o)
+    assert(o.rng)
+    assert(o.map)
+    o.component_rng = o.component_rng or o.rng:create()
+    o.puzzle_rng = o.puzzle_rng or o.rng:create()
+    o.treasure_rng = o.treasure_rng or o.rng:create()
+    o.mask = o.mask or 0
+    o.open_doors = o.open_doors or {}
+    o.data_messages = o.data_messages or function () end
+    return Class.new(self, o)
+end
+
+function zentropy.Room:door(data, dir)
+    if not data then return end
+    local component_name, component_mask = zentropy.components:get_door(data.open, dir, self.mask, self.component_rng)
+    if not component_name then
+        for _, msg in ipairs(messages) do print(msg) end
+        error(string.format("door not found: open=%s dir=%s mask=%06o", data.open, dir, self.mask))
+    end
+    self.mask = bit32.bor(self.mask, component_mask)
+    data.rewrite = {}
+    function data.rewrite.door(properties)
+        properties.savegame_variable = data.name
+        return properties
+    end
+    self.map:include(0, 0, component_name, data)
+    self.data_messages('component', component_name)
+end
+
+function zentropy.Room:obstacle(data, dir, item)
+    if not data then return end
+    local component_name, component_mask = zentropy.components:get_obstacle(item, dir, self.mask, self.component_rng)
+    if not component_name then
+        for _, msg in ipairs(messages) do print(msg) end
+        error(string.format("obstacle not found: item=%s dir=%s mask=%06o", item, dir, self.mask))
+    end
+    self.mask = bit32.bor(self.mask, component_mask)
+    self.map:include(0, 0, component_name, data)
+    self.data_messages('component', component_name)
+end
+
+function zentropy.Room:filler()
+    local filler_data = {
+        rng=self.puzzle_rng,
+    }
+    local component_name, component_mask = zentropy.components:get_filler(self.mask, self.component_rng)
+    if component_name then
+        self.mask = bit32.bor(self.mask, component_mask)
+        if self.puzzle_rng:random() < 0.5 then
+            filler_data.doors = self.open_doors
+            self.open_doors = {}
+        else
+            filler_data.doors = {}
+        end
+        self.map:include(0, 0, component_name, filler_data)
+        self.data_messages('component', component_name)
+        return true
+    end
+    return false
+end
+
+function zentropy.Room:treasure(treasure_data)
+    local component_name, component_mask
+    local component_type
+    if treasure_data.see then
+        component_name, component_mask = zentropy.components:get_puzzle(self.mask, self.component_rng)
+        component_type = 'puzzle'
+        treasure_data.doors = {}
+        treasure_data.rng = self.puzzle_rng
+    else
+        component_name, component_mask = zentropy.components:get_treasure(treasure_data.open, self.mask, self.component_rng)
+        component_type = 'treasure'
+    end
+    self.open_doors = {}
+    if not component_name then
+        for _, msg in ipairs(messages) do print(msg) end
+        error(string.format("%s not found: open=%s mask=%06o", component_type, treasure_data.open, self.mask))
+    end
+    self.mask = bit32.bor(self.mask, component_mask)
+
+    treasure_data.section = component_mask
+    treasure_data.rewrite = {}
+    function treasure_data.rewrite.chest(properties)
+        properties.treasure_savegame_variable = treasure_data.name
+        properties.treasure_name = treasure_data.item_name
+        return properties
+    end
+    treasure_data.rng = self.treasure_rng:biased(component_mask)
+    self.map:include(0, 0, component_name, treasure_data)
+    self.data_messages('component', component_name)
+end
+
+function zentropy.Room:enemy(data)
+    local component_name, component_mask = zentropy.components:get_enemy(data.name, self.mask, self.component_rng)
+    self.map:include(0, 0, component_name, data)
+    self.mask = bit32.bor(self.mask, component_mask)
+end
+
+function zentropy.Room:sign(data)
+    for _, section_string in ipairs{'400', '200', '100', '040', '020', '010', '004', '002', '001'} do
+        local section = Util.oct(section_string)
+        if bit32.band(self.mask, section) == 0 then
+            local component_name = string.format('components/sign')
+            data.section = section
+            self.map:include(0, 0, component_name, data)
+            self.data_messages('component', component_name)
+            self.mask = bit32.bor(self.mask, section)
+            return
+        end
+    end
+    for _, msg in ipairs(messages) do print(msg) end
+    error('cannot fit sign')
+end
+
 return zentropy
