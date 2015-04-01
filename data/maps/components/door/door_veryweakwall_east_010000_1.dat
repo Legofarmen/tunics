@@ -86,7 +86,7 @@ door{
   x = 288,
   y = 112,
   name = "door",
-  direction = 2,
+  direction = 0,
   sprite = "entities/door_very_weak_wall",
   opening_method = "explosion",
 }
