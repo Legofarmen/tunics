@@ -107,31 +107,6 @@ function submenu:previous_submenu()
   sol.menu.start(self.game, submenus[submenu_index], false)
 end
 
-function submenu:on_command_pressed(command)
-
-    local handled = false
-
-    if self.game:is_dialog_enabled() then
-        -- Commands will be applied to the dialog box only.
-        return false
-    end
-
-    -- The save dialog is not shown
-    if command == "attack" then
-        sol.audio.play_sound("message_end")
-        self.save_dialog_choice = 0
-        self.question_text_1:set_text_key("save_dialog.save_question_0")
-        self.question_text_2:set_text_key("save_dialog.save_question_1")
-        self.action_command_effect_saved = self.game:get_custom_command_effect("action")
-        self.game:set_custom_command_effect("action", "validate")
-        self.attack_command_effect_saved = self.game:get_custom_command_effect("attack")
-        self.game:set_custom_command_effect("attack", "validate")
-        handled = true
-    end
-
-    return handled
-end
-
 function submenu:draw_background(dst_surface)
 
   local submenu_index = self.game:get_value("pause_last_submenu")
@@ -139,6 +114,10 @@ function submenu:draw_background(dst_surface)
   self.background_surfaces:draw_region(
       320 * (submenu_index - 1), 0, 320, 240,
       dst_surface, (width - 320) / 2, (height - 240) / 2)
+end
+
+function submenu:on_command_pressed(command)
+    return false
 end
 
 return submenu

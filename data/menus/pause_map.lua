@@ -1,14 +1,16 @@
-local Class = require 'lib/class'
+local submenu = require("menus/pause_submenu")
+local MapMenu = submenu:new()
 
-local MapMenu = Class:new{
-    colors={
-        [1] = {150,150,150},
-        [2] = {200,200,200},
-        entrance = {255,255,255},
-    },
+MapMenu.colors={
+    [1] = {150,150,150},
+    [2] = {200,200,200},
+    entrance = {255,255,255},
 }
 
 function MapMenu:on_started()
+
+  submenu.on_started(self)
+
     local width, height = sol.video.get_quest_size()
     local center_x, center_y = width / 2, height / 2
     self.backgrounds = sol.surface.create("pause_submenus.png", true)
@@ -112,5 +114,26 @@ function MapMenu:draw_hero_point()
     local hero_x, hero_y = self.game:get_hero():get_position()
     self.hero_point_sprite:draw(self.map_surface, 2 * math.floor(6 * (hero_x - 40) / 320), 2 * math.floor(6 * (hero_y - 40) / 240))
 end
+
+function MapMenu:on_command_pressed(command)
+
+    local handled = submenu.on_command_pressed(self, command)
+
+    if not handled then
+
+        if command == "left" then
+            self:previous_submenu()
+            handled = true
+
+        elseif command == "right" then
+            self:next_submenu()
+            handled = true
+
+        end
+    end
+
+    return handled
+end
+
 
 return MapMenu
