@@ -1,5 +1,5 @@
 local Class = require 'lib/class'
-local Util = require 'lib/util'
+local util = require 'lib/util'
 
 bit32 = bit32 or bit
 
@@ -8,10 +8,10 @@ zentropy = zentropy or {
         Project = {},
         Components = Class:new{
             CORNER_SECTION_MASKS = {
-                Util.oct('000001'),
-                Util.oct('000004'),
-                Util.oct('000100'),
-                Util.oct('000400'),
+                util.oct('000001'),
+                util.oct('000004'),
+                util.oct('000100'),
+                util.oct('000400'),
             },
         },
         Tilesets = Class:new{},
@@ -68,7 +68,7 @@ function zentropy.db.Components:obstacle(id, iterator)
     local dir = iterator()
     local mask_string = iterator()
     if mask_string == nil then return false end
-    local mask = Util.oct(mask_string)
+    local mask = util.oct(mask_string)
     self.obstacles[item] = self.obstacles[item] or {}
     self.obstacles[item][dir] = self.obstacles[item][dir] or {}
     table.insert(self.obstacles[item][dir], {
@@ -86,7 +86,7 @@ function zentropy.db.Components:treasure(id, iterator)
     if mask_string == 'any' then
         mask = mask_string
     else
-        mask = Util.oct(mask_string)
+        mask = util.oct(mask_string)
     end
     self.treasures[open] = self.treasures[open] or {}
     table.insert(self.treasures[open], {
@@ -100,7 +100,7 @@ function zentropy.db.Components:puzzle(id, iterator)
     local mask_string = iterator()
     if mask_string == nil then return false end
     local mask
-    mask = Util.oct(mask_string)
+    mask = util.oct(mask_string)
     table.insert(self.puzzles, {
         id=id,
         mask=mask,
@@ -113,7 +113,7 @@ function zentropy.db.Components:door(id, iterator)
     local dir = iterator()
     local mask_string = iterator()
     if mask_string == nil then return false end
-    local mask = Util.oct(mask_string)
+    local mask = util.oct(mask_string)
     self.doors[open] = self.doors[open] or {}
     self.doors[open][dir] = self.doors[open][dir] or {}
     table.insert(self.doors[open][dir], {
@@ -130,7 +130,7 @@ function zentropy.db.Components:enemy(id, iterator)
     if mask_string == 'any' then
         mask = mask_string
     else
-        mask = Util.oct(mask_string)
+        mask = util.oct(mask_string)
     end
     table.insert(self.enemies, {
         id=id,
@@ -146,7 +146,7 @@ function zentropy.db.Components:filler(id, iterator)
     if mask_string == 'any' then
         mask = mask_string
     else
-        mask = Util.oct(mask_string)
+        mask = util.oct(mask_string)
     end
     table.insert(self.fillers, {
         id=id,
@@ -159,7 +159,7 @@ function zentropy.db.Components:enemy(id, iterator)
     local name = iterator()
     local mask_string = iterator()
     if mask_string == nil then return false end
-    local mask = Util.oct(mask_string)
+    local mask = util.oct(mask_string)
     self.enemies[name] = self.enemies[name] or {}
     table.insert(self.enemies[name], {
         id=id,
@@ -437,7 +437,7 @@ end
 
 function zentropy.Room:sign(data)
     for _, section_string in ipairs{'400', '200', '100', '040', '020', '010', '004', '002', '001'} do
-        local section = Util.oct(section_string)
+        local section = util.oct(section_string)
         if bit32.band(self.mask, section) == 0 then
             local component_name = string.format('components/sign')
             data.section = section
