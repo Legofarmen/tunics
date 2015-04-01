@@ -79,12 +79,6 @@ function Puzzle.big_chest_step(item_name)
     end
 end
 
-function Puzzle.bomb_doors_step(root)
-    root:each_child(function (key, head)
-        root:update_child(key, head:with_needs{see='map',reach='bomb',open='bomb'})
-    end)
-end
-
 function Puzzle.locked_door_step(rng, blackboard)
     return function (root)
         local bigkey_found = false
