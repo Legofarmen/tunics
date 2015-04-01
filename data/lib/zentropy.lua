@@ -171,7 +171,7 @@ end
 function zentropy.db.Components:parse(maps)
     maps = maps or zentropy.db.Project:parse().map
 
-    for k, v in pairs(maps) do
+    for k, v in util.pairs_by_keys(maps) do
         if string.sub(v.id, 0, 11) == 'components/' then
             local parts = string.gmatch(string.gsub(v.id, '.*/', ''), '[^_]+')
             local part = parts()
@@ -195,7 +195,7 @@ function zentropy.db.Components:get_door(open, dir, mask, rng)
         return
     end
     local entries = {}
-    for _, entry in pairs(self.doors[open][dir]) do
+    for _, entry in util.pairs_by_keys(self.doors[open][dir]) do
         if bit32.band(mask, entry.mask) == 0 then
             table.insert(entries, entry)
         end
@@ -216,7 +216,7 @@ function zentropy.db.Components:get_obstacle(item, dir, mask, rng)
         return
     end
     local entries = {}
-    for _, entry in pairs(self.obstacles[item][dir]) do
+    for _, entry in util.pairs_by_keys(self.obstacles[item][dir]) do
         if bit32.band(mask, entry.mask) == 0 then
             table.insert(entries, entry)
         end
@@ -230,12 +230,12 @@ end
 
 function zentropy.db.Components:get_filler(mask, rng)
     local entries = {}
-    for _, entry in pairs(self.fillers) do
+    for _, entry in util.pairs_by_keys(self.fillers) do
         if bit32.band(mask, entry.mask) == 0 then
             table.insert(entries, entry)
         end
     end
-    for _, entry in pairs(self.puzzles) do
+    for _, entry in util.pairs_by_keys(self.puzzles) do
         if bit32.band(mask, entry.mask) == 0 then
             table.insert(entries, entry)
         end
@@ -253,7 +253,7 @@ function zentropy.db.Components:get_treasure(open, mask, rng)
         return
     end
     local entries = {}
-    for _, entry in pairs(self.treasures[open]) do
+    for _, entry in util.pairs_by_keys(self.treasures[open]) do
         if entry.mask == 'any' then
             for _, section in ipairs(self.CORNER_SECTION_MASKS) do
                 if bit32.band(mask, section) == 0 then
@@ -273,7 +273,7 @@ end
 
 function zentropy.db.Components:get_puzzle(mask, rng)
     local entries = {}
-    for _, entry in pairs(self.puzzles) do
+    for _, entry in util.pairs_by_keys(self.puzzles) do
         table.insert(entries, entry)
     end
     if #entries == 0 then
@@ -297,7 +297,7 @@ function zentropy.db.Components:get_enemy(name, mask, rng)
         return
     end
     local entries = {}
-    for _, entry in pairs(self.enemies[name]) do
+    for _, entry in util.pairs_by_keys(self.enemies[name]) do
         if bit32.band(mask, entry.mask) == 0 then
             table.insert(entries, entry)
         end
@@ -318,7 +318,7 @@ end
 function zentropy.db.Tilesets:parse(tilesets)
     tilesets = tilesets or zentropy.db.Project:parse().tileset
 
-    for k, v in pairs(tilesets) do
+    for k, v in util.pairs_by_keys(tilesets) do
         local parts = string.gmatch(v.id, '[^_]+')
         local part = parts()
         if self[part] then
