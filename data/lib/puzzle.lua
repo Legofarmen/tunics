@@ -64,10 +64,11 @@ function Puzzle.hide_treasures_step(root)
     root:accept(HideTreasuresVisitor)
 end
 
-function Puzzle.obstacle_step(item_name, open)
+function Puzzle.obstacle_step(item_name, open, see)
+    see = see or 'nothing'
     return function (root)
         root:each_child(function (key, head)
-            root:update_child(key, head:with_needs{see='nothing',reach=item_name,open=open})
+            root:update_child(key, head:with_needs{see=see,reach=item_name,open=open})
         end)
     end
 end
@@ -240,7 +241,7 @@ function Puzzle.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, item_names)
 
     function get_item_obstacle(item_name)
         if item_name == 'bomb' then
-            return Puzzle.obstacle_step(item_name, 'bomb')
+            return Puzzle.obstacle_step(item_name, 'bomb', 'map')
         else
             return Puzzle.obstacle_step(item_name)
         end
