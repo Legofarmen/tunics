@@ -78,15 +78,16 @@ end
 
 
 
-local obstacle_mask = 0
 local walls = {}
 for _, dir in pairs{'north','south','east','west'} do
     if data.doors[dir] then
-        if not room:door({open=data.doors[dir].open, name=data.doors[dir].name}, dir) then
-            for _, msg in ipairs(messages) do print(msg) end
-            error('')
+        if not data.doors[dir].reach then
+            if not room:door({open=data.doors[dir].open, name=data.doors[dir].name}, dir) then
+                for _, msg in ipairs(messages) do print(msg) end
+                error('')
+            end
         end
-        if not data.doors[dir].open and data.doors[dir].reach ~= 'bomb' then
+        if not data.doors[dir].open and not data.doors[dir].reach and not data.doors[dir].see then
             room.open_doors[dir] = true
         end
         if data.doors[dir].reach then
@@ -98,17 +99,22 @@ for _, dir in pairs{'north','south','east','west'} do
 end
 
 local obstacle_dir = nil
+local obstacle_doors = {}
 if data.doors.north and data.doors.north.reach then
     obstacle_dir = (obstacle_dir or '') .. 'north'
+    obstacle_doors.north = data.doors.north
 end
 if data.doors.south and data.doors.south.reach then
     obstacle_dir = (obstacle_dir or '') .. 'south'
+    obstacle_doors.south = data.doors.south
 end
 if data.doors.east and data.doors.east.reach then
     obstacle_dir = (obstacle_dir or '') .. 'east'
+    obstacle_doors.east = data.doors.east
 end
 if data.doors.west and data.doors.west.reach then
     obstacle_dir = (obstacle_dir or '') .. 'west'
+    obstacle_doors.west = data.doors.west
 end
 
 for _, dir in ipairs(walls) do
@@ -129,7 +135,7 @@ for _, treasure_data in ipairs(data.treasures) do
     end
 end
 
-if obstacle_treasure and obstacle_mask == 0 then
+if obstacle_treasure then
     obstacle_dir = walls[room_rng:random(#walls)]
     obstacle_item = obstacle_treasure.reach
 end
@@ -140,6 +146,8 @@ if obstacle_dir then
 
     obstacle_data.treasure1 = obstacle_treasure
     obstacle_data.treasure2 = table.remove(normal_treasures)
+    obstacle_data.doors = obstacle_doors
+    obstacle_data.room = room
 
     if not room:obstacle(obstacle_data, obstacle_dir, obstacle_item) then
         for _, msg in ipairs(messages) do print(msg) end

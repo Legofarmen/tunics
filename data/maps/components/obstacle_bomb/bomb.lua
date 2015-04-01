@@ -1,13 +1,10 @@
 local bomb = {}
 
-function bomb.init(map, data, directions)
-	for _, dir in ipairs(directions) do
-		local door_u = map:get_entity('door_' .. dir):get_userdata()
-		function door_u:on_opened()
-			map:get_entity('door_'  .. dir .. '_closed'):set_enabled(false)
-			map:get_entity('top_'  .. dir .. '_open'):set_enabled(true)
-			sol.audio.play_sound('secret')
-		end
+local util = require 'lib/util'
+
+function bomb.init(map, data)
+	for dir, door_data in pairs(data.doors) do
+        data.room:door({open='bomb', name=door_data.name}, dir)
 	end
 	
 	if data.treasure1 then

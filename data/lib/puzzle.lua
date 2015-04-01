@@ -53,7 +53,7 @@ function Puzzle.boss_step(root)
 end
 
 function Puzzle.fairy_step(root)
-    root:add_child(Tree.Enemy:new{name='fairy'}:with_needs{see='map',reach='bomb'})
+    root:add_child(Tree.Enemy:new{name='fairy'}:with_needs{see='map',reach='bomb',open='bomb'})
 end
 
 function Puzzle.culdesac_step(root)
@@ -80,7 +80,7 @@ end
 
 function Puzzle.bomb_doors_step(root)
     root:each_child(function (key, head)
-        root:update_child(key, head:with_needs{see='map',reach='bomb'})
+        root:update_child(key, head:with_needs{see='map',reach='bomb',open='bomb'})
     end)
 end
 

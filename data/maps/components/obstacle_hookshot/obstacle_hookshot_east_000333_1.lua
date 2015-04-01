@@ -28,3 +28,7 @@ end
 
 replace(placeholder1, data.treasure1)
 replace(placeholder2, data.treasure2)
+
+for dir, door_data in pairs(data.doors) do
+    data.room:door({open=door_data.open, name=door_data.name}, dir)
+end
