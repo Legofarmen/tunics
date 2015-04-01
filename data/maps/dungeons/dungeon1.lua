@@ -33,7 +33,7 @@ function map:on_started()
     end
 end
 
-local puzzle = Puzzle.alpha_dungeon(puzzle_rng, nkeys, nfairies, nculdesacs, {'hookshot', 'bomb'})
+local puzzle = Puzzle.alpha_dungeon(puzzle_rng, nkeys, nfairies, nculdesacs, {'bomb'})
 --puzzle:accept(Tree.PrintVisitor:new{})
 
 local floor1, floor2 = zentropy.components:get_floors(presentation_rng)

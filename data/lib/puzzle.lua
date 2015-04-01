@@ -64,10 +64,10 @@ function Puzzle.hide_treasures_step(root)
     root:accept(HideTreasuresVisitor)
 end
 
-function Puzzle.obstacle_step(item_name)
+function Puzzle.obstacle_step(item_name, open)
     return function (root)
         root:each_child(function (key, head)
-            root:update_child(key, head:with_needs{see='nothing',reach=item_name})
+            root:update_child(key, head:with_needs{see='nothing',reach=item_name,open=open})
         end)
     end
 end
@@ -239,7 +239,11 @@ end
 function Puzzle.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, item_names)
 
     function get_item_obstacle(item_name)
-        return Puzzle.obstacle_step(item_name)
+        if item_name == 'bomb' then
+            return Puzzle.obstacle_step(item_name, 'bomb')
+        else
+            return Puzzle.obstacle_step(item_name)
+        end
     end
 
     local d = Puzzle.Dependencies:new()
@@ -255,7 +259,6 @@ function Puzzle.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, item_names)
     d:dependency('hidetreasures', 'compass')
 
     for _, item_name in ipairs(item_names) do
-        print(item_name)
         local obstacle_name = string.format('obstacle_%s', item_name)
         local bigchest_name = string.format('bigchest_%s', item_name)
         d:single(obstacle_name, get_item_obstacle(item_name))
