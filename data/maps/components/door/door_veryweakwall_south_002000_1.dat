@@ -1,0 +1,113 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  tileset = "dungeon_brick_gray_1",
+  music = "same",
+}
+
+tile{
+  layer = 1,
+  x = 168,
+  y = 208,
+  width = 8,
+  height = 16,
+  pattern = "door_blast.2.support.2",
+}
+
+tile{
+  layer = 1,
+  x = 144,
+  y = 208,
+  width = 8,
+  height = 16,
+  pattern = "door_blast.2.support.1",
+}
+
+tile{
+  layer = 1,
+  x = 152,
+  y = 208,
+  width = 16,
+  height = 16,
+  pattern = "door_blast.2",
+}
+
+tile{
+  layer = 1,
+  x = 152,
+  y = 224,
+  width = 16,
+  height = 16,
+  pattern = "floor.1",
+}
+
+tile{
+  layer = 1,
+  x = 144,
+  y = 232,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.2",
+}
+
+tile{
+  layer = 1,
+  x = 168,
+  y = 232,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.2",
+}
+
+wall{
+  layer = 1,
+  x = 152,
+  y = 208,
+  width = 16,
+  height = 16,
+  stops_enemies = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 144,
+  y = 208,
+  width = 32,
+  height = 24,
+  name = "door_closed",
+  pattern = "wall.2",
+  enabled_at_start = true,
+}
+
+door{
+  layer = 1,
+  x = 152,
+  y = 208,
+  name = "door",
+  direction = 3,
+  sprite = "entities/door_very_weak_wall",
+  opening_method = "explosion",
+}
+
+tile{
+  layer = 2,
+  x = 120,
+  y = 224,
+  width = 80,
+  height = 8,
+  pattern = "door_cache.2",
+}
+
+dynamic_tile{
+  layer = 2,
+  x = 144,
+  y = 224,
+  width = 32,
+  height = 8,
+  name = "top_open",
+  pattern = "door_top.blast.2",
+  enabled_at_start = true,
+}
+

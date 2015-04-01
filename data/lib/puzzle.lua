@@ -65,7 +65,6 @@ function Puzzle.hide_treasures_step(root)
 end
 
 function Puzzle.obstacle_step(item_name, open, see)
-    see = see or 'nothing'
     return function (root)
         root:each_child(function (key, head)
             root:update_child(key, head:with_needs{see=see,reach=item_name,open=open})
@@ -234,11 +233,18 @@ end
 function Puzzle.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, item_names)
 
     function get_obstacle_step(obstacle_type)
+        local see, open
         if obstacle_type == 'weakwall' then
-            return Puzzle.obstacle_step(obstacle_type, 'weakwall', 'map')
+            see = 'map'
+            open = 'weakwall'
+        elseif obstacle_type == 'veryweakwall' then
+            see = 'nothing'
+            open = 'veryweakwall'
         else
-            return Puzzle.obstacle_step(obstacle_type)
+            see = 'nothing'
+            open = 'open'
         end
+        return Puzzle.obstacle_step(obstacle_type, open, see)
     end
 
     local d = Puzzle.Dependencies:new()
@@ -254,32 +260,38 @@ function Puzzle.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, item_names)
     d:dependency('hidetreasures', 'compass')
 
     for _, item_name in ipairs(item_names) do
-        local obstacle_type
-        if item_name == 'bomb' then
-            obstacle_type = 'weakwall'
-        else
-            obstacle_type = item_name
-        end
-        local obstacle_name = string.format('obstacle_%s', obstacle_type)
         local bigchest_name = string.format('bigchest_%s', item_name)
-        d:single(obstacle_name, get_obstacle_step(obstacle_type))
         d:single(bigchest_name, Puzzle.big_chest_step(item_name))
-        d:dependency('boss', obstacle_name)
-        d:dependency(obstacle_name, bigchest_name)
         d:dependency(bigchest_name, 'bigkey')
-        if obstacle_type == 'weakwall' then
-            d:dependency(obstacle_name, 'map')
+
+        local obstacle_types
+        if item_name == 'bomb' then
+            obstacle_types = {'veryweakwall','weakwall'}
+        else
+            obstacle_types = {item_name}
+        end
+        for _, obstacle_type in ipairs(obstacle_types) do
+            local obstacle_name = string.format('obstacle_%s', obstacle_type)
+            d:single(obstacle_name, get_obstacle_step(obstacle_type))
+            d:dependency('boss', obstacle_name)
+            d:dependency(obstacle_name, bigchest_name)
+        end
+        if item_name == 'bomb' then
+            d:dependency('obstacle_weakwall', 'map')
+            d:dependency('obstacle_weakwall', 'obstacle_veryweakwall')
         end
     end
 
     local blackboard = {}
     local lockeddoors_rng = rng:create()
     local first_lock, last_lock = d:multiple('lockeddoor', nkeys, Puzzle.locked_door_step(lockeddoors_rng, blackboard))
-    d:dependency('bigkey', first_lock)
-    d:dependency('compass', first_lock)
-    d:dependency('map', first_lock)
-    local first_key, last_key = d:multiple('smallkey', nkeys, Puzzle.smallkey_step(blackboard))
-    d:dependency(last_lock, first_key)
+    if first_lock then
+        d:dependency('bigkey', first_lock)
+        d:dependency('compass', first_lock)
+        d:dependency('map', first_lock)
+        local first_key, last_key = d:multiple('smallkey', nkeys, Puzzle.smallkey_step(blackboard))
+        d:dependency(last_lock, first_key)
+    end
 
     d:multiple('culdesac', nculdesacs, Puzzle.culdesac_step)
     d:multiple('fairy', nfairies, Puzzle.fairy_step)
