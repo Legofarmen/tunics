@@ -132,26 +132,26 @@ chest{
   sprite = "entities/chest",
 }
 
-dynamic_tile{
+custom_entity{
   layer = 1,
-  x = 128,
-  y = 64,
+  x = 184,
+  y = 77,
   width = 16,
   height = 16,
-  name = "lantern_1",
-  pattern = "torch_off",
-  enabled_at_start = true,
+  name = "torch_2",
+  direction = 3,
+  model = "torch",
 }
 
-dynamic_tile{
+custom_entity{
   layer = 1,
-  x = 176,
-  y = 64,
+  x = 136,
+  y = 77,
   width = 16,
   height = 16,
-  name = "lantern_2",
-  pattern = "torch_off",
-  enabled_at_start = true,
+  name = "torch_1",
+  direction = 3,
+  model = "torch",
 }
 
 dynamic_tile{
