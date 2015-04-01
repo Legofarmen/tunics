@@ -53,7 +53,7 @@ function Puzzle.boss_step(root)
 end
 
 function Puzzle.fairy_step(root)
-    root:add_child(Tree.Enemy:new{name='fairy'}:with_needs{see='map',reach='weakwall',open='bomb'})
+    root:add_child(Tree.Enemy:new{name='fairy'}:with_needs{see='map',reach='weakwall',open='weakwall'})
 end
 
 function Puzzle.culdesac_step(root)
@@ -235,7 +235,7 @@ function Puzzle.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, item_names)
 
     function get_obstacle_step(obstacle_type)
         if obstacle_type == 'weakwall' then
-            return Puzzle.obstacle_step(obstacle_type, 'bomb', 'map')
+            return Puzzle.obstacle_step(obstacle_type, 'weakwall', 'map')
         else
             return Puzzle.obstacle_step(obstacle_type)
         end

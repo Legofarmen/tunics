@@ -4,7 +4,7 @@ local util = require 'lib/util'
 
 function bomb.init(map, data)
 	for dir, door_data in pairs(data.doors) do
-        data.room:door({open='bomb', name=door_data.name}, dir)
+        data.room:door({open='weakwall', name=door_data.name}, dir)
 	end
 	
 	if data.treasure1 then

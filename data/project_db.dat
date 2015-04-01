@@ -6,8 +6,8 @@ map{ id = "components/door/door_entrance_south_002777_1", description = "Door en
 map{ id = "components/door/door_open_west_040000_1", description = " Door open west 040000 1" }
 map{ id = "components/door/door_open_east_010000_1", description = "Door open east 010000 1" }
 map{ id = "components/door/door_bigkey_north_200700_1", description = "Door bigkey north 200700 1" }
-map{ id = "components/door/door_bomb_north_200000_1", description = "Door bomb north 200000 1" }
-map{ id = "components/door/door_bomb_south_002000_1", description = "Door bomb south 002000 1" }
+map{ id = "components/door/door_weakwall_north_200000_1", description = "Door weakwall north 200000 1" }
+map{ id = "components/door/door_weakwall_south_002000_1", description = "Door weakwall south 002000 1" }
 map{ id = "components/filler/filler_000400_1", description = "Filler 000400 1" }
 map{ id = "components/filler/filler_000100_1", description = "Filler 000100 1" }
 map{ id = "components/filler/filler_000004_1", description = "Filler 000004 1" }
@@ -32,8 +32,8 @@ map{ id = "components/obstacle_hookshot/obstacle_hookshot_west_000444_1", descri
 map{ id = "components/obstacle_hookshot/obstacle_hookshot_east_000111_1", description = "Obstacle hookshot east 000111 1" }
 map{ id = "components/door/door_bigkey_south_002000_1", description = "Door bigkey south 002000 1" }
 map{ id = "components/sign", description = "Sign" }
-map{ id = "components/door/door_bomb_east_010000_1", description = "Door bomb east 010000 1" }
-map{ id = "components/door/door_bomb_west_040000_1", description = "Door bomb west 040000 1" }
+map{ id = "components/door/door_weakwall_east_010000_1", description = "Door weakwall east 010000 1" }
+map{ id = "components/door/door_weakwall_west_040000_1", description = "Door weakwall west 040000 1" }
 map{ id = "components/obstacle_hookshot/obstacle_hookshot_south_000007_1", description = "Obstacle hookshot south 000007 1" }
 map{ id = "components/obstacle_hookshot/obstacle_hookshot_northeast_000711_1", description = "Obstacle hookshot northeast 000711 1" }
 map{ id = "components/obstacle_hookshot/obstacle_hookshot_northwest_000744_1", description = "Obstacle hookshot northwest 000744 1" }
