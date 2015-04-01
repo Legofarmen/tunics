@@ -24,12 +24,13 @@ local BigKeyDetectorVisitor = {}
 setmetatable(BigKeyDetectorVisitor, BigKeyDetectorVisitor)
 
 function BigKeyDetectorVisitor:visit_room(room)
+    local found = false
     room:each_child(function (key, child)
-        if not child.open == 'smallkey' and child:accept(self) then
-            return true
+        if child.open ~= 'smallkey' and child:accept(self) then
+            found = true
         end
     end)
-    return false
+    return found
 end
 
 function BigKeyDetectorVisitor:visit_treasure(treasure)
