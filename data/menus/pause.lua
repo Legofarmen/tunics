@@ -1,6 +1,6 @@
 local Class = require 'lib/class'
 
---local inventory_builder = require("menus/pause_inventory")
+local inventory_builder = require("menus/pause_inventory")
 local map_builder = require("menus/pause_map")
 
 local Pause = Class:new()
@@ -11,11 +11,9 @@ function Pause:new(o)
 end
 
 function Pause:start_pause_menu()
-
-    self.pause_submenus = {
-        --inventory_builder:new(self),
-        map_builder:new{game=self.game},
-    }
+    self.pause_submenus = {}
+    table.insert(self.pause_submenus, inventory_builder:new(self.game, self.pause_submenus))
+    table.insert(self.pause_submenus, map_builder:new{game=self.game})
 
     local submenu_index = self.game:get_value("pause_last_submenu")
     if not submenu_index or submenu_index < 1 or submenu_index > #self.pause_submenus then

@@ -23,3 +23,10 @@ font{
   id = "green_digits",
   file = "text/green_digits.png",
 }
+
+font{
+  id = "dialog",
+  file = "text/la.ttf",
+  size = 11,
+  default = true
+}
