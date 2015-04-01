@@ -67,7 +67,7 @@ tile{
   y = 200,
   width = 64,
   height = 8,
-  pattern = "wall_low_border.2",
+  pattern = "wall_border.2",
 }
 
 chest{
