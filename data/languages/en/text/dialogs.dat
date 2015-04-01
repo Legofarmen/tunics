@@ -53,3 +53,48 @@ dialog{
 Got the small key.
 ]]
 }
+
+dialog{
+  id = "_item_description.bomb.1",
+  icon = 1,
+  skip = "all",
+  text = [[
+Use Bombs against
+enemies and to
+destroy obstacles.
+]]
+}
+
+dialog{
+  id = "_item_description.bow.1",
+  icon = 2,
+  skip = "all",
+  text = [[
+You don't have any
+Arrows left!
+]]
+}
+
+dialog{
+  id = "_item_description.bow.2",
+  icon = 3,
+  skip = "all",
+  text = [[
+Shoot Arrows to
+defeat tough
+enemies.
+]]
+}
+
+dialog{
+  id = "_item_description.lamp.1",
+  icon = 5,
+  skip = "all",
+  text = [[
+Brighten dark places
+and light torches
+with the Lamp, but
+watch your Magic
+Meter!
+]]
+}
