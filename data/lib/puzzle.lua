@@ -53,7 +53,7 @@ function Puzzle.boss_step(root)
 end
 
 function Puzzle.fairy_step(root)
-    root:add_child(Tree.Enemy:new{name='fairy'}:with_needs{see='map',reach='bomb',open='bomb'})
+    root:add_child(Tree.Enemy:new{name='fairy'}:with_needs{see='map',reach='weakwall',open='bomb'})
 end
 
 function Puzzle.culdesac_step(root)
@@ -233,11 +233,11 @@ end
 
 function Puzzle.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, item_names)
 
-    function get_item_obstacle(item_name)
-        if item_name == 'bomb' then
-            return Puzzle.obstacle_step(item_name, 'bomb', 'map')
+    function get_obstacle_step(obstacle_type)
+        if obstacle_type == 'weakwall' then
+            return Puzzle.obstacle_step(obstacle_type, 'bomb', 'map')
         else
-            return Puzzle.obstacle_step(item_name)
+            return Puzzle.obstacle_step(obstacle_type)
         end
     end
 
@@ -254,14 +254,20 @@ function Puzzle.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, item_names)
     d:dependency('hidetreasures', 'compass')
 
     for _, item_name in ipairs(item_names) do
-        local obstacle_name = string.format('obstacle_%s', item_name)
+        local obstacle_type
+        if item_name == 'bomb' then
+            obstacle_type = 'weakwall'
+        else
+            obstacle_type = item_name
+        end
+        local obstacle_name = string.format('obstacle_%s', obstacle_type)
         local bigchest_name = string.format('bigchest_%s', item_name)
-        d:single(obstacle_name, get_item_obstacle(item_name))
+        d:single(obstacle_name, get_obstacle_step(obstacle_type))
         d:single(bigchest_name, Puzzle.big_chest_step(item_name))
         d:dependency('boss', obstacle_name)
         d:dependency(obstacle_name, bigchest_name)
         d:dependency(bigchest_name, 'bigkey')
-        if item_name == 'bomb' then
+        if obstacle_type == 'weakwall' then
             d:dependency(obstacle_name, 'map')
         end
     end
