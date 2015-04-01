@@ -216,9 +216,9 @@ function inventory_submenu:show_info_message()
 
   -- Position of the dialog (top or bottom).
   if self.cursor_row >= 2 then
-    self.game:set_dialog_position("top")  -- Top of the screen.
+    self.game.dialog_box:set_dialog_position("top")  -- Top of the screen.
   else
-    self.game:set_dialog_position("bottom")  -- Bottom of the screen.
+    self.game.dialog_box:set_dialog_position("bottom")  -- Bottom of the screen.
   end
 
   self.game:set_custom_command_effect("action", nil)
@@ -226,7 +226,7 @@ function inventory_submenu:show_info_message()
   self.game:start_dialog("_item_description." .. item_name .. "." .. variant, function()
     self.game:set_custom_command_effect("action", "info")
     self.game:set_custom_command_effect("attack", "save")
-    self.game:set_dialog_position("auto")  -- Back to automatic position.
+    self.game.dialog_box:set_dialog_position("auto")  -- Back to automatic position.
   end)
 
 end

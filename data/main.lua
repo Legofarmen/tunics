@@ -2,6 +2,8 @@ local zentropy = require 'lib/zentropy'
 local util = require 'lib/util'
 local Pause = require 'menus/pause'
 
+local dialog_box = require 'menus/dialog_box'
+
 zentropy.init()
 
 util.wdebug_truncate()
@@ -35,6 +37,8 @@ function sol.main:on_started()
 
     game:set_starting_location('dungeons/dungeon1')
 
+    game.dialog_box = dialog_box:new{game=game}
+
     local pause = Pause:new{game=game}
 
     function game:on_command_pressed(command)
@@ -56,11 +60,29 @@ function sol.main:on_started()
     
     function game:on_started()
         game:get_hero():set_walking_speed(160)
+        self.dialog_box:initialize_dialog_box()
         self:initialize_hud()
+    end
+
+    -- Called by the engine when a dialog starts.
+    function game:on_dialog_started(dialog, info)
+
+        self.dialog_box.dialog = dialog
+        self.dialog_box.info = info
+        sol.menu.start(self, self.dialog_box)
+    end
+
+    -- Called by the engine when a dialog finishes.
+    function game:on_dialog_finished(dialog)
+
+        sol.menu.stop(self.dialog_box)
+        self.dialog_box.dialog = nil
+        self.dialog_box.info = nil
     end
 
     function game:on_finished()
         self:quit_hud()
+        self.dialog_box:quit_dialog_box()
     end
 
     function game:on_map_changed(map)
