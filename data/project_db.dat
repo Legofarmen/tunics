@@ -104,20 +104,20 @@ map{ id = "components/puzzle/puzzle_000777_1", description = "Puzzle 000777 1" }
 map{ id = "components/puzzle/puzzle_000006_1", description = "Puzzle 000006 1" }
 map{ id = "components/puzzle/puzzle_000003_1", description = "Puzzle 000003 1 " }
 map{ id = "components/obstacle_lamp/obstacle_lamp_any_000700_1", description = "Obstacle lamp any 00700 1" }
-map{ id = "components/obstacle_weakwall/obstacle_weakwall_north_000700_1", description = "obstacle_weakwall_north_000700_1" }
-map{ id = "components/obstacle_weakwall/obstacle_weakwall_northeast_000700_1", description = "obstacle_weakwall_northeast_000700_1" }
-map{ id = "components/obstacle_weakwall/obstacle_weakwall_northwest_000700_1", description = "obstacle_weakwall_northwest_000700_1" }
-map{ id = "components/obstacle_weakwall/obstacle_weakwall_northeastwest_000700_1", description = "obstacle_weakwall_northeastwest_000700_1" }
-map{ id = "components/obstacle_weakwall/obstacle_weakwall_south_000007_1", description = "obstacle_weakwall_south_00007_1" }
-map{ id = "components/obstacle_weakwall/obstacle_weakwall_southeast_000007_1", description = "obstacle_weakwall_southeast_00007_1" }
-map{ id = "components/obstacle_weakwall/obstacle_weakwall_southwest_000007_1", description = "obstacle_weakwall_southwest_00007_1" }
-map{ id = "components/obstacle_weakwall/obstacle_weakwall_southeastwest_000007_1", description = "obstacle_weakwall_southeastwest_00007_1" }
-map{ id = "components/obstacle_weakwall/obstacle_weakwall_northsoutheast_000111_1", description = "obstacle_weakwall_northsoutheast_000111_1" }
-map{ id = "components/obstacle_weakwall/obstacle_weakwall_northsouthwest_000444_1", description = "obstacle_weakwall_northsouthwest_000111_1" }
-map{ id = "components/obstacle_weakwall/obstacle_weakwall_eastwest_000444_1", description = "obstacle_weakwall_eastwest_000444_1" }
-map{ id = "components/obstacle_weakwall/obstacle_weakwall_northsouth_000700_1", description = "obstacle_weakwall_northsouth_000700_1" }
-map{ id = "components/obstacle_weakwall/obstacle_weakwall_east_000111_1", description = "obstacle_weakwall_east_000111_1" }
-map{ id = "components/obstacle_weakwall/obstacle_weakwall_west_000444_1", description = "obstacle_weakwall_west_000444_1" }
+map{ id = "components/obstacle_weakwall/obstacle_weakwall_north_000400_1", description = "Obstacle weakwall north 000400 1" }
+map{ id = "components/obstacle_weakwall/obstacle_weakwall_northeast_000100_1", description = "Obstacle weakwall northeast 000100 1" }
+map{ id = "components/obstacle_weakwall/obstacle_weakwall_northwest_000400_1", description = "Obstacle weakwall northwest 000400 1" }
+map{ id = "components/obstacle_weakwall/obstacle_weakwall_northeastwest_000400_1", description = "Obstacle weakwall northeastwest 000400 1" }
+map{ id = "components/obstacle_weakwall/obstacle_weakwall_south_000004_1", description = "Obstacle weakwall south 000004 1" }
+map{ id = "components/obstacle_weakwall/obstacle_weakwall_southeast_000001_1", description = "Obstacle weakwall southeast 000001 1" }
+map{ id = "components/obstacle_weakwall/obstacle_weakwall_southwest_000004_1", description = "Obstacle weakwall southwest 000004 1" }
+map{ id = "components/obstacle_weakwall/obstacle_weakwall_southeastwest_000004_1", description = "Obstacle weakwall southeastwest 000004 1" }
+map{ id = "components/obstacle_weakwall/obstacle_weakwall_northsoutheast_000001_1", description = "Obstacle weakwall northsoutheast 000001 1" }
+map{ id = "components/obstacle_weakwall/obstacle_weakwall_northsouthwest_000004_1", description = "Obstacle weakwall northsouthwest 000004 1" }
+map{ id = "components/obstacle_weakwall/obstacle_weakwall_eastwest_000400_1", description = "Obstacle weakwall eastwest 000400 1" }
+map{ id = "components/obstacle_weakwall/obstacle_weakwall_northsouth_000400_1", description = "Obstacle weakwall northsouth 000400 1" }
+map{ id = "components/obstacle_weakwall/obstacle_weakwall_east_000100_1", description = "Obstacle weakwall east 000100 1" }
+map{ id = "components/obstacle_weakwall/obstacle_weakwall_west_000004_1", description = "Obstacle weakwall west 000004 1" }
 map{ id = "components/filler/filler_202777_1", description = "Filler 202777 1" }
 
 tileset{ id = "light_world", description = "Light World" }

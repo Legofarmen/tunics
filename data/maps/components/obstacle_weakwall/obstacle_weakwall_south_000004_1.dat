@@ -7,49 +7,10 @@ properties{
   music = "same",
 }
 
-tile{
-  layer = 1,
-  x = 144,
-  y = 16,
-  width = 8,
-  height = 16,
-  pattern = "door_blast.1.support.1",
-}
-
-tile{
-  layer = 1,
-  x = 168,
-  y = 16,
-  width = 8,
-  height = 16,
-  pattern = "door_blast.1.support.2",
-}
-
 dynamic_tile{
   layer = 1,
-  x = 144,
-  y = 8,
-  width = 32,
-  height = 24,
-  name = "door_north_closed",
-  pattern = "wall.1",
-  enabled_at_start = true,
-}
-
-door{
-  layer = 1,
-  x = 152,
-  y = 16,
-  name = "door_north",
-  direction = 1,
-  sprite = "entities/door_weak_wall",
-  opening_method = "explosion",
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 40,
-  y = 40,
+  x = 48,
+  y = 144,
   width = 32,
   height = 48,
   name = "treasure_obstacle_carpet",
@@ -59,8 +20,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 48,
-  y = 48,
+  x = 56,
+  y = 152,
   width = 16,
   height = 16,
   name = "treasure_obstacle_chest",
@@ -70,8 +31,8 @@ dynamic_tile{
 
 door{
   layer = 1,
-  x = 48,
-  y = 64,
+  x = 56,
+  y = 168,
   name = "treasure_obstacle_block",
   direction = 1,
   sprite = "entities/door_weak_block",
@@ -80,8 +41,8 @@ door{
 
 dynamic_tile{
   layer = 1,
-  x = 80,
-  y = 40,
+  x = 88,
+  y = 144,
   width = 32,
   height = 48,
   name = "treasure_open_carpet",
@@ -91,8 +52,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 88,
-  y = 48,
+  x = 96,
+  y = 152,
   width = 16,
   height = 16,
   name = "treasure_open_chest",
@@ -119,17 +80,6 @@ door{
   direction = 3,
   sprite = "entities/door_weak_wall",
   opening_method = "explosion",
-}
-
-dynamic_tile{
-  layer = 2,
-  x = 144,
-  y = 8,
-  width = 32,
-  height = 8,
-  name = "top_north_open",
-  pattern = "door_top.blast.1",
-  enabled_at_start = false,
 }
 
 dynamic_tile{

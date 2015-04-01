@@ -9,8 +9,8 @@ properties{
 
 dynamic_tile{
   layer = 1,
-  x = 40,
-  y = 152,
+  x = 200,
+  y = 144,
   width = 32,
   height = 48,
   name = "treasure_obstacle_carpet",
@@ -20,8 +20,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 48,
-  y = 160,
+  x = 208,
+  y = 152,
   width = 16,
   height = 16,
   name = "treasure_obstacle_chest",
@@ -31,8 +31,8 @@ dynamic_tile{
 
 door{
   layer = 1,
-  x = 48,
-  y = 176,
+  x = 208,
+  y = 168,
   name = "treasure_obstacle_block",
   direction = 1,
   sprite = "entities/door_weak_block",
@@ -41,8 +41,8 @@ door{
 
 dynamic_tile{
   layer = 1,
-  x = 80,
-  y = 152,
+  x = 240,
+  y = 144,
   width = 32,
   height = 48,
   name = "treasure_open_carpet",
@@ -52,8 +52,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 88,
-  y = 160,
+  x = 248,
+  y = 152,
   width = 16,
   height = 16,
   name = "treasure_open_chest",
@@ -72,15 +72,14 @@ dynamic_tile{
   enabled_at_start = true,
 }
 
-dynamic_tile{
+door{
   layer = 1,
-  x = 8,
-  y = 104,
-  width = 24,
-  height = 32,
-  name = "door_west_closed",
-  pattern = "wall.3",
-  enabled_at_start = true,
+  x = 288,
+  y = 112,
+  name = "door_east",
+  direction = 0,
+  sprite = "entities/door_weak_wall",
+  opening_method = "explosion",
 }
 
 dynamic_tile{
@@ -96,43 +95,12 @@ dynamic_tile{
 
 door{
   layer = 1,
-  x = 16,
-  y = 112,
-  name = "door_west",
-  direction = 2,
-  sprite = "entities/door_weak_wall",
-  opening_method = "explosion",
-}
-
-door{
-  layer = 1,
   x = 152,
   y = 208,
   name = "door_south",
   direction = 3,
   sprite = "entities/door_weak_wall",
   opening_method = "explosion",
-}
-
-door{
-  layer = 1,
-  x = 288,
-  y = 112,
-  name = "door_east",
-  direction = 0,
-  sprite = "entities/door_weak_wall",
-  opening_method = "explosion",
-}
-
-dynamic_tile{
-  layer = 2,
-  x = 144,
-  y = 224,
-  width = 32,
-  height = 8,
-  name = "top_south_open",
-  pattern = "door_top.blast.2",
-  enabled_at_start = false,
 }
 
 dynamic_tile{
@@ -148,12 +116,12 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 2,
-  x = 8,
-  y = 104,
-  width = 8,
-  height = 32,
-  name = "top_west_open",
-  pattern = "door_top.blast.3",
+  x = 144,
+  y = 224,
+  width = 32,
+  height = 8,
+  name = "top_south_open",
+  pattern = "door_top.blast.2",
   enabled_at_start = false,
 }
 
