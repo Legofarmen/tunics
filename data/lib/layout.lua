@@ -577,8 +577,9 @@ function Layout.solarus_mixin(object, map, floors)
             }
             local doors = {}
             for native_dir, native_door in pairs(info.doors) do
+                local door_name = self:door_name(native_door.native_pos.depth, native_door.native_pos.leaf, native_door.native_pos.dir)
                 map_info.doors[self:dir_from_native(native_dir)] = {
-                    name=self:door_name(native_door.native_pos.depth, native_door.native_pos.leaf, native_door.native_pos.dir),
+                    name=door_name,
                     see=native_door.see,
                     reach=native_door.reach,
                     open=native_door.open,
