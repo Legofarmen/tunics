@@ -16,8 +16,8 @@ function item:on_variant_changed(variant)
 
   self:get_game():set_max_magic(max_magic)
 
-  -- Unlock pickable magic jars.
+  --[[ Unlock pickable magic jars.
   local magic_flask = self:get_game():get_item("magic_flask")
-  magic_flask:set_obtainable(true)
+  magic_flask:set_obtainable(true)]]
 end
 

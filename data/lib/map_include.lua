@@ -56,7 +56,7 @@ function component_map(map_userdata, component_x, component_y, component_prefix,
     function o:create_chest(properties) return component_entity(map_userdata:create_chest(transform(properties))) end
     function o:create_crystal(properties) return component_entity(map_userdata:create_crystal(transform(properties))) end
     function o:create_crystal_block(properties) return component_entity(map_userdata:create_crystal_block(transform(properties))) end
-    function o:create_custom_entity(properties) return component_entity(map_userdata:custom_entity(transform(properties))) end
+    function o:create_custom_entity(properties) return component_entity(map_userdata:create_custom_entity(transform(properties))) end
     function o:create_destination(properties) return component_entity(map_userdata:create_destination(transform(properties))) end
     function o:create_destructible(properties) return component_entity(map_userdata:create_destructible(transform(properties))) end
     function o:create_door(properties) return component_entity(map_userdata:create_door(transform(properties))) end

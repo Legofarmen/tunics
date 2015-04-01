@@ -3,9 +3,8 @@ local item = ...
 
 local game = item:get_game()
 
-
-item.temporary_lit_torches = {} -- List of torches that will be unlit by timers soon (FIFO).
-item.was_dark_room = false
+--[[item.temporary_lit_torches = {} -- List of torches that will be unlit by timers soon (FIFO).
+item.was_dark_room = false]]
 
 function item:on_created()
 
@@ -51,7 +50,7 @@ function item:create_fire()
   }
 end
 
--- Unlights the oldest torch still lit.
+--[[Unlights the oldest torch still lit.
 function item:unlight_oldest_torch()
 
   -- Remove the torch from the FIFO.
@@ -65,7 +64,7 @@ function item:unlight_oldest_torch()
     -- make the room dark again
     self:get_map():set_light(0)
   end
-end
+end]]
 
 -- Called when the player obtains the Lamp.
 function item:on_obtained(variant, savegame_variable)
@@ -81,43 +80,10 @@ function item:on_obtained(variant, savegame_variable)
 
 end
 
--- Called when the current map changes.
+--[[ Called when the current map changes.
 function item:on_map_changed()
 
   self.temporary_lit_torches = {}
   self.was_dark_room = false
 end
-
--- Called when the hero presses the action key in front of an NPC
--- linked to the Lamp.
-function item:on_npc_interaction(npc)
-
-  if npc:get_name():find("^torch") then
-    npc:get_map():get_game():start_dialog("torch.need_lamp")
-  end
-end
-
--- Called when fire touches an NPC linked to the Lamp.
-function item:on_npc_collision_fire(npc)
-
-  if npc:get_name():find("^torch") then
-
-    local torch_sprite = npc:get_sprite()
-    if torch_sprite:get_animation() == "unlit" then
-      -- Temporarily light the torch up.
-      torch_sprite:set_animation("lit")
-      sol.timer.start(10000, function()
-        self:unlight_oldest_torch()
-      end)
-      table.insert(self.temporary_lit_torches, npc)
-
-      local map = self:get_map()
-      if map.get_light ~= nil and map:get_light() == 0 then
-        -- Light the room.
-        self.was_dark_room = true
-        map:set_light(1)
-      end
-    end
-  end
-end
-
+]]
