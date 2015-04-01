@@ -61,7 +61,7 @@ function util.table_lines(prefix, data, f)
     if type(data) == 'table' then
         local n = 0
         for key, value in util.pairs_by_keys(data) do
-            table_lines(prefix .. '.' .. key, value, f)
+            util.table_lines(prefix .. '.' .. key, value, f)
             n = n + 1
         end
         if n == 0 then
