@@ -87,13 +87,17 @@ function FillerObstacleVisitor:visit_room(room)
         if child.open == 'bigkey' then
             is_reachable = false
         end
-        is_reachable = is_reachable and child:is_reachable()
+        if child:is_open() then
+            is_reachable = is_reachable and child:is_reachable()
+        end
         child:accept(self)
     end)
     if is_reachable then
         local obstacle = self.obstacles[self.rng:random(2 * #self.obstacles)]
         room:each_child(function (key, child)
-            child.reach = obstacle
+            if child:is_open() then
+                child.reach = obstacle
+            end
         end)
     end
 end
