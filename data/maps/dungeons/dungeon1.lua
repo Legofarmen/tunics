@@ -43,13 +43,15 @@ local all_items = {
 }
 local big_treasure = treasure_override or all_items[game_prng:random(#all_items)]
 
+local big_treasure_i = nil
 for i, item_name in ipairs(all_items) do
     if item_name == big_treasure then
-        table.remove(all_items, i)
+        big_treasure_i = i
     else
-        game:set_value(item_name, 1)
+        game:get_item(item_name):set_variant(1)
     end
 end
+table.remove(all_items, big_treasure_i)
 local puzzle = Puzzle.alpha_dungeon(puzzle_rng, nkeys, nfairies, nculdesacs, { big_treasure }, all_items)
 --puzzle:accept(Tree.PrintVisitor:new{})
 
