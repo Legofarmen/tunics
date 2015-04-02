@@ -600,6 +600,26 @@ tile_pattern{
 }
 
 tile_pattern{
+  id = "bow_target.bottom",
+  ground = "traversable",
+  default_layer = 1,
+  x = 456,
+  y = 24,
+  width = 32,
+  height = 8,
+}
+
+tile_pattern{
+  id = "bow_target.top",
+  ground = "wall",
+  default_layer = 1,
+  x = 456,
+  y = 0,
+  width = 32,
+  height = 24,
+}
+
+tile_pattern{
   id = "carpet.1",
   ground = "traversable",
   default_layer = 1,
