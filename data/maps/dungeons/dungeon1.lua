@@ -48,7 +48,9 @@ for i, item_name in ipairs(all_items) do
     if item_name == big_treasure then
         big_treasure_i = i
     else
-        game:get_item(item_name):set_variant(1)
+        local item = game:get_item(item_name)
+        item:set_variant(1)
+        item:on_obtained(item_name)
     end
 end
 table.remove(all_items, big_treasure_i)
