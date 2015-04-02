@@ -12,8 +12,8 @@ end
 
 function Pause:start_pause_menu()
     self.pause_submenus = {}
-    table.insert(self.pause_submenus, inventory_builder:new(self.game, self.pause_submenus))
     table.insert(self.pause_submenus, map_builder:new(self.game, self.pause_submenus))
+    table.insert(self.pause_submenus, inventory_builder:new(self.game, self.pause_submenus))
 
     local submenu_index = self.game:get_value("pause_last_submenu")
     if not submenu_index or submenu_index < 1 or submenu_index > #self.pause_submenus then
