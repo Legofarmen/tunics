@@ -41,6 +41,33 @@ function BigKeyDetectorVisitor:visit_enemy(enemy)
     return false
 end
 
+local BigkeyDistanceVisitor = {}
+
+setmetatable(BigkeyDistanceVisitor, BigkeyDistanceVisitor)
+
+function BigkeyDistanceVisitor:visit_room(room)
+    if room.open == 'bigkey' then
+        return 1
+    else
+        local nearest = math.huge
+        room:each_child(function (key, child)
+            nearest = math.min(nearest, child:accept(self) + 1)
+        end)
+        return nearest
+    end
+end
+function BigkeyDistanceVisitor:visit_enemy(enemy)
+    return math.huge
+end
+function BigkeyDistanceVisitor:visit_treasure(treasure)
+    if treasure.item_name == 'bigkey' or treasure.open == 'bigkey' then
+        return 1
+    else
+        return math.huge
+    end
+end
+
+
 local Puzzle = {}
 
 function Puzzle.treasure_step(item_name)
@@ -119,7 +146,25 @@ function Puzzle.max_heads(rng, n)
     return function (root)
         while #root.children > n do
             local node1 = root:remove_child(root:random_child(rng))
-            local node2 = root:remove_child(root:random_child(rng))
+            local f
+            if node1:accept(BigkeyDistanceVisitor) < math.huge then
+                f = function(node) return math.min(node:accept(BigkeyDistanceVisitor), 10) end
+            else
+                f = function(node) return 11 - math.min(node:accept(BigkeyDistanceVisitor), 10) end
+            end
+            local n = 0
+            local chosen = nil
+            root:each_child(function (key, child)
+                local d = 2 * f(child)
+                if child.get_weight then
+                    d = d - child:get_weight()
+                end
+                n = n + d
+                if rng:random(n) <= d then
+                    chosen = key
+                end
+            end)
+            local node2 = root:remove_child(chosen)
 
             local fork = Tree.Room:new()
             local n1 = node1:get_node_metric()
@@ -287,9 +332,9 @@ function Puzzle.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, item_names)
     local lockeddoors_rng = rng:create()
     local first_lock, last_lock = d:multiple('lockeddoor', nkeys, Puzzle.locked_door_step(lockeddoors_rng, blackboard))
     if first_lock then
-        d:dependency('bigkey', first_lock)
-        d:dependency('compass', first_lock)
-        d:dependency('map', first_lock)
+        d:dependency('bigkey', last_lock)
+        d:dependency('compass', last_lock)
+        d:dependency('map', last_lock)
         local first_key, last_key = d:multiple('smallkey', nkeys, Puzzle.smallkey_step(blackboard))
         d:dependency(last_lock, first_key)
     end
@@ -306,7 +351,7 @@ function Puzzle.render_steps(rng, steps)
     -- Build puzzle tree using the sequence of steps
     local heads = Tree.Room:new()
     for name, element in ipairs(steps) do
-        Puzzle.max_heads(rng:create(), 4)(heads)
+        Puzzle.max_heads(rng:create(), 6)(heads)
         element.step(heads)
     end
 
