@@ -52,6 +52,24 @@ tile{
   pattern = "bow_target.bottom",
 }
 
+tile{
+  layer = 1,
+  x = 200,
+  y = 32,
+  width = 64,
+  height = 8,
+  pattern = "wall_border.1",
+}
+
+tile{
+  layer = 1,
+  x = 200,
+  y = 200,
+  width = 64,
+  height = 8,
+  pattern = "wall_border.2",
+}
+
 dynamic_tile{
   layer = 1,
   x = 224,
