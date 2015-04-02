@@ -100,24 +100,6 @@ chest{
 
 dynamic_tile{
   layer = 1,
-  x = 200,
-  y = 152,
-  width = 16,
-  height = 16,
-  name = "placeholder_1",
-  pattern = "floor_pot",
-  enabled_at_start = true,
-}
-
-destructible{
-  layer = 1,
-  x = 208,
-  y = 165,
-  sprite = "entities/vase",
-}
-
-dynamic_tile{
-  layer = 1,
   x = 216,
   y = 152,
   width = 16,
@@ -131,24 +113,6 @@ destructible{
   layer = 1,
   x = 224,
   y = 165,
-  sprite = "entities/vase",
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 200,
-  y = 168,
-  width = 16,
-  height = 16,
-  name = "placeholder_3",
-  pattern = "floor_pot",
-  enabled_at_start = true,
-}
-
-destructible{
-  layer = 1,
-  x = 208,
-  y = 181,
   sprite = "entities/vase",
 }
 

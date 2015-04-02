@@ -1,0 +1,104 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  tileset = "dungeon_house_brown_1",
+  music = "same",
+}
+
+tile{
+  layer = 1,
+  x = 112,
+  y = 32,
+  width = 8,
+  height = 176,
+  pattern = "floor_border.2",
+}
+
+tile{
+  layer = 1,
+  x = 56,
+  y = 32,
+  width = 8,
+  height = 176,
+  pattern = "floor_border.2",
+}
+
+tile{
+  layer = 1,
+  x = 64,
+  y = 32,
+  width = 48,
+  height = 176,
+  pattern = "floor_small.2",
+}
+
+tile{
+  layer = 1,
+  x = 72,
+  y = 56,
+  width = 32,
+  height = 24,
+  pattern = "bow_target.top",
+}
+
+tile{
+  layer = 1,
+  x = 72,
+  y = 80,
+  width = 32,
+  height = 8,
+  pattern = "bow_target.bottom",
+}
+
+tile{
+  layer = 1,
+  x = 56,
+  y = 32,
+  width = 64,
+  height = 8,
+  pattern = "wall_border.1",
+}
+
+tile{
+  layer = 1,
+  x = 56,
+  y = 200,
+  width = 64,
+  height = 8,
+  pattern = "wall_border.2",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 80,
+  y = 160,
+  width = 16,
+  height = 16,
+  name = "treasure_obstacle_chest",
+  pattern = "floor_small.4",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 112,
+  y = 160,
+  width = 16,
+  height = 16,
+  name = "treasure_open_chest",
+  pattern = "floor_small.4",
+  enabled_at_start = false,
+}
+
+switch{
+  layer = 1,
+  x = 80,
+  y = 64,
+  name = "switch",
+  subtype = "arrow_target",
+  needs_block = false,
+  inactivate_when_leaving = false,
+}
+

@@ -90,42 +90,6 @@ destructible{
   sprite = "entities/vase",
 }
 
-dynamic_tile{
-  layer = 1,
-  x = 88,
-  y = 56,
-  width = 16,
-  height = 16,
-  name = "placeholder_5",
-  pattern = "floor_pot",
-  enabled_at_start = true,
-}
-
-destructible{
-  layer = 1,
-  x = 96,
-  y = 69,
-  sprite = "entities/vase",
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 88,
-  y = 72,
-  width = 16,
-  height = 16,
-  name = "placeholder_6",
-  pattern = "floor_pot",
-  enabled_at_start = true,
-}
-
-destructible{
-  layer = 1,
-  x = 96,
-  y = 85,
-  sprite = "entities/vase",
-}
-
 door{
   layer = 1,
   x = 152,
@@ -208,36 +172,36 @@ chest{
 
 dynamic_tile{
   layer = 1,
-  x = 104,
+  x = 88,
   y = 56,
   width = 16,
   height = 16,
-  name = "placeholder_7",
+  name = "placeholder_5",
   pattern = "floor_pot",
   enabled_at_start = true,
 }
 
 destructible{
   layer = 1,
-  x = 112,
+  x = 96,
   y = 69,
   sprite = "entities/vase",
 }
 
 dynamic_tile{
   layer = 1,
-  x = 104,
+  x = 88,
   y = 72,
   width = 16,
   height = 16,
-  name = "placeholder_8",
+  name = "placeholder_6",
   pattern = "floor_pot",
   enabled_at_start = true,
 }
 
 destructible{
   layer = 1,
-  x = 112,
+  x = 96,
   y = 85,
   sprite = "entities/vase",
 }

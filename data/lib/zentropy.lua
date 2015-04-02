@@ -371,6 +371,12 @@ function zentropy.Room:obstacle(data, dir, item)
         return false
     end
     self.mask = bit32.bor(self.mask, component_mask)
+
+    if data.treasure2 then
+        if self:treasure(data.treasure2) then
+            data.treasure2 = nil
+        end
+    end
     self.map:include(0, 0, component_name, data)
     self.data_messages('component', component_name)
     return true

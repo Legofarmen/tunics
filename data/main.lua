@@ -13,7 +13,7 @@ function sol.main:on_started()
 
     local old_game = sol.game.load("zentropy1.dat")
     local old_values = {}
-    for _, name in pairs{'seed', 'tier', 'override_tileset', 'override_keys', 'override_fairies', 'override_culdesacs'} do
+    for _, name in pairs{'seed', 'tier', 'override_tileset', 'override_keys', 'override_fairies', 'override_culdesacs', 'override_treasure'} do
         old_values[name] = old_game:get_value(name)
     end
     old_values.seed = old_values.seed or 1

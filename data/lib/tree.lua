@@ -153,7 +153,7 @@ function Room:remove_child(key)
     if self.children[key] then
         return table.remove(self.children, key)
     else
-        error('no such key: ' .. key)
+        error(string.format('no such key: %s', key))
     end
 end
 

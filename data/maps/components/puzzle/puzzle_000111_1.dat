@@ -7,6 +7,24 @@ properties{
   music = "same",
 }
 
+tile{
+  layer = 1,
+  x = 248,
+  y = 56,
+  width = 16,
+  height = 16,
+  pattern = "torch_off",
+}
+
+tile{
+  layer = 1,
+  x = 248,
+  y = 168,
+  width = 16,
+  height = 16,
+  pattern = "torch_off",
+}
+
 switch{
   layer = 1,
   x = 0,
@@ -32,24 +50,6 @@ dynamic_tile{
 destructible{
   layer = 1,
   x = 240,
-  y = 69,
-  sprite = "entities/vase",
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 248,
-  y = 56,
-  width = 16,
-  height = 16,
-  name = "placeholder_2",
-  pattern = "floor_pot",
-  enabled_at_start = true,
-}
-
-destructible{
-  layer = 1,
-  x = 256,
   y = 69,
   sprite = "entities/vase",
 }
@@ -140,24 +140,6 @@ dynamic_tile{
 destructible{
   layer = 1,
   x = 240,
-  y = 181,
-  sprite = "entities/vase",
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 248,
-  y = 168,
-  width = 16,
-  height = 16,
-  name = "placeholder_8",
-  pattern = "floor_pot",
-  enabled_at_start = true,
-}
-
-destructible{
-  layer = 1,
-  x = 256,
   y = 181,
   sprite = "entities/vase",
 }

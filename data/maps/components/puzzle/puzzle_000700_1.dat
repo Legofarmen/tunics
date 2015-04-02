@@ -100,17 +100,6 @@ chest{
 
 dynamic_tile{
   layer = 1,
-  x = 48,
-  y = 48,
-  width = 16,
-  height = 16,
-  name = "placeholder_1",
-  pattern = "floor_pot",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
   x = 64,
   y = 48,
   width = 16,
@@ -173,28 +162,6 @@ dynamic_tile{
   name = "placeholder_7",
   pattern = "floor_pot",
   enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 256,
-  y = 48,
-  width = 16,
-  height = 16,
-  name = "placeholder_8",
-  pattern = "floor_pot",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 48,
-  y = 80,
-  width = 16,
-  height = 16,
-  name = "placeholder_9",
-  pattern = "floor_small.2",
-  enabled_at_start = false,
 }
 
 dynamic_tile{
@@ -263,27 +230,9 @@ dynamic_tile{
   enabled_at_start = false,
 }
 
-dynamic_tile{
-  layer = 1,
-  x = 256,
-  y = 80,
-  width = 16,
-  height = 16,
-  name = "placeholder_16",
-  pattern = "floor_small.2",
-  enabled_at_start = false,
-}
-
 destructible{
   layer = 1,
   x = 72,
-  y = 61,
-  sprite = "entities/vase",
-}
-
-destructible{
-  layer = 1,
-  x = 56,
   y = 61,
   sprite = "entities/vase",
 }
@@ -321,25 +270,6 @@ destructible{
   x = 248,
   y = 61,
   sprite = "entities/vase",
-}
-
-destructible{
-  layer = 1,
-  x = 264,
-  y = 61,
-  sprite = "entities/vase",
-}
-
-block{
-  layer = 1,
-  x = 56,
-  y = 93,
-  name = "block_placeholder_9",
-  direction = -1,
-  sprite = "entities/block",
-  pushable = false,
-  pullable = false,
-  maximum_moves = 1,
 }
 
 block{
@@ -407,18 +337,6 @@ block{
   x = 248,
   y = 93,
   name = "block_placeholder_15",
-  direction = -1,
-  sprite = "entities/block",
-  pushable = false,
-  pullable = false,
-  maximum_moves = 1,
-}
-
-block{
-  layer = 1,
-  x = 264,
-  y = 93,
-  name = "block_placeholder_16",
   direction = -1,
   sprite = "entities/block",
   pushable = false,

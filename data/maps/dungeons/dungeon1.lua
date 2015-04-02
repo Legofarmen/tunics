@@ -13,8 +13,10 @@ local nkeys = game:get_value('override_keys') or 3
 local nfairies = game:get_value('override_fairies') or 1
 local nculdesacs = game:get_value('override_culdesacs') or 3
 local tileset_override = game:get_value('override_tileset')
+local treasure_override = game:get_value('override_treasure')
 
 local master_prng = Prng.from_seed(tier, seed)
+local game_prng = master_prng:create()
 local puzzle_rng = master_prng:create()
 local layout_rng = master_prng:create()
 local presentation_rng = master_prng:create()
@@ -33,7 +35,26 @@ function map:on_started()
     end
 end
 
-local puzzle = Puzzle.alpha_dungeon(puzzle_rng, nkeys, nfairies, nculdesacs, {'bomb','hookshot'})
+local all_items = {
+    'bomb',
+    'hookshot',
+    'lamp',
+	'bow',
+}
+local big_treasure = treasure_override or all_items[game_prng:random(#all_items)]
+
+local big_treasure_i = nil
+for i, item_name in ipairs(all_items) do
+    if item_name == big_treasure then
+        big_treasure_i = i
+    else
+        local item = game:get_item(item_name)
+        item:set_variant(1)
+        item:on_obtained(item_name)
+    end
+end
+table.remove(all_items, big_treasure_i)
+local puzzle = Puzzle.alpha_dungeon(puzzle_rng, nkeys, nfairies, nculdesacs, { big_treasure }, all_items)
 --puzzle:accept(Tree.PrintVisitor:new{})
 
 local floor1, floor2 = zentropy.components:get_floors(presentation_rng)

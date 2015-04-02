@@ -98,3 +98,15 @@ watch your Magic
 Meter!
 ]]
 }
+
+dialog{
+  id = "_item_description.hookshot.1",
+  icon = 6,
+  skip = "all",
+  text = [[
+Hoist yourself up to
+inaccessible places
+with the help of the
+Hookshot.
+]]
+}

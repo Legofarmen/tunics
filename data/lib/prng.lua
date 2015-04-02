@@ -5,7 +5,10 @@ local Prng = Class:new()
 
 function Prng.from_seed(seed1, seed2)
     seed2 = seed2 or seed1
-    return Prng:new{seeda = seed1 * seed2, seedb = seed1 + seed2}
+    local maxbits = 32768 * 65536 - 1
+    local seeda = bit32.band(seed1 + seed2, maxbits)
+    local seedb = bit32.band(seed1 * seed2, maxbits)
+    return Prng:new{seeda = seeda, seedb = seedb}
 end
 
 function Prng:random(a, b)

@@ -24,12 +24,13 @@ local BigKeyDetectorVisitor = {}
 setmetatable(BigKeyDetectorVisitor, BigKeyDetectorVisitor)
 
 function BigKeyDetectorVisitor:visit_room(room)
+    local found = false
     room:each_child(function (key, child)
-        if not child.open == 'smallkey' and child:accept(self) then
-            return true
+        if not found and child.open ~= 'smallkey' and child:accept(self) then
+            found = true
         end
     end)
-    return false
+    return found
 end
 
 function BigKeyDetectorVisitor:visit_treasure(treasure)
@@ -38,6 +39,63 @@ end
 
 function BigKeyDetectorVisitor:visit_enemy(enemy)
     return false
+end
+
+local BigkeyDistanceVisitor = {}
+
+setmetatable(BigkeyDistanceVisitor, BigkeyDistanceVisitor)
+
+function BigkeyDistanceVisitor:visit_room(room)
+    if room.open == 'bigkey' then
+        return 1
+    else
+        local nearest = math.huge
+        room:each_child(function (key, child)
+            nearest = math.min(nearest, child:accept(self) + 1)
+        end)
+        return nearest
+    end
+end
+function BigkeyDistanceVisitor:visit_enemy(enemy)
+    return math.huge
+end
+function BigkeyDistanceVisitor:visit_treasure(treasure)
+    if treasure.item_name == 'bigkey' or treasure.open == 'bigkey' then
+        return 1
+    else
+        return math.huge
+    end
+end
+
+
+local FillerObstacleVisitor = Class:new()
+
+function FillerObstacleVisitor:new(o)
+    assert(o.rng)
+    assert(o.obstacles)
+    return Class.new(self, o)
+end
+
+function FillerObstacleVisitor:visit_treasure(treasure) end
+function FillerObstacleVisitor:visit_enemy(enemy) end
+function FillerObstacleVisitor:visit_room(room)
+    local is_reachable = true
+    if room.open == 'entrance' then
+        is_reachable = false
+    end
+    room:each_child(function (key, child)
+        if child.open == 'bigkey' then
+            is_reachable = false
+        end
+        is_reachable = is_reachable and child:is_reachable()
+        child:accept(self)
+    end)
+    if is_reachable then
+        local obstacle = self.obstacles[self.rng:random(2 * #self.obstacles)]
+        room:each_child(function (key, child)
+            child.reach = obstacle
+        end)
+    end
 end
 
 local Puzzle = {}
@@ -53,7 +111,7 @@ function Puzzle.boss_step(root)
 end
 
 function Puzzle.fairy_step(root)
-    root:add_child(Tree.Enemy:new{name='fairy'}:with_needs{see='map',reach='bomb',open='bomb'})
+    root:add_child(Tree.Enemy:new{name='fairy'}:with_needs{see='map',reach='weakwall',open='weakwall'})
 end
 
 function Puzzle.culdesac_step(root)
@@ -65,7 +123,6 @@ function Puzzle.hide_treasures_step(root)
 end
 
 function Puzzle.obstacle_step(item_name, open, see)
-    see = see or 'nothing'
     return function (root)
         root:each_child(function (key, head)
             root:update_child(key, head:with_needs{see=see,reach=item_name,open=open})
@@ -77,12 +134,6 @@ function Puzzle.big_chest_step(item_name)
     return function (root)
         root:add_child(Tree.Treasure:new{name=item_name, see='nothing', reach='nothing', open='bigkey'})
     end
-end
-
-function Puzzle.bomb_doors_step(root)
-    root:each_child(function (key, head)
-        root:update_child(key, head:with_needs{see='map',reach='bomb',open='bomb'})
-    end)
 end
 
 function Puzzle.locked_door_step(rng, blackboard)
@@ -125,7 +176,25 @@ function Puzzle.max_heads(rng, n)
     return function (root)
         while #root.children > n do
             local node1 = root:remove_child(root:random_child(rng))
-            local node2 = root:remove_child(root:random_child(rng))
+            local f
+            if node1:accept(BigkeyDistanceVisitor) < math.huge then
+                f = function(node) return math.min(node:accept(BigkeyDistanceVisitor), 10) end
+            else
+                f = function(node) return 11 - math.min(node:accept(BigkeyDistanceVisitor), 10) end
+            end
+            local n = 0
+            local chosen = nil
+            root:each_child(function (key, child)
+                local d = 2 * f(child)
+                if child.get_weight then
+                    d = d - child:get_weight()
+                end
+                n = n + d
+                if rng:random(n) <= d then
+                    chosen = key
+                end
+            end)
+            local node2 = root:remove_child(chosen)
 
             local fork = Tree.Room:new()
             local n1 = node1:get_node_metric()
@@ -237,14 +306,32 @@ function Puzzle.Dependencies:multiple(name, count, element)
     return first, last
 end
 
-function Puzzle.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, item_names)
+function Puzzle.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, treasure_items, brought_items)
+    brought_items = brought_items or {}
 
-    function get_item_obstacle(item_name)
-        if item_name == 'bomb' then
-            return Puzzle.obstacle_step(item_name, 'bomb', 'map')
+    function get_obstacle_types(item_name, has_map)
+        if item_name ~= 'bomb' then
+            return {item_name}
+        elseif has_map then
+            return {'veryweakwall','weakwall'}
         else
-            return Puzzle.obstacle_step(item_name)
+            return {'veryweakwall'}
         end
+    end
+
+    function get_obstacle_step(obstacle_type)
+        local see, open
+        if obstacle_type == 'weakwall' then
+            see = 'map'
+            open = 'weakwall'
+        elseif obstacle_type == 'veryweakwall' then
+            see = 'nothing'
+            open = 'veryweakwall'
+        else
+            see = 'nothing'
+            open = 'open'
+        end
+        return Puzzle.obstacle_step(obstacle_type, open, see)
     end
 
     local d = Puzzle.Dependencies:new()
@@ -259,41 +346,58 @@ function Puzzle.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, item_names)
     d:single('compass', Puzzle.treasure_step('compass'))
     d:dependency('hidetreasures', 'compass')
 
-    for _, item_name in ipairs(item_names) do
-        local obstacle_name = string.format('obstacle_%s', item_name)
+    for _, item_name in ipairs(treasure_items) do
         local bigchest_name = string.format('bigchest_%s', item_name)
-        d:single(obstacle_name, get_item_obstacle(item_name))
         d:single(bigchest_name, Puzzle.big_chest_step(item_name))
-        d:dependency('boss', obstacle_name)
-        d:dependency(obstacle_name, bigchest_name)
         d:dependency(bigchest_name, 'bigkey')
+
+        local obstacle_types = get_obstacle_types(item_name, true)
+        for _, obstacle_type in ipairs(obstacle_types) do
+            local obstacle_name = string.format('obstacle_%s', obstacle_type)
+            d:single(obstacle_name, get_obstacle_step(obstacle_type))
+            d:dependency('boss', obstacle_name)
+            d:dependency(obstacle_name, bigchest_name)
+        end
         if item_name == 'bomb' then
-            d:dependency(obstacle_name, 'map')
+            d:dependency('obstacle_weakwall', 'map')
+            d:dependency('obstacle_weakwall', 'obstacle_veryweakwall')
         end
     end
 
     local blackboard = {}
     local lockeddoors_rng = rng:create()
     local first_lock, last_lock = d:multiple('lockeddoor', nkeys, Puzzle.locked_door_step(lockeddoors_rng, blackboard))
-    d:dependency('bigkey', first_lock)
-    d:dependency('compass', first_lock)
-    d:dependency('map', first_lock)
-    local first_key, last_key = d:multiple('smallkey', nkeys, Puzzle.smallkey_step(blackboard))
-    d:dependency(last_lock, first_key)
+    if first_lock then
+        d:dependency('bigkey', last_lock)
+        d:dependency('compass', last_lock)
+        d:dependency('map', last_lock)
+        local first_key, last_key = d:multiple('smallkey', nkeys, Puzzle.smallkey_step(blackboard))
+        d:dependency(last_lock, first_key)
+    end
 
     d:multiple('culdesac', nculdesacs, Puzzle.culdesac_step)
     d:multiple('fairy', nfairies, Puzzle.fairy_step)
 
     local steps = Puzzle.sequence(rng:create(), d.result)
-
-    return Puzzle.render_steps(rng, steps)
+    local tree = Puzzle.render_steps(rng, steps)
+    local obstacle_types = {}
+    for _, item_name in ipairs(brought_items) do
+        for _, obstacle in ipairs(get_obstacle_types(item_name, false)) do
+            table.insert(obstacle_types, obstacle)
+        end
+    end
+    tree:accept(FillerObstacleVisitor:new{
+        obstacles = obstacle_types,
+        rng = rng:create(),
+    })
+    return tree
 end
 
 function Puzzle.render_steps(rng, steps)
     -- Build puzzle tree using the sequence of steps
     local heads = Tree.Room:new()
     for name, element in ipairs(steps) do
-        Puzzle.max_heads(rng:create(), 4)(heads)
+        Puzzle.max_heads(rng:create(), 6)(heads)
         element.step(heads)
     end
 
