@@ -154,6 +154,7 @@ map{ id = "components/obstacle_lamp/obstacle_lamp_northsouth_000700_1", descript
 map{ id = "components/obstacle_lamp/obstacle_lamp_eastwest_000111_1", description = "Obstacle lamp eastwest 000111 1" }
 map{ id = "components/obstacle_lamp/obstacle_lamp_northsouthwest_000444_1", description = "Obstacle lamp northsouthwest 000444 1" }
 map{ id = "components/obstacle_lamp/obstacle_lamp_northsoutheast_000111_1", description = "Obstacle lamp northsoutheast 000111 1" }
+map{ id = "components/obstacle_bow/obstacle_bow_north_000400_1", description = "Obstacle bow north 000400 1" }
 
 tileset{ id = "light_world", description = "Light World" }
 tileset{ id = "dungeon_brick_gray_1", description = "Dungeon brick gray 1" }
@@ -162,6 +163,7 @@ tileset{ id = "dungeon_smoothbrick_desert_1", description = "Dungeon smoothbrick
 tileset{ id = "dungeon_ganon_brown_1", description = "Dungeon ganon brown 1" }
 tileset{ id = "dungeon_brick_blue_1", description = "Dungeon brick blue 1" }
 tileset{ id = "dungeon_cave_brown_1", description = "Dungeon cave brown 1" }
+tileset{ id = "dungeon_house_brown_1", description = "Dungeon house brown 1" }
 
 sprite{ id = "entities/block", description = "Block" }
 sprite{ id = "entities/chest", description = "Chest" }
