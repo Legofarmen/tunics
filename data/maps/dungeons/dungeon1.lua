@@ -42,7 +42,14 @@ local all_items = {
 }
 local big_treasure = treasure_override or all_items[game_prng:random(#all_items)]
 
-local puzzle = Puzzle.alpha_dungeon(puzzle_rng, nkeys, nfairies, nculdesacs, { big_treasure })
+for i, item_name in ipairs(all_items) do
+    if item_name == big_treasure then
+        table.remove(all_items, i)
+    else
+        game:set_value(item_name, 1)
+    end
+end
+local puzzle = Puzzle.alpha_dungeon(puzzle_rng, nkeys, nfairies, nculdesacs, { big_treasure }, all_items)
 --puzzle:accept(Tree.PrintVisitor:new{})
 
 local floor1, floor2 = zentropy.components:get_floors(presentation_rng)

@@ -68,6 +68,36 @@ function BigkeyDistanceVisitor:visit_treasure(treasure)
 end
 
 
+local FillerObstacleVisitor = Class:new()
+
+function FillerObstacleVisitor:new(o)
+    assert(o.rng)
+    assert(o.obstacles)
+    return Class.new(self, o)
+end
+
+function FillerObstacleVisitor:visit_treasure(treasure) end
+function FillerObstacleVisitor:visit_enemy(enemy) end
+function FillerObstacleVisitor:visit_room(room)
+    local is_reachable = true
+    if self.open == 'entrance' then
+        is_reachable = false
+    end
+    room:each_child(function (key, child)
+        if child.open == 'bigkey' then
+            is_reachable = false
+        end
+        is_reachable = is_reachable and child:is_reachable()
+        child:accept(self)
+    end)
+    if is_reachable then
+        local obstacle = self.obstacles[self.rng:random(2 * #self.obstacles)]
+        room:each_child(function (key, child)
+            child.reach = obstacle
+        end)
+    end
+end
+
 local Puzzle = {}
 
 function Puzzle.treasure_step(item_name)
@@ -276,7 +306,18 @@ function Puzzle.Dependencies:multiple(name, count, element)
     return first, last
 end
 
-function Puzzle.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, item_names)
+function Puzzle.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, treasure_items, brought_items)
+    brought_items = brought_items or {}
+
+    function get_obstacle_types(item_name, has_map)
+        if item_name ~= 'bomb' then
+            return {item_name}
+        elseif has_map then
+            return {'veryweakwall','weakwall'}
+        else
+            return {'veryweakwall'}
+        end
+    end
 
     function get_obstacle_step(obstacle_type)
         local see, open
@@ -305,17 +346,12 @@ function Puzzle.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, item_names)
     d:single('compass', Puzzle.treasure_step('compass'))
     d:dependency('hidetreasures', 'compass')
 
-    for _, item_name in ipairs(item_names) do
+    for _, item_name in ipairs(treasure_items) do
         local bigchest_name = string.format('bigchest_%s', item_name)
         d:single(bigchest_name, Puzzle.big_chest_step(item_name))
         d:dependency(bigchest_name, 'bigkey')
 
-        local obstacle_types
-        if item_name == 'bomb' then
-            obstacle_types = {'veryweakwall','weakwall'}
-        else
-            obstacle_types = {item_name}
-        end
+        local obstacle_types = get_obstacle_types(item_name, true)
         for _, obstacle_type in ipairs(obstacle_types) do
             local obstacle_name = string.format('obstacle_%s', obstacle_type)
             d:single(obstacle_name, get_obstacle_step(obstacle_type))
@@ -343,8 +379,18 @@ function Puzzle.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, item_names)
     d:multiple('fairy', nfairies, Puzzle.fairy_step)
 
     local steps = Puzzle.sequence(rng:create(), d.result)
-
-    return Puzzle.render_steps(rng, steps)
+    local tree = Puzzle.render_steps(rng, steps)
+    local obstacle_types = {}
+    for _, item_name in ipairs(brought_items) do
+        for _, obstacle in ipairs(get_obstacle_types(item_name, false)) do
+            table.insert(obstacle_types, obstacle)
+        end
+    end
+    tree:accept(FillerObstacleVisitor:new{
+        obstacles = obstacle_types,
+        rng = rng:create(),
+    })
+    return tree
 end
 
 function Puzzle.render_steps(rng, steps)
