@@ -26,7 +26,7 @@ setmetatable(BigKeyDetectorVisitor, BigKeyDetectorVisitor)
 function BigKeyDetectorVisitor:visit_room(room)
     local found = false
     room:each_child(function (key, child)
-        if child.open ~= 'smallkey' and child:accept(self) then
+        if not found and child.open ~= 'smallkey' and child:accept(self) then
             found = true
         end
     end)
