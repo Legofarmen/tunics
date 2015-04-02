@@ -13,6 +13,7 @@ local nkeys = game:get_value('override_keys') or 3
 local nfairies = game:get_value('override_fairies') or 1
 local nculdesacs = game:get_value('override_culdesacs') or 3
 local tileset_override = game:get_value('override_tileset')
+local treasure_override = game:get_value('override_treasure')
 
 local master_prng = Prng.from_seed(tier, seed)
 local game_prng = master_prng:create()
@@ -39,9 +40,9 @@ local all_items = {
     'hookshot',
     'lamp',
 }
-local treasures = { all_items[game_prng:random(#all_items)] }
+local big_treasure = treasure_override or all_items[game_prng:random(#all_items)]
 
-local puzzle = Puzzle.alpha_dungeon(puzzle_rng, nkeys, nfairies, nculdesacs, treasures)
+local puzzle = Puzzle.alpha_dungeon(puzzle_rng, nkeys, nfairies, nculdesacs, { big_treasure })
 --puzzle:accept(Tree.PrintVisitor:new{})
 
 local floor1, floor2 = zentropy.components:get_floors(presentation_rng)
