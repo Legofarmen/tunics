@@ -1,0 +1,84 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  tileset = "dungeon_brick_gray_1",
+  music = "same",
+}
+
+tile{
+  layer = 1,
+  x = 120,
+  y = 56,
+  width = 80,
+  height = 32,
+  pattern = "floor_small.2",
+}
+
+tile{
+  layer = 1,
+  x = 112,
+  y = 48,
+  width = 96,
+  height = 8,
+  pattern = "floor_border.2",
+}
+
+tile{
+  layer = 1,
+  x = 112,
+  y = 88,
+  width = 96,
+  height = 8,
+  pattern = "floor_border.2",
+}
+
+tile{
+  layer = 1,
+  x = 112,
+  y = 56,
+  width = 8,
+  height = 32,
+  pattern = "floor_border.2",
+}
+
+tile{
+  layer = 1,
+  x = 200,
+  y = 56,
+  width = 8,
+  height = 32,
+  pattern = "floor_border.2",
+}
+
+chest{
+  layer = 1,
+  x = 160,
+  y = 77,
+  name = "chest",
+  sprite = "entities/chest",
+}
+
+custom_entity{
+  layer = 1,
+  x = 184,
+  y = 77,
+  width = 16,
+  height = 16,
+  name = "torch_2",
+  direction = 3,
+  model = "torch",
+}
+
+custom_entity{
+  layer = 1,
+  x = 136,
+  y = 77,
+  width = 16,
+  height = 16,
+  name = "torch_1",
+  direction = 3,
+  model = "torch",
+}
+

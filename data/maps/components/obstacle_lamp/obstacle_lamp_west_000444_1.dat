@@ -3,17 +3,8 @@ properties{
   y = 0,
   width = 320,
   height = 240,
-  tileset = "dungeon_cave_brown_1",
+  tileset = "dungeon_brick_gray_1",
   music = "same",
-}
-
-tile{
-  layer = 1,
-  x = 72,
-  y = 112,
-  width = 16,
-  height = 16,
-  pattern = "floor.5",
 }
 
 tile{
@@ -40,25 +31,7 @@ tile{
   y = 32,
   width = 48,
   height = 176,
-  pattern = "door_main.2.floor.3",
-}
-
-tile{
-  layer = 1,
-  x = 72,
-  y = 104,
-  width = 32,
-  height = 24,
-  pattern = "barrier.1.1",
-}
-
-tile{
-  layer = 1,
-  x = 56,
-  y = 32,
-  width = 64,
-  height = 8,
-  pattern = "wall_border.1",
+  pattern = "floor_small.1",
 }
 
 tile{
@@ -70,13 +43,42 @@ tile{
   pattern = "wall_border.2",
 }
 
+tile{
+  layer = 1,
+  x = 56,
+  y = 32,
+  width = 64,
+  height = 8,
+  pattern = "wall_border.1",
+}
+
 chest{
   layer = 1,
   x = 88,
   y = 125,
   name = "chest",
-  sprite = "entities/big_chest",
-  opening_method = "interaction_if_savegame_variable",
-  opening_condition = "bigkey",
+  sprite = "entities/chest",
+}
+
+custom_entity{
+  layer = 1,
+  x = 88,
+  y = 173,
+  width = 16,
+  height = 16,
+  name = "torch_2",
+  direction = 3,
+  model = "torch",
+}
+
+custom_entity{
+  layer = 1,
+  x = 88,
+  y = 77,
+  width = 16,
+  height = 16,
+  name = "torch_1",
+  direction = 3,
+  model = "torch",
 }
 

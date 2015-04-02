@@ -1,10 +1,10 @@
-local obstacle_lamp = {}
+local lamp = {}
 
 local util = require 'lib/util'
-
-function obstacle_lamp.init(map, data)
+    		
+function lamp.init(map, data)
 	for dir, door_data in pairs(data.doors) do
-        data.room:door({open='bomb', name=door_data.name}, dir)
+        data.room:door({open='closed', name=door_data.name}, dir)
 	end
 	
 	if data.treasure1 then
@@ -38,4 +38,4 @@ function obstacle_lamp.init(map, data)
 	end
 end
 
-return bomb
+return lamp
