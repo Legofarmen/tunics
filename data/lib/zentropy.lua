@@ -24,6 +24,14 @@ function zentropy.init()
     entries = zentropy.db.Project:parse()
     zentropy.components = zentropy.db.Components:new():parse(entries.map)
     zentropy.tilesets = zentropy.db.Tilesets:new():parse(entries.tileset)
+
+    zentropy.musics = {}
+    for k, v in ipairs(entries.music) do
+        local parts = string.gmatch(v.id, '[^_]+')
+        local kind = parts()
+        zentropy.musics[kind] = zentropy.musics[kind] or {}
+        table.insert(zentropy.musics[kind], v)
+    end
 end
 
 function zentropy.db.Project:parse()

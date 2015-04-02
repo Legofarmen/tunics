@@ -118,6 +118,7 @@ map{ id = "components/obstacle_weakwall/obstacle_weakwall_northsouth_000400_1", 
 map{ id = "components/obstacle_weakwall/obstacle_weakwall_east_000100_1", description = "Obstacle weakwall east 000100 1" }
 map{ id = "components/obstacle_weakwall/obstacle_weakwall_west_000004_1", description = "Obstacle weakwall west 000004 1" }
 map{ id = "components/filler/filler_202777_1", description = "Filler 202777 1" }
+map{ id = "components/filler/filler_210711_1", description = "Filler 210711 1" }
 map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_east_000111_1", description = "obstacle_veryweakwall_east_000111_1" }
 map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_eastwest_000444_1", description = "obstacle_veryweakwall_eastwest_000444_1" }
 map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_north_000700_1", description = "obstacle_veryweakwall_north_000700_1" }
