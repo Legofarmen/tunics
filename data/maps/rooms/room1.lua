@@ -129,6 +129,7 @@ local obstacle_treasure = nil
 local normal_treasures = {}
 for _, treasure_data in ipairs(data.treasures) do
     if treasure_data.reach then
+        assert(not obstacle_item or obstacle_item == treasure_data.reach)
         obstacle_treasure = treasure_data
     else
         table.insert(normal_treasures, treasure_data)
@@ -136,7 +137,7 @@ for _, treasure_data in ipairs(data.treasures) do
 end
 
 if obstacle_treasure then
-    obstacle_dir = walls[room_rng:random(#walls)]
+    obstacle_dir = obstacle_dir or walls[room_rng:random(#walls)]
     obstacle_item = obstacle_treasure.reach
 end
 
