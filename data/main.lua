@@ -12,12 +12,10 @@ function sol.main:on_started()
     sol.language.set_language("en")
 
     local old_game = sol.game.load("zentropy1.dat")
-    local old_values = {}
-    for _, name in pairs{'seed', 'tier', 'override_tileset', 'override_keys', 'override_fairies', 'override_culdesacs', 'override_treasure'} do
-        old_values[name] = old_game:get_value(name)
+    local overrides = {}
+    for _, name in pairs{'override_seed', 'override_tileset', 'override_keys', 'override_fairies', 'override_culdesacs', 'override_treasure'} do
+        overrides[name] = old_game:get_value(name)
     end
-    old_values.seed = old_values.seed or 1
-    old_values.tier = old_values.tier or 1
 
     sol.game.delete("zentropy1.dat")
     local game = sol.game.load("zentropy1.dat")
@@ -25,8 +23,13 @@ function sol.main:on_started()
     game:set_max_life(12)
     game:set_life(12)
     game:set_value('small_key_amount', 0)
+    game:set_value('tier', 1)
 
-    for name, value in pairs(old_values) do
+    math.randomseed(os.time())
+    game:set_value('seed', overrides.override_seed or math.random(32768 * 65536 - 1))
+    print('Using seed: ' .. game:get_value('seed'))
+
+    for name, value in pairs(overrides) do
         game:set_value(name, value)
     end
 
