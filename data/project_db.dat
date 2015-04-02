@@ -275,7 +275,7 @@ music{ id = "dark_mountain", description = "Dark Mountain" }
 music{ id = "dark_world", description = "Dark World" }
 music{ id = "light_world_dungeon", description = "Dungeon (light world)" }
 music{ id = "dark_world_dungeon", description = "Dungeon (dark world)" }
-music{ id = "dungeon_finished", description = "Dungeon finished" }
+music{ id = "finished", description = "Dungeon finished" }
 music{ id = "excalibur", description = "Excalibur" }
 music{ id = "fanfare", description = "Fanfare" }
 music{ id = "fortune_teller", description = "Fortune Teller" }
@@ -283,7 +283,6 @@ music{ id = "ganon_appears", description = "Ganon appears" }
 music{ id = "ganon_battle", description = "Ganon battle" }
 music{ id = "ganon_theme", description = "Ganon theme" }
 music{ id = "great_fairy", description = "Great Fairy" }
-music{ id = "village", description = "Kakariko Village" }
 music{ id = "legend", description = "Legend" }
 music{ id = "lost_woods", description = "Lost Woods" }
 music{ id = "mini_game", description = "Mini game" }
@@ -296,6 +295,11 @@ music{ id = "title_screen", description = "Title screen" }
 music{ id = "triforce", description = "Triforce" }
 music{ id = "victory", description = "Victory" }
 music{ id = "zelda", description = "Zelda theme" }
+music{ id = "dungeon_village", description = "Dungeon village" }
+music{ id = "dungeon_dark", description = "Dungeon dark" }
+music{ id = "dungeon_light", description = "Dungeon light" }
+music{ id = "dungeon_castle", description = "Dungeon castle" }
+music{ id = "dungeon_cave", description = "dungeon_cave" }
 
 sound{ id = "arrow_hit", description = "arrow_hit" }
 sound{ id = "bomb", description = "bomb" }

@@ -1,0 +1,82 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  tileset = "dungeon_smoothbrick_green_1",
+  music = "same",
+}
+
+tile{
+  layer = 1,
+  x = 288,
+  y = 8,
+  width = 24,
+  height = 24,
+  pattern = "wall.corner.2",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 224,
+  y = 48,
+  width = 16,
+  height = 16,
+  name = "treasure_obstacle_chest",
+  pattern = "floor_small.1",
+  enabled_at_start = true,
+}
+
+door{
+  layer = 1,
+  x = 224,
+  y = 64,
+  name = "treasure_obstacle_block",
+  direction = 1,
+  sprite = "entities/door_weak_block",
+  opening_method = "explosion",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 256,
+  y = 48,
+  width = 16,
+  height = 16,
+  name = "treasure_open_chest",
+  pattern = "floor_small.1",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 288,
+  y = 104,
+  width = 24,
+  height = 32,
+  name = "door_east_closed",
+  pattern = "wall.4",
+  enabled_at_start = true,
+}
+
+door{
+  layer = 1,
+  x = 288,
+  y = 112,
+  name = "door_east",
+  direction = 0,
+  sprite = "entities/door_weak_wall",
+  opening_method = "explosion",
+}
+
+dynamic_tile{
+  layer = 2,
+  x = 304,
+  y = 104,
+  width = 8,
+  height = 32,
+  name = "top_east_open",
+  pattern = "door_top.blast.4",
+  enabled_at_start = false,
+}
+
