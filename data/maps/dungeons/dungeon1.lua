@@ -39,6 +39,7 @@ local all_items = {
     'bomb',
     'hookshot',
     'lamp',
+	'bow',
 }
 local big_treasure = treasure_override or all_items[game_prng:random(#all_items)]
 
