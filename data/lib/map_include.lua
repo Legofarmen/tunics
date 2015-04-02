@@ -33,6 +33,13 @@ function component_map(map_userdata, component_x, component_y, component_prefix,
         end
         return o
     end
+    local add_prefix = function (name)
+        if string.sub(name, 0, 2) == '__' then
+            return name
+        else
+            return component_prefix .. name
+        end
+    end
 
     local rewrite = data.rewrite or {}
     local transform = function (properties)
@@ -43,9 +50,7 @@ function component_map(map_userdata, component_x, component_y, component_prefix,
             if rewrite[properties.name] then
                 properties = rewrite[properties.name](properties) or properties
             end
-            if string.sub(properties.name, 0, 2) ~= '__' then
-                properties.name = component_prefix .. properties.name
-            end
+            properties.name = add_prefix(properties.name)
         end
         return properties
     end
@@ -79,39 +84,39 @@ function component_map(map_userdata, component_x, component_y, component_prefix,
         return component_entity(map_userdata:create_dynamic_tile(transform(properties)))
     end
     function o:get_entity(name)
-        return component_entity(map_userdata:get_entity(component_prefix .. name))
+        return component_entity(map_userdata:get_entity(add_prefix(name)))
     end
     function o:get_entities(prefix)
         local entities = {}
-        for entity_userdata in map_userdata:get_entities(component_prefix .. prefix) do
+        for entity_userdata in map_userdata:get_entities(add_prefix(prefix)) do
             ce = component_entity(entity_userdata)
             entities[ce:get_name()] = ce
         end
         return util.values_by_keys(entities)
     end
     function o:has_entity(name)
-        return map_userdata:has_entity(component_prefix .. name)
+        return map_userdata:has_entity(add_prefix(name))
     end
     function o:get_entities_count(prefix)
-        return map_userdata:get_entities_count(component_prefix .. prefix)
+        return map_userdata:get_entities_count(add_prefix(prefix))
     end
     function o:has_entities(prefix)
-        return map_userdata:has_entities(component_prefix .. prefix)
+        return map_userdata:has_entities(add_prefix(prefix))
     end
     function o:set_entities_enabled(prefix, enabled)
-        return map_userdata:set_entities_enabled(component_prefix .. prefix, enabled)
+        return map_userdata:set_entities_enabled(add_prefix(prefix), enabled)
     end
     function o:remove_entities(prefix)
-        return map_userdata:remove_entities(component_prefix .. prefix)
+        return map_userdata:remove_entities(add_prefix(prefix))
     end
     function o:open_doors(prefix)
-        return map_userdata:open_doors(component_prefix .. prefix)
+        return map_userdata:open_doors(add_prefix(prefix))
     end
     function o:close_doors(prefix)
-        return map_userdata:close_doors(component_prefix .. prefix)
+        return map_userdata:close_doors(add_prefix(prefix))
     end
     function o:set_doors_open(prefix, open)
-        return map_userdata:set_doors_open(component_prefix .. prefix, open)
+        return map_userdata:set_doors_open(add_prefix(prefix), open)
     end
     function o:include(x, y, name, data)
         return map_userdata:include(x + component_x, y + component_y, name, data)
