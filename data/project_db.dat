@@ -119,6 +119,9 @@ map{ id = "components/obstacle_bomb/obstacle_bomb_northsouth_000700_1", descript
 map{ id = "components/obstacle_bomb/obstacle_bomb_east_000111_1", description = "obstacle_bomb_east_000111_1" }
 map{ id = "components/obstacle_bomb/obstacle_bomb_west_000444_1", description = "obstacle_bomb_west_000444_1" }
 map{ id = "components/filler/filler_202777_1", description = "Filler 202777 1" }
+map{ id = "tompa/filler210711", description = "Filler 210711" }
+map{ id = "components/filler/filler_210711_1.lua", description = "Filler 210711 1" }
+map{ id = "components/filler/filler_210711_1", description = "Filler 210711 1" }
 
 tileset{ id = "light_world", description = "Light World" }
 tileset{ id = "dungeon_brick_gray_1", description = "Dungeon brick gray 1" }
