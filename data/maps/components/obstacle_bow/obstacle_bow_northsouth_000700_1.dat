@@ -269,7 +269,7 @@ dynamic_tile{
   height = 16,
   name = "treasure_obstacle_chest",
   pattern = "floor_small.4",
-  enabled_at_start = true,
+  enabled_at_start = false,
 }
 
 dynamic_tile{
@@ -280,7 +280,7 @@ dynamic_tile{
   height = 16,
   name = "treasure_open_chest",
   pattern = "floor_small.4",
-  enabled_at_start = true,
+  enabled_at_start = false,
 }
 
 switch{
