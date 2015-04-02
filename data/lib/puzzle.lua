@@ -80,7 +80,7 @@ function FillerObstacleVisitor:visit_treasure(treasure) end
 function FillerObstacleVisitor:visit_enemy(enemy) end
 function FillerObstacleVisitor:visit_room(room)
     local is_reachable = true
-    if self.open == 'entrance' then
+    if room.open == 'entrance' then
         is_reachable = false
     end
     room:each_child(function (key, child)
