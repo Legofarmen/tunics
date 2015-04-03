@@ -9,15 +9,6 @@ function component_map(map_userdata, component_x, component_y, component_prefix,
         end
         local component_name_start = string.len(component_prefix) + 1
         local o = {}
-        setmetatable(o, {
-            __index = function (table, key)
-                if type(entity_userdata[key]) == 'function' then
-                    return function (self, ...) return entity_userdata[key](entity_userdata, ...) end
-                else
-                    return entity_userdata[key]
-                end
-            end,
-        })
         function o:get_name()
             return string.sub(entity_userdata:get_name(), component_name_start)
         end
@@ -31,6 +22,18 @@ function component_map(map_userdata, component_x, component_y, component_prefix,
         function o:get_userdata()
             return entity_userdata
         end
+        setmetatable(o, {
+            __index = function (table, key)
+                if type(entity_userdata[key]) == 'function' then
+                    return function (self, ...) return entity_userdata[key](entity_userdata, ...) end
+                else
+                    return entity_userdata[key]
+                end
+            end,
+            __newindex = function (table, key, value)
+                entity_userdata[key] = value
+            end,
+        })
         return o
     end
     local add_prefix = function (name)

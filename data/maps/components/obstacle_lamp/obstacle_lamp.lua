@@ -45,9 +45,8 @@ function lamp.init(map, data, timeout)
 	local torch_count = map:get_entities_count('torch_')
 	local lit_count = 0 
 	for torch in torches do
-		local torch_u = torch:get_userdata()
 		if timeout then torch:set_timeout(timeout) end
-		function torch_u:on_lit()
+		function torch:on_lit()
 			lit_count = lit_count + 1
 			if lit_count == torch_count then
 				local sound = nil
@@ -62,7 +61,7 @@ function lamp.init(map, data, timeout)
 				sol.audio.play_sound(sound)
 			end	
         end
-		function torch_u:on_unlighting()
+		function torch:on_unlighting()
 			if lit_count == torch_count then
 				return false
 			else

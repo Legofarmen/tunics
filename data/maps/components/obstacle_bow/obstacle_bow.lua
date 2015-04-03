@@ -42,8 +42,7 @@ function bow.init(map, data, timeout)
 	end
 
 	local switch = map:get_entity('switch')
-	local switch_u = switch:get_userdata()
-	function switch_u:on_activated()
+	function switch:on_activated()
 		local sound = nil
 		if data.treasure1 then
 			hidden_chest:set_enabled(true)

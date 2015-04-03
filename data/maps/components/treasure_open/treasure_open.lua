@@ -3,8 +3,7 @@ local treasure = {}
 function treasure.init(map, data)
 
     local chest = map:get_entity('chest')
-        local switch = map:get_entity('switch')
-    local switch_u = switch:get_userdata()
+    local switch = map:get_entity('switch')
 
     local placeholders = {}
     for entity in map:get_entities('placeholder_') do
@@ -20,7 +19,7 @@ function treasure.init(map, data)
          block:set_pushable(true)
     end
 
-    function switch_u:on_activated()
+    function switch:on_activated()
         chest:set_enabled(true)
         sol.audio.play_sound('chest_appears')
     end

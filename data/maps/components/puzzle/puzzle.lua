@@ -6,11 +6,10 @@ function puzzle.init(map, data)
 
     local chest = map:get_entity('chest')
     local switch = map:get_entity('switch')
-    local switch_u = switch:get_userdata()
-    local sensor_north_u = map:get_entity('sensor_north'):get_userdata()
-    local sensor_south_u = map:get_entity('sensor_south'):get_userdata()
-    local sensor_east_u = map:get_entity('sensor_east'):get_userdata()
-    local sensor_west_u = map:get_entity('sensor_west'):get_userdata()
+    local sensor_north = map:get_entity('sensor_north')
+    local sensor_south = map:get_entity('sensor_south')
+    local sensor_east = map:get_entity('sensor_east')
+    local sensor_west = map:get_entity('sensor_west')
 
     local function sensor_activated()
         if not switch:is_activated() then
@@ -39,12 +38,12 @@ function puzzle.init(map, data)
             block:set_position(x, y - 1)
         end
 
-        sensor_north_u.on_activated = sensor_activated
-        sensor_south_u.on_activated = sensor_activated
-        sensor_east_u.on_activated = sensor_activated
-        sensor_west_u.on_activated = sensor_activated
+        sensor_north.on_activated = sensor_activated
+        sensor_south.on_activated = sensor_activated
+        sensor_east.on_activated = sensor_activated
+        sensor_west.on_activated = sensor_activated
 
-        function switch_u:on_activated()
+        function switch:on_activated()
             if data.item_name then
                 chest:set_enabled(true)
                 sol.audio.play_sound('chest_appears')
