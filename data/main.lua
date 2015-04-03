@@ -1,7 +1,6 @@
 local zentropy = require 'lib/zentropy'
 local util = require 'lib/util'
 local Pause = require 'menus/pause'
-local Prng = require 'lib/prng'
 
 local dialog_box = require 'menus/dialog_box'
 
@@ -11,30 +10,9 @@ util.wdebug_truncate()
 
 function sol.main:on_started()
     sol.language.set_language("en")
-
-    local old_game = sol.game.load("zentropy1.dat")
-    local overrides = {}
-    for _, name in pairs{'override_seed', 'override_tileset', 'override_keys', 'override_fairies', 'override_culdesacs', 'override_treasure'} do
-        overrides[name] = old_game:get_value(name)
-    end
-
-    sol.game.delete("zentropy1.dat")
-    local game = sol.game.load("zentropy1.dat")
-    game:set_ability("sword", 1)
-    game:set_max_life(12)
-    game:set_life(12)
-    game:set_value('small_key_amount', 0)
-    game:set_value('tier', 1)
-
     math.randomseed(os.time())
-    game:set_value('seed', overrides.override_seed or math.random(32768 * 65536 - 1))
-    print('Using seed: ' .. game:get_value('seed'))
 
-    for name, value in pairs(overrides) do
-        game:set_value(name, value)
-    end
-
-    game:save()
+    local game = zentropy.game.new_game('zentropy1.dat')
 
     require('lib/map_include.lua')
     sol.main.load_file("hud/hud")(game)
