@@ -547,6 +547,15 @@ tile{
   pattern = "wall_statue.1.2",
 }
 
+teletransporter{
+  layer = 1,
+  x = 152,
+  y = 16,
+  width = 16,
+  height = 16,
+  destination_map = "rooms/cut_scene",
+}
+
 enemy{
   layer = 1,
   x = 176,
@@ -554,6 +563,14 @@ enemy{
   direction = 3,
   breed = "green_knight_soldier",
   rank = 2,
+}
+
+stairs{
+  layer = 1,
+  x = 152,
+  y = 16,
+  direction = 1,
+  subtype = "3",
 }
 
 tile{

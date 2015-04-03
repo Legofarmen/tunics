@@ -412,3 +412,20 @@ enemy{
   rank = 2,
 }
 
+teletransporter{
+  layer = 1,
+  x = 152,
+  y = 16,
+  width = 16,
+  height = 16,
+  destination_map = "rooms/cut_scene",
+}
+
+stairs{
+  layer = 1,
+  x = 152,
+  y = 16,
+  direction = 1,
+  subtype = "3",
+}
+

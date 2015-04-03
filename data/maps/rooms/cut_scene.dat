@@ -314,3 +314,10 @@ pickable{
   treasure_variant = 2,
 }
 
+destination{
+  layer = 0,
+  x = 0,
+  y = 13,
+  direction = 3,
+}
+
