@@ -1,6 +1,7 @@
 local zentropy = require 'lib/zentropy'
 local util = require 'lib/util'
 local Pause = require 'menus/pause'
+local Prng = require 'lib/prng'
 
 local dialog_box = require 'menus/dialog_box'
 
@@ -31,6 +32,23 @@ function sol.main:on_started()
 
     for name, value in pairs(overrides) do
         game:set_value(name, value)
+    end
+
+    local all_items = {
+        'bomb',
+        'hookshot',
+        'lamp',
+        'bow',
+    }
+
+    local rng = Prng.from_seed(game:get_value('seed'), game:get_value('tier'))
+    local big_treasure = overrides.override_treasure or all_items[rng:random(#all_items)]
+    for i, item_name in ipairs(all_items) do
+        if item_name ~= big_treasure then
+            local item = game:get_item(item_name)
+            item:set_variant(1)
+            item:on_obtained(item_name)
+        end
     end
 
     game:save()
