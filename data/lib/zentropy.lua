@@ -3,6 +3,9 @@ local util = require 'lib/util'
 local Prng = require 'lib/prng'
 local Puzzle = require 'lib/puzzle'
 local map_include = require 'lib/map_include'
+local dialog_box = require 'menus/dialog_box'
+local Pause = require 'menus/pause'
+
 
 bit32 = bit32 or bit
 
@@ -502,7 +505,21 @@ end
 
 function zentropy.game.new_game(filename)
     zentropy.game.filename = filename
-    local game = zentropy.game.load()
+
+    local old_game = sol.game.load(filename)
+    local overrides = {}
+    for _, name in pairs{'override_seed', 'override_tier', 'override_tileset', 'override_keys', 'override_fairies', 'override_culdesacs'} do
+        overrides[name] = old_game:get_value(name)
+    end
+    sol.game.delete(zentropy.game.filename)
+    zentropy.game.game = zentropy.game.init(sol.game.load(filename))
+    local game = zentropy.game.game
+    zentropy.game.game = game
+    for name, value in pairs(overrides) do
+        game:set_value(name, value)
+    end
+    game:save()
+
     local seed = game:get_value('override_seed') or math.random(32768 * 65536 - 1)
     local rng = Prng.from_seed(seed, 1)
     game:set_value('seed', seed)
@@ -543,20 +560,68 @@ function zentropy.game.next_tier()
     return game
 end
 
-function zentropy.game.load()
-    local game = sol.game.load(zentropy.game.filename)
-    local overrides = {}
-    for _, name in pairs{'override_seed', 'override_tier', 'override_tileset', 'override_keys', 'override_fairies', 'override_culdesacs'} do
-        overrides[name] = game:get_value(name)
+function zentropy.game.init(game)
+    sol.main.load_file("hud/hud")(game)
+
+    game:set_starting_location('dungeons/dungeon1')
+
+    game.dialog_box = dialog_box:new{game=game}
+
+    local pause = Pause:new{game=game}
+
+    function game:on_command_pressed(command)
+        if command == 'pause' and game:is_paused() then
+            game:save()
+            print("saved")
+        end
     end
-    sol.game.delete(zentropy.game.filename)
-    local new_game = sol.game.load(zentropy.game.filename)
-    for name, value in pairs(overrides) do
-        new_game:set_value(name, value)
+
+    function game:on_paused()
+        pause:start_pause_menu()
+        self:hud_on_paused()
     end
-    new_game:save()
-    zentropy.game.game = sol.game.load(zentropy.game.filename)
-    return zentropy.game.game
+
+    function game:on_unpaused()
+        pause:stop_pause_menu()
+        self:hud_on_unpaused()
+    end
+
+    function game:on_started()
+        game:get_hero():set_walking_speed(160)
+        self.dialog_box:initialize_dialog_box()
+        self:initialize_hud()
+    end
+
+    -- Called by the engine when a dialog starts.
+    function game:on_dialog_started(dialog, info)
+
+        self.dialog_box.dialog = dialog
+        self.dialog_box.info = info
+        sol.menu.start(self, self.dialog_box)
+    end
+
+    -- Called by the engine when a dialog finishes.
+    function game:on_dialog_finished(dialog)
+
+        sol.menu.stop(self.dialog_box)
+        self.dialog_box.dialog = nil
+        self.dialog_box.info = nil
+    end
+
+    function game:on_game_over_finished()
+        sol.main.reset()
+    end
+
+    function game:on_finished()
+        self:quit_hud()
+        self.dialog_box:quit_dialog_box()
+    end
+
+    function game:on_map_changed(map)
+        self:hud_on_map_changed(map)
+    end
+
+    return game
 end
 
 return zentropy
