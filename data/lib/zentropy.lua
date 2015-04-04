@@ -2,6 +2,7 @@ local Class = require 'lib/class'
 local util = require 'lib/util'
 local Prng = require 'lib/prng'
 local Puzzle = require 'lib/puzzle'
+local map_include = require 'lib/map_include'
 
 bit32 = bit32 or bit
 
@@ -469,7 +470,7 @@ function zentropy.Room:sign(data)
     return true
 end
 
-function zentropy.game.get_items(tier, rng)
+function zentropy.game.get_items_sequence(rng)
     local d = Puzzle.Dependencies:new()
     d:single('bow_1', {item_name='bow'})
     d:single('lamp_1', {item_name='lamp'})
@@ -478,55 +479,84 @@ function zentropy.game.get_items(tier, rng)
     local items = Puzzle.sequence(rng, d.result)
     local i = 1
     local brought_items = {}
-    for i = 1, tier - 1 do
-        brought_items[items[i].step.item_name] = true
+    local result = {}
+    for _, item in ipairs(items) do
+        table.insert(result, item.step.item_name)
     end
-    return items[tier].step.item_name, brought_items
+    return result
+end
+
+function zentropy.game.get_items()
+    local items = {}
+    for _, item_name in ipairs{'bow','bomb','hookshot','lamp'} do
+        items[item_name] = zentropy.game.game:get_item(item_name):get_variant()
+    end
+    return items
+end
+
+function zentropy.game.set_items(items)
+    for item_name, variant in pairs(items) do
+        zentropy.game.game:get_item(item_name):set_variant(variant)
+    end
 end
 
 function zentropy.game.new_game(filename)
     zentropy.game.filename = filename
-    local old_game = sol.game.load(zentropy.game.filename)
-    old_game:set_value('seed', old_game:get_value('override_seed') or math.random(32768 * 65536 - 1))
-    old_game:set_value('tier', 0)
-    old_game:set_ability("sword", 1)
-    old_game:set_max_life(12)
-    old_game:set_life(12)
-    zentropy.game.game = old_game
-    return zentropy.game.next_tier()
+    local game = zentropy.game.load()
+    local seed = game:get_value('override_seed') or math.random(32768 * 65536 - 1)
+    local rng = Prng.from_seed(seed, 1)
+    game:set_value('seed', seed)
+    game:set_value('tier', 0)
+    game:set_ability('sword', 1)
+    game:set_max_life(12)
+    game:set_life(12)
+    zentropy.game.items = zentropy.game.get_items_sequence(rng)
+    return game
 end
 
 function zentropy.game.next_tier()
-    local old_game = zentropy.game.game
-    local tier = old_game:get_value('tier') + 1
-    local seed = old_game:get_value('seed')
-    local sword_ability = old_game:get_ability('sword')
-    local max_life = old_game:get_max_life()
-    local life = old_game:get_life()
+    local game = zentropy.game.game
+    local tier = game:get_value('tier') + 1
+
+    local luafile = zentropy.game.filename
+    game:save()
+    local luaf = sol.main.load_file(luafile)
+    sol.game.delete(zentropy.game.filename)
+    if not luaf then
+        error("error: loading file: " .. luafile)
+    end
+    local luaenv = setmetatable({}, {__newindex=function (table, key, value)
+        if string.sub(key, 1, 5) == 'room_' then
+            game:set_value(key, nil)
+        end
+    end})
+    setfenv(luaf, luaenv)(map, data)
+
+    game:set_value('tier', tier)
+    local treasure_item = table.remove(zentropy.game.items, 1)
+    game:set_value('treasure_item', treasure_item)
+    game:set_value('small_key_amount', 0)
+    game:set_value(game:get_item('bigkey'):get_savegame_variable(), nil)
+    game:set_value(game:get_item('map'):get_savegame_variable(), nil)
+    game:set_value(game:get_item('compass'):get_savegame_variable(), nil)
+
+    return game
+end
+
+function zentropy.game.load()
+    local game = sol.game.load(zentropy.game.filename)
     local overrides = {}
     for _, name in pairs{'override_seed', 'override_tier', 'override_tileset', 'override_keys', 'override_fairies', 'override_culdesacs'} do
-        overrides[name] = old_game:get_value(name)
+        overrides[name] = game:get_value(name)
     end
     sol.game.delete(zentropy.game.filename)
-    local game = sol.game.load(zentropy.game.filename)
-    zentropy.game.game = game
+    local new_game = sol.game.load(zentropy.game.filename)
     for name, value in pairs(overrides) do
-        game:set_value(name, value)
+        new_game:set_value(name, value)
     end
-    game:set_value('seed', seed)
-    game:set_value('tier', tier)
-    game:set_ability("sword", sword_ability)
-    game:set_max_life(max_life)
-    game:set_life(life)
-    game:set_value('small_key_amount', 0)
-
-    local rng = Prng.from_seed(game:get_value('seed'), tier)
-    local treasure_item, brought_items = zentropy.game.get_items(tier, rng)
-    game:set_value('treasure_item', treasure_item)
-    for item_name, variant in pairs(brought_items) do
-        game:get_item(item_name):set_variant(1)
-    end
-    return game
+    new_game:save()
+    zentropy.game.game = sol.game.load(zentropy.game.filename)
+    return zentropy.game.game
 end
 
 return zentropy

@@ -13,6 +13,7 @@ function sol.main:on_started()
     math.randomseed(os.time())
 
     local game = zentropy.game.new_game('zentropy1.dat')
+    zentropy.game.next_tier()
 
     require('lib/map_include.lua')
     sol.main.load_file("hud/hud")(game)

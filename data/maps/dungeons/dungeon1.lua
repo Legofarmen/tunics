@@ -42,17 +42,11 @@ local all_items = {
     'lamp',
 }
 local brought_items = {}
-local big_treasure = nil
-local n = 1
+local big_treasure = game:get_value('treasure_item')
 for i, item_name in ipairs(all_items) do
     local item = game:get_item(item_name)
     if item:get_variant() >= 1 then
         table.insert(brought_items, item_name)
-    else
-        if dungeon_rng:random(n) == 1 then
-            big_treasure = item_name
-        end
-        n = n + 1
     end
 end
 
