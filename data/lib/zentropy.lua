@@ -521,6 +521,7 @@ function zentropy.game.new_game(filename)
     game:save()
 
     local seed = game:get_value('override_seed') or math.random(32768 * 65536 - 1)
+    local last_tier = (game:get_value('override_tier') or 1) - 1
     local rng = Prng.from_seed(seed, 1)
     game:set_value('seed', seed)
     game:set_value('tier', 0)
@@ -528,6 +529,15 @@ function zentropy.game.new_game(filename)
     game:set_max_life(12)
     game:set_life(12)
     zentropy.game.items = zentropy.game.get_items_sequence(rng)
+    for i = 1, last_tier do
+        local item_name = table.remove(zentropy.game.items, 1)
+        if item_name then
+            local item = game:get_item(item_name)
+            item:set_variant(1)
+            item:on_obtained()
+        end
+    end
+    game:set_value('tier', last_tier)
     return game
 end
 
@@ -556,6 +566,8 @@ function zentropy.game.next_tier()
     game:set_value(game:get_item('bigkey'):get_savegame_variable(), nil)
     game:set_value(game:get_item('map'):get_savegame_variable(), nil)
     game:set_value(game:get_item('compass'):get_savegame_variable(), nil)
+
+    game:save()
 
     return game
 end
