@@ -260,6 +260,7 @@ function tree.Metric:is_valid()
     if self.directional_doors > 1 then return false end
 
     if self.bigkey_doors > 0 and self.treasures > 0 then return false end
+    if self.bigkey_doors > 0 and self.hidden_doors > 0 then return false end
 
     if self.treasures > 2 then return false end
     if self.normal_treasures > 1 then return false end
