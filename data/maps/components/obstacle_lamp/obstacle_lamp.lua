@@ -7,9 +7,9 @@ function lamp.init(map, data, timeout)
 	for dir, door_data in pairs(data.doors) do
         data.room:door({open='closed', name=door_data.name, door_names=door_names}, dir)
 	end
-			
+
 	local hidden_chest = nil
-	
+
 	if data.treasure1 then
 		local x, y = map:get_entity('treasure_obstacle_chest'):get_position()
 		x, y = x + 8, y + 13
