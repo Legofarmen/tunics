@@ -2,7 +2,7 @@ local util = require 'lib/util'
 
 local mapmeta = sol.main.get_metatable('map')
 
-function component_map(map_userdata, component_x, component_y, component_prefix, data)
+local function component_map(map_userdata, component_x, component_y, component_prefix, data)
     local component_entity = function (entity_userdata)
         if entity_userdata == nil then
             return nil
