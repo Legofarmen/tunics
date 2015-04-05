@@ -475,6 +475,13 @@ npc{
   sprite = "npc/zelda",
 }
 
+destination{
+  layer = 0,
+  x = 136,
+  y = 77,
+  direction = 3,
+}
+
 tile{
   layer = 1,
   x = 144,

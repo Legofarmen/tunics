@@ -532,6 +532,7 @@ function zentropy.game.resume_game()
         end
     end
 
+    zentropy.game.game:set_starting_location('dungeons/dungeon1')
     zentropy.game.game:start()
 end
 
@@ -577,6 +578,7 @@ function zentropy.game.new_game()
     end
     game:set_value('tier', last_tier)
     zentropy.game.next_tier()
+    game:set_starting_location('rooms/intro_1')
     game:start()
 end
 
@@ -610,8 +612,6 @@ end
 
 function zentropy.game.init(game)
     sol.main.load_file("hud/hud")(game)
-
-    game:set_starting_location('dungeons/dungeon1')
 
     game.dialog_box = dialog_box:new{game=game}
 
