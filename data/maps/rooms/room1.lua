@@ -7,7 +7,7 @@ local room_rng = rng:create()
 bit32 = bit32 or bit
 
 local Class = require 'lib/class.lua'
-local Util = require 'lib/util'
+local util = require 'lib/util'
 local List = require 'lib/list'
 local zentropy = require 'lib/zentropy'
 
@@ -15,7 +15,7 @@ local messages = {}
 function data_messages(prefix, data)
     if type(data) == 'table' then
         local n = 0
-        for key, value in Util.pairs_by_keys(data) do
+        for key, value in util.pairs_by_keys(data) do
             data_messages(prefix .. '.' .. key, value)
             n = n + 1
         end

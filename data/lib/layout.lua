@@ -1,5 +1,5 @@
 local Class = require 'lib/class'
-local Util = require 'lib/util'
+local util = require 'lib/util'
 
 
 local Layout = {}
@@ -167,8 +167,8 @@ function collect_mixin(object)
     end
 
     function object:each_room(f)
-        for depth, row in Util.pairs_by_keys(self.rooms) do
-            for leaf, native_room in Util.pairs_by_keys(row) do
+        for depth, row in util.pairs_by_keys(self.rooms) do
+            for leaf, native_room in util.pairs_by_keys(row) do
                 f(depth, leaf, native_room)
             end
         end
