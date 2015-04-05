@@ -4,6 +4,7 @@ local MWC = require 'lib/mwc_rng'
 local Prng = Class:new()
 
 function Prng.from_seed(seed1, seed2)
+    assert(seed1)
     seed2 = seed2 or seed1
     local maxbits = 32768 * 65536 - 1
     local seeda = bit32.band(seed1 + seed2, maxbits)

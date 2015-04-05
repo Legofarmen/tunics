@@ -503,6 +503,39 @@ function zentropy.game.set_items(items)
     end
 end
 
+function zentropy.game.resume_game(filename)
+    zentropy.game.filename = filename
+    zentropy.game.game = zentropy.game.init(sol.game.load(filename))
+
+    local old_game = zentropy.game.game
+
+    local overrides = {}
+    for _, name in pairs{'override_seed', 'override_tier', 'override_tileset', 'override_keys', 'override_fairies', 'override_culdesacs'} do
+        overrides[name] = old_game:get_value(name)
+    end
+    sol.game.delete(filename)
+    local clean_game = sol.game.load(filename)
+    for name, value in pairs(overrides) do
+        clean_game:set_value(name, value)
+    end
+    clean_game:save()
+
+    local seed = zentropy.game.game:get_value('seed')
+    local last_tier = zentropy.game.game:get_value('tier') - 1
+    local rng = Prng.from_seed(seed, 1)
+    zentropy.game.items = zentropy.game.get_items_sequence(rng)
+    for i = 1, last_tier do
+        local item_name = table.remove(zentropy.game.items, 1)
+        if item_name then
+            local item = zentropy.game.game:get_item(item_name)
+            item:set_variant(1)
+            item:on_obtained()
+        end
+    end
+
+    return zentropy.game.game
+end
+
 function zentropy.game.new_game(filename)
     zentropy.game.filename = filename
 
@@ -514,7 +547,6 @@ function zentropy.game.new_game(filename)
     sol.game.delete(zentropy.game.filename)
     zentropy.game.game = zentropy.game.init(sol.game.load(filename))
     local game = zentropy.game.game
-    zentropy.game.game = game
     for name, value in pairs(overrides) do
         game:set_value(name, value)
     end
