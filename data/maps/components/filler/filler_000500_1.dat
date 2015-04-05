@@ -1,0 +1,391 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  tileset = "dungeon_brick_gray_1",
+  music = "same",
+}
+
+tile{
+  layer = 1,
+  x = 88,
+  y = 16,
+  width = 24,
+  height = 48,
+  pattern = "wall.3",
+}
+
+tile{
+  layer = 1,
+  x = 80,
+  y = 56,
+  width = 16,
+  height = 24,
+  pattern = "wall.1",
+}
+
+tile{
+  layer = 1,
+  x = 64,
+  y = 8,
+  width = 24,
+  height = 24,
+  pattern = "wall.corner.2",
+}
+
+tile{
+  layer = 1,
+  x = 64,
+  y = 32,
+  width = 24,
+  height = 32,
+  pattern = "wall.4",
+}
+
+tile{
+  layer = 1,
+  x = 64,
+  y = 56,
+  width = 24,
+  height = 24,
+  pattern = "wall.corner_reverse.2",
+}
+
+tile{
+  layer = 1,
+  x = 88,
+  y = 56,
+  width = 24,
+  height = 24,
+  pattern = "wall.corner_reverse.1",
+}
+
+tile{
+  layer = 1,
+  x = 88,
+  y = 8,
+  width = 24,
+  height = 24,
+  pattern = "wall.corner.1",
+}
+
+tile{
+  layer = 1,
+  x = 56,
+  y = 32,
+  width = 8,
+  height = 8,
+  pattern = "wall_border.corner.2",
+}
+
+tile{
+  layer = 1,
+  x = 56,
+  y = 40,
+  width = 8,
+  height = 32,
+  pattern = "wall_border.4",
+}
+
+tile{
+  layer = 1,
+  x = 56,
+  y = 64,
+  width = 8,
+  height = 16,
+  pattern = "wall_border.4",
+}
+
+tile{
+  layer = 1,
+  x = 56,
+  y = 80,
+  width = 8,
+  height = 8,
+  pattern = "wall_border.corner_reverse.2",
+}
+
+tile{
+  layer = 1,
+  x = 64,
+  y = 80,
+  width = 48,
+  height = 8,
+  pattern = "wall_border.1",
+}
+
+tile{
+  layer = 1,
+  x = 112,
+  y = 80,
+  width = 8,
+  height = 8,
+  pattern = "wall_border.corner_reverse.1",
+}
+
+tile{
+  layer = 1,
+  x = 112,
+  y = 48,
+  width = 8,
+  height = 32,
+  pattern = "wall_border.3",
+}
+
+tile{
+  layer = 1,
+  x = 112,
+  y = 40,
+  width = 8,
+  height = 16,
+  pattern = "wall_border.3",
+}
+
+tile{
+  layer = 1,
+  x = 112,
+  y = 32,
+  width = 8,
+  height = 8,
+  pattern = "wall_border.corner.1",
+}
+
+tile{
+  layer = 1,
+  x = 232,
+  y = 16,
+  width = 24,
+  height = 48,
+  pattern = "wall.3",
+}
+
+tile{
+  layer = 1,
+  x = 224,
+  y = 56,
+  width = 16,
+  height = 24,
+  pattern = "wall.1",
+}
+
+tile{
+  layer = 1,
+  x = 208,
+  y = 8,
+  width = 24,
+  height = 24,
+  pattern = "wall.corner.2",
+}
+
+tile{
+  layer = 1,
+  x = 208,
+  y = 32,
+  width = 24,
+  height = 32,
+  pattern = "wall.4",
+}
+
+tile{
+  layer = 1,
+  x = 208,
+  y = 56,
+  width = 24,
+  height = 24,
+  pattern = "wall.corner_reverse.2",
+}
+
+tile{
+  layer = 1,
+  x = 232,
+  y = 56,
+  width = 24,
+  height = 24,
+  pattern = "wall.corner_reverse.1",
+}
+
+tile{
+  layer = 1,
+  x = 232,
+  y = 8,
+  width = 24,
+  height = 24,
+  pattern = "wall.corner.1",
+}
+
+tile{
+  layer = 1,
+  x = 200,
+  y = 32,
+  width = 8,
+  height = 8,
+  pattern = "wall_border.corner.2",
+}
+
+tile{
+  layer = 1,
+  x = 200,
+  y = 40,
+  width = 8,
+  height = 32,
+  pattern = "wall_border.4",
+}
+
+tile{
+  layer = 1,
+  x = 200,
+  y = 64,
+  width = 8,
+  height = 16,
+  pattern = "wall_border.4",
+}
+
+tile{
+  layer = 1,
+  x = 200,
+  y = 80,
+  width = 8,
+  height = 8,
+  pattern = "wall_border.corner_reverse.2",
+}
+
+tile{
+  layer = 1,
+  x = 208,
+  y = 80,
+  width = 48,
+  height = 8,
+  pattern = "wall_border.1",
+}
+
+tile{
+  layer = 1,
+  x = 256,
+  y = 80,
+  width = 8,
+  height = 8,
+  pattern = "wall_border.corner_reverse.1",
+}
+
+tile{
+  layer = 1,
+  x = 256,
+  y = 48,
+  width = 8,
+  height = 32,
+  pattern = "wall_border.3",
+}
+
+tile{
+  layer = 1,
+  x = 256,
+  y = 40,
+  width = 8,
+  height = 16,
+  pattern = "wall_border.3",
+}
+
+tile{
+  layer = 1,
+  x = 256,
+  y = 32,
+  width = 8,
+  height = 8,
+  pattern = "wall_border.corner.1",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 8,
+  width = 32,
+  height = 16,
+  pattern = "wall_torch.1",
+}
+
+tile{
+  layer = 1,
+  x = 256,
+  y = 8,
+  width = 32,
+  height = 16,
+  pattern = "wall_torch.1",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 40,
+  y = 56,
+  width = 16,
+  height = 16,
+  name = "tile_9",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+destructible{
+  layer = 1,
+  x = 48,
+  y = 69,
+  name = "Vase_9",
+  sprite = "entities/vase",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 40,
+  y = 40,
+  width = 16,
+  height = 16,
+  name = "tile_2",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+destructible{
+  layer = 1,
+  x = 48,
+  y = 53,
+  name = "Vase_2",
+  sprite = "entities/vase",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 264,
+  y = 56,
+  width = 16,
+  height = 16,
+  name = "tile_3",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+destructible{
+  layer = 1,
+  x = 272,
+  y = 69,
+  name = "Vase_3",
+  sprite = "entities/vase",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 264,
+  y = 40,
+  width = 16,
+  height = 16,
+  name = "tile_4",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+destructible{
+  layer = 1,
+  x = 272,
+  y = 53,
+  name = "Vase_4",
+  sprite = "entities/vase",
+}
+
