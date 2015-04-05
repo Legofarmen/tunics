@@ -118,6 +118,10 @@ function submenu:draw_background(dst_surface)
 end
 
 function submenu:on_command_pressed(command)
+    if command == 'attack' then
+        self.game:save()
+        sol.main.exit()
+    end
     return false
 end
 

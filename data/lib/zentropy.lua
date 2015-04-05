@@ -617,13 +617,6 @@ function zentropy.game.init(game)
 
     local pause = Pause:new{game=game}
 
-    function game:on_command_pressed(command)
-        if command == 'pause' and game:is_paused() then
-            game:save()
-            print("saved")
-        end
-    end
-
     function game:on_paused()
         pause:start_pause_menu()
         self:hud_on_paused()
