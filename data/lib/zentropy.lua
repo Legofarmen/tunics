@@ -503,9 +503,8 @@ function zentropy.game.set_items(items)
     end
 end
 
-function zentropy.game.resume_game(filename)
-    zentropy.game.filename = filename
-    zentropy.game.game = zentropy.game.init(sol.game.load(filename))
+function zentropy.game.resume_game()
+    zentropy.game.game = zentropy.game.init(sol.game.load(zentropy.game.filename))
 
     local old_game = zentropy.game.game
 
@@ -513,8 +512,8 @@ function zentropy.game.resume_game(filename)
     for _, name in pairs{'override_seed', 'override_tier', 'override_tileset', 'override_keys', 'override_fairies', 'override_culdesacs'} do
         overrides[name] = old_game:get_value(name)
     end
-    sol.game.delete(filename)
-    local clean_game = sol.game.load(filename)
+    sol.game.delete(zentropy.game.filename)
+    local clean_game = sol.game.load(zentropy.game.filename)
     for name, value in pairs(overrides) do
         clean_game:set_value(name, value)
     end
@@ -533,19 +532,26 @@ function zentropy.game.resume_game(filename)
         end
     end
 
-    return zentropy.game.game
+    zentropy.game.game:start()
 end
 
-function zentropy.game.new_game(filename)
+function zentropy.game.set_filename(filename)
     zentropy.game.filename = filename
+end
 
-    local old_game = sol.game.load(filename)
+function zentropy.game.has_savegame()
+    local game = sol.game.load(zentropy.game.filename)
+    return game:get_value('seed') and game:get_value('tier')
+end
+
+function zentropy.game.new_game()
+    local old_game = sol.game.load(zentropy.game.filename)
     local overrides = {}
     for _, name in pairs{'override_seed', 'override_tier', 'override_tileset', 'override_keys', 'override_fairies', 'override_culdesacs'} do
         overrides[name] = old_game:get_value(name)
     end
     sol.game.delete(zentropy.game.filename)
-    zentropy.game.game = zentropy.game.init(sol.game.load(filename))
+    zentropy.game.game = zentropy.game.init(sol.game.load(zentropy.game.filename))
     local game = zentropy.game.game
     for name, value in pairs(overrides) do
         game:set_value(name, value)
@@ -570,7 +576,8 @@ function zentropy.game.new_game(filename)
         end
     end
     game:set_value('tier', last_tier)
-    return game
+    zentropy.game.next_tier()
+    game:start()
 end
 
 function zentropy.game.next_tier()
@@ -598,9 +605,6 @@ function zentropy.game.next_tier()
     game:set_value(game:get_item('bigkey'):get_savegame_variable(), nil)
     game:set_value(game:get_item('map'):get_savegame_variable(), nil)
     game:set_value(game:get_item('compass'):get_savegame_variable(), nil)
-
-    game:save()
-
     return game
 end
 

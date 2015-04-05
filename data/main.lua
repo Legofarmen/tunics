@@ -8,70 +8,61 @@ util.wdebug_truncate()
 local savegame_menu = {}
 
 function savegame_menu:on_started()
-    local width, height = sol.video.get_quest_size()
-    local center_x, center_y = width / 2, height / 2
-    self.state = 'resume'
-    self.resume_text = sol.text_surface.create{
-      font = "dialog",
-      horizontal_alignment = "left",
-      vertical_alignment = "top",
-      text = 'Resume game',
-    }
-    self.resume_text:set_xy(100, center_y - 10)
-    self.new_text = sol.text_surface.create{
-      font = "dialog",
-      horizontal_alignment = "left",
-      vertical_alignment = "top",
-      text = 'New game',
-    }
-    self.new_text:set_xy(100, center_y + 10)
-    self.cursor_text = sol.text_surface.create{
-      font = "dialog",
-      horizontal_alignment = "left",
-      vertical_alignment = "top",
-      text = ">",
-    }
-end
-
-function savegame_menu:on_draw(dst_surface)
-    local x, y
-    if self.state == 'new' then
-        x, y = self.new_text:get_xy()
-    else
-        x, y = self.resume_text:get_xy()
+    local function create_surface(text)
+        return sol.text_surface.create{
+            font = "dialog",
+            horizontal_alignment = "center",
+            vertical_alignment = "middle",
+            text = text,
+        }
     end
-    self.cursor_text:set_xy(x - 20, y)
-    self.cursor_text:draw(dst_surface)
-    self.resume_text:draw(dst_surface)
-    self.new_text:draw(dst_surface)
+    zentropy.game.set_filename('zentropy1.dat')
+    self.items = {}
+    if zentropy.game.has_savegame() then
+        table.insert(self.items, { surface = create_surface('Continue'), action = zentropy.game.resume_game })
+    end
+    table.insert(self.items, { surface = create_surface('New game'), action = zentropy.game.new_game })
+    self.current_item = 1
+
+    local item_width, item_height = self.items[1].surface:get_size()
+    local menu_height = item_height * #self.items + math.ceil(0.5 * item_height) * (#self.items - 1)
+    local screen_width, screen_height = sol.video.get_quest_size()
+    local center_x, start_y = screen_width / 2, (screen_height - menu_height) / 2
+    for _, item in ipairs(self.items) do
+        item.surface:set_xy(center_x, start_y)
+        start_y = start_y + math.ceil(1.5 * item_height)
+    end
 end
 
 function savegame_menu:on_key_pressed(key)
-
     local handled = false
     if key == "escape" then
         sol.main.exit()
         handled = true
     elseif key == "return" then
-        local game = nil
-        if self.state == 'new' then
-            game = zentropy.game.new_game('zentropy1.dat')
-            zentropy.game.next_tier()
-        else
-            game = zentropy.game.resume_game('zentropy1.dat')
-        end
+        self.items[self.current_item].action()
         sol.menu.stop(self)
-        game:start()
         handled = true
     elseif key == 'up' then
-        if self.state ~= 'resume' then self.state = 'resume' end
+        if self.current_item > 1 then self.current_item = self.current_item - 1 end
         handled = true
     elseif key == 'down' then
-        if self.state ~= 'new' then self.state = 'new' end
+        if self.current_item < #self.items then self.current_item = self.current_item + 1 end
         handled = true
     end
 
     return handled
+end
+
+function savegame_menu:on_draw(dst_surface)
+    for i, item in ipairs(self.items) do
+        if i == self.current_item then
+            item.surface:set_color{255, 255, 255}
+        else
+            item.surface:set_color{128, 128, 128}
+        end
+        item.surface:draw(dst_surface)
+    end
 end
 
 
