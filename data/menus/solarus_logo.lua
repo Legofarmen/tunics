@@ -180,7 +180,7 @@ function solarus_logo_menu:on_key_pressed(key)
 
   if key == "escape" then
     -- Escape: quit Solarus.
-    sol.main.exit()
+    sol.main.reset()
   else
     -- If the timer exists (after step 1).
     if timer ~= nil then

@@ -120,7 +120,7 @@ end
 function submenu:on_command_pressed(command)
     if command == 'attack' then
         self.game:save()
-        sol.main.exit()
+        sol.main.reset()
     end
     return false
 end
