@@ -22,7 +22,7 @@ function data_messages(prefix, data)
             table.insert(messages, prefix .. ' = {}')
         end
     elseif type(data) ~= 'function' then
-        table.insert(messages, prefix .. ' = ' .. data)
+        table.insert(messages, prefix .. ' = ' .. tostring(data))
     end
 end
 data_messages('data', data)
@@ -180,7 +180,5 @@ if #messages > 0 then
 end
 
 if not is_special_room(data) then
-    local sections = {'111', '700', '444', '007', '100', '400', '004', '001'}
-    List.shuffle(rng:augment_string('fillers'), sections)
     repeat until not room:filler()
 end
