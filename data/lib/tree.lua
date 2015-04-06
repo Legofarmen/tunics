@@ -149,20 +149,17 @@ function Room:each_child(f)
 end
 
 function Room:random_child(rng, w)
-    local function weighted_random_element(rng, array, w)
-        local total = 0
-        local rkey, rchild
-        for key, elem in ipairs(array) do
-            local weight = w and w(elem) or 1
-            total = total + weight
-            if weight > rng:random() * total then
-                rkey = key
-                rchild = elem
-            end
+    w = w or function () return 1 end
+    local total = 0
+    local rkey, rchild = nil, nil
+    for key, elem in ipairs(self.children) do
+        local weight = w(elem)
+        total = total + weight
+        if weight > rng:random() * total then
+            rkey, rchild = key, elem
         end
-        return rkey, rchild
     end
-    return weighted_random_element(rng, self.children, w)
+    return rkey, rchild
 end
 
 function Room:get_weight()
