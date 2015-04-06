@@ -143,12 +143,12 @@ function Hash(str)
     
     local i = 1
     while count > 0 do
-	local byte = string.byte(str, i)
+        local byte = string.byte(str, i)
 
-	crc = xor(lshift(crc, 8), CRC32[xor(rshift(crc, 24), byte) + 1])
+        crc = xor(lshift(crc, 8), CRC32[xor(rshift(crc, 24), byte) + 1])
 
-	i = i + 1
-	count = count - 1
+        i = i + 1
+        count = count - 1
     end
 
     return crc
