@@ -574,7 +574,7 @@ function Layout.solarus_mixin(object, map, floors)
                 doors={},
                 treasures={},
                 enemies=info.enemies,
-                rng=self.rng:augment_string('room_' .. map_x .. '_' .. map_y),
+                rng=room_rng,
             }
             local doors = {}
             for native_dir, native_door in pairs(info.doors) do
