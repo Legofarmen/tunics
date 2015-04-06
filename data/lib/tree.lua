@@ -27,21 +27,6 @@ function WeightVisitor:visit_enemy(enemy)
 end
 
 
-local function weighted_random_element(rng, array, w)
-    local total = 0
-    local rkey, rchild
-    for key, elem in ipairs(array) do
-        local weight = w and w(elem) or 1
-        total = total + weight
-        if weight > rng:random() * total then
-            rkey = key
-            rchild = elem
-        end
-    end
-    return rkey, rchild
-end
-
-
 local Node = Class:new()
 
 local Room = Node:new{class='Room'}
@@ -164,6 +149,19 @@ function Room:each_child(f)
 end
 
 function Room:random_child(rng, w)
+    local function weighted_random_element(rng, array, w)
+        local total = 0
+        local rkey, rchild
+        for key, elem in ipairs(array) do
+            local weight = w and w(elem) or 1
+            total = total + weight
+            if weight > rng:random() * total then
+                rkey = key
+                rchild = elem
+            end
+        end
+        return rkey, rchild
+    end
     return weighted_random_element(rng, self.children, w)
 end
 
