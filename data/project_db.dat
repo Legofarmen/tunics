@@ -172,7 +172,7 @@ map{ id = "components/obstacle_bow/obstacle_bow_west_000444_1", description = "O
 map{ id = "components/filler/filler_000001_3", description = "X Filler 000001 3" }
 map{ id = "components/filler/filler_000004_4", description = "X Filler 000004 4" }
 map{ id = "components/filler/filler_000005_1", description = "X Filler 000005 1" }
-map{ id = "components/filler/filler_000057_1", description = "X Filler 000057 1" }
+map{ id = "components/filler/fix_filler_000057_1", description = "X Filler 000057 1" }
 map{ id = "components/filler/filler_000100_3", description = "X Filler 000100 3" }
 map{ id = "components/filler/filler_000400_4", description = "X Filler 000400 4" }
 map{ id = "components/filler/filler_000500_1", description = "X Filler 000500 1" }
@@ -182,7 +182,7 @@ map{ id = "components/filler/filler_000707_1", description = "X Filler 000707 1"
 map{ id = "components/filler/filler_000777_1", description = "X Filler 000777 1" }
 map{ id = "components/filler/filler_000777_2", description = "X Filler 000777 2" }
 map{ id = "components/filler/filler_200700_4", description = "X Filler 200700 4" }
-map{ id = "components/filler/filler_202777_2", description = "X Filler 202777 2" }
+map{ id = "components/filler/filler_200777_2", description = "X Filler 200777 2" }
 map{ id = "components/filler/filler_210711_2", description = "X Filler 210711 2" }
 map{ id = "components/filler/filler_210711_3", description = "X Filler 210711 3" }
 

@@ -1,8 +1,8 @@
-local bomb = {}
+local obstacle_weakwall = {}
 
 local util = require 'lib/util'
 
-function bomb.init(map, data)
+function obstacle_weakwall.init(map, data)
 	for dir, door_data in pairs(data.doors) do
         data.room:door({open='weakwall', name=door_data.name}, dir)
 	end
@@ -38,4 +38,4 @@ function bomb.init(map, data)
 	end
 end
 
-return bomb
+return obstacle_weakwall
