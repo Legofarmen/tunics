@@ -1,10 +1,9 @@
 local map, data = ...
 
-local rng = data.rng
-local room_rng = rng:create()
-
-
 bit32 = bit32 or bit
+
+local rng = data.rng
+
 
 local Class = require 'lib/class.lua'
 local util = require 'lib/util'
@@ -28,7 +27,7 @@ function data_messages(prefix, data)
 end
 data_messages('data', data)
 
-local room = zentropy.Room:new{rng=rng:create(), map=map, data_messages=data_messages}
+local room = zentropy.Room:new{rng=rng, map=map, data_messages=data_messages}
 
 local DialogBox = Class:new()
 
@@ -118,8 +117,9 @@ if data.doors.west and data.doors.west.reach then
 end
 
 for _, dir in ipairs(walls) do
-    if room_rng:random(2) == 2 then
-        map:get_entity('crack_' .. dir):set_enabled(true)
+    local name = 'crack_' .. dir
+    if rng:augment_string(name):random(3) == 1 then
+        map:get_entity(name):set_enabled(true)
     end
 end
 
@@ -137,7 +137,7 @@ for _, treasure_data in ipairs(data.treasures) do
 end
 
 if obstacle_treasure then
-    obstacle_dir = obstacle_dir or walls[room_rng:random(#walls)]
+    obstacle_dir = obstacle_dir or walls[rng:augment_string('obstacle_dir'):random(#walls)]
     obstacle_item = obstacle_treasure.reach
 end
 
@@ -181,6 +181,6 @@ end
 
 if not is_special_room(data) then
     local sections = {'111', '700', '444', '007', '100', '400', '004', '001'}
-    List.shuffle(rng:create(), sections)
+    List.shuffle(rng:augment_string('fillers'), sections)
     repeat until not room:filler()
 end

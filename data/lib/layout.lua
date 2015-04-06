@@ -568,12 +568,13 @@ function Layout.solarus_mixin(object, map, floors)
             self:separator(map_x, map_y+1, 'north')
             self:separator(map_x+1, map_y, 'west')
 
+            local room_rng=self.rng:augment_string('room_' .. map_x .. '_' .. map_y)
             local map_info = {
                 name=self:room_name(depth, leaf),
                 doors={},
                 treasures={},
                 enemies=info.enemies,
-                rng=self.rng:biased(10 * map_y + map_x),
+                rng=self.rng:augment_string('room_' .. map_x .. '_' .. map_y),
             }
             local doors = {}
             for native_dir, native_door in pairs(info.doors) do
@@ -595,9 +596,8 @@ function Layout.solarus_mixin(object, map, floors)
                 })
             end
 
-            local floor_rng = self.rng:biased(10 * map_y + map_x)
             local x, y = 320 * map_x, 240 * map_y
-            map:include(x, y, floors[floor_rng:random(#floors)], {})
+            map:include(x, y, floors[room_rng:augment_string('floor'):random(#floors)], {})
             map:include(x, y, 'rooms/room1', map_info)
         end)
     end

@@ -351,9 +351,6 @@ zentropy.Room = Class:new()
 function zentropy.Room:new(o)
     assert(o.rng)
     assert(o.map)
-    o.component_rng = o.component_rng or o.rng:create()
-    o.puzzle_rng = o.puzzle_rng or o.rng:create()
-    o.treasure_rng = o.treasure_rng or o.rng:create()
     o.mask = o.mask or 0
     o.open_doors = o.open_doors or {}
     o.data_messages = o.data_messages or function () end
@@ -362,7 +359,7 @@ end
 
 function zentropy.Room:door(data, dir)
     if not data then return end
-    local component_name, component_mask = zentropy.components:get_door(data.open, dir, self.mask, self.component_rng)
+    local component_name, component_mask = zentropy.components:get_door(data.open, dir, self.mask, self.rng:augment_string('door_' .. dir))
     if not component_name then
         self.data_messages('error', string.format("door not found: open=%s dir=%s mask=%06o", data.open, dir, self.mask))
         return false
@@ -380,7 +377,7 @@ end
 
 function zentropy.Room:obstacle(data, dir, item)
     if not data then return end
-    local component_name, component_mask = zentropy.components:get_obstacle(item, dir, self.mask, self.component_rng)
+    local component_name, component_mask = zentropy.components:get_obstacle(item, dir, self.mask, self.rng:augment_string('obstacle_' .. dir))
     if not component_name then
         self.data_messages('error', string.format("obstacle not found: item=%s dir=%s mask=%06o", item, dir, self.mask))
         return false
@@ -398,13 +395,15 @@ function zentropy.Room:obstacle(data, dir, item)
 end
 
 function zentropy.Room:filler()
+    self.filler_count = (self.filler_count or 0) + 1
+    local rng = self.rng:augment_string('filler_' .. self.filler_count)
     local filler_data = {
-        rng=self.puzzle_rng,
+        rng=rng,
     }
-    local component_name, component_mask = zentropy.components:get_filler(self.mask, self.component_rng)
+    local component_name, component_mask = zentropy.components:get_filler(self.mask, rng)
     if component_name then
         self.mask = bit32.bor(self.mask, component_mask)
-        if self.puzzle_rng:random() < 0.5 then
+        if rng:augment_string('puzzle'):random() < 0.5 then
             filler_data.doors = self.open_doors
             self.open_doors = {}
         else
@@ -418,15 +417,16 @@ function zentropy.Room:filler()
 end
 
 function zentropy.Room:treasure(treasure_data)
+    local rng = self.rng:augment_string('treasure')
     local component_name, component_mask
     local component_type
     if treasure_data.see then
-        component_name, component_mask = zentropy.components:get_puzzle(self.mask, self.component_rng)
+        component_name, component_mask = zentropy.components:get_puzzle(self.mask, rng)
         component_type = 'puzzle'
         treasure_data.doors = {}
         treasure_data.rng = self.puzzle_rng
     else
-        component_name, component_mask = zentropy.components:get_treasure(treasure_data.open, self.mask, self.component_rng)
+        component_name, component_mask = zentropy.components:get_treasure(treasure_data.open, self.mask, rng)
         component_type = 'treasure'
     end
     self.open_doors = {}
@@ -443,14 +443,14 @@ function zentropy.Room:treasure(treasure_data)
         properties.treasure_name = treasure_data.item_name
         return properties
     end
-    treasure_data.rng = self.treasure_rng:biased(component_mask)
+    treasure_data.rng = rng:augment_string('component')
     self.map:include(0, 0, component_name, treasure_data)
     self.data_messages('component', component_name)
     return true
 end
 
 function zentropy.Room:enemy(data)
-    local component_name, component_mask = zentropy.components:get_enemy(data.name, self.mask, self.component_rng)
+    local component_name, component_mask = zentropy.components:get_enemy(data.name, self.mask, self.rng:augment_string('enemy'))
     self.map:include(0, 0, component_name, data)
     self.mask = bit32.bor(self.mask, component_mask)
     return true
@@ -521,8 +521,8 @@ function zentropy.game.resume_game()
 
     local seed = zentropy.game.game:get_value('seed')
     local last_tier = zentropy.game.game:get_value('tier') - 1
-    local rng = Prng.from_seed(seed, 1)
-    zentropy.game.items = zentropy.game.get_items_sequence(rng)
+    local quest_rng = Prng:new{ seed=seed }:augment_string('quest')
+    zentropy.game.items = zentropy.game.get_items_sequence(quest_rng)
     for i = 1, last_tier do
         local item_name = table.remove(zentropy.game.items, 1)
         if item_name then
@@ -561,13 +561,13 @@ function zentropy.game.new_game()
 
     local seed = game:get_value('override_seed') or math.random(32768 * 65536 - 1)
     local last_tier = (game:get_value('override_tier') or 1) - 1
-    local rng = Prng.from_seed(seed, 1)
+    local quest_rng = Prng:new{ seed=seed }:augment_string('quest')
     game:set_value('seed', seed)
     game:set_value('tier', 0)
     game:set_ability('sword', 1)
     game:set_max_life(12)
     game:set_life(12)
-    zentropy.game.items = zentropy.game.get_items_sequence(rng)
+    zentropy.game.items = zentropy.game.get_items_sequence(quest_rng)
     for i = 1, last_tier do
         local item_name = table.remove(zentropy.game.items, 1)
         if item_name then

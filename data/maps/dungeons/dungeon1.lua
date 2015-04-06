@@ -15,11 +15,10 @@ local nculdesacs = game:get_value('override_culdesacs') or 3
 local tileset_override = game:get_value('override_tileset')
 local treasure_override = game:get_value('override_treasure')
 
-local master_prng = Prng.from_seed(seed, tier)
-local dungeon_rng = master_prng:create()
-local puzzle_rng = master_prng:create()
-local layout_rng = master_prng:create()
-local presentation_rng = master_prng:create()
+local master_prng = Prng:new{ seed=seed }:augment_string('tier_' .. tier)
+local puzzle_rng = master_prng:augment_string('subquest')
+local layout_rng = master_prng:augment_string('layout')
+local presentation_rng = master_prng:augment_string('presentation')
 
 local layout = Layout.BidiVisitor
 

@@ -362,7 +362,7 @@ function Puzzle.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, treasure_items, 
     end
 
     local blackboard = {}
-    local lockeddoors_rng = rng:create()
+    local lockeddoors_rng = rng:augment_string('locked_doors')
     local first_lock, last_lock = d:multiple('lockeddoor', nkeys, Puzzle.locked_door_step(lockeddoors_rng, blackboard))
     if first_lock then
         d:dependency('bigkey', last_lock)
@@ -375,7 +375,7 @@ function Puzzle.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, treasure_items, 
     d:multiple('culdesac', nculdesacs, Puzzle.culdesac_step)
     d:multiple('fairy', nfairies, Puzzle.fairy_step)
 
-    local steps = Puzzle.sequence(rng:create(), d.result)
+    local steps = Puzzle.sequence(rng:augment_string('steps'), d.result)
     local tree = Puzzle.render_steps(rng, steps)
     local obstacle_types = {}
     for _, item_name in ipairs(brought_items) do
@@ -385,7 +385,7 @@ function Puzzle.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, treasure_items, 
     end
     tree:accept(FillerObstacleVisitor:new{
         obstacles = obstacle_types,
-        rng = rng:create(),
+        rng = rng:augment_string('obstacles'),
     })
     return tree
 end
@@ -393,8 +393,8 @@ end
 function Puzzle.render_steps(rng, steps)
     -- Build puzzle tree using the sequence of steps
     local heads = Tree.Room:new()
-    for name, element in ipairs(steps) do
-        Puzzle.max_heads(rng:create(), 6)(heads)
+    for i, element in ipairs(steps) do
+        Puzzle.max_heads(rng:augment_string('step_' .. i), 6)(heads)
         element.step(heads)
     end
 
