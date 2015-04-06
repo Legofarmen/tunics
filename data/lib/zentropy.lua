@@ -299,8 +299,8 @@ function zentropy.db.Components:get_puzzle(mask, rng)
 end
 
 function zentropy.db.Components:get_floors(rng)
-    local i = rng:random(#self.floors)
-    local j = rng:random(#self.floors - 1)
+    local i = rng:augment_string('first'):random(#self.floors)
+    local j = rng:augment_string('second'):random(#self.floors - 1)
     if j >= i then
         j = j + 1
     end
@@ -398,7 +398,7 @@ function zentropy.Room:filler()
     self.filler_count = (self.filler_count or 0) + 1
     local rng = self.rng:augment_string('filler_' .. self.filler_count)
     local filler_data = {
-        rng=rng,
+        rng=rng:augment_string('component'),
     }
     local component_name, component_mask = zentropy.components:get_filler(self.mask, rng)
     if component_name then

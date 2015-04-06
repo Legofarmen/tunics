@@ -73,6 +73,7 @@ local FillerObstacleVisitor = Class:new()
 function FillerObstacleVisitor:new(o)
     assert(o.rng)
     assert(o.obstacles)
+    o.counter = 0
     return Class.new(self, o)
 end
 
@@ -88,7 +89,8 @@ function FillerObstacleVisitor:visit_room(room)
         child:accept(self)
     end)
     if is_reachable then
-        local obstacle = self.obstacles[self.rng:random(2 * #self.obstacles)]
+        self.counter = self.counter + 1
+        local obstacle = self.obstacles[self.rng:augment_string('' .. self.counter):random(2 * #self.obstacles)]
         room:each_child(function (key, child)
             child.reach = obstacle
         end)
@@ -136,21 +138,14 @@ end
 function Puzzle.locked_door_step(rng, blackboard)
     return function (root)
         local bigkey_found = false
-        local chosen_key = nil
-        local chosen_child = nil
-        local n = 1
-        root:each_child(function (key, child)
-            if not bigkey_found then
-                if rng:random(n) == 1 then
-                    chosen_key = key
-                    chosen_child = child
-                end
-                n = n + 1
-                if child:accept(BigKeyDetectorVisitor) then
-                    bigkey_found = true
-                    chosen_key = key
-                    chosen_child = child
-                end
+        local chosen_key, chosen_child = root:random_child(rng, function (key, child)
+            if bigkey_found then
+                return 0
+            elseif child:accept(BigKeyDetectorVisitor) then
+                bigkey_found = true
+                return math.huge
+            else
+                return 1
             end
         end)
         if chosen_key then
@@ -172,23 +167,19 @@ end
 function Puzzle.max_heads(rng, n)
     return function (root)
         while #root.children > n do
-            local node1 = root:remove_child(root:random_child(rng))
+            local node1 = root:remove_child(root:random_child(rng:augment_string('node1')))
             local f
             if node1:accept(BigkeyDistanceVisitor) < math.huge then
                 f = function(node) return math.min(node:accept(BigkeyDistanceVisitor), 10) end
             else
                 f = function(node) return 11 - math.min(node:accept(BigkeyDistanceVisitor), 10) end
             end
-            local n = 0
-            local chosen = nil
-            root:each_child(function (key, child)
+            local chosen = root:random_child(rng:augment_string('node2'), function (key, child)
                 local d = 2 * f(child)
                 if child.get_weight then
-                    d = d - child:get_weight()
-                end
-                n = n + d
-                if rng:random(n) <= d then
-                    chosen = key
+                    return d - child:get_weight()
+                else
+                    return d
                 end
             end)
             local node2 = root:remove_child(chosen)
@@ -233,32 +224,27 @@ function Puzzle.sequence(rng, elements)
         return element.weight
     end
 
-    local total_weight = 0
     for name, element in pairs(elements) do
-        total_weight = total_weight + calc_weight(element)
+        calc_weight(element)
     end
 
     -- Pick something with no rdeps.
     -- Selection is weighted according to element weight.
-    function pick(elements)
-        local result = nil
-        local n = 0
-        for name, element in pairs(elements) do
+    function pick(rng, elements)
+        return rng:choose(elements, function (name, element)
             if next(element.rdeps) == nil then
-                n = n + element.weight
-                local r = rng:random()
-                if rng:random(n) <= element.weight then
-                    result = name
-                end
+                return element.weight
+            else
+                return 0
             end
-        end
-        return result
+        end)
     end
 
     local result = {}
+    local counter = 1
     while next(elements) do
-        local name = pick(elements)
-        local element = elements[name]
+        local name, element = pick(rng:augment_string('' .. counter), elements)
+        counter = counter + 1
         for dep in pairs(element.deps) do
             elements[dep].rdeps[name] = nil
         end
@@ -288,12 +274,16 @@ function Puzzle.Dependencies:dependency(deep_name, shallow_name)
     self.result[shallow_name].rdeps[deep_name] = true
 end
 
-function Puzzle.Dependencies:multiple(name, count, element)
+function Puzzle.Dependencies:multiple(name, count, factory, rng)
     local first = nil
     local last = nil
     for i = 1, count do
         local current = string.format('%s_%d', name, i)
-        self:single(current, element)
+        if rng then
+            self:single(current, factory(rng:augment_string('' .. i)))
+        else
+            self:single(current, factory())
+        end
         if last then
             self:dependency(last, current)
         end
@@ -363,17 +353,17 @@ function Puzzle.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, treasure_items, 
 
     local blackboard = {}
     local lockeddoors_rng = rng:augment_string('locked_doors')
-    local first_lock, last_lock = d:multiple('lockeddoor', nkeys, Puzzle.locked_door_step(lockeddoors_rng, blackboard))
+    local first_lock, last_lock = d:multiple('lockeddoor', nkeys, function (rng) return Puzzle.locked_door_step(rng, blackboard) end, lockeddoors_rng)
     if first_lock then
         d:dependency('bigkey', last_lock)
         d:dependency('compass', last_lock)
         d:dependency('map', last_lock)
-        local first_key, last_key = d:multiple('smallkey', nkeys, Puzzle.smallkey_step(blackboard))
+        local first_key, last_key = d:multiple('smallkey', nkeys, function () return Puzzle.smallkey_step(blackboard) end)
         d:dependency(last_lock, first_key)
     end
 
-    d:multiple('culdesac', nculdesacs, Puzzle.culdesac_step)
-    d:multiple('fairy', nfairies, Puzzle.fairy_step)
+    d:multiple('culdesac', nculdesacs, function () return Puzzle.culdesac_step end)
+    d:multiple('fairy', nfairies, function () return Puzzle.fairy_step end)
 
     local steps = Puzzle.sequence(rng:augment_string('steps'), d.result)
     local tree = Puzzle.render_steps(rng, steps)

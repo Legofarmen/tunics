@@ -52,11 +52,11 @@ end
 local puzzle = Puzzle.alpha_dungeon(puzzle_rng, nkeys, nfairies, nculdesacs, { big_treasure }, brought_items)
 --puzzle:accept(Tree.PrintVisitor:new{})
 
-local floor1, floor2 = zentropy.components:get_floors(presentation_rng)
+local floor1, floor2 = zentropy.components:get_floors(presentation_rng:augment_string('floors'))
 
-map:set_tileset(tileset_override or zentropy.tilesets.dungeon[presentation_rng:random(#zentropy.tilesets.dungeon)])
+map:set_tileset(tileset_override or zentropy.tilesets.dungeon[presentation_rng:augment_string('tileset'):random(#zentropy.tilesets.dungeon)])
 
-local music = zentropy.musics.dungeon[presentation_rng:random(#zentropy.musics.dungeon)].id
+local music = zentropy.musics.dungeon[presentation_rng:augment_string('music'):random(#zentropy.musics.dungeon)].id
 sol.audio.play_music(music)
 
 local solarus_layout = Layout.solarus_mixin(layout:new{rng=layout_rng}, map, {floor1, floor2})
