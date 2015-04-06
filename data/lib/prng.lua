@@ -26,14 +26,9 @@ function Prng:random(a, b)
     end
 end
 
-function Prng:augment(bias)
-    assert(bias == bit32.band(bias, 2^31-1))
-    return Prng:new{ seed=bit32.bxor(self.seed, bias) }
-end
-
 function Prng:augment_string(s)
     local bits = bit32.band(CRC32.Hash(s), 2^31-1)
-    return self:augment(bits)
+    return Prng:new{ seed=bit32.bxor(self.seed, bits) }
 end
 
 return Prng
