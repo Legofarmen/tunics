@@ -149,17 +149,7 @@ function Room:each_child(f)
 end
 
 function Room:random_child(rng, w)
-    w = w or function () return 1 end
-    local total = 0
-    local rkey, rchild = nil, nil
-    for key, elem in ipairs(self.children) do
-        local weight = w(elem)
-        total = total + weight
-        if weight > rng:random() * total then
-            rkey, rchild = key, elem
-        end
-    end
-    return rkey, rchild
+    return rng:ichoose(self.children, w)
 end
 
 function Room:get_weight()

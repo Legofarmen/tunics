@@ -31,4 +31,23 @@ function Prng:augment_string(s)
     return Prng:new{ seed=bit32.bxor(self.seed, bits) }
 end
 
+function Prng:ichoose(t, w)
+    w = w or function () return 1 end
+    local j = nil
+    local total = 0
+    local mwc = MWC.MakeGenerator(self.seed, bit32.bxor(self.seed, 2^31-1))
+    for i, value in ipairs(t) do
+        local weight = w(value)
+        total = total + weight
+        if weight * 2.328306e-10 * mwc() <= weight then
+            j = i
+        end
+    end
+    if j then
+        return j, t[j]
+    else
+        return
+    end
+end
+
 return Prng
