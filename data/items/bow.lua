@@ -6,6 +6,7 @@ function item:on_created()
     self:set_savegame_variable("bow")
     self:set_amount_savegame_variable("bow_amount")
     self:set_assignable(true)
+    self:set_max_amount(20)
 end
 
 function item:on_using()
@@ -36,7 +37,5 @@ function item:on_amount_changed(amount)
 end
 function item:on_obtained(variant, savegame_variable)
     game:set_item_assigned(2, self)
-    local bow = self:get_game():get_item("bow")
-    bow:set_max_amount(20)
-    bow:set_amount(bow:get_max_amount())
+    self:set_amount(self:get_max_amount())
 end
