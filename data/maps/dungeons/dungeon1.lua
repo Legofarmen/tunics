@@ -45,11 +45,6 @@ local brought_items = {}
 for i = 1, tier - 1 do
     local item = zentropy.game.get_tier_treasure(i)
     if item then
-        local x = game:get_item(item)
-        print('variant', item, x:get_variant())
-        if x:has_amount() then
-            print('amount', item, x:get_amount(), x:get_max_amount())
-        end
         table.insert(brought_items, item)
     end
 end
