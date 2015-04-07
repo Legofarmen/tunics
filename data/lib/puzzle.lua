@@ -1,5 +1,4 @@
 local Tree = require 'lib/tree'
-local List = require 'lib/list'
 local Class = require 'lib/class'
 
 local HideTreasuresVisitor = {}
