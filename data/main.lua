@@ -16,7 +16,6 @@ function savegame_menu:on_started()
             text = text,
         }
     end
-    zentropy.game.set_filename('zentropy1.dat')
     self.items = {}
     if zentropy.game.has_savegame() then
         table.insert(self.items, { surface = create_surface('Continue'), action = zentropy.game.resume_game })

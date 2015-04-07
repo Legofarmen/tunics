@@ -22,7 +22,10 @@ zentropy = zentropy or {
         },
         Tilesets = Class:new{},
     },
-    game = {},
+    game = {
+        save_filename = 'zentropy.dat',
+        overrides_filename = 'overrides.dat',
+    },
 }
 
 zentropy.db.Project.__index = zentropy.db.Project
@@ -504,7 +507,7 @@ function zentropy.game.set_items(items)
 end
 
 function zentropy.game.resume_game()
-    zentropy.game.game = zentropy.game.init(sol.game.load(zentropy.game.filename))
+    zentropy.game.game = zentropy.game.init(sol.game.load(zentropy.game.save_filename))
 
     local seed = zentropy.game.game:get_value('seed')
     local last_tier = zentropy.game.game:get_value('tier') - 1
@@ -519,22 +522,21 @@ function zentropy.game.resume_game()
     zentropy.game.game:start()
 end
 
-function zentropy.game.set_filename(filename)
-    zentropy.game.filename = filename
-end
-
 function zentropy.game.has_savegame()
-    local game = sol.game.load(zentropy.game.filename)
+    local game = sol.game.load(zentropy.game.save_filename)
     return game:get_value('seed') and game:get_value('tier')
 end
 
-function zentropy.game.new_game()
-    local overrides = sol.game.load('overrides.dat')
-    sol.game.delete(zentropy.game.filename)
-    zentropy.game.game = zentropy.game.init(sol.game.load(zentropy.game.filename))
+function zentropy.game.get_override(key)
+    return sol.game.load(zentropy.game.overrides_filename):get_value(key)
+end
 
-    local seed = overrides:get_value('override_seed') or math.random(32768 * 65536 - 1)
-    local last_tier = (overrides:get_value('override_tier') or 1) - 1
+function zentropy.game.new_game()
+    sol.game.delete(zentropy.game.save_filename)
+    zentropy.game.game = zentropy.game.init(sol.game.load(zentropy.game.save_filename))
+
+    local seed = zentropy.game.get_override('seed') or math.random(32768 * 65536 - 1)
+    local last_tier = (zentropy.game.get_override('tier') or 1) - 1
     local quest_rng = Prng:new{ seed=seed }:augment_string('quest')
     zentropy.game.game:set_value('seed', seed)
     zentropy.game.game:set_ability('sword', 1)
@@ -561,10 +563,10 @@ function zentropy.game.next_tier()
     local game = zentropy.game.game
     local tier = game:get_value('tier') + 1
 
-    local luafile = zentropy.game.filename
+    local luafile = zentropy.game.save_filename
     game:save()
     local luaf = sol.main.load_file(luafile)
-    sol.game.delete(zentropy.game.filename)
+    sol.game.delete(zentropy.game.save_filename)
     if not luaf then
         error("error: loading file: " .. luafile)
     end

@@ -7,14 +7,12 @@ local Prng = require 'lib/prng'
 local Layout = require 'lib/layout'
 local zentropy = require 'lib/zentropy'
 
-local overrides = sol.game.load('overrides.dat')
 local tier = game:get_value('tier')
 local seed = game:get_value('seed')
-local nkeys = overrides:get_value('override_keys') or 3
-local nfairies = overrides:get_value('override_fairies') or 1
-local nculdesacs = overrides:get_value('override_culdesacs') or 3
-local tileset_override = overrides:get_value('override_tileset')
-local treasure_override = overrides:get_value('override_treasure')
+local nkeys = zentropy.game.get_override('keys') or 3
+local nfairies = zentropy.game.get_override('fairies') or 1
+local nculdesacs = zentropy.game.get_override('culdesacs') or 3
+local tileset_override = zentropy.game.get_override('tileset')
 
 local master_prng = Prng:new{ seed=seed }:augment_string('tier_' .. tier)
 local puzzle_rng = master_prng:augment_string('subquest')
