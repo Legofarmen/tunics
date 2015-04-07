@@ -1,6 +1,6 @@
 local item = ...
 local game = item:get_game()
-local util = require 'lib/util'
+
 function item:on_created()
 
     self:set_savegame_variable("bow")
@@ -35,7 +35,9 @@ function item:on_amount_changed(amount)
         end
     end
 end
+
 function item:on_obtained(variant, savegame_variable)
+
     game:set_item_assigned(2, self)
     self:set_amount(self:get_max_amount())
 end
