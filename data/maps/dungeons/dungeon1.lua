@@ -33,21 +33,28 @@ function map:on_started()
     end
 end
 
-local all_items = {
-    'bomb',
-    'bow',
-    'hookshot',
-    'lamp',
-}
-local brought_items = {}
 local big_treasure = zentropy.game.get_tier_treasure()
-for i, item_name in ipairs(all_items) do
-    if game:get_item(item_name):get_variant() >= 1 then
-        table.insert(brought_items, item_name)
+local treasure_items
+if big_treasure then
+    treasure_items = { big_treasure }
+else
+    treasure_items = {}
+end
+
+local brought_items = {}
+for i = 1, tier - 1 do
+    local item = zentropy.game.get_tier_treasure(i)
+    if item then
+        local x = game:get_item(item)
+        print('variant', item, x:get_variant())
+        if x:has_amount() then
+            print('amount', item, x:get_amount(), x:get_max_amount())
+        end
+        table.insert(brought_items, item)
     end
 end
 
-local puzzle = Puzzle.alpha_dungeon(puzzle_rng, nkeys, nfairies, nculdesacs, { big_treasure }, brought_items)
+local puzzle = Puzzle.alpha_dungeon(puzzle_rng, nkeys, nfairies, nculdesacs, treasure_items, brought_items)
 --puzzle:accept(Tree.PrintVisitor:new{})
 
 local floor1, floor2 = zentropy.components:get_floors(presentation_rng:augment_string('floors'))
