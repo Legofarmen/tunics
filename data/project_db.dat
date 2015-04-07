@@ -414,12 +414,9 @@ item{ id = "smallkey", description = "Small key" }
 item{ id = "sword", description = "Sword" }
 item{ id = "heart", description = "Heart" }
 item{ id = "fairy", description = "Fairy" }
-item{ id = "tunic", description = "Tunic" }
 item{ id = "lamp", description = "Lamp" }
 item{ id = "magic_bar", description = "Magic bar" }
 item{ id = "bow", description = "Bow" }
-item{ id = "quiver", description = "Quiver" }
-item{ id = "arrow", description = "Arrow" }
 
 enemy{ id = "tentacle", description = "Tentacle" }
 enemy{ id = "green_knight_soldier", description = "Green knight soldier" }

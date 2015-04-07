@@ -2,8 +2,8 @@ local item = ...local game = item:get_game()
 local util = require 'lib/util'
 function item:on_created()
 
-  self:set_savegame_variable("i1102")
-  self:set_amount_savegame_variable("i1025")
+  self:set_savegame_variable("bow")
+  self:set_amount_savegame_variable("bow_amount")
   self:set_assignable(true)
 end
 
