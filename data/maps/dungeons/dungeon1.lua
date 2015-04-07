@@ -9,11 +9,10 @@ local zentropy = require 'lib/zentropy'
 
 local tier = game:get_value('tier')
 local seed = game:get_value('seed')
-local nkeys = game:get_value('override_keys') or 3
-local nfairies = game:get_value('override_fairies') or 1
-local nculdesacs = game:get_value('override_culdesacs') or 3
-local tileset_override = game:get_value('override_tileset')
-local treasure_override = game:get_value('override_treasure')
+local nkeys = zentropy.game.get_override('keys') or 3
+local nfairies = zentropy.game.get_override('fairies') or 1
+local nculdesacs = zentropy.game.get_override('culdesacs') or 3
+local tileset_override = zentropy.game.get_override('tileset')
 
 local master_prng = Prng:new{ seed=seed }:augment_string('tier_' .. tier)
 local puzzle_rng = master_prng:augment_string('subquest')
@@ -34,22 +33,23 @@ function map:on_started()
     end
 end
 
-local all_items = {
-    'bomb',
-    'bow',
-    'hookshot',
-    'lamp',
-}
+local big_treasure = zentropy.game.get_tier_treasure()
+local treasure_items
+if big_treasure then
+    treasure_items = { big_treasure }
+else
+    treasure_items = {}
+end
+
 local brought_items = {}
-local big_treasure = game:get_value('treasure_item')
-for i, item_name in ipairs(all_items) do
-    local item = game:get_item(item_name)
-    if item:get_variant() >= 1 then
-        table.insert(brought_items, item_name)
+for i = 1, tier - 1 do
+    local item = zentropy.game.get_tier_treasure(i)
+    if item then
+        table.insert(brought_items, item)
     end
 end
 
-local puzzle = Puzzle.alpha_dungeon(puzzle_rng, nkeys, nfairies, nculdesacs, { big_treasure }, brought_items)
+local puzzle = Puzzle.alpha_dungeon(puzzle_rng, nkeys, nfairies, nculdesacs, treasure_items, brought_items)
 --puzzle:accept(Tree.PrintVisitor:new{})
 
 local floor1, floor2 = zentropy.components:get_floors(presentation_rng:augment_string('floors'))

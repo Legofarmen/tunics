@@ -7,7 +7,6 @@ local rng = data.rng
 
 local Class = require 'lib/class.lua'
 local util = require 'lib/util'
-local List = require 'lib/list'
 local zentropy = require 'lib/zentropy'
 
 local messages = {}
