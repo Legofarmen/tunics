@@ -40,10 +40,9 @@ local all_items = {
     'lamp',
 }
 local brought_items = {}
-local big_treasure = game:get_value('treasure_item')
+local big_treasure = zentropy.game.get_tier_treasure()
 for i, item_name in ipairs(all_items) do
-    local item = game:get_item(item_name)
-    if item:get_variant() >= 1 then
+    if game:get_item(item_name):get_variant() >= 1 then
         table.insert(brought_items, item_name)
     end
 end

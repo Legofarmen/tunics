@@ -508,15 +508,7 @@ end
 
 function zentropy.game.resume_game()
     zentropy.game.game = zentropy.game.init(sol.game.load(zentropy.game.save_filename))
-
-    local seed = zentropy.game.game:get_value('seed')
-    local last_tier = zentropy.game.game:get_value('tier') - 1
-    local quest_rng = Prng:new{ seed=seed }:augment_string('quest')
-
-    zentropy.game.items = zentropy.game.get_items_sequence(quest_rng)
-    for i = 1, last_tier do
-        table.remove(zentropy.game.items, 1)
-    end
+    zentropy.game.setup_quest_invariants()
 
     zentropy.game.game:set_starting_location('dungeons/dungeon1')
     zentropy.game.game:start()
@@ -531,21 +523,34 @@ function zentropy.game.get_override(key)
     return sol.game.load(zentropy.game.overrides_filename):get_value(key)
 end
 
-function zentropy.game.new_game()
-    sol.game.delete(zentropy.game.save_filename)
-    zentropy.game.game = zentropy.game.init(sol.game.load(zentropy.game.save_filename))
-
-    local seed = zentropy.game.get_override('seed') or math.random(32768 * 65536 - 1)
-    local last_tier = (zentropy.game.get_override('tier') or 1) - 1
+function zentropy.game.setup_quest_invariants()
+    local seed = zentropy.game.game:get_value('seed')
     local quest_rng = Prng:new{ seed=seed }:augment_string('quest')
-    zentropy.game.game:set_value('seed', seed)
+    zentropy.game.items = zentropy.game.get_items_sequence(quest_rng)
+end
+
+function zentropy.game.setup_quest_initial()
     zentropy.game.game:set_ability('sword', 1)
     zentropy.game.game:set_max_life(12)
     zentropy.game.game:set_life(12)
+end
 
-    zentropy.game.items = zentropy.game.get_items_sequence(quest_rng)
-    for i = 1, last_tier do
-        local item_name = table.remove(zentropy.game.items, 1)
+function zentropy.game.get_new_seed()
+    return zentropy.game.get_override('seed') or math.random(32768 * 65536 - 1)
+end
+
+function zentropy.game.new_game()
+    sol.game.delete(zentropy.game.save_filename)
+
+    zentropy.game.game = zentropy.game.init(sol.game.load(zentropy.game.save_filename))
+    zentropy.game.game:set_value('seed', zentropy.game.get_new_seed())
+    zentropy.game.setup_quest_initial()
+    zentropy.game.setup_quest_invariants()
+
+    local tier = zentropy.game.get_override('tier') or 1
+    zentropy.game.setup_tier_initial(tier)
+    for i = 1, tier - 1 do
+        local item_name = zentropy.game.get_tier_treasure(i)
         if item_name then
             local item = zentropy.game.game:get_item(item_name)
             item:set_variant(1)
@@ -553,16 +558,24 @@ function zentropy.game.new_game()
         end
     end
 
-    zentropy.game.game:set_value('tier', last_tier)
-    zentropy.game.next_tier()
     zentropy.game.game:set_starting_location('rooms/intro_1')
     zentropy.game.game:start()
 end
 
 function zentropy.game.next_tier()
-    local game = zentropy.game.game
-    local tier = game:get_value('tier') + 1
+    return zentropy.game.setup_tier_initial(zentropy.game.game:get_value('tier') + 1)
+end
 
+function zentropy.game.setup_tier_initial(tier)
+    local game = zentropy.game.game
+
+    -- reset dungeon items
+    game:set_value('small_key_amount', 0)
+    game:set_value(game:get_item('bigkey'):get_savegame_variable(), nil)
+    game:set_value(game:get_item('map'):get_savegame_variable(), nil)
+    game:set_value(game:get_item('compass'):get_savegame_variable(), nil)
+
+    -- reset all state related to rooms, doors and treasures
     local luafile = zentropy.game.save_filename
     game:save()
     local luaf = sol.main.load_file(luafile)
@@ -577,14 +590,14 @@ function zentropy.game.next_tier()
     end})
     setfenv(luaf, luaenv)(map, data)
 
+    -- increment tier
     game:set_value('tier', tier)
-    local treasure_item = table.remove(zentropy.game.items, 1)
-    game:set_value('treasure_item', treasure_item)
-    game:set_value('small_key_amount', 0)
-    game:set_value(game:get_item('bigkey'):get_savegame_variable(), nil)
-    game:set_value(game:get_item('map'):get_savegame_variable(), nil)
-    game:set_value(game:get_item('compass'):get_savegame_variable(), nil)
+
     return game
+end
+
+function zentropy.game.get_tier_treasure(tier)
+    return zentropy.game.items[tier or zentropy.game.game:get_value('tier')]
 end
 
 function zentropy.game.init(game)
