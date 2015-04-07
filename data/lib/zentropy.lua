@@ -506,30 +506,13 @@ end
 function zentropy.game.resume_game()
     zentropy.game.game = zentropy.game.init(sol.game.load(zentropy.game.filename))
 
-    local old_game = zentropy.game.game
-
-    local overrides = {}
-    for _, name in pairs{'override_seed', 'override_tier', 'override_tileset', 'override_keys', 'override_fairies', 'override_culdesacs'} do
-        overrides[name] = old_game:get_value(name)
-    end
-    sol.game.delete(zentropy.game.filename)
-    local clean_game = sol.game.load(zentropy.game.filename)
-    for name, value in pairs(overrides) do
-        clean_game:set_value(name, value)
-    end
-    clean_game:save()
-
     local seed = zentropy.game.game:get_value('seed')
     local last_tier = zentropy.game.game:get_value('tier') - 1
     local quest_rng = Prng:new{ seed=seed }:augment_string('quest')
+
     zentropy.game.items = zentropy.game.get_items_sequence(quest_rng)
     for i = 1, last_tier do
-        local item_name = table.remove(zentropy.game.items, 1)
-        if item_name then
-            local item = zentropy.game.game:get_item(item_name)
-            item:set_variant(1)
-            item:on_obtained()
-        end
+        table.remove(zentropy.game.items, 1)
     end
 
     zentropy.game.game:set_starting_location('dungeons/dungeon1')
@@ -546,40 +529,32 @@ function zentropy.game.has_savegame()
 end
 
 function zentropy.game.new_game()
-    local old_game = sol.game.load(zentropy.game.filename)
-    local overrides = {}
-    for _, name in pairs{'override_seed', 'override_tier', 'override_tileset', 'override_keys', 'override_fairies', 'override_culdesacs'} do
-        overrides[name] = old_game:get_value(name)
-    end
+    local overrides = sol.game.load('overrides.dat')
     sol.game.delete(zentropy.game.filename)
     zentropy.game.game = zentropy.game.init(sol.game.load(zentropy.game.filename))
-    local game = zentropy.game.game
-    for name, value in pairs(overrides) do
-        game:set_value(name, value)
-    end
-    game:save()
 
-    local seed = game:get_value('override_seed') or math.random(32768 * 65536 - 1)
-    local last_tier = (game:get_value('override_tier') or 1) - 1
+    local seed = overrides:get_value('override_seed') or math.random(32768 * 65536 - 1)
+    local last_tier = (overrides:get_value('override_tier') or 1) - 1
     local quest_rng = Prng:new{ seed=seed }:augment_string('quest')
-    game:set_value('seed', seed)
-    game:set_value('tier', 0)
-    game:set_ability('sword', 1)
-    game:set_max_life(12)
-    game:set_life(12)
+    zentropy.game.game:set_value('seed', seed)
+    zentropy.game.game:set_ability('sword', 1)
+    zentropy.game.game:set_max_life(12)
+    zentropy.game.game:set_life(12)
+
     zentropy.game.items = zentropy.game.get_items_sequence(quest_rng)
     for i = 1, last_tier do
         local item_name = table.remove(zentropy.game.items, 1)
         if item_name then
-            local item = game:get_item(item_name)
+            local item = zentropy.game.game:get_item(item_name)
             item:set_variant(1)
             item:on_obtained()
         end
     end
-    game:set_value('tier', last_tier)
+
+    zentropy.game.game:set_value('tier', last_tier)
     zentropy.game.next_tier()
-    game:set_starting_location('rooms/intro_1')
-    game:start()
+    zentropy.game.game:set_starting_location('rooms/intro_1')
+    zentropy.game.game:start()
 end
 
 function zentropy.game.next_tier()
