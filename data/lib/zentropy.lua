@@ -552,10 +552,17 @@ function zentropy.game.has_savegame()
     return game:get_value('seed') and game:get_value('tier')
 end
 
+function zentropy.game.get_rng(tier)
+    local master_rng = Prng:new{ path=zentropy.game.game:get_value('seed') }
+    if tier then
+        return master_rng:augment_string('tiers'):augment_string(tier)
+    else
+        return master_rng:augment_string('quest')
+    end
+end
+
 function zentropy.game.setup_quest_invariants()
-    local seed = zentropy.game.game:get_value('seed')
-    local quest_rng = Prng:new{ seed=seed }:augment_string('quest')
-    zentropy.game.items = zentropy.game.get_items_sequence(quest_rng)
+    zentropy.game.items = zentropy.game.get_items_sequence(zentropy.game.get_rng())
 end
 
 function zentropy.game.setup_quest_initial()

@@ -7,17 +7,16 @@ local Prng = require 'lib/prng'
 local Layout = require 'lib/layout'
 local zentropy = require 'lib/zentropy'
 
-local tier = game:get_value('tier')
-local seed = game:get_value('seed')
 local nkeys = zentropy.settings.tier_keys
 local nfairies = zentropy.settings.tier_fairies
 local nculdesacs = zentropy.settings.tier_culdesacs
 local tileset_override = zentropy.settings.tier_tileset
 
-local master_prng = Prng:new{ seed=seed }:augment_string('tier_' .. tier)
-local puzzle_rng = master_prng:augment_string('subquest')
-local layout_rng = master_prng:augment_string('layout')
-local presentation_rng = master_prng:augment_string('presentation')
+local tier = game:get_value('tier')
+local tier_prng = zentropy.game.get_rng(tier)
+local puzzle_rng = tier_prng:augment_string('subquest')
+local layout_rng = tier_prng:augment_string('layout')
+local presentation_rng = tier_prng:augment_string('presentation')
 
 local layout = Layout.BidiVisitor
 

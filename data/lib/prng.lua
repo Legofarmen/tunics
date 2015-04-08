@@ -6,13 +6,19 @@ local util = require 'lib/util'
 local Prng = Class:new()
 
 function Prng:new(o)
-    assert(o.seed == bit32.band(o.seed, 2^31-1))
+    assert(o.path)
     return Class.new(self, o)
+end
+
+function Prng:setup_mwc()
+    local mask = 2 ^ 31 - 1
+    local seed = bit32.band(CRC32.Hash(self.path), mask)
+    self.mwc = MWC.MakeGenerator(seed, bit32.bxor(seed, mask))
 end
 
 function Prng:random(a, b)
     if not self.mwc then
-        self.mwc = MWC.MakeGenerator(self.seed, bit32.bxor(self.seed, 2^31-1))
+        self:setup_mwc()
     end
 
     local bits = self.mwc()
@@ -28,17 +34,17 @@ function Prng:random(a, b)
 end
 
 function Prng:augment_string(s)
-    local bits = bit32.band(CRC32.Hash(s), 2^31-1)
-    return Prng:new{ seed=bit32.bxor(self.seed, bits) }
+    return Prng:new{ path = self.path .. '.' .. s }
 end
 
 function Prng:ichoose(t, w)
+    if not self.mwc then
+        self:setup_mwc()
+    end
+
     w = w or function () return 1 end
     local j = nil
     local total = 0
-    if not self.mwc then
-        self.mwc = MWC.MakeGenerator(self.seed, bit32.bxor(self.seed, 2^31-1))
-    end
     for i, value in ipairs(t) do
         local weight = w(i, value)
         total = total + weight
@@ -54,12 +60,13 @@ function Prng:ichoose(t, w)
 end
 
 function Prng:choose(t, w)
+    if not self.mwc then
+        self:setup_mwc()
+    end
+
     w = w or function () return 1 end
     local j = nil
     local total = 0
-    if not self.mwc then
-        self.mwc = MWC.MakeGenerator(self.seed, bit32.bxor(self.seed, 2^31-1))
-    end
     for key, value in util.pairs_by_keys(t) do
         local weight = w(key, value)
         total = total + weight
