@@ -9,10 +9,10 @@ local zentropy = require 'lib/zentropy'
 
 local tier = game:get_value('tier')
 local seed = game:get_value('seed')
-local nkeys = zentropy.game.get_override('keys') or 3
-local nfairies = zentropy.game.get_override('fairies') or 1
-local nculdesacs = zentropy.game.get_override('culdesacs') or 3
-local tileset_override = zentropy.game.get_override('tileset')
+local nkeys = zentropy.settings.tier_keys
+local nfairies = zentropy.settings.tier_fairies
+local nculdesacs = zentropy.settings.tier_culdesacs
+local tileset_override = zentropy.settings.tier_tileset
 
 local master_prng = Prng:new{ seed=seed }:augment_string('tier_' .. tier)
 local puzzle_rng = master_prng:augment_string('subquest')

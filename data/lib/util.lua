@@ -1,15 +1,9 @@
 local util = {}
 
-local wdebug_path = "wdebug.txt"
-function util.wdebug_truncate()
-	local f = io.open(wdebug_path, "w")
-	f:close()
-end
 function util.wdebug(message)
-	
-	local f = io.open( wdebug_path, "a")
-	f:write(message .. "\n")
-	f:close()
+    local zentropy = require 'lib/zentropy'
+    zentropy.debug('util.wdebug() is deprecated, use zentropy.debug() instead')
+    zentropy.debug(message)
 end
 
 function util.filter_keys(table, keys)

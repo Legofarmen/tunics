@@ -3,8 +3,6 @@ local util = require 'lib/util'
 
 zentropy.init()
 
-util.wdebug_truncate()
-
 local savegame_menu = {}
 
 function savegame_menu:on_started()
@@ -67,8 +65,6 @@ end
 
 function sol.main:on_started()
     sol.language.set_language("en")
-    math.randomseed(os.time())
 
     sol.menu.start(self, savegame_menu)
-
 end

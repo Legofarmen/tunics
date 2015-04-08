@@ -23,12 +23,32 @@ zentropy = zentropy or {
         Tilesets = Class:new{},
     },
     game = {
-        save_filename = 'zentropy.dat',
-        overrides_filename = 'overrides.dat',
+        savefile = 'zentropy.dat',
+    },
+    settings = {
+        filename = 'settings.dat',
+        defaults = {
+            debug_filename = 'wdebug.txt',
+            quest_seed = os.time(),
+            quest_tier = 1,
+            tier_keys = 3,
+            tier_fairies = 1,
+            tier_culdesacs = 3,
+        },
     },
 }
 
 zentropy.db.Project.__index = zentropy.db.Project
+
+local settings_meta = {}
+
+function settings_meta:__index(key)
+    return sol.game.load(self.filename):get_value(key) or self.defaults[key]
+end
+
+setmetatable(zentropy.settings, settings_meta)
+
+print(zentropy.settings.debug_filename)
 
 function zentropy.init()
     entries = zentropy.db.Project:parse()
@@ -41,6 +61,19 @@ function zentropy.init()
         local kind = parts()
         zentropy.musics[kind] = zentropy.musics[kind] or {}
         table.insert(zentropy.musics[kind], v)
+    end
+
+    io.open(zentropy.settings.debug_filename, "w"):close()
+end
+
+function zentropy.debug(message)
+    local filename = zentropy.settings.debug_filename
+    if filename == '-' then
+        print(message)
+    else
+        local f = io.open(filename, "a")
+        f:write(message .. "\n")
+        f:close()
     end
 end
 
@@ -194,9 +227,9 @@ function zentropy.db.Components:parse(maps)
             local parts = string.gmatch(string.gsub(v.id, '.*/', ''), '[^_]+')
             local part = parts()
             if not self[part] then
-                print('ignoring component: ', v.id)
+                zentropy.debug('ignoring component: ', v.id)
             elseif not self[part](self, v.id, parts) then
-                print('ignoring component: ', v.id)
+                zentropy.debug('ignoring component: ', v.id)
             end
         end
     end
@@ -342,7 +375,7 @@ function zentropy.db.Tilesets:parse(tilesets)
         if self[part] then
             table.insert(self[part], v.id)
         else
-            print('ignoring tileset: ', v.id)
+            zentropy.debug('ignoring tileset: ', v.id)
         end
     end
 
@@ -471,7 +504,7 @@ function zentropy.Room:sign(data)
             return true
         end
     end
-    for _, msg in ipairs(messages) do print(msg) end
+    for _, msg in ipairs(messages) do zentropy.debug(msg) end
     self.data_messages('error', 'cannot fit sign')
     return true
 end
@@ -507,7 +540,7 @@ function zentropy.game.set_items(items)
 end
 
 function zentropy.game.resume_game()
-    zentropy.game.game = zentropy.game.init(sol.game.load(zentropy.game.save_filename))
+    zentropy.game.game = zentropy.game.init(sol.game.load(zentropy.game.savefile))
     zentropy.game.setup_quest_invariants()
 
     zentropy.game.game:set_starting_location('dungeons/dungeon1')
@@ -515,12 +548,8 @@ function zentropy.game.resume_game()
 end
 
 function zentropy.game.has_savegame()
-    local game = sol.game.load(zentropy.game.save_filename)
+    local game = sol.game.load(zentropy.game.savefile)
     return game:get_value('seed') and game:get_value('tier')
-end
-
-function zentropy.game.get_override(key)
-    return sol.game.load(zentropy.game.overrides_filename):get_value(key)
 end
 
 function zentropy.game.setup_quest_invariants()
@@ -535,19 +564,15 @@ function zentropy.game.setup_quest_initial()
     zentropy.game.game:set_life(12)
 end
 
-function zentropy.game.get_new_seed()
-    return zentropy.game.get_override('seed') or math.random(32768 * 65536 - 1)
-end
-
 function zentropy.game.new_game()
-    sol.game.delete(zentropy.game.save_filename)
+    sol.game.delete(zentropy.game.savefile)
 
-    zentropy.game.game = zentropy.game.init(sol.game.load(zentropy.game.save_filename))
-    zentropy.game.game:set_value('seed', zentropy.game.get_new_seed())
+    zentropy.game.game = zentropy.game.init(sol.game.load(zentropy.game.savefile))
+    zentropy.game.game:set_value('seed', zentropy.settings.quest_seed)
     zentropy.game.setup_quest_initial()
     zentropy.game.setup_quest_invariants()
 
-    local tier = zentropy.game.get_override('tier') or 1
+    local tier = zentropy.settings.quest_tier
     zentropy.game.setup_tier_initial(tier)
     for i = 1, tier - 1 do
         local item_name = zentropy.game.get_tier_treasure(i)
@@ -576,10 +601,10 @@ function zentropy.game.setup_tier_initial(tier)
     game:set_value(game:get_item('compass'):get_savegame_variable(), nil)
 
     -- reset all state related to rooms, doors and treasures
-    local luafile = zentropy.game.save_filename
+    local luafile = zentropy.game.savefile
     game:save()
     local luaf = sol.main.load_file(luafile)
-    sol.game.delete(zentropy.game.save_filename)
+    sol.game.delete(zentropy.game.savefile)
     if not luaf then
         error("error: loading file: " .. luafile)
     end
