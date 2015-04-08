@@ -14,9 +14,9 @@ local tileset_override = zentropy.settings.tier_tileset
 
 local tier = game:get_value('tier')
 local tier_prng = zentropy.game.get_rng(tier)
-local puzzle_rng = tier_prng:augment_string('subquest')
-local layout_rng = tier_prng:augment_string('layout')
-local presentation_rng = tier_prng:augment_string('presentation')
+local puzzle_rng = tier_prng:refine('subquest')
+local layout_rng = tier_prng:refine('layout')
+local presentation_rng = tier_prng:refine('presentation')
 
 local layout = Layout.BidiVisitor
 
@@ -51,11 +51,11 @@ end
 local puzzle = Puzzle.alpha_dungeon(puzzle_rng, nkeys, nfairies, nculdesacs, treasure_items, brought_items)
 --puzzle:accept(Tree.PrintVisitor:new{})
 
-local floor1, floor2 = zentropy.components:get_floors(presentation_rng:augment_string('floors'))
+local floor1, floor2 = zentropy.components:get_floors(presentation_rng:refine('floors'))
 
-map:set_tileset(tileset_override or zentropy.tilesets.dungeon[presentation_rng:augment_string('tileset'):random(#zentropy.tilesets.dungeon)])
+map:set_tileset(tileset_override or zentropy.tilesets.dungeon[presentation_rng:refine('tileset'):random(#zentropy.tilesets.dungeon)])
 
-local music = zentropy.musics.dungeon[presentation_rng:augment_string('music'):random(#zentropy.musics.dungeon)].id
+local music = zentropy.musics.dungeon[presentation_rng:refine('music'):random(#zentropy.musics.dungeon)].id
 sol.audio.play_music(music)
 
 local solarus_layout = Layout.solarus_mixin(layout:new{rng=layout_rng}, map, {floor1, floor2})

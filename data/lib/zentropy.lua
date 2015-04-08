@@ -335,8 +335,8 @@ function zentropy.db.Components:get_puzzle(mask, rng)
 end
 
 function zentropy.db.Components:get_floors(rng)
-    local i = rng:augment_string('first'):random(#self.floors)
-    local j = rng:augment_string('second'):random(#self.floors - 1)
+    local i = rng:refine('first'):random(#self.floors)
+    local j = rng:refine('second'):random(#self.floors - 1)
     if j >= i then
         j = j + 1
     end
@@ -395,7 +395,7 @@ end
 
 function zentropy.Room:door(data, dir)
     if not data then return end
-    local component_name, component_mask = zentropy.components:get_door(data.open, dir, self.mask, self.rng:augment_string('door_' .. dir))
+    local component_name, component_mask = zentropy.components:get_door(data.open, dir, self.mask, self.rng:refine('door_' .. dir))
     if not component_name then
         self.data_messages('error', string.format("door not found: open=%s dir=%s mask=%06o", data.open, dir, self.mask))
         return false
@@ -413,7 +413,7 @@ end
 
 function zentropy.Room:obstacle(data, dir, item)
     if not data then return end
-    local component_name, component_mask = zentropy.components:get_obstacle(item, dir, self.mask, self.rng:augment_string('obstacle_' .. dir))
+    local component_name, component_mask = zentropy.components:get_obstacle(item, dir, self.mask, self.rng:refine('obstacle_' .. dir))
     if not component_name then
         self.data_messages('error', string.format("obstacle not found: item=%s dir=%s mask=%06o", item, dir, self.mask))
         return false
@@ -432,14 +432,14 @@ end
 
 function zentropy.Room:filler()
     self.filler_count = (self.filler_count or 0) + 1
-    local rng = self.rng:augment_string('filler_' .. self.filler_count)
+    local rng = self.rng:refine('filler_' .. self.filler_count)
     local filler_data = {
-        rng=rng:augment_string('component'),
+        rng=rng:refine('component'),
     }
     local component_name, component_mask = zentropy.components:get_filler(self.mask, rng)
     if component_name then
         self.mask = bit32.bor(self.mask, component_mask)
-        if rng:augment_string('puzzle'):random() < 0.5 then
+        if rng:refine('puzzle'):random() < 0.5 then
             filler_data.doors = self.open_doors
             self.open_doors = {}
         else
@@ -453,7 +453,7 @@ function zentropy.Room:filler()
 end
 
 function zentropy.Room:treasure(treasure_data)
-    local rng = self.rng:augment_string('treasure')
+    local rng = self.rng:refine('treasure')
     local component_name, component_mask
     local component_type
     if treasure_data.see then
@@ -479,14 +479,14 @@ function zentropy.Room:treasure(treasure_data)
         properties.treasure_name = treasure_data.item_name
         return properties
     end
-    treasure_data.rng = rng:augment_string('component')
+    treasure_data.rng = rng:refine('component')
     self.map:include(0, 0, component_name, treasure_data)
     self.data_messages('component', component_name)
     return true
 end
 
 function zentropy.Room:enemy(data)
-    local component_name, component_mask = zentropy.components:get_enemy(data.name, self.mask, self.rng:augment_string('enemy'))
+    local component_name, component_mask = zentropy.components:get_enemy(data.name, self.mask, self.rng:refine('enemy'))
     self.map:include(0, 0, component_name, data)
     self.mask = bit32.bor(self.mask, component_mask)
     return true
@@ -555,9 +555,9 @@ end
 function zentropy.game.get_rng(tier)
     local master_rng = Prng:new{ path=zentropy.game.game:get_value('seed') }
     if tier then
-        return master_rng:augment_string('tiers'):augment_string(tier)
+        return master_rng:refine('tiers'):refine(tier)
     else
-        return master_rng:augment_string('quest')
+        return master_rng:refine('quest')
     end
 end
 

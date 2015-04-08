@@ -33,8 +33,8 @@ function Prng:random(a, b)
     end
 end
 
-function Prng:augment_string(s)
-    return Prng:new{ path = self.path .. '.' .. s }
+function Prng:refine(suffix)
+    return Prng:new{ path = self.path .. '.' .. suffix }
 end
 
 function Prng:ichoose(t, w)

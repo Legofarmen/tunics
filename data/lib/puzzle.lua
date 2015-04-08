@@ -89,7 +89,7 @@ function FillerObstacleVisitor:visit_room(room)
     end)
     if is_reachable then
         self.counter = self.counter + 1
-        local obstacle = self.obstacles[self.rng:augment_string('' .. self.counter):random(2 * #self.obstacles)]
+        local obstacle = self.obstacles[self.rng:refine('' .. self.counter):random(2 * #self.obstacles)]
         room:each_child(function (key, child)
             child.reach = obstacle
         end)
@@ -166,14 +166,14 @@ end
 function Puzzle.max_heads(rng, n)
     return function (root)
         while #root.children > n do
-            local node1 = root:remove_child(root:random_child(rng:augment_string('node1')))
+            local node1 = root:remove_child(root:random_child(rng:refine('node1')))
             local f
             if node1:accept(BigkeyDistanceVisitor) < math.huge then
                 f = function(node) return math.min(node:accept(BigkeyDistanceVisitor), 10) end
             else
                 f = function(node) return 11 - math.min(node:accept(BigkeyDistanceVisitor), 10) end
             end
-            local chosen = root:random_child(rng:augment_string('node2'), function (key, child)
+            local chosen = root:random_child(rng:refine('node2'), function (key, child)
                 local d = 2 * f(child)
                 if child.get_weight then
                     return d - child:get_weight()
@@ -242,7 +242,7 @@ function Puzzle.sequence(rng, elements)
     local result = {}
     local counter = 1
     while next(elements) do
-        local name, element = pick(rng:augment_string('' .. counter), elements)
+        local name, element = pick(rng:refine('' .. counter), elements)
         counter = counter + 1
         for dep in pairs(element.deps) do
             elements[dep].rdeps[name] = nil
@@ -279,7 +279,7 @@ function Puzzle.Dependencies:multiple(name, count, factory, rng)
     for i = 1, count do
         local current = string.format('%s_%d', name, i)
         if rng then
-            self:single(current, factory(rng:augment_string('' .. i)))
+            self:single(current, factory(rng:refine('' .. i)))
         else
             self:single(current, factory())
         end
@@ -351,7 +351,7 @@ function Puzzle.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, treasure_items, 
     end
 
     local blackboard = {}
-    local lockeddoors_rng = rng:augment_string('locked_doors')
+    local lockeddoors_rng = rng:refine('locked_doors')
     local first_lock, last_lock = d:multiple('lockeddoor', nkeys, function (rng) return Puzzle.locked_door_step(rng, blackboard) end, lockeddoors_rng)
     if first_lock then
         d:dependency('bigkey', last_lock)
@@ -364,7 +364,7 @@ function Puzzle.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, treasure_items, 
     d:multiple('culdesac', nculdesacs, function () return Puzzle.culdesac_step end)
     d:multiple('fairy', nfairies, function () return Puzzle.fairy_step end)
 
-    local steps = Puzzle.sequence(rng:augment_string('steps'), d.result)
+    local steps = Puzzle.sequence(rng:refine('steps'), d.result)
     local tree = Puzzle.render_steps(rng, steps)
     local obstacle_types = {}
     for _, item_name in ipairs(brought_items) do
@@ -374,7 +374,7 @@ function Puzzle.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, treasure_items, 
     end
     tree:accept(FillerObstacleVisitor:new{
         obstacles = obstacle_types,
-        rng = rng:augment_string('obstacles'),
+        rng = rng:refine('obstacles'),
     })
     return tree
 end
@@ -383,7 +383,7 @@ function Puzzle.render_steps(rng, steps)
     -- Build puzzle tree using the sequence of steps
     local heads = Tree.Room:new()
     for i, element in ipairs(steps) do
-        Puzzle.max_heads(rng:augment_string('step_' .. i), 6)(heads)
+        Puzzle.max_heads(rng:refine('step_' .. i), 6)(heads)
         element.step(heads)
     end
 

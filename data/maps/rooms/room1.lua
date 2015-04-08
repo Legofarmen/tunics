@@ -117,7 +117,7 @@ end
 
 for _, dir in ipairs(walls) do
     local name = 'crack_' .. dir
-    if rng:augment_string(name):random(3) == 1 then
+    if rng:refine(name):random(3) == 1 then
         map:get_entity(name):set_enabled(true)
     end
 end
@@ -136,7 +136,7 @@ for _, treasure_data in ipairs(data.treasures) do
 end
 
 if obstacle_treasure then
-    obstacle_dir = obstacle_dir or walls[rng:augment_string('obstacle_dir'):random(#walls)]
+    obstacle_dir = obstacle_dir or walls[rng:refine('obstacle_dir'):random(#walls)]
     obstacle_item = obstacle_treasure.reach
 end
 
