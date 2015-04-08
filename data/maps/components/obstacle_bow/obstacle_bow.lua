@@ -4,7 +4,7 @@ local util = require 'lib/util'
 
 function bow.init(map, data, timeout)
 	local door_names = {}
-	for dir, door_data in pairs(data.doors) do
+	for dir, door_data in util.pairs_by_keys(data.doors) do
 		data.room:door({open='closed', name=door_data.name, door_names=door_names}, dir)
 	end
 
@@ -48,7 +48,7 @@ function bow.init(map, data, timeout)
 			hidden_chest:set_enabled(true)
 			sound = 'chest_appears'
 		end
-		for dir, name in pairs(door_names) do
+		for dir, name in util.pairs_by_keys(door_names) do
 			map:open_doors(name)
 			sound = 'secret'
 		end

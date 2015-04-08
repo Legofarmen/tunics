@@ -3,7 +3,7 @@ local obstacle_weakwall = {}
 local util = require 'lib/util'
 
 function obstacle_weakwall.init(map, data)
-	for dir, door_data in pairs(data.doors) do
+	for dir, door_data in util.pairs_by_keys(data.doors) do
         data.room:door({open='weakwall', name=door_data.name}, dir)
 	end
 	

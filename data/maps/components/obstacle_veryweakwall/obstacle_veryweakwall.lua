@@ -3,7 +3,7 @@ local bomb = {}
 local util = require 'lib/util'
 
 function bomb.init(map, data)
-	for dir, door_data in pairs(data.doors) do
+	for dir, door_data in util.pairs_by_keys(data.doors) do
         data.room:door({open='veryweakwall', name=door_data.name}, dir)
 	end
 	

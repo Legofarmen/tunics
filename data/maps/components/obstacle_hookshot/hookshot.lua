@@ -1,5 +1,7 @@
 local hookshot = {}
 
+local util = require 'lib/util'
+
 local function replace(map, placeholder, data)
     local x, y = placeholder:get_position()
     x, y = x + 8, y + 13
@@ -29,7 +31,7 @@ end
 function hookshot.init(map, data)
     replace(map, map:get_entity('placeholder1'), data.treasure1)
     replace(map, map:get_entity('placeholder2'), data.treasure2)
-    for dir, door_data in pairs(data.doors) do
+    for dir, door_data in util.pairs_by_keys(data.doors) do
         data.room:door({open=door_data.open, name=door_data.name}, dir)
     end
 end

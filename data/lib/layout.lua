@@ -394,7 +394,7 @@ function Layout.print_mixin(object)
                 if not thing:is_open() then print(string.format("\t\tto open: %s", thing.open)) end
             end
             print(string.format("Room %d;%d", x, y))
-            for dir, door in pairs(info.doors) do
+            for dir, door in util.pairs_by_keys(info.doors) do
                 print(string.format("  Door %s", dir))
                 print_access(door)
             end

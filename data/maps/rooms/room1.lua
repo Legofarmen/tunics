@@ -77,7 +77,7 @@ end
 
 
 local walls = {}
-for _, dir in pairs{'north','south','east','west'} do
+for _, dir in ipairs{'north','south','east','west'} do
     if data.doors[dir] then
         if not data.doors[dir].reach then
             if not room:door({open=data.doors[dir].open, name=data.doors[dir].name}, dir) then
