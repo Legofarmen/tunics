@@ -69,3 +69,14 @@ dynamic_tile{
   enabled_at_start = false,
 }
 
+dynamic_tile{
+  layer = 1,
+  x = 240,
+  y = 64,
+  width = 16,
+  height = 16,
+  name = "enemy",
+  pattern = "floor_small.4",
+  enabled_at_start = false,
+}
+

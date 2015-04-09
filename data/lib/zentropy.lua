@@ -683,15 +683,16 @@ function zentropy.game.init(game)
 end
 
 function zentropy.inject_enemy(placeholder, rng)
-    local x, y, layer = placeholder:get_position()
     local map = placeholder:get_map()
+    local x, y, layer = placeholder:get_position()
+
     local treasure_name
     if rng:random() < 0.5 then
         treasure_name = 'heart'
     else
         treasure_name = nil
     end
-    map:create_enemy{
+    local enemy = map:create_enemy{
         layer=layer,
         x=x,
         y=y,
@@ -699,6 +700,9 @@ function zentropy.inject_enemy(placeholder, rng)
         breed='tentacle',
         treasure_name=treasure_name,
     }
+    local origin_x, origin_y = enemy:get_origin()
+    enemy:set_position(x + origin_x, y + origin_y)
+
     placeholder:remove()
 end
 

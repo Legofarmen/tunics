@@ -149,6 +149,7 @@ if obstacle_dir then
     obstacle_data.treasure2 = table.remove(normal_treasures)
     obstacle_data.doors = obstacle_doors
     obstacle_data.room = room
+    obstacle_data.rng = rng:refine('obstacle')
 
     if not room:obstacle(obstacle_data, obstacle_dir, obstacle_item) then
         for _, msg in ipairs(messages) do print(msg) end

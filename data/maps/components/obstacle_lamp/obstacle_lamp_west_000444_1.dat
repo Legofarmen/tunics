@@ -3,7 +3,7 @@ properties{
   y = 0,
   width = 320,
   height = 240,
-  tileset = "dungeon_brick_gray_1",
+  tileset = "dungeon_smoothbrick_green_1",
   music = "same",
 }
 
@@ -92,6 +92,17 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "treasure_open_chest",
+  pattern = "floor_small.4",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 112,
+  y = 160,
+  width = 16,
+  height = 16,
+  name = "enemy",
   pattern = "floor_small.4",
   enabled_at_start = false,
 }
