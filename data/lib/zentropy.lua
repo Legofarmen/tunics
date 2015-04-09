@@ -576,6 +576,17 @@ function zentropy.game.setup_quest_initial()
     zentropy.game.game:set_life(12)
 end
 
+function zentropy.game.catch_up_on_items(tier)
+    for i = 1, tier - 1 do
+        local item_name = zentropy.game.get_tier_treasure(i)
+        if item_name then
+            local item = zentropy.game.game:get_item(item_name)
+            item:set_variant(1)
+            item:on_obtained()
+        end
+    end
+end
+
 function zentropy.game.new_game()
     sol.game.delete(zentropy.game.savefile)
 
@@ -586,14 +597,7 @@ function zentropy.game.new_game()
 
     local tier = zentropy.settings.quest_tier
     zentropy.game.setup_tier_initial(tier)
-    for i = 1, tier - 1 do
-        local item_name = zentropy.game.get_tier_treasure(i)
-        if item_name then
-            local item = zentropy.game.game:get_item(item_name)
-            item:set_variant(1)
-            item:on_obtained()
-        end
-    end
+    zentropy.game.catch_up_on_items(tier)
 
     zentropy.game.game:set_starting_location('rooms/intro_1')
     zentropy.game.game:start()
