@@ -27,15 +27,15 @@ function puzzle.init(map, data)
         local hideout = placeholders[data.rng:random(#placeholders)]
 
         hideout:set_enabled(false)
-        switch:set_position(hideout:get_position())
+        local x, y = hideout:get_position()
+        if zentropy.settings.debug_cheat then
+            y = y + 4
+        end
+        switch:set_position(x, y)
 
         local block = map:get_entity('block_' .. hideout:get_name())
         if block then
             block:set_pushable(true)
-            if zentropy.settings.debug_cheat then
-                local x, y = block:get_position()
-                block:set_position(x, y - 1)
-            end
         end
 
         sensor_north.on_activated = sensor_activated
