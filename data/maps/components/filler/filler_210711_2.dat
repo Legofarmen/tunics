@@ -297,24 +297,6 @@ tile{
 
 tile{
   layer = 1,
-  x = 216,
-  y = 8,
-  width = 16,
-  height = 32,
-  pattern = "wall_pillar.4.1",
-}
-
-tile{
-  layer = 1,
-  x = 264,
-  y = 8,
-  width = 16,
-  height = 32,
-  pattern = "wall_pillar.4.1",
-}
-
-tile{
-  layer = 1,
   x = 24,
   y = 32,
   width = 64,
@@ -328,7 +310,7 @@ tile{
   y = 8,
   width = 16,
   height = 32,
-  pattern = "wall_pillar.4.1",
+  pattern = "wall_pillar.1.1",
 }
 
 tile{
@@ -337,6 +319,24 @@ tile{
   y = 8,
   width = 16,
   height = 32,
-  pattern = "wall_pillar.4.1",
+  pattern = "wall_pillar.1.1",
+}
+
+tile{
+  layer = 1,
+  x = 216,
+  y = 8,
+  width = 16,
+  height = 32,
+  pattern = "wall_pillar.1.1",
+}
+
+tile{
+  layer = 1,
+  x = 264,
+  y = 8,
+  width = 16,
+  height = 32,
+  pattern = "wall_pillar.1.1",
 }
 

@@ -65,6 +65,6 @@ end
 
 function sol.main:on_started()
     sol.language.set_language("en")
-
     sol.menu.start(self, savegame_menu)
+	sol.audio.preload_sounds()
 end

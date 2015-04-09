@@ -3,14 +3,14 @@ properties{
   y = 0,
   width = 320,
   height = 240,
-  tileset = "dungeon_brick_blue_1",
+  tileset = "dungeon_brick_gray_1",
   music = "same",
 }
 
 tile{
   layer = 1,
   x = 56,
-  y = 56,
+  y = 168,
   width = 208,
   height = 16,
   pattern = "floor.19",
@@ -19,7 +19,7 @@ tile{
 tile{
   layer = 1,
   x = 248,
-  y = 72,
+  y = 56,
   width = 16,
   height = 112,
   pattern = "floor.19",
@@ -27,20 +27,11 @@ tile{
 
 tile{
   layer = 1,
-  x = 32,
+  x = 224,
   y = 32,
   width = 24,
   height = 24,
   pattern = "wall_low.corner.1",
-}
-
-tile{
-  layer = 1,
-  x = 32,
-  y = 72,
-  width = 24,
-  height = 24,
-  pattern = "wall_low.corner.3",
 }
 
 tile{
@@ -63,15 +54,6 @@ tile{
 
 tile{
   layer = 1,
-  x = 224,
-  y = 184,
-  width = 24,
-  height = 24,
-  pattern = "wall_low.corner.3",
-}
-
-tile{
-  layer = 1,
   x = 264,
   y = 56,
   width = 24,
@@ -82,8 +64,8 @@ tile{
 tile{
   layer = 1,
   x = 56,
-  y = 32,
-  width = 208,
+  y = 144,
+  width = 176,
   height = 24,
   pattern = "wall_low.1",
 }
@@ -91,17 +73,8 @@ tile{
 tile{
   layer = 1,
   x = 56,
-  y = 72,
-  width = 176,
-  height = 24,
-  pattern = "wall_low.2",
-}
-
-tile{
-  layer = 1,
-  x = 248,
   y = 184,
-  width = 16,
+  width = 208,
   height = 24,
   pattern = "wall_low.2",
 }
@@ -109,7 +82,7 @@ tile{
 tile{
   layer = 1,
   x = 224,
-  y = 88,
+  y = 56,
   width = 24,
   height = 96,
   pattern = "wall_low.3",
@@ -117,17 +90,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 32,
-  y = 56,
-  width = 24,
-  height = 16,
-  pattern = "wall_low.3",
-}
-
-tile{
-  layer = 1,
-  x = 32,
-  y = 96,
+  x = 40,
+  y = 136,
   width = 184,
   height = 8,
   pattern = "barrier.1.1",
@@ -136,7 +100,7 @@ tile{
 tile{
   layer = 1,
   x = 216,
-  y = 104,
+  y = 32,
   width = 8,
   height = 104,
   pattern = "barrier.3.2",
@@ -145,7 +109,7 @@ tile{
 tile{
   layer = 1,
   x = 216,
-  y = 96,
+  y = 32,
   width = 8,
   height = 8,
   pattern = "barrier.3.border",
@@ -154,7 +118,7 @@ tile{
 tile{
   layer = 1,
   x = 32,
-  y = 96,
+  y = 136,
   width = 8,
   height = 8,
   pattern = "barrier.3.border",
@@ -163,7 +127,7 @@ tile{
 tile{
   layer = 1,
   x = 216,
-  y = 200,
+  y = 136,
   width = 8,
   height = 8,
   pattern = "barrier.3.border",
@@ -171,56 +135,20 @@ tile{
 
 tile{
   layer = 1,
-  x = 24,
-  y = 56,
-  width = 8,
-  height = 16,
-  pattern = "waterfall.3.top",
+  x = 248,
+  y = 32,
+  width = 16,
+  height = 24,
+  pattern = "wall_low.1",
 }
 
 tile{
   layer = 1,
   x = 32,
-  y = 48,
-  width = 8,
-  height = 32,
-  pattern = "waterfall.3.middle",
-}
-
-tile{
-  layer = 1,
-  x = 224,
-  y = 72,
+  y = 184,
   width = 24,
   height = 24,
-  pattern = "wall_low.corner_reverse.3",
-}
-
-tile{
-  layer = 1,
-  x = 40,
-  y = 40,
-  width = 240,
-  height = 48,
-  pattern = "water.transparent",
-}
-
-tile{
-  layer = 1,
-  x = 232,
-  y = 88,
-  width = 48,
-  height = 112,
-  pattern = "water.transparent",
-}
-
-tile{
-  layer = 1,
-  x = 240,
-  y = 200,
-  width = 32,
-  height = 16,
-  pattern = "water_wall.drain_gate.2",
+  pattern = "wall_low.corner.3",
 }
 
 tile{
@@ -229,24 +157,96 @@ tile{
   y = 8,
   width = 32,
   height = 24,
-  pattern = "wall_pipe.1",
+  pattern = "wall_statue.6.1",
 }
 
 tile{
   layer = 1,
-  x = 8,
-  y = 48,
+  x = 248,
+  y = 24,
+  width = 16,
+  height = 8,
+  pattern = "waterfall.1.top",
+}
+
+tile{
+  layer = 1,
+  x = 240,
+  y = 32,
+  width = 32,
+  height = 8,
+  pattern = "waterfall.1.middle",
+}
+
+tile{
+  layer = 1,
+  x = 224,
+  y = 144,
   width = 24,
-  height = 32,
-  pattern = "wall_statue.6.3",
+  height = 24,
+  pattern = "wall_low.corner_reverse.1",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 144,
+  width = 24,
+  height = 24,
+  pattern = "wall_low.corner.1",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 168,
+  width = 24,
+  height = 16,
+  pattern = "wall_low.3",
 }
 
 tile{
   layer = 1,
   x = 40,
-  y = 48,
-  width = 8,
+  y = 152,
+  width = 240,
+  height = 48,
+  pattern = "water.transparent",
+}
+
+tile{
+  layer = 1,
+  x = 232,
+  y = 40,
+  width = 48,
+  height = 112,
+  pattern = "water.transparent",
+}
+
+tile{
+  layer = 1,
+  x = 24,
+  y = 160,
+  width = 16,
   height = 32,
-  pattern = "waterfall.3.bottom",
+  pattern = "water_wall.drain_gate.3",
+}
+
+tile{
+  layer = 1,
+  x = 240,
+  y = 40,
+  width = 32,
+  height = 8,
+  pattern = "waterfall.1.bottom",
+}
+
+tile{
+  layer = 1,
+  x = 288,
+  y = 160,
+  width = 24,
+  height = 32,
+  pattern = "wall_pipe.4",
 }
 

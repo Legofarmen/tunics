@@ -14,14 +14,15 @@ function hookshot.init(map, data)
 	obstacle_x, obstacle_y = obstacle_x + 8, obstacle_y + 13
 	
 	if data.treasure1 then
-		hidden_chest = map:create_chest{
+		map:create_chest{
             sprite="entities/chest",
             layer=1,
             x = obstacle_x,
             y = obstacle_y,
             treasure_name=data.treasure1.item_name,
             treasure_savegame_variable=data.treasure1.name,
-        }
+		}
+	map:set_entities_enabled('treasure_obstacle_', true)
 	else
 		map:create_block{
             layer = 1,
@@ -34,7 +35,6 @@ function hookshot.init(map, data)
             maximum_moves = 0,
         }		
 	end
-	map:set_entities_enabled('treasure_obstacle_', true)
 	
 	local open_x, open_y = map:get_entity('treasure_open_chest'):get_position()
 	open_x, open_y = open_x + 8, open_y + 13
@@ -48,6 +48,7 @@ function hookshot.init(map, data)
             treasure_name=data.treasure2.item_name,
             treasure_savegame_variable=data.treasure2.name,
         }
+	map:set_entities_enabled('treasure_open_', true)
 	else
 		map:create_block{
             layer = 1,
@@ -60,7 +61,6 @@ function hookshot.init(map, data)
             maximum_moves = 0,
         }
 	end
-	map:set_entities_enabled('treasure_open_', true)
 	
 end
 

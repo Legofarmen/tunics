@@ -1,0 +1,117 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  tileset = "dungeon_brick_gray_1",
+  music = "same",
+}
+
+tile{
+  layer = 1,
+  x = 192,
+  y = 8,
+  width = 24,
+  height = 24,
+  pattern = "wall.corner.2",
+}
+
+tile{
+  layer = 1,
+  x = 8,
+  y = 144,
+  width = 24,
+  height = 24,
+  pattern = "wall.corner.3",
+}
+
+tile{
+  layer = 1,
+  x = 192,
+  y = 144,
+  width = 24,
+  height = 24,
+  pattern = "wall.corner.4",
+}
+
+tile{
+  layer = 1,
+  x = 192,
+  y = 32,
+  width = 24,
+  height = 112,
+  pattern = "wall.4",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 144,
+  width = 160,
+  height = 24,
+  pattern = "wall.2",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 136,
+  width = 8,
+  height = 8,
+  pattern = "wall_border.corner.3",
+}
+
+tile{
+  layer = 1,
+  x = 184,
+  y = 136,
+  width = 8,
+  height = 8,
+  pattern = "wall_border.corner.4",
+}
+
+tile{
+  layer = 1,
+  x = 184,
+  y = 32,
+  width = 8,
+  height = 8,
+  pattern = "wall_border.corner.2",
+}
+
+tile{
+  layer = 1,
+  x = 184,
+  y = 40,
+  width = 8,
+  height = 96,
+  pattern = "wall_border.4",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 136,
+  width = 144,
+  height = 8,
+  pattern = "wall_border.2",
+}
+
+tile{
+  layer = 2,
+  x = 8,
+  y = 168,
+  width = 304,
+  height = 64,
+  pattern = "ceiling",
+}
+
+tile{
+  layer = 2,
+  x = 216,
+  y = 8,
+  width = 96,
+  height = 160,
+  pattern = "ceiling",
+}
+

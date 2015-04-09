@@ -3,7 +3,7 @@ properties{
   y = 0,
   width = 1280,
   height = 768,
-  tileset = "dungeon_ganon",
+  tileset = "dungeon_ice_blue_1",
   music = "same",
 }
 

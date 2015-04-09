@@ -558,15 +558,6 @@ tile{
 
 tile{
   layer = 1,
-  x = 136,
-  y = 192,
-  width = 48,
-  height = 8,
-  pattern = "wall_border.2",
-}
-
-tile{
-  layer = 1,
   x = 96,
   y = 176,
   width = 16,
@@ -614,16 +605,7 @@ tile{
   layer = 1,
   x = 136,
   y = 200,
-  width = 16,
-  height = 24,
-  pattern = "wall.2",
-}
-
-tile{
-  layer = 1,
-  x = 152,
-  y = 200,
-  width = 32,
+  width = 48,
   height = 24,
   pattern = "wall.2",
 }
@@ -671,15 +653,6 @@ tile{
   width = 16,
   height = 16,
   pattern = "torch",
-}
-
-tile{
-  layer = 1,
-  x = 144,
-  y = 200,
-  width = 32,
-  height = 24,
-  pattern = "wall_statue.1.2",
 }
 
 tile{
@@ -734,6 +707,24 @@ tile{
   width = 16,
   height = 32,
   pattern = "wall_pillar.1.2",
+}
+
+tile{
+  layer = 1,
+  x = 144,
+  y = 200,
+  width = 32,
+  height = 24,
+  pattern = "wall_statue.1.2",
+}
+
+tile{
+  layer = 1,
+  x = 136,
+  y = 192,
+  width = 48,
+  height = 8,
+  pattern = "wall_border.2",
 }
 
 dynamic_tile{
