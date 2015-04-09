@@ -32,10 +32,10 @@ function puzzle.init(map, data)
         local block = map:get_entity('block_' .. hideout:get_name())
         if block then
             block:set_pushable(true)
-
-	    -- Debug cheat:
-            local x, y = block:get_position()
-            block:set_position(x, y - 1)
+            if zentropy.settings.debug_cheat then
+                local x, y = block:get_position()
+                block:set_position(x, y - 1)
+            end
         end
 
         sensor_north.on_activated = sensor_activated
