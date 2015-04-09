@@ -23,7 +23,7 @@ zentropy = zentropy or {
         Tilesets = Class:new{},
     },
     game = {
-        savefile = 'zentropy.dat',
+        savefile = 'save.dat',
     },
     settings = {
         filename = 'settings.dat',
