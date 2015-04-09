@@ -162,13 +162,13 @@ function tree.Metric:new(o)
     o = o or {}
     o.doors = o.doors or 0
     o.hidden_doors = o.hidden_doors or 0
-    o.obstacle_doors = o.obstacle_doors or 0
+    o.obstacle_doors = o.obstacle_doors or {}
     o.bigkey_doors = o.bigkey_doors or 0
     o.directional_doors = o.directional_doors or 0
     o.treasures = o.treasures or 0
     o.normal_treasures = o.normal_treasures or 0
     o.hidden_treasures = o.hidden_treasures or 0
-    o.obstacle_treasures = o.obstacle_treasures or 0
+    o.obstacle_treasures = o.obstacle_treasures or {}
     o.bigkey_treasures = o.bigkey_treasures or 0
     return Node.new(self, o)
 end
@@ -176,7 +176,18 @@ end
 function tree.Metric.__add(lhs, rhs)
     local metric = tree.Metric:new()
     for key, value in pairs(lhs) do
-        metric[key] = value + rhs[key]
+        if type(value) == 'table' then
+            local result = {}
+            for key, value in pairs(lhs[key]) do
+                result[key] = value
+            end
+            for key, value in pairs(rhs[key]) do
+                result[key] = (result[key] or 0) + value
+            end
+            metric[key] = result
+        else
+            metric[key] = value + rhs[key]
+        end
     end
     return metric
 end
@@ -184,20 +195,31 @@ end
 function tree.Metric.__sub(lhs, rhs)
     local metric = tree.Metric:new()
     for key, value in pairs(lhs) do
-        metric[key] = value - rhs[key]
+        if type(value) == 'table' then
+            local result = {}
+            for key, value in pairs(lhs[key]) do
+                result[key] = value
+            end
+            for key, value in pairs(rhs[key]) do
+                if result[key] == value then
+                    result[key] = nil
+                else
+                    result[key] = result[key] - value
+                end
+            end
+            metric[key] = result
+        else
+            metric[key] = value - rhs[key]
+        end
     end
     return metric
-end
-
-function tree.Metric:get_obstacles()
-    return math.max(self.obstacle_doors, self.obstacle_treasures)
 end
 
 function Room:get_node_metric()
     local metric = tree.Metric:new()
     metric.doors = 1
     if not self:is_visible() then metric.hidden_doors = 1 end
-    if not self:is_reachable() then metric.obstacle_doors = 1 end
+    if not self:is_reachable() then metric.obstacle_doors = { [self.reach] = 1 } end
     if self.open == 'bigkey' then metric.bigkey_doors = 1 end
     return metric
 end
@@ -206,7 +228,7 @@ function Treasure:get_node_metric()
     local metric = tree.Metric:new()
     metric.treasures = 1
     if not self:is_visible() then metric.hidden_treasures = 1 end
-    if not self:is_reachable() then metric.obstacle_treasures = 1 end
+    if not self:is_reachable() then metric.obstacle_treasures = { [self.reach] = 1 } end
     if self.open == 'bigkey' then metric.bigkey_treasures = 1 end
     if self:is_normal() then metric.normal_treasures = 1 end
     return metric
@@ -235,14 +257,59 @@ function Enemy:get_children_metric()
     return metric
 end
 
+function tree.Metric:get_obstacles()
+    local obstacles = {}
+    for k, v in pairs(self.obstacle_doors) do
+        obstacles[k] = v
+    end
+    for k, v in pairs(self.obstacle_treasures) do
+        obstacles[k] = math.max(obstacles[k] or 0, v)
+    end
+    local total = 0
+    for k, v in pairs(obstacles) do
+        total = total + v
+    end
+    return total
+end
+
+function tree.Metric:get_obstacle_doors()
+    local total = 0
+    for k, v in pairs(self.obstacle_doors) do
+        total = total + v
+    end
+    return total
+end
+
+function tree.Metric:get_obstacle_treasures()
+    local total = 0
+    for k, v in pairs(self.obstacle_treasures) do
+        total = total + v
+    end
+    return total
+end
+
+function tree.Metric:get_obstacle_types()
+    local result = 0
+    for k, v in pairs(self.obstacle_doors) do
+        result = result + 1
+    end
+    for k, v in pairs(self.obstacle_treasures) do
+        if not self.obstacle_doors[k] then
+            result = result + 1
+        end
+    end
+    return result
+end
+
 function tree.Metric:__tostring()
     return string.format('D:%d (%d,%d,%d,%d) T:%d (%d,%d,%d,%d)',
-    self.doors,     self.hidden_doors,     self.obstacle_doors,     self.bigkey_doors,     self.directional_doors,
-    self.treasures, self.hidden_treasures, self.obstacle_treasures, self.bigkey_treasures, self.normal_treasures)
+    self.doors,     self.hidden_doors,     self:get_obstacle_doors(),     self.bigkey_doors,     self.directional_doors,
+    self.treasures, self.hidden_treasures, self:get_obstacle_treasures(), self.bigkey_treasures, self.normal_treasures)
 end
 
 function tree.Metric:is_valid()
     if self.directional_doors > 1 then return false end
+    if self:get_obstacle_types() > 1 then return false end
 
     if self.bigkey_doors > 0 and self.treasures > 0 then return false end
     if self.bigkey_doors > 0 and self.hidden_doors > 0 then return false end
@@ -251,7 +318,7 @@ function tree.Metric:is_valid()
     if self.normal_treasures > 1 then return false end
     if self.hidden_treasures > 1 then return false end
     if self.bigkey_treasures > 1 then return false end
-    if self.obstacle_treasures > 1 then return false end
+    if self:get_obstacle_treasures() > 1 then return false end
 
     if (self.bigkey_treasures > 0 or self.hidden_treasures > 0) and self:get_obstacles() > 0 then return false end
     if self.bigkey_treasures > 0 and self.normal_treasures > 0 then return false end
