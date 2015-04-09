@@ -469,6 +469,17 @@ destructible{
   sprite = "entities/vase_skull",
 }
 
+dynamic_tile{
+  layer = 1,
+  x = 152,
+  y = 120,
+  width = 16,
+  height = 16,
+  name = "enemy",
+  pattern = "carpet.1",
+  enabled_at_start = false,
+}
+
 tile{
   layer = 2,
   x = 0,

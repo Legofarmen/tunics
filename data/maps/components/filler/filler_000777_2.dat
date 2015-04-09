@@ -394,6 +394,17 @@ tile{
   pattern = "wall_pillar.3.1",
 }
 
+dynamic_tile{
+  layer = 1,
+  x = 152,
+  y = 112,
+  width = 16,
+  height = 16,
+  name = "enemy",
+  pattern = "carpet.5",
+  enabled_at_start = false,
+}
+
 tile{
   layer = 2,
   x = 0,

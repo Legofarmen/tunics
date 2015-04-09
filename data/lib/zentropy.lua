@@ -682,4 +682,24 @@ function zentropy.game.init(game)
     return game
 end
 
+function zentropy.inject_enemy(placeholder, rng)
+    local x, y, layer = placeholder:get_position()
+    local map = placeholder:get_map()
+    local treasure_name
+    if rng:random() < 0.5 then
+        treasure_name = 'heart'
+    else
+        treasure_name = nil
+    end
+    map:create_enemy{
+        layer=layer,
+        x=x,
+        y=y,
+        direction=3,
+        breed='tentacle',
+        treasure_name=treasure_name,
+    }
+    placeholder:remove()
+end
+
 return zentropy

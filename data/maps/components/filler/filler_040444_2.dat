@@ -52,3 +52,14 @@ tile{
   pattern = "statue.1",
 }
 
+dynamic_tile{
+  layer = 1,
+  x = 80,
+  y = 112,
+  width = 16,
+  height = 16,
+  name = "enemy",
+  pattern = "carpet.5",
+  enabled_at_start = false,
+}
+

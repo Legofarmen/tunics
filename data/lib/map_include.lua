@@ -3,26 +3,31 @@ local util = require 'lib/util'
 local mapmeta = sol.main.get_metatable('map')
 
 local function component_map(map_userdata, component_x, component_y, component_prefix, data)
+    local o = {}
+
     local component_entity = function (entity_userdata)
         if entity_userdata == nil then
             return nil
         end
         local component_name_start = string.len(component_prefix) + 1
-        local o = {}
-        function o:get_name()
+        local entity = {}
+        function entity:get_name()
             return string.sub(entity_userdata:get_name(), component_name_start)
         end
-        function o:get_position()
-            local x, y = entity_userdata:get_position()
-            return x - component_x, y - component_y
+        function entity:get_position()
+            local x, y, layer = entity_userdata:get_position()
+            return x - component_x, y - component_y, layer
         end
-        function o:set_position(x, y, ...)
+        function entity:set_position(x, y, ...)
             return entity_userdata:set_position(x + component_x, y + component_y, ...)
         end
-        function o:get_userdata()
+        function entity:get_userdata()
             return entity_userdata
         end
-        setmetatable(o, {
+        function entity:get_map()
+            return o
+        end
+        setmetatable(entity, {
             __index = function (table, key)
                 if type(entity_userdata[key]) == 'function' then
                     return function (self, ...) return entity_userdata[key](entity_userdata, ...) end
@@ -34,7 +39,7 @@ local function component_map(map_userdata, component_x, component_y, component_p
                 entity_userdata[key] = value
             end,
         })
-        return o
+        return entity
     end
     local add_prefix = function (name)
         if string.sub(name, 0, 2) == '__' then
@@ -58,7 +63,6 @@ local function component_map(map_userdata, component_x, component_y, component_p
         return properties
     end
 
-    local o = {}
     function o:create_block(properties) return component_entity(map_userdata:create_block(transform(properties))) end
     function o:create_bomb(properties) return component_entity(map_userdata:create_bomb(transform(properties))) end
     function o:create_chest(properties) return component_entity(map_userdata:create_chest(transform(properties))) end

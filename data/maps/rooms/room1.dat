@@ -152,16 +152,6 @@ tile{
   pattern = "wall_border.corner.2",
 }
 
-enemy{
-  layer = 1,
-  x = 112,
-  y = 117,
-  name = "enemy_1",
-  direction = 3,
-  breed = "tentacle",
-  treasure_name = "heart",
-}
-
 dynamic_tile{
   layer = 1,
   x = 152,

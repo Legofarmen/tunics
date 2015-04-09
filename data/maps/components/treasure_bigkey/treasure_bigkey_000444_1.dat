@@ -80,3 +80,14 @@ chest{
   opening_condition = "bigkey",
 }
 
+dynamic_tile{
+  layer = 1,
+  x = 80,
+  y = 152,
+  width = 16,
+  height = 16,
+  name = "enemy",
+  pattern = "carpet.1",
+  enabled_at_start = false,
+}
+

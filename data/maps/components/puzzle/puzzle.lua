@@ -1,6 +1,7 @@
 local puzzle = {}
 
 local util = require 'lib/util'
+local zentropy = require 'lib/zentropy'
 
 function puzzle.init(map, data)
 
@@ -10,6 +11,9 @@ function puzzle.init(map, data)
     local sensor_south = map:get_entity('sensor_south')
     local sensor_east = map:get_entity('sensor_east')
     local sensor_west = map:get_entity('sensor_west')
+    local enemy = map:get_entity('enemy')
+
+    zentropy.inject_enemy(enemy, data.rng:refine('enemy'))
 
     local function sensor_activated()
         if not switch:is_activated() then
@@ -27,11 +31,11 @@ function puzzle.init(map, data)
         local hideout = placeholders[data.rng:random(#placeholders)]
 
         hideout:set_enabled(false)
-        local x, y = hideout:get_position()
+        local x, y, layer = hideout:get_position()
         if zentropy.settings.debug_cheat then
             y = y + 4
         end
-        switch:set_position(x, y)
+        switch:set_position(x, y, layer)
 
         local block = map:get_entity('block_' .. hideout:get_name())
         if block then

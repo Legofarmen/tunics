@@ -5,6 +5,10 @@ function treasure.init(map, data)
     local chest = map:get_entity('chest')
     local switch = map:get_entity('switch')
 
+    if map:has_entity('enemy') then
+        zentropy.inject_enemy(map:get_entity('enemy'), data.rng:refine('enemy'))
+    end
+
     local placeholders = {}
     for entity in map:get_entities('placeholder_') do
         table.insert(placeholders, entity)

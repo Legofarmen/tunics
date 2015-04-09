@@ -204,3 +204,14 @@ chest{
   sprite = "entities/chest",
 }
 
+dynamic_tile{
+  layer = 1,
+  x = 80,
+  y = 72,
+  width = 16,
+  height = 16,
+  name = "enemy",
+  pattern = "carpet.1",
+  enabled_at_start = false,
+}
+
