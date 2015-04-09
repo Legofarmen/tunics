@@ -530,17 +530,37 @@ function zentropy.game.get_items_sequence(rng)
     return result
 end
 
+function zentropy.game.has_savegame()
+    return sol.game.exists(zentropy.game.savefile)
+end
+
 function zentropy.game.resume_game()
     zentropy.game.game = zentropy.game.init(sol.game.load(zentropy.game.savefile))
     zentropy.game.setup_quest_invariants()
 
     zentropy.game.game:set_starting_location('dungeons/dungeon1')
     zentropy.game.game:start()
+    sol.game.delete(zentropy.game.savefile)
 end
 
-function zentropy.game.has_savegame()
-    local game = sol.game.load(zentropy.game.savefile)
-    return game:get_value('seed') and game:get_value('tier')
+function zentropy.game.new_game()
+    sol.game.delete(zentropy.game.savefile)
+
+    zentropy.game.game = zentropy.game.init(sol.game.load(zentropy.game.savefile))
+    zentropy.game.game:set_value('seed', zentropy.settings.quest_seed)
+    zentropy.game.setup_quest_initial()
+    zentropy.game.setup_quest_invariants()
+
+    local tier = zentropy.settings.quest_tier
+    zentropy.game.catch_up_on_items(tier)
+    zentropy.game.setup_tier_initial(tier)
+
+    zentropy.game.game:set_starting_location('rooms/intro_1')
+    zentropy.game.game:start()
+end
+
+function zentropy.game.next_tier()
+    return zentropy.game.setup_tier_initial(zentropy.game.game:get_value('tier') + 1)
 end
 
 function zentropy.game.get_rng(tier)
@@ -571,26 +591,6 @@ function zentropy.game.catch_up_on_items(tier)
             item:on_obtained()
         end
     end
-end
-
-function zentropy.game.new_game()
-    sol.game.delete(zentropy.game.savefile)
-
-    zentropy.game.game = zentropy.game.init(sol.game.load(zentropy.game.savefile))
-    zentropy.game.game:set_value('seed', zentropy.settings.quest_seed)
-    zentropy.game.setup_quest_initial()
-    zentropy.game.setup_quest_invariants()
-
-    local tier = zentropy.settings.quest_tier
-    zentropy.game.setup_tier_initial(tier)
-    zentropy.game.catch_up_on_items(tier)
-
-    zentropy.game.game:set_starting_location('rooms/intro_1')
-    zentropy.game.game:start()
-end
-
-function zentropy.game.next_tier()
-    return zentropy.game.setup_tier_initial(zentropy.game.game:get_value('tier') + 1)
 end
 
 function zentropy.game.setup_tier_initial(tier)
