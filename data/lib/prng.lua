@@ -22,6 +22,7 @@ function Prng:random(a, b)
     end
 
     local bits = self.mwc()
+    zentropy.debug(self.path, bits)
     if a then
         if not b then
             a, b = 1, a
