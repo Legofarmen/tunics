@@ -48,8 +48,6 @@ end
 
 setmetatable(zentropy.settings, settings_meta)
 
-print(zentropy.settings.debug_filename)
-
 function zentropy.init()
     entries = zentropy.db.Project:parse()
     zentropy.components = zentropy.db.Components:new():parse(entries.map)
