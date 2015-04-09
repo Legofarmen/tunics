@@ -66,11 +66,18 @@ function zentropy.init()
     io.open(zentropy.settings.debug_filename, "w"):close()
 end
 
-function zentropy.debug(message)
+function zentropy.debug(...)
     local filename = zentropy.settings.debug_filename
     if filename == '-' then
-        print(message)
+        print(...)
     else
+        local args = { n = select("#", ...), ... }
+        local message = ''
+        local sep = ''
+        for i = 1, args.n do
+            message = message .. sep .. args[i]
+            sep = "\t"
+        end
         local f = io.open(filename, "a")
         f:write(message .. "\n")
         f:close()
