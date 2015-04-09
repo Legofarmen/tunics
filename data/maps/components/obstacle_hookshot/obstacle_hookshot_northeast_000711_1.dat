@@ -220,9 +220,9 @@ dynamic_tile{
   y = 48,
   width = 16,
   height = 16,
-  name = "placeholder2",
+  name = "treasure_open_chest",
   pattern = "floor_small.2",
-  enabled_at_start = true,
+  enabled_at_start = false,
 }
 
 dynamic_tile{
@@ -231,8 +231,8 @@ dynamic_tile{
   y = 168,
   width = 16,
   height = 16,
-  name = "placeholder1",
+  name = "treasure_obstacle_chest",
   pattern = "floor_small.2",
-  enabled_at_start = true,
+  enabled_at_start = false,
 }
 
