@@ -52,6 +52,10 @@ function util.fromoct(n)
 end
 
 function util.table_lines(prefix, data, f)
+    if not f then
+        local zentropy = require 'lib/zentropy'
+        f = zentropy.debug
+    end
     if type(data) == 'table' then
         local n = 0
         for key, value in util.pairs_by_keys(data) do
