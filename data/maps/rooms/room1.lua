@@ -89,6 +89,7 @@ for _, dir in ipairs{'north','south','east','west'} do
             room.open_doors[dir] = true
         end
         if data.doors[dir].reach then
+            assert(not obstacle_item or obstacle_item == data.doors[dir].reach)
             obstacle_item = data.doors[dir].reach
         end
     else
