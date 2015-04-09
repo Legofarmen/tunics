@@ -362,7 +362,7 @@ destructible{
 dynamic_tile{
   layer = 1,
   x = 248,
-  y = 96,
+  y = 104,
   width = 16,
   height = 16,
   name = "enemy",
