@@ -530,20 +530,6 @@ function zentropy.game.get_items_sequence(rng)
     return result
 end
 
-function zentropy.game.get_items()
-    local items = {}
-    for _, item_name in ipairs{'bow','bomb','hookshot','lamp'} do
-        items[item_name] = zentropy.game.game:get_item(item_name):get_variant()
-    end
-    return items
-end
-
-function zentropy.game.set_items(items)
-    for item_name, variant in pairs(items) do
-        zentropy.game.game:get_item(item_name):set_variant(variant)
-    end
-end
-
 function zentropy.game.resume_game()
     zentropy.game.game = zentropy.game.init(sol.game.load(zentropy.game.savefile))
     zentropy.game.setup_quest_invariants()
