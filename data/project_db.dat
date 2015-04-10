@@ -73,7 +73,7 @@ map{ id = "components/filler/filler_010111_3", description = "Filler 010111 3" }
 map{ id = "components/filler/filler_002007_3", description = "Filler 002007 3" }
 map{ id = "components/enemy/enemy_boss_000777_2", description = "Enemy boss 000777 2" }
 map{ id = "dev/tileset_test", description = "Tileset test" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_eastwest_000575_1", description = "Obstacle hookshot eastweast 000575 1" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_eastwest_000575_1", description = "Obstacle hookshot eastwest 000575 1" }
 map{ id = "components/obstacle_hookshot/obstacle_hookshot_northsouth_000777_1", description = "Obstacle hookshot northsouth 000777 1" }
 map{ id = "components/obstacle_hookshot/obstacle_hookshot_eastwest_000777_1", description = "Obstacle hookshot eastwest 000777 1" }
 map{ id = "components/obstacle_hookshot/obstacle_hookshot_north_000770_1", description = "Obstacle hookshot north 000770 1" }
@@ -193,6 +193,12 @@ map{ id = "components/filler/filler_210711_4", description = "Filler 210711 4" }
 map{ id = "components/filler/filler_042447_2", description = "Filler 042447 2" }
 map{ id = "components/filler/filler_240744_2", description = "Filler 240744 2" }
 map{ id = "components/filler/filler_012117_2", description = "Filler 012117 2" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_southwest_000711_1", description = "Obstacle hookshot southwest 000711 1" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_southeast_000744_1", description = "Obstacle hookshot southeast 000744 1" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_northsoutheast_000666", description = "Obstacle hookshot northsoutheast 000666" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshout_northsouthwest_000333_1", description = "Obstacle hookshot northsouthwest 000333 1rr" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_northeastwest_000277", description = "Obstacle hookshot northeastwest 000277" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_southeastwest_000772", description = "Obstacle hookshot southeastwest 000772" }
 
 tileset{ id = "light_world", description = "Light World" }
 tileset{ id = "dungeon_brick_gray_1", description = "Dungeon brick gray 1" }

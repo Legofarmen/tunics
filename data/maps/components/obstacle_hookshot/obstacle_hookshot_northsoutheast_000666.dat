@@ -1,0 +1,231 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  tileset = "dungeon_brick_gray_1",
+  music = "same",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 56,
+  width = 56,
+  height = 40,
+  pattern = "hole",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 144,
+  width = 56,
+  height = 40,
+  pattern = "hole",
+}
+
+tile{
+  layer = 1,
+  x = 88,
+  y = 56,
+  width = 48,
+  height = 128,
+  pattern = "hole",
+}
+
+tile{
+  layer = 1,
+  x = 48,
+  y = 56,
+  width = 72,
+  height = 16,
+  pattern = "wall_hole.1",
+}
+
+tile{
+  layer = 1,
+  x = 48,
+  y = 144,
+  width = 40,
+  height = 16,
+  pattern = "wall_hole.1",
+}
+
+tile{
+  layer = 1,
+  x = 88,
+  y = 144,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.corner_reverse.1",
+}
+
+tile{
+  layer = 1,
+  x = 88,
+  y = 96,
+  width = 16,
+  height = 48,
+  pattern = "wall_hole.3",
+}
+
+tile{
+  layer = 1,
+  x = 88,
+  y = 80,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.corner_reverse.3",
+}
+
+tile{
+  layer = 1,
+  x = 48,
+  y = 80,
+  width = 40,
+  height = 16,
+  pattern = "wall_hole.2",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 80,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.corner.3",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 56,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.corner.1",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 72,
+  width = 16,
+  height = 8,
+  pattern = "wall_hole.3",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 144,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.corner.1",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 168,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.corner.3",
+}
+
+tile{
+  layer = 1,
+  x = 48,
+  y = 168,
+  width = 72,
+  height = 16,
+  pattern = "wall_hole.2",
+}
+
+tile{
+  layer = 1,
+  x = 120,
+  y = 56,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.corner.2",
+}
+
+tile{
+  layer = 1,
+  x = 120,
+  y = 72,
+  width = 16,
+  height = 96,
+  pattern = "wall_hole.4",
+}
+
+tile{
+  layer = 1,
+  x = 120,
+  y = 168,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.corner.4",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 160,
+  width = 16,
+  height = 8,
+  pattern = "wall_hole.3",
+}
+
+tile{
+  layer = 1,
+  x = 8,
+  y = 152,
+  width = 16,
+  height = 32,
+  pattern = "wall_torch.3",
+}
+
+tile{
+  layer = 1,
+  x = 8,
+  y = 56,
+  width = 16,
+  height = 32,
+  pattern = "wall_torch.3",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 144,
+  y = 104,
+  width = 16,
+  height = 16,
+  name = "treasure_obstacle_chest",
+  pattern = "floor_small.2",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 56,
+  y = 120,
+  width = 16,
+  height = 16,
+  name = "treasure_open_chest",
+  pattern = "floor_small.2",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 144,
+  y = 128,
+  width = 16,
+  height = 16,
+  name = "enemy",
+  pattern = "floor_small.2",
+  enabled_at_start = false,
+}
+
