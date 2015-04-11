@@ -2,7 +2,7 @@ local submenu = require("menus/pause_submenu")
 local inventory_submenu = submenu:new()
 
 local item_names = {
-  "bomb",
+  "bombs_counter",
   "bow",
   "lamp",
   "hookshot",

@@ -1,4 +1,4 @@
-text{ key = "inventory.caption.item.bomb.1", value = "Bombs" }
+text{ key = "inventory.caption.item.bombs_counter.1", value = "Bombs" }
 text{ key = "inventory.caption.item.bow.1", value = "Bow" }
 text{ key = "inventory.caption.item.bow.2", value = "Bow & Arrows" }
 text{ key = "inventory.caption.item.lamp.1", value = "Lamp" }

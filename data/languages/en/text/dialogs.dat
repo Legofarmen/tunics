@@ -13,9 +13,9 @@ Got the lamp.
 }
 
 dialog{
-  id = "_treasure.bomb.1",
+  id = "_treasure.bombs_counter.1",
   text = [[
-Got the bomb.
+Got some bombs.
 ]]
 }
 
@@ -50,12 +50,12 @@ Got the map.
 dialog{
   id = "_treasure.smallkey.1",
   text = [[
-Got the small key.
+Got a key.
 ]]
 }
 
 dialog{
-  id = "_item_description.bomb.1",
+  id = "_item_description.bombs_counter.1",
   icon = 1,
   skip = "all",
   text = [[

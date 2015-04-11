@@ -296,7 +296,7 @@ function Puzzle.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, treasure_items, 
     brought_items = brought_items or {}
 
     function get_obstacle_types(item_name, has_map)
-        if item_name ~= 'bomb' then
+        if item_name ~= 'bombs_counter' then
             return {item_name}
         elseif has_map then
             return {'veryweakwall','weakwall'}
@@ -344,7 +344,7 @@ function Puzzle.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, treasure_items, 
             d:dependency('boss', obstacle_name)
             d:dependency(obstacle_name, bigchest_name)
         end
-        if item_name == 'bomb' then
+        if item_name == 'bombs_counter' then
             d:dependency('obstacle_weakwall', 'map')
             d:dependency('obstacle_weakwall', 'obstacle_veryweakwall')
         end

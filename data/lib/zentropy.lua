@@ -519,7 +519,7 @@ function zentropy.game.get_items_sequence(rng)
     d:single('bow_1', {item_name='bow'})
     d:single('lamp_1', {item_name='lamp'})
     d:single('hookshot_1', {item_name='hookshot'})
-    d:single('bomb_1', {item_name='bomb'})
+    d:single('bomb_1', {item_name='bombs_counter'})
     local items = Puzzle.sequence(rng, d.result)
     local i = 1
     local brought_items = {}
@@ -685,7 +685,7 @@ end
 local function get_random_treasure(rng)
     local treasures = {
         heart = { 3/4 }, fairy = { 1/4 },
-    --    bomb = { 8/12, 3/12, 1/12 },
+        bomb = { 8/12, 3/12, 1/12 },
         arrow = { 10/16, 5/16, 1/16 },
         magic_flask = { 7/8, 1/8 },
     }
@@ -709,7 +709,6 @@ function zentropy.inject_enemy(placeholder, rng)
     local map = placeholder:get_map()
     local x, y, layer = placeholder:get_position()
     local treasure_name, treasure_variant = get_random_treasure(rng)
-    print(treasure_name, treasure_variant)
     local enemy = map:create_enemy{
         layer=layer,
         x=x,
