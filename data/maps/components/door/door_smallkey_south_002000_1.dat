@@ -9,15 +9,6 @@ properties{
 
 tile{
   layer = 1,
-  x = 152,
-  y = 208,
-  width = 16,
-  height = 16,
-  pattern = "door.2",
-}
-
-tile{
-  layer = 1,
   x = 168,
   y = 208,
   width = 8,
@@ -61,6 +52,17 @@ tile{
   pattern = "barrier.1.2",
 }
 
+dynamic_tile{
+  layer = 1,
+  x = 152,
+  y = 208,
+  width = 16,
+  height = 16,
+  name = "doorway",
+  pattern = "door.2",
+  enabled_at_start = true,
+}
+
 wall{
   layer = 1,
   x = 152,
@@ -68,18 +70,6 @@ wall{
   width = 16,
   height = 16,
   stops_enemies = true,
-}
-
-door{
-  layer = 1,
-  x = 152,
-  y = 208,
-  name = "door",
-  direction = 3,
-  sprite = "entities/door_small_key",
-  opening_method = "interaction_if_savegame_variable",
-  opening_condition = "small_key_amount",
-  opening_condition_consumed = true,
 }
 
 tile{

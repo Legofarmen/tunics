@@ -757,6 +757,15 @@ function zentropy.inject_big_chest(placeholder, data)
     return chest
 end
 
+function zentropy.inject_door(position_tile, properties)
+    assert(properties.direction)
+    assert(properties.sprite)
+    local map = position_tile:get_map()
+    properties.x, properties.y, properties.layer = position_tile:get_position()
+    properties.name = properties.name or 'door'
+    return map:create_door(properties)
+end
+
 function zentropy.game.assign_item(item)
     local game = item:get_game()
     if not game:get_item_assigned(1) then
