@@ -765,10 +765,10 @@ end
 
 function zentropy.game.assign_item(item)
     local game = item:get_game()
-    if not game:get_item_assigned(1) then
-        game:set_item_assigned(1, item)
-    elseif not game:get_item_assigned(2) then
+    if not game:get_item_assigned(2) then
         game:set_item_assigned(2, item)
+    elseif not game:get_item_assigned(1) then
+        game:set_item_assigned(1, item)
     end
 end
 
