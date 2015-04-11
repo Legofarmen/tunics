@@ -634,7 +634,9 @@ function zentropy.game.init(game)
     end
 
     function game:on_started()
-        game:get_hero():set_walking_speed(160)
+        if zentropy.settings.debug_walking_speed then
+            game:get_hero():set_walking_speed(zentropy.settings.debug_walking_speed)
+        end
         self.dialog_box:initialize_dialog_box()
         self:initialize_hud()
     end
