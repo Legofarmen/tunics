@@ -50,22 +50,6 @@ function item:create_fire()
   }
 end
 
---[[Unlights the oldest torch still lit.
-function item:unlight_oldest_torch()
-
-  -- Remove the torch from the FIFO.
-  local npc = table.remove(self.temporary_lit_torches, 1)
-  if npc:exists() then
-    -- Change its animation if it still exists on the map.
-    npc:get_sprite():set_animation("unlit")
-  end
-
-  if #self.temporary_lit_torches == 0 and self.was_dark_room then
-    -- make the room dark again
-    self:get_map():set_light(0)
-  end
-end]]
-
 -- Called when the player obtains the Lamp.
 function item:on_obtained(variant, savegame_variable)
 
@@ -76,14 +60,4 @@ function item:on_obtained(variant, savegame_variable)
   if not magic_bar:has_variant() then
     magic_bar:set_variant(1)
   end
-  
-
 end
-
---[[ Called when the current map changes.
-function item:on_map_changed()
-
-  self.temporary_lit_torches = {}
-  self.was_dark_room = false
-end
-]]
