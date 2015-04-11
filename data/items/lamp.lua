@@ -8,7 +8,7 @@ item.was_dark_room = false]]
 
 function item:on_created()
 
-  self:set_savegame_variable("i1104")
+  self:set_savegame_variable("lamp")
   self:set_assignable(true)
 end
 
@@ -53,11 +53,11 @@ end
 -- Called when the player obtains the Lamp.
 function item:on_obtained(variant, savegame_variable)
 
-	game:set_item_assigned(2, self)
+    zentropy.game.assign_item(self)
 
-  -- Give the magic bar if necessary.
-  local magic_bar = self:get_game():get_item("magic_bar")
-  if not magic_bar:has_variant() then
-    magic_bar:set_variant(1)
-  end
+    -- Give the magic bar if necessary.
+    local magic_bar = self:get_game():get_item("magic_bar")
+    if not magic_bar:has_variant() then
+        magic_bar:set_variant(1)
+    end
 end

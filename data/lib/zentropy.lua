@@ -682,16 +682,33 @@ function zentropy.game.init(game)
     return game
 end
 
+local function get_random_treasure(rng)
+    local treasures = {
+        heart = { 3/4 }, fairy = { 1/4 },
+    --    bomb = { 8/12, 3/12, 1/12 },
+    --    arrow = { 10/16, 5/16, 1/16 },
+        magic_flask = { 7/8, 1/8 },
+    }
+    local x = 4 * rng:random()
+    for item_name, probabilities in pairs(treasures) do
+        if zentropy.game.game:get_item(item_name):is_obtainable() then
+            for variant, p in ipairs(probabilities) do
+                x = x - p
+                if x < 0 then
+                    return item_name, variant
+                end
+            end
+        else
+            x = x - 1
+        end
+    end
+    return nil, nil
+end
+
 function zentropy.inject_enemy(placeholder, rng)
     local map = placeholder:get_map()
     local x, y, layer = placeholder:get_position()
-
-    local treasure_name
-    if rng:random() < 0.5 then
-        treasure_name = 'heart'
-    else
-        treasure_name = nil
-    end
+    local treasure_name, treasure_variant = get_random_treasure(rng)
     local enemy = map:create_enemy{
         layer=layer,
         x=x,
@@ -699,11 +716,21 @@ function zentropy.inject_enemy(placeholder, rng)
         direction=3,
         breed='tentacle',
         treasure_name=treasure_name,
+        treasure_variant=treasure_variant,
     }
     local origin_x, origin_y = enemy:get_origin()
     enemy:set_position(x + origin_x, y + origin_y)
 
     placeholder:remove()
+end
+
+function zentropy.game.assign_item(item)
+    local game = item:get_game()
+    if not game:get_item_assigned(1) then
+        game:set_item_assigned(1, item)
+    elseif not game:get_item_assigned(2) then
+        game:set_item_assigned(2, item)
+    end
 end
 
 return zentropy

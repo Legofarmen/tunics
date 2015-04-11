@@ -433,6 +433,7 @@ item{ id = "tunic", description = "Tunic" }
 item{ id = "lamp", description = "Lamp" }
 item{ id = "magic_bar", description = "Magic bar" }
 item{ id = "bow", description = "Bow" }
+item{ id = "magic_flask", description = "Magic flask" }
 
 enemy{ id = "tentacle", description = "Tentacle" }
 enemy{ id = "green_knight_soldier", description = "Green knight soldier" }
