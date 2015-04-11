@@ -28,7 +28,9 @@ function lamp.init(map, data, timeout)
             treasure_name=data.treasure1.item_name,
             treasure_savegame_variable=data.treasure1.name,
         }
-		hidden_chest:set_enabled(false)
+        if not hidden_chest:is_open() then
+            hidden_chest:set_enabled(false)
+        end
 	else
 		map:set_entities_enabled('treasure_obstacle_', false)
 	end
