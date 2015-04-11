@@ -376,12 +376,15 @@ tile{
   pattern = "wall_statue.1.1",
 }
 
-chest{
+dynamic_tile{
   layer = 1,
-  x = 136,
-  y = 109,
+  x = 128,
+  y = 96,
+  width = 16,
+  height = 16,
   name = "chest",
-  sprite = "entities/chest",
+  pattern = "carpet.2",
+  enabled_at_start = true,
 }
 
 tile{

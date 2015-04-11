@@ -478,12 +478,6 @@ function zentropy.Room:treasure(treasure_data)
     self.mask = bit32.bor(self.mask, component_mask)
 
     treasure_data.section = component_mask
-    treasure_data.rewrite = {}
-    function treasure_data.rewrite.chest(properties)
-        properties.treasure_savegame_variable = treasure_data.name
-        properties.treasure_name = treasure_data.item_name
-        return properties
-    end
     treasure_data.rng = rng:refine('component')
     self.map:include(0, 0, component_name, treasure_data)
     self.data_messages('component', component_name)
@@ -722,6 +716,45 @@ function zentropy.inject_enemy(placeholder, rng)
     enemy:set_position(x + origin_x, y + origin_y)
 
     placeholder:remove()
+    return enemy
+end
+
+function zentropy.inject_chest(placeholder, data)
+    local map = placeholder:get_map()
+    local x, y, layer = placeholder:get_position()
+    local chest = map:create_chest{
+        x=x,
+        y=y,
+        layer=layer,
+        treasure_name=data.item_name,
+        treasure_variant=data.variant,
+        treasure_savegame_variable=data.name,
+        sprite='entities/chest',
+    }
+    local origin_x, origin_y = chest:get_origin()
+    chest:set_position(x + origin_x, y + origin_y)
+    placeholder:remove()
+    return chest
+end
+
+function zentropy.inject_big_chest(placeholder, data)
+    local map = placeholder:get_map()
+    local x, y, layer = placeholder:get_position()
+    local chest = map:create_chest{
+        x=x,
+        y=y,
+        layer=layer,
+        treasure_name=data.item_name,
+        treasure_variant=data.variant,
+        treasure_savegame_variable=data.name,
+        sprite='entities/big_chest',
+        opening_method='interaction_if_savegame_variable',
+        opening_condition='bigkey',
+    }
+    local origin_x, origin_y = chest:get_origin()
+    chest:set_position(x + origin_x, y + origin_y)
+    placeholder:remove()
+    return chest
 end
 
 function zentropy.game.assign_item(item)

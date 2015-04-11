@@ -70,16 +70,6 @@ tile{
   pattern = "wall_border.2",
 }
 
-chest{
-  layer = 1,
-  x = 232,
-  y = 125,
-  name = "chest",
-  sprite = "entities/big_chest",
-  opening_method = "interaction_if_savegame_variable",
-  opening_condition = "bigkey",
-}
-
 dynamic_tile{
   layer = 1,
   x = 224,
@@ -89,5 +79,16 @@ dynamic_tile{
   name = "enemy",
   pattern = "carpet.1",
   enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 224,
+  y = 112,
+  width = 16,
+  height = 16,
+  name = "chest",
+  pattern = "carpet.2",
+  enabled_at_start = true,
 }
 
