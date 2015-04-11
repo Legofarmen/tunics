@@ -5,6 +5,7 @@ function item:on_created()
     self:set_savegame_variable("bomb")
     self:set_amount_savegame_variable("bomb_amount")
     self:set_assignable(true)
+    self:on_variant_changed(self:get_variant())
 end
 
 function item:on_obtained(variant, savegame_variable)
