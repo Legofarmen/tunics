@@ -26,7 +26,6 @@ function item:on_variant_changed(variant)
         local max_amount = max_amounts[variant]
 
         -- Set the max value of the bomb counter.
-        self:set_variant(1)
         self:set_max_amount(max_amount)
 
         -- Unlock pickable bombs.
