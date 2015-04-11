@@ -686,7 +686,7 @@ local function get_random_treasure(rng)
     local treasures = {
         heart = { 3/4 }, fairy = { 1/4 },
     --    bomb = { 8/12, 3/12, 1/12 },
-    --    arrow = { 10/16, 5/16, 1/16 },
+        arrow = { 10/16, 5/16, 1/16 },
         magic_flask = { 7/8, 1/8 },
     }
     local x = 4 * rng:random()
@@ -709,6 +709,7 @@ function zentropy.inject_enemy(placeholder, rng)
     local map = placeholder:get_map()
     local x, y, layer = placeholder:get_position()
     local treasure_name, treasure_variant = get_random_treasure(rng)
+    print(treasure_name, treasure_variant)
     local enemy = map:create_enemy{
         layer=layer,
         x=x,
