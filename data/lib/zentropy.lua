@@ -406,11 +406,6 @@ function zentropy.Room:door(data, dir)
         return false
     end
     self.mask = bit32.bor(self.mask, component_mask)
-    data.rewrite = {}
-    function data.rewrite.door(properties)
-        properties.savegame_variable = data.name
-        return properties
-    end
     self.map:include(0, 0, component_name, data)
     self.data_messages('component', component_name)
     return true
