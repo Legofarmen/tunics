@@ -439,9 +439,6 @@ item{ id = "bombs_counter", description = "Bombs counter" }
 
 enemy{ id = "tentacle", description = "Tentacle" }
 enemy{ id = "green_knight_soldier", description = "Green knight soldier" }
-enemy{ id = "generic_soldier", description = "Generic soldier" }
-enemy{ id = "generic_towards_hero", description = "Generic towards hero" }
-enemy{ id = "generic_waiting_for_hero", description = "Generic waiting for hero" }
 
 entity{ id = "torch", description = "Torch" }
 
