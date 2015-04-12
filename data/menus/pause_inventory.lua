@@ -10,44 +10,48 @@ local item_names = {
 
 function inventory_submenu:on_started()
 
-  submenu.on_started(self)
+    submenu.on_started(self)
 
-  self.cursor_sprite = sol.sprite.create("menus/pause_cursor")
-  self.sprites = {}
-  self.counters = {}
-  self.captions = {}
+    self.cursor_sprite = sol.sprite.create("menus/pause_cursor")
+    self.sprites = {}
+    self.counters = {}
+    self.captions = {}
 
-  for k = 1, #item_names do
-    -- Get the item, its possession state and amount.
-    local item = self.game:get_item(item_names[k])
-    local variant = item:get_variant()
+    for k = 1, #item_names do
+        -- Get the item, its possession state and amount.
+        local item = self.game:get_item(item_names[k])
+        local variant = item:get_variant()
 
-    if variant > 0 then
-      if item:has_amount() then
-        -- Show a counter in this case.
-        local amount = item:get_amount()
-        local maximum = item:get_max_amount()
+        if variant > 0 then
+            if item:has_amount() then
+                -- Show a counter in this case.
+                local amount = item:get_amount()
+                local maximum = item:get_max_amount()
 
-        self.counters[k] = sol.text_surface.create{
-          horizontal_alignment = "center",
-          vertical_alignment = "top",
-          text = item:get_amount(),
-          font = (amount == maximum) and "green_digits" or "white_digits",
-        }
-      end
+                self.counters[k] = sol.text_surface.create{
+                    horizontal_alignment = "center",
+                    vertical_alignment = "top",
+                    text = item:get_amount(),
+                    font = (amount == maximum) and "green_digits" or "white_digits",
+                }
+            end
 
-      -- Initialize the sprite and the caption string.
-      self.sprites[k] = sol.sprite.create("entities/items")
-      self.sprites[k]:set_animation(item_names[k])
-      self.sprites[k]:set_direction(variant - 1)
+            -- Initialize the sprite and the caption string.
+            self.sprites[k] = sol.sprite.create("entities/items")
+            self.sprites[k]:set_animation(item_names[k])
+            self.sprites[k]:set_direction(variant - 1)
+        end
     end
-  end
 
-  -- Initialize the cursor
-  local index = self.game:get_value("pause_inventory_last_item_index") or 0
-  local row = math.floor(index / 7)
-  local column = index % 7
-  self:set_cursor_position(row, column)
+    -- Initialize the cursor
+    local index = self.game:get_value("pause_inventory_last_item_index") or 0
+    local row = math.floor(index / 7)
+    if self.from == 'right' then
+        column = 6
+    else
+        column = 0
+    end
+    self:set_cursor_position(row, column)
 end
 
 function inventory_submenu:on_finished()

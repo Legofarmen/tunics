@@ -94,6 +94,7 @@ function submenu:next_submenu()
   local submenu_index = self.game:get_value("pause_last_submenu")
   submenu_index = (submenu_index % #submenus) + 1
   self.game:set_value("pause_last_submenu", submenu_index)
+  submenus[submenu_index].from = 'left'
   sol.menu.start(self.game, submenus[submenu_index], false)
 end
 
@@ -105,6 +106,7 @@ function submenu:previous_submenu()
   local submenu_index = self.game:get_value("pause_last_submenu")
   submenu_index = (submenu_index + 2) % #submenus + 1
   self.game:set_value("pause_last_submenu", submenu_index)
+  submenus[submenu_index].from = 'right'
   sol.menu.start(self.game, submenus[submenu_index], false)
 end
 
