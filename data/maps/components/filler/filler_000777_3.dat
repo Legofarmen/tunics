@@ -45,9 +45,9 @@ tile{
 
 tile{
   layer = 1,
-  x = 16,
+  x = 40,
   y = 136,
-  width = 48,
+  width = 16,
   height = 8,
   pattern = "wall_border.2",
 }
@@ -198,7 +198,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 8,
+  x = 32,
   y = 136,
   width = 8,
   height = 8,
