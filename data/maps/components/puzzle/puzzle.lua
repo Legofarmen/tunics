@@ -5,13 +5,14 @@ local zentropy = require 'lib/zentropy'
 
 function puzzle.init(map, data)
 
-    local chest = map:get_entity('chest')
     local switch = map:get_entity('switch')
     local sensor_north = map:get_entity('sensor_north')
     local sensor_south = map:get_entity('sensor_south')
     local sensor_east = map:get_entity('sensor_east')
     local sensor_west = map:get_entity('sensor_west')
     local enemy = map:get_entity('enemy')
+
+    local chest = zentropy.inject_chest(map:get_entity('chest'), data)
 
     zentropy.inject_enemy(enemy, data.rng:refine('enemy'))
 

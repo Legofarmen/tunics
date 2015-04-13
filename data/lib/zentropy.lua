@@ -21,6 +21,7 @@ zentropy = zentropy or {
             },
         },
         Tilesets = Class:new{},
+        Enemies = Class:new{},
     },
     game = {
         savefile = 'save.dat',
@@ -52,6 +53,7 @@ function zentropy.init()
     entries = zentropy.db.Project:parse()
     zentropy.components = zentropy.db.Components:new():parse(entries.map)
     zentropy.tilesets = zentropy.db.Tilesets:new():parse(entries.tileset)
+    zentropy.enemies = zentropy.db.Enemies:new():parse(entries.enemy)
 
     zentropy.musics = {}
     for k, v in ipairs(entries.music) do
@@ -365,6 +367,16 @@ function zentropy.db.Components:get_enemy(name, mask, rng)
     return entry.id, entry.mask
 end
 
+function zentropy.db.Enemies:parse(enemies)
+    enemies = enemies or zentropy.db.Project:parse().enemy
+
+    for k, v in util.pairs_by_keys(enemies) do
+        table.insert(self, v.id)
+    end
+
+    return self
+end
+
 function zentropy.db.Tilesets:new(o)
     o = o or {}
     o.dungeon = o.dungeon or {}
@@ -406,11 +418,6 @@ function zentropy.Room:door(data, dir)
         return false
     end
     self.mask = bit32.bor(self.mask, component_mask)
-    data.rewrite = {}
-    function data.rewrite.door(properties)
-        properties.savegame_variable = data.name
-        return properties
-    end
     self.map:include(0, 0, component_name, data)
     self.data_messages('component', component_name)
     return true
@@ -478,12 +485,6 @@ function zentropy.Room:treasure(treasure_data)
     self.mask = bit32.bor(self.mask, component_mask)
 
     treasure_data.section = component_mask
-    treasure_data.rewrite = {}
-    function treasure_data.rewrite.chest(properties)
-        properties.treasure_savegame_variable = treasure_data.name
-        properties.treasure_name = treasure_data.item_name
-        return properties
-    end
     treasure_data.rng = rng:refine('component')
     self.map:include(0, 0, component_name, treasure_data)
     self.data_messages('component', component_name)
@@ -519,7 +520,7 @@ function zentropy.game.get_items_sequence(rng)
     d:single('bow_1', {item_name='bow'})
     d:single('lamp_1', {item_name='lamp'})
     d:single('hookshot_1', {item_name='hookshot'})
-    d:single('bomb_1', {item_name='bomb'})
+    d:single('bomb_1', {item_name='bombs_counter'})
     local items = Puzzle.sequence(rng, d.result)
     local i = 1
     local brought_items = {}
@@ -645,7 +646,9 @@ function zentropy.game.init(game)
     end
 
     function game:on_started()
-        game:get_hero():set_walking_speed(160)
+        if zentropy.settings.debug_walking_speed then
+            game:get_hero():set_walking_speed(zentropy.settings.debug_walking_speed)
+        end
         self.dialog_box:initialize_dialog_box()
         self:initialize_hud()
     end
@@ -682,28 +685,104 @@ function zentropy.game.init(game)
     return game
 end
 
+local function get_random_treasure(rng)
+    local treasures = {
+        heart = { 3/4 }, fairy = { 1/4 },
+        bomb = { 8/12, 3/12, 1/12 },
+        arrow = { 10/16, 5/16, 1/16 },
+        magic_flask = { 7/8, 1/8 },
+    }
+    local x = 4 * rng:random()
+    for item_name, probabilities in pairs(treasures) do
+        if zentropy.game.game:get_item(item_name):is_obtainable() then
+            for variant, p in ipairs(probabilities) do
+                x = x - p
+                if x < 0 then
+                    return item_name, variant
+                end
+            end
+        else
+            x = x - 1
+        end
+    end
+    return nil, nil
+end
+
 function zentropy.inject_enemy(placeholder, rng)
     local map = placeholder:get_map()
     local x, y, layer = placeholder:get_position()
-
-    local treasure_name
-    if rng:random() < 0.5 then
-        treasure_name = 'heart'
-    else
-        treasure_name = nil
-    end
+    local treasure_name, treasure_variant = get_random_treasure(rng:refine('drop'))
+    local _, breed = rng:refine('breed'):ichoose(zentropy.enemies)
     local enemy = map:create_enemy{
         layer=layer,
         x=x,
         y=y,
         direction=3,
-        breed='tentacle',
+        breed=breed,
         treasure_name=treasure_name,
+        treasure_variant=treasure_variant,
     }
     local origin_x, origin_y = enemy:get_origin()
     enemy:set_position(x + origin_x, y + origin_y)
 
     placeholder:remove()
+    return enemy
+end
+
+function zentropy.inject_chest(placeholder, data)
+    local map = placeholder:get_map()
+    local x, y, layer = placeholder:get_position()
+    local chest = map:create_chest{
+        x=x,
+        y=y,
+        layer=layer,
+        treasure_name=data.item_name,
+        treasure_variant=data.variant,
+        treasure_savegame_variable=data.name,
+        sprite='entities/chest',
+    }
+    local origin_x, origin_y = chest:get_origin()
+    chest:set_position(x + origin_x, y + origin_y)
+    placeholder:remove()
+    return chest
+end
+
+function zentropy.inject_big_chest(placeholder, data)
+    local map = placeholder:get_map()
+    local x, y, layer = placeholder:get_position()
+    local chest = map:create_chest{
+        x=x,
+        y=y,
+        layer=layer,
+        treasure_name=data.item_name,
+        treasure_variant=data.variant,
+        treasure_savegame_variable=data.name,
+        sprite='entities/big_chest',
+        opening_method='interaction_if_savegame_variable',
+        opening_condition='bigkey',
+    }
+    local origin_x, origin_y = chest:get_origin()
+    chest:set_position(x + origin_x, y + origin_y)
+    placeholder:remove()
+    return chest
+end
+
+function zentropy.inject_door(position_tile, properties)
+    assert(properties.direction)
+    assert(properties.sprite)
+    local map = position_tile:get_map()
+    properties.x, properties.y, properties.layer = position_tile:get_position()
+    properties.name = properties.name or 'door'
+    return map:create_door(properties)
+end
+
+function zentropy.game.assign_item(item)
+    local game = item:get_game()
+    if not game:get_item_assigned(2) then
+        game:set_item_assigned(2, item)
+    elseif not game:get_item_assigned(1) then
+        game:set_item_assigned(1, item)
+    end
 end
 
 return zentropy

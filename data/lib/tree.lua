@@ -320,6 +320,8 @@ function tree.Metric:is_valid()
     if self.bigkey_treasures > 1 then return false end
     if self:get_obstacle_treasures() > 1 then return false end
 
+    if self.hidden_treasures > 0 and self.bigkey_treasures > 0 then return false end
+
     if (self.bigkey_treasures > 0 or self.hidden_treasures > 0) and self:get_obstacles() > 0 then return false end
     if self.bigkey_treasures > 0 and self.normal_treasures > 0 then return false end
 

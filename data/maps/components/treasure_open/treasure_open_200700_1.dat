@@ -250,14 +250,6 @@ tile{
   pattern = "wall.corner.2",
 }
 
-chest{
-  layer = 1,
-  x = 160,
-  y = 77,
-  name = "chest",
-  sprite = "entities/chest",
-}
-
 dynamic_tile{
   layer = 1,
   x = 128,
@@ -267,6 +259,17 @@ dynamic_tile{
   name = "enemy",
   pattern = "carpet.1",
   enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 152,
+  y = 64,
+  width = 16,
+  height = 16,
+  name = "chest",
+  pattern = "carpet.2",
+  enabled_at_start = true,
 }
 
 tile{

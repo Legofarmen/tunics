@@ -10,15 +10,6 @@ properties{
 tile{
   layer = 1,
   x = 288,
-  y = 112,
-  width = 16,
-  height = 16,
-  pattern = "door.4",
-}
-
-tile{
-  layer = 1,
-  x = 288,
   y = 128,
   width = 16,
   height = 8,
@@ -61,6 +52,17 @@ tile{
   pattern = "barrier.1.1",
 }
 
+dynamic_tile{
+  layer = 1,
+  x = 288,
+  y = 112,
+  width = 16,
+  height = 16,
+  name = "doorway",
+  pattern = "door.4",
+  enabled_at_start = true,
+}
+
 wall{
   layer = 1,
   x = 288,
@@ -68,15 +70,6 @@ wall{
   width = 16,
   height = 16,
   stops_enemies = true,
-}
-
-door{
-  layer = 1,
-  x = 288,
-  y = 112,
-  name = "door_east",
-  direction = 0,
-  sprite = "entities/door_normal",
 }
 
 tile{

@@ -42,24 +42,19 @@ local function component_map(map_userdata, component_x, component_y, component_p
         return entity
     end
     local add_prefix = function (name)
-        if string.sub(name, 0, 2) == '__' then
+        if name == nil then
+            return nil
+        elseif string.sub(name, 0, 2) == '__' then
             return name
         else
             return component_prefix .. name
         end
     end
 
-    local rewrite = data.rewrite or {}
     local transform = function (properties)
-        local old_x, old_y = properties.x, properties.y
         properties.x = properties.x + component_x
         properties.y = properties.y + component_y
-        if properties.name then
-            if rewrite[properties.name] then
-                properties = rewrite[properties.name](properties) or properties
-            end
-            properties.name = add_prefix(properties.name)
-        end
+        properties.name = add_prefix(properties.name)
         return properties
     end
 

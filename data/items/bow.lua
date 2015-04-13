@@ -38,6 +38,10 @@ end
 
 function item:on_obtained(variant, savegame_variable)
 
-    game:set_item_assigned(2, self)
+    zentropy.game.assign_item(self)
     self:set_amount(self:get_max_amount())
+
+    -- Unlock pickable arrows.
+    local arrow = game:get_item("arrow")
+    arrow:set_obtainable(true)
 end

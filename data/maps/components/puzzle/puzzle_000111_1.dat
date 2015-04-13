@@ -216,14 +216,6 @@ sensor{
   name = "sensor_east",
 }
 
-chest{
-  layer = 1,
-  x = 248,
-  y = 125,
-  name = "chest",
-  sprite = "entities/chest",
-}
-
 dynamic_tile{
   layer = 1,
   x = 216,
@@ -233,6 +225,17 @@ dynamic_tile{
   name = "enemy",
   pattern = "carpet.5",
   enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 240,
+  y = 112,
+  width = 16,
+  height = 16,
+  name = "chest",
+  pattern = "carpet.1",
+  enabled_at_start = true,
 }
 
 dynamic_tile{

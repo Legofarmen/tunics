@@ -123,18 +123,20 @@ end
 
 function enemy:on_custom_attack_received(attack, sprite)
 
-  if attack == "sword" and sprite == sword_sprite then
-    sol.audio.play_sound("sword_tapping")
-    being_pushed = true
-    local x, y = self:get_position()
-    local angle = self:get_angle(self:get_map():get_entity("hero")) + math.pi
-    local movement = sol.movement.create("straight")
-    movement:set_speed(128)
-    movement:set_angle(angle)
-    movement:set_max_distance(26)
-    movement:set_smooth(true)
-    movement:start(self)
-  end
+    local hero = self:get_map():get_entity("hero")
+
+    if attack == "sword" and sprite == sword_sprite and self:is_in_same_region(hero) then
+        sol.audio.play_sound("sword_tapping")
+        being_pushed = true
+        local x, y = self:get_position()
+        local angle = self:get_angle(hero) + math.pi
+        local movement = sol.movement.create("straight")
+        movement:set_speed(128)
+        movement:set_angle(angle)
+        movement:set_max_distance(26)
+        movement:set_smooth(true)
+        movement:start(self)
+    end
 end
 
 function enemy:go_random()

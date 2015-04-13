@@ -296,13 +296,25 @@ sprite{ id = "hero/ground2", description = "Shallow water under hero" }
 sprite{ id = "hero/trail", description = "Hero trail" }
 sprite{ id = "hud/gameover_fade", description = "HUD: Game-over fade" }
 sprite{ id = "enemies/enemy_killed", description = "Enemy killed" }
-sprite{ id = "enemies/tentacle", description = "Enemy: Tentacle" }
+sprite{ id = "enemies/tentacle", description = "Tentacle" }
 sprite{ id = "menus/hero_head", description = "Menu: hero head" }
 sprite{ id = "menus/hero_point", description = "Menu: Hero point" }
 sprite{ id = "entities/big_chest", description = "Big chest" }
 sprite{ id = "enemies/green_knight_soldier", description = "Green knight soldier" }
 sprite{ id = "enemies/green_knight_soldier_sword", description = "Green knight soldier (sword)" }
 sprite{ id = "entities/torch", description = "Torch" }
+sprite{ id = "enemies/ropa", description = "Ropa" }
+sprite{ id = "enemies/gibdo", description = "Gibdo" }
+sprite{ id = "enemies/bubble", description = "Bubble" }
+sprite{ id = "enemies/snap_dragon", description = "Snap dragon" }
+sprite{ id = "enemies/blue_knight_soldier", description = "Blue knight soldier" }
+sprite{ id = "enemies/red_knight_soldier", description = "Red knight soldier" }
+sprite{ id = "enemies/red_helmasaur", description = "Red helmasaur" }
+sprite{ id = "enemies/simple_green_soldier", description = "Simple green soldier" }
+sprite{ id = "enemies/red_hardhat_beetle", description = "Red hardhat beetle" }
+sprite{ id = "enemies/pike_fixed", description = "Pike fixed" }
+sprite{ id = "enemies/pike_auto", description = "Pike auto" }
+sprite{ id = "enemies/pike_detect", description = "Pike detect" }
 
 music{ id = "agahnim", description = "Agahnim theme" }
 music{ id = "beginning", description = "Beginning" }
@@ -440,12 +452,24 @@ item{ id = "tunic", description = "Tunic" }
 item{ id = "lamp", description = "Lamp" }
 item{ id = "magic_bar", description = "Magic bar" }
 item{ id = "bow", description = "Bow" }
+item{ id = "magic_flask", description = "Magic flask" }
+item{ id = "arrow", description = "Arrow" }
+item{ id = "bombs_counter", description = "Bombs counter" }
 
 enemy{ id = "tentacle", description = "Tentacle" }
 enemy{ id = "green_knight_soldier", description = "Green knight soldier" }
-enemy{ id = "generic_soldier", description = "Generic soldier" }
-enemy{ id = "generic_towards_hero", description = "Generic towards hero" }
-enemy{ id = "generic_waiting_for_hero", description = "Generic waiting for hero" }
+enemy{ id = "blue_knight_soldier", description = "Blue knight soldier" }
+enemy{ id = "red_knight_soldier", description = "Red knight soldier" }
+enemy{ id = "gibdo", description = "Gibdo" }
+enemy{ id = "red_hardhat_beetle", description = "Red hardhat beetle" }
+enemy{ id = "red_helmasaur", description = "Red helmasaur" }
+enemy{ id = "ropa", description = "Ropa" }
+enemy{ id = "simple_green_soldier", description = "Simple green soldier" }
+enemy{ id = "snap_dragon", description = "Snap dragon" }
+enemy{ id = "pike_auto", description = "Pike auto" }
+enemy{ id = "pike_fixed", description = "Pike fixed" }
+enemy{ id = "pike_detect", description = "Pike detect" }
+enemy{ id = "bubble", description = "Bubble" }
 
 entity{ id = "torch", description = "Torch" }
 

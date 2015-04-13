@@ -1,2 +1,10 @@
 local map, data = ...
-data.door_names.west = door_west:get_userdata():get_name()
+
+local zentropy = require 'lib/zentropy'
+
+local door = zentropy.inject_door(map:get_entity('doorway'), {
+    savegame_variable = data.name,
+    direction = 2,
+    sprite = "entities/door_normal",
+})
+data.door_names.west = door:get_userdata():get_name()
