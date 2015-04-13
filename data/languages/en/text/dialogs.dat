@@ -1,7 +1,15 @@
 dialog{
-  id = "_treasure.glove.1",
+  id = "intro_2.2",
   text = [[
-Got the glove.
+Off you go.
+]]
+}
+
+dialog{
+  id = "_treasure.sword.1",
+  text = [[
+You got the sword. 
+Looks sharp!
 ]]
 }
 

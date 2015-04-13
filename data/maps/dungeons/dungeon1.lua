@@ -55,8 +55,10 @@ local floor1, floor2 = zentropy.components:get_floors(presentation_rng:refine('f
 
 map:set_tileset(tileset_override or zentropy.tilesets.dungeon[presentation_rng:refine('tileset'):random(#zentropy.tilesets.dungeon)])
 
-local music = zentropy.musics.dungeon[presentation_rng:refine('music'):random(#zentropy.musics.dungeon)].id
-sol.audio.play_music(music)
+if not sol.audio.get_music() then 
+	local music = zentropy.musics.dungeon[presentation_rng:refine('music'):random(#zentropy.musics.dungeon)].id
+	sol.audio.play_music(music)
+end
 
 local solarus_layout = Layout.solarus_mixin(layout:new{rng=layout_rng}, map, {floor1, floor2})
 solarus_layout:render(puzzle)

@@ -323,6 +323,7 @@ sprite{ id = "enemies/red_hardhat_beetle", description = "Red hardhat beetle" }
 sprite{ id = "enemies/pike_fixed", description = "Pike fixed" }
 sprite{ id = "enemies/pike_auto", description = "Pike auto" }
 sprite{ id = "enemies/pike_detect", description = "Pike detect" }
+sprite{ id = "entities/tunic_1", description = "Tunic 1" }
 
 music{ id = "agahnim", description = "Agahnim theme" }
 music{ id = "beginning", description = "Beginning" }

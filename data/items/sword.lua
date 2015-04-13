@@ -4,7 +4,7 @@ function item:on_created()
 
   self:set_savegame_variable("i1129")
   self:set_sound_when_picked(nil)
-  self:set_sound_when_brandished(nil)
+  --self:set_sound_when_brandished(nil)
 end
 
 function item:on_variant_changed(variant)
