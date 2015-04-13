@@ -1,4 +1,18 @@
 dialog{
+  id = "_treasure.glove.1",
+  text = [[
+Got the glove.
+]]
+}
+
+dialog{
+  id = "_treasure.flippers.1",
+  text = [[
+Got the flippers.
+]]
+}
+
+dialog{
   id = "_treasure.bow.1",
   text = [[
 Got the bow.
