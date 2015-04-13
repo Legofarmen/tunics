@@ -3,7 +3,7 @@ properties{
   y = 0,
   width = 320,
   height = 240,
-  tileset = "dungeon_smoothbrick_green_1",
+  tileset = "dungeon_cave_brown_1",
   music = "same",
 }
 
@@ -316,15 +316,6 @@ tile{
 tile{
   layer = 1,
   x = 144,
-  y = 104,
-  width = 32,
-  height = 32,
-  pattern = "statue.7",
-}
-
-tile{
-  layer = 1,
-  x = 144,
   y = 136,
   width = 32,
   height = 16,
@@ -401,6 +392,15 @@ tile{
   width = 32,
   height = 16,
   pattern = "wall_torch.1",
+}
+
+tile{
+  layer = 1,
+  x = 144,
+  y = 104,
+  width = 32,
+  height = 32,
+  pattern = "statue.1",
 }
 
 destructible{
