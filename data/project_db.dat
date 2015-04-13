@@ -199,6 +199,13 @@ map{ id = "components/obstacle_hookshot/obstacle_hookshot_northsoutheast_000666"
 map{ id = "components/obstacle_hookshot/obstacle_hookshout_northsouthwest_000333_1", description = "Obstacle hookshot northsouthwest 000333 1rr" }
 map{ id = "components/obstacle_hookshot/obstacle_hookshot_northeastwest_000277", description = "Obstacle hookshot northeastwest 000277" }
 map{ id = "components/obstacle_hookshot/obstacle_hookshot_southeastwest_000772", description = "Obstacle hookshot southeastwest 000772" }
+map{ id = "tompa/filler_y", description = "Filler Y" }
+map{ id = "tompa/filler_y2", description = "Filler Y2" }
+map{ id = "tompa/filler_y3", description = "Filler Y3" }
+map{ id = "tompa/obstacle_hookshot_northeast_000777_1", description = "Ibstacle hookshot northeast 000777 1" }
+map{ id = "tompa/filler_y4_long", description = "Filler Y4 long" }
+map{ id = "tompa/room_2", description = "Room 2" }
+map{ id = "tompa/filler_y5", description = "Filler Y5" }
 
 tileset{ id = "light_world", description = "Light World" }
 tileset{ id = "dungeon_brick_gray_1", description = "Dungeon brick gray 1" }
