@@ -462,6 +462,7 @@ enemy{ id = "snap_dragon", description = "Snap dragon" }
 enemy{ id = "pike_auto", description = "Pike auto" }
 enemy{ id = "pike_fixed", description = "Pike fixed" }
 enemy{ id = "pike_detect", description = "Pike detect" }
+enemy{ id = "bubble", description = "Bubble" }
 
 entity{ id = "torch", description = "Torch" }
 
