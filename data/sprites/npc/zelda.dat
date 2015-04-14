@@ -8,11 +8,10 @@ animation{
     { x = 0, y = 96, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 29 },
   },
 }
-
 animation{
   name = "walking",
   src_image = "npc/alttp.png",
-  frame_delay = 125,
+  frame_delay = 100,
   frame_to_loop_on = 0,
   directions = {
     { x = 0, y = 0, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 29, num_frames = 2 },
@@ -21,4 +20,3 @@ animation{
     { x = 0, y = 96, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 29, num_frames = 2 },
   },
 }
-

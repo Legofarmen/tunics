@@ -1,4 +1,11 @@
 dialog{
+  id = "intro_1",
+  text = [[
+I'm knitting you a new tunic.
+]]
+}
+
+dialog{
   id = "_treasure.glove.1",
   text = [[
 Got the glove.

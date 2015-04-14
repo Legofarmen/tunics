@@ -45,15 +45,6 @@ tile{
 
 tile{
   layer = 0,
-  x = 16,
-  y = 16,
-  width = 48,
-  height = 16,
-  pattern = "grass.tree.roots.1",
-}
-
-tile{
-  layer = 0,
   x = 112,
   y = 16,
   width = 48,
@@ -342,96 +333,6 @@ tile{
 
 tile{
   layer = 0,
-  x = 168,
-  y = 56,
-  width = 8,
-  height = 8,
-  pattern = "carpet.corner.1",
-}
-
-tile{
-  layer = 0,
-  x = 168,
-  y = 64,
-  width = 8,
-  height = 16,
-  pattern = "carpet.3",
-}
-
-tile{
-  layer = 0,
-  x = 168,
-  y = 80,
-  width = 8,
-  height = 8,
-  pattern = "carpet.corner.3",
-}
-
-tile{
-  layer = 0,
-  x = 176,
-  y = 56,
-  width = 16,
-  height = 8,
-  pattern = "carpet.1",
-}
-
-tile{
-  layer = 0,
-  x = 192,
-  y = 56,
-  width = 8,
-  height = 8,
-  pattern = "carpet.corner.2",
-}
-
-tile{
-  layer = 0,
-  x = 192,
-  y = 64,
-  width = 8,
-  height = 16,
-  pattern = "carpet.4",
-}
-
-tile{
-  layer = 0,
-  x = 176,
-  y = 80,
-  width = 16,
-  height = 8,
-  pattern = "carpet.2",
-}
-
-tile{
-  layer = 0,
-  x = 192,
-  y = 80,
-  width = 8,
-  height = 8,
-  pattern = "carpet.corner.4",
-}
-
-tile{
-  layer = 0,
-  x = 176,
-  y = 64,
-  width = 16,
-  height = 16,
-  pattern = "carpet",
-}
-
-tile{
-  layer = 0,
-  x = 128,
-  y = 64,
-  width = 16,
-  height = 16,
-  pattern = "grass.hole",
-}
-
-tile{
-  layer = 0,
   x = 216,
   y = 40,
   width = 16,
@@ -466,20 +367,22 @@ tile{
   pattern = "grass.flower_double",
 }
 
-npc{
-  layer = 0,
-  x = 184,
-  y = 77,
-  direction = 2,
-  subtype = "0",
-  sprite = "npc/zelda",
-}
-
-destination{
+tile{
   layer = 0,
   x = 136,
-  y = 77,
-  direction = 3,
+  y = 64,
+  width = 8,
+  height = 8,
+  pattern = "invisible_wall",
+}
+
+tile{
+  layer = 0,
+  x = 136,
+  y = 72,
+  width = 8,
+  height = 8,
+  pattern = "invisible_wall",
 }
 
 tile{
@@ -570,24 +473,6 @@ tile{
   width = 48,
   height = 8,
   pattern = "grass.tree.roots.2",
-}
-
-tile{
-  layer = 1,
-  x = -32,
-  y = -24,
-  width = 48,
-  height = 40,
-  pattern = "tree.green.1",
-}
-
-tile{
-  layer = 1,
-  x = 16,
-  y = -24,
-  width = 48,
-  height = 40,
-  pattern = "tree.green.1",
 }
 
 tile{
@@ -687,15 +572,6 @@ tile{
   width = 48,
   height = 40,
   pattern = "tree.green.1",
-}
-
-tile{
-  layer = 1,
-  x = -8,
-  y = 8,
-  width = 48,
-  height = 16,
-  pattern = "tree.green.2",
 }
 
 tile{
@@ -1263,5 +1139,135 @@ tile{
   width = 8,
   height = 8,
   pattern = "grass.soil.diag.1b",
+}
+
+tile{
+  layer = 1,
+  x = 120,
+  y = 56,
+  width = 80,
+  height = 32,
+  pattern = "grass.soil",
+}
+
+tile{
+  layer = 1,
+  x = 168,
+  y = 56,
+  width = 8,
+  height = 8,
+  pattern = "carpet.corner.1",
+}
+
+tile{
+  layer = 1,
+  x = 168,
+  y = 64,
+  width = 8,
+  height = 16,
+  pattern = "carpet.3",
+}
+
+tile{
+  layer = 1,
+  x = 168,
+  y = 80,
+  width = 8,
+  height = 8,
+  pattern = "carpet.corner.3",
+}
+
+tile{
+  layer = 1,
+  x = 176,
+  y = 56,
+  width = 16,
+  height = 8,
+  pattern = "carpet.1",
+}
+
+tile{
+  layer = 1,
+  x = 192,
+  y = 56,
+  width = 8,
+  height = 8,
+  pattern = "carpet.corner.2",
+}
+
+tile{
+  layer = 1,
+  x = 192,
+  y = 64,
+  width = 8,
+  height = 16,
+  pattern = "carpet.4",
+}
+
+tile{
+  layer = 1,
+  x = 176,
+  y = 80,
+  width = 16,
+  height = 8,
+  pattern = "carpet.2",
+}
+
+tile{
+  layer = 1,
+  x = 192,
+  y = 80,
+  width = 8,
+  height = 8,
+  pattern = "carpet.corner.4",
+}
+
+tile{
+  layer = 1,
+  x = 176,
+  y = 64,
+  width = 16,
+  height = 16,
+  pattern = "carpet",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 128,
+  y = 64,
+  width = 16,
+  height = 16,
+  name = "hole",
+  pattern = "grass.hole",
+  enabled_at_start = true,
+}
+
+npc{
+  layer = 1,
+  x = 184,
+  y = 77,
+  name = "zelda",
+  direction = 2,
+  subtype = "0",
+  sprite = "npc/zelda",
+  behavior = "dialog#treasure_glove.1",
+}
+
+dynamic_tile{
+  layer = 2,
+  x = 128,
+  y = 64,
+  width = 16,
+  height = 16,
+  name = "cover",
+  pattern = "grass.weed_big",
+  enabled_at_start = true,
+}
+
+destination{
+  layer = 2,
+  x = 136,
+  y = 77,
+  direction = 0,
 }
 
