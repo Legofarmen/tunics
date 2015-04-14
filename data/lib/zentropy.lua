@@ -578,7 +578,6 @@ function zentropy.game.setup_quest_invariants()
 end
 
 function zentropy.game.setup_quest_initial()
-    zentropy.game.game:set_ability('sword', 1)
     zentropy.game.game:set_max_life(12)
     zentropy.game.game:set_life(12)
 end

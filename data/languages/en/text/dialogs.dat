@@ -1,4 +1,5 @@
 dialog{
+<<<<<<< HEAD
   id = "intro_1",
   text = [[
 I'm knitting you a new tunic.
@@ -7,8 +8,19 @@ I'm knitting you a new tunic.
 
 dialog{
   id = "_treasure.glove.1",
+=======
+  id = "intro_2.2",
+>>>>>>> f77db0b5a910c2b3f0fdef7ae2fccd30720d42bd
   text = [[
-Got the glove.
+Off you go.
+]]
+}
+
+dialog{
+  id = "_treasure.sword.1",
+  text = [[
+You got the sword. 
+Looks sharp!
 ]]
 }
 

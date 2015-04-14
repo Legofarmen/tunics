@@ -1,0 +1,150 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  tileset = "dungeon_brick_gray_1",
+  music = "same",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 144,
+  width = 256,
+  height = 32,
+  pattern = "water",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 176,
+  width = 8,
+  height = 8,
+  pattern = "wall_border.corner.1",
+}
+
+tile{
+  layer = 1,
+  x = 280,
+  y = 176,
+  width = 8,
+  height = 8,
+  pattern = "wall_border.corner.2",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 176,
+  width = 240,
+  height = 8,
+  pattern = "wall_border.1",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 136,
+  width = 8,
+  height = 8,
+  pattern = "wall_border.corner.3",
+}
+
+tile{
+  layer = 1,
+  x = 280,
+  y = 136,
+  width = 8,
+  height = 8,
+  pattern = "wall_border.corner.4",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 136,
+  width = 240,
+  height = 8,
+  pattern = "wall_border.2",
+}
+
+tile{
+  layer = 1,
+  x = 8,
+  y = 144,
+  width = 24,
+  height = 32,
+  pattern = "wall_statue.1.3",
+}
+
+tile{
+  layer = 1,
+  x = 24,
+  y = 152,
+  width = 8,
+  height = 16,
+  pattern = "waterfall.3.top",
+}
+
+tile{
+  layer = 1,
+  x = 56,
+  y = 184,
+  width = 16,
+  height = 16,
+  pattern = "torch",
+}
+
+tile{
+  layer = 1,
+  x = 256,
+  y = 184,
+  width = 16,
+  height = 16,
+  pattern = "torch",
+}
+
+tile{
+  layer = 1,
+  x = 288,
+  y = 144,
+  width = 16,
+  height = 32,
+  pattern = "water_wall.drain_gate.4",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 152,
+  y = 112,
+  width = 16,
+  height = 16,
+  name = "treasure_obstacle_chest",
+  pattern = "floor_small.2",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 112,
+  y = 176,
+  width = 16,
+  height = 16,
+  name = "treasure_open_chest",
+  pattern = "floor_small.2",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 112,
+  y = 112,
+  width = 16,
+  height = 16,
+  name = "enemy",
+  pattern = "floor_small.2",
+  enabled_at_start = false,
+}
+

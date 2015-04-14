@@ -47,8 +47,12 @@ function return_zelda()
 end
 
 function map:on_started()
+<<<<<<< HEAD
 	
 	sol.audio.play_music("lost_woods")
 			
     	
+=======
+    map:get_game():get_hero():teleport('rooms/intro_2')
+>>>>>>> f77db0b5a910c2b3f0fdef7ae2fccd30720d42bd
 end
