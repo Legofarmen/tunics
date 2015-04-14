@@ -1,0 +1,258 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  tileset = "dungeon_brick_gray_1",
+  music = "same",
+}
+
+tile{
+  layer = 1,
+  x = 72,
+  y = 24,
+  width = 32,
+  height = 80,
+  pattern = "water",
+}
+
+tile{
+  layer = 1,
+  x = 72,
+  y = 8,
+  width = 32,
+  height = 24,
+  pattern = "wall_statue.1.1",
+}
+
+tile{
+  layer = 1,
+  x = 72,
+  y = 104,
+  width = 176,
+  height = 32,
+  pattern = "water",
+}
+
+tile{
+  layer = 1,
+  x = 216,
+  y = 128,
+  width = 32,
+  height = 80,
+  pattern = "water",
+}
+
+tile{
+  layer = 1,
+  x = 64,
+  y = 32,
+  width = 8,
+  height = 8,
+  pattern = "wall_border.corner.2",
+}
+
+tile{
+  layer = 1,
+  x = 64,
+  y = 40,
+  width = 8,
+  height = 96,
+  pattern = "wall_border.4",
+}
+
+tile{
+  layer = 1,
+  x = 64,
+  y = 136,
+  width = 8,
+  height = 8,
+  pattern = "wall_border.corner_reverse.2",
+}
+
+tile{
+  layer = 1,
+  x = 72,
+  y = 136,
+  width = 128,
+  height = 8,
+  pattern = "wall_border.1",
+}
+
+tile{
+  layer = 1,
+  x = 192,
+  y = 136,
+  width = 16,
+  height = 8,
+  pattern = "wall_border.1",
+}
+
+tile{
+  layer = 1,
+  x = 208,
+  y = 136,
+  width = 8,
+  height = 8,
+  pattern = "wall_border.corner.2",
+}
+
+tile{
+  layer = 1,
+  x = 208,
+  y = 144,
+  width = 8,
+  height = 48,
+  pattern = "wall_border.4",
+}
+
+tile{
+  layer = 1,
+  x = 208,
+  y = 184,
+  width = 8,
+  height = 16,
+  pattern = "wall_border.4",
+}
+
+tile{
+  layer = 1,
+  x = 208,
+  y = 200,
+  width = 8,
+  height = 8,
+  pattern = "wall_border.corner.4",
+}
+
+tile{
+  layer = 1,
+  x = 104,
+  y = 32,
+  width = 8,
+  height = 8,
+  pattern = "wall_border.corner.1",
+}
+
+tile{
+  layer = 1,
+  x = 104,
+  y = 40,
+  width = 8,
+  height = 48,
+  pattern = "wall_border.3",
+}
+
+tile{
+  layer = 1,
+  x = 104,
+  y = 80,
+  width = 8,
+  height = 16,
+  pattern = "wall_border.3",
+}
+
+tile{
+  layer = 1,
+  x = 104,
+  y = 96,
+  width = 8,
+  height = 8,
+  pattern = "wall_border.corner.3",
+}
+
+tile{
+  layer = 1,
+  x = 112,
+  y = 96,
+  width = 128,
+  height = 8,
+  pattern = "wall_border.2",
+}
+
+tile{
+  layer = 1,
+  x = 232,
+  y = 96,
+  width = 16,
+  height = 8,
+  pattern = "wall_border.2",
+}
+
+tile{
+  layer = 1,
+  x = 248,
+  y = 96,
+  width = 8,
+  height = 8,
+  pattern = "wall_border.corner.2",
+}
+
+tile{
+  layer = 1,
+  x = 248,
+  y = 104,
+  width = 8,
+  height = 96,
+  pattern = "wall_border.3",
+}
+
+tile{
+  layer = 1,
+  x = 248,
+  y = 200,
+  width = 8,
+  height = 8,
+  pattern = "wall_border.corner.3",
+}
+
+tile{
+  layer = 1,
+  x = 80,
+  y = 24,
+  width = 16,
+  height = 8,
+  pattern = "waterfall.1.top",
+}
+
+tile{
+  layer = 1,
+  x = 216,
+  y = 208,
+  width = 32,
+  height = 16,
+  pattern = "water_wall.drain_gate.2",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 56,
+  y = 168,
+  width = 16,
+  height = 16,
+  name = "treasure_obstacle_chest",
+  pattern = "floor_small.2",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 248,
+  y = 56,
+  width = 16,
+  height = 16,
+  name = "treasure_open_chest",
+  pattern = "floor_small.2",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 152,
+  y = 72,
+  width = 16,
+  height = 16,
+  name = "enemy",
+  pattern = "floor_small.2",
+  enabled_at_start = false,
+}
+
