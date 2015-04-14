@@ -325,6 +325,7 @@ sprite{ id = "enemies/red_hardhat_beetle", description = "Red hardhat beetle" }
 sprite{ id = "enemies/pike_fixed", description = "Pike fixed" }
 sprite{ id = "enemies/pike_auto", description = "Pike auto" }
 sprite{ id = "enemies/pike_detect", description = "Pike detect" }
+sprite{ id = "entities/tunic_1", description = "Tunic 1" }
 
 music{ id = "agahnim", description = "Agahnim theme" }
 music{ id = "beginning", description = "Beginning" }
@@ -465,6 +466,8 @@ item{ id = "bow", description = "Bow" }
 item{ id = "magic_flask", description = "Magic flask" }
 item{ id = "arrow", description = "Arrow" }
 item{ id = "bombs_counter", description = "Bombs counter" }
+item{ id = "flippers", description = "Flippers" }
+item{ id = "glove", description = "Glove" }
 
 enemy{ id = "tentacle", description = "Tentacle" }
 enemy{ id = "green_knight_soldier", description = "Green knight soldier" }

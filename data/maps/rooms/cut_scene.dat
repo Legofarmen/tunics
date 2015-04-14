@@ -9,315 +9,39 @@ properties{
 
 tile{
   layer = 0,
-  x = -8,
+  x = 0,
   y = 0,
-  width = 336,
+  width = 320,
   height = 240,
-  pattern = "tree.under",
-}
-
-tile{
-  layer = 0,
-  x = 120,
-  y = 112,
-  width = 8,
-  height = 8,
-  pattern = "carpet.corner.1",
-}
-
-tile{
-  layer = 0,
-  x = 128,
-  y = 120,
-  width = 16,
-  height = 16,
-  pattern = "carpet",
-}
-
-tile{
-  layer = 0,
-  x = 120,
-  y = 120,
-  width = 8,
-  height = 16,
-  pattern = "carpet.3",
-}
-
-tile{
-  layer = 0,
-  x = 120,
-  y = 136,
-  width = 8,
-  height = 8,
-  pattern = "carpet.corner.3",
-}
-
-tile{
-  layer = 0,
-  x = 144,
-  y = 112,
-  width = 8,
-  height = 8,
-  pattern = "carpet.corner.2",
-}
-
-tile{
-  layer = 0,
-  x = 144,
-  y = 136,
-  width = 8,
-  height = 8,
-  pattern = "carpet.corner.4",
-}
-
-tile{
-  layer = 0,
-  x = 128,
-  y = 112,
-  width = 16,
-  height = 8,
-  pattern = "carpet.1",
-}
-
-tile{
-  layer = 0,
-  x = 128,
-  y = 136,
-  width = 16,
-  height = 8,
-  pattern = "carpet.2",
-}
-
-tile{
-  layer = 0,
-  x = 144,
-  y = 120,
-  width = 8,
-  height = 16,
-  pattern = "carpet.4",
+  pattern = "black",
 }
 
 npc{
   layer = 0,
-  x = 136,
-  y = 133,
+  x = 240,
+  y = 125,
+  name = "zelda",
   direction = 3,
   subtype = "0",
   sprite = "npc/zelda",
-}
-
-pickable{
-  layer = 0,
-  x = 168,
-  y = 125,
-  treasure_name = "tunic",
-  treasure_variant = 2,
-}
-
-pickable{
-  layer = 0,
-  x = 176,
-  y = 125,
-  treasure_name = "tunic",
-  treasure_variant = 3,
-}
-
-pickable{
-  layer = 0,
-  x = 184,
-  y = 125,
-  treasure_name = "tunic",
-}
-
-pickable{
-  layer = 0,
-  x = 192,
-  y = 125,
-  treasure_name = "tunic",
-  treasure_variant = 2,
-}
-
-pickable{
-  layer = 0,
-  x = 184,
-  y = 133,
-  treasure_name = "tunic",
-  treasure_variant = 3,
-}
-
-pickable{
-  layer = 0,
-  x = 168,
-  y = 133,
-  treasure_name = "tunic",
-  treasure_variant = 2,
-}
-
-pickable{
-  layer = 0,
-  x = 176,
-  y = 133,
-  treasure_name = "tunic",
-  treasure_variant = 3,
-}
-
-pickable{
-  layer = 0,
-  x = 184,
-  y = 133,
-  treasure_name = "tunic",
-}
-
-pickable{
-  layer = 0,
-  x = 192,
-  y = 133,
-  treasure_name = "tunic",
-  treasure_variant = 2,
-}
-
-pickable{
-  layer = 0,
-  x = 168,
-  y = 141,
-  treasure_name = "tunic",
-  treasure_variant = 3,
-}
-
-pickable{
-  layer = 0,
-  x = 176,
-  y = 141,
-  treasure_name = "tunic",
-}
-
-pickable{
-  layer = 0,
-  x = 184,
-  y = 141,
-  treasure_name = "tunic",
-  treasure_variant = 2,
-}
-
-pickable{
-  layer = 0,
-  x = 176,
-  y = 141,
-  treasure_name = "tunic",
-  treasure_variant = 3,
-}
-
-pickable{
-  layer = 0,
-  x = 184,
-  y = 141,
-  treasure_name = "tunic",
-}
-
-pickable{
-  layer = 0,
-  x = 192,
-  y = 141,
-  treasure_name = "tunic",
-  treasure_variant = 2,
-}
-
-pickable{
-  layer = 0,
-  x = 168,
-  y = 149,
-  treasure_name = "tunic",
-  treasure_variant = 3,
-}
-
-pickable{
-  layer = 0,
-  x = 176,
-  y = 149,
-  treasure_name = "tunic",
-}
-
-pickable{
-  layer = 0,
-  x = 184,
-  y = 149,
-  treasure_name = "tunic",
-  treasure_variant = 2,
-}
-
-pickable{
-  layer = 0,
-  x = 176,
-  y = 149,
-  treasure_name = "tunic",
-  treasure_variant = 3,
-}
-
-pickable{
-  layer = 0,
-  x = 184,
-  y = 149,
-  treasure_name = "tunic",
-}
-
-pickable{
-  layer = 0,
-  x = 192,
-  y = 149,
-  treasure_name = "tunic",
-  treasure_variant = 2,
-}
-
-pickable{
-  layer = 0,
-  x = 168,
-  y = 157,
-  treasure_name = "tunic",
-  treasure_variant = 3,
-}
-
-pickable{
-  layer = 0,
-  x = 176,
-  y = 157,
-  treasure_name = "tunic",
-}
-
-pickable{
-  layer = 0,
-  x = 184,
-  y = 157,
-  treasure_name = "tunic",
-  treasure_variant = 2,
-}
-
-pickable{
-  layer = 0,
-  x = 176,
-  y = 157,
-  treasure_name = "tunic",
-  treasure_variant = 3,
-}
-
-pickable{
-  layer = 0,
-  x = 184,
-  y = 157,
-  treasure_name = "tunic",
-}
-
-pickable{
-  layer = 0,
-  x = 192,
-  y = 157,
-  treasure_name = "tunic",
-  treasure_variant = 2,
+  behavior = "dialog#",
 }
 
 destination{
   layer = 0,
-  x = 0,
-  y = 13,
-  direction = 3,
+  x = 80,
+  y = 125,
+  direction = 0,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 184,
+  y = 112,
+  width = 16,
+  height = 16,
+  name = "first",
+  pattern = "water",
+  enabled_at_start = true,
 }
 

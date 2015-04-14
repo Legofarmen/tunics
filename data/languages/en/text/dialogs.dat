@@ -1,4 +1,26 @@
 dialog{
+  id = "intro_2.2",
+  text = [[
+Off you go.
+]]
+}
+
+dialog{
+  id = "_treasure.sword.1",
+  text = [[
+You got the sword. 
+Looks sharp!
+]]
+}
+
+dialog{
+  id = "_treasure.flippers.1",
+  text = [[
+Got the flippers.
+]]
+}
+
+dialog{
   id = "_treasure.bow.1",
   text = [[
 Got the bow.
