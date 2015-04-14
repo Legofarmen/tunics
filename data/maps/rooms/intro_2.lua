@@ -1,7 +1,7 @@
 local map = ...
 
 function map:on_started()
-    
+		sol.audio.set_music_volume(25)
 end
 
 function map:on_opening_transition_finished()
@@ -23,6 +23,7 @@ function intro_2_dialog_1()
 			map:open_doors("door")
 			sol.timer.start(300, function()
 				sol.audio.play_music("beginning")
+				sol.audio.set_music_volume(100 )
 				
 			end)
 		end)

@@ -151,6 +151,15 @@ tile{
   pattern = "spikes",
 }
 
+teletransporter{
+  layer = 1,
+  x = 152,
+  y = 16,
+  width = 16,
+  height = 16,
+  destination_map = "rooms/cutscene",
+}
+
 enemy{
   layer = 1,
   x = 176,
@@ -158,15 +167,6 @@ enemy{
   direction = 3,
   breed = "green_knight_soldier",
   rank = 2,
-}
-
-teletransporter{
-  layer = 1,
-  x = 152,
-  y = 16,
-  width = 16,
-  height = 16,
-  destination_map = "rooms/cut_scene",
 }
 
 stairs{

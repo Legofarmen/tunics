@@ -556,8 +556,12 @@ function zentropy.game.new_game()
     zentropy.game.catch_up_on_items(tier)
     zentropy.game.setup_tier_initial(tier)
 
-    zentropy.game.game:set_starting_location('rooms/intro_1')
-    zentropy.game.game:start()
+    if zentropy.settings.skip_cinematics then 
+		zentropy.game.game:set_starting_location('dungeons/dungeon1')
+	else
+		zentropy.game.game:set_starting_location('rooms/intro_1')
+    end
+	zentropy.game.game:start()
 end
 
 function zentropy.game.next_tier()
@@ -578,6 +582,7 @@ function zentropy.game.setup_quest_invariants()
 end
 
 function zentropy.game.setup_quest_initial()
+	zentropy.game.game:set_ability('sword', 1)
     zentropy.game.game:set_max_life(12)
     zentropy.game.game:set_life(12)
 end

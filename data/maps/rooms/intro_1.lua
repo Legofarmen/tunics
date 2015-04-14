@@ -42,17 +42,18 @@ function return_zelda()
 	sol.timer.start(1100,function()
 		move_z:stop()
 		zelda:get_sprite():set_direction(3)
+		sol.timer.start(500, transport)
 	end)
 		
 end
 
 function map:on_started()
-<<<<<<< HEAD
 	
 	sol.audio.play_music("lost_woods")
-			
-    	
-=======
-    map:get_game():get_hero():teleport('rooms/intro_2')
->>>>>>> f77db0b5a910c2b3f0fdef7ae2fccd30720d42bd
+	sol.audio.set_music_volume(50)
+end
+
+function transport()
+	map:get_game():get_hero():teleport('rooms/intro_2')
+
 end

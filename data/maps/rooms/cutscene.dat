@@ -42,6 +42,6 @@ dynamic_tile{
   height = 16,
   name = "first",
   pattern = "water",
-  enabled_at_start = true,
+  enabled_at_start = false,
 }
 
