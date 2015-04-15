@@ -186,7 +186,7 @@ map{ id = "components/filler/filler_000777_3", description = "Filler 000777 3" }
 map{ id = "components/filler/filler_210711_2", description = "X Filler 210711 2" }
 map{ id = "components/filler/filler_000711_1", description = "Filler 000711 1" }
 map{ id = "components/filler/filler_210711_3", description = "Filler 210711 3" }
-map{ id = "components/filler/filler_240744_1", description = "Filler 240744 1 " }
+map{ id = "components/filler/filler_240744_1", description = "Filler 240744 1" }
 map{ id = "components/filler/filler_042447_1", description = "Filler 042447 1" }
 map{ id = "components/filler/filler_012117_1", description = "Filler 012117 1" }
 map{ id = "components/filler/filler_210711_4", description = "Filler 210711 4" }
@@ -216,8 +216,6 @@ map{ id = "components/filler/filler_000004_4", description = "Filler 000 004 4" 
 map{ id = "components/filler/filler_000777_4", description = "Filler 000 777 4" }
 map{ id = "rooms/intro_1", description = "Intro 1" }
 map{ id = "rooms/flippers_example", description = "Flippers example" }
-map{ id = "components/filler/filler_240744_1", description = "Filler 240744 1" }
-map{ id = "components/filler/filler_240744_2", description = "Filler 240744 2" }
 map{ id = "components/obstacle_flippers/obstacle_flippers_east_000331_1", description = "Obstacle flippers east 000331 1" }
 map{ id = "components/obstacle_flippers/obstacle_flippers_north_000760_1", description = "Obstacle flippers north 000760 1" }
 map{ id = "components/obstacle_flippers/Obstacle_flippers_south_000067_1", description = "Obstacle flippers south 000067 1" }
@@ -238,6 +236,7 @@ map{ id = "components/obstacle_flippers/obstacle_flippers_north_050777_1", descr
 map{ id = "components/obstacle_flippers/obstacle_flippers_south_050777_1", description = "Obstacle flippers south 050777 1" }
 map{ id = "components/obstacle_flippers/Obstacle_flippers_east_202777_1", description = "Obstacle flippers east 202777 1" }
 map{ id = "components/obstacle_flippers/obstacle_flippers_west_202777_1", description = "Obstacle flippers west 202777 1" }
+map{ id = "tompa/obstacle_south_ushape", description = "Obstacle south ushape" }
 
 tileset{ id = "light_world", description = "Light World" }
 tileset{ id = "dungeon_brick_gray_1", description = "Dungeon brick gray 1" }
