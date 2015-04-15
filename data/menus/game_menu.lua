@@ -33,7 +33,7 @@ function game_menu:on_key_pressed(key)
     if key == "escape" then
         sol.main.exit()
         handled = true
-    elseif key == "return" then
+    elseif key == "space" then
         self.items[self.current_item].action()
         sol.audio.stop_music()
 		sol.menu.stop(self)
