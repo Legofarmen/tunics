@@ -1,4 +1,23 @@
 dialog{
+  id = "try_again",
+  question = true,
+  text = [[
+Try again?
+Sure
+Nope
+]]
+}
+
+dialog{
+  id = "game_over",
+  text = [[
+Game over.
+You completed X tiers.
+]]
+}
+
+
+dialog{
   id = "tier_complete",
   text = [[
 Tier X completed. Keep going!
