@@ -521,6 +521,7 @@ function zentropy.game.get_items_sequence(rng)
     d:single('lamp_1', {item_name='lamp'})
     d:single('hookshot_1', {item_name='hookshot'})
     d:single('bomb_1', {item_name='bombs_counter'})
+    d:single('flippers_1', {item_name='flippers'})
     local items = Puzzle.sequence(rng, d.result)
     local i = 1
     local brought_items = {}
