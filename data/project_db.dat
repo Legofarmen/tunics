@@ -52,7 +52,7 @@ map{ id = "components/door/door_smallkey_east_010000_1", description = "Door sma
 map{ id = "components/door/door_smallkey_north_200000_1", description = "Door small key north 200000 1" }
 map{ id = "components/door/door_smallkey_south_002000_1", description = "Door small key south 002000 1" }
 map{ id = "components/door/door_smallkey_west_040000_1", description = "Door small key west 040000 1" }
-map{ id = "rooms/intro_2", description = "Intro 2" }
+map{ id = "rooms/intro_3", description = "Intro 3" }
 map{ id = "components/floor/floor_1", description = "Floor 1" }
 map{ id = "components/floor/floor_2", description = "Floor 2" }
 map{ id = "components/floor/floor_3", description = "Floor 3" }
@@ -62,8 +62,8 @@ map{ id = "components/floor/floor_6", description = "Floor 6" }
 map{ id = "components/door/door_entrance_south_002777_2", description = "Door entrance south 002777 2" }
 map{ id = "components/door/door_entrance_south_002777_3", description = "Door entrance south 002777 3" }
 map{ id = "components/door/door_entrance_south_002777_4", description = "Door entrance south 002777 4" }
-map{ id = "rooms/intro_1", description = "Intro 1" }
-map{ id = "rooms/cutscene", description = "Cutscene" }
+map{ id = "rooms/intro_2", description = "Intro 2" }
+map{ id = "rooms/cutscene", description = "Cut scene" }
 map{ id = "rooms/title", description = "Title" }
 map{ id = "old/filler_200200_2", description = "Filler 200200 2" }
 map{ id = "old/filler_002002_2", description = "Filler 002002 2" }
@@ -214,6 +214,8 @@ map{ id = "components/filler/filler_000100_4", description = "Filler 000 100 4" 
 map{ id = "components/filler/filler_000400_4", description = "Filler 000 400 4" }
 map{ id = "components/filler/filler_000004_4", description = "Filler 000 004 4" }
 map{ id = "components/filler/filler_000777_4", description = "Filler 000 777 4" }
+map{ id = "rooms/intro_1", description = "Intro 1" }
+map{ id = "rooms/flippers_example", description = "Flippers example" }
 
 tileset{ id = "light_world", description = "Light World" }
 tileset{ id = "dungeon_brick_gray_1", description = "Dungeon brick gray 1" }
@@ -323,7 +325,6 @@ sprite{ id = "enemies/red_hardhat_beetle", description = "Red hardhat beetle" }
 sprite{ id = "enemies/pike_fixed", description = "Pike fixed" }
 sprite{ id = "enemies/pike_auto", description = "Pike auto" }
 sprite{ id = "enemies/pike_detect", description = "Pike detect" }
-sprite{ id = "entities/tunic_1", description = "Tunic 1" }
 
 music{ id = "agahnim", description = "Agahnim theme" }
 music{ id = "beginning", description = "Beginning" }
