@@ -35,7 +35,8 @@ function game_menu:on_key_pressed(key)
         handled = true
     elseif key == "return" then
         self.items[self.current_item].action()
-        sol.menu.stop(self)
+        sol.audio.stop_music()
+		sol.menu.stop(self)
         handled = true
     elseif key == 'up' then
         if self.current_item > 1 then self.current_item = self.current_item - 1 end
@@ -44,7 +45,7 @@ function game_menu:on_key_pressed(key)
         if self.current_item < #self.items then self.current_item = self.current_item + 1 end
         handled = true
     end
-
+	
     return handled
 end
 

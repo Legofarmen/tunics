@@ -6,13 +6,14 @@ local zentropy = require 'lib/zentropy'
 local skip = false
 
 function map:on_started()
-	
+	game:set_hud_enabled(false)
+	game:set_pause_allowed(false)
 	sol.audio.stop_music()
     hero:set_direction(0)
-	if zentropy.settings.skip_cinematics then
-		zentropy.game.next_tier()
-		game:get_hero():teleport('dungeons/dungeon1')	
-	end
+	--if zentropy.settings.skip_cinematics then
+	--	zentropy.game.next_tier()
+	--	game:get_hero():teleport('dungeons/dungeon1')
+	--end
 end
 
 function map:on_opening_transition_finished()
@@ -22,6 +23,7 @@ function map:on_opening_transition_finished()
 	local x, y, layer = map:get_entity('first'):get_position()
 	local tier = game:get_value('tier')
 	local tiern = 1
+	
 	zentropy.debug("tier " .. tier)
 	zentropy.debug("tiern " .. tiern)
 	
@@ -42,15 +44,24 @@ function map:on_opening_transition_finished()
 		if tiern % 6 == 0 then
 			y=y+16
 			x=x+96
-						
+
 		end
 		tiern = tiern + 1
-		return tiern <= tier
+		if tiern <= tier then
+			return true 
+		else
+			game.dialog_box:set_dialog_style("empty")
+			
+			game:start_dialog("tier_complete", function()
+				zentropy.game.next_tier()
+				game:get_hero():teleport('dungeons/dungeon1')
+				game.dialog_box:set_dialog_style("box")
+				sol.timer.start(game, 1200, function()
+					game:set_hud_enabled(true)
+					game:set_pause_allowed(true)
+				end)
+			end)
+			return false
+		end
 	end)
-		
-	sol.timer.start(3000, function()
-		zentropy.game.next_tier()
-		game:get_hero():teleport('dungeons/dungeon1')	
-	end)
-	
 end

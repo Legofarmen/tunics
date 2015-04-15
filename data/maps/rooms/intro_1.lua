@@ -1,59 +1,22 @@
 local map = ...
+local game = map:get_game()
 
-local hero = map:get_game():get_hero()
-local zelda = map:get_entity('zelda')
-local move_z = sol.movement.create("target")
+-- Intro script.
 
-function map:on_opening_transition_finished()
+function map:on_started(destination)
 	hero:freeze()
-	start_intro()
-end
-
-function start_intro()
-	sol.timer.start(500,function()
-		map:set_entities_enabled('cover', false)
-		local move_h = sol.movement.create("straight")
-		sol.audio.play_sound("hero_falls")
-		hero:set_animation("falling",function()
-			local x, y, layer = hero:get_position()
-			hero:set_position(x+8,y,0)
-		end)	
-		sol.timer.start(200, move_zelda)
-	end)
-end
-
-function move_zelda()
-	zelda:get_sprite():set_animation("walking")
-	move_z:start(zelda)
-	sol.timer.start(500,function()
-		zelda:get_sprite():set_animation("stopped")
-		sol.timer.start(1000, function()
-			return_zelda()
-		end)
-	end)
-end
-
-function return_zelda()
-	local x, y, layer = hero:get_position()
-	zelda:get_sprite():set_direction(0)
-	move_z:set_speed(32)
-	zelda:get_sprite():set_animation("walking")
-	hero:set_position(x+40,y,0)
-	sol.timer.start(1100,function()
-		move_z:stop()
-		zelda:get_sprite():set_direction(3)
-		sol.timer.start(500, transport)
-	end)
-		
-end
-
-function map:on_started()
-	
 	sol.audio.play_music("lost_woods")
 	sol.audio.set_music_volume(50)
-end
-
-function transport()
-	map:get_game():get_hero():teleport('rooms/intro_2')
-
+	game:set_hud_enabled(false)
+	game:set_pause_allowed(false)
+	game.dialog_box:set_dialog_style("empty")
+	--game.dialog_box.set_dialog_style(game.dialog_box, "empty")
+	
+	sol.timer.start(1000, function()
+		game:start_dialog("intro_1_1", function()
+			game:start_dialog("intro_1_2", function()
+				hero:teleport("rooms/intro_2")
+			end)
+		end)
+	end)
 end

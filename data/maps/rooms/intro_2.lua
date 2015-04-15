@@ -1,36 +1,72 @@
 local map = ...
 
+local game = map:get_game()
+
+local hero = map:get_game():get_hero()
+local zelda = map:get_entity('zelda')
+
+
 function map:on_started()
-		sol.audio.set_music_volume(25)
+
 end
 
 function map:on_opening_transition_finished()
-	if zentropy.settings.skip_cinematics then
-		zentropy.game.game:set_ability('sword', 1)
-		map:get_game():get_hero():teleport('dungeons/dungeon1')	
-		
-	else
-		hero:freeze()
- 		hero:set_direction(1)
-		sol.timer.start(500,intro_2_dialog_1)
-	end
+	hero:freeze()
+	sol.timer.start(1000, function()
+		map:start_intro()
+	end)
 end
 
-function intro_2_dialog_1()
-	--dialog: on_finished
-	 hero:start_treasure('sword', 1, "i1129",function()
-		sol.timer.start(200,function()
-			map:open_doors("door")
-			sol.timer.start(300, function()
-				sol.audio.play_music("beginning")
-				sol.audio.set_music_volume(100 )
-				
-			end)
-		end)
-	 end)
+function map:start_intro()
+	game.dialog_box:set_dialog_style("box")
+	game:start_dialog("intro_2_1")
+	sol.timer.start(500,function()
+		sol.audio.play_sound('door_closed')
+		map:set_entities_enabled('cover', false)
+		sol.audio.play_sound("hero_falls")
 		
-	 
-	 
-	 
-	
+		hero:set_animation("falling",function()
+			local x, y, layer = hero:get_position()
+			hero:set_position(x+8,y,0)
+		end)	
+		
+		local move_h = sol.movement.create("straight")
+		
+		local move_z_1 = sol.movement.create("target")
+		move_z_1:set_target(map:get_entity("target_1"))
+		
+		local move_z_2 = sol.movement.create("target")
+		move_z_2:set_target(map:get_entity("target_2"))
+		move_z_2:set_speed(32)
+		function move_z_1:on_finished()
+			zelda:get_sprite():set_animation("stopped")
+			game:start_dialog("intro_2_2")
+			sol.timer.start(700,function()
+				game:start_dialog("intro_2_3")
+				sol.timer.start(1500,function()
+					zelda:get_sprite():set_direction(3)
+					game:start_dialog("intro_2_4")
+					zelda:get_sprite():set_direction(0)
+					zelda:get_sprite():set_animation("walking")
+					move_z_2:start(zelda)
+				end)
+			end)
+		end
+		
+		function move_z_2:on_finished()
+			zelda:get_sprite():set_direction(3)
+			sol.timer.start(1000, map.transport)
+		end
+		
+		sol.timer.start(400, function()
+			zelda:get_sprite():set_animation("walking")
+			move_z_1:start(zelda)
+
+		end)
+	end)
+end
+
+function map:transport()
+	map:get_game():get_hero():teleport('rooms/intro_3')
+
 end

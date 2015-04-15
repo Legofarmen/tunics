@@ -63,7 +63,7 @@ map{ id = "components/door/door_entrance_south_002777_2", description = "Door en
 map{ id = "components/door/door_entrance_south_002777_3", description = "Door entrance south 002777 3" }
 map{ id = "components/door/door_entrance_south_002777_4", description = "Door entrance south 002777 4" }
 map{ id = "rooms/intro_2", description = "Intro 2" }
-map{ id = "rooms/cutscene", description = "Cut scene" }
+map{ id = "rooms/cutscene", description = "Cutscene" }
 map{ id = "rooms/title", description = "Title" }
 map{ id = "old/filler_200200_2", description = "Filler 200200 2" }
 map{ id = "old/filler_002002_2", description = "Filler 002002 2" }

@@ -1,16 +1,96 @@
 dialog{
-  id = "intro_1",
+  id = "tier_complete",
   text = [[
-I'm knitting you a new tunic.
+Tier X completed.
+Keep going.
 ]]
 }
 
 dialog{
-  id = "intro_2.2",
+  id = "intro_1_1",
+  text = [[
+Hyrule is at peace.
+]]
+}
+
+dialog{
+  id = "intro_1_2",
+  text = [[
+It's a nice day 
+for a picninc...
+]]
+}
+
+dialog{
+  id = "intro_2_1",
+  text = [[
+I'm knitting you 
+a new tunic.
+]]
+}
+
+dialog{
+  id = "intro_2_2",
+  text = [[
+Hey!
+]]
+}
+
+dialog{
+  id = "intro_2_3",
+  text = [[
+Hello?
+]]
+}
+
+dialog{
+  id = "intro_2_4",
+  text = [[
+I guess I'll just
+keep knitting until
+he gets back.
+]]
+}
+
+dialog{
+  id = "intro_3_1",
+  text = [[
+Hello there.
+ 
+ 
+Long time since an 
+adventurer came by.
+]]
+}
+
+dialog{
+  id = "intro_3_2",
+  text = [[
+There is a way out, 
+you'll just have to 
+fight your way through 
+the dungeons.
+  
+Good luck.
+
+Oh, and one more thing...
+]]
+}
+
+dialog{
+  id = "intro_3_3",
+  text = [[
+
+]]
+}
+
+dialog{
+  id = "intro_3_npc",
   text = [[
 Off you go.
 ]]
 }
+
 dialog{
   id = "_treasure.glove.1",
   text =[[
@@ -21,8 +101,11 @@ You got the glove!
 dialog{
   id = "_treasure.sword.1",
   text = [[
-You got the sword. 
-Looks sharp!
+It's dangerous to 
+go alone. Take this.
+
+You got the sword.
+Looks sharp.
 ]]
 }
 

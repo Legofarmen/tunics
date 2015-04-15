@@ -1,14 +1,8 @@
 -- Animated Solarus logo by Maxs.
 
--- You may include this logo in your quest to show that you use Solarus,
--- but this is not mandatory.
-
--- Example of use:
+-- Usage:
 -- local logo = require("menus/solarus_logo")
 -- sol.menu.start(logo)
--- logo.on_finished = function()
---   -- Do whatever you want next (show a title screen, start a game...)
--- end
 local solarus_logo_menu = {}
 
 -- Main surface of the menu.
@@ -45,6 +39,7 @@ local timer = nil
 -- Rebuilds the whole surface of the menu.
 local function rebuild_surface()
 
+  -- Clean the surface.
   surface:clear()
 
   -- Draw the title (after step 1).
@@ -96,6 +91,8 @@ function solarus_logo_menu:step1()
   sun:set_xy(0, -33)
   sword:stop_movement()
   sword:set_xy(-48, 48)
+  -- Play the sword sound.
+  sol.audio.play_sound("solarus_logo")
   -- Update the surface.
   rebuild_surface()
 end
@@ -180,7 +177,7 @@ function solarus_logo_menu:on_key_pressed(key)
 
   if key == "escape" then
     -- Escape: quit Solarus.
-    sol.main.reset()
+    sol.main.exit()
   else
     -- If the timer exists (after step 1).
     if timer ~= nil then
