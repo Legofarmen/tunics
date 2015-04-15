@@ -96,31 +96,31 @@ function FillerObstacleVisitor:visit_room(room)
     end
 end
 
-local Puzzle = {}
+local Quest = {}
 
-function Puzzle.treasure_step(item_name)
+function Quest.treasure_step(item_name)
     return function (root)
         root:add_child(Tree.Treasure:new{name=item_name})
     end
 end
 
-function Puzzle.boss_step(root)
+function Quest.boss_step(root)
     root:add_child(Tree.Enemy:new{name='boss'}:with_needs{open='bigkey',reach='nothing',dir='north'})
 end
 
-function Puzzle.fairy_step(root)
+function Quest.fairy_step(root)
     root:add_child(Tree.Enemy:new{name='fairy'}:with_needs{see='map',reach='weakwall',open='weakwall'})
 end
 
-function Puzzle.culdesac_step(root)
+function Quest.culdesac_step(root)
     root:add_child(Tree.Room:new{})
 end
 
-function Puzzle.hide_treasures_step(root)
+function Quest.hide_treasures_step(root)
     root:accept(HideTreasuresVisitor)
 end
 
-function Puzzle.obstacle_step(item_name, open, see)
+function Quest.obstacle_step(item_name, open, see)
     return function (root)
         root:each_child(function (key, head)
             root:update_child(key, head:with_needs{see=see,reach=item_name,open=open})
@@ -128,13 +128,13 @@ function Puzzle.obstacle_step(item_name, open, see)
     end
 end
 
-function Puzzle.big_chest_step(item_name)
+function Quest.big_chest_step(item_name)
     return function (root)
         root:add_child(Tree.Treasure:new{name=item_name, see='nothing', reach='nothing', open='bigkey'})
     end
 end
 
-function Puzzle.locked_door_step(rng, blackboard)
+function Quest.locked_door_step(rng, blackboard)
     return function (root)
         local bigkey_found = false
         local chosen_key, chosen_child = root:random_child(rng, function (key, child)
@@ -154,16 +154,16 @@ function Puzzle.locked_door_step(rng, blackboard)
     end
 end
 
-function Puzzle.smallkey_step(blackboard)
+function Quest.smallkey_step(blackboard)
     return function (root)
         if blackboard.smallkeys > 0 then
-            Puzzle.treasure_step('smallkey')(root)
+            Quest.treasure_step('smallkey')(root)
             blackboard.smallkeys = blackboard.smallkeys - 1
         end
     end
 end
 
-function Puzzle.max_heads(rng, n)
+function Quest.max_heads(rng, n)
     return function (root)
         while #root.children > n do
             local node1 = root:remove_child(root:random_child(rng:refine('node1')))
@@ -211,7 +211,7 @@ function Puzzle.max_heads(rng, n)
     end
 end
 
-function Puzzle.sequence(rng, elements)
+function Quest.sequence(rng, elements)
 
     function calc_weight(element)
         if not element.weight then
@@ -256,24 +256,24 @@ function Puzzle.sequence(rng, elements)
     return result
 end
 
-Puzzle.Dependencies = Class:new()
+Quest.Dependencies = Class:new()
 
-function Puzzle.Dependencies:new(o)
+function Quest.Dependencies:new(o)
     o = o or {}
     o.result = o.result or {}
     return Class.new(self, o)
 end
 
-function Puzzle.Dependencies:single(name, element)
+function Quest.Dependencies:single(name, element)
     self.result[name] = { step=element, deps={}, rdeps={} }
 end
 
-function Puzzle.Dependencies:dependency(deep_name, shallow_name)
+function Quest.Dependencies:dependency(deep_name, shallow_name)
     self.result[deep_name].deps[shallow_name] = true
     self.result[shallow_name].rdeps[deep_name] = true
 end
 
-function Puzzle.Dependencies:multiple(name, count, factory, rng)
+function Quest.Dependencies:multiple(name, count, factory, rng)
     local first = nil
     local last = nil
     for i = 1, count do
@@ -292,7 +292,7 @@ function Puzzle.Dependencies:multiple(name, count, factory, rng)
     return first, last
 end
 
-function Puzzle.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, treasure_items, brought_items)
+function Quest.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, treasure_items, brought_items)
     brought_items = brought_items or {}
 
     function get_obstacle_types(item_name, has_map)
@@ -317,24 +317,24 @@ function Puzzle.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, treasure_items, 
             see = 'nothing'
             open = 'open'
         end
-        return Puzzle.obstacle_step(obstacle_type, open, see)
+        return Quest.obstacle_step(obstacle_type, open, see)
     end
 
-    local d = Puzzle.Dependencies:new()
+    local d = Quest.Dependencies:new()
 
-    d:single('boss', Puzzle.boss_step)
-    d:single('bigkey', Puzzle.treasure_step('bigkey'))
+    d:single('boss', Quest.boss_step)
+    d:single('bigkey', Quest.treasure_step('bigkey'))
     d:dependency('boss', 'bigkey')
 
-    d:single('map', Puzzle.treasure_step('map'))
+    d:single('map', Quest.treasure_step('map'))
 
-    d:single('hidetreasures', Puzzle.hide_treasures_step)
-    d:single('compass', Puzzle.treasure_step('compass'))
+    d:single('hidetreasures', Quest.hide_treasures_step)
+    d:single('compass', Quest.treasure_step('compass'))
     d:dependency('hidetreasures', 'compass')
 
     for _, item_name in ipairs(treasure_items) do
         local bigchest_name = string.format('bigchest_%s', item_name)
-        d:single(bigchest_name, Puzzle.big_chest_step(item_name))
+        d:single(bigchest_name, Quest.big_chest_step(item_name))
         d:dependency(bigchest_name, 'bigkey')
 
         local obstacle_types = get_obstacle_types(item_name, true)
@@ -352,20 +352,20 @@ function Puzzle.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, treasure_items, 
 
     local blackboard = {}
     local lockeddoors_rng = rng:refine('locked_doors')
-    local first_lock, last_lock = d:multiple('lockeddoor', nkeys, function (rng) return Puzzle.locked_door_step(rng, blackboard) end, lockeddoors_rng)
+    local first_lock, last_lock = d:multiple('lockeddoor', nkeys, function (rng) return Quest.locked_door_step(rng, blackboard) end, lockeddoors_rng)
     if first_lock then
         d:dependency('bigkey', last_lock)
         d:dependency('compass', last_lock)
         d:dependency('map', last_lock)
-        local first_key, last_key = d:multiple('smallkey', nkeys, function () return Puzzle.smallkey_step(blackboard) end)
+        local first_key, last_key = d:multiple('smallkey', nkeys, function () return Quest.smallkey_step(blackboard) end)
         d:dependency(last_lock, first_key)
     end
 
-    d:multiple('culdesac', nculdesacs, function () return Puzzle.culdesac_step end)
-    d:multiple('fairy', nfairies, function () return Puzzle.fairy_step end)
+    d:multiple('culdesac', nculdesacs, function () return Quest.culdesac_step end)
+    d:multiple('fairy', nfairies, function () return Quest.fairy_step end)
 
-    local steps = Puzzle.sequence(rng:refine('steps'), d.result)
-    local tree = Puzzle.render_steps(rng, steps)
+    local steps = Quest.sequence(rng:refine('steps'), d.result)
+    local tree = Quest.render_steps(rng, steps)
     local obstacle_types = {}
     for _, item_name in ipairs(brought_items) do
         for _, obstacle in ipairs(get_obstacle_types(item_name, false)) do
@@ -379,11 +379,11 @@ function Puzzle.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, treasure_items, 
     return tree
 end
 
-function Puzzle.render_steps(rng, steps)
+function Quest.render_steps(rng, steps)
     -- Build puzzle tree using the sequence of steps
     local heads = Tree.Room:new()
     for i, element in ipairs(steps) do
-        Puzzle.max_heads(rng:refine('step_' .. i), 6)(heads)
+        Quest.max_heads(rng:refine('step_' .. i), 6)(heads)
         element.step(heads)
     end
 
@@ -400,4 +400,4 @@ function Puzzle.render_steps(rng, steps)
     return root
 end
 
-return Puzzle
+return Quest

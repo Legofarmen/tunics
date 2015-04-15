@@ -2,7 +2,7 @@ local map = ...
 local game = map:get_game()
 
 local Tree = require 'lib/tree'
-local Puzzle = require 'lib/puzzle'
+local Quest = require 'lib/quest'
 local Prng = require 'lib/prng'
 local Layout = require 'lib/layout'
 local zentropy = require 'lib/zentropy'
@@ -48,7 +48,7 @@ for i = 1, tier - 1 do
     end
 end
 
-local puzzle = Puzzle.alpha_dungeon(puzzle_rng, nkeys, nfairies, nculdesacs, treasure_items, brought_items)
+local puzzle = Quest.alpha_dungeon(puzzle_rng, nkeys, nfairies, nculdesacs, treasure_items, brought_items)
 --puzzle:accept(Tree.PrintVisitor:new{})
 
 local floor1, floor2 = zentropy.components:get_floors(presentation_rng:refine('floors'))
