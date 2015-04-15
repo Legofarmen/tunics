@@ -1,8 +1,7 @@
 dialog{
   id = "tier_complete",
   text = [[
-Tier X completed.
-Keep going.
+Tier X completed. Keep going!
 ]]
 }
 

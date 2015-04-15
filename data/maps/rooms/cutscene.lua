@@ -3,6 +3,10 @@ local game = map:get_game()
 
 local zentropy = require 'lib/zentropy'
 
+local cutscene = {}
+local text = sol.language.get_dialog('tier_complete') 
+local text_show = text.text:gsub("X", zentropy.game.game:get_value('tier'))
+
 local skip = false
 
 function map:on_started()
@@ -14,6 +18,37 @@ function map:on_started()
 	--	zentropy.game.next_tier()
 	--	game:get_hero():teleport('dungeons/dungeon1')
 	--end
+end
+
+function cutscene:on_started()
+	cutscene.surface = sol.surface.create(320, 240)
+	cutscene.text = sol.text_surface.create{
+        font = "dialog",
+		horizontal_alignment = "center",
+		vertical_alignment = "middle",
+		text = text_show,
+	}
+	cutscene.text:set_xy(170, 60)
+end
+
+function cutscene:on_draw(dst_surface)
+	cutscene.text:set_color{255, 255, 255}
+	cutscene.text:draw(dst_surface)
+end
+
+function cutscene:on_key_pressed(key)
+    local handled = false
+	sol.menu.stop(self)		
+    return handled
+end
+
+function cutscene:on_finished()
+	zentropy.game.next_tier()
+	game:get_hero():teleport('dungeons/dungeon1')
+	sol.timer.start(game,500, function()
+		game:set_hud_enabled(false)
+		game:set_pause_allowed(true)
+	end)
 end
 
 function map:on_opening_transition_finished()
@@ -50,18 +85,13 @@ function map:on_opening_transition_finished()
 		if tiern <= tier then
 			return true 
 		else
-			game.dialog_box:set_dialog_style("empty")
-			
-			game:start_dialog("tier_complete", function()
-				zentropy.game.next_tier()
-				game:get_hero():teleport('dungeons/dungeon1')
-				game.dialog_box:set_dialog_style("box")
-				sol.timer.start(game, 1200, function()
-					game:set_hud_enabled(true)
-					game:set_pause_allowed(true)
-				end)
+			sol.timer.start(800,function()
+				sol.menu.start(map, cutscene, true)
 			end)
-			return false
+		return false
+			
+			
 		end
 	end)
 end
+
