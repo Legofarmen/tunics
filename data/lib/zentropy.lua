@@ -280,7 +280,6 @@ function zentropy.db.Components:get_obstacle(item, dir, mask, rng)
     for i = 0, 15 do
         local d = ''
         local new_mask = bit32.bor(door_mask, i)
-        zentropy.debug(new_mask)
         if bit32.band(new_mask, 8) ~= 0 then d = d .. 'north' end
         if bit32.band(new_mask, 4) ~= 0 then d = d .. 'south' end
         if bit32.band(new_mask, 2) ~= 0 then d = d .. 'east' end
