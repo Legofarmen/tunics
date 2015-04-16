@@ -272,18 +272,19 @@ function zentropy.db.Components:get_obstacle(item, dir, mask, rng)
     end
 
     local door_mask = 0
-    if string.gmatch(dir, 'north') then door_mask = bit32.bor(door_mask, 8) end
-    if string.gmatch(dir, 'south') then door_mask = bit32.bor(door_mask, 4) end
-    if string.gmatch(dir, 'east') then door_mask = bit32.bor(door_mask, 2) end
-    if string.gmatch(dir, 'west') then door_mask = bit32.bor(door_mask, 1) end
+    if string.gmatch(dir, 'north')() then door_mask = bit32.bor(door_mask, 8) end
+    if string.gmatch(dir, 'south')() then door_mask = bit32.bor(door_mask, 4) end
+    if string.gmatch(dir, 'east')() then door_mask = bit32.bor(door_mask, 2) end
+    if string.gmatch(dir, 'west')() then door_mask = bit32.bor(door_mask, 1) end
     local doors = {}
     for i = 0, 15 do
-        local new_mask = bit32.bor(door_mask, i)
         local d = ''
-        if bit32.band(new_mask, 8) then d = d .. 'north' end
-        if bit32.band(new_mask, 4) then d = d .. 'south' end
-        if bit32.band(new_mask, 2) then d = d .. 'east' end
-        if bit32.band(new_mask, 1) then d = d .. 'west' end
+        local new_mask = bit32.bor(door_mask, i)
+        zentropy.debug(new_mask)
+        if bit32.band(new_mask, 8) ~= 0 then d = d .. 'north' end
+        if bit32.band(new_mask, 4) ~= 0 then d = d .. 'south' end
+        if bit32.band(new_mask, 2) ~= 0 then d = d .. 'east' end
+        if bit32.band(new_mask, 1) ~= 0 then d = d .. 'west' end
         doors[d] = true
     end
 
