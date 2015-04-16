@@ -237,6 +237,7 @@ map{ id = "tompa/obstacle_flippers_south_050777_1", description = "Obstacle flip
 map{ id = "tompa/Obstacle_flippers_east_202777_1", description = "Obstacle flippers east 202777 1" }
 map{ id = "tompa/obstacle_flippers_west_202777_1", description = "Obstacle flippers west 202777 1" }
 map{ id = "tompa/obstacle_south_ushape", description = "Obstacle south ushape" }
+map{ id = "rooms/game_over", description = "Game over" }
 
 tileset{ id = "light_world", description = "Light World" }
 tileset{ id = "dungeon_brick_gray_1", description = "Dungeon brick gray 1" }
@@ -488,6 +489,7 @@ item{ id = "arrow", description = "Arrow" }
 item{ id = "bombs_counter", description = "Bombs counter" }
 item{ id = "flippers", description = "Flippers" }
 item{ id = "glove", description = "Glove" }
+item{ id = "bottle_1", description = "Bottle 1" }
 
 enemy{ id = "tentacle", description = "Tentacle" }
 enemy{ id = "green_knight_soldier", description = "Green knight soldier" }

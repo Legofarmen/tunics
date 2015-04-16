@@ -5,9 +5,10 @@ local legofarmen_logo = require 'menus/legofarmen_logo'
 local game_menu = require 'menus/game_menu'
 
 function sol.main:on_started()
-
+	
     zentropy.init()
-    sol.language.set_language("en")
+		    
+	sol.language.set_language("en")
     
 	if zentropy.settings.skip_cinematics then
 		sol.menu.start(self, game_menu)

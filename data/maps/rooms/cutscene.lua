@@ -14,10 +14,9 @@ function map:on_started()
 	game:set_pause_allowed(false)
 	sol.audio.stop_music()
     hero:set_direction(0)
-	--if zentropy.settings.skip_cinematics then
-	--	zentropy.game.next_tier()
-	--	game:get_hero():teleport('dungeons/dungeon1')
-	--end
+	if zentropy.settings.skip_cinematics then
+		cutscene:on_finished()
+	end
 end
 
 function cutscene:on_started()

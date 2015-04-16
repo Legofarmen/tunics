@@ -5,7 +5,7 @@ local Puzzle = require 'lib/puzzle'
 local map_include = require 'lib/map_include'
 local dialog_box = require 'menus/dialog_box'
 local Pause = require 'menus/pause'
-
+local game_over_menu = require 'menus/game_over'
 
 bit32 = bit32 or bit
 
@@ -673,9 +673,13 @@ function zentropy.game.init(game)
         self.dialog_box.dialog = nil
         self.dialog_box.info = nil
     end
-
+	
+	function game:on_game_over_started()
+		sol.menu.start(zentropy.game.game:get_map(),game_over_menu)
+	end
+	
     function game:on_game_over_finished()
-        sol.main.reset()
+        --sol.main.reset()
     end
 
     function game:on_finished()

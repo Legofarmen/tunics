@@ -1,0 +1,47 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  tileset = "light_world",
+  music = "same",
+}
+
+tile{
+  layer = 0,
+  x = 0,
+  y = 0,
+  width = 328,
+  height = 240,
+  pattern = "real_black",
+}
+
+destination{
+  layer = 0,
+  x = 80,
+  y = 125,
+  direction = 0,
+}
+
+npc{
+  layer = 0,
+  x = 240,
+  y = 125,
+  name = "zelda",
+  direction = 3,
+  subtype = "0",
+  sprite = "npc/zelda",
+  behavior = "dialog#",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 184,
+  y = 112,
+  width = 16,
+  height = 16,
+  name = "first",
+  pattern = "water",
+  enabled_at_start = false,
+}
+
