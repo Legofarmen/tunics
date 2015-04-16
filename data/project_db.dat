@@ -217,8 +217,8 @@ map{ id = "components/filler/filler_000777_4", description = "Filler 000 777 4" 
 map{ id = "rooms/intro_1", description = "Intro 1" }
 map{ id = "rooms/flippers_example", description = "Flippers example" }
 map{ id = "components/obstacle_flippers/obstacle_flippers_east_000331_1", description = "Obstacle flippers east 000331 1" }
-map{ id = "components/obstacle_flippers/obstacle_flippers_north_000760_1", description = "Obstacle flippers north 000760 1" }
-map{ id = "components/obstacle_flippers/Obstacle_flippers_south_000067_1", description = "Obstacle flippers south 000067 1" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_north_000771_1", description = "Obstacle flippers north 000771 1" }
+map{ id = "components/obstacle_flippers/Obstacle_flippers_south_000477_1", description = "Obstacle flippers south 000477 1" }
 map{ id = "components/obstacle_flippers/obstacle_flippers_west_000664_1", description = "Obstacle flippers west 000664 1" }
 map{ id = "components/obstacle_flippers/obstacle_flippers_northsouth_000777_1", description = "Obstacle flippers northsouth 000777 1" }
 map{ id = "components/obstacle_flippers/obstacle_flippers_eastwest_000777_1", description = "Obstacle flippers eastwest 000777 1" }
@@ -229,13 +229,13 @@ map{ id = "components/obstacle_flippers/obstacle_flippers_southwest_000777_1", d
 map{ id = "components/obstacle_flippers/obstacle_flippers_northsouthwest_000331_1", description = "Obstacle flippers northsouthwest 000331 1" }
 map{ id = "components/obstacle_flippers/obstacle_flippers_northsoutheast_000664_1", description = "Obstacle flippers northsoutheast 000664 1" }
 map{ id = "components/obstacle_flippers/obstacle_flippers_northeastwest_000067_1", description = "Obstacle flipperst northeastwest 000067 1" }
-map{ id = "components/obstacle_flippers/obstacle_flippers_southeastwest_000760_1", description = "Obstacle flippers southeastwest 000760 1" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_southeastwest_000771_1", description = "Obstacle flippers southeastwest 000771 1" }
 map{ id = "tompa/filler_y6", description = "Filler Y6" }
 map{ id = "tompa/filler_y7", description = "Filler Y7" }
-map{ id = "components/obstacle_flippers/obstacle_flippers_north_050777_1", description = "Obstacle flippers north 050777 1" }
-map{ id = "components/obstacle_flippers/obstacle_flippers_south_050777_1", description = "Obstacle flippers south 050777 1" }
-map{ id = "components/obstacle_flippers/Obstacle_flippers_east_202777_1", description = "Obstacle flippers east 202777 1" }
-map{ id = "components/obstacle_flippers/obstacle_flippers_west_202777_1", description = "Obstacle flippers west 202777 1" }
+map{ id = "tompa/obstacle_flippers_north_050777_1", description = "Obstacle flippers north 050777 1" }
+map{ id = "tompa/obstacle_flippers_south_050777_1", description = "Obstacle flippers south 050777 1" }
+map{ id = "tompa/Obstacle_flippers_east_202777_1", description = "Obstacle flippers east 202777 1" }
+map{ id = "tompa/obstacle_flippers_west_202777_1", description = "Obstacle flippers west 202777 1" }
 map{ id = "tompa/obstacle_south_ushape", description = "Obstacle south ushape" }
 map{ id = "rooms/game_over", description = "Game over" }
 
@@ -347,6 +347,12 @@ sprite{ id = "enemies/red_hardhat_beetle", description = "Red hardhat beetle" }
 sprite{ id = "enemies/pike_fixed", description = "Pike fixed" }
 sprite{ id = "enemies/pike_auto", description = "Pike auto" }
 sprite{ id = "enemies/pike_detect", description = "Pike detect" }
+sprite{ id = "hud/action_icon_flip", description = "Action icon flip" }
+sprite{ id = "hud/dialog_box_message_end", description = "Dialog box message end" }
+sprite{ id = "hud/empty_heart", description = "Empty heart" }
+sprite{ id = "hud/magic_bar", description = "Magic bar" }
+sprite{ id = "hud/pause_icon_flip", description = "Pause icon flip" }
+sprite{ id = "hud/sword_icon_flip", description = "Sword icon flip" }
 
 music{ id = "agahnim", description = "Agahnim theme" }
 music{ id = "beginning", description = "Beginning" }

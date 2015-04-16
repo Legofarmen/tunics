@@ -3,8 +3,8 @@ dialog{
   question = true,
   text = [[
 Try again?
-$? Sure
-$? Nope
+  Sure
+  Nope
 ]]
 }
 
@@ -86,12 +86,12 @@ dialog{
   text = [[
 There is a way out, 
 you'll just have to 
-fight your way through 
+fight your way through.
 the dungeons.
   
 Good luck.
 
-Oh, and one more thing...
+Oh, one more thing...
 ]]
 }
 
@@ -121,9 +121,6 @@ dialog{
   text = [[
 It's dangerous to 
 go alone. Take this.
-
-You got the sword.
-Looks sharp.
 ]]
 }
 

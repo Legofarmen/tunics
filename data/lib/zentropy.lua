@@ -1,7 +1,7 @@
 local Class = require 'lib/class'
 local util = require 'lib/util'
 local Prng = require 'lib/prng'
-local Puzzle = require 'lib/puzzle'
+local Quest = require 'lib/quest'
 local map_include = require 'lib/map_include'
 local dialog_box = require 'menus/dialog_box'
 local Pause = require 'menus/pause'
@@ -516,13 +516,13 @@ function zentropy.Room:sign(data)
 end
 
 function zentropy.game.get_items_sequence(rng)
-    local d = Puzzle.Dependencies:new()
+    local d = Quest.Dependencies:new()
     d:single('bow_1', {item_name='bow'})
     d:single('lamp_1', {item_name='lamp'})
     d:single('hookshot_1', {item_name='hookshot'})
     d:single('bomb_1', {item_name='bombs_counter'})
     d:single('flippers_1', {item_name='flippers'})
-    local items = Puzzle.sequence(rng, d.result)
+    local items = Quest.sequence(rng, d.result)
     local i = 1
     local brought_items = {}
     local result = {}

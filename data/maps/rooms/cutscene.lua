@@ -44,8 +44,8 @@ end
 function cutscene:on_finished()
 	zentropy.game.next_tier()
 	game:get_hero():teleport('dungeons/dungeon1')
-	sol.timer.start(game,500, function()
-		game:set_hud_enabled(false)
+	sol.timer.start(game,2000, function()
+		game:set_hud_enabled(true)
 		game:set_pause_allowed(true)
 	end)
 end
