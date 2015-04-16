@@ -3,8 +3,8 @@ dialog{
   question = true,
   text = [[
 Try again?
-Sure
-Nope
+$? Sure
+$? Nope
 ]]
 }
 
