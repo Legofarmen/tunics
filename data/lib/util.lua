@@ -1,11 +1,5 @@
 local util = {}
 
-function util.wdebug(message)
-    local zentropy = require 'lib/zentropy'
-    zentropy.debug('util.wdebug() is deprecated, use zentropy.debug() instead')
-    zentropy.debug(message)
-end
-
 function util.filter_keys(table, keys)
     local result = {}
     for _, key in ipairs(keys) do
