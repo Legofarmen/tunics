@@ -331,6 +331,24 @@ tile{
   pattern = "wall_torch.2",
 }
 
+tile{
+  layer = 1,
+  x = 288,
+  y = 104,
+  width = 24,
+  height = 32,
+  pattern = "wall_statue.1.4",
+}
+
+tile{
+  layer = 1,
+  x = 8,
+  y = 104,
+  width = 24,
+  height = 32,
+  pattern = "wall_statue.1.3",
+}
+
 dynamic_tile{
   layer = 1,
   x = 152,

@@ -136,15 +136,6 @@ tile{
 tile{
   layer = 1,
   x = 88,
-  y = 80,
-  width = 24,
-  height = 24,
-  pattern = "wall_low.corner_reverse.2",
-}
-
-tile{
-  layer = 1,
-  x = 88,
   y = 56,
   width = 24,
   height = 32,
@@ -185,15 +176,6 @@ tile{
   width = 24,
   height = 48,
   pattern = "wall_low.4",
-}
-
-tile{
-  layer = 1,
-  x = 72,
-  y = 88,
-  width = 176,
-  height = 32,
-  pattern = "water.transparent",
 }
 
 tile{
@@ -239,6 +221,24 @@ tile{
   width = 32,
   height = 16,
   pattern = "water_pool_ladder.1",
+}
+
+tile{
+  layer = 1,
+  x = 88,
+  y = 80,
+  width = 24,
+  height = 24,
+  pattern = "wall_low.corner_reverse.2",
+}
+
+tile{
+  layer = 1,
+  x = 72,
+  y = 88,
+  width = 176,
+  height = 32,
+  pattern = "water.transparent",
 }
 
 jumper{

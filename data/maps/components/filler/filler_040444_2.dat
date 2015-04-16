@@ -9,6 +9,15 @@ properties{
 
 tile{
   layer = 1,
+  x = 64,
+  y = 40,
+  width = 48,
+  height = 160,
+  pattern = "floor_small.2",
+}
+
+tile{
+  layer = 1,
   x = 56,
   y = 40,
   width = 8,
@@ -23,15 +32,6 @@ tile{
   width = 8,
   height = 160,
   pattern = "floor_border.1",
-}
-
-tile{
-  layer = 1,
-  x = 64,
-  y = 40,
-  width = 48,
-  height = 160,
-  pattern = "door_main.2.floor.3",
 }
 
 tile{

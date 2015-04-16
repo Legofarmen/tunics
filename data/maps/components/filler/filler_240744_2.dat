@@ -9,10 +9,19 @@ properties{
 
 tile{
   layer = 1,
-  x = 24,
+  x = 88,
   y = 32,
+  width = 128,
+  height = 16,
+  pattern = "hole",
+}
+
+tile{
+  layer = 1,
+  x = 24,
+  y = 48,
   width = 256,
-  height = 72,
+  height = 56,
   pattern = "hole",
 }
 

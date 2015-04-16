@@ -27,16 +27,16 @@ map{ id = "components/treasure_bigkey/treasure_bigkey_000100_1", description = "
 map{ id = "dev/room_template", description = "Room1 template" }
 map{ id = "components/enemy/enemy_fairy_000777_1", description = "Enemy fairy 000777 1 " }
 map{ id = "old/chest_hookshot_777202", description = "Chest hookshoot 777202 " }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_north_000700_1", description = "Obstacle hookshot north 000700 1" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_west_000444_1", description = "Obstacle hookshot west 000444 1" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_east_000111_1", description = "Obstacle hookshot east 000111 1" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_north_200700_1", description = "Obstacle hookshot north 200700 1" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_west_040444_1", description = "Obstacle hookshot west 040444 1" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_east_010111_1", description = "Obstacle hookshot east 010111 1" }
 map{ id = "components/door/door_bigkey_south_002000_1", description = "Door bigkey south 002000 1" }
 map{ id = "components/sign", description = "Sign" }
 map{ id = "components/door/door_weakwall_east_010000_1", description = "Door weakwall east 010000 1" }
 map{ id = "components/door/door_weakwall_west_040000_1", description = "Door weakwall west 040000 1" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_south_000007_1", description = "Obstacle hookshot south 000007 1" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_northeast_000711_1", description = "Obstacle hookshot northeast 000711 1" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_northwest_000744_1", description = "Obstacle hookshot northwest 000744 1" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_south_002007_1", description = "Obstacle hookshot south 002007 1" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_northeast_210711_1", description = "Obstacle hookshot northeast 210711 1" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_northwest_240744_1", description = "Obstacle hookshot northwest 240744 1" }
 map{ id = "components/filler/filler_200700_2", description = "Filler 200700 2" }
 map{ id = "components/enemy/enemy_boss_000777_1", description = "Enemy boss 000777 1" }
 map{ id = "components/filler/filler_000001_2", description = "Filler 000001 2" }
@@ -73,15 +73,15 @@ map{ id = "components/filler/filler_010111_3", description = "Filler 010111 3" }
 map{ id = "components/filler/filler_002007_3", description = "Filler 002007 3" }
 map{ id = "components/enemy/enemy_boss_000777_2", description = "Enemy boss 000777 2" }
 map{ id = "dev/tileset_test", description = "Tileset test" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_eastwest_000575_1", description = "Obstacle hookshot eastwest 000575 1" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_northsouth_000777_1", description = "Obstacle hookshot northsouth 000777 1" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_eastwest_000777_1", description = "Obstacle hookshot eastwest 000777 1" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_north_000770_1", description = "Obstacle hookshot north 000770 1" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_south_000077_1", description = "Obstacle hookshot south 000077 1" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_north_000777_1", description = "Obstacle hookshot north 000777 1" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_north_050777_1", description = "Obstacle hookshot north 050777 1" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_east_000333_1", description = "Obstacle hookshot east 000333 1" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_east_202333_1", description = "Obstacle hookshot east 202333 1" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_eastwest_050575_1", description = "Obstacle hookshot eastwest 050575 1" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_northsouth_202777_1", description = "Obstacle hookshot northsouth 202777 1" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_eastwest_050777_1", description = "Obstacle hookshot eastwest 050777 1" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_north_200770_1", description = "Obstacle hookshot north 200770 1" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_south_002077_1", description = "Obstacle hookshot south 002077 1" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_north_200777_1", description = "Obstacle hookshot north 200777 1" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_north_250777_1", description = "Obstacle hookshot north 250777 1" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_east_010333_1", description = "Obstacle hookshot east 010333 1" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_east_212333_1", description = "Obstacle hookshot east 212333 1" }
 map{ id = "components/treasure_open/treasure_open_200700_1", description = "Treasure open 200700 1" }
 map{ id = "components/treasure_open/treasure_open_000111_1", description = "Treasure open 000111 1" }
 map{ id = "components/treasure_open/treasure_open_200770_1", description = "Treasure open 200770 1" }
@@ -156,7 +156,7 @@ map{ id = "components/obstacle_lamp/obstacle_lamp_eastwest_000111_1", descriptio
 map{ id = "components/obstacle_lamp/obstacle_lamp_northsouthwest_000444_1", description = "Obstacle lamp northsouthwest 000444 1" }
 map{ id = "components/obstacle_lamp/obstacle_lamp_northsoutheast_000111_1", description = "Obstacle lamp northsoutheast 000111 1" }
 map{ id = "components/obstacle_bow/obstacle_bow_east_000111_1", description = "Obstacle bow east 000111 1" }
-map{ id = "components/obstacle_bow/obstacle_bow_eastwest_000700_1", description = "Obstacle bow eastwest 000700 1" }
+map{ id = "components/obstacle_bow/obstacle_bow_eastwest_000700_1", description = "Obstacle bow northsoutheastwest 000700 1" }
 map{ id = "components/obstacle_bow/obstacle_bow_north_000700_1", description = "Obstacle bow north 000700 1" }
 map{ id = "components/obstacle_bow/obstacle_bow_northeast_000700_1", description = "Obstacle bow northeast 000700 1" }
 map{ id = "components/obstacle_bow/obstacle_bow_northeastwest_000700_1", description = "Obstacle bow northeastwest 000700 1" }
@@ -172,18 +172,18 @@ map{ id = "components/obstacle_bow/obstacle_bow_west_000444_1", description = "O
 map{ id = "components/filler/filler_000001_3", description = "Filler 000001 3" }
 map{ id = "components/filler/filler_000004_3", description = "Filler 000004 3" }
 map{ id = "components/filler/filler_000005_1", description = "Filler 000005 1" }
-map{ id = "components/filler/fix_filler_002057_1", description = "Filler 000057 1" }
+map{ id = "components/filler/filler_002007_4", description = "Filler 002007 1" }
 map{ id = "components/filler/filler_000100_3", description = "Filler 000100 3" }
 map{ id = "components/filler/filler_000400_3", description = "Filler 000400 3" }
 map{ id = "components/filler/filler_000500_1", description = "Filler 000500 1" }
 map{ id = "components/filler/filler_000505_1", description = "Filler 000505 1" }
 map{ id = "components/filler/filler_000505_2", description = "Filler 000505 2" }
 map{ id = "components/filler/filler_000707_1", description = "Filler 000707 1" }
-map{ id = "components/filler/filler_000777_1", description = "X Filler 000777 1" }
+map{ id = "components/filler/filler_000777_1", description = "Filler 000777 1" }
 map{ id = "components/filler/filler_000777_2", description = "Filler 000777 2" }
 map{ id = "components/filler/filler_200700_4", description = "Filler 200700 4" }
 map{ id = "components/filler/filler_000777_3", description = "Filler 000777 3" }
-map{ id = "components/filler/filler_210711_2", description = "X Filler 210711 2" }
+map{ id = "components/filler/filler_210711_2", description = "Filler 210711 2" }
 map{ id = "components/filler/filler_000711_1", description = "Filler 000711 1" }
 map{ id = "components/filler/filler_210711_3", description = "Filler 210711 3" }
 map{ id = "components/filler/filler_240744_1", description = "Filler 240744 1" }
@@ -193,12 +193,12 @@ map{ id = "components/filler/filler_210711_4", description = "Filler 210711 4" }
 map{ id = "components/filler/filler_042447_2", description = "Filler 042447 2" }
 map{ id = "components/filler/filler_240744_2", description = "Filler 240744 2" }
 map{ id = "components/filler/filler_012117_2", description = "Filler 012117 2" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_southwest_000711_1", description = "Obstacle hookshot southwest 000711 1" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_southeast_000744_1", description = "Obstacle hookshot southeast 000744 1" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_northsoutheast_000666", description = "Obstacle hookshot northsoutheast 000666" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshout_northsouthwest_000333_1", description = "Obstacle hookshot northsouthwest 000333 1rr" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_northeastwest_000277", description = "Obstacle hookshot northeastwest 000277" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_southeastwest_000772", description = "Obstacle hookshot southeastwest 000772" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_southwest_042711_1", description = "Obstacle hookshot southwest 042711 1" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_southeast_012744_1", description = "Obstacle hookshot southeast 012744 1" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_northsoutheast_212666_1", description = "Obstacle hookshot northsoutheast 212666 1" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_northsouthwest_242333_1", description = "Obstacle hookshot northsouthwest 242333 1" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_northeastwest_250277", description = "Obstacle hookshot northeastwest 250277" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_southeastwest_052772_1", description = "Obstacle hookshot southeastwest 052772 1" }
 map{ id = "tompa/filler_y", description = "Filler Y" }
 map{ id = "tompa/filler_y2", description = "Filler Y2" }
 map{ id = "tompa/filler_y3", description = "Filler Y3" }
@@ -207,29 +207,29 @@ map{ id = "tompa/filler_y4_long", description = "Filler Y4 long" }
 map{ id = "tompa/room_2", description = "Room 2" }
 map{ id = "tompa/filler_y5", description = "Filler Y5" }
 map{ id = "tompa/obstacle_hookshot_northwest_000777_1", description = "Obstacle hookshot northwest 000777 1" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_northwest_000777_1", description = "Obstacle hookshot northwest 000777 1" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_northeast_000777_1", description = "Obstacle hookshot northeast 000777 1" }
-map{ id = "components/filler/filler_000001_4", description = "Filler 000 001 4" }
-map{ id = "components/filler/filler_000100_4", description = "Filler 000 100 4" }
-map{ id = "components/filler/filler_000400_4", description = "Filler 000 400 4" }
-map{ id = "components/filler/filler_000004_4", description = "Filler 000 004 4" }
-map{ id = "components/filler/filler_000777_4", description = "Filler 000 777 4" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_northwest_240777_1", description = "Obstacle hookshot northwest 240777 1" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_northeast_210777_1", description = "Obstacle hookshot northeast 210777 1" }
+map{ id = "components/filler/filler_000001_4", description = "Filler 000001 4" }
+map{ id = "components/filler/filler_000100_4", description = "Filler 000100 4" }
+map{ id = "components/filler/filler_000400_4", description = "Filler 000400 4" }
+map{ id = "components/filler/filler_000004_4", description = "Filler 000004 4" }
+map{ id = "components/filler/filler_000777_4", description = "Filler 000777 4" }
 map{ id = "rooms/intro_1", description = "Intro 1" }
 map{ id = "rooms/flippers_example", description = "Flippers example" }
-map{ id = "components/obstacle_flippers/obstacle_flippers_east_000331_1", description = "Obstacle flippers east 000331 1" }
-map{ id = "components/obstacle_flippers/obstacle_flippers_north_000771_1", description = "Obstacle flippers north 000771 1" }
-map{ id = "components/obstacle_flippers/Obstacle_flippers_south_000477_1", description = "Obstacle flippers south 000477 1" }
-map{ id = "components/obstacle_flippers/obstacle_flippers_west_000664_1", description = "Obstacle flippers west 000664 1" }
-map{ id = "components/obstacle_flippers/obstacle_flippers_northsouth_000777_1", description = "Obstacle flippers northsouth 000777 1" }
-map{ id = "components/obstacle_flippers/obstacle_flippers_eastwest_000777_1", description = "Obstacle flippers eastwest 000777 1" }
-map{ id = "components/obstacle_flippers/obstacle_flippers_northeast_000777_1", description = "Obstacle flippers northeast 000777 1" }
-map{ id = "components/obstacle_flippers/obstacle_flippers_northwest_000777_1", description = "Obstacle flippers northwest 000777 1" }
-map{ id = "components/obstacle_flippers/obstacle_flippers_southeast_000777_1", description = "Obstacle flippers southeast 000777 1" }
-map{ id = "components/obstacle_flippers/obstacle_flippers_southwest_000777_1", description = "Obstacle flippers southwest 000777 1" }
-map{ id = "components/obstacle_flippers/obstacle_flippers_northsouthwest_000331_1", description = "Obstacle flippers northsouthwest 000331 1" }
-map{ id = "components/obstacle_flippers/obstacle_flippers_northsoutheast_000664_1", description = "Obstacle flippers northsoutheast 000664 1" }
-map{ id = "components/obstacle_flippers/obstacle_flippers_northeastwest_000067_1", description = "Obstacle flipperst northeastwest 000067 1" }
-map{ id = "components/obstacle_flippers/obstacle_flippers_southeastwest_000771_1", description = "Obstacle flippers southeastwest 000771 1" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_east_010331_1", description = "Obstacle flippers east 010331 1" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_north_200771_1", description = "Obstacle flippers north 200771 1" }
+map{ id = "components/obstacle_flippers/Obstacle_flippers_south_002477_1", description = "Obstacle flippers south 002477 1" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_west_040664_1", description = "Obstacle flippers west 040664 1" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_northsouth_202777_1", description = "Obstacle flippers northsouth 202777 1" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_eastwest_050777_1", description = "Obstacle flippers eastwest 050777 1" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_northeast_210777_1", description = "Obstacle flippers northeast 210777 1" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_northwest_240777_1", description = "Obstacle flippers northwest 240777 1" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_southeast_012777_1", description = "Obstacle flippers southeast 012777 1" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_southwest_012777_1", description = "Obstacle flippers southwest 012777 1" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_northsouthwest_242331_1", description = "Obstacle flippers northsouthwest 242331 1" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_northsoutheast_212664_1", description = "Obstacle flippers northsoutheast 212664 1" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_northeastwest_250067_1", description = "Obstacle flipperst northeastwest 250067 1" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_southeastwest_000771_1", description = "Obstacle flippers southeastwest 052771 1" }
 map{ id = "tompa/filler_y6", description = "Filler Y6" }
 map{ id = "tompa/filler_y7", description = "Filler Y7" }
 map{ id = "tompa/obstacle_flippers_north_050777_1", description = "Obstacle flippers north 050777 1" }
@@ -238,6 +238,15 @@ map{ id = "tompa/Obstacle_flippers_east_202777_1", description = "Obstacle flipp
 map{ id = "tompa/obstacle_flippers_west_202777_1", description = "Obstacle flippers west 202777 1" }
 map{ id = "tompa/obstacle_south_ushape", description = "Obstacle south ushape" }
 map{ id = "rooms/game_over", description = "Game over" }
+map{ id = "components/filler/filler_240744_3", description = "Filler 240744 3" }
+map{ id = "components/filler/filler_240744_4", description = "Filler 240744 4" }
+map{ id = "components/obstacle_flippers/Obstacle_flippers_east_212777_1", description = "Obstacle flippers east 212777 1" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_south_002067_1", description = "Obstacle flippers south 002067 1" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_west_242777_1", description = "Obstacle flippers west 242777 1" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_north_200760_1", description = "Obstacle flippers north 200760 1" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_north_250777_1", description = "Obstacle flippers north 250777 1" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_south_052777_1", description = "Obstacle flippers south 052777 1" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_southeastwest_052760_1", description = "Obstacle flippers southeastwest 052760 1" }
 
 tileset{ id = "light_world", description = "Light World" }
 tileset{ id = "dungeon_brick_gray_1", description = "Dungeon brick gray 1" }
