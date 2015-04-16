@@ -335,13 +335,15 @@ PrintVisitor.__index = PrintVisitor
 function PrintVisitor:new(o)
     o = o or {}
     o.prefix = o.prefix or ''
+    o.zentropy = require 'lib/zentropy'
+
     setmetatable(o, PrintVisitor)
     return o
 end
 
 function PrintVisitor:visit_room(room)
     local child_prefix = self.prefix .. '  '
-    print(self.prefix .. tostring(room))
+    self.zentropy.debug(self.prefix .. tostring(room))
     room:each_child(function (key, child)
         self.prefix = child_prefix
         child:accept(self)
@@ -349,11 +351,11 @@ function PrintVisitor:visit_room(room)
 end
 
 function PrintVisitor:visit_treasure(treasure)
-    print(self.prefix .. tostring(treasure))
+    self.zentropy.debug(self.prefix .. tostring(treasure))
 end
 
 function PrintVisitor:visit_enemy(enemy)
-    print(self.prefix .. tostring(enemy))
+    self.zentropy.debug(self.prefix .. tostring(enemy))
 end
 
 
