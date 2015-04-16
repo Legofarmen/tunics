@@ -27,25 +27,43 @@ tile{
 
 tile{
   layer = 1,
-  x = 216,
-  y = 32,
-  width = 32,
-  height = 8,
-  pattern = "waterfall.1.middle",
+  x = 232,
+  y = 104,
+  width = 24,
+  height = 24,
+  pattern = "wall_low.corner.4",
+}
+
+tile{
+  layer = 1,
+  x = 208,
+  y = 56,
+  width = 24,
+  height = 32,
+  pattern = "wall_low.3",
 }
 
 tile{
   layer = 1,
   x = 216,
+  y = 24,
+  width = 32,
+  height = 16,
+  pattern = "water_wall.drain_gate.1",
+}
+
+tile{
+  layer = 1,
+  x = 72,
   y = 8,
   width = 32,
   height = 24,
-  pattern = "wall_statue.1.1",
+  pattern = "wall_statue.6.1",
 }
 
 tile{
   layer = 1,
-  x = 224,
+  x = 80,
   y = 24,
   width = 16,
   height = 8,
@@ -55,159 +73,15 @@ tile{
 tile{
   layer = 1,
   x = 72,
-  y = 208,
+  y = 32,
   width = 32,
-  height = 16,
-  pattern = "water_wall.drain_gate.2",
-}
-
-tile{
-  layer = 1,
-  x = 208,
-  y = 56,
-  width = 24,
-  height = 48,
-  pattern = "wall_low.3",
-}
-
-tile{
-  layer = 1,
-  x = 88,
-  y = 96,
-  width = 128,
-  height = 24,
-  pattern = "wall_low.1",
-}
-
-tile{
-  layer = 1,
-  x = 208,
-  y = 96,
-  width = 24,
-  height = 24,
-  pattern = "wall_low.corner_reverse.1",
-}
-
-tile{
-  layer = 1,
-  x = 64,
-  y = 96,
-  width = 24,
-  height = 24,
-  pattern = "wall_low.corner.1",
-}
-
-tile{
-  layer = 1,
-  x = 64,
-  y = 184,
-  width = 24,
-  height = 24,
-  pattern = "wall_low.corner.3",
-}
-
-tile{
-  layer = 1,
-  x = 88,
-  y = 184,
-  width = 24,
-  height = 24,
-  pattern = "wall_low.corner.4",
-}
-
-tile{
-  layer = 1,
-  x = 64,
-  y = 120,
-  width = 24,
-  height = 64,
-  pattern = "wall_low.3",
-}
-
-tile{
-  layer = 1,
-  x = 88,
-  y = 136,
-  width = 24,
-  height = 48,
-  pattern = "wall_low.4",
-}
-
-tile{
-  layer = 1,
-  x = 104,
-  y = 120,
-  width = 128,
-  height = 24,
-  pattern = "wall_low.2",
-}
-
-tile{
-  layer = 1,
-  x = 88,
-  y = 120,
-  width = 24,
-  height = 24,
-  pattern = "wall_low.corner_reverse.4",
-}
-
-tile{
-  layer = 1,
-  x = 232,
-  y = 120,
-  width = 24,
-  height = 24,
-  pattern = "wall_low.corner.4",
-}
-
-tile{
-  layer = 1,
-  x = 232,
-  y = 56,
-  width = 24,
-  height = 64,
-  pattern = "wall_low.4",
-}
-
-tile{
-  layer = 1,
-  x = 216,
-  y = 40,
-  width = 32,
-  height = 64,
-  pattern = "water.transparent",
+  height = 8,
+  pattern = "waterfall.1.middle",
 }
 
 tile{
   layer = 1,
   x = 72,
-  y = 136,
-  width = 32,
-  height = 64,
-  pattern = "water.transparent",
-}
-
-tile{
-  layer = 1,
-  x = 72,
-  y = 104,
-  width = 176,
-  height = 32,
-  pattern = "water.transparent",
-}
-
-tile{
-  layer = 1,
-  x = 96,
-  y = 160,
-  width = 16,
-  height = 32,
-  pattern = "water_pool_ladder.4",
-}
-
-tile{
-  layer = 1,
-  x = 216,
   y = 40,
   width = 32,
   height = 8,
@@ -216,17 +90,231 @@ tile{
 
 tile{
   layer = 1,
+  x = 104,
+  y = 80,
+  width = 112,
+  height = 24,
+  pattern = "wall_low.1",
+}
+
+tile{
+  layer = 1,
+  x = 88,
+  y = 32,
+  width = 24,
+  height = 24,
+  pattern = "wall_low.corner.2",
+}
+
+tile{
+  layer = 1,
+  x = 64,
+  y = 32,
+  width = 24,
+  height = 24,
+  pattern = "wall_low.corner.1",
+}
+
+tile{
+  layer = 1,
+  x = 64,
+  y = 104,
+  width = 24,
+  height = 24,
+  pattern = "wall_low.corner.3",
+}
+
+tile{
+  layer = 1,
   x = 208,
-  y = 48,
-  width = 16,
+  y = 80,
+  width = 24,
+  height = 24,
+  pattern = "wall_low.corner_reverse.1",
+}
+
+tile{
+  layer = 1,
+  x = 88,
+  y = 80,
+  width = 24,
+  height = 24,
+  pattern = "wall_low.corner_reverse.2",
+}
+
+tile{
+  layer = 1,
+  x = 88,
+  y = 56,
+  width = 24,
   height = 32,
-  pattern = "water_pool_ladder.3",
+  pattern = "wall_low.4",
+}
+
+tile{
+  layer = 1,
+  x = 64,
+  y = 56,
+  width = 24,
+  height = 48,
+  pattern = "wall_low.3",
+}
+
+tile{
+  layer = 1,
+  x = 72,
+  y = 40,
+  width = 32,
+  height = 48,
+  pattern = "water.transparent",
+}
+
+tile{
+  layer = 1,
+  x = 88,
+  y = 104,
+  width = 144,
+  height = 24,
+  pattern = "wall_low.2",
+}
+
+tile{
+  layer = 1,
+  x = 232,
+  y = 56,
+  width = 24,
+  height = 48,
+  pattern = "wall_low.4",
+}
+
+tile{
+  layer = 1,
+  x = 72,
+  y = 88,
+  width = 176,
+  height = 32,
+  pattern = "water.transparent",
+}
+
+tile{
+  layer = 1,
+  x = 216,
+  y = 40,
+  width = 32,
+  height = 48,
+  pattern = "water.transparent",
+}
+
+tile{
+  layer = 1,
+  x = 72,
+  y = 32,
+  width = 32,
+  height = 8,
+  pattern = "waterfall.1.middle",
+}
+
+tile{
+  layer = 1,
+  x = 72,
+  y = 40,
+  width = 32,
+  height = 8,
+  pattern = "waterfall.1.bottom",
+}
+
+tile{
+  layer = 1,
+  x = 104,
+  y = 112,
+  width = 32,
+  height = 16,
+  pattern = "water_pool_ladder.2",
+}
+
+tile{
+  layer = 1,
+  x = 176,
+  y = 80,
+  width = 32,
+  height = 16,
+  pattern = "water_pool_ladder.1",
+}
+
+jumper{
+  layer = 1,
+  x = 136,
+  y = 120,
+  width = 112,
+  height = 8,
+  direction = 2,
+  jump_length = 40,
+}
+
+jumper{
+  layer = 1,
+  x = 72,
+  y = 120,
+  width = 32,
+  height = 8,
+  direction = 2,
+  jump_length = 40,
+}
+
+jumper{
+  layer = 1,
+  x = 112,
+  y = 80,
+  width = 64,
+  height = 8,
+  direction = 6,
+  jump_length = 40,
+}
+
+jumper{
+  layer = 1,
+  x = 248,
+  y = 40,
+  width = 8,
+  height = 80,
+  direction = 4,
+  jump_length = 40,
+}
+
+jumper{
+  layer = 1,
+  x = 104,
+  y = 40,
+  width = 8,
+  height = 40,
+  direction = 4,
+  jump_length = 40,
+}
+
+jumper{
+  layer = 1,
+  x = 208,
+  y = 40,
+  width = 8,
+  height = 40,
+  direction = 0,
+  jump_length = 40,
+}
+
+jumper{
+  layer = 1,
+  x = 64,
+  y = 40,
+  width = 8,
+  height = 80,
+  direction = 0,
+  jump_length = 40,
 }
 
 dynamic_tile{
   layer = 1,
-  x = 56,
-  y = 56,
+  x = 120,
+  y = 40,
   width = 16,
   height = 16,
   name = "treasure_obstacle_chest",
@@ -247,92 +335,12 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 152,
-  y = 56,
+  x = 184,
+  y = 168,
   width = 16,
   height = 16,
   name = "enemy",
   pattern = "floor_small.2",
   enabled_at_start = false,
-}
-
-jumper{
-  layer = 1,
-  x = 72,
-  y = 96,
-  width = 136,
-  height = 8,
-  direction = 6,
-  jump_length = 40,
-}
-
-jumper{
-  layer = 1,
-  x = 112,
-  y = 136,
-  width = 136,
-  height = 8,
-  direction = 2,
-  jump_length = 40,
-}
-
-jumper{
-  layer = 1,
-  x = 248,
-  y = 40,
-  width = 8,
-  height = 96,
-  direction = 4,
-  jump_length = 40,
-}
-
-jumper{
-  layer = 1,
-  x = 104,
-  y = 144,
-  width = 8,
-  height = 16,
-  direction = 4,
-  jump_length = 40,
-}
-
-jumper{
-  layer = 1,
-  x = 64,
-  y = 104,
-  width = 8,
-  height = 96,
-  direction = 0,
-  jump_length = 40,
-}
-
-jumper{
-  layer = 1,
-  x = 208,
-  y = 40,
-  width = 8,
-  height = 8,
-  direction = 0,
-  jump_length = 40,
-}
-
-jumper{
-  layer = 1,
-  x = 104,
-  y = 192,
-  width = 8,
-  height = 8,
-  direction = 4,
-  jump_length = 40,
-}
-
-jumper{
-  layer = 1,
-  x = 208,
-  y = 80,
-  width = 8,
-  height = 16,
-  direction = 0,
-  jump_length = 40,
 }
 
