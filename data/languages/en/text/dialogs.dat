@@ -86,7 +86,7 @@ dialog{
   text = [[
 There is a way out, 
 you'll just have to 
-fight your way through 
+fight your way through.
 the dungeons.
   
 Good luck.
@@ -121,9 +121,6 @@ dialog{
   text = [[
 It's dangerous to 
 go alone. Take this.
-
-You got the sword.
-Looks sharp.
 ]]
 }
 

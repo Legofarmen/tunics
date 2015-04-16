@@ -11,10 +11,6 @@ function legofarmen_logo:on_started()
 	sol.timer.start(self, 300, function()
 		self:show_logo()
 		sol.audio.play_music("title_screen")
-		sol.timer.start(20000, function()
-			sol.audio.play_music("great_fairy")
-		end)
-		
 	end)
 	
 	-- use these 0.3 seconds to preload all sound effects
