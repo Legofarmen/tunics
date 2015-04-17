@@ -50,6 +50,9 @@ end
 setmetatable(zentropy.settings, settings_meta)
 
 function zentropy.init()
+
+    io.open(zentropy.settings.debug_filename, "w"):close()
+
     entries = zentropy.db.Project:parse()
     zentropy.components = zentropy.db.Components:new():parse(entries.map)
     zentropy.tilesets = zentropy.db.Tilesets:new():parse(entries.tileset)
@@ -62,8 +65,6 @@ function zentropy.init()
         zentropy.musics[kind] = zentropy.musics[kind] or {}
         table.insert(zentropy.musics[kind], v)
     end
-
-    io.open(zentropy.settings.debug_filename, "w"):close()
 end
 
 function zentropy.debug(...)
