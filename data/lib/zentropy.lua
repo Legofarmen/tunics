@@ -270,23 +270,34 @@ function zentropy.db.Components:get_obstacle(item, dir, mask, rng)
     if not self.obstacles[item] then
         return
     end
-
+    local dir_bits = 0
     local door_mask = 0
-    if string.gmatch(dir, 'north')() then door_mask = bit32.bor(door_mask, 8) end
-    if string.gmatch(dir, 'south')() then door_mask = bit32.bor(door_mask, 4) end
-    if string.gmatch(dir, 'east')() then door_mask = bit32.bor(door_mask, 2) end
-    if string.gmatch(dir, 'west')() then door_mask = bit32.bor(door_mask, 1) end
+    if string.gmatch(dir, 'north')() then
+        dir_bits = bit32.bor(dir_bits, 8)
+        door_mask = bit32.bor(door_mask, util.oct('200000'));
+    end
+    if string.gmatch(dir, 'south')() then
+        dir_bits = bit32.bor(dir_bits, 4)
+        door_mask = bit32.bor(door_mask, util.oct('040000'));
+    end
+    if string.gmatch(dir, 'east')() then
+        dir_bits = bit32.bor(dir_bits, 2)
+        door_mask = bit32.bor(door_mask, util.oct('010000'));
+    end
+    if string.gmatch(dir, 'west')() then
+        dir_bits = bit32.bor(dir_bits, 1)
+        door_mask = bit32.bor(door_mask, util.oct('002000'));
+    end
     local doors = {}
     for i = 0, 15 do
         local d = ''
-        local new_mask = bit32.bor(door_mask, i)
-        if bit32.band(new_mask, 8) ~= 0 then d = d .. 'north' end
-        if bit32.band(new_mask, 4) ~= 0 then d = d .. 'south' end
-        if bit32.band(new_mask, 2) ~= 0 then d = d .. 'east' end
-        if bit32.band(new_mask, 1) ~= 0 then d = d .. 'west' end
+        local new_bits = bit32.bor(dir_bits, i)
+        if bit32.band(new_bits, 8) ~= 0 then d = d .. 'north' end
+        if bit32.band(new_bits, 4) ~= 0 then d = d .. 'south' end
+        if bit32.band(new_bits, 2) ~= 0 then d = d .. 'east' end
+        if bit32.band(new_bits, 1) ~= 0 then d = d .. 'west' end
         doors[d] = true
     end
-
     local entries = {}
     for d in util.pairs_by_keys(doors) do
         for _, entry in util.pairs_by_keys(self.obstacles[item][d] or {}) do
@@ -299,7 +310,7 @@ function zentropy.db.Components:get_obstacle(item, dir, mask, rng)
         return
     end
     local entry = entries[rng:random(#entries)]
-    return entry.id, entry.mask
+    return entry.id, bit32.bor(entry.mask, door_mask)
 end
 
 function zentropy.db.Components:get_filler(mask, rng)
