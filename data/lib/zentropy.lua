@@ -30,6 +30,7 @@ zentropy = zentropy or {
         filename = 'settings.dat',
         defaults = {
             debug_filename = 'wdebug.txt',
+            quest_sword_ability = 1,
             quest_seed = os.time(),
             quest_tier = 1,
             tier_keys = 3,
@@ -610,7 +611,7 @@ function zentropy.game.setup_quest_invariants()
 end
 
 function zentropy.game.setup_quest_initial()
-	zentropy.game.game:set_ability('sword', 1)
+    zentropy.game.game:set_ability('sword', zentropy.settings.quest_sword_ability)
     zentropy.game.game:set_max_life(12)
     zentropy.game.game:set_life(12)
 end
