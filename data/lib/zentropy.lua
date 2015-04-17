@@ -359,7 +359,9 @@ end
 function zentropy.db.Components:get_puzzle(mask, rng)
     local entries = {}
     for _, entry in util.pairs_by_keys(self.puzzles) do
-        table.insert(entries, entry)
+        if bit32.band(mask, entry.mask) == 0 then
+            table.insert(entries, entry)
+        end
     end
     if #entries == 0 then
         return
