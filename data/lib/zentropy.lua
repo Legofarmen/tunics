@@ -595,7 +595,9 @@ function zentropy.game.catch_up_on_items(tier)
         if item_name then
             local item = zentropy.game.game:get_item(item_name)
             item:set_variant(1)
-            item:on_obtained()
+            if item.on_obtained then
+                item:on_obtained()
+            end
         end
     end
 end
