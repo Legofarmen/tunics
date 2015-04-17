@@ -79,21 +79,19 @@ end
 function FillerObstacleVisitor:visit_treasure(treasure) end
 function FillerObstacleVisitor:visit_enemy(enemy) end
 function FillerObstacleVisitor:visit_room(room)
-    local is_reachable = true
-    if room.open == 'entrance' then
-        is_reachable = false
-    end
+    local need = {
+        reach = self.obstacles[self.rng:refine('' .. self.counter):random(2 * #self.obstacles)],
+    }
+    local old_metric = room:get_children_metric()
     room:each_child(function (key, child)
-        is_reachable = is_reachable and child:is_open() and child:is_reachable()
-        child:accept(self)
+        if child:can_need(need) then
+            local new_metric = old_metric - child:get_node_metric() + child:get_node_metric_with(need)
+            if new_metric:is_valid() then
+                child:with_needs(need)
+                old_metric = new_metric
+            end
+        end
     end)
-    if is_reachable then
-        self.counter = self.counter + 1
-        local obstacle = self.obstacles[self.rng:refine('' .. self.counter):random(2 * #self.obstacles)]
-        room:each_child(function (key, child)
-            child.reach = obstacle
-        end)
-    end
 end
 
 local Quest = {}

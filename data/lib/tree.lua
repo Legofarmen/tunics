@@ -56,17 +56,26 @@ function Node:prop_string(keys)
     return s
 end
 
-function Node:with_needs(needs)
+function Node:can_need(needs)
     for kind, need in pairs(needs) do
         if self[kind] and not (self[kind] == 'nothing' and need == 'nothing') then
-            needs.children = {self}
-            return Room:new(needs)
+            return false
         end
     end
-    for kind, need in pairs(needs) do
-        self[kind] = need
+    return true
+end
+
+function Node:with_needs(needs)
+    assert(needs)
+    if self:can_need(needs) then
+        for kind, need in pairs(needs) do
+            self[kind] = need
+        end
+        return self
+    else
+        needs.children = {self}
+        return Room:new(needs)
     end
-    return self
 end
 
 function Node:is_visible()
@@ -224,6 +233,10 @@ function Room:get_node_metric()
     return metric
 end
 
+function Node:get_node_metric_with(needs)
+    return self:new():with_needs(needs):get_node_metric()
+end
+
 function Treasure:get_node_metric()
     local metric = tree.Metric:new()
     metric.treasures = 1
@@ -256,6 +269,8 @@ function Enemy:get_children_metric()
     local metric = tree.Metric:new()
     return metric
 end
+
+
 
 function tree.Metric:get_obstacles()
     local obstacles = {}
