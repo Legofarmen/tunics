@@ -81,7 +81,7 @@ for _, dir in ipairs{'north','south','east','west'} do
     if data.doors[dir] then
         if not data.doors[dir].reach then
             if not room:door({open=data.doors[dir].open, name=data.doors[dir].name}, dir) then
-                for _, msg in ipairs(messages) do print(msg) end
+                for _, msg in ipairs(messages) do zentropy.debug(msg) end
                 error('')
             end
         end
@@ -152,21 +152,21 @@ if obstacle_dir then
     obstacle_data.rng = rng:refine('obstacle')
 
     if not room:obstacle(obstacle_data, obstacle_dir, obstacle_item) then
-        for _, msg in ipairs(messages) do print(msg) end
+        for _, msg in ipairs(messages) do zentropy.debug(msg) end
         error('')
     end
 end
 
 for _, treasure_data in ipairs(normal_treasures) do
     if not room:treasure(treasure_data) then
-        for _, msg in ipairs(messages) do print(msg) end
+        for _, msg in ipairs(messages) do zentropy.debug(msg) end
         error('')
     end
 end
 
 for _, enemy_data in ipairs(data.enemies) do
     if not room:enemy(enemy_data) then
-        for _, msg in ipairs(messages) do print(msg) end
+        for _, msg in ipairs(messages) do zentropy.debug(msg) end
         error('')
     end
 end
@@ -174,7 +174,7 @@ end
 if #messages > 0 then
     --[[
      if not room:sign({menu=DialogBox:new{text=messages, game=map:get_game()}}) then
-        for _, msg in ipairs(messages) do print(msg) end
+        for _, msg in ipairs(messages) do zentropy.debug(msg) end
         error('')
     end
     ]]
