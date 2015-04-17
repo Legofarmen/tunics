@@ -178,7 +178,7 @@ map{ id = "components/filler/filler_000400_3", description = "Filler 000400 3" }
 map{ id = "components/filler/filler_000500_1", description = "Filler 000500 1" }
 map{ id = "components/filler/filler_000505_1", description = "Filler 000505 1" }
 map{ id = "components/filler/filler_000505_2", description = "Filler 000505 2" }
-map{ id = "components/filler/filler_000707_1", description = "Filler 000707 1" }
+map{ id = "components/filler/filler_000707_5", description = "Filler 000777 5" }
 map{ id = "components/filler/filler_000777_1", description = "X Filler 000777 1" }
 map{ id = "components/filler/filler_000777_2", description = "Filler 000777 2" }
 map{ id = "components/filler/filler_200700_4", description = "Filler 200700 4" }
@@ -213,7 +213,7 @@ map{ id = "components/filler/filler_000001_4", description = "Filler 000 001 4" 
 map{ id = "components/filler/filler_000100_4", description = "Filler 000 100 4" }
 map{ id = "components/filler/filler_000400_4", description = "Filler 000 400 4" }
 map{ id = "components/filler/filler_000004_4", description = "Filler 000 004 4" }
-map{ id = "components/filler/filler_000777_4", description = "Filler 000 777 4" }
+map{ id = "components/filler/filler_000777_4", description = "Filler 000777 4" }
 map{ id = "rooms/intro_1", description = "Intro 1" }
 map{ id = "rooms/flippers_example", description = "Flippers example" }
 map{ id = "components/obstacle_flippers/obstacle_flippers_east_000331_1", description = "Obstacle flippers east 000331 1" }
@@ -238,6 +238,18 @@ map{ id = "tompa/Obstacle_flippers_east_202777_1", description = "Obstacle flipp
 map{ id = "tompa/obstacle_flippers_west_202777_1", description = "Obstacle flippers west 202777 1" }
 map{ id = "tompa/obstacle_south_ushape", description = "Obstacle south ushape" }
 map{ id = "rooms/game_over", description = "Game over" }
+map{ id = "components/filler/filler_240744_3", description = "Filler 240744 3" }
+map{ id = "components/filler/filler_240744_4", description = "Filler 240744 4" }
+map{ id = "tompa/filler_y8", description = "Filler Y8" }
+map{ id = "components/filler/filler_000400_5", description = "Filler 000400 5" }
+map{ id = "components/filler/filler_000100_5", description = "Filler 000100 5" }
+map{ id = "components/filler/filler_000004", description = "Filler 000004 5" }
+map{ id = "components/filler/filler_000001_5", description = "Filler 000001 5" }
+map{ id = "tompa/filler_y9", description = "Filler Y9" }
+map{ id = "tompa/filler_y10", description = "Filler Y10" }
+map{ id = "tompa/filler_y11", description = "Filler Y11" }
+map{ id = "components/obstacle_glove/obstacle_glove_north_000700_1", description = "Obstacle glove north 000700 1" }
+map{ id = "components/obstacle_glove/obstacle_glove_north_000700_2", description = "Obstacle glove north 000700 2" }
 
 tileset{ id = "light_world", description = "Light World" }
 tileset{ id = "dungeon_brick_gray_1", description = "Dungeon brick gray 1" }
