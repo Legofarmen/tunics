@@ -50,8 +50,6 @@ end
 setmetatable(zentropy.settings, settings_meta)
 
 function zentropy.init()
-    io.open(zentropy.settings.debug_filename, "w"):close()
-
     entries = zentropy.db.Project:parse()
     zentropy.components = zentropy.db.Components:new():parse(entries.map)
     zentropy.tilesets = zentropy.db.Tilesets:new():parse(entries.tileset)
@@ -65,6 +63,7 @@ function zentropy.init()
         table.insert(zentropy.musics[kind], v)
     end
 
+    io.open(zentropy.settings.debug_filename, "w"):close()
 end
 
 function zentropy.debug(...)
@@ -267,32 +266,17 @@ function zentropy.db.Components:get_door(open, dir, mask, rng)
 end
 
 function zentropy.db.Components:get_obstacle(item, dir, mask, rng)
+    open = open or 'open'
     if not self.obstacles[item] then
         return
     end
-
-    local door_mask = 0
-    if string.gmatch(dir, 'north') then door_mask = bit32.bor(door_mask, 8) end
-    if string.gmatch(dir, 'south') then door_mask = bit32.bor(door_mask, 4) end
-    if string.gmatch(dir, 'east') then door_mask = bit32.bor(door_mask, 2) end
-    if string.gmatch(dir, 'west') then door_mask = bit32.bor(door_mask, 1) end
-    local doors = {}
-    for i = 0, 15 do
-        local new_mask = bit32.bor(door_mask, i)
-        local d = ''
-        if bit32.band(new_mask, 8) then d = d .. 'north' end
-        if bit32.band(new_mask, 4) then d = d .. 'south' end
-        if bit32.band(new_mask, 2) then d = d .. 'east' end
-        if bit32.band(new_mask, 1) then d = d .. 'west' end
-        doors[d] = true
+    if not self.obstacles[item][dir] then
+        return
     end
-
     local entries = {}
-    for d in util.pairs_by_keys(doors) do
-        for _, entry in util.pairs_by_keys(self.obstacles[item][d] or {}) do
-            if bit32.band(mask, entry.mask) == 0 then
-                table.insert(entries, entry)
-            end
+    for _, entry in util.pairs_by_keys(self.obstacles[item][dir]) do
+        if bit32.band(mask, entry.mask) == 0 then
+            table.insert(entries, entry)
         end
     end
     if #entries == 0 then
