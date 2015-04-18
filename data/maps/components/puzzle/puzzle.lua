@@ -87,15 +87,17 @@ function puzzle.init(map, data)
         sensor_west.on_activated = sensor_activated
 
         function switch:on_activated()
-            if data.treasure1.item_name then
+            local sound = nil
+            if data.treasure1 then
                 hidden_chest:set_enabled(true)
-                sol.audio.play_sound('chest_appears')
+                sound = 'chest_appears'
             end
-            for dir, _ in pairs(data.doors) do
-                map:open_doors('door_' .. dir)
-                if not next(data.doors, dir) then
-                    sol.audio.play_sound('secret')
-                end
+            map:set_doors_open('door_', true)
+            if next(data.doors) then
+                sound = 'secret'
+            end
+            if sound then
+                sol.audio.play_sound(sound)
             end
         end
     else
