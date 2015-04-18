@@ -506,8 +506,6 @@ function zentropy.Room:treasure(treasure_data)
             doors = {},
             rng = self.puzzle_rng,
         }
-        util.table_lines('treasure_data', treasure_data)
-        util.table_lines('component_name', component_name)
     else
         component_name, component_mask = zentropy.components:get_treasure(treasure_data.open, self.mask, rng)
         component_type = 'treasure'
