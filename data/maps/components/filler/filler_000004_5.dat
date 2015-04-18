@@ -216,7 +216,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 68,
+  x = 64,
   y = 160,
   width = 16,
   height = 16,
