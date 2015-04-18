@@ -113,7 +113,7 @@ map{ id = "components/obstacle_weakwall/obstacle_weakwall_southwest_000004_1", d
 map{ id = "components/obstacle_weakwall/obstacle_weakwall_southeastwest_000004_1", description = "Obstacle weakwall southeastwest 000004 1" }
 map{ id = "components/obstacle_weakwall/obstacle_weakwall_northsoutheast_000001_1", description = "Obstacle weakwall northsoutheast 000001 1" }
 map{ id = "components/obstacle_weakwall/obstacle_weakwall_northsouthwest_000004_1", description = "Obstacle weakwall northsouthwest 000004 1" }
-map{ id = "components/obstacle_weakwall/obstacle_weakwall_eastwest_000400_1", description = "Obstacle weakwall eastwest 000400 1" }
+map{ id = "components/obstacle_weakwall/obstacle_weakwall_eastwest_050400_1", description = "Obstacle weakwall eastwest 050400 1" }
 --map{ id = "components/obstacle_weakwall/obstacle_weakwall_northsouth_000400_1", description = "Obstacle weakwall northsouth 000400 1" }
 map{ id = "components/obstacle_weakwall/obstacle_weakwall_east_000100_1", description = "Obstacle weakwall east 000100 1" }
 map{ id = "components/obstacle_weakwall/obstacle_weakwall_west_000004_1", description = "Obstacle weakwall west 000004 1" }
