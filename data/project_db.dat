@@ -255,7 +255,6 @@ map{ id = "tompa/filler_y10", description = "Filler Y10" }
 map{ id = "tompa/filler_y11", description = "Filler Y11" }
 map{ id = "components/obstacle_glove/obstacle_glove_north_000700_1", description = "Obstacle glove north 000700 1" }
 map{ id = "components/obstacle_glove/obstacle_glove_north_000700_2", description = "Obstacle glove north 000700 2" }
-map{ id = "components/filler/filler_000001_5", description = "Filler 000001 5" }
 map{ id = "components/filler/filler_000707_2", description = "Filler 000707 2" }
 
 tileset{ id = "light_world", description = "Light World" }
