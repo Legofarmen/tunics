@@ -201,7 +201,7 @@ destructible{
 dynamic_tile{
   layer = 1,
   x = 120,
-  y = 64,
+  y = 40,
   width = 16,
   height = 16,
   name = "enemy",
@@ -215,7 +215,18 @@ dynamic_tile{
   y = 64,
   width = 16,
   height = 16,
-  name = "chest",
+  name = "treasure_obstacle_chest",
+  pattern = "carpet.1",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 120,
+  y = 64,
+  width = 16,
+  height = 16,
+  name = "treasure_open_chest",
   pattern = "carpet.1",
   enabled_at_start = true,
 }
