@@ -80,6 +80,7 @@ function FillerObstacleVisitor:visit_treasure(treasure) end
 function FillerObstacleVisitor:visit_enemy(enemy) end
 function FillerObstacleVisitor:visit_room(room)
     local need = {
+        open = 'open',
         reach = self.obstacles[self.rng:refine('' .. self.counter):random(2 * #self.obstacles)],
     }
     local old_metric = room:get_children_metric()
