@@ -105,12 +105,12 @@ map{ id = "components/puzzle/puzzle_000006_1", description = "Puzzle 000006 1" }
 map{ id = "components/puzzle/puzzle_000003_1", description = "Puzzle 000003 1 " }
 map{ id = "components/obstacle_weakwall/obstacle_weakwall_north_000400_1", description = "Obstacle weakwall north 000400 1" }
 map{ id = "components/obstacle_weakwall/obstacle_weakwall_northeast_210100_1", description = "Obstacle weakwall northeast 210100 1" }
-map{ id = "components/obstacle_weakwall/obstacle_weakwall_northwest_000400_1", description = "Obstacle weakwall northwest 000400 1" }
+map{ id = "components/obstacle_weakwall/obstacle_weakwall_northwest_240400_1", description = "Obstacle weakwall northwest 240400 1" }
 map{ id = "components/obstacle_weakwall/obstacle_weakwall_northeastwest_250400_1", description = "Obstacle weakwall northeastwest 250400 1" }
 map{ id = "components/obstacle_weakwall/obstacle_weakwall_south_000004_1", description = "Obstacle weakwall south 000004 1" }
 map{ id = "components/obstacle_weakwall/obstacle_weakwall_southeast_000001_1", description = "Obstacle weakwall southeast 000001 1" }
-map{ id = "components/obstacle_weakwall/obstacle_weakwall_southwest_000004_1", description = "Obstacle weakwall southwest 000004 1" }
-map{ id = "components/obstacle_weakwall/obstacle_weakwall_southeastwest_000004_1", description = "Obstacle weakwall southeastwest 000004 1" }
+map{ id = "components/obstacle_weakwall/obstacle_weakwall_southwest_042004_1", description = "Obstacle weakwall southwest 042004 1" }
+map{ id = "components/obstacle_weakwall/obstacle_weakwall_southeastwest_052004_1", description = "Obstacle weakwall southeastwest 052004 1" }
 map{ id = "components/obstacle_weakwall/obstacle_weakwall_northsoutheast_212001_1", description = "Obstacle weakwall northsoutheast 212001 1" }
 map{ id = "components/obstacle_weakwall/obstacle_weakwall_northsouthwest_242004_1", description = "Obstacle weakwall northsouthwest 242004 1" }
 map{ id = "components/obstacle_weakwall/obstacle_weakwall_eastwest_050400_1", description = "Obstacle weakwall eastwest 050400 1" }
