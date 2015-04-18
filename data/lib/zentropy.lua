@@ -30,6 +30,7 @@ zentropy = zentropy or {
         filename = 'settings.dat',
         defaults = {
             debug_filename = 'wdebug.txt',
+            quest_sword_ability = 1,
             quest_seed = os.time(),
             quest_tier = 1,
             tier_keys = 3,
@@ -270,20 +271,32 @@ function zentropy.db.Components:get_obstacle(item, dir, mask, rng)
     if not self.obstacles[item] then
         return
     end
-
+    local dir_bits = 0
     local door_mask = 0
-    if string.gmatch(dir, 'north') then door_mask = bit32.bor(door_mask, 8) end
-    if string.gmatch(dir, 'south') then door_mask = bit32.bor(door_mask, 4) end
-    if string.gmatch(dir, 'east') then door_mask = bit32.bor(door_mask, 2) end
-    if string.gmatch(dir, 'west') then door_mask = bit32.bor(door_mask, 1) end
+    if string.gmatch(dir, 'north')() then
+        dir_bits = bit32.bor(dir_bits, 8)
+        door_mask = bit32.bor(door_mask, util.oct('200000'));
+    end
+    if string.gmatch(dir, 'south')() then
+        dir_bits = bit32.bor(dir_bits, 4)
+        door_mask = bit32.bor(door_mask, util.oct('040000'));
+    end
+    if string.gmatch(dir, 'east')() then
+        dir_bits = bit32.bor(dir_bits, 2)
+        door_mask = bit32.bor(door_mask, util.oct('010000'));
+    end
+    if string.gmatch(dir, 'west')() then
+        dir_bits = bit32.bor(dir_bits, 1)
+        door_mask = bit32.bor(door_mask, util.oct('002000'));
+    end
     local doors = {}
     for i = 0, 15 do
-        local new_mask = bit32.bor(door_mask, i)
         local d = ''
-        if bit32.band(new_mask, 8) then d = d .. 'north' end
-        if bit32.band(new_mask, 4) then d = d .. 'south' end
-        if bit32.band(new_mask, 2) then d = d .. 'east' end
-        if bit32.band(new_mask, 1) then d = d .. 'west' end
+        local new_bits = bit32.bor(dir_bits, i)
+        if bit32.band(new_bits, 8) ~= 0 then d = d .. 'north' end
+        if bit32.band(new_bits, 4) ~= 0 then d = d .. 'south' end
+        if bit32.band(new_bits, 2) ~= 0 then d = d .. 'east' end
+        if bit32.band(new_bits, 1) ~= 0 then d = d .. 'west' end
         doors[d] = true
     end
 
@@ -299,7 +312,7 @@ function zentropy.db.Components:get_obstacle(item, dir, mask, rng)
         return
     end
     local entry = entries[rng:random(#entries)]
-    return entry.id, entry.mask
+    return entry.id, bit32.bor(entry.mask, door_mask)
 end
 
 function zentropy.db.Components:get_filler(mask, rng)
@@ -348,7 +361,9 @@ end
 function zentropy.db.Components:get_puzzle(mask, rng)
     local entries = {}
     for _, entry in util.pairs_by_keys(self.puzzles) do
-        table.insert(entries, entry)
+        if bit32.band(mask, entry.mask) == 0 then
+            table.insert(entries, entry)
+        end
     end
     if #entries == 0 then
         return
@@ -433,8 +448,8 @@ function zentropy.Room:door(data, dir)
         self.data_messages('error', string.format("door not found: open=%s dir=%s mask=%06o", data.open, dir, self.mask))
         return false
     end
-    self.mask = bit32.bor(self.mask, component_mask)
     self.map:include(0, 0, component_name, data)
+    self.mask = bit32.bor(self.mask, component_mask)
     self.data_messages('component', component_name)
     return true
 end
@@ -446,14 +461,13 @@ function zentropy.Room:obstacle(data, dir, item)
         self.data_messages('error', string.format("obstacle not found: item=%s dir=%s mask=%06o", item, dir, self.mask))
         return false
     end
-    self.mask = bit32.bor(self.mask, component_mask)
-
     if data.treasure2 then
         if self:treasure(data.treasure2) then
             data.treasure2 = nil
         end
     end
     self.map:include(0, 0, component_name, data)
+    self.mask = bit32.bor(self.mask, component_mask)
     self.data_messages('component', component_name)
     return true
 end
@@ -466,7 +480,6 @@ function zentropy.Room:filler()
     }
     local component_name, component_mask = zentropy.components:get_filler(self.mask, rng)
     if component_name then
-        self.mask = bit32.bor(self.mask, component_mask)
         if rng:refine('puzzle'):random() < 0.5 then
             filler_data.doors = self.open_doors
             self.open_doors = {}
@@ -474,6 +487,7 @@ function zentropy.Room:filler()
             filler_data.doors = {}
         end
         self.map:include(0, 0, component_name, filler_data)
+        self.mask = bit32.bor(self.mask, component_mask)
         self.data_messages('component', component_name)
         return true
     end
@@ -498,11 +512,10 @@ function zentropy.Room:treasure(treasure_data)
         self.data_messages('error', string.format("%s not found: open=%s mask=%06o", component_type, treasure_data.open, self.mask))
         return false
     end
-    self.mask = bit32.bor(self.mask, component_mask)
-
     treasure_data.section = component_mask
     treasure_data.rng = rng:refine('component')
     self.map:include(0, 0, component_name, treasure_data)
+    self.mask = bit32.bor(self.mask, component_mask)
     self.data_messages('component', component_name)
     return true
 end
@@ -521,8 +534,8 @@ function zentropy.Room:sign(data)
             local component_name = string.format('components/sign')
             data.section = section
             self.map:include(0, 0, component_name, data)
-            self.data_messages('component', component_name)
             self.mask = bit32.bor(self.mask, section)
+            self.data_messages('component', component_name)
             return true
         end
     end
@@ -599,7 +612,7 @@ function zentropy.game.setup_quest_invariants()
 end
 
 function zentropy.game.setup_quest_initial()
-	zentropy.game.game:set_ability('sword', 1)
+    zentropy.game.game:set_ability('sword', zentropy.settings.quest_sword_ability)
     zentropy.game.game:set_max_life(12)
     zentropy.game.game:set_life(12)
 end
@@ -610,7 +623,9 @@ function zentropy.game.catch_up_on_items(tier)
         if item_name then
             local item = zentropy.game.game:get_item(item_name)
             item:set_variant(1)
-            item:on_obtained()
+            if item.on_obtained then
+                item:on_obtained()
+            end
         end
     end
 end

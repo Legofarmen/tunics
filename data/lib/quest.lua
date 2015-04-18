@@ -79,21 +79,20 @@ end
 function FillerObstacleVisitor:visit_treasure(treasure) end
 function FillerObstacleVisitor:visit_enemy(enemy) end
 function FillerObstacleVisitor:visit_room(room)
-    local is_reachable = true
-    if room.open == 'entrance' then
-        is_reachable = false
-    end
+    local need = {
+        reach = self.obstacles[self.rng:refine('' .. self.counter):random(2 * #self.obstacles)],
+    }
+    local old_metric = room:get_children_metric()
     room:each_child(function (key, child)
-        is_reachable = is_reachable and child:is_open() and child:is_reachable()
         child:accept(self)
+        if child:can_need(need) and self.open ~= 'entrance' then
+            local new_metric = old_metric - child:get_node_metric() + child:get_node_metric_with(need)
+            if new_metric:is_valid() then
+                child:with_needs(need)
+                old_metric = new_metric
+            end
+        end
     end)
-    if is_reachable then
-        self.counter = self.counter + 1
-        local obstacle = self.obstacles[self.rng:refine('' .. self.counter):random(2 * #self.obstacles)]
-        room:each_child(function (key, child)
-            child.reach = obstacle
-        end)
-    end
 end
 
 local Quest = {}
@@ -364,22 +363,18 @@ function Quest.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, treasure_items, b
     d:multiple('culdesac', nculdesacs, function () return Quest.culdesac_step end)
     d:multiple('fairy', nfairies, function () return Quest.fairy_step end)
 
-    local steps = Quest.sequence(rng:refine('steps'), d.result)
-    local tree = Quest.render_steps(rng, steps)
     local obstacle_types = {}
     for _, item_name in ipairs(brought_items) do
         for _, obstacle in ipairs(get_obstacle_types(item_name, false)) do
             table.insert(obstacle_types, obstacle)
         end
     end
-    tree:accept(FillerObstacleVisitor:new{
-        obstacles = obstacle_types,
-        rng = rng:refine('obstacles'),
-    })
-    return tree
+
+    local steps = Quest.sequence(rng:refine('steps'), d.result)
+    return Quest.render_steps(rng, steps, obstacle_types)
 end
 
-function Quest.render_steps(rng, steps)
+function Quest.render_steps(rng, steps, filler_obstacle_types)
     -- Build puzzle tree using the sequence of steps
     local heads = Tree.Room:new()
     for i, element in ipairs(steps) do
@@ -388,16 +383,19 @@ function Quest.render_steps(rng, steps)
     end
 
     -- Put entrance room at the the tree root
-    local root = Tree.Room:new{ open='entrance' }
+    local tree = Tree.Room:new{ open='entrance' }
     heads:each_child(function (key, child)
-        if child.class == 'Room' and child:is_reachable() and child:is_open() then
-            root:add_child(child)
-        else
-            root:add_child(Tree.Room:new{ children={child} })
+        if not (child.class == 'Room' and child:is_reachable() and child:is_open()) then
+            child = Tree.Room:new{ children={child} }
         end
+        child:accept(FillerObstacleVisitor:new{
+            obstacles = filler_obstacle_types,
+            rng = rng:refine('obstacles'),
+        })
+        tree:add_child(child)
     end)
 
-    return root
+    return tree
 end
 
 return Quest

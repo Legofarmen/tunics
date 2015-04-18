@@ -10,12 +10,20 @@ local util = require 'lib/util'
 local zentropy = require 'lib/zentropy'
 
 local messages = {}
-function data_messages(prefix, data)
+local too_deep = false
+function data_messages(prefix, data, depth)
+    depth = (depth or 0) + 1
+    if depth > 20 then
+        too_deep = true
+        return
+    end
     if type(data) == 'table' then
         local n = 0
         for key, value in util.pairs_by_keys(data) do
-            data_messages(prefix .. '.' .. key, value)
-            n = n + 1
+            if key ~= '__index' then
+                data_messages(prefix .. '.' .. key, value, depth)
+                n = n + 1
+            end
         end
         if n == 0 then
             table.insert(messages, prefix .. ' = {}')
@@ -75,7 +83,6 @@ function is_special_room(data)
 end
 
 
-
 local walls = {}
 for _, dir in ipairs{'north','south','east','west'} do
     if data.doors[dir] then
@@ -122,7 +129,6 @@ for _, dir in ipairs(walls) do
         map:get_entity(name):set_enabled(true)
     end
 end
-
 
 
 local obstacle_treasure = nil
@@ -182,4 +188,7 @@ end
 
 if not is_special_room(data) then
     repeat until not room:filler()
+end
+if too_deep then
+    util.table_lines('messages', messages)
 end
