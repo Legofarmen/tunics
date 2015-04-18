@@ -461,13 +461,18 @@ function zentropy.Room:obstacle(data, dir, item)
         self.data_messages('error', string.format("obstacle not found: item=%s dir=%s mask=%06o", item, dir, self.mask))
         return false
     end
+    local mask0 = self.mask
+    local mask1 = bit32.bor(mask0, component_mask)
+    self.mask = mask1  -- make sure the obstacle and separate treasure component don't overlap
     if data.treasure2 then
         if self:treasure(data.treasure2) then
             data.treasure2 = nil
         end
     end
+    local mask2 = self.mask
+    self.mask = mask0  -- make sure the obstacle can draw its doors
     self.map:include(0, 0, component_name, data)
-    self.mask = bit32.bor(self.mask, component_mask)
+    self.mask = bit32.bor(mask1, mask2)  -- keep the bits from both obstacle and treasure components
     self.data_messages('component', component_name)
     return true
 end
