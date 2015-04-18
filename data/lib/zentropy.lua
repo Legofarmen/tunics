@@ -77,7 +77,7 @@ function zentropy.debug(...)
         local message = ''
         local sep = ''
         for i = 1, args.n do
-            message = message .. sep .. args[i]
+            message = message .. sep .. tostring(args[i])
             sep = "\t"
         end
         local f = io.open(filename, "a")
@@ -501,8 +501,13 @@ function zentropy.Room:treasure(treasure_data)
     if treasure_data.see then
         component_name, component_mask = zentropy.components:get_puzzle(self.mask, rng)
         component_type = 'puzzle'
-        treasure_data.doors = {}
-        treasure_data.rng = self.puzzle_rng
+        treasure_data = {
+            treasure1 = treasure_data,
+            doors = {},
+            rng = self.puzzle_rng,
+        }
+        util.table_lines('treasure_data', treasure_data)
+        util.table_lines('component_name', component_name)
     else
         component_name, component_mask = zentropy.components:get_treasure(treasure_data.open, self.mask, rng)
         component_type = 'treasure'

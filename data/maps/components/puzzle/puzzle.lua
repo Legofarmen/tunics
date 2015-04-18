@@ -12,19 +12,49 @@ function puzzle.init(map, data)
     local sensor_west = map:get_entity('sensor_west')
     local enemy = map:get_entity('enemy')
 
-    local chest = zentropy.inject_chest(map:get_entity('chest'), data)
-
     zentropy.inject_enemy(enemy, data.rng:refine('enemy'))
 
-    local function sensor_activated()
-        if not switch:is_activated() then
-            for dir, _ in pairs(data.doors) do
-                map:close_doors('door_' .. dir)
-            end
+    local hidden_chest = nil
+
+    if data.treasure1 then
+        local placeholder = map:get_entity('treasure_obstacle_chest')
+        local x, y = placeholder:get_position()
+        x, y = x + 8, y + 13
+        hidden_chest = map:create_chest{
+            sprite = "entities/chest",
+            layer = 1,
+            x = x,
+            y = y,
+            treasure_name=data.treasure1.item_name,
+            treasure_savegame_variable=data.treasure1.name,
+        }
+        if hidden_chest:is_open() then
+            switch:set_activated(true)
+        else
+            hidden_chest:set_enabled(false)
         end
+        placeholder:remove()
+    else
+        map:set_entities_enabled('treasure_obstacle_', false)
     end
 
-    if data.item_name or next(data.doors) then
+    if data.treasure2 then
+        local placeholder = map:get_entity('treasure_open_chest')
+        local x, y = placeholder:get_position()
+        x, y = x + 8, y + 13
+        map:create_chest{
+            sprite="entities/chest",
+            layer=1,
+            x = x,
+            y = y,
+            treasure_name=data.treasure2.item_name,
+            treasure_savegame_variable=data.treasure2.name,
+        }
+    else
+        map:set_entities_enabled('treasure_open_', false)
+    end
+
+    if data.treasure1 or next(data.doors) then
         local placeholders = {}
         for entity in map:get_entities('placeholder_') do
             table.insert(placeholders, entity)
@@ -43,14 +73,22 @@ function puzzle.init(map, data)
             block:set_pushable(true)
         end
 
+        local function sensor_activated()
+            if not switch:is_activated() then
+                for dir, _ in pairs(data.doors) do
+                    map:close_doors('door_' .. dir)
+                end
+            end
+        end
+
         sensor_north.on_activated = sensor_activated
         sensor_south.on_activated = sensor_activated
         sensor_east.on_activated = sensor_activated
         sensor_west.on_activated = sensor_activated
 
         function switch:on_activated()
-            if data.item_name then
-                chest:set_enabled(true)
+            if data.treasure1.item_name then
+                hidden_chest:set_enabled(true)
                 sol.audio.play_sound('chest_appears')
             end
             for dir, _ in pairs(data.doors) do
@@ -68,11 +106,6 @@ function puzzle.init(map, data)
         map:set_doors_open('door_', true)
         for dir, _ in pairs(data.doors) do
             map:get_entity('door_' .. dir .. '_top'):set_enabled(true)
-        end
-        if chest:is_open() then
-            switch:set_activated(true)
-        else
-            chest:set_enabled(false)
         end
     end)
 end
