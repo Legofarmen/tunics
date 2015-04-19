@@ -64,5 +64,18 @@ function util.table_lines(prefix, data, f)
     end
 end
 
+function util.ijoin(sep, t)
+    if #t == 0 then
+        return ''
+    elseif #t == 1 then
+        return t[1]
+    else
+        local res = t[1]
+        for i = 2, #t do
+            res = res .. sep .. t[i]
+        end
+        return res
+    end
+end
 
 return util
