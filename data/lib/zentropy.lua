@@ -346,10 +346,6 @@ function zentropy.db.Components:get_treasure(open, mask, rng)
     return entry.id, entry.mask
 end
 
-function zentropy.db.Components:get_puzzle(mask, rng)
-    return self:get_obstacle('puzzle', '', mask, rng)
-end
-
 function zentropy.db.Components:get_floors(rng)
     local i = rng:refine('first'):random(#self.floors)
     local j = rng:refine('second'):random(#self.floors - 1)
@@ -482,7 +478,7 @@ function zentropy.Room:treasure(treasure_data)
     local component_name, component_mask
     local component_type
     if treasure_data.see then
-        component_name, component_mask = zentropy.components:get_puzzle(self.mask, rng)
+        component_name, component_mask = zentropy.components:get_obstacle('puzzle', '', self.mask, rng)
         component_type = 'puzzle'
         treasure_data = {
             treasure1 = treasure_data,
