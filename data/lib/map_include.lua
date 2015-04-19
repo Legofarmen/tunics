@@ -123,6 +123,9 @@ local function component_map(map_userdata, component_x, component_y, component_p
     function o:include(x, y, name, data)
         return map_userdata:include(x + component_x, y + component_y, name, data)
     end
+    function o:get_userdata()
+        return map_userdata;
+    end
     setmetatable(o, {
         __index = function (table, key)
             if type(map_userdata[key]) == 'function' then
