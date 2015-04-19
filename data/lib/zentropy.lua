@@ -69,22 +69,48 @@ function zentropy.init()
 end
 
 function zentropy.debug(...)
+    local args = { n = select("#", ...), ... }
+    zentropy.debug_callback(function (write)
+        if #args == 0 then
+            write()
+        elseif #args == 1 then
+            write(args[1])
+        elseif #args == 2 then
+            write(args[1], args[2])
+        elseif #args == 3 then
+            write(args[1], args[2], args[3])
+        else
+            assert(false)
+        end
+    end)
+end
+
+function zentropy.debug_table(prefix, data)
+    zentropy.debug_callback(function (write)
+        util.table_lines(prefix, data, write)
+    end)
+end
+
+function zentropy.debug_callback(callback)
     local filename = zentropy.settings.debug_filename
     if filename == '-' then
-        print(...)
+        callback(print)
     else
-        local args = { n = select("#", ...), ... }
-        local message = ''
-        local sep = ''
-        for i = 1, args.n do
-            message = message .. sep .. tostring(args[i])
-            sep = "\t"
-        end
         local f = io.open(filename, "a")
-        f:write(message .. "\n")
+        callback(function (...)
+            local args = { n = select("#", ...), ... }
+            local message = ''
+            local sep = ''
+            for i = 1, args.n do
+                message = message .. sep .. tostring(args[i])
+                sep = "\t"
+            end
+            f:write(message .. "\n")
+        end)
         f:close()
     end
 end
+
 
 function zentropy.db.Project:parse()
     local entries = {}
@@ -498,23 +524,11 @@ function zentropy.Room:trap(open_doors)
 end
 
 function zentropy.Room:treasure(treasure_data)
+    assert(not treasure_data.see)
     local rng = self.rng:refine('treasure')
-    local component_name, component_mask
-    local component_type
-    if treasure_data.see then
-        component_name, component_mask = zentropy.components:get_obstacle('puzzle', '', self.mask, rng)
-        component_type = 'puzzle'
-        treasure_data = {
-            treasure1 = treasure_data,
-            doors = {},
-            rng = self.puzzle_rng,
-        }
-    else
-        component_name, component_mask = zentropy.components:get_treasure(treasure_data.open, self.mask, rng)
-        component_type = 'treasure'
-    end
+    local component_name, component_mask = zentropy.components:get_treasure(treasure_data.open, self.mask, rng)
     if not component_name then
-        self.data_messages('error', string.format("%s not found: open=%s mask=%06o", component_type, treasure_data.open, self.mask))
+        self.data_messages('error', string.format("treasure not found: open=%s mask=%06o", treasure_data.open, self.mask))
         return false
     end
     treasure_data.section = component_mask
