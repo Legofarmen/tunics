@@ -45,6 +45,7 @@ end
 
 
 local walls = {}
+local open_doors = {}
 for _, dir in ipairs{'north','south','east','west'} do
     if data.doors[dir] then
         if not data.doors[dir].reach then
@@ -54,7 +55,7 @@ for _, dir in ipairs{'north','south','east','west'} do
             end
         end
         if not data.doors[dir].open and not data.doors[dir].reach and not data.doors[dir].see then
-            room.open_doors[dir] = true
+            open_doors[dir] = true
         end
         if data.doors[dir].reach then
             assert(not obstacle_item or obstacle_item == data.doors[dir].reach)
@@ -140,7 +141,7 @@ end
 
 if not is_special_room(data) then
     if rng:refine('trap'):random() < 0.2 then
-        room:trap(room.open_doors)
+        room:trap(open_doors)
     end
 
     --[[

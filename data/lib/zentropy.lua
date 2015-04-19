@@ -424,7 +424,6 @@ function zentropy.Room:new(o)
     assert(o.rng)
     assert(o.map)
     o.mask = o.mask or 0
-    o.open_doors = o.open_doors or {}
     o.data_messages = o.data_messages or function () end
     return Class.new(self, o)
 end
@@ -514,7 +513,6 @@ function zentropy.Room:treasure(treasure_data)
         component_name, component_mask = zentropy.components:get_treasure(treasure_data.open, self.mask, rng)
         component_type = 'treasure'
     end
-    self.open_doors = {}
     if not component_name then
         self.data_messages('error', string.format("%s not found: open=%s mask=%06o", component_type, treasure_data.open, self.mask))
         return false
