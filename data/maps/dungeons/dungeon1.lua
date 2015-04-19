@@ -71,4 +71,25 @@ end
 
 map:add_on_started(function ()
     solarus_layout:move_hero_to_start()
+
+    if zentropy.settings.debug_flying then
+        local width, height = map:get_size()
+        map:create_dynamic_tile{
+            layer = 2,
+            x = 0,
+            y = 0,
+            width = width,
+            height = height,
+            pattern = "invisible_traversable",
+            enabled_at_start = true,
+        }
+        local hero = map:get_hero()
+        local x, y = hero:get_position()
+        hero:set_position(x, y, 2)
+        for entity in map:get_entities('') do
+            if entity:get_type() == 'separator' then
+                entity:remove()
+            end
+        end
+    end
 end)
