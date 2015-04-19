@@ -9,27 +9,8 @@ local util = require 'lib/util'
 local zentropy = require 'lib/zentropy'
 
 local messages = {}
-local too_deep = false
 function data_messages(prefix, data, depth)
-    depth = (depth or 0) + 1
-    if depth > 20 then
-        too_deep = true
-        return
-    end
-    if type(data) == 'table' then
-        local n = 0
-        for key, value in util.pairs_by_keys(data) do
-            if key ~= '__index' then
-                data_messages(prefix .. '.' .. key, value, depth)
-                n = n + 1
-            end
-        end
-        if n == 0 then
-            table.insert(messages, prefix .. ' = {}')
-        end
-    elseif type(data) ~= 'function' then
-        table.insert(messages, prefix .. ' = ' .. tostring(data))
-    end
+    table.insert(messages, {[prefix]=data})
 end
 data_messages('data', data)
 
@@ -140,7 +121,7 @@ for _, enemy_data in ipairs(data.enemies) do
 end
 
 if not is_special_room(data) then
-    if rng:refine('trap'):random() < 0.2 then
+    if not next(normal_treasures) and rng:refine('trap'):random() < 0.2 then
         room:trap(open_doors)
     end
 
@@ -158,6 +139,5 @@ if not is_special_room(data) then
         n = n + 1
     end
 end
-if too_deep then
-    util.table_lines('messages', messages)
-end
+
+--zentropy.debug_table('messages', messages)
