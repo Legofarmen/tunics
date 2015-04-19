@@ -322,6 +322,20 @@ function zentropy.db.Components:get_filler(mask, rng)
     return entry.id, entry.mask
 end
 
+function zentropy.db.Components:get_puzzle(mask, rng)
+    local entries = {}
+    for _, entry in util.pairs_by_keys(self.obstacles.puzzle.northsoutheastwest) do
+        if bit32.band(mask, entry.mask) == 0 then
+            table.insert(entries, entry)
+        end
+    end
+    if #entries == 0 then
+        return
+    end
+    local entry = entries[rng:random(#entries)]
+    return entry.id, entry.mask
+end
+
 function zentropy.db.Components:get_treasure(open, mask, rng)
     open = open or 'open'
     if not self.treasures[open] then
@@ -451,26 +465,37 @@ function zentropy.Room:obstacle(data, dir, item)
     return true
 end
 
-function zentropy.Room:filler()
-    self.filler_count = (self.filler_count or 0) + 1
-    local rng = self.rng:refine('filler_' .. self.filler_count)
-    local filler_data = {
-        rng=rng:refine('component'),
-    }
+function zentropy.Room:filler(n)
+    local rng = self.rng:refine('filler_' .. n)
     local component_name, component_mask = zentropy.components:get_filler(self.mask, rng)
     if component_name then
-        if rng:refine('puzzle'):random() < 0.5 then
-            filler_data.doors = self.open_doors
-            self.open_doors = {}
-        else
-            filler_data.doors = {}
-        end
+        local filler_data = {
+            rng=rng:refine('component'),
+            doors = {},
+        }
         self.map:include(0, 0, component_name, filler_data)
         self.mask = bit32.bor(self.mask, component_mask)
         self.data_messages('component', component_name)
         return true
     end
     return false
+end
+
+function zentropy.Room:trap(open_doors)
+    local rng = self.rng:refine('trap')
+    local component_name, component_mask = zentropy.components:get_puzzle(self.mask, rng)
+    if component_name then
+        local filler_data = {
+            rng=rng:refine('component'),
+            doors = open_doors,
+        }
+        self.map:include(0, 0, component_name, filler_data)
+        self.mask = bit32.bor(self.mask, component_mask)
+        self.data_messages('component', component_name)
+        return true
+    else
+        return false
+    end
 end
 
 function zentropy.Room:treasure(treasure_data)

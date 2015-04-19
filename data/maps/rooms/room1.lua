@@ -138,16 +138,24 @@ for _, enemy_data in ipairs(data.enemies) do
     end
 end
 
---[[
-if #messages > 0 then
-    if not room:sign{menu=zentropy.menu(util.ijoin("\n", messages) .. "\n")} then
-        for _, msg in ipairs(messages) do zentropy.debug(msg) end
-        error('')
-    end
-end
-]]
 if not is_special_room(data) then
-    repeat until not room:filler()
+    if rng:refine('trap'):random() < 0.2 then
+        room:trap(room.open_doors)
+    end
+
+    --[[
+    if #messages > 0 then
+        if not room:sign{menu=zentropy.menu(util.ijoin("\n", messages) .. "\n")} then
+            for _, msg in ipairs(messages) do zentropy.debug(msg) end
+            error('')
+        end
+    end
+    ]]
+
+    local n = 0
+    while room:filler(n) do
+        n = n + 1
+    end
 end
 if too_deep then
     util.table_lines('messages', messages)
