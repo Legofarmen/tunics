@@ -156,18 +156,6 @@ function zentropy.db.Components:treasure(id, iterator)
     return true
 end
 
-function zentropy.db.Components:puzzle(id, iterator)
-    local mask_string = iterator()
-    if mask_string == nil then return false end
-    local mask
-    mask = util.oct(mask_string)
-    table.insert(self.puzzles, {
-        id=id,
-        mask=mask,
-    })
-    return true
-end
-
 function zentropy.db.Components:door(id, iterator)
     local open = iterator()
     local dir = iterator()
@@ -322,7 +310,7 @@ function zentropy.db.Components:get_filler(mask, rng)
             table.insert(entries, entry)
         end
     end
-    for _, entry in util.pairs_by_keys(self.puzzles) do
+    for _, entry in util.pairs_by_keys(self.obstacles.puzzle.northsoutheastwest) do
         if bit32.band(mask, entry.mask) == 0 then
             table.insert(entries, entry)
         end
@@ -359,17 +347,7 @@ function zentropy.db.Components:get_treasure(open, mask, rng)
 end
 
 function zentropy.db.Components:get_puzzle(mask, rng)
-    local entries = {}
-    for _, entry in util.pairs_by_keys(self.puzzles) do
-        if bit32.band(mask, entry.mask) == 0 then
-            table.insert(entries, entry)
-        end
-    end
-    if #entries == 0 then
-        return
-    end
-    local entry = entries[rng:random(#entries)]
-    return entry.id, entry.mask
+    return self:get_obstacle('puzzle', '', mask, rng)
 end
 
 function zentropy.db.Components:get_floors(rng)
