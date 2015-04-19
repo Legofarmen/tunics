@@ -547,7 +547,7 @@ function zentropy.Room:sign(data)
             return true
         end
     end
-    for _, msg in ipairs(messages) do zentropy.debug(msg) end
+    for _, msg in ipairs(data) do zentropy.debug(msg) end
     self.data_messages('error', 'cannot fit sign')
     return true
 end
@@ -832,5 +832,12 @@ function zentropy.game.assign_item(item)
         game:set_item_assigned(1, item)
     end
 end
+
+function zentropy.menu(text)
+    local menu = zentropy.game.game.dialog_box:new()
+    menu.dialog = {text = text}
+    return menu
+end
+
 
 return zentropy
