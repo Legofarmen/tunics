@@ -69,19 +69,9 @@ function zentropy.init()
 end
 
 function zentropy.debug(...)
-    local args = { n = select("#", ...), ... }
+    local args = { ... }
     zentropy.debug_callback(function (write)
-        if #args == 0 then
-            write()
-        elseif #args == 1 then
-            write(args[1])
-        elseif #args == 2 then
-            write(args[1], args[2])
-        elseif #args == 3 then
-            write(args[1], args[2], args[3])
-        else
-            assert(false)
-        end
+        write(unpack(args))
     end)
 end
 
@@ -554,7 +544,7 @@ function zentropy.Room:sign(data)
             return true
         end
     end
-    for _, msg in ipairs(data) do zentropy.debug(msg) end
+    zentropy.debug(util.ijoin("\n", data))
     self.data_messages('error', 'cannot fit sign')
     return true
 end
