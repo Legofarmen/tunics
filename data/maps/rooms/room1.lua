@@ -26,21 +26,16 @@ end
 
 
 local walls = {}
-local open_doors = {}
 for _, dir in ipairs{'north','south','east','west'} do
     if data.doors[dir] then
-        if not data.doors[dir].reach then
+        if data.doors[dir].reach then
+            assert(not obstacle_item or obstacle_item == data.doors[dir].reach)
+            obstacle_item = data.doors[dir].reach
+        else
             if not room:door({open=data.doors[dir].open, name=data.doors[dir].name}, dir) then
                 for _, msg in ipairs(messages) do zentropy.debug(msg) end
                 error('')
             end
-        end
-        if not data.doors[dir].open and not data.doors[dir].reach and not data.doors[dir].see then
-            open_doors[dir] = true
-        end
-        if data.doors[dir].reach then
-            assert(not obstacle_item or obstacle_item == data.doors[dir].reach)
-            obstacle_item = data.doors[dir].reach
         end
     else
         table.insert(walls, dir)
@@ -121,10 +116,6 @@ for _, enemy_data in ipairs(data.enemies) do
 end
 
 if not is_special_room(data) then
-    if not next(normal_treasures) and rng:refine('trap'):random() < 0.2 then
-        room:trap(open_doors)
-    end
-
     --[[
     if #messages > 0 then
         if not room:sign{menu=zentropy.menu(util.ijoin("\n", messages) .. "\n")} then
@@ -139,5 +130,3 @@ if not is_special_room(data) then
         n = n + 1
     end
 end
-
---zentropy.debug_table('messages', messages)

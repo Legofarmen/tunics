@@ -109,7 +109,7 @@ function Quest.boss_step(root)
 end
 
 function Quest.fairy_step(root)
-    root:add_child(Tree.Enemy:new{name='fairy'}:with_needs{see='map',reach='weakwall',open='weakwall'})
+    root:add_child(Tree.Enemy:new{name='fairy'}:with_needs{see='map',reach='puzzle',open='open'})
 end
 
 function Quest.culdesac_step(root)
@@ -364,7 +364,7 @@ function Quest.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, treasure_items, b
     d:multiple('culdesac', nculdesacs, function () return Quest.culdesac_step end)
     d:multiple('fairy', nfairies, function () return Quest.fairy_step end)
 
-    local obstacle_types = {}
+    local obstacle_types = {'puzzle'}
     for _, item_name in ipairs(brought_items) do
         for _, obstacle in ipairs(get_obstacle_types(item_name, false)) do
             table.insert(obstacle_types, obstacle)

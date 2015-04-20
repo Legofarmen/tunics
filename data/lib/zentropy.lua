@@ -336,11 +336,6 @@ function zentropy.db.Components:get_filler(mask, rng)
             table.insert(entries, entry)
         end
     end
-    for _, entry in util.pairs_by_keys(self.obstacles.puzzle.northsoutheastwest) do
-        if bit32.band(mask, entry.mask) == 0 then
-            table.insert(entries, entry)
-        end
-    end
     if #entries == 0 then
         return
     end
@@ -485,7 +480,7 @@ function zentropy.Room:obstacle(data, dir, item)
     local mask2 = self.mask
     self.mask = mask0  -- make sure the obstacle can draw its doors
     self.map:include(0, 0, component_name, data)
-    self.mask = bit32.bor(mask1, mask2)  -- keep the bits from both obstacle and treasure components
+    self.mask = bit32.bor(self.mask, mask2)  -- keep the bits from both obstacle and treasure components
     self.data_messages('component', component_name)
     return true
 end
@@ -513,6 +508,7 @@ function zentropy.Room:trap(open_doors)
         local filler_data = {
             rng=rng:refine('component'),
             doors = open_doors,
+            room = self,
         }
         self.map:include(0, 0, component_name, filler_data)
         self.mask = bit32.bor(self.mask, component_mask)
