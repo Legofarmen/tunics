@@ -79,20 +79,31 @@ end
 function FillerObstacleVisitor:visit_treasure(treasure) end
 function FillerObstacleVisitor:visit_enemy(enemy) end
 function FillerObstacleVisitor:visit_room(room)
-    local need = {
-        open = 'open',
-        reach = self.obstacles[self.rng:refine('' .. self.counter):random(2 * #self.obstacles)],
-    }
+    local obstacle = self.obstacles[self.rng:refine('' .. self.counter):random(2 * #self.obstacles)]
+    local need = {}
+    if obstacle == 'trap' then
+        need.open = 'open'
+        need.reach = 'puzzle'
+    elseif obstacle and obstacle:find('wall$') then
+        need.open = obstacle
+        need.reach = obstacle
+    else
+        need.open = 'open'
+        need.reach = obstacle
+    end
     local old_metric = room:get_children_metric()
     room:each_child(function (key, child)
-        child:accept(self)
-        if child:can_need(need) and self.open ~= 'entrance' then
+        if obstacle and child:can_need(need) and self.open ~= 'entrance' then
             local new_metric = old_metric - child:get_node_metric() + child:get_node_metric_with(need)
             if new_metric:is_valid() then
                 child:with_needs(need)
                 old_metric = new_metric
+                if obstacle == 'trap' then
+                    room.exit = 'puzzle'
+                end
             end
         end
+        child:accept(self)
     end)
 end
 
@@ -361,7 +372,7 @@ function Quest.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, treasure_items, b
     d:multiple('culdesac', nculdesacs, function () return Quest.culdesac_step end)
     d:multiple('fairy', nfairies, function () return Quest.fairy_step end)
 
-    local obstacle_types = {'puzzle'}
+    local obstacle_types = {'trap'}
     for _, item_name in ipairs(brought_items) do
         for _, obstacle in ipairs(get_obstacle_types(item_name, false)) do
             table.insert(obstacle_types, obstacle)

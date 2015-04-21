@@ -30,8 +30,8 @@ end
 local Node = Class:new()
 
 local Room = Node:new{class='Room'}
-local Treasure = Node:new{class='Treasure', open='nothing'}
-local Enemy = Node:new{class='Enemy', reach='nothing', open='nothing'}
+local Treasure = Node:new{class='Treasure', open='nothing', exit='nothing'}
+local Enemy = Node:new{class='Enemy', reach='nothing', open='nothing', exit='nothing'}
 
 function Treasure:new(o)
     o = o or {}
@@ -95,7 +95,7 @@ function Node:is_directional()
 end
 
 function Room:__tostring()
-    return string.format("Room[%s]", self:prop_string{'reach', 'open', 'dir'})
+    return string.format("Room[%s]", self:prop_string{'exit', 'reach', 'open', 'dir'})
 end
 
 function Treasure:__tostring()
