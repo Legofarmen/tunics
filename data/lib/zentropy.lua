@@ -69,22 +69,38 @@ function zentropy.init()
 end
 
 function zentropy.debug(...)
+    local args = { ... }
+    zentropy.debug_callback(function (write)
+        write(unpack(args))
+    end)
+end
+
+function zentropy.debug_table(prefix, data)
+    zentropy.debug_callback(function (write)
+        util.table_lines(prefix, data, write)
+    end)
+end
+
+function zentropy.debug_callback(callback)
     local filename = zentropy.settings.debug_filename
     if filename == '-' then
-        print(...)
+        callback(print)
     else
-        local args = { n = select("#", ...), ... }
-        local message = ''
-        local sep = ''
-        for i = 1, args.n do
-            message = message .. sep .. tostring(args[i])
-            sep = "\t"
-        end
         local f = io.open(filename, "a")
-        f:write(message .. "\n")
+        callback(function (...)
+            local args = { n = select("#", ...), ... }
+            local message = ''
+            local sep = ''
+            for i = 1, args.n do
+                message = message .. sep .. tostring(args[i])
+                sep = "\t"
+            end
+            f:write(message .. "\n")
+        end)
         f:close()
     end
 end
+
 
 function zentropy.db.Project:parse()
     local entries = {}
@@ -150,18 +166,6 @@ function zentropy.db.Components:treasure(id, iterator)
     end
     self.treasures[open] = self.treasures[open] or {}
     table.insert(self.treasures[open], {
-        id=id,
-        mask=mask,
-    })
-    return true
-end
-
-function zentropy.db.Components:puzzle(id, iterator)
-    local mask_string = iterator()
-    if mask_string == nil then return false end
-    local mask
-    mask = util.oct(mask_string)
-    table.insert(self.puzzles, {
         id=id,
         mask=mask,
     })
@@ -322,7 +326,16 @@ function zentropy.db.Components:get_filler(mask, rng)
             table.insert(entries, entry)
         end
     end
-    for _, entry in util.pairs_by_keys(self.puzzles) do
+    if #entries == 0 then
+        return
+    end
+    local entry = entries[rng:random(#entries)]
+    return entry.id, entry.mask
+end
+
+function zentropy.db.Components:get_puzzle(mask, rng)
+    local entries = {}
+    for _, entry in util.pairs_by_keys(self.obstacles.puzzle.northsoutheastwest) do
         if bit32.band(mask, entry.mask) == 0 then
             table.insert(entries, entry)
         end
@@ -348,20 +361,6 @@ function zentropy.db.Components:get_treasure(open, mask, rng)
                 end
             end
         elseif bit32.band(mask, entry.mask) == 0 then
-            table.insert(entries, entry)
-        end
-    end
-    if #entries == 0 then
-        return
-    end
-    local entry = entries[rng:random(#entries)]
-    return entry.id, entry.mask
-end
-
-function zentropy.db.Components:get_puzzle(mask, rng)
-    local entries = {}
-    for _, entry in util.pairs_by_keys(self.puzzles) do
-        if bit32.band(mask, entry.mask) == 0 then
             table.insert(entries, entry)
         end
     end
@@ -436,7 +435,6 @@ function zentropy.Room:new(o)
     assert(o.rng)
     assert(o.map)
     o.mask = o.mask or 0
-    o.open_doors = o.open_doors or {}
     o.data_messages = o.data_messages or function () end
     return Class.new(self, o)
 end
@@ -472,25 +470,19 @@ function zentropy.Room:obstacle(data, dir, item)
     local mask2 = self.mask
     self.mask = mask0  -- make sure the obstacle can draw its doors
     self.map:include(0, 0, component_name, data)
-    self.mask = bit32.bor(mask1, mask2)  -- keep the bits from both obstacle and treasure components
+    self.mask = bit32.bor(self.mask, mask2)  -- keep the bits from both obstacle and treasure components
     self.data_messages('component', component_name)
     return true
 end
 
-function zentropy.Room:filler()
-    self.filler_count = (self.filler_count or 0) + 1
-    local rng = self.rng:refine('filler_' .. self.filler_count)
-    local filler_data = {
-        rng=rng:refine('component'),
-    }
+function zentropy.Room:filler(n)
+    local rng = self.rng:refine('filler_' .. n)
     local component_name, component_mask = zentropy.components:get_filler(self.mask, rng)
     if component_name then
-        if rng:refine('puzzle'):random() < 0.5 then
-            filler_data.doors = self.open_doors
-            self.open_doors = {}
-        else
-            filler_data.doors = {}
-        end
+        local filler_data = {
+            rng=rng:refine('component'),
+            doors = {},
+        }
         self.map:include(0, 0, component_name, filler_data)
         self.mask = bit32.bor(self.mask, component_mask)
         self.data_messages('component', component_name)
@@ -499,25 +491,30 @@ function zentropy.Room:filler()
     return false
 end
 
-function zentropy.Room:treasure(treasure_data)
-    local rng = self.rng:refine('treasure')
-    local component_name, component_mask
-    local component_type
-    if treasure_data.see then
-        component_name, component_mask = zentropy.components:get_puzzle(self.mask, rng)
-        component_type = 'puzzle'
-        treasure_data = {
-            treasure1 = treasure_data,
-            doors = {},
-            rng = self.puzzle_rng,
+function zentropy.Room:trap(open_doors)
+    local rng = self.rng:refine('trap')
+    local component_name, component_mask = zentropy.components:get_puzzle(self.mask, rng)
+    if component_name then
+        local filler_data = {
+            rng=rng:refine('component'),
+            doors = open_doors,
+            room = self,
         }
+        self.map:include(0, 0, component_name, filler_data)
+        self.mask = bit32.bor(self.mask, component_mask)
+        self.data_messages('component', component_name)
+        return true
     else
-        component_name, component_mask = zentropy.components:get_treasure(treasure_data.open, self.mask, rng)
-        component_type = 'treasure'
+        return false
     end
-    self.open_doors = {}
+end
+
+function zentropy.Room:treasure(treasure_data)
+    assert(not treasure_data.see)
+    local rng = self.rng:refine('treasure')
+    local component_name, component_mask = zentropy.components:get_treasure(treasure_data.open, self.mask, rng)
     if not component_name then
-        self.data_messages('error', string.format("%s not found: open=%s mask=%06o", component_type, treasure_data.open, self.mask))
+        self.data_messages('error', string.format("treasure not found: open=%s mask=%06o", treasure_data.open, self.mask))
         return false
     end
     treasure_data.section = component_mask
@@ -547,7 +544,7 @@ function zentropy.Room:sign(data)
             return true
         end
     end
-    for _, msg in ipairs(messages) do zentropy.debug(msg) end
+    zentropy.debug(util.ijoin("\n", data))
     self.data_messages('error', 'cannot fit sign')
     return true
 end
@@ -559,6 +556,7 @@ function zentropy.game.get_items_sequence(rng)
     d:single('hookshot_1', {item_name='hookshot'})
     d:single('bomb_1', {item_name='bombs_counter'})
     d:single('flippers_1', {item_name='flippers'})
+    d:single('glove_1', {item_name='glove'})
     local items = Quest.sequence(rng, d.result)
     local i = 1
     local brought_items = {}
@@ -591,6 +589,17 @@ function zentropy.game.new_game()
     zentropy.game.setup_quest_invariants()
 
     local tier = zentropy.settings.quest_tier
+    if type(tier) == 'string' then
+        for i, item_name in ipairs(zentropy.game.items) do
+            if tier == item_name then
+                tier = i
+                break
+            end
+        end
+        if type(tier) == 'string' then
+            error('unknown tier: ' .. tier)
+        end
+    end
     zentropy.game.catch_up_on_items(tier)
     zentropy.game.setup_tier_initial(tier)
 
@@ -832,5 +841,12 @@ function zentropy.game.assign_item(item)
         game:set_item_assigned(1, item)
     end
 end
+
+function zentropy.menu(text)
+    local menu = zentropy.game.game.dialog_box:new()
+    menu.dialog = {text = text}
+    return menu
+end
+
 
 return zentropy

@@ -1,0 +1,118 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  tileset = "dungeon_brick_gray_1",
+  music = "same",
+}
+
+tile{
+  layer = 1,
+  x = 128,
+  y = 184,
+  width = 16,
+  height = 24,
+  pattern = "barrier_big.3.border.2",
+}
+
+tile{
+  layer = 1,
+  x = 128,
+  y = 152,
+  width = 16,
+  height = 32,
+  pattern = "barrier_big.3.2",
+}
+
+tile{
+  layer = 1,
+  x = 128,
+  y = 136,
+  width = 16,
+  height = 16,
+  pattern = "barrier_big.3.border.1",
+}
+
+tile{
+  layer = 1,
+  x = 176,
+  y = 184,
+  width = 16,
+  height = 24,
+  pattern = "barrier_big.3.border.2",
+}
+
+tile{
+  layer = 1,
+  x = 176,
+  y = 152,
+  width = 16,
+  height = 32,
+  pattern = "barrier_big.3.2",
+}
+
+tile{
+  layer = 1,
+  x = 176,
+  y = 136,
+  width = 16,
+  height = 16,
+  pattern = "barrier_big.3.border.1",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 144,
+  y = 136,
+  width = 16,
+  height = 16,
+  name = "stone_1",
+  pattern = "floor_small.4",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 160,
+  y = 136,
+  width = 16,
+  height = 16,
+  name = "stone_2",
+  pattern = "floor_small.4",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 160,
+  y = 168,
+  width = 16,
+  height = 16,
+  name = "treasure_obstacle_chest",
+  pattern = "floor_small.2",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 248,
+  y = 168,
+  width = 16,
+  height = 16,
+  name = "treasure_open_chest",
+  pattern = "floor_small.2",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 96,
+  y = 144,
+  width = 16,
+  height = 16,
+  name = "enemy",
+  pattern = "floor_small.2",
+  enabled_at_start = false,
+}
+

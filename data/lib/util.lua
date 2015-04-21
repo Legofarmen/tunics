@@ -53,8 +53,12 @@ function util.table_lines(prefix, data, f)
     if type(data) == 'table' then
         local n = 0
         for key, value in util.pairs_by_keys(data) do
-            util.table_lines(prefix .. '.' .. key, value, f)
-            n = n + 1
+            if key == '__index' then
+                f(string.format('%s.%s = ...', prefix, key))
+            else
+                util.table_lines(prefix .. '.' .. key, value, f)
+                n = n + 1
+            end
         end
         if n == 0 then
             f(string.format('%s = {}', prefix))
@@ -64,5 +68,26 @@ function util.table_lines(prefix, data, f)
     end
 end
 
+function util.table_string(prefix, data)
+    local lines = {}
+    util.table_lines(prefix, data, function (line)
+        table.insert(lines, line)
+    end)
+    return util.ijoin("\n", lines)
+end
+
+function util.ijoin(sep, t)
+    if #t == 0 then
+        return ''
+    elseif #t == 1 then
+        return t[1]
+    else
+        local res = tostring(t[1])
+        for i = 2, #t do
+            res = res .. sep .. tostring(t[i])
+        end
+        return res
+    end
+end
 
 return util

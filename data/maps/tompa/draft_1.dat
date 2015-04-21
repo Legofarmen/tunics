@@ -234,202 +234,182 @@ tile{
 
 tile{
   layer = 1,
-  x = 32,
-  y = 32,
+  x = 272,
+  y = 80,
+  width = 16,
+  height = 8,
+  pattern = "barrier.1.1",
+}
+
+tile{
+  layer = 1,
+  x = 176,
+  y = 136,
   width = 112,
-  height = 72,
-  pattern = "hole",
+  height = 8,
+  pattern = "barrier.1.1",
 }
 
 tile{
   layer = 1,
-  x = 176,
-  y = 32,
-  width = 112,
-  height = 72,
-  pattern = "hole",
+  x = 264,
+  y = 80,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
 }
 
 tile{
   layer = 1,
-  x = 32,
+  x = 264,
   y = 88,
-  width = 16,
-  height = 16,
-  pattern = "wall_hole.corner.3",
+  width = 8,
+  height = 24,
+  pattern = "barrier.1.2",
 }
 
 tile{
   layer = 1,
-  x = 48,
-  y = 88,
-  width = 80,
-  height = 16,
-  pattern = "wall_hole.2",
+  x = 264,
+  y = 112,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
 }
 
 tile{
   layer = 1,
-  x = 128,
-  y = 88,
-  width = 16,
-  height = 16,
-  pattern = "wall_hole.corner.4",
+  x = 200,
+  y = 112,
+  width = 64,
+  height = 8,
+  pattern = "barrier.1.1",
 }
 
 tile{
-  layer = 1,
-  x = 128,
-  y = 48,
-  width = 16,
-  height = 40,
-  pattern = "wall_hole.4",
-}
-
-tile{
-  layer = 1,
-  x = 128,
-  y = 32,
-  width = 16,
-  height = 16,
-  pattern = "wall_hole.corner.2",
-}
-
-tile{
-  layer = 1,
-  x = 48,
-  y = 32,
-  width = 80,
-  height = 16,
-  pattern = "wall_hole.1",
-}
-
-tile{
-  layer = 1,
-  x = 32,
-  y = 32,
-  width = 16,
-  height = 16,
-  pattern = "wall_hole.corner.1",
-}
-
-tile{
-  layer = 1,
-  x = 32,
-  y = 48,
-  width = 16,
-  height = 40,
-  pattern = "wall_hole.3",
-}
-
-tile{
-  layer = 1,
-  x = 272,
-  y = 32,
-  width = 16,
-  height = 16,
-  pattern = "wall_hole.corner.2",
-}
-
-tile{
-  layer = 1,
-  x = 272,
-  y = 48,
-  width = 16,
-  height = 40,
-  pattern = "wall_hole.4",
-}
-
-tile{
-  layer = 1,
-  x = 272,
-  y = 88,
-  width = 16,
-  height = 16,
-  pattern = "wall_hole.corner.4",
-}
-
-tile{
-  layer = 1,
-  x = 192,
-  y = 88,
-  width = 80,
-  height = 16,
-  pattern = "wall_hole.2",
-}
-
-tile{
-  layer = 1,
-  x = 176,
-  y = 88,
-  width = 16,
-  height = 16,
-  pattern = "wall_hole.corner.3",
-}
-
-tile{
-  layer = 1,
-  x = 176,
-  y = 48,
-  width = 16,
-  height = 40,
-  pattern = "wall_hole.3",
-}
-
-tile{
-  layer = 1,
-  x = 176,
-  y = 32,
-  width = 16,
-  height = 16,
-  pattern = "wall_hole.corner.1",
-}
-
-tile{
-  layer = 1,
-  x = 192,
-  y = 32,
-  width = 80,
-  height = 16,
-  pattern = "wall_hole.1",
-}
-
-tile{
-  layer = 1,
-  x = 72,
-  y = 8,
-  width = 32,
-  height = 16,
-  pattern = "wall_torch.1",
-}
-
-tile{
-  layer = 1,
-  x = 216,
-  y = 8,
-  width = 32,
-  height = 16,
-  pattern = "wall_torch.1",
-}
-
-destructible{
-  layer = 1,
-  x = 152,
-  y = 101,
-  name = "Block_2",
-  sprite = "entities/stone_white_skull",
-  weight = 1,
-  damage_on_enemies = 2,
-}
-
-destructible{
   layer = 1,
   x = 168,
-  y = 101,
-  name = "Block_3",
-  sprite = "entities/stone_white_skull",
+  y = 136,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+tile{
+  layer = 1,
+  x = 168,
+  y = 56,
+  width = 8,
+  height = 80,
+  pattern = "barrier.1.2",
+}
+
+tile{
+  layer = 1,
+  x = 192,
+  y = 112,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+tile{
+  layer = 1,
+  x = 168,
+  y = 48,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+tile{
+  layer = 1,
+  x = 192,
+  y = 80,
+  width = 8,
+  height = 32,
+  pattern = "barrier.1.2",
+}
+
+tile{
+  layer = 1,
+  x = 192,
+  y = 72,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+tile{
+  layer = 1,
+  x = 200,
+  y = 72,
+  width = 40,
+  height = 8,
+  pattern = "barrier.1.1",
+}
+
+tile{
+  layer = 1,
+  x = 176,
+  y = 48,
+  width = 64,
+  height = 8,
+  pattern = "barrier.1.1",
+}
+
+tile{
+  layer = 1,
+  x = 240,
+  y = 72,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+tile{
+  layer = 1,
+  x = 240,
+  y = 48,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+destructible{
+  layer = 1,
+  x = 184,
+  y = 69,
+  name = "stone_1",
+  sprite = "entities/stone_white",
   weight = 1,
-  damage_on_enemies = 2,
+}
+
+destructible{
+  layer = 1,
+  x = 232,
+  y = 69,
+  name = "stone_4",
+  sprite = "entities/stone_white",
+  weight = 1,
+}
+
+destructible{
+  layer = 1,
+  x = 184,
+  y = 133,
+  name = "stone_8",
+  sprite = "entities/stone_white",
+  weight = 1,
+}
+
+destructible{
+  layer = 1,
+  x = 264,
+  y = 133,
+  name = "stone_13",
+  sprite = "entities/stone_white",
+  weight = 1,
 }
 
 tile{

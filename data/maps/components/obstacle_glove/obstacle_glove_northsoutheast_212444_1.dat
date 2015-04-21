@@ -1,0 +1,141 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  tileset = "dungeon_brick_gray_1",
+  music = "same",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 64,
+  y = 80,
+  width = 16,
+  height = 16,
+  name = "stone_7",
+  pattern = "floor_small.4",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 48,
+  y = 64,
+  width = 16,
+  height = 16,
+  name = "stone_2",
+  pattern = "floor_small.4",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 80,
+  y = 96,
+  width = 16,
+  height = 16,
+  name = "stone_3",
+  pattern = "floor_small.4",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 96,
+  y = 112,
+  width = 16,
+  height = 16,
+  name = "stone_4",
+  pattern = "floor_small.4",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 32,
+  y = 48,
+  width = 16,
+  height = 16,
+  name = "stone_5",
+  pattern = "floor_small.4",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 72,
+  y = 168,
+  width = 16,
+  height = 16,
+  name = "treasure_obstacle_chest",
+  pattern = "floor_small.2",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 48,
+  y = 80,
+  width = 16,
+  height = 16,
+  name = "treasure_open_chest",
+  pattern = "floor_small.2",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 120,
+  y = 112,
+  width = 16,
+  height = 16,
+  name = "enemy",
+  pattern = "floor_small.2",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 80,
+  y = 128,
+  width = 16,
+  height = 16,
+  name = "stone_6",
+  pattern = "floor_small.4",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 64,
+  y = 144,
+  width = 16,
+  height = 16,
+  name = "stone_8",
+  pattern = "floor_small.4",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 48,
+  y = 160,
+  width = 16,
+  height = 16,
+  name = "stone_9",
+  pattern = "floor_small.4",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 32,
+  y = 176,
+  width = 16,
+  height = 16,
+  name = "stone_10",
+  pattern = "floor_small.4",
+  enabled_at_start = true,
+}
+

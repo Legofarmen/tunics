@@ -3,125 +3,8 @@ properties{
   y = 0,
   width = 320,
   height = 240,
-  tileset = "dungeon_brick_gray_1",
+  tileset = "dungeon_smoothbrick_green_1",
   music = "same",
-}
-
-tile{
-  layer = 0,
-  x = 40,
-  y = 40,
-  width = 128,
-  height = 64,
-  pattern = "floor.17",
-}
-
-tile{
-  layer = 0,
-  x = 168,
-  y = 40,
-  width = 112,
-  height = 64,
-  pattern = "floor.17",
-}
-
-tile{
-  layer = 0,
-  x = 144,
-  y = 24,
-  width = 32,
-  height = 80,
-  pattern = "floor_low.17",
-}
-
-tile{
-  layer = 0,
-  x = 40,
-  y = 136,
-  width = 112,
-  height = 64,
-  pattern = "floor.17",
-}
-
-tile{
-  layer = 0,
-  x = 168,
-  y = 136,
-  width = 112,
-  height = 64,
-  pattern = "floor.17",
-}
-
-tile{
-  layer = 0,
-  x = 24,
-  y = 104,
-  width = 128,
-  height = 32,
-  pattern = "floor_low.17",
-}
-
-tile{
-  layer = 0,
-  x = 168,
-  y = 104,
-  width = 112,
-  height = 32,
-  pattern = "floor_low.17",
-}
-
-tile{
-  layer = 0,
-  x = 40,
-  y = 32,
-  width = 240,
-  height = 8,
-  pattern = "wall_border.1",
-}
-
-tile{
-  layer = 0,
-  x = 32,
-  y = 32,
-  width = 8,
-  height = 8,
-  pattern = "wall_border.corner.1",
-}
-
-tile{
-  layer = 0,
-  x = 32,
-  y = 200,
-  width = 8,
-  height = 8,
-  pattern = "wall_border.corner.3",
-}
-
-tile{
-  layer = 0,
-  x = 280,
-  y = 200,
-  width = 8,
-  height = 8,
-  pattern = "wall_border.corner.4",
-}
-
-tile{
-  layer = 0,
-  x = 280,
-  y = 32,
-  width = 8,
-  height = 8,
-  pattern = "wall_border.corner.2",
-}
-
-tile{
-  layer = 0,
-  x = 280,
-  y = 40,
-  width = 8,
-  height = 160,
-  pattern = "wall_border.4",
 }
 
 tile{
@@ -180,15 +63,6 @@ tile{
 
 tile{
   layer = 0,
-  x = 8,
-  y = 32,
-  width = 24,
-  height = 176,
-  pattern = "wall.3",
-}
-
-tile{
-  layer = 0,
   x = 288,
   y = 32,
   width = 24,
@@ -197,63 +71,18 @@ tile{
 }
 
 tile{
-  layer = 0,
-  x = 144,
-  y = 104,
-  width = 32,
-  height = 32,
-  pattern = "floor.17",
-}
-
-tile{
-  layer = 0,
-  x = 40,
-  y = 200,
-  width = 240,
-  height = 8,
-  pattern = "wall_border.2",
-}
-
-tile{
-  layer = 0,
-  x = 144,
-  y = 136,
-  width = 32,
-  height = 64,
-  pattern = "floor_low.17",
-}
-
-tile{
-  layer = 0,
-  x = 32,
-  y = 40,
-  width = 8,
-  height = 160,
-  pattern = "wall_border.3",
-}
-
-tile{
   layer = 1,
   x = 32,
   y = 32,
-  width = 112,
-  height = 72,
-  pattern = "hole",
-}
-
-tile{
-  layer = 1,
-  x = 176,
-  y = 32,
-  width = 112,
-  height = 72,
+  width = 256,
+  height = 176,
   pattern = "hole",
 }
 
 tile{
   layer = 1,
   x = 32,
-  y = 88,
+  y = 192,
   width = 16,
   height = 16,
   pattern = "wall_hole.corner.3",
@@ -261,20 +90,11 @@ tile{
 
 tile{
   layer = 1,
-  x = 48,
-  y = 88,
-  width = 96,
-  height = 16,
-  pattern = "wall_hole.2",
-}
-
-tile{
-  layer = 1,
-  x = 48,
-  y = 32,
-  width = 96,
-  height = 16,
-  pattern = "wall_hole.1",
+  x = 32,
+  y = 48,
+  width = 16,
+  height = 56,
+  pattern = "wall_hole.3",
 }
 
 tile{
@@ -288,11 +108,11 @@ tile{
 
 tile{
   layer = 1,
-  x = 32,
-  y = 48,
-  width = 16,
-  height = 40,
-  pattern = "wall_hole.3",
+  x = 48,
+  y = 32,
+  width = 224,
+  height = 16,
+  pattern = "wall_hole.1",
 }
 
 tile{
@@ -309,14 +129,14 @@ tile{
   x = 272,
   y = 48,
   width = 16,
-  height = 40,
+  height = 16,
   pattern = "wall_hole.4",
 }
 
 tile{
   layer = 1,
   x = 272,
-  y = 88,
+  y = 192,
   width = 16,
   height = 16,
   pattern = "wall_hole.corner.4",
@@ -324,58 +144,275 @@ tile{
 
 tile{
   layer = 1,
-  x = 176,
-  y = 88,
-  width = 96,
+  x = 48,
+  y = 192,
+  width = 224,
   height = 16,
   pattern = "wall_hole.2",
 }
 
 tile{
   layer = 1,
-  x = 176,
+  x = 56,
+  y = 128,
+  width = 32,
+  height = 64,
+  pattern = "floor.17",
+}
+
+tile{
+  layer = 1,
+  x = 88,
+  y = 160,
+  width = 48,
+  height = 32,
+  pattern = "floor.17",
+}
+
+tile{
+  layer = 1,
+  x = 128,
   y = 32,
-  width = 96,
+  width = 80,
+  height = 32,
+  pattern = "floor.17",
+}
+
+tile{
+  layer = 1,
+  x = 176,
+  y = 64,
+  width = 112,
+  height = 32,
+  pattern = "floor.17",
+}
+
+tile{
+  layer = 1,
+  x = 144,
+  y = 176,
+  width = 64,
+  height = 32,
+  pattern = "floor.17",
+}
+
+tile{
+  layer = 1,
+  x = 176,
+  y = 96,
+  width = 32,
+  height = 112,
+  pattern = "floor.17",
+}
+
+tile{
+  layer = 1,
+  x = 256,
+  y = 96,
+  width = 32,
+  height = 48,
+  pattern = "floor.17",
+}
+
+tile{
+  layer = 1,
+  x = 136,
+  y = 64,
+  width = 40,
   height = 16,
   pattern = "wall_hole.1",
 }
 
 tile{
   layer = 1,
-  x = 72,
-  y = 8,
-  width = 32,
+  x = 208,
+  y = 96,
+  width = 48,
   height = 16,
-  pattern = "wall_torch.1",
+  pattern = "wall_hole.1",
 }
 
 tile{
   layer = 1,
-  x = 216,
+  x = 272,
+  y = 144,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.corner.2",
+}
+
+tile{
+  layer = 1,
+  x = 256,
+  y = 144,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.1",
+}
+
+tile{
+  layer = 1,
+  x = 272,
+  y = 160,
+  width = 16,
+  height = 32,
+  pattern = "wall_hole.4",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 136,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.corner.1",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 152,
+  width = 16,
+  height = 40,
+  pattern = "wall_hole.3",
+}
+
+tile{
+  layer = 1,
+  x = 48,
+  y = 136,
+  width = 8,
+  height = 16,
+  pattern = "wall_hole.1",
+}
+
+tile{
+  layer = 1,
+  x = 104,
+  y = 32,
+  width = 32,
+  height = 128,
+  pattern = "floor.17",
+}
+
+tile{
+  layer = 1,
+  x = 88,
   y = 8,
   width = 32,
+  height = 24,
+  pattern = "wall_statue.4.1",
+}
+
+tile{
+  layer = 1,
+  x = 200,
+  y = 8,
+  width = 32,
+  height = 24,
+  pattern = "wall_statue.4.1",
+}
+
+tile{
+  layer = 1,
+  x = 88,
+  y = 208,
+  width = 32,
   height = 16,
-  pattern = "wall_torch.1",
+  pattern = "wall_torch.2",
 }
 
-destructible{
+tile{
   layer = 1,
-  x = 152,
-  y = 101,
-  name = "Block_4",
-  sprite = "entities/stone_white_skull",
-  weight = 1,
-  damage_on_enemies = 2,
+  x = 200,
+  y = 208,
+  width = 32,
+  height = 16,
+  pattern = "wall_torch.2",
 }
 
-destructible{
+tile{
   layer = 1,
-  x = 168,
-  y = 101,
-  name = "Block_2",
-  sprite = "entities/stone_white_skull",
-  weight = 1,
-  damage_on_enemies = 2,
+  x = 24,
+  y = 104,
+  width = 64,
+  height = 32,
+  pattern = "floor.17",
+}
+
+tile{
+  layer = 1,
+  x = 8,
+  y = 32,
+  width = 24,
+  height = 176,
+  pattern = "wall.3",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 104,
+  y = 112,
+  width = 16,
+  height = 16,
+  name = "stone_1",
+  pattern = "floor_small.4",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 120,
+  y = 112,
+  width = 16,
+  height = 16,
+  name = "stone_2",
+  pattern = "floor_small.4",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 176,
+  y = 144,
+  width = 16,
+  height = 16,
+  name = "stone_3",
+  pattern = "floor_small.4",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 192,
+  y = 144,
+  width = 16,
+  height = 16,
+  name = "stone_4",
+  pattern = "floor_small.4",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 224,
+  y = 64,
+  width = 16,
+  height = 16,
+  name = "stone_5",
+  pattern = "floor_small.4",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 224,
+  y = 80,
+  width = 16,
+  height = 16,
+  name = "stone_6",
+  pattern = "floor_small.4",
+  enabled_at_start = true,
 }
 
 tile{

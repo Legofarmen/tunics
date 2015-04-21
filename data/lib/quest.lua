@@ -8,7 +8,7 @@ setmetatable(HideTreasuresVisitor, HideTreasuresVisitor)
 function HideTreasuresVisitor:visit_room(room)
     room:each_child(function (key, child)
         if child.class == 'Treasure' and child:is_reachable() and child:is_open() then
-            room:update_child(key, child:with_needs{see='compass',reach='nothing',open='nothing'})
+            room:update_child(key, child:with_needs{reach='puzzle',open='nothing'})
         end
         child:accept(self)
     end)
@@ -79,20 +79,31 @@ end
 function FillerObstacleVisitor:visit_treasure(treasure) end
 function FillerObstacleVisitor:visit_enemy(enemy) end
 function FillerObstacleVisitor:visit_room(room)
-    local need = {
-        open = 'open',
-        reach = self.obstacles[self.rng:refine('' .. self.counter):random(2 * #self.obstacles)],
-    }
+    local obstacle = self.obstacles[self.rng:refine('' .. self.counter):random(2 * #self.obstacles)]
+    local need = {}
+    if obstacle == 'trap' then
+        need.open = 'open'
+        need.reach = 'puzzle'
+    elseif obstacle and obstacle:find('wall$') then
+        need.open = obstacle
+        need.reach = obstacle
+    else
+        need.open = 'open'
+        need.reach = obstacle
+    end
     local old_metric = room:get_children_metric()
     room:each_child(function (key, child)
-        child:accept(self)
-        if child:can_need(need) and self.open ~= 'entrance' then
+        if obstacle and child:can_need(need) and self.open ~= 'entrance' then
             local new_metric = old_metric - child:get_node_metric() + child:get_node_metric_with(need)
             if new_metric:is_valid() then
                 child:with_needs(need)
                 old_metric = new_metric
+                if obstacle == 'trap' then
+                    room.exit = 'puzzle'
+                end
             end
         end
+        child:accept(self)
     end)
 end
 
@@ -109,7 +120,7 @@ function Quest.boss_step(root)
 end
 
 function Quest.fairy_step(root)
-    root:add_child(Tree.Enemy:new{name='fairy'}:with_needs{see='map',reach='weakwall',open='weakwall'})
+    root:add_child(Tree.Enemy:new{name='fairy'}:with_needs{reach='puzzle',open='open'})
 end
 
 function Quest.culdesac_step(root)
@@ -120,17 +131,17 @@ function Quest.hide_treasures_step(root)
     root:accept(HideTreasuresVisitor)
 end
 
-function Quest.obstacle_step(item_name, open, see)
+function Quest.obstacle_step(item_name, open)
     return function (root)
         root:each_child(function (key, head)
-            root:update_child(key, head:with_needs{see=see,reach=item_name,open=open})
+            root:update_child(key, head:with_needs{reach=item_name,open=open})
         end)
     end
 end
 
 function Quest.big_chest_step(item_name)
     return function (root)
-        root:add_child(Tree.Treasure:new{name=item_name, see='nothing', reach='nothing', open='bigkey'})
+        root:add_child(Tree.Treasure:new{name=item_name, reach='nothing', open='bigkey'})
     end
 end
 
@@ -306,18 +317,15 @@ function Quest.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, treasure_items, b
     end
 
     function get_obstacle_step(obstacle_type)
-        local see, open
+        local open
         if obstacle_type == 'weakwall' then
-            see = 'map'
             open = 'weakwall'
         elseif obstacle_type == 'veryweakwall' then
-            see = 'nothing'
             open = 'veryweakwall'
         else
-            see = 'nothing'
             open = 'open'
         end
-        return Quest.obstacle_step(obstacle_type, open, see)
+        return Quest.obstacle_step(obstacle_type, open)
     end
 
     local d = Quest.Dependencies:new()
@@ -364,7 +372,7 @@ function Quest.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, treasure_items, b
     d:multiple('culdesac', nculdesacs, function () return Quest.culdesac_step end)
     d:multiple('fairy', nfairies, function () return Quest.fairy_step end)
 
-    local obstacle_types = {}
+    local obstacle_types = {'trap'}
     for _, item_name in ipairs(brought_items) do
         for _, obstacle in ipairs(get_obstacle_types(item_name, false)) do
             table.insert(obstacle_types, obstacle)

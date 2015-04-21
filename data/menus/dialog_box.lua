@@ -266,7 +266,11 @@ function dialog_box:show_next_dialog()
       status = self.selected_answer == 1
     end
 
-    self.game:stop_dialog(status)
+    if self.game:is_dialog_enabled() then
+        self.game:stop_dialog(status)
+    else
+        sol.menu.stop(self)
+    end
   end
 end
 

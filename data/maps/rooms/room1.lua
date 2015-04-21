@@ -5,74 +5,16 @@ bit32 = bit32 or bit
 local rng = data.rng
 
 
-local Class = require 'lib/class.lua'
 local util = require 'lib/util'
 local zentropy = require 'lib/zentropy'
 
 local messages = {}
-local too_deep = false
 function data_messages(prefix, data, depth)
-    depth = (depth or 0) + 1
-    if depth > 20 then
-        too_deep = true
-        return
-    end
-    if type(data) == 'table' then
-        local n = 0
-        for key, value in util.pairs_by_keys(data) do
-            if key ~= '__index' then
-                data_messages(prefix .. '.' .. key, value, depth)
-                n = n + 1
-            end
-        end
-        if n == 0 then
-            table.insert(messages, prefix .. ' = {}')
-        end
-    elseif type(data) ~= 'function' then
-        table.insert(messages, prefix .. ' = ' .. tostring(data))
-    end
+    table.insert(messages, {[prefix]=data})
 end
 data_messages('data', data)
 
 local room = zentropy.Room:new{rng=rng, map=map, data_messages=data_messages}
-
-local DialogBox = Class:new()
-
-function DialogBox:on_started()
-    self.lines = {}
-    local y = 0
-    for _, text in ipairs(self.text) do
-        local line = sol.text_surface.create{
-            text=text,
-            vertical_alignment="top",
-        }
-        line:set_xy(0, y)
-        local width, height = line:get_size()
-        y = y + height
-        table.insert(self.lines, line)
-    end
-    self.game:set_hud_enabled(false)
-    self.game:get_hero():freeze()
-end
-
-function DialogBox:on_finished()
-    self.game:set_hud_enabled(true)
-    self.game:get_hero():unfreeze()
-end
-
-function DialogBox:on_command_pressed(command)
-    if command == 'action' then
-        sol.menu.stop(self)
-    end
-    return true
-end
-
-function DialogBox:on_draw(dst_surface)
-    for _, line in ipairs(self.lines) do
-        line:draw(dst_surface)
-    end
-end
-
 
 function is_special_room(data)
     for dir, door in pairs(data.doors) do
@@ -86,18 +28,13 @@ end
 local walls = {}
 for _, dir in ipairs{'north','south','east','west'} do
     if data.doors[dir] then
-        if not data.doors[dir].reach then
-            if not room:door({open=data.doors[dir].open, name=data.doors[dir].name}, dir) then
-                for _, msg in ipairs(messages) do zentropy.debug(msg) end
-                error('')
-            end
-        end
-        if not data.doors[dir].open and not data.doors[dir].reach and not data.doors[dir].see then
-            room.open_doors[dir] = true
-        end
         if data.doors[dir].reach then
             assert(not obstacle_item or obstacle_item == data.doors[dir].reach)
             obstacle_item = data.doors[dir].reach
+        else
+            if not room:door({open=data.doors[dir].open, name=data.doors[dir].name}, dir) then
+                error(util.table_string('messages', messages))
+            end
         end
     else
         table.insert(walls, dir)
@@ -158,37 +95,34 @@ if obstacle_dir then
     obstacle_data.rng = rng:refine('obstacle')
 
     if not room:obstacle(obstacle_data, obstacle_dir, obstacle_item) then
-        for _, msg in ipairs(messages) do zentropy.debug(msg) end
-        error('')
+        error(util.table_string('messages', messages))
     end
 end
 
 for _, treasure_data in ipairs(normal_treasures) do
     if not room:treasure(treasure_data) then
-        for _, msg in ipairs(messages) do zentropy.debug(msg) end
-        error('')
+        error(util.table_string('messages', messages))
     end
 end
 
 for _, enemy_data in ipairs(data.enemies) do
     if not room:enemy(enemy_data) then
-        for _, msg in ipairs(messages) do zentropy.debug(msg) end
-        error('')
+        error(util.table_string('messages', messages))
     end
-end
-
-if #messages > 0 then
-    --[[
-     if not room:sign({menu=DialogBox:new{text=messages, game=map:get_game()}}) then
-        for _, msg in ipairs(messages) do zentropy.debug(msg) end
-        error('')
-    end
-    ]]
 end
 
 if not is_special_room(data) then
-    repeat until not room:filler()
-end
-if too_deep then
-    util.table_lines('messages', messages)
+    --[[
+    if #messages > 0 then
+        local text = util.table_string('messages', messages)
+        if not room:sign{menu=zentropy.menu(text .. "\n")} then
+            error(text)
+        end
+    end
+    ]]
+
+    local n = 0
+    while room:filler(n) do
+        n = n + 1
+    end
 end

@@ -30,8 +30,8 @@ end
 local Node = Class:new()
 
 local Room = Node:new{class='Room'}
-local Treasure = Node:new{class='Treasure', open='nothing'}
-local Enemy = Node:new{class='Enemy', see='nothing', reach='nothing', open='nothing'}
+local Treasure = Node:new{class='Treasure', open='nothing', exit='nothing'}
+local Enemy = Node:new{class='Enemy', reach='nothing', open='nothing', exit='nothing'}
 
 function Treasure:new(o)
     o = o or {}
@@ -78,10 +78,6 @@ function Node:with_needs(needs)
     end
 end
 
-function Node:is_visible()
-    return not self.see or self.see == 'nothing'
-end
-
 function Node:is_reachable()
     return not self.reach or self.reach == 'nothing'
 end
@@ -91,7 +87,7 @@ function Node:is_open()
 end
 
 function Node:is_normal()
-    return self:is_visible() and self:is_reachable() and self:is_open()
+    return self:is_reachable() and self:is_open()
 end
 
 function Node:is_directional()
@@ -99,11 +95,11 @@ function Node:is_directional()
 end
 
 function Room:__tostring()
-    return string.format("Room[%s]", self:prop_string{'see', 'reach', 'open', 'dir'})
+    return string.format("Room[%s]", self:prop_string{'exit', 'reach', 'open', 'dir'})
 end
 
 function Treasure:__tostring()
-    return string.format("Treasure:%s[%s]", self.name, self:prop_string{'see', 'reach', 'open'})
+    return string.format("Treasure:%s[%s]", self.name, self:prop_string{'reach', 'open'})
 end
 
 function Enemy:__tostring()
@@ -170,13 +166,11 @@ tree.Metric = Class:new()
 function tree.Metric:new(o)
     o = o or {}
     o.doors = o.doors or 0
-    o.hidden_doors = o.hidden_doors or 0
     o.obstacle_doors = o.obstacle_doors or {}
     o.bigkey_doors = o.bigkey_doors or 0
     o.directional_doors = o.directional_doors or 0
     o.treasures = o.treasures or 0
     o.normal_treasures = o.normal_treasures or 0
-    o.hidden_treasures = o.hidden_treasures or 0
     o.obstacle_treasures = o.obstacle_treasures or {}
     o.bigkey_treasures = o.bigkey_treasures or 0
     return Node.new(self, o)
@@ -227,7 +221,6 @@ end
 function Room:get_node_metric()
     local metric = tree.Metric:new()
     metric.doors = 1
-    if not self:is_visible() then metric.hidden_doors = 1 end
     if not self:is_reachable() then metric.obstacle_doors = { [self.reach] = 1 } end
     if self.open == 'bigkey' then metric.bigkey_doors = 1 end
     return metric
@@ -240,7 +233,6 @@ end
 function Treasure:get_node_metric()
     local metric = tree.Metric:new()
     metric.treasures = 1
-    if not self:is_visible() then metric.hidden_treasures = 1 end
     if not self:is_reachable() then metric.obstacle_treasures = { [self.reach] = 1 } end
     if self.open == 'bigkey' then metric.bigkey_treasures = 1 end
     if self:is_normal() then metric.normal_treasures = 1 end
@@ -317,9 +309,9 @@ function tree.Metric:get_obstacle_types()
 end
 
 function tree.Metric:__tostring()
-    return string.format('D:%d (%d,%d,%d,%d) T:%d (%d,%d,%d,%d)',
-    self.doors,     self.hidden_doors,     self:get_obstacle_doors(),     self.bigkey_doors,     self.directional_doors,
-    self.treasures, self.hidden_treasures, self:get_obstacle_treasures(), self.bigkey_treasures, self.normal_treasures)
+    return string.format('D:%d (%d,%d,%d) T:%d (%d,%d,%d)',
+    self.doors,     self:get_obstacle_doors(),     self.bigkey_doors,     self.directional_doors,
+    self.treasures, self:get_obstacle_treasures(), self.bigkey_treasures, self.normal_treasures)
 end
 
 function tree.Metric:is_valid()
@@ -327,18 +319,14 @@ function tree.Metric:is_valid()
     if self:get_obstacle_types() > 1 then return false end
 
     if self.bigkey_doors > 0 and self.treasures > 0 then return false end
-    if self.bigkey_doors > 0 and self.hidden_doors > 0 then return false end
     if self.bigkey_doors > 0 and self:get_obstacles() > 0 then return false end
 
     if self.treasures > 2 then return false end
     if self.normal_treasures > 1 then return false end
-    if self.hidden_treasures > 1 then return false end
     if self.bigkey_treasures > 1 then return false end
     if self:get_obstacle_treasures() > 1 then return false end
 
-    if self.hidden_treasures > 0 and self.bigkey_treasures > 0 then return false end
-
-    if (self.bigkey_treasures > 0 or self.hidden_treasures > 0) and self:get_obstacles() > 0 then return false end
+    if self.bigkey_treasures > 0 and self:get_obstacles() > 0 then return false end
     if self.bigkey_treasures > 0 and self.normal_treasures > 0 then return false end
 
     return true

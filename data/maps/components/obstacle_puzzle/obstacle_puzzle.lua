@@ -14,6 +14,12 @@ function puzzle.init(map, data)
 
     zentropy.inject_enemy(enemy, data.rng:refine('enemy'))
 
+	local door_names = {}
+	for dir, door_data in util.pairs_by_keys(data.doors) do
+        assert((door_data.open or 'open') == 'open')
+		data.room:door({open='closed', name=door_data.name, door_names=door_names}, dir)
+	end
+
     local hidden_chest = nil
 
     if data.treasure1 then
@@ -75,8 +81,8 @@ function puzzle.init(map, data)
 
         local function sensor_activated()
             if not switch:is_activated() then
-                for dir, _ in pairs(data.doors) do
-                    map:close_doors('door_' .. dir)
+                for dir, name in util.pairs_by_keys(door_names) do
+                    map:close_doors(name)
                 end
             end
         end
@@ -92,8 +98,8 @@ function puzzle.init(map, data)
                 hidden_chest:set_enabled(true)
                 sound = 'chest_appears'
             end
-            map:set_doors_open('door_', true)
-            if next(data.doors) then
+            for dir, name in util.pairs_by_keys(door_names) do
+                map:open_doors(name)
                 sound = 'secret'
             end
             if sound then

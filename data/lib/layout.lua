@@ -180,7 +180,6 @@ function collect_mixin(object)
         local data = {
             item_name = treasure.name,
         }
-        if treasure.see ~= 'nothing' then data.see=treasure.see end
         if treasure.reach ~= 'nothing' then data.reach=treasure.reach end
         if treasure.open ~= 'nothing' then data.open=treasure.open end
         table.insert(info.treasures, data)
@@ -200,8 +199,8 @@ function collect_mixin(object)
             doors={
                 [from_dir]={
                     native_pos=native_pos,
-                    see=room.see,
                     open=room.open,
+                    reach=room.exit,
                 },
             },
             treasures={},
@@ -212,9 +211,9 @@ function collect_mixin(object)
             local data = {
                 native_pos=native_pos,
             }
-            if room.see ~= 'nothing' then data.see = room.see end
             if room.reach ~= 'nothing' then data.reach = room.reach end
             if room.open ~= 'nothing' then data.open = room.open end
+            if room.exit ~= 'nothing' then data.exit = room.exit end
             self:get_room(parent_depth, parent_leaf).doors[native_dir] = data
         end
     end
@@ -389,11 +388,11 @@ function Layout.print_mixin(object)
     function object:collect_on_finish()
         self:each_room(function (depth, leaf, info)
             function print_access(thing)
-                if not thing:is_visible() then print(string.format("\t\tto see: %s", thing.see)) end
-                if not thing:is_reachable() then print(string.format("\t\tto reach: %s", thing.reach)) end
-                if not thing:is_open() then print(string.format("\t\tto open: %s", thing.open)) end
+                if thing.reach then print(string.format("\t\tto reach: %s", thing.reach)) end
+                if thing.open then print(string.format("\t\tto open: %s", thing.open)) end
+                if thing.exit then print(string.format("\t\tto exit: %s", thing.exit)) end
             end
-            print(string.format("Room %d;%d", x, y))
+            print(string.format("Room %d;%d", depth, leaf))
             for dir, door in util.pairs_by_keys(info.doors) do
                 print(string.format("  Door %s", dir))
                 print_access(door)
@@ -461,7 +460,7 @@ function Layout.minimap_mixin(object, map_menu)
                         door_info.y = y
                     end
                     door_info.is_entrance = (door.open == 'entrance')
-                    if not door.see or self.game:get_value(door_name) then
+                    if door.open ~= 'weakwall' or self.game:get_value(door_name) then
                         door_info.perception = math.max(door_info.perception or 0, room_perception)
                         doors[door_name] = door_info
                     end
@@ -581,16 +580,15 @@ function Layout.solarus_mixin(object, map, floors)
                 local door_name = self:door_name(native_door.native_pos.depth, native_door.native_pos.leaf, native_door.native_pos.dir)
                 map_info.doors[self:dir_from_native(native_dir)] = {
                     name=door_name,
-                    see=native_door.see,
                     reach=native_door.reach,
                     open=native_door.open,
+                    exit=native_door.exit,
                 }
             end
             for n, treasure in ipairs(info.treasures) do
                 table.insert(map_info.treasures, {
                     name=self:treasure_name(depth, leaf, n),
                     item_name=treasure.item_name,
-                    see=treasure.see,
                     reach=treasure.reach,
                     open=treasure.open,
                 })
