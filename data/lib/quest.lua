@@ -8,7 +8,7 @@ setmetatable(HideTreasuresVisitor, HideTreasuresVisitor)
 function HideTreasuresVisitor:visit_room(room)
     room:each_child(function (key, child)
         if child.class == 'Treasure' and child:is_reachable() and child:is_open() then
-            room:update_child(key, child:with_needs{see='compass',reach='puzzle',open='nothing'})
+            room:update_child(key, child:with_needs{reach='puzzle',open='nothing'})
         end
         child:accept(self)
     end)
@@ -109,7 +109,7 @@ function Quest.boss_step(root)
 end
 
 function Quest.fairy_step(root)
-    root:add_child(Tree.Enemy:new{name='fairy'}:with_needs{see='map',reach='puzzle',open='open'})
+    root:add_child(Tree.Enemy:new{name='fairy'}:with_needs{reach='puzzle',open='open'})
 end
 
 function Quest.culdesac_step(root)
@@ -120,17 +120,17 @@ function Quest.hide_treasures_step(root)
     root:accept(HideTreasuresVisitor)
 end
 
-function Quest.obstacle_step(item_name, open, see)
+function Quest.obstacle_step(item_name, open)
     return function (root)
         root:each_child(function (key, head)
-            root:update_child(key, head:with_needs{see=see,reach=item_name,open=open})
+            root:update_child(key, head:with_needs{reach=item_name,open=open})
         end)
     end
 end
 
 function Quest.big_chest_step(item_name)
     return function (root)
-        root:add_child(Tree.Treasure:new{name=item_name, see='nothing', reach='nothing', open='bigkey'})
+        root:add_child(Tree.Treasure:new{name=item_name, reach='nothing', open='bigkey'})
     end
 end
 
@@ -306,18 +306,15 @@ function Quest.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, treasure_items, b
     end
 
     function get_obstacle_step(obstacle_type)
-        local see, open
+        local open
         if obstacle_type == 'weakwall' then
-            see = 'nothing'
             open = 'weakwall'
         elseif obstacle_type == 'veryweakwall' then
-            see = 'nothing'
             open = 'veryweakwall'
         else
-            see = 'nothing'
             open = 'open'
         end
-        return Quest.obstacle_step(obstacle_type, open, see)
+        return Quest.obstacle_step(obstacle_type, open)
     end
 
     local d = Quest.Dependencies:new()
