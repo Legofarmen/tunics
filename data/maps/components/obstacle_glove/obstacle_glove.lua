@@ -48,15 +48,18 @@ function glove.init(map, data)
         map:set_entities_enabled('treasure_open_', false)
     end
 
-    for stone in map:get_entities('stone_') do
-        local x, y, layer = stone:get_position()
-        map:create_destructible{
+    for placeholder in map:get_entities('stone_') do
+        local x, y, layer = placeholder:get_position()
+        local stone = map:create_destructible{
             layer = layer,
             x = x,
             y = y,
-            sprite = 'entities/stone_white'
+            sprite = 'entities/stone_white',
+            weight = 1,
         }
-        stone:remove()
+        local x_origin, y_origin = stone:get_origin()
+        stone:set_position(x + x_origin, y + y_origin)
+        placeholder:remove()
     end
 
 end
