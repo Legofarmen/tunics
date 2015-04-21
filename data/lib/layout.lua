@@ -461,7 +461,7 @@ function Layout.minimap_mixin(object, map_menu)
                         door_info.y = y
                     end
                     door_info.is_entrance = (door.open == 'entrance')
-                    if not door.see or self.game:get_value(door_name) then
+                    if door.open ~= 'weakwall' or self.game:get_value(door_name) then
                         door_info.perception = math.max(door_info.perception or 0, room_perception)
                         doors[door_name] = door_info
                     end

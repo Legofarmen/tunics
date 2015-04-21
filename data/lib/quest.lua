@@ -308,7 +308,7 @@ function Quest.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, treasure_items, b
     function get_obstacle_step(obstacle_type)
         local see, open
         if obstacle_type == 'weakwall' then
-            see = 'map'
+            see = 'nothing'
             open = 'weakwall'
         elseif obstacle_type == 'veryweakwall' then
             see = 'nothing'
