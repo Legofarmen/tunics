@@ -252,7 +252,7 @@ map{ id = "components/filler/filler_000004_5", description = "Filler 000004 5" }
 map{ id = "tompa/filler_y9", description = "Filler Y9" }
 map{ id = "tompa/filler_y10", description = "Filler Y10" }
 map{ id = "tompa/filler_y11", description = "Filler Y11" }
-map{ id = "components/obstacle_glove/obstacle_glove_north_000700_2", description = "Obstacle glove north 000700 2" }
+map{ id = "components/obstacle_glove/obstacle_glove_north_200700_1", description = "Obstacle glove north 200700 1" }
 map{ id = "components/filler/filler_000707_2", description = "Filler 000707 2" }
 map{ id = "components/obstacle_glove/obstacle_glove_eastwest_050777_1", description = "Obstacle glove eastwest 050777 1" }
 map{ id = "components/obstacle_glove/obstacle_glove_northeast_210711_1", description = "Obstacle glove northeast 210711 1" }
@@ -273,6 +273,13 @@ map{ id = "tompa/draft_2", description = "Draft 2" }
 map{ id = "tompa/draft_3", description = "Draft 3" }
 map{ id = "tompa/draft_4", description = "Draft 4" }
 map{ id = "tompa/draft_5", description = "Draft 5" }
+map{ id = "components/obstacle_glove/obstacle_glove_east_010777_1", description = "Obstacle glove east 010777 1" }
+map{ id = "components/obstacle_glove/obstacle_glove_north_200777_2", description = "Obstacle glove north 200777 2" }
+map{ id = "components/obstacle_glove/obstacle_glove_south_002777_2", description = "Obstacle glove south 002777 2" }
+map{ id = "components/obstacle_glove/obstacle_glove_west_040777_1", description = "Obstacle glove west 040777 1" }
+map{ id = "components/obstacle_glove/obstacle_glove_east_010333_1", description = "Obstacle glove east 010333 1" }
+map{ id = "components/obstacle_glove/obstacle_glove_south_002077_1", description = "Obstacle glove south 002077 1" }
+map{ id = "components/obstacle_glove/obstacle_glove_west_040555_1", description = "Obstacle glove west 040555 1" }
 
 tileset{ id = "light_world", description = "Light World" }
 tileset{ id = "dungeon_brick_gray_1", description = "Dungeon brick gray 1" }
