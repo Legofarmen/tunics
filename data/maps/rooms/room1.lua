@@ -33,7 +33,7 @@ for _, dir in ipairs{'north','south','east','west'} do
             obstacle_item = data.doors[dir].reach
         else
             if not room:door({open=data.doors[dir].open, name=data.doors[dir].name}, dir) then
-                error(util.ijoin("\n", messages))
+                error(util.table_string('messages', messages))
             end
         end
     else
@@ -95,27 +95,28 @@ if obstacle_dir then
     obstacle_data.rng = rng:refine('obstacle')
 
     if not room:obstacle(obstacle_data, obstacle_dir, obstacle_item) then
-        error(util.ijoin("\n", messages))
+        error(util.table_string('messages', messages))
     end
 end
 
 for _, treasure_data in ipairs(normal_treasures) do
     if not room:treasure(treasure_data) then
-        error(util.ijoin("\n", messages))
+        error(util.table_string('messages', messages))
     end
 end
 
 for _, enemy_data in ipairs(data.enemies) do
     if not room:enemy(enemy_data) then
-        error(util.ijoin("\n", messages))
+        error(util.table_string('messages', messages))
     end
 end
 
 if not is_special_room(data) then
     --[[
     if #messages > 0 then
-        if not room:sign{menu=zentropy.menu(util.ijoin("\n", messages) .. "\n")} then
-            error(util.ijoin("\n", messages))
+        local text = util.table_string('messages', messages)
+        if not room:sign{menu=zentropy.menu(text .. "\n")} then
+            error(text)
         end
     end
     ]]
