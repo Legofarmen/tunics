@@ -589,6 +589,17 @@ function zentropy.game.new_game()
     zentropy.game.setup_quest_invariants()
 
     local tier = zentropy.settings.quest_tier
+    if type(tier) == 'string' then
+        for i, item_name in ipairs(zentropy.game.items) do
+            if tier == item_name then
+                tier = i
+                break
+            end
+        end
+        if type(tier) == 'string' then
+            error('unknown tier: ' .. tier)
+        end
+    end
     zentropy.game.catch_up_on_items(tier)
     zentropy.game.setup_tier_initial(tier)
 
