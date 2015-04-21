@@ -53,8 +53,12 @@ function util.table_lines(prefix, data, f)
     if type(data) == 'table' then
         local n = 0
         for key, value in util.pairs_by_keys(data) do
-            util.table_lines(prefix .. '.' .. key, value, f)
-            n = n + 1
+            if key == '__index' then
+                f(string.format('%s.%s = ...', prefix, key))
+            else
+                util.table_lines(prefix .. '.' .. key, value, f)
+                n = n + 1
+            end
         end
         if n == 0 then
             f(string.format('%s = {}', prefix))
