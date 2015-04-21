@@ -24,10 +24,18 @@ function is_special_room(data)
     end
 end
 
-local room_events = {}
+local room_events = {
+    door_sensor_activated_listeners = {},
+}
 
 function room_events:on_door_sensor_activated(direction)
+    for listener in pairs(self.door_sensor_activated_listeners) do
+        listener(direction)
+    end
+end
 
+function room_events:add_door_sensor_activated_listener(listener)
+    self.door_sensor_activated_listeners[listener] = true
 end
 
 
