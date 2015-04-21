@@ -1,15 +1,5 @@
 local map, data = ...
 
-local zentropy = require 'lib/zentropy'
+local door_weakwall = require 'maps/components/door/door_weakwall'
 
-local door = zentropy.inject_door(map:get_entity('doorway'), {
-    savegame_variable = data.name,
-    direction = 1,
-    sprite = "entities/door_weak_wall",
-    opening_method = "explosion",
-})
-
-function door:on_opened()
-    door_closed:set_enabled(false)
-    top_open:set_enabled(true)
-end
+return door_weakwall.init(map, data, 1)

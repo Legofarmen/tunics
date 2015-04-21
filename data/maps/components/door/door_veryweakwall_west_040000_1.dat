@@ -9,24 +9,6 @@ properties{
 
 tile{
   layer = 1,
-  x = 16,
-  y = 128,
-  width = 16,
-  height = 8,
-  pattern = "door_blast.3.support.2",
-}
-
-tile{
-  layer = 1,
-  x = 16,
-  y = 104,
-  width = 16,
-  height = 8,
-  pattern = "door_blast.3.support.1",
-}
-
-tile{
-  layer = 1,
   x = 0,
   y = 112,
   width = 16,
@@ -58,7 +40,7 @@ dynamic_tile{
   y = 112,
   width = 16,
   height = 16,
-  name = "doorway",
+  name = "door_open",
   pattern = "door_blast.3",
   enabled_at_start = true,
 }
@@ -72,14 +54,34 @@ wall{
   stops_enemies = true,
 }
 
+sensor{
+  layer = 1,
+  x = 40,
+  y = 125,
+  width = 16,
+  height = 16,
+  name = "sensor",
+}
+
 dynamic_tile{
   layer = 1,
-  x = 8,
+  x = 16,
   y = 104,
-  width = 24,
-  height = 32,
-  name = "door_closed",
-  pattern = "wall.3",
+  width = 16,
+  height = 8,
+  name = "door_open_5",
+  pattern = "door_blast.3.support.1",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 16,
+  y = 128,
+  width = 16,
+  height = 8,
+  name = "door_open_3",
+  pattern = "door_blast.3.support.2",
   enabled_at_start = true,
 }
 
@@ -98,7 +100,7 @@ dynamic_tile{
   y = 104,
   width = 8,
   height = 32,
-  name = "top_open",
+  name = "door_open_4",
   pattern = "door_top.blast.3",
   enabled_at_start = false,
 }
