@@ -199,6 +199,7 @@ function collect_mixin(object)
             doors={
                 [from_dir]={
                     native_pos=native_pos,
+                    open=room.open,
                     reach=room.exit,
                 },
             },
@@ -387,11 +388,11 @@ function Layout.print_mixin(object)
     function object:collect_on_finish()
         self:each_room(function (depth, leaf, info)
             function print_access(thing)
-                if not thing:is_reachable() then print(string.format("\t\tto reach: %s", thing.reach)) end
-                if not thing:is_open() then print(string.format("\t\tto open: %s", thing.open)) end
-                if not thing:is_exit() then print(string.format("\t\tto exit: %s", thing.exit)) end
+                if thing.reach then print(string.format("\t\tto reach: %s", thing.reach)) end
+                if thing.open then print(string.format("\t\tto open: %s", thing.open)) end
+                if thing.exit then print(string.format("\t\tto exit: %s", thing.exit)) end
             end
-            print(string.format("Room %d;%d", x, y))
+            print(string.format("Room %d;%d", depth, leaf))
             for dir, door in util.pairs_by_keys(info.doors) do
                 print(string.format("  Door %s", dir))
                 print_access(door)
@@ -458,7 +459,7 @@ function Layout.minimap_mixin(object, map_menu)
                         door_info.x = x
                         door_info.y = y
                     end
-                    door_info.is_entrance = (door.exit == 'entrance')
+                    door_info.is_entrance = (door.open == 'entrance')
                     if door.open ~= 'weakwall' or self.game:get_value(door_name) then
                         door_info.perception = math.max(door_info.perception or 0, room_perception)
                         doors[door_name] = door_info

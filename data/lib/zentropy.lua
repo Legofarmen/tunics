@@ -556,6 +556,7 @@ function zentropy.game.get_items_sequence(rng)
     d:single('hookshot_1', {item_name='hookshot'})
     d:single('bomb_1', {item_name='bombs_counter'})
     d:single('flippers_1', {item_name='flippers'})
+    d:single('glove_1', {item_name='glove'})
     local items = Quest.sequence(rng, d.result)
     local i = 1
     local brought_items = {}
@@ -588,6 +589,17 @@ function zentropy.game.new_game()
     zentropy.game.setup_quest_invariants()
 
     local tier = zentropy.settings.quest_tier
+    if type(tier) == 'string' then
+        for i, item_name in ipairs(zentropy.game.items) do
+            if tier == item_name then
+                tier = i
+                break
+            end
+        end
+        if type(tier) == 'string' then
+            error('unknown tier: ' .. tier)
+        end
+    end
     zentropy.game.catch_up_on_items(tier)
     zentropy.game.setup_tier_initial(tier)
 
