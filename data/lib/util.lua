@@ -64,15 +64,23 @@ function util.table_lines(prefix, data, f)
     end
 end
 
+function util.table_string(prefix, data)
+    local lines = {}
+    util.table_lines(prefix, data, function (line)
+        table.insert(lines, line)
+    end)
+    return util.ijoin("\n", lines)
+end
+
 function util.ijoin(sep, t)
     if #t == 0 then
         return ''
     elseif #t == 1 then
         return t[1]
     else
-        local res = t[1]
+        local res = tostring(t[1])
         for i = 2, #t do
-            res = res .. sep .. t[i]
+            res = res .. sep .. tostring(t[i])
         end
         return res
     end

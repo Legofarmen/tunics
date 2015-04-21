@@ -8,3 +8,4 @@ local door = zentropy.inject_door(map:get_entity('doorway'), {
     sprite = "entities/door_normal",
 })
 data.door_names.south = door:get_userdata():get_name()
+map:set_doors_open(door:get_name(), true)

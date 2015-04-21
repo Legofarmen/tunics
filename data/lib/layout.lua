@@ -199,7 +199,7 @@ function collect_mixin(object)
             doors={
                 [from_dir]={
                     native_pos=native_pos,
-                    open=room.open,
+                    reach=room.exit,
                 },
             },
             treasures={},
@@ -212,6 +212,7 @@ function collect_mixin(object)
             }
             if room.reach ~= 'nothing' then data.reach = room.reach end
             if room.open ~= 'nothing' then data.open = room.open end
+            if room.exit ~= 'nothing' then data.exit = room.exit end
             self:get_room(parent_depth, parent_leaf).doors[native_dir] = data
         end
     end
@@ -388,6 +389,7 @@ function Layout.print_mixin(object)
             function print_access(thing)
                 if not thing:is_reachable() then print(string.format("\t\tto reach: %s", thing.reach)) end
                 if not thing:is_open() then print(string.format("\t\tto open: %s", thing.open)) end
+                if not thing:is_exit() then print(string.format("\t\tto exit: %s", thing.exit)) end
             end
             print(string.format("Room %d;%d", x, y))
             for dir, door in util.pairs_by_keys(info.doors) do
@@ -456,7 +458,7 @@ function Layout.minimap_mixin(object, map_menu)
                         door_info.x = x
                         door_info.y = y
                     end
-                    door_info.is_entrance = (door.open == 'entrance')
+                    door_info.is_entrance = (door.exit == 'entrance')
                     if door.open ~= 'weakwall' or self.game:get_value(door_name) then
                         door_info.perception = math.max(door_info.perception or 0, room_perception)
                         doors[door_name] = door_info
@@ -579,6 +581,7 @@ function Layout.solarus_mixin(object, map, floors)
                     name=door_name,
                     reach=native_door.reach,
                     open=native_door.open,
+                    exit=native_door.exit,
                 }
             end
             for n, treasure in ipairs(info.treasures) do
