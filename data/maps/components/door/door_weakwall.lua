@@ -14,7 +14,7 @@ function door_weakwall.init(map, data, direction)
     local sensor = map:get_entity('sensor')
 
     function sensor:on_activated()
-        data.room_events:door_sensor_activated(direction)
+        data.room_events:on_door_sensor_activated(direction)
     end
 
     local component = {}

@@ -440,6 +440,7 @@ function zentropy.Room:new(o)
 end
 
 function zentropy.Room:door(data, dir)
+    assert(data.room_events)
     if not data then return end
     local component_name, component_mask = zentropy.components:get_door(data.open, dir, self.mask, self.rng:refine('door_' .. dir))
     if not component_name then
@@ -453,6 +454,7 @@ function zentropy.Room:door(data, dir)
 end
 
 function zentropy.Room:obstacle(data, dir, item)
+    assert(data.room_events)
     if not data then return end
     local component_name, component_mask = zentropy.components:get_obstacle(item, dir, self.mask, self.rng:refine('obstacle_' .. dir))
     if not component_name then

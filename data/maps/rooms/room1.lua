@@ -24,6 +24,12 @@ function is_special_room(data)
     end
 end
 
+local room_events = {}
+
+function room_events:on_door_sensor_activated(direction)
+
+end
+
 
 local walls = {}
 for _, dir in ipairs{'north','south','east','west'} do
@@ -32,7 +38,7 @@ for _, dir in ipairs{'north','south','east','west'} do
             assert(not obstacle_item or obstacle_item == data.doors[dir].reach)
             obstacle_item = data.doors[dir].reach
         else
-            if not room:door({open=data.doors[dir].open, name=data.doors[dir].name}, dir) then
+            if not room:door({open=data.doors[dir].open, name=data.doors[dir].name, room_events=room_events}, dir) then
                 error(util.table_string('messages', messages))
             end
         end
@@ -93,6 +99,7 @@ if obstacle_dir then
     obstacle_data.doors = obstacle_doors
     obstacle_data.room = room
     obstacle_data.rng = rng:refine('obstacle')
+    obstacle_data.room_events = room_events
 
     if not room:obstacle(obstacle_data, obstacle_dir, obstacle_item) then
         error(util.table_string('messages', messages))

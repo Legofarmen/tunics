@@ -9,7 +9,7 @@ function bow.init(map, data, timeout)
 	local door_names = {}
 	for dir, door_data in util.pairs_by_keys(data.doors) do
         assert((door_data.open or 'open') == 'open')
-		data.room:door({open='closed', name=door_data.name, door_names=door_names}, dir)
+		data.room:door({open='closed', name=door_data.name, door_names=door_names, room_events=data.room_events}, dir)
 	end
 
     if enemy then

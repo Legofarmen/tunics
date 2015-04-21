@@ -7,7 +7,7 @@ function door_veryweakwall.init(map, data, direction)
     local door = zentropy.inject_door(map:get_entity('door_open'), {
         name = 'door',
         savegame_variable = data.name,
-        direction = 0,
+        direction = direction,
         sprite = "entities/door_very_weak_wall",
         opening_method = "explosion",
     })
@@ -15,7 +15,7 @@ function door_veryweakwall.init(map, data, direction)
     local sensor = map:get_entity('sensor')
 
     function sensor:on_activated()
-        data.room_events:door_sensor_activated(direction)
+        data.room_events:on_door_sensor_activated(direction)
     end
 
     local component = {}
