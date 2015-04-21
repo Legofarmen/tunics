@@ -1,11 +1,5 @@
 local map, data = ...
 
-local zentropy = require 'lib/zentropy'
+local door_bigkey = require 'maps/components/door/door_bigkey'
 
-zentropy.inject_door(map:get_entity('doorway'), {
-    savegame_variable = data.name,
-    direction = 1,
-    sprite = "entities/door_big_key",
-    opening_method = "interaction_if_savegame_variable",
-    opening_condition = "bigkey",
-})
+return door_bigkey.init(map, data, 1)

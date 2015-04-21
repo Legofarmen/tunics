@@ -322,6 +322,15 @@ wall{
   stops_enemies = true,
 }
 
+sensor{
+  layer = 1,
+  x = 160,
+  y = 205,
+  width = 16,
+  height = 16,
+  name = "sensor",
+}
+
 tile{
   layer = 2,
   x = 144,
