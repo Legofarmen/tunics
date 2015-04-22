@@ -178,5 +178,5 @@ function mapmeta:include(x, y, name, data)
             return map:get_entity(key)
         end
     end})
-    setfenv(luaf, luaenv)(map, data)
+    return setfenv(luaf, luaenv)(map, data)
 end

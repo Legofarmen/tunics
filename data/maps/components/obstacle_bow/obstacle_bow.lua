@@ -6,10 +6,11 @@ local zentropy = require 'lib/zentropy'
 function bow.init(map, data, timeout)
     local enemy = map:get_entity('enemy')
 
-	local door_names = {}
+	local doors = {}
 	for dir, door_data in util.pairs_by_keys(data.doors) do
         assert((door_data.open or 'open') == 'open')
-		data.room:door({open='closed', name=door_data.name, door_names=door_names}, dir)
+		local door = data.room:door({open='closed', name=door_data.name, room_events=data.room_events}, dir)
+        table.insert(doors, door)
 	end
 
     if enemy then
@@ -58,12 +59,20 @@ function bow.init(map, data, timeout)
 			hidden_chest:set_enabled(true)
 			sound = 'chest_appears'
 		end
-		for dir, name in util.pairs_by_keys(door_names) do
-			map:open_doors(name)
+		for _, component in ipairs(doors) do
+			component:open()
 			sound = 'secret'
 		end
 		sol.audio.play_sound(sound)
 	end
+
+    data.room_events:add_door_sensor_activated_listener(function ()
+        if not switch:is_activated() then
+            for _, component in ipairs(doors) do
+                component:close()
+            end
+        end
+    end)
 
 end
 

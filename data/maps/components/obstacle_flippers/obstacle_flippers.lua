@@ -5,7 +5,7 @@ local util = require 'lib/util'
 function flippers.init(map, data)
 	local door_names = {}
 	for dir, door_data in util.pairs_by_keys(data.doors) do
-		data.room:door({open=door_data.open or 'open', name=door_data.name, door_names=door_names}, dir)
+		data.room:door({open=door_data.open or 'open', name=door_data.name, door_names=door_names, room_events=data.room_events}, dir)
 	end
 
     local hidden_chest = nil

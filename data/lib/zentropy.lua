@@ -440,19 +440,21 @@ function zentropy.Room:new(o)
 end
 
 function zentropy.Room:door(data, dir)
+    assert(data.room_events)
     if not data then return end
     local component_name, component_mask = zentropy.components:get_door(data.open, dir, self.mask, self.rng:refine('door_' .. dir))
     if not component_name then
         self.data_messages('error', string.format("door not found: open=%s dir=%s mask=%06o", data.open, dir, self.mask))
-        return false
+        return
     end
-    self.map:include(0, 0, component_name, data)
+    local component = self.map:include(0, 0, component_name, data)
     self.mask = bit32.bor(self.mask, component_mask)
     self.data_messages('component', component_name)
-    return true
+    return component
 end
 
 function zentropy.Room:obstacle(data, dir, item)
+    assert(data.room_events)
     if not data then return end
     local component_name, component_mask = zentropy.components:get_obstacle(item, dir, self.mask, self.rng:refine('obstacle_' .. dir))
     if not component_name then

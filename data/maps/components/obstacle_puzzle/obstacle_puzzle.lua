@@ -6,18 +6,15 @@ local zentropy = require 'lib/zentropy'
 function puzzle.init(map, data)
 
     local switch = map:get_entity('switch')
-    local sensor_north = map:get_entity('sensor_north')
-    local sensor_south = map:get_entity('sensor_south')
-    local sensor_east = map:get_entity('sensor_east')
-    local sensor_west = map:get_entity('sensor_west')
     local enemy = map:get_entity('enemy')
 
     zentropy.inject_enemy(enemy, data.rng:refine('enemy'))
 
-	local door_names = {}
+	local doors = {}
 	for dir, door_data in util.pairs_by_keys(data.doors) do
         assert((door_data.open or 'open') == 'open')
-		data.room:door({open='closed', name=door_data.name, door_names=door_names}, dir)
+		local door = data.room:door({open='closed', name=door_data.name, room_events=data.room_events}, dir)
+        table.insert(doors, door)
 	end
 
     local hidden_chest = nil
@@ -79,18 +76,13 @@ function puzzle.init(map, data)
             block:set_pushable(true)
         end
 
-        local function sensor_activated()
+        data.room_events:add_door_sensor_activated_listener(function ()
             if not switch:is_activated() then
-                for dir, name in util.pairs_by_keys(door_names) do
-                    map:close_doors(name)
+                for _, component in ipairs(doors) do
+                    component:close()
                 end
             end
-        end
-
-        sensor_north.on_activated = sensor_activated
-        sensor_south.on_activated = sensor_activated
-        sensor_east.on_activated = sensor_activated
-        sensor_west.on_activated = sensor_activated
+        end)
 
         function switch:on_activated()
             local sound = nil
@@ -98,8 +90,8 @@ function puzzle.init(map, data)
                 hidden_chest:set_enabled(true)
                 sound = 'chest_appears'
             end
-            for dir, name in util.pairs_by_keys(door_names) do
-                map:open_doors(name)
+            for _, component in ipairs(doors) do
+                component:open()
                 sound = 'secret'
             end
             if sound then
@@ -109,13 +101,6 @@ function puzzle.init(map, data)
     else
         switch:set_enabled(false)
     end
-
-    map:add_on_started(function ()
-        map:set_doors_open('door_', true)
-        for dir, _ in pairs(data.doors) do
-            map:get_entity('door_' .. dir .. '_top'):set_enabled(true)
-        end
-    end)
 end
 
 return puzzle

@@ -337,7 +337,7 @@ tile{
   y = 104,
   width = 24,
   height = 32,
-  pattern = "wall_statue.1.4",
+  pattern = "wall_pipe.4",
 }
 
 tile{
@@ -346,7 +346,7 @@ tile{
   y = 104,
   width = 24,
   height = 32,
-  pattern = "wall_statue.1.3",
+  pattern = "wall_pipe.3",
 }
 
 dynamic_tile{

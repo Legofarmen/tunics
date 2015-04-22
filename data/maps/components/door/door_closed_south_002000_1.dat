@@ -58,7 +58,7 @@ dynamic_tile{
   y = 208,
   width = 16,
   height = 16,
-  name = "doorway",
+  name = "door_open",
   pattern = "door.2",
   enabled_at_start = true,
 }
@@ -70,6 +70,15 @@ wall{
   width = 16,
   height = 16,
   stops_enemies = true,
+}
+
+sensor{
+  layer = 1,
+  x = 160,
+  y = 205,
+  width = 16,
+  height = 16,
+  name = "sensor",
 }
 
 tile{
