@@ -9,73 +9,352 @@ properties{
 
 tile{
   layer = 1,
-  x = 128,
-  y = 184,
-  width = 16,
-  height = 24,
-  pattern = "barrier_big.3.border.2",
-}
-
-tile{
-  layer = 1,
-  x = 128,
-  y = 152,
-  width = 16,
-  height = 32,
-  pattern = "barrier_big.3.2",
-}
-
-tile{
-  layer = 1,
-  x = 128,
-  y = 136,
+  x = 296,
+  y = 168,
   width = 16,
   height = 16,
-  pattern = "barrier_big.3.border.1",
+  pattern = "wall_diag.4",
 }
 
 tile{
   layer = 1,
-  x = 176,
-  y = 184,
-  width = 16,
-  height = 24,
-  pattern = "barrier_big.3.border.2",
+  x = 288,
+  y = 160,
+  width = 24,
+  height = 16,
+  pattern = "wall.4",
 }
 
 tile{
   layer = 1,
-  x = 176,
-  y = 152,
-  width = 16,
-  height = 32,
-  pattern = "barrier_big.3.2",
-}
-
-tile{
-  layer = 1,
-  x = 176,
-  y = 136,
+  x = 288,
+  y = 176,
   width = 16,
   height = 16,
-  pattern = "barrier_big.3.border.1",
+  pattern = "wall_diag.4",
+}
+
+tile{
+  layer = 1,
+  x = 288,
+  y = 176,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.4",
+}
+
+tile{
+  layer = 1,
+  x = 280,
+  y = 184,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.4",
+}
+
+tile{
+  layer = 1,
+  x = 272,
+  y = 192,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.4",
+}
+
+tile{
+  layer = 1,
+  x = 264,
+  y = 200,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.4",
+}
+
+tile{
+  layer = 1,
+  x = 256,
+  y = 208,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.4",
+}
+
+tile{
+  layer = 1,
+  x = 264,
+  y = 184,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.border.4",
+}
+
+tile{
+  layer = 1,
+  x = 272,
+  y = 176,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.border.4",
+}
+
+tile{
+  layer = 1,
+  x = 248,
+  y = 216,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.4",
+}
+
+tile{
+  layer = 1,
+  x = 240,
+  y = 208,
+  width = 16,
+  height = 24,
+  pattern = "wall.2",
+}
+
+tile{
+  layer = 1,
+  x = 256,
+  y = 192,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.border.4",
+}
+
+tile{
+  layer = 1,
+  x = 304,
+  y = 184,
+  width = 8,
+  height = 48,
+  pattern = "ceiling",
+}
+
+tile{
+  layer = 1,
+  x = 296,
+  y = 192,
+  width = 8,
+  height = 40,
+  pattern = "ceiling",
+}
+
+tile{
+  layer = 1,
+  x = 288,
+  y = 200,
+  width = 8,
+  height = 32,
+  pattern = "ceiling",
+}
+
+tile{
+  layer = 1,
+  x = 280,
+  y = 208,
+  width = 8,
+  height = 24,
+  pattern = "ceiling",
+}
+
+tile{
+  layer = 1,
+  x = 272,
+  y = 216,
+  width = 8,
+  height = 16,
+  pattern = "ceiling",
+}
+
+tile{
+  layer = 1,
+  x = 264,
+  y = 224,
+  width = 8,
+  height = 8,
+  pattern = "ceiling",
+}
+
+tile{
+  layer = 1,
+  x = 8,
+  y = 184,
+  width = 8,
+  height = 48,
+  pattern = "ceiling",
+}
+
+tile{
+  layer = 1,
+  x = 16,
+  y = 192,
+  width = 8,
+  height = 40,
+  pattern = "ceiling",
+}
+
+tile{
+  layer = 1,
+  x = 24,
+  y = 200,
+  width = 8,
+  height = 32,
+  pattern = "ceiling",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 208,
+  width = 8,
+  height = 24,
+  pattern = "ceiling",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 216,
+  width = 8,
+  height = 16,
+  pattern = "ceiling",
+}
+
+tile{
+  layer = 1,
+  x = 48,
+  y = 224,
+  width = 8,
+  height = 8,
+  pattern = "ceiling",
+}
+
+tile{
+  layer = 1,
+  x = 8,
+  y = 168,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.3",
+}
+
+tile{
+  layer = 1,
+  x = 16,
+  y = 176,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.3",
+}
+
+tile{
+  layer = 1,
+  x = 24,
+  y = 184,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.3",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 192,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.3",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 200,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.3",
+}
+
+tile{
+  layer = 1,
+  x = 48,
+  y = 208,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.3",
+}
+
+tile{
+  layer = 1,
+  x = 56,
+  y = 216,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.3",
+}
+
+tile{
+  layer = 1,
+  x = 8,
+  y = 160,
+  width = 24,
+  height = 16,
+  pattern = "wall.3",
+}
+
+tile{
+  layer = 1,
+  x = 64,
+  y = 208,
+  width = 16,
+  height = 24,
+  pattern = "wall.2",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 176,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.border.3",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 184,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.border.3",
+}
+
+tile{
+  layer = 1,
+  x = 48,
+  y = 192,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.border.3",
 }
 
 dynamic_tile{
   layer = 1,
-  x = 144,
-  y = 136,
+  x = 152,
+  y = 160,
   width = 16,
   height = 16,
-  name = "stone_1",
+  name = "stone_3",
   pattern = "floor_small.4",
   enabled_at_start = true,
 }
 
 dynamic_tile{
   layer = 1,
-  x = 160,
-  y = 136,
+  x = 136,
+  y = 176,
   width = 16,
   height = 16,
   name = "stone_2",
@@ -85,8 +364,41 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 160,
-  y = 168,
+  x = 120,
+  y = 192,
+  width = 16,
+  height = 16,
+  name = "stone_1",
+  pattern = "floor_small.4",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 168,
+  y = 176,
+  width = 16,
+  height = 16,
+  name = "stone_4",
+  pattern = "floor_small.4",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 184,
+  y = 192,
+  width = 16,
+  height = 16,
+  name = "stone_5",
+  pattern = "floor_small.4",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 56,
+  y = 152,
   width = 16,
   height = 16,
   name = "treasure_obstacle_chest",
@@ -97,7 +409,7 @@ dynamic_tile{
 dynamic_tile{
   layer = 1,
   x = 248,
-  y = 168,
+  y = 152,
   width = 16,
   height = 16,
   name = "treasure_open_chest",
@@ -107,12 +419,23 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 96,
-  y = 144,
+  x = 152,
+  y = 136,
   width = 16,
   height = 16,
   name = "enemy",
   pattern = "floor_small.2",
   enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 56,
+  y = 168,
+  width = 16,
+  height = 16,
+  name = "stone_6",
+  pattern = "floor_small.4",
+  enabled_at_start = true,
 }
 

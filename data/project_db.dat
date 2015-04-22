@@ -252,20 +252,20 @@ map{ id = "components/filler/filler_000004_5", description = "Filler 000004 5" }
 map{ id = "tompa/filler_y9", description = "Filler Y9" }
 map{ id = "tompa/filler_y10", description = "Filler Y10" }
 map{ id = "tompa/filler_y11", description = "Filler Y11" }
-map{ id = "components/obstacle_glove/obstacle_glove_north_200700_1", description = "Obstacle glove north 200700 1" }
+map{ id = "components/obstacle_glove/obstacle_glove_north_200700_2", description = "Obstacle glove north 200700 2" }
 map{ id = "components/filler/filler_000707_2", description = "Filler 000707 2" }
-map{ id = "components/obstacle_glove/obstacle_glove_eastwest_050777_1", description = "Obstacle glove eastwest 050777 1" }
-map{ id = "components/obstacle_glove/obstacle_glove_northeast_210711_1", description = "Obstacle glove northeast 210711 1" }
-map{ id = "components/obstacle_glove/obstacle_glove_northeastwest_250777_1", description = "Obstacle glove northeastwest 250777 1" }
-map{ id = "components/obstacle_glove/obstacle_glove_northsouth_202777_1", description = "Obstacle glove northsouth 202777 1" }
+map{ id = "components/obstacle_glove/obstacle_glove_eastwest_050777_3", description = "Obstacle glove eastwest 050777 3" }
+map{ id = "components/obstacle_glove/obstacle_glove_northeast_210711_4", description = "Obstacle glove northeast 210711 4" }
+map{ id = "components/obstacle_glove/obstacle_glove_northeastwest_250777_5", description = "Obstacle glove northeastwest 250777 5" }
+map{ id = "components/obstacle_glove/obstacle_glove_northsouth_202777_6", description = "Obstacle glove northsouth 202777 6" }
 map{ id = "components/obstacle_glove/obstacle_glove_northsoutheast_212444_1", description = "Obstacle glove northsoutheast 212444 1" }
 map{ id = "components/obstacle_glove/obstacle_glove_east_010111_1", description = "Obstacle glove east 010111 1" }
 map{ id = "components/obstacle_glove/obstacle_glove_northsouthwest_242111_1", description = "Obstacle glove northsouthwest 242111 1" }
-map{ id = "components/obstacle_glove/obstacle_glove_northwest_240777_1", description = "Obstacle glove northwest 240777 1" }
-map{ id = "components/obstacle_glove/obstacle_glove_south_002007_1", description = "Obstacle glove south 002007 1" }
-map{ id = "components/obstacle_glove/obstacle_glove_southeast_012777_1", description = "Obstacle glove southeast 012777 1" }
-map{ id = "components/obstacle_glove/obstacle_glove_southeastwest_052777_1", description = "Obstacle glove southeastwest 052777 1" }
-map{ id = "components/obstacle_glove/obstacle_glove_southwest_042711_1", description = "Obstacle glove southwest 042711 1" }
+map{ id = "components/obstacle_glove/obstacle_glove_northwest_240777_4", description = "Obstacle glove northwest 240777 4" }
+map{ id = "components/obstacle_glove/obstacle_glove_south_002007_7", description = "Obstacle glove south 002007 7" }
+map{ id = "components/obstacle_glove/obstacle_glove_southeast_012777_4", description = "Obstacle glove southeast 012777 4" }
+map{ id = "components/obstacle_glove/obstacle_glove_southeastwest_052777_8", description = "Obstacle glove southeastwest 052777 8" }
+map{ id = "components/obstacle_glove/obstacle_glove_southwest_042711_4", description = "Obstacle glove southwest 042711 4" }
 map{ id = "components/obstacle_glove/obstacle_glove_west_040444_1", description = "Obstacle glove west 040444 1" }
 map{ id = "tompa/Obstacle_flippers_east_202777_1", description = "Obstacle flippers east 202777 1" }
 map{ id = "tompa/draft_1", description = "Draft 1" }
@@ -273,13 +273,25 @@ map{ id = "tompa/draft_2", description = "Draft 2" }
 map{ id = "tompa/draft_3", description = "Draft 3" }
 map{ id = "tompa/draft_4", description = "Draft 4" }
 map{ id = "tompa/draft_5", description = "Draft 5" }
-map{ id = "components/obstacle_glove/obstacle_glove_east_010777_1", description = "Obstacle glove east 010777 1" }
-map{ id = "components/obstacle_glove/obstacle_glove_north_200777_2", description = "Obstacle glove north 200777 2" }
-map{ id = "components/obstacle_glove/obstacle_glove_south_002777_2", description = "Obstacle glove south 002777 2" }
-map{ id = "components/obstacle_glove/obstacle_glove_west_040777_1", description = "Obstacle glove west 040777 1" }
-map{ id = "components/obstacle_glove/obstacle_glove_east_010333_1", description = "Obstacle glove east 010333 1" }
-map{ id = "components/obstacle_glove/obstacle_glove_south_002077_1", description = "Obstacle glove south 002077 1" }
-map{ id = "components/obstacle_glove/obstacle_glove_west_040555_1", description = "Obstacle glove west 040555 1" }
+map{ id = "components/obstacle_glove/obstacle_glove_east_010777_3", description = "Obstacle glove east 010777 3" }
+map{ id = "components/obstacle_glove/obstacle_glove_north_200777_3", description = "Obstacle glove north 200777 3" }
+map{ id = "components/obstacle_glove/obstacle_glove_south_002777_3", description = "Obstacle glove south 002777 3" }
+map{ id = "components/obstacle_glove/obstacle_glove_west_040777_3", description = "Obstacle glove west 040777 3" }
+map{ id = "components/obstacle_glove/obstacle_glove_east_010333_2", description = "Obstacle glove east 010333 2" }
+map{ id = "components/obstacle_glove/obstacle_glove_south_002077_2", description = "Obstacle glove south 002077 2" }
+map{ id = "components/obstacle_glove/obstacle_glove_west_040555_2", description = "Obstacle glove west 040555 2" }
+map{ id = "tompa/draft_6", description = "Draft 6" }
+map{ id = "components/obstacle_glove/obstacle_glove_north_200700_1", description = "Obstacle glove north 200700 1" }
+map{ id = "components/obstacle_glove/obstacle_glove_south_002007_1", description = "Obstacle glove south 002007 1" }
+map{ id = "components/obstacle_glove/obstacle_glove_northsouth_202777_3", description = "Obstacle glove northsouth 202777 3" }
+map{ id = "components/obstacle_glove/obstacle_glove_southeastwest_052777_5", description = "Obstacle glove southeastwest 052777 5" }
+map{ id = "components/obstacle_glove/obstacle_glove_eastwest_050777_6", description = "Obstacle glove eastwest 050777 6" }
+map{ id = "components/obstacle_glove/obstacle_glove_northeast_210777_6", description = "Obstacle glove northeast 210777 6" }
+map{ id = "components/obstacle_glove/obstacle_glove_northwest_240777_6", description = "Obstacle glove northwest 240777 6" }
+map{ id = "components/obstacle_glove/obstacle_glove_southeast_012777_6", description = "Obstacle glove southeast 012777 6" }
+map{ id = "components/obstacle_glove/obstacle_glove_southwest_042777_6", description = "Obstacle glove southwest 042777 6" }
+map{ id = "components/obstacle_glove/obstacle_glove_northeastwest_250777_8", description = "Obstacle glove northeastwest 250777 8" }
+map{ id = "components/obstacle_glove/obstacle_north_200700_7", description = "Obstacle north 200700 7" }
 
 tileset{ id = "light_world", description = "Light World" }
 tileset{ id = "dungeon_brick_gray_1", description = "Dungeon brick gray 1" }

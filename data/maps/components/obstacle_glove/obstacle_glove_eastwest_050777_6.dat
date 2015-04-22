@@ -1,0 +1,313 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  tileset = "dungeon_brick_gray_1",
+  music = "same",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 32,
+  width = 112,
+  height = 72,
+  pattern = "hole",
+}
+
+tile{
+  layer = 1,
+  x = 48,
+  y = 136,
+  width = 96,
+  height = 32,
+  pattern = "hole",
+}
+
+tile{
+  layer = 1,
+  x = 176,
+  y = 136,
+  width = 112,
+  height = 72,
+  pattern = "hole",
+}
+
+tile{
+  layer = 1,
+  x = 64,
+  y = 168,
+  width = 80,
+  height = 40,
+  pattern = "hole",
+}
+
+tile{
+  layer = 1,
+  x = 176,
+  y = 32,
+  width = 80,
+  height = 40,
+  pattern = "hole",
+}
+
+tile{
+  layer = 1,
+  x = 176,
+  y = 72,
+  width = 96,
+  height = 32,
+  pattern = "hole",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 32,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.corner.1",
+}
+
+tile{
+  layer = 1,
+  x = 48,
+  y = 32,
+  width = 96,
+  height = 16,
+  pattern = "wall_hole.1",
+}
+
+tile{
+  layer = 1,
+  x = 48,
+  y = 152,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.corner.3",
+}
+
+tile{
+  layer = 1,
+  x = 64,
+  y = 192,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.corner.3",
+}
+
+tile{
+  layer = 1,
+  x = 240,
+  y = 32,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.corner.2",
+}
+
+tile{
+  layer = 1,
+  x = 256,
+  y = 72,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.corner.2",
+}
+
+tile{
+  layer = 1,
+  x = 272,
+  y = 192,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.corner.4",
+}
+
+tile{
+  layer = 1,
+  x = 64,
+  y = 152,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.corner_reverse.3",
+}
+
+tile{
+  layer = 1,
+  x = 64,
+  y = 168,
+  width = 16,
+  height = 24,
+  pattern = "wall_hole.3",
+}
+
+tile{
+  layer = 1,
+  x = 48,
+  y = 136,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.3",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 48,
+  width = 16,
+  height = 56,
+  pattern = "wall_hole.3",
+}
+
+tile{
+  layer = 1,
+  x = 176,
+  y = 32,
+  width = 64,
+  height = 16,
+  pattern = "wall_hole.1",
+}
+
+tile{
+  layer = 1,
+  x = 240,
+  y = 48,
+  width = 16,
+  height = 24,
+  pattern = "wall_hole.4",
+}
+
+tile{
+  layer = 1,
+  x = 240,
+  y = 72,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.corner_reverse.2",
+}
+
+tile{
+  layer = 1,
+  x = 256,
+  y = 88,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.4",
+}
+
+tile{
+  layer = 1,
+  x = 272,
+  y = 136,
+  width = 16,
+  height = 56,
+  pattern = "wall_hole.4",
+}
+
+tile{
+  layer = 1,
+  x = 80,
+  y = 192,
+  width = 64,
+  height = 16,
+  pattern = "wall_hole.2",
+}
+
+tile{
+  layer = 1,
+  x = 176,
+  y = 192,
+  width = 96,
+  height = 16,
+  pattern = "wall_hole.2",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 128,
+  y = 104,
+  width = 16,
+  height = 16,
+  name = "stone_1",
+  pattern = "floor_small.4",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 128,
+  y = 120,
+  width = 16,
+  height = 16,
+  name = "stone_2",
+  pattern = "floor_small.4",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 176,
+  y = 104,
+  width = 16,
+  height = 16,
+  name = "stone_3",
+  pattern = "floor_small.4",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 176,
+  y = 120,
+  width = 16,
+  height = 16,
+  name = "stone_4",
+  pattern = "floor_small.4",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 32,
+  y = 136,
+  width = 16,
+  height = 16,
+  name = "stone_5",
+  pattern = "floor_small.4",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 264,
+  y = 40,
+  width = 16,
+  height = 16,
+  name = "treasure_obstacle_chest",
+  pattern = "floor_small.2",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 48,
+  y = 168,
+  width = 16,
+  height = 16,
+  name = "treasure_open_chest",
+  pattern = "floor_small.2",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 152,
+  y = 112,
+  width = 16,
+  height = 16,
+  name = "enemy",
+  pattern = "floor_small.2",
+  enabled_at_start = false,
+}
+
