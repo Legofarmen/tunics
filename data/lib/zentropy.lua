@@ -460,7 +460,6 @@ function zentropy.Room:delayed_door(data, dir)
     end
     self.mask = bit32.bor(self.mask, component_mask)
     self.data_messages('component', component_name)
-    print(component_name)
     return function ()
         return self.map:include(0, 0, component_name, data)
     end
