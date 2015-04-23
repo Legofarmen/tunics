@@ -101,6 +101,12 @@ function zentropy.debug_callback(callback)
     end
 end
 
+function zentropy.assert(v, message)
+    if not v then
+        error(debug.traceback(message or 'assertion failed!', 2))
+    end
+end
+
 
 function zentropy.db.Project:parse()
     local entries = {}
@@ -432,15 +438,15 @@ end
 zentropy.Room = Class:new()
 
 function zentropy.Room:new(o)
-    assert(o.rng)
-    assert(o.map)
+    zentropy.assert(o.rng)
+    zentropy.assert(o.map)
     o.mask = o.mask or 0
     o.data_messages = o.data_messages or function () end
     return Class.new(self, o)
 end
 
 function zentropy.Room:door(data, dir)
-    assert(data.room_events)
+    zentropy.assert(data.room_events)
     if not data then return end
     local component_name, component_mask = zentropy.components:get_door(data.open, dir, self.mask, self.rng:refine('door_' .. dir))
     if not component_name then
@@ -454,7 +460,7 @@ function zentropy.Room:door(data, dir)
 end
 
 function zentropy.Room:obstacle(data, dir, item)
-    assert(data.room_events)
+    zentropy.assert(data.room_events)
     if not data then return end
     local component_name, component_mask = zentropy.components:get_obstacle(item, dir, self.mask, self.rng:refine('obstacle_' .. dir))
     if not component_name then
@@ -512,7 +518,7 @@ function zentropy.Room:trap(open_doors)
 end
 
 function zentropy.Room:treasure(treasure_data)
-    assert(not treasure_data.see)
+    zentropy.assert(not treasure_data.see)
     local rng = self.rng:refine('treasure')
     local component_name, component_mask = zentropy.components:get_treasure(treasure_data.open, self.mask, rng)
     if not component_name then
@@ -827,8 +833,8 @@ function zentropy.inject_big_chest(placeholder, data)
 end
 
 function zentropy.inject_door(position_tile, properties)
-    assert(properties.direction)
-    assert(properties.sprite)
+    zentropy.assert(properties.direction)
+    zentropy.assert(properties.sprite)
     local map = position_tile:get_map()
     properties.x, properties.y, properties.layer = position_tile:get_position()
     properties.name = properties.name or 'door'
