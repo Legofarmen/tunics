@@ -12,7 +12,7 @@ function puzzle.init(map, data)
 
 	local doors = {}
 	for dir, door_data in util.pairs_by_keys(data.doors) do
-        assert((door_data.open or 'open') == 'open')
+        zentropy.assert((door_data.open or 'open') == 'open')
 		local door = data.room:door({open='closed', name=door_data.name, room_events=data.room_events}, dir)
         table.insert(doors, door)
 	end

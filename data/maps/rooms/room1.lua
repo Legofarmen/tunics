@@ -40,15 +40,18 @@ end
 
 
 local walls = {}
+local delayed_doors = {}
 for _, dir in ipairs{'north','south','east','west'} do
     if data.doors[dir] then
         if data.doors[dir].reach then
             assert(not obstacle_item or obstacle_item == data.doors[dir].reach)
             obstacle_item = data.doors[dir].reach
         else
-            if not room:door({open=data.doors[dir].open, name=data.doors[dir].name, room_events=room_events}, dir) then
+            local door = room:delayed_door({open=data.doors[dir].open, name=data.doors[dir].name, room_events=room_events}, dir)
+            if not door then
                 error(util.table_string('messages', messages))
             end
+            table.insert(delayed_doors, door)
         end
     else
         table.insert(walls, dir)
@@ -141,4 +144,8 @@ if not is_special_room(data) then
     while room:filler(n) do
         n = n + 1
     end
+end
+
+for _, f in ipairs(delayed_doors) do
+    f()
 end

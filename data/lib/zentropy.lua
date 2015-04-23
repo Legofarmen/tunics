@@ -31,7 +31,7 @@ zentropy = zentropy or {
         defaults = {
             debug_filename = 'wdebug.txt',
             quest_sword_ability = 1,
-            quest_seed = os.time(),
+            quest_seed = function () return os.time() end,
             quest_tier = 1,
             tier_keys = 3,
             tier_fairies = 1,
@@ -45,7 +45,12 @@ zentropy.db.Project.__index = zentropy.db.Project
 local settings_meta = {}
 
 function settings_meta:__index(key)
-    return sol.game.load(self.filename):get_value(key) or self.defaults[key]
+    local value = sol.game.load(self.filename):get_value(key) or self.defaults[key]
+    if type(value) == 'function' then
+        return value()
+    else
+        return value
+    end
 end
 
 setmetatable(zentropy.settings, settings_meta)
@@ -446,6 +451,11 @@ function zentropy.Room:new(o)
 end
 
 function zentropy.Room:door(data, dir)
+    local include = self:delayed_door(data, dir)
+    return include()
+end
+
+function zentropy.Room:delayed_door(data, dir)
     zentropy.assert(data.room_events)
     if not data then return end
     local component_name, component_mask = zentropy.components:get_door(data.open, dir, self.mask, self.rng:refine('door_' .. dir))
@@ -453,10 +463,11 @@ function zentropy.Room:door(data, dir)
         self.data_messages('error', string.format("door not found: open=%s dir=%s mask=%06o", data.open, dir, self.mask))
         return
     end
-    local component = self.map:include(0, 0, component_name, data)
     self.mask = bit32.bor(self.mask, component_mask)
     self.data_messages('component', component_name)
-    return component
+    return function ()
+        return self.map:include(0, 0, component_name, data)
+    end
 end
 
 function zentropy.Room:obstacle(data, dir, item)
@@ -588,7 +599,7 @@ function zentropy.game.resume_game()
     sol.game.delete(zentropy.game.savefile)
 end
 
-function zentropy.game.new_game()
+function zentropy.game.new_game(is_retry)
     sol.game.delete(zentropy.game.savefile)
 
     zentropy.game.game = zentropy.game.init(sol.game.load(zentropy.game.savefile))
@@ -613,7 +624,9 @@ function zentropy.game.new_game()
 
     if zentropy.settings.skip_cinematics then 
 		zentropy.game.game:set_starting_location('dungeons/dungeon1')
-	else
+	elseif is_retry then
+		zentropy.game.game:set_starting_location('rooms/intro_3', 'retry')
+    else
 		zentropy.game.game:set_starting_location('rooms/intro_1')
     end
 	zentropy.game.game:start()
@@ -774,6 +787,7 @@ local function get_random_treasure(rng)
 end
 
 function zentropy.inject_enemy(placeholder, rng)
+    zentropy.assert(placeholder)
     local map = placeholder:get_map()
     local x, y, layer = placeholder:get_position()
     local treasure_name, treasure_variant = get_random_treasure(rng:refine('drop'))
