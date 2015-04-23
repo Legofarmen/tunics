@@ -6,6 +6,7 @@ local Quest = require 'lib/quest'
 local Prng = require 'lib/prng'
 local Layout = require 'lib/layout'
 local zentropy = require 'lib/zentropy'
+local mappings = require 'lib/mappings'
 
 local nkeys = zentropy.settings.tier_keys
 local nfairies = zentropy.settings.tier_fairies
@@ -53,11 +54,18 @@ local puzzle = Quest.alpha_dungeon(puzzle_rng, nkeys, nfairies, nculdesacs, trea
 
 local floor1, floor2 = zentropy.components:get_floors(presentation_rng:refine('floors'))
 
-map:set_tileset(tileset_override or zentropy.tilesets.dungeon[presentation_rng:refine('tileset'):random(#zentropy.tilesets.dungeon)])
+local mapping = mappings.choose(tier, presentation_rng:refine('mappings'))
+
+if tileset_override then
+    map:set_tileset(tileset_override)
+else
+    local i, tileset = presentation_rng:refine('tileset'):ichoose(zentropy.tilesets.dungeon[mapping.family])
+    map:set_tileset(tileset)
+end
+
 
 if not sol.audio.get_music() then 
-	local music = zentropy.musics.dungeon[presentation_rng:refine('music'):random(#zentropy.musics.dungeon)].id
-	sol.audio.play_music(music)
+	sol.audio.play_music(mapping.music)
 end
 
 local solarus_layout = Layout.solarus_mixin(layout:new{rng=layout_rng}, map, {floor1, floor2})

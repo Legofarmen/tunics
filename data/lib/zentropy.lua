@@ -429,9 +429,11 @@ function zentropy.db.Tilesets:parse(tilesets)
 
     for k, v in util.pairs_by_keys(tilesets) do
         local parts = string.gmatch(v.id, '[^_]+')
-        local part = parts()
-        if self[part] then
-            table.insert(self[part], v.id)
+        local kind = parts()
+        local family = parts()
+        if self[kind] then
+            self[kind][family] = self[kind][family] or {}
+            table.insert(self[kind][family], v.id)
         else
             zentropy.debug('ignoring tileset: ', v.id)
         end

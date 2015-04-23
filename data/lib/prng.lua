@@ -38,6 +38,8 @@ function Prng:refine(suffix)
 end
 
 function Prng:ichoose(t, w)
+    local zentropy = require 'lib/zentropy'
+    zentropy.assert(t)
     if not self.mwc then
         self:setup_mwc()
     end
