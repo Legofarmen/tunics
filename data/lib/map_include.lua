@@ -178,5 +178,11 @@ function mapmeta:include(x, y, name, data)
             return map:get_entity(key)
         end
     end})
-    return setfenv(luaf, luaenv)(map, data)
+    local result = { pcall(setfenv(luaf, luaenv), map, data) }
+    local success = table.remove(result, 1)
+    if success then
+        return unpack(result)
+    else
+        error("executing '" .. luafile .. "':\n" .. result[1])
+    end
 end
