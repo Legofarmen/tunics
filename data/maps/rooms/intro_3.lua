@@ -1,7 +1,11 @@
 local map = ...
 local game = map:get_game()
 
-function map:on_started()
+local start_destination = nil
+
+function map:on_started(destination)
+    print(destination:get_name())
+        start_destination = destination:get_name()
 		sol.audio.set_music_volume(25)
 		hero:set_direction(0)
 		hero:set_animation("dead")
@@ -10,7 +14,7 @@ function map:on_started()
 end
 
 function map:on_opening_transition_finished()
-	if zentropy.game.game:get_value('restarted') == 1 then 
+	if start_destination == 'retry' then
 		map:get_sword()
 	else
 		hero:freeze()

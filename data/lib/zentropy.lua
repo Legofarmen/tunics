@@ -599,7 +599,7 @@ function zentropy.game.resume_game()
     sol.game.delete(zentropy.game.savefile)
 end
 
-function zentropy.game.new_game()
+function zentropy.game.new_game(is_retry)
     sol.game.delete(zentropy.game.savefile)
 
     zentropy.game.game = zentropy.game.init(sol.game.load(zentropy.game.savefile))
@@ -624,7 +624,9 @@ function zentropy.game.new_game()
 
     if zentropy.settings.skip_cinematics then 
 		zentropy.game.game:set_starting_location('dungeons/dungeon1')
-	else
+	elseif is_retry then
+		zentropy.game.game:set_starting_location('rooms/intro_3', 'retry')
+    else
 		zentropy.game.game:set_starting_location('rooms/intro_1')
     end
 	zentropy.game.game:start()

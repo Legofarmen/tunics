@@ -391,7 +391,9 @@ destination{
   layer = 1,
   x = 160,
   y = 157,
+  name = "new_game",
   direction = 1,
+  default = true,
 }
 
 stairs{
@@ -409,6 +411,14 @@ door{
   name = "door_2",
   direction = 1,
   sprite = "entities/door_normal",
+}
+
+destination{
+  layer = 1,
+  x = 160,
+  y = 157,
+  name = "retry",
+  direction = 1,
 }
 
 tile{

@@ -63,7 +63,7 @@ function game_over:menu()
 			
 			--todo, NEW new game
 			
-			zentropy.game.new_game()
+			zentropy.game.new_game(true)
 			
 		else
 			
