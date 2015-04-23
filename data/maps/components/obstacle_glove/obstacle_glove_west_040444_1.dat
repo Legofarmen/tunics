@@ -383,7 +383,7 @@ dynamic_tile{
   y = 168,
   width = 16,
   height = 16,
-  name = "treasure_obstacle_chest_2",
+  name = "treasure_obstacle_chest",
   pattern = "floor_small.2",
   enabled_at_start = false,
 }
@@ -394,7 +394,7 @@ dynamic_tile{
   y = 56,
   width = 16,
   height = 16,
-  name = "treasure_open_chest_2",
+  name = "treasure_open_chest",
   pattern = "floor_small.2",
   enabled_at_start = false,
 }
@@ -405,7 +405,7 @@ dynamic_tile{
   y = 112,
   width = 16,
   height = 16,
-  name = "enemy_2",
+  name = "enemy",
   pattern = "floor_small.2",
   enabled_at_start = false,
 }
