@@ -21,7 +21,6 @@ zentropy = zentropy or {
             },
         },
         Tilesets = Class:new{},
-        Enemies = Class:new{},
     },
     game = {
         savefile = 'save.dat',
@@ -62,7 +61,6 @@ function zentropy.init()
     entries = zentropy.db.Project:parse()
     zentropy.components = zentropy.db.Components:new():parse(entries.map)
     zentropy.tilesets = zentropy.db.Tilesets:new():parse(entries.tileset)
-    zentropy.enemies = zentropy.db.Enemies:new():parse(entries.enemy)
 
     zentropy.musics = {}
     for k, v in ipairs(entries.music) do
@@ -138,7 +136,6 @@ function zentropy.db.Components:new(o)
     o.obstacles = o.obstacles or {}
     o.treasures = o.treasures or {}
     o.doors = o.doors or {}
-    o.enemies = o.enemies or {}
     o.fillers = o.fillers or {}
     o.enemies = o.enemies or {}
     o.puzzles = o.puzzles or {}
@@ -406,16 +403,6 @@ function zentropy.db.Components:get_enemy(name, mask, rng)
     end
     local entry = entries[rng:random(#entries)]
     return entry.id, entry.mask
-end
-
-function zentropy.db.Enemies:parse(enemies)
-    enemies = enemies or zentropy.db.Project:parse().enemy
-
-    for k, v in util.pairs_by_keys(enemies) do
-        table.insert(self, v.id)
-    end
-
-    return self
 end
 
 function zentropy.db.Tilesets:new(o)
@@ -793,7 +780,7 @@ function zentropy.inject_enemy(placeholder, rng)
     local map = placeholder:get_map()
     local x, y, layer = placeholder:get_position()
     local treasure_name, treasure_variant = get_random_treasure(rng:refine('drop'))
-    local _, breed = rng:refine('breed'):ichoose(zentropy.enemies)
+    local _, breed = rng:refine('breed'):ichoose(zentropy.Room.enemies)
     local enemy = map:create_enemy{
         layer=layer,
         x=x,

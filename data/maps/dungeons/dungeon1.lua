@@ -55,6 +55,8 @@ local puzzle = Quest.alpha_dungeon(puzzle_rng, nkeys, nfairies, nculdesacs, trea
 local floor1, floor2 = zentropy.components:get_floors(presentation_rng:refine('floors'))
 
 local mapping = mappings.choose(tier, presentation_rng:refine('mappings'))
+zentropy.Room.enemies = mapping.enemies
+zentropy.Room.destructibles = mapping.destructibles
 
 if tileset_override then
     map:set_tileset(tileset_override)
