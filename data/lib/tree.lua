@@ -78,16 +78,8 @@ function Node:with_needs(needs)
     end
 end
 
-function Node:is_reachable()
-    return not self.reach or self.reach == 'nothing'
-end
-
-function Node:is_open()
-    return not self.open or self.open == 'nothing'
-end
-
 function Node:is_normal()
-    return self:is_reachable() and self:is_open()
+    return (not self.reach or self.reach == 'nothing') and (not self.open or self.open == 'nothing')
 end
 
 function Node:is_directional()
@@ -221,7 +213,7 @@ end
 function Room:get_node_metric()
     local metric = tree.Metric:new()
     metric.doors = 1
-    if not self:is_reachable() then metric.obstacle_doors = { [self.reach] = 1 } end
+    if self.reach and self.reach ~= 'nothing' then metric.obstacle_doors = { [self.reach] = 1 } end
     if self.open == 'bigkey' then metric.bigkey_doors = 1 end
     return metric
 end
@@ -233,7 +225,7 @@ end
 function Treasure:get_node_metric()
     local metric = tree.Metric:new()
     metric.treasures = 1
-    if not self:is_reachable() then metric.obstacle_treasures = { [self.reach] = 1 } end
+    if self.reach and self.reach ~= 'nothing' then metric.obstacle_treasures = { [self.reach] = 1 } end
     if self.open == 'bigkey' then metric.bigkey_treasures = 1 end
     if self:is_normal() then metric.normal_treasures = 1 end
     return metric

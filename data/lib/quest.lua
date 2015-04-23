@@ -7,8 +7,8 @@ setmetatable(HideTreasuresVisitor, HideTreasuresVisitor)
 
 function HideTreasuresVisitor:visit_room(room)
     room:each_child(function (key, child)
-        if child.class == 'Treasure' and child:is_reachable() and child:is_open() then
-            room:update_child(key, child:with_needs{reach='puzzle',open='nothing'})
+        if child.class == 'Treasure' and child:is_normal() then
+            room:update_child(key, child:with_needs{reach='puzzle',open='open'})
         end
         child:accept(self)
     end)
@@ -96,8 +96,6 @@ function FillerObstacleVisitor:visit_room(room)
         if obstacle and child:can_need(need) and self.open ~= 'entrance' then
             local new_metric = old_metric - child:get_node_metric() + child:get_node_metric_with(need)
             if new_metric:is_valid() then
-                child:with_needs(need)
-                old_metric = new_metric
                 if obstacle ~= 'trap' then
                     child:with_needs(need)
                     old_metric = new_metric
@@ -399,7 +397,7 @@ function Quest.render_steps(rng, steps, filler_obstacle_types)
     -- Put entrance room at the the tree root
     local tree = Tree.Room:new{ open='entrance' }
     heads:each_child(function (key, child)
-        if not (child.class == 'Room' and child:is_reachable() and child:is_open()) then
+        if not (child.class == 'Room' and child:is_normal()) then
             child = Tree.Room:new{ children={child} }
         end
         child:accept(FillerObstacleVisitor:new{
