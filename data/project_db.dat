@@ -562,6 +562,7 @@ enemy{ id = "pike_auto", description = "Pike auto" }
 enemy{ id = "pike_fixed", description = "Pike fixed" }
 enemy{ id = "pike_detect", description = "Pike detect" }
 enemy{ id = "bubble", description = "Bubble" }
+enemy{ id = "agahnim", description = "Agahnim" }
 
 entity{ id = "torch", description = "Torch" }
 
