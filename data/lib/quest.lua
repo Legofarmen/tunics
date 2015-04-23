@@ -98,7 +98,12 @@ function FillerObstacleVisitor:visit_room(room)
             if new_metric:is_valid() then
                 child:with_needs(need)
                 old_metric = new_metric
-                if obstacle == 'trap' then
+                if obstacle ~= 'trap' then
+                    child:with_needs(need)
+                    old_metric = new_metric
+                elseif not room.open or room.open == 'open' then
+                    child:with_needs(need)
+                    old_metric = new_metric
                     room.exit = 'puzzle'
                 end
             end
