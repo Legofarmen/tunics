@@ -3,6 +3,7 @@ local zentropy = require 'lib/zentropy'
 local door_open = {}
 
 function door_open.init(map, data, direction)
+    zentropy.assert(data.room_events)
 
     local sensor = map:get_entity('sensor')
 

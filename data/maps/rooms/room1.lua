@@ -121,6 +121,7 @@ for _, treasure_data in ipairs(normal_treasures) do
 end
 
 for _, enemy_data in ipairs(data.enemies) do
+    enemy_data.room_events = room_events
     if not room:enemy(enemy_data) then
         error(util.table_string('messages', messages))
     end
