@@ -446,6 +446,11 @@ function zentropy.Room:new(o)
 end
 
 function zentropy.Room:door(data, dir)
+    local include = self:delayed_door(data, dir)
+    return include()
+end
+
+function zentropy.Room:delayed_door(data, dir)
     zentropy.assert(data.room_events)
     if not data then return end
     local component_name, component_mask = zentropy.components:get_door(data.open, dir, self.mask, self.rng:refine('door_' .. dir))
@@ -453,10 +458,12 @@ function zentropy.Room:door(data, dir)
         self.data_messages('error', string.format("door not found: open=%s dir=%s mask=%06o", data.open, dir, self.mask))
         return
     end
-    local component = self.map:include(0, 0, component_name, data)
     self.mask = bit32.bor(self.mask, component_mask)
     self.data_messages('component', component_name)
-    return component
+    print(component_name)
+    return function ()
+        return self.map:include(0, 0, component_name, data)
+    end
 end
 
 function zentropy.Room:obstacle(data, dir, item)
@@ -494,6 +501,7 @@ function zentropy.Room:filler(n)
         self.map:include(0, 0, component_name, filler_data)
         self.mask = bit32.bor(self.mask, component_mask)
         self.data_messages('component', component_name)
+        print(component_name)
         return true
     end
     return false
@@ -774,6 +782,7 @@ local function get_random_treasure(rng)
 end
 
 function zentropy.inject_enemy(placeholder, rng)
+    zentropy.assert(placeholder)
     local map = placeholder:get_map()
     local x, y, layer = placeholder:get_position()
     local treasure_name, treasure_variant = get_random_treasure(rng:refine('drop'))
