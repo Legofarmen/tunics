@@ -235,19 +235,46 @@ tile{
 tile{
   layer = 1,
   x = 40,
-  y = 184,
-  width = 16,
-  height = 16,
-  pattern = "torch",
+  y = 136,
+  width = 240,
+  height = 8,
+  pattern = "wall_border.2",
 }
 
 tile{
   layer = 1,
-  x = 264,
-  y = 184,
-  width = 16,
-  height = 16,
-  pattern = "torch",
+  x = 40,
+  y = 96,
+  width = 240,
+  height = 8,
+  pattern = "wall_border.1",
+}
+
+tile{
+  layer = 1,
+  x = 8,
+  y = 72,
+  width = 24,
+  height = 24,
+  pattern = "wall.corner.1",
+}
+
+tile{
+  layer = 1,
+  x = 288,
+  y = 72,
+  width = 24,
+  height = 24,
+  pattern = "wall.corner.2",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 72,
+  width = 256,
+  height = 24,
+  pattern = "wall.1",
 }
 
 tile{
@@ -255,198 +282,242 @@ tile{
   x = 8,
   y = 144,
   width = 24,
+  height = 24,
+  pattern = "wall.corner.3",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 144,
+  width = 256,
+  height = 24,
+  pattern = "wall.2",
+}
+
+tile{
+  layer = 1,
+  x = 288,
+  y = 144,
+  width = 24,
+  height = 24,
+  pattern = "wall.corner.4",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 72,
+  width = 16,
   height = 32,
-  pattern = "wall_statue.6.3",
+  pattern = "wall_pillar.1.1",
 }
 
 tile{
   layer = 1,
-  x = 24,
-  y = 152,
-  width = 8,
+  x = 88,
+  y = 72,
+  width = 16,
+  height = 32,
+  pattern = "wall_pillar.1.1",
+}
+
+tile{
+  layer = 1,
+  x = 136,
+  y = 72,
+  width = 16,
+  height = 32,
+  pattern = "wall_pillar.1.1",
+}
+
+tile{
+  layer = 1,
+  x = 56,
+  y = 80,
+  width = 32,
   height = 16,
-  pattern = "waterfall.3.top",
+  pattern = "wall_torch.1",
 }
 
 tile{
   layer = 1,
-  x = 32,
-  y = 160,
-  width = 24,
-  height = 24,
-  pattern = "wall_low.corner.3",
+  x = 104,
+  y = 80,
+  width = 32,
+  height = 16,
+  pattern = "wall_torch.1",
 }
 
 tile{
   layer = 1,
-  x = 32,
-  y = 136,
-  width = 24,
-  height = 24,
-  pattern = "wall_low.corner.1",
+  x = 184,
+  y = 80,
+  width = 32,
+  height = 16,
+  pattern = "wall_torch.1",
+}
+
+tile{
+  layer = 1,
+  x = 232,
+  y = 80,
+  width = 32,
+  height = 16,
+  pattern = "wall_torch.1",
+}
+
+tile{
+  layer = 1,
+  x = 168,
+  y = 72,
+  width = 16,
+  height = 32,
+  pattern = "wall_pillar.1.1",
+}
+
+tile{
+  layer = 1,
+  x = 216,
+  y = 72,
+  width = 16,
+  height = 32,
+  pattern = "wall_pillar.1.1",
 }
 
 tile{
   layer = 1,
   x = 264,
-  y = 136,
-  width = 24,
-  height = 24,
-  pattern = "wall_low.corner.2",
-}
-
-tile{
-  layer = 1,
-  x = 264,
-  y = 160,
-  width = 24,
-  height = 24,
-  pattern = "wall_low.corner.4",
-}
-
-tile{
-  layer = 1,
-  x = 56,
-  y = 136,
-  width = 208,
-  height = 24,
-  pattern = "wall_low.1",
-}
-
-tile{
-  layer = 1,
-  x = 56,
-  y = 160,
-  width = 208,
-  height = 24,
-  pattern = "wall_low.2",
+  y = 72,
+  width = 16,
+  height = 32,
+  pattern = "wall_pillar.1.1",
 }
 
 tile{
   layer = 1,
   x = 280,
-  y = 144,
-  width = 16,
-  height = 32,
-  pattern = "water_wall.drain_gate.4",
+  y = 96,
+  width = 8,
+  height = 8,
+  pattern = "wall_border.corner.2",
 }
 
 tile{
   layer = 1,
   x = 32,
-  y = 144,
+  y = 96,
   width = 8,
-  height = 32,
-  pattern = "waterfall.3.middle",
+  height = 8,
+  pattern = "wall_border.corner.1",
 }
 
 tile{
   layer = 1,
   x = 40,
-  y = 144,
-  width = 8,
+  y = 136,
+  width = 16,
   height = 32,
-  pattern = "waterfall.3.bottom",
+  pattern = "wall_pillar.1.2",
 }
 
 tile{
   layer = 1,
-  x = 40,
-  y = 144,
-  width = 240,
+  x = 88,
+  y = 136,
+  width = 16,
   height = 32,
-  pattern = "water.transparent",
+  pattern = "wall_pillar.1.2",
 }
 
 tile{
   layer = 1,
-  x = 72,
-  y = 168,
-  width = 32,
-  height = 16,
-  pattern = "water_pool_ladder.2",
+  x = 136,
+  y = 136,
+  width = 16,
+  height = 32,
+  pattern = "wall_pillar.1.2",
+}
+
+tile{
+  layer = 1,
+  x = 168,
+  y = 136,
+  width = 16,
+  height = 32,
+  pattern = "wall_pillar.1.2",
 }
 
 tile{
   layer = 1,
   x = 216,
   y = 136,
+  width = 16,
+  height = 32,
+  pattern = "wall_pillar.1.2",
+}
+
+tile{
+  layer = 1,
+  x = 264,
+  y = 136,
+  width = 16,
+  height = 32,
+  pattern = "wall_pillar.1.2",
+}
+
+tile{
+  layer = 1,
+  x = 56,
+  y = 144,
   width = 32,
   height = 16,
-  pattern = "water_pool_ladder.1",
+  pattern = "wall_torch.2",
 }
 
-dynamic_tile{
-  layer = 1,
-  x = 184,
-  y = 184,
-  width = 16,
-  height = 16,
-  name = "treasure_obstacle_chest",
-  pattern = "floor_small.2",
-  enabled_at_start = false,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 152,
-  y = 112,
-  width = 16,
-  height = 16,
-  name = "treasure_open_chest",
-  pattern = "floor_small.2",
-  enabled_at_start = false,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 112,
-  y = 112,
-  width = 16,
-  height = 16,
-  name = "enemy",
-  pattern = "floor_small.2",
-  enabled_at_start = false,
-}
-
-jumper{
-  layer = 1,
-  x = 40,
-  y = 176,
-  width = 32,
-  height = 8,
-  direction = 2,
-  jump_length = 40,
-}
-
-jumper{
+tile{
   layer = 1,
   x = 104,
-  y = 176,
-  width = 176,
-  height = 8,
-  direction = 2,
-  jump_length = 40,
-}
-
-jumper{
-  layer = 1,
-  x = 248,
-  y = 136,
+  y = 144,
   width = 32,
-  height = 8,
-  direction = 6,
-  jump_length = 40,
+  height = 16,
+  pattern = "wall_torch.2",
 }
 
-jumper{
+tile{
   layer = 1,
-  x = 40,
+  x = 184,
+  y = 144,
+  width = 32,
+  height = 16,
+  pattern = "wall_torch.2",
+}
+
+tile{
+  layer = 1,
+  x = 232,
+  y = 144,
+  width = 32,
+  height = 16,
+  pattern = "wall_torch.2",
+}
+
+tile{
+  layer = 1,
+  x = 32,
   y = 136,
-  width = 176,
+  width = 8,
   height = 8,
-  direction = 6,
-  jump_length = 40,
+  pattern = "wall_border.corner.3",
+}
+
+tile{
+  layer = 1,
+  x = 280,
+  y = 136,
+  width = 8,
+  height = 8,
+  pattern = "wall_border.corner.4",
 }
 
 tile{
@@ -627,5 +698,23 @@ tile{
   width = 32,
   height = 8,
   pattern = "door_top.low.2",
+}
+
+tile{
+  layer = 2,
+  x = 8,
+  y = 8,
+  width = 304,
+  height = 64,
+  pattern = "ceiling",
+}
+
+tile{
+  layer = 2,
+  x = 8,
+  y = 168,
+  width = 304,
+  height = 64,
+  pattern = "ceiling",
 }
 

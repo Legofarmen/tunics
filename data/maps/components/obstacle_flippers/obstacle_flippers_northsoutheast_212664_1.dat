@@ -260,7 +260,7 @@ jumper{
 
 dynamic_tile{
   layer = 1,
-  x = 152,
+  x = 136,
   y = 112,
   width = 16,
   height = 16,
