@@ -280,8 +280,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 264,
-  y = 40,
+  x = 48,
+  y = 168,
   width = 16,
   height = 16,
   name = "treasure_obstacle_chest",
@@ -291,8 +291,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 48,
-  y = 168,
+  x = 264,
+  y = 40,
   width = 16,
   height = 16,
   name = "treasure_open_chest",

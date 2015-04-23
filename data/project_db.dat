@@ -288,6 +288,7 @@ map{ id = "components/obstacle_glove/obstacle_north_200700_7", description = "Ob
 map{ id = "tompa/draft_7", description = "Draft 7 - corridor" }
 map{ id = "tompa/draft_7_2", description = "Draft 7 2 corridor ns" }
 map{ id = "components/obstacle_flippers/obstacle_flippers_southeastwest_052770_1", description = "Obstacle flippers southeastwest 052770 1" }
+map{ id = "tompa/obstacle_glove_temp2", description = "Obstacle glove temp" }
 
 tileset{ id = "light_world", description = "Light World" }
 tileset{ id = "dungeon_brick_gray_1", description = "Dungeon brick gray 1" }

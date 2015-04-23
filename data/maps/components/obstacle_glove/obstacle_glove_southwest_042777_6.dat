@@ -280,22 +280,22 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 256,
-  y = 40,
+  x = 40,
+  y = 168,
   width = 16,
   height = 16,
-  name = "treasure_obstacle_chest_2",
+  name = "treasure_obstacle_chest",
   pattern = "floor_small.2",
   enabled_at_start = false,
 }
 
 dynamic_tile{
   layer = 1,
-  x = 40,
-  y = 168,
+  x = 256,
+  y = 40,
   width = 16,
   height = 16,
-  name = "treasure_open_chest_2",
+  name = "treasure_open_chest",
   pattern = "floor_small.2",
   enabled_at_start = false,
 }

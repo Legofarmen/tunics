@@ -702,7 +702,7 @@ tile{
 
 dynamic_tile{
   layer = 1,
-  x = 88,
+  x = 104,
   y = 104,
   width = 16,
   height = 16,
@@ -713,7 +713,7 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 88,
+  x = 104,
   y = 120,
   width = 16,
   height = 16,
@@ -728,7 +728,7 @@ dynamic_tile{
   y = 112,
   width = 16,
   height = 16,
-  name = "Treasure_open_chest",
+  name = "treasure_open_chest",
   pattern = "floor_small.2",
   enabled_at_start = true,
 }
@@ -739,7 +739,7 @@ dynamic_tile{
   y = 104,
   width = 16,
   height = 16,
-  name = "Treasure_obstacle_chest",
+  name = "treasure_obstacle_chest",
   pattern = "floor_small.2",
   enabled_at_start = true,
 }
