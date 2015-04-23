@@ -295,8 +295,8 @@ jumper{
 
 dynamic_tile{
   layer = 1,
-  x = 56,
-  y = 56,
+  x = 120,
+  y = 160,
   width = 16,
   height = 16,
   name = "treasure_obstacle_chest",
@@ -306,8 +306,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 120,
-  y = 168,
+  x = 56,
+  y = 56,
   width = 16,
   height = 16,
   name = "treasure_open_chest",

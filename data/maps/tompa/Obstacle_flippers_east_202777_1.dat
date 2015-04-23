@@ -215,21 +215,57 @@ tile{
 }
 
 tile{
-  layer = 1,
-  x = 192,
-  y = 40,
-  width = 96,
-  height = 160,
-  pattern = "water.transparent",
+  layer = 0,
+  x = 160,
+  y = 96,
+  width = 24,
+  height = 24,
+  pattern = "wall_low.corner.2",
+}
+
+tile{
+  layer = 0,
+  x = 136,
+  y = 96,
+  width = 24,
+  height = 24,
+  pattern = "wall_low.corner.1",
+}
+
+tile{
+  layer = 0,
+  x = 136,
+  y = 120,
+  width = 24,
+  height = 24,
+  pattern = "wall_low.corner.3",
+}
+
+tile{
+  layer = 0,
+  x = 160,
+  y = 120,
+  width = 24,
+  height = 24,
+  pattern = "wall_low.corner.4",
 }
 
 tile{
   layer = 1,
-  x = 32,
+  x = 184,
   y = 40,
   width = 96,
   height = 160,
-  pattern = "water.transparent",
+  pattern = "water_shallow",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 40,
+  width = 96,
+  height = 160,
+  pattern = "water_shallow",
 }
 
 tile{
@@ -1071,17 +1107,152 @@ tile{
 
 tile{
   layer = 1,
-  x = 128,
+  x = 32,
+  y = 32,
+  width = 8,
+  height = 8,
+  pattern = "water_shallow.corner.1",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 32,
+  width = 32,
+  height = 8,
+  pattern = "water_shallow.1",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 40,
+  width = 8,
+  height = 160,
+  pattern = "water_shallow.3",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 200,
+  width = 8,
+  height = 8,
+  pattern = "water_shallow.corner.3",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 200,
+  width = 32,
+  height = 8,
+  pattern = "water_shallow.2",
+}
+
+tile{
+  layer = 1,
+  x = 248,
+  y = 32,
+  width = 32,
+  height = 8,
+  pattern = "water_shallow.1",
+}
+
+tile{
+  layer = 1,
+  x = 248,
+  y = 200,
+  width = 32,
+  height = 8,
+  pattern = "water_shallow.2",
+}
+
+tile{
+  layer = 1,
+  x = 280,
+  y = 200,
+  width = 8,
+  height = 8,
+  pattern = "water_shallow.corner.4",
+}
+
+tile{
+  layer = 1,
+  x = 280,
+  y = 32,
+  width = 8,
+  height = 8,
+  pattern = "water_shallow.corner.2",
+}
+
+tile{
+  layer = 1,
+  x = 280,
+  y = 40,
+  width = 8,
+  height = 160,
+  pattern = "water_shallow.4",
+}
+
+tile{
+  layer = 1,
+  x = 144,
+  y = 64,
+  width = 32,
+  height = 24,
+  pattern = "wall_statue.6.1",
+}
+
+tile{
+  layer = 1,
+  x = 152,
+  y = 80,
+  width = 16,
+  height = 8,
+  pattern = "waterfall.1.top",
+}
+
+tile{
+  layer = 1,
+  x = 152,
+  y = 88,
+  width = 16,
+  height = 8,
+  pattern = "waterfall.1.middle",
+}
+
+tile{
+  layer = 1,
+  x = 152,
+  y = 88,
+  width = 16,
+  height = 8,
+  pattern = "waterfall.1.bottom",
+}
+
+tile{
+  layer = 1,
+  x = 152,
+  y = 112,
+  width = 16,
+  height = 16,
+  pattern = "floor_water_drain",
+}
+
+tile{
+  layer = 1,
+  x = 136,
   y = 96,
-  width = 64,
+  width = 48,
   height = 48,
-  pattern = "water",
+  pattern = "water.transparent",
 }
 
 dynamic_tile{
   layer = 1,
-  x = 64,
-  y = 112,
+  x = 256,
+  y = 48,
   width = 16,
   height = 16,
   name = "treasure_obstacle_chest",
@@ -1091,8 +1262,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 240,
-  y = 112,
+  x = 48,
+  y = 48,
   width = 16,
   height = 16,
   name = "treasure_open_chest",
@@ -1102,7 +1273,7 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 104,
+  x = 192,
   y = 112,
   width = 16,
   height = 16,
