@@ -500,7 +500,6 @@ function zentropy.Room:filler(n)
         self.map:include(0, 0, component_name, filler_data)
         self.mask = bit32.bor(self.mask, component_mask)
         self.data_messages('component', component_name)
-        print(component_name)
         return true
     end
     return false
