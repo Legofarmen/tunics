@@ -31,7 +31,7 @@ zentropy = zentropy or {
         defaults = {
             debug_filename = 'wdebug.txt',
             quest_sword_ability = 1,
-            quest_seed = os.time(),
+            quest_seed = function () return os.time() end,
             quest_tier = 1,
             tier_keys = 3,
             tier_fairies = 1,
@@ -45,7 +45,12 @@ zentropy.db.Project.__index = zentropy.db.Project
 local settings_meta = {}
 
 function settings_meta:__index(key)
-    return sol.game.load(self.filename):get_value(key) or self.defaults[key]
+    local value = sol.game.load(self.filename):get_value(key) or self.defaults[key]
+    if type(value) == 'function' then
+        return value()
+    else
+        return value
+    end
 end
 
 setmetatable(zentropy.settings, settings_meta)
