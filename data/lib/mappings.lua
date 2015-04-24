@@ -40,22 +40,22 @@ local family_music = {
 local tier_complexity = {
     [1] = {
         keys=1,
-        culdesacs=1,
+        culdesacs=0,
         fairies=0,
     },
     [3] = {
         keys=2,
-        culdesacs=2,
+        culdesacs=1,
         fairies=0,
     },
     [5] = {
         keys=3,
-        culdesacs=3,
+        culdesacs=2,
         fairies=1,
     },
     [10] = {
         keys=4,
-        culdesacs=4,
+        culdesacs=3,
         fairies=1,
     },
 }
