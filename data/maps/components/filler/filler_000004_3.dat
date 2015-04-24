@@ -9,9 +9,9 @@ properties{
 
 tile{
   layer = 1,
-  x = 32,
+  x = 40,
   y = 144,
-  width = 96,
+  width = 88,
   height = 8,
   pattern = "barrier.1.1",
 }
@@ -30,7 +30,7 @@ tile{
   x = 128,
   y = 152,
   width = 8,
-  height = 56,
+  height = 48,
   pattern = "barrier.1.2",
 }
 
@@ -77,5 +77,23 @@ tile{
   width = 32,
   height = 24,
   pattern = "wall_statue.4.2",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 144,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+tile{
+  layer = 1,
+  x = 128,
+  y = 200,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
 }
 

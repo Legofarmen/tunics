@@ -3,7 +3,7 @@ properties{
   y = 0,
   width = 320,
   height = 240,
-  tileset = "dungeon_brick_gray_1",
+  tileset = "dungeon_house_brown_1",
   music = "same",
 }
 
@@ -11,7 +11,7 @@ tile{
   layer = 1,
   x = 184,
   y = 144,
-  width = 104,
+  width = 96,
   height = 8,
   pattern = "barrier.1.1",
 }
@@ -21,7 +21,7 @@ tile{
   x = 184,
   y = 144,
   width = 8,
-  height = 64,
+  height = 56,
   pattern = "barrier.1.2",
 }
 
@@ -77,5 +77,23 @@ tile{
   width = 32,
   height = 24,
   pattern = "wall_statue.4.2",
+}
+
+tile{
+  layer = 1,
+  x = 280,
+  y = 144,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+tile{
+  layer = 1,
+  x = 184,
+  y = 200,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
 }
 
