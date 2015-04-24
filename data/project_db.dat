@@ -171,12 +171,12 @@ map{ id = "components/filler/filler_210711_4", description = "Filler 210711 4" }
 map{ id = "components/filler/filler_042447_2", description = "Filler 042447 2" }
 map{ id = "components/filler/filler_240744_2", description = "Filler 240744 2" }
 map{ id = "components/filler/filler_012117_2", description = "Filler 012117 2" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_sw_042711_1", description = "Obstacle hookshot sw 042711 1" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_sw_042777_1", description = "Obstacle hookshot sw 042777 1" }
 map{ id = "components/obstacle_hookshot/obstacle_hookshot_se_012744_1", description = "Obstacle hookshot se 012744 1" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_nse_212666_1", description = "Obstacle hookshot nse 212666 1" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_nsw_242333_1", description = "Obstacle hookshot nsw 242333 1" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_new_250277", description = "Obstacle hookshot new 250277" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_sew_052772_1", description = "Obstacle hookshot sew 052772 1" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_nse_212777_1", description = "Obstacle hookshot nse 212777 1" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_nsw_242777_1", description = "Obstacle hookshot nsw 242777 1" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_new_250777", description = "Obstacle hookshot new 250777" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_sew_052777_1", description = "Obstacle hookshot sew 052777 1" }
 map{ id = "tompa/filler_y", description = "Filler Y" }
 map{ id = "tompa/filler_y2", description = "Filler Y2" }
 map{ id = "tompa/filler_y3", description = "Filler Y3" }
