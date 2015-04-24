@@ -55,6 +55,7 @@ function glove.init(map, data)
             x = x,
             y = y,
             sprite = zentropy.Room.destructibles.stone1,
+            destruction_sound = 'stone',
             weight = 1,
         }
         local x_origin, y_origin = stone:get_origin()

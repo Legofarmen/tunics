@@ -803,6 +803,7 @@ function zentropy.inject_pot(placeholder, rng)
         layer=layer,
         x=x,
         y=y,
+        destruction_sound='stone',
         sprite=zentropy.Room.destructibles.pot,
         treasure_name=treasure_name,
         treasure_variant=treasure_variant,
