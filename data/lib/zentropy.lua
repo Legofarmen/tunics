@@ -32,9 +32,6 @@ zentropy = zentropy or {
             quest_sword_ability = 1,
             quest_seed = function () return os.time() end,
             quest_tier = 1,
-            tier_keys = 3,
-            tier_fairies = 1,
-            tier_culdesacs = 3,
         },
     },
 }

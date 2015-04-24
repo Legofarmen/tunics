@@ -8,9 +8,6 @@ local Layout = require 'lib/layout'
 local zentropy = require 'lib/zentropy'
 local mappings = require 'lib/mappings'
 
-local nkeys = zentropy.settings.tier_keys
-local nfairies = zentropy.settings.tier_fairies
-local nculdesacs = zentropy.settings.tier_culdesacs
 local tileset_override = zentropy.settings.tier_tileset
 
 local tier = game:get_value('tier')
@@ -49,14 +46,18 @@ for i = 1, tier - 1 do
     end
 end
 
-local puzzle = Quest.alpha_dungeon(puzzle_rng, nkeys, nfairies, nculdesacs, treasure_items, brought_items)
---puzzle:accept(Tree.PrintVisitor:new{})
-
 local floor1, floor2 = zentropy.components:get_floors(presentation_rng:refine('floors'))
 
 local mapping = mappings.choose(tier, presentation_rng:refine('mappings'))
 zentropy.Room.enemies = mapping.enemies
 zentropy.Room.destructibles = mapping.destructibles
+
+local nkeys = zentropy.settings.tier_keys or mapping.complexity.keys
+local nfairies = zentropy.settings.tier_fairies or mapping.complexity.fairies
+local nculdesacs = zentropy.settings.tier_culdesacs or mapping.complexity.culdesacs
+
+local puzzle = Quest.alpha_dungeon(puzzle_rng, nkeys, nfairies, nculdesacs, treasure_items, brought_items)
+--puzzle:accept(Tree.PrintVisitor:new{})
 
 if tileset_override then
     map:set_tileset(tileset_override)

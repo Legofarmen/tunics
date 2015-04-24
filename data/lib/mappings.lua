@@ -37,6 +37,29 @@ local family_music = {
     },
 }
 
+local tier_complexity = {
+    [1] = {
+        keys=1,
+        culdesacs=1,
+        fairies=0,
+    },
+    [3] = {
+        keys=2,
+        culdesacs=2,
+        fairies=0,
+    },
+    [5] = {
+        keys=3,
+        culdesacs=3,
+        fairies=1,
+    },
+    [10] = {
+        keys=4,
+        culdesacs=4,
+        fairies=1,
+    },
+}
+
 local family_destructibles = {
     smoothbrick = {
         pot = 'entities/vase',
@@ -111,6 +134,18 @@ local function get_enemies(current_tier)
     return enemies
 end
 
+function get_complexity(current_tier)
+    local max = 0
+    local result = nil
+    for tier, complexity in pairs(tier_complexity) do
+        if tier <= current_tier and tier > max then
+            max = tier
+            result = complexity
+        end
+    end
+    return result
+end
+
 local mappings = {}
 
 function mappings.choose(current_tier, rng)
@@ -118,11 +153,13 @@ function mappings.choose(current_tier, rng)
     local _, music = rng:refine('music'):ichoose(family_music[family])
     local destructibles = family_destructibles[family]
     local enemies = get_enemies(current_tier)
+    local complexity = get_complexity(current_tier)
     return {
         family=family,
         music=music,
         destructibles=destructibles,
         enemies=enemies,
+        complexity=complexity,
     }
 end
 
