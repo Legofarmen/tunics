@@ -103,39 +103,39 @@ map{ id = "components/enemy/enemy_fairy_000777_2", description = "Enemy fairy 00
 map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000777_1", description = "Puzzle 000777 1" }
 map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000006_1", description = "Puzzle 000006 1" }
 map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000003_1", description = "Puzzle 000003 1 " }
-map{ id = "components/obstacle_weakwall/obstacle_weakwall_north_000400_1", description = "Obstacle weakwall north 000400 1" }
-map{ id = "components/obstacle_weakwall/obstacle_weakwall_northeast_210100_1", description = "Obstacle weakwall northeast 210100 1" }
-map{ id = "components/obstacle_weakwall/obstacle_weakwall_northwest_240400_1", description = "Obstacle weakwall northwest 240400 1" }
-map{ id = "components/obstacle_weakwall/obstacle_weakwall_northeastwest_250400_1", description = "Obstacle weakwall northeastwest 250400 1" }
-map{ id = "components/obstacle_weakwall/obstacle_weakwall_south_000004_1", description = "Obstacle weakwall south 000004 1" }
-map{ id = "components/obstacle_weakwall/obstacle_weakwall_southeast_000001_1", description = "Obstacle weakwall southeast 000001 1" }
-map{ id = "components/obstacle_weakwall/obstacle_weakwall_southwest_042004_1", description = "Obstacle weakwall southwest 042004 1" }
-map{ id = "components/obstacle_weakwall/obstacle_weakwall_southeastwest_052004_1", description = "Obstacle weakwall southeastwest 052004 1" }
-map{ id = "components/obstacle_weakwall/obstacle_weakwall_northsoutheast_212001_1", description = "Obstacle weakwall northsoutheast 212001 1" }
-map{ id = "components/obstacle_weakwall/obstacle_weakwall_northsouthwest_242004_1", description = "Obstacle weakwall northsouthwest 242004 1" }
-map{ id = "components/obstacle_weakwall/obstacle_weakwall_eastwest_050400_1", description = "Obstacle weakwall eastwest 050400 1" }
-map{ id = "components/obstacle_weakwall/obstacle_weakwall_east_000100_1", description = "Obstacle weakwall east 000100 1" }
-map{ id = "components/obstacle_weakwall/obstacle_weakwall_west_000004_1", description = "Obstacle weakwall west 000004 1" }
+map{ id = "components/obstacle_weakwall/obstacle_weakwall_n_000400_1", description = "Obstacle weakwall north 000400 1" }
+map{ id = "components/obstacle_weakwall/obstacle_weakwall_ne_210100_1", description = "Obstacle weakwall northeast 210100 1" }
+map{ id = "components/obstacle_weakwall/obstacle_weakwall_nw_240400_1", description = "Obstacle weakwall northwest 240400 1" }
+map{ id = "components/obstacle_weakwall/obstacle_weakwall_new_250400_1", description = "Obstacle weakwall northeastwest 250400 1" }
+map{ id = "components/obstacle_weakwall/obstacle_weakwall_s_000004_1", description = "Obstacle weakwall south 000004 1" }
+map{ id = "components/obstacle_weakwall/obstacle_weakwall_se_000001_1", description = "Obstacle weakwall southeast 000001 1" }
+map{ id = "components/obstacle_weakwall/obstacle_weakwall_sw_042004_1", description = "Obstacle weakwall southwest 042004 1" }
+map{ id = "components/obstacle_weakwall/obstacle_weakwall_sew_052004_1", description = "Obstacle weakwall southeastwest 052004 1" }
+map{ id = "components/obstacle_weakwall/obstacle_weakwall_nse_212001_1", description = "Obstacle weakwall northsoutheast 212001 1" }
+map{ id = "components/obstacle_weakwall/obstacle_weakwall_nsw_242004_1", description = "Obstacle weakwall northsouthwest 242004 1" }
+map{ id = "components/obstacle_weakwall/obstacle_weakwall_ew_050400_1", description = "Obstacle weakwall eastwest 050400 1" }
+map{ id = "components/obstacle_weakwall/obstacle_weakwall_e_000100_1", description = "Obstacle weakwall east 000100 1" }
+map{ id = "components/obstacle_weakwall/obstacle_weakwall_w_000004_1", description = "Obstacle weakwall west 000004 1" }
 map{ id = "components/filler/filler_202777_1", description = "Filler 202777 1" }
 map{ id = "components/filler/filler_210711_1", description = "Filler 210711 1" }
-map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_east_000111_1", description = "obstacle_veryweakwall_east_000111_1" }
-map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_eastwest_000444_1", description = "obstacle_veryweakwall_eastwest_000444_1" }
-map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_north_000700_1", description = "obstacle_veryweakwall_north_000700_1" }
-map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_northeast_000700_1", description = "obstacle_veryweakwall_northeast_000700_1" }
-map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_northeastwest_000700_1", description = "obstacle_veryweakwall_northeastwest_000700_1" }
-map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_northsouth_000700_1", description = "obstacle_veryweakwall_northsouth_000700_1" }
-map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_south_000007_1", description = "obstacle_veryweakwall_south_000007_1" }
-map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_west_000444_1", description = "obstacle_veryweakwall_west_000444_1" }
+map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_e_000111_1", description = "obstacle_veryweakwall_east_000111_1" }
+map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_ew_000444_1", description = "obstacle_veryweakwall_eastwest_000444_1" }
+map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_n_000700_1", description = "obstacle_veryweakwall_north_000700_1" }
+map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_ne_000700_1", description = "obstacle_veryweakwall_northeast_000700_1" }
+map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_new_000700_1", description = "obstacle_veryweakwall_northeastwest_000700_1" }
+map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_ns_000700_1", description = "obstacle_veryweakwall_northsouth_000700_1" }
+map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_s_000007_1", description = "obstacle_veryweakwall_south_000007_1" }
+map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_w_000444_1", description = "obstacle_veryweakwall_west_000444_1" }
 map{ id = "components/door/door_veryweakwall_east_010000_1", description = "Door veryweakwall east 010000 1" }
 map{ id = "components/door/door_veryweakwall_west_040000_1", description = "Door veryweakwall west 040000 1" }
 map{ id = "components/door/door_veryweakwall_north_200000_1", description = "Door veryweakwall north 200000 1" }
 map{ id = "components/door/door_veryweakwall_south_002000_1", description = "Door veryweakwall south 002000 1" }
-map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_southwest_000007_1", description = "obstacle_veryweakwall_southwest_000007_1" }
-map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_southeastwest_000007_1", description = "obstacle_veryweakwall_southeastwest_000007_1" }
-map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_southeast_000007_1", description = "obstacle_veryweakwall_southeast_000007_1" }
-map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_northwest_000700_1", description = "obstacle_veryweakwall_northwest_000700_1" }
-map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_northsouthwest_000444_1", description = "obstacle_veryweakwall_northsouthwest_000444_1" }
-map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_northsoutheast_000111_1", description = "obstacle_veryweakwall_northsoutheast_000111_1" }
+map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_sw_000007_1", description = "obstacle_veryweakwall_southwest_000007_1" }
+map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_sew_000007_1", description = "obstacle_veryweakwall_southeastwest_000007_1" }
+map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_se_000007_1", description = "obstacle_veryweakwall_southeast_000007_1" }
+map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_nw_000700_1", description = "obstacle_veryweakwall_northwest_000700_1" }
+map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_nsw_000444_1", description = "obstacle_veryweakwall_northsouthwest_000444_1" }
+map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_nse_000111_1", description = "obstacle_veryweakwall_northsoutheast_000111_1" }
 map{ id = "components/door/door_closed_north_200000_1", description = "Door closed north 200000 1" }
 map{ id = "components/door/door_closed_south_002000_1", description = "Door closed south 002000 1" }
 map{ id = "components/door/door_closed_west_040000_1", description = "Door closed west 040000 1" }
