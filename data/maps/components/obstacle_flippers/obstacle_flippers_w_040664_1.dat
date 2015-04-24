@@ -207,17 +207,6 @@ dynamic_tile{
   enabled_at_start = false,
 }
 
-dynamic_tile{
-  layer = 1,
-  x = 152,
-  y = 80,
-  width = 16,
-  height = 16,
-  name = "enemy",
-  pattern = "floor_small.2",
-  enabled_at_start = false,
-}
-
 jumper{
   layer = 1,
   x = 56,
@@ -266,6 +255,28 @@ dynamic_tile{
   height = 16,
   name = "treasure_obstacle_chest",
   pattern = "floor_small.2",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 40,
+  y = 112,
+  width = 16,
+  height = 16,
+  name = "enemy_6",
+  pattern = "carpet.1",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 136,
+  y = 152,
+  width = 16,
+  height = 16,
+  name = "enemy_2",
+  pattern = "carpet.1",
   enabled_at_start = false,
 }
 

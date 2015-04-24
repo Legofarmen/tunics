@@ -7,6 +7,10 @@ function flippers.init(map, data)
         data.room:door({open=door_data.open or 'open', name=door_data.name, room_events=data.room_events}, dir)
     end
 
+    for entity in map:get_entities('enemy') do
+        zentropy.inject_enemy(entity, data.rng:refine(entity:get_name()))
+    end
+
     if data.treasure1 then
         zentropy.inject_chest(map:get_entity('treasure_obstacle_chest'), data.treasure1)
         map:set_entities_enabled('treasure_obstacle_', true)

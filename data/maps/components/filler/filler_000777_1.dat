@@ -72,17 +72,6 @@ tile{
 
 dynamic_tile{
   layer = 1,
-  x = 152,
-  y = 120,
-  width = 16,
-  height = 16,
-  name = "enemy",
-  pattern = "carpet.1",
-  enabled_at_start = false,
-}
-
-dynamic_tile{
-  layer = 1,
   x = 248,
   y = 40,
   width = 16,
@@ -123,5 +112,49 @@ dynamic_tile{
   name = "pot_4",
   pattern = "floor_pot",
   enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 184,
+  y = 48,
+  width = 16,
+  height = 16,
+  name = "enemy_5",
+  pattern = "carpet.1",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 72,
+  y = 48,
+  width = 16,
+  height = 16,
+  name = "enemy_2",
+  pattern = "carpet.1",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 256,
+  y = 80,
+  width = 16,
+  height = 16,
+  name = "enemy_3",
+  pattern = "carpet.1",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 152,
+  y = 168,
+  width = 16,
+  height = 16,
+  name = "enemy_4",
+  pattern = "carpet.1",
+  enabled_at_start = false,
 }
 

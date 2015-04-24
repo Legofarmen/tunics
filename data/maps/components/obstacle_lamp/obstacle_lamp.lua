@@ -4,8 +4,6 @@ local util = require 'lib/util'
 local zentropy = require 'lib/zentropy'
     		
 function lamp.init(map, data, timeout)
-    local enemy = map:get_entity('enemy')
-
 	local doors = {}
 	for dir, door_data in util.pairs_by_keys(data.doors) do
         assert((door_data.open or 'open') == 'open')
@@ -13,8 +11,8 @@ function lamp.init(map, data, timeout)
         table.insert(doors, door)
 	end
 
-    if enemy then
-        zentropy.inject_enemy(enemy, data.rng:refine('enemy'))
+    for entity in map:get_entities('enemy') do
+        zentropy.inject_enemy(entity, data.rng:refine(entity:get_name()))
     end
 
 	local hidden_chest = nil

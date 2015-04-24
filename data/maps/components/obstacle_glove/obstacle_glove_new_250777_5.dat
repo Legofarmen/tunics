@@ -357,17 +357,6 @@ dynamic_tile{
   enabled_at_start = false,
 }
 
-dynamic_tile{
-  layer = 1,
-  x = 152,
-  y = 168,
-  width = 16,
-  height = 16,
-  name = "enemy",
-  pattern = "floor_small.2",
-  enabled_at_start = false,
-}
-
 destructible{
   layer = 1,
   x = 40,
@@ -382,5 +371,49 @@ destructible{
   y = 45,
   name = "Vase_2",
   sprite = "entities/vase",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 88,
+  y = 168,
+  width = 16,
+  height = 16,
+  name = "enemy_3",
+  pattern = "carpet.1",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 216,
+  y = 168,
+  width = 16,
+  height = 16,
+  name = "enemy_2",
+  pattern = "carpet.1",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 88,
+  y = 40,
+  width = 16,
+  height = 16,
+  name = "enemy_4",
+  pattern = "carpet.1",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 216,
+  y = 40,
+  width = 16,
+  height = 16,
+  name = "enemy_5",
+  pattern = "carpet.1",
+  enabled_at_start = false,
 }
 

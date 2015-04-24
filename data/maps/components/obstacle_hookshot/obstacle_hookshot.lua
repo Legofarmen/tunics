@@ -3,13 +3,14 @@ local hookshot = {}
 local util = require 'lib/util'
 
 function hookshot.init(map, data)
-	local door_names = {}
 	for dir, door_data in util.pairs_by_keys(data.doors) do
-		data.room:door({open=door_data.open or 'open', name=door_data.name, door_names=door_names, room_events=data.room_events}, dir)
+		data.room:door({open=door_data.open or 'open', name=door_data.name, room_events=data.room_events}, dir)
 	end
 
-    local hidden_chest = nil
-	
+    for entity in map:get_entities('enemy') do
+        zentropy.inject_enemy(entity, data.rng:refine(entity:get_name()))
+    end
+
 	local obstacle_x, obstacle_y = map:get_entity('treasure_obstacle_chest'):get_position()
 	obstacle_x, obstacle_y = obstacle_x + 8, obstacle_y + 13
 	

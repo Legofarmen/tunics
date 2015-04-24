@@ -5,15 +5,19 @@ local zentropy = require 'lib/zentropy'
 
 function glove.init(map, data)
 
-    local enemy = map:get_entity('enemy')
-
-    zentropy.inject_enemy(enemy, data.rng:refine('enemy'))
+    for entity in map:get_entities('enemy') do
+        zentropy.inject_enemy(entity, data.rng:refine(entity:get_name()))
+    end
 
 	local door_names = {}
 	for dir, door_data in util.pairs_by_keys(data.doors) do
         assert((door_data.open or 'open') == 'open')
 		data.room:door({open='open', name=door_data.name, door_names=door_names, room_events=data.room_events}, dir)
 	end
+
+    for entity in map:get_entities('pot_') do
+        zentropy.inject_pot(entity, data.rng:refine(entity:get_name()))
+    end
 
     if data.treasure1 then
         local placeholder = map:get_entity('treasure_obstacle_chest')

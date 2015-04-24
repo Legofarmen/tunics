@@ -63,17 +63,6 @@ tile{
 
 dynamic_tile{
   layer = 1,
-  x = 104,
-  y = 80,
-  width = 16,
-  height = 16,
-  name = "enemy",
-  pattern = "carpet.1",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
   x = 72,
   y = 72,
   width = 16,
@@ -81,5 +70,16 @@ dynamic_tile{
   name = "chest",
   pattern = "carpet.2",
   enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 120,
+  y = 72,
+  width = 16,
+  height = 16,
+  name = "enemy_2",
+  pattern = "carpet.1",
+  enabled_at_start = false,
 }
 

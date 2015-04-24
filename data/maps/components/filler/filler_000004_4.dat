@@ -88,3 +88,14 @@ tile{
   pattern = "wall_border.corner.3",
 }
 
+dynamic_tile{
+  layer = 1,
+  x = 80,
+  y = 144,
+  width = 16,
+  height = 16,
+  name = "enemy_2",
+  pattern = "carpet.1",
+  enabled_at_start = false,
+}
+

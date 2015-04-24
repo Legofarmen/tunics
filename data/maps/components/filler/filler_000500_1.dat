@@ -315,7 +315,7 @@ tile{
 
 dynamic_tile{
   layer = 1,
-  x = 152,
+  x = 168,
   y = 64,
   width = 16,
   height = 16,
@@ -366,5 +366,16 @@ dynamic_tile{
   name = "pot_4",
   pattern = "floor_pot",
   enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 136,
+  y = 64,
+  width = 16,
+  height = 16,
+  name = "enemy_2",
+  pattern = "carpet.1",
+  enabled_at_start = false,
 }
 

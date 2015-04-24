@@ -266,11 +266,22 @@ dynamic_tile{
 dynamic_tile{
   layer = 1,
   x = 48,
-  y = 128,
+  y = 136,
   width = 16,
   height = 16,
-  name = "enemy",
-  pattern = "floor_small.2",
+  name = "enemy_6",
+  pattern = "carpet.1",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 264,
+  y = 120,
+  width = 16,
+  height = 16,
+  name = "enemy_2",
+  pattern = "carpet.1",
   enabled_at_start = false,
 }
 

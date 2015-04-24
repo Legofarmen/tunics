@@ -369,12 +369,45 @@ tile{
 
 dynamic_tile{
   layer = 1,
-  x = 152,
-  y = 120,
+  x = 40,
+  y = 40,
   width = 16,
   height = 16,
-  name = "enemy",
-  pattern = "carpet.5",
+  name = "enemy_5",
+  pattern = "carpet.1",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 152,
+  y = 40,
+  width = 16,
+  height = 16,
+  name = "enemy_2",
+  pattern = "carpet.1",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 152,
+  y = 184,
+  width = 16,
+  height = 16,
+  name = "enemy_3",
+  pattern = "carpet.1",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 264,
+  y = 184,
+  width = 16,
+  height = 16,
+  name = "enemy_4",
+  pattern = "carpet.1",
   enabled_at_start = false,
 }
 

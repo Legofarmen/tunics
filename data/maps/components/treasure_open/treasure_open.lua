@@ -4,8 +4,8 @@ function treasure.init(map, data)
 
     local chest = zentropy.inject_chest(map:get_entity('chest'), data)
 
-    if map:has_entity('enemy') then
-        zentropy.inject_enemy(map:get_entity('enemy'), data.rng:refine('enemy'))
+    for entity in map:get_entities('enemy') do
+        zentropy.inject_enemy(entity, data.rng:refine(entity:get_name()))
     end
 
     if map:has_entities('placeholder_') or map:has_entities('pot_') then

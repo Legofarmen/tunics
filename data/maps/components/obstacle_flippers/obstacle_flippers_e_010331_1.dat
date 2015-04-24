@@ -218,17 +218,6 @@ dynamic_tile{
   enabled_at_start = false,
 }
 
-dynamic_tile{
-  layer = 1,
-  x = 152,
-  y = 80,
-  width = 16,
-  height = 16,
-  name = "enemy",
-  pattern = "floor_small.2",
-  enabled_at_start = false,
-}
-
 jumper{
   layer = 1,
   x = 184,
@@ -267,5 +256,27 @@ jumper{
   height = 112,
   direction = 0,
   jump_length = 40,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 264,
+  y = 128,
+  width = 16,
+  height = 16,
+  name = "enemy_4",
+  pattern = "carpet.1",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 168,
+  y = 152,
+  width = 16,
+  height = 16,
+  name = "enemy_2",
+  pattern = "carpet.1",
+  enabled_at_start = false,
 }
 

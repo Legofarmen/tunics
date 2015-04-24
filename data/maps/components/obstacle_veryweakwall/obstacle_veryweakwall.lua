@@ -7,7 +7,11 @@ function bomb.init(map, data)
         assert(door_data.open == 'veryweakwall')
         data.room:door({open='veryweakwall', name=door_data.name, room_events=data.room_events}, dir)
 	end
-	
+
+    for entity in map:get_entities('enemy') do
+        zentropy.inject_enemy(entity, data.rng:refine(entity:get_name()))
+    end
+
 	if data.treasure1 then
 		local x, y = map:get_entity('treasure_obstacle_chest'):get_position()
 		x, y = x + 8, y + 13

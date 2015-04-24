@@ -73,10 +73,21 @@ tile{
 dynamic_tile{
   layer = 1,
   x = 224,
+  y = 112,
+  width = 16,
+  height = 16,
+  name = "chest",
+  pattern = "carpet.2",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 224,
   y = 88,
   width = 16,
   height = 16,
-  name = "enemy",
+  name = "enemy_2",
   pattern = "carpet.1",
   enabled_at_start = false,
 }
@@ -84,11 +95,11 @@ dynamic_tile{
 dynamic_tile{
   layer = 1,
   x = 224,
-  y = 112,
+  y = 136,
   width = 16,
   height = 16,
-  name = "chest",
-  pattern = "carpet.2",
-  enabled_at_start = true,
+  name = "enemy_3",
+  pattern = "carpet.1",
+  enabled_at_start = false,
 }
 

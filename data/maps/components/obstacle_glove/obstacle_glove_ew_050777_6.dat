@@ -309,17 +309,6 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 152,
-  y = 112,
-  width = 16,
-  height = 16,
-  name = "enemy",
-  pattern = "floor_small.2",
-  enabled_at_start = false,
-}
-
-dynamic_tile{
-  layer = 1,
   x = 176,
   y = 32,
   width = 16,
@@ -327,5 +316,49 @@ dynamic_tile{
   name = "stone_5",
   pattern = "floor_small.4",
   enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 152,
+  y = 72,
+  width = 16,
+  height = 16,
+  name = "enemy_5",
+  pattern = "carpet.1",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 152,
+  y = 152,
+  width = 16,
+  height = 16,
+  name = "enemy_2",
+  pattern = "carpet.1",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 72,
+  y = 112,
+  width = 16,
+  height = 16,
+  name = "enemy_3",
+  pattern = "carpet.1",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 232,
+  y = 112,
+  width = 16,
+  height = 16,
+  name = "enemy_4",
+  pattern = "carpet.1",
+  enabled_at_start = false,
 }
 
