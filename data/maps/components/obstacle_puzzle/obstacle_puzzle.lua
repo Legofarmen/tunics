@@ -59,7 +59,8 @@ function puzzle.init(map, data)
 
     if data.treasure1 or next(data.doors) then
         local placeholders = {}
-        for entity in map:get_entities('placeholder_') do
+        for entity in map:get_entities('pot_') do
+            zentropy.inject_pot(entity, data.rng:refine(entity:get_name()))
             table.insert(placeholders, entity)
         end
         local hideout = placeholders[data.rng:random(#placeholders)]
