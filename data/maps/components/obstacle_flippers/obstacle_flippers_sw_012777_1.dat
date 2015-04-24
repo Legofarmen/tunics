@@ -369,3 +369,21 @@ dynamic_tile{
   enabled_at_start = false,
 }
 
+wall{
+  layer = 1,
+  x = 104,
+  y = 48,
+  width = 8,
+  height = 32,
+  stops_enemies = true,
+}
+
+wall{
+  layer = 1,
+  x = 208,
+  y = 160,
+  width = 8,
+  height = 32,
+  stops_enemies = true,
+}
+
