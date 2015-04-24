@@ -774,22 +774,27 @@ end
 
 function zentropy.inject_enemy(placeholder, rng)
     zentropy.assert(placeholder)
-    local map = placeholder:get_map()
-    local x, y, layer = placeholder:get_position()
-    local treasure_name, treasure_variant = get_random_treasure(rng:refine('drop'))
-    local _, breed = rng:refine('breed'):ichoose(zentropy.Room.enemies)
-    local enemy = map:create_enemy{
-        layer=layer,
-        x=x,
-        y=y,
-        direction=3,
-        breed=breed,
-        treasure_name=treasure_name,
-        treasure_variant=treasure_variant,
-    }
-    local origin_x, origin_y = enemy:get_origin()
-    enemy:set_position(x + origin_x, y + origin_y)
-
+    local r = zentropy.Room.enemy_ratio
+    local rng2 = rng:refine(r)
+    while 1 <= r or rng2:random() < r do
+        local map = placeholder:get_map()
+        local x, y, layer = placeholder:get_position()
+        local treasure_name, treasure_variant = get_random_treasure(rng2:refine('drop'))
+        local _, breed = rng2:refine('breed'):ichoose(zentropy.Room.enemies)
+        local enemy = map:create_enemy{
+            layer=layer,
+            x=x,
+            y=y,
+            direction=3,
+            breed=breed,
+            treasure_name=treasure_name,
+            treasure_variant=treasure_variant,
+        }
+        local origin_x, origin_y = enemy:get_origin()
+        enemy:set_position(x + origin_x, y + origin_y)
+        r = r - 1
+        rng2 = rng:refine(r)
+    end
     placeholder:remove()
     return enemy
 end

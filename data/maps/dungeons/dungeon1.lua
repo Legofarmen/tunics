@@ -20,6 +20,10 @@ local layout = Layout.BidiVisitor
 
 local on_started_handlers = {}
 
+function get_enemy_ratio(tier)
+    return (3/10) * tier + (2/10)
+end
+
 function map:add_on_started(f)
     table.insert(on_started_handlers, f)
 end
@@ -51,6 +55,7 @@ local floor1, floor2 = zentropy.components:get_floors(presentation_rng:refine('f
 local mapping = mappings.choose(tier, presentation_rng:refine('mappings'))
 zentropy.Room.enemies = mapping.enemies
 zentropy.Room.destructibles = mapping.destructibles
+zentropy.Room.enemy_ratio = get_enemy_ratio(tier)
 
 local nkeys = zentropy.settings.tier_keys or mapping.complexity.keys
 local nfairies = zentropy.settings.tier_fairies or mapping.complexity.fairies
