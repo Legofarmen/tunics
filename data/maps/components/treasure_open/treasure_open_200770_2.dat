@@ -232,17 +232,6 @@ tile{
   pattern = "torch_big.top",
 }
 
-dynamic_tile{
-  layer = 1,
-  x = 88,
-  y = 56,
-  width = 16,
-  height = 16,
-  name = "placeholder_1",
-  pattern = "floor_pot",
-  enabled_at_start = true,
-}
-
 switch{
   layer = 1,
   x = 0,
@@ -252,103 +241,6 @@ switch{
   sprite = "entities/switch",
   needs_block = false,
   inactivate_when_leaving = false,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 88,
-  y = 72,
-  width = 16,
-  height = 16,
-  name = "placeholder_2",
-  pattern = "floor_pot",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 88,
-  y = 88,
-  width = 16,
-  height = 16,
-  name = "placeholder_3",
-  pattern = "floor_pot",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 216,
-  y = 56,
-  width = 16,
-  height = 16,
-  name = "placeholder_4",
-  pattern = "floor_pot",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 216,
-  y = 72,
-  width = 16,
-  height = 16,
-  name = "placeholder_5",
-  pattern = "floor_pot",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 216,
-  y = 88,
-  width = 16,
-  height = 16,
-  name = "placeholder_6",
-  pattern = "floor_pot",
-  enabled_at_start = true,
-}
-
-destructible{
-  layer = 1,
-  x = 224,
-  y = 101,
-  sprite = "entities/vase",
-}
-
-destructible{
-  layer = 1,
-  x = 224,
-  y = 85,
-  sprite = "entities/vase",
-}
-
-destructible{
-  layer = 1,
-  x = 224,
-  y = 69,
-  sprite = "entities/vase",
-}
-
-destructible{
-  layer = 1,
-  x = 96,
-  y = 69,
-  sprite = "entities/vase",
-}
-
-destructible{
-  layer = 1,
-  x = 96,
-  y = 85,
-  sprite = "entities/vase",
-}
-
-destructible{
-  layer = 1,
-  x = 96,
-  y = 101,
-  sprite = "entities/vase",
 }
 
 dynamic_tile{
@@ -370,6 +262,72 @@ dynamic_tile{
   height = 16,
   name = "chest",
   pattern = "carpet.2",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 88,
+  y = 56,
+  width = 16,
+  height = 16,
+  name = "pot_7",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 88,
+  y = 72,
+  width = 16,
+  height = 16,
+  name = "pot_2",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 88,
+  y = 88,
+  width = 16,
+  height = 16,
+  name = "pot_3",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 216,
+  y = 56,
+  width = 16,
+  height = 16,
+  name = "pot_4",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 216,
+  y = 72,
+  width = 16,
+  height = 16,
+  name = "pot_5",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 216,
+  y = 88,
+  width = 16,
+  height = 16,
+  name = "pot_6",
+  pattern = "floor_pot",
   enabled_at_start = true,
 }
 

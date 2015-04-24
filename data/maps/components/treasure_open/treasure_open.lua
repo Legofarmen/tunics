@@ -8,11 +8,12 @@ function treasure.init(map, data)
         zentropy.inject_enemy(map:get_entity('enemy'), data.rng:refine('enemy'))
     end
 
-    if map:has_entities('placeholder_') then
+    if map:has_entities('placeholder_') or map:has_entities('pot_') then
         local switch = map:get_entity('switch')
 
         local placeholders = {}
-        for entity in map:get_entities('placeholder_') do
+        for entity in map:get_entities('pot_') do
+            zentropy.inject_pot(entity, data.rng:refine(entity:get_name()))
             table.insert(placeholders, entity)
         end
         local hideout = placeholders[data.rng:random(#placeholders)]
