@@ -383,6 +383,26 @@ sprite{ id = "hud/empty_heart", description = "Empty heart" }
 sprite{ id = "hud/magic_bar", description = "Magic bar" }
 sprite{ id = "hud/pause_icon_flip", description = "Pause icon flip" }
 sprite{ id = "hud/sword_icon_flip", description = "Sword icon flip" }
+sprite{ id = "enemies/bari_blue", description = "Bari blue" }
+sprite{ id = "enemies/bari_mini", description = "Bari mini" }
+sprite{ id = "enemies/bari_red", description = "Bari red" }
+sprite{ id = "enemies/chuchu_green", description = "Buzz blob" }
+sprite{ id = "enemies/crab", description = "Sand crab" }
+sprite{ id = "enemies/deadrock", description = "Deadrock" }
+sprite{ id = "enemies/keese", description = "Keese" }
+sprite{ id = "enemies/lanmola", description = "Lanmola" }
+sprite{ id = "enemies/lanmola_body", description = "Lanmola body" }
+sprite{ id = "enemies/lanmola_tail", description = "Lanmola tail" }
+sprite{ id = "enemies/lizalfos", description = "Lizalfos" }
+sprite{ id = "enemies/octorok_red", description = "Octorok red" }
+sprite{ id = "enemies/poe", description = "Poe" }
+sprite{ id = "enemies/rat", description = "Rat" }
+sprite{ id = "enemies/rock_small", description = "Rock small" }
+sprite{ id = "enemies/rope", description = "Rope" }
+sprite{ id = "enemies/stalfos_head", description = "Stalfos head" }
+sprite{ id = "enemies/stalfos_knight", description = "Stalfos knight" }
+sprite{ id = "enemies/geldman", description = "Geldman" }
+sprite{ id = "enemies/hardhat_beetle_blue", description = "Hardhat beetle blue" }
 
 music{ id = "agahnim", description = "Agahnim theme" }
 music{ id = "beginning", description = "Beginning" }
@@ -542,6 +562,25 @@ enemy{ id = "pike_fixed", description = "Pike fixed" }
 enemy{ id = "pike_detect", description = "Pike detect" }
 enemy{ id = "bubble", description = "Bubble" }
 enemy{ id = "agahnim", description = "Agahnim" }
+enemy{ id = "stalfos_head", description = "Stalfos head" }
+enemy{ id = "stalfos_knight", description = "Stalfos knight" }
+enemy{ id = "rope", description = "Rope" }
+enemy{ id = "rock_small", description = "Rock small" }
+enemy{ id = "rat", description = "Rat" }
+enemy{ id = "poe", description = "Poe" }
+enemy{ id = "octorok_red", description = "Octorok red" }
+enemy{ id = "lizalfos", description = "Lizalfos" }
+enemy{ id = "lanmola_tail", description = "Lanmola tail" }
+enemy{ id = "lanmola_body", description = "Lanmola body" }
+enemy{ id = "lanmola", description = "Lanmola" }
+enemy{ id = "keese", description = "Keese" }
+enemy{ id = "geldman", description = "Geldman" }
+enemy{ id = "deadrock", description = "Deadrock" }
+enemy{ id = "crab", description = "Sand crab" }
+enemy{ id = "chuchu_green", description = "Buzz blob" }
+enemy{ id = "bari_blue", description = "Bari blue" }
+enemy{ id = "bari_red", description = "Bari red" }
+enemy{ id = "bari_mini", description = "Bari mini" }
 
 entity{ id = "torch", description = "Torch" }
 
