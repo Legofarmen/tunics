@@ -54,7 +54,7 @@ function glove.init(map, data)
             layer = layer,
             x = x,
             y = y,
-            sprite = 'entities/stone_white',
+            sprite = zentropy.Room.destructibles.stone1,
             weight = 1,
         }
         local x_origin, y_origin = stone:get_origin()
