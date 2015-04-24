@@ -315,78 +315,13 @@ tile{
 
 dynamic_tile{
   layer = 1,
-  x = 40,
-  y = 184,
-  width = 16,
-  height = 16,
-  name = "tile",
-  pattern = "floor_pot",
-  enabled_at_start = true,
-}
-
-destructible{
-  layer = 1,
-  x = 48,
-  y = 197,
-  name = "Vase",
-  sprite = "entities/vase",
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 40,
-  y = 168,
-  width = 16,
-  height = 16,
-  name = "tile_2",
-  pattern = "floor_pot",
-  enabled_at_start = true,
-}
-
-destructible{
-  layer = 1,
-  x = 48,
-  y = 181,
-  name = "Vase_2",
-  sprite = "entities/vase",
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 264,
-  y = 184,
-  width = 16,
-  height = 16,
-  name = "tile_3",
-  pattern = "floor_pot",
-  enabled_at_start = true,
-}
-
-destructible{
-  layer = 1,
-  x = 272,
-  y = 197,
-  name = "Vase_3",
-  sprite = "entities/vase",
-}
-
-dynamic_tile{
-  layer = 1,
   x = 264,
   y = 168,
   width = 16,
   height = 16,
-  name = "tile_4",
+  name = "pot_1",
   pattern = "floor_pot",
   enabled_at_start = true,
-}
-
-destructible{
-  layer = 1,
-  x = 272,
-  y = 181,
-  name = "Vase_4",
-  sprite = "entities/vase",
 }
 
 dynamic_tile{
@@ -398,5 +333,38 @@ dynamic_tile{
   name = "enemy",
   pattern = "carpet.1",
   enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 264,
+  y = 184,
+  width = 16,
+  height = 16,
+  name = "pot_2",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 40,
+  y = 168,
+  width = 16,
+  height = 16,
+  name = "pot_3",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 40,
+  y = 184,
+  width = 16,
+  height = 16,
+  name = "pot_4",
+  pattern = "floor_pot",
+  enabled_at_start = true,
 }
 

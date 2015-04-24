@@ -797,6 +797,25 @@ function zentropy.inject_enemy(placeholder, rng)
     return enemy
 end
 
+function zentropy.inject_pot(placeholder, rng)
+    zentropy.assert(placeholder)
+    local map = placeholder:get_map()
+    local x, y, layer = placeholder:get_position()
+    local treasure_name, treasure_variant = get_random_treasure(rng:refine('treasure'))
+    local entity = map:create_destructible{
+        layer=layer,
+        x=x,
+        y=y,
+        sprite=zentropy.Room.destructibles.pot,
+        treasure_name=treasure_name,
+        treasure_variant=treasure_variant,
+    }
+    local origin_x, origin_y = entity:get_origin()
+    entity:set_position(x + origin_x, y + origin_y)
+
+    return entity
+end
+
 function zentropy.inject_chest(placeholder, data)
     local map = placeholder:get_map()
     local x, y, layer = placeholder:get_position()

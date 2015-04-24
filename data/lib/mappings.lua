@@ -39,34 +39,34 @@ local family_music = {
 
 local family_destructibles = {
     smoothbrick = {
-        vase = 'vase',
-        glove1 = 'stone_white',
-        glove2 = 'stone_black',
+        pot = 'entities/vase',
+        stone1 = 'entities/stone_white',
+        stone2 = 'entities/stone_black',
     },
     house = {
-        vase = 'vase',
-        glove1 = 'stone_white',
-        glove2 = 'stone_black',
+        pot = 'entities/vase',
+        stone1 = 'entities/stone_white',
+        stone2 = 'entities/stone_black',
     },
     brick = {
-        vase = 'vase_skull',
-        glove1 = 'stone_white_skull',
-        glove2 = 'stone_black_skull',
+        pot = 'entities/vase_skull',
+        stone1 = 'entities/stone_white_skull',
+        stone2 = 'entities/stone_black_skull',
     },
     cave = {
-        vase = 'vase_skull',
-        glove1 = 'stone_white_skull',
-        glove2 = 'stone_black_skull',
+        pot = 'entities/vase_skull',
+        stone1 = 'entities/stone_white_skull',
+        stone2 = 'entities/stone_black_skull',
     },
     ganon = {
-        vase = 'vase_skull',
-        glove1 = 'stone_white_skull',
-        glove2 = 'stone_black_skull',
+        pot = 'entities/vase_skull',
+        stone1 = 'entities/stone_white_skull',
+        stone2 = 'entities/stone_black_skull',
     },
     ice = {
-        vase = 'vase_skull',
-        glove1 = 'stone_white_skull',
-        glove2 = 'stone_black_skull',
+        pot = 'entities/vase_skull',
+        stone1 = 'entities/stone_white_skull',
+        stone2 = 'entities/stone_black_skull',
     },
 }
 
@@ -116,7 +116,7 @@ local mappings = {}
 function mappings.choose(current_tier, rng)
     local family = choose_family(current_tier, rng:refine('family'))
     local _, music = rng:refine('music'):ichoose(family_music[family])
-    local _, destructibles = rng:refine('music'):ichoose(family_destructibles[family])
+    local destructibles = family_destructibles[family]
     local enemies = get_enemies(current_tier)
     return {
         family=family,
