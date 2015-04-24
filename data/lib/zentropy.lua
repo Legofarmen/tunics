@@ -302,10 +302,10 @@ function zentropy.db.Components:get_obstacle(item, dir, mask, rng)
     for i = 0, 15 do
         local d = ''
         local new_bits = bit32.bor(dir_bits, i)
-        if bit32.band(new_bits, 8) ~= 0 then d = d .. 'north' end
-        if bit32.band(new_bits, 4) ~= 0 then d = d .. 'south' end
-        if bit32.band(new_bits, 2) ~= 0 then d = d .. 'east' end
-        if bit32.band(new_bits, 1) ~= 0 then d = d .. 'west' end
+        if bit32.band(new_bits, 8) ~= 0 then d = d .. 'n' end
+        if bit32.band(new_bits, 4) ~= 0 then d = d .. 's' end
+        if bit32.band(new_bits, 2) ~= 0 then d = d .. 'e' end
+        if bit32.band(new_bits, 1) ~= 0 then d = d .. 'w' end
         doors[d] = true
     end
 
