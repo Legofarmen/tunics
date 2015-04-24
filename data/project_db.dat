@@ -91,18 +91,18 @@ map{ id = "old/treasure_compass_000004_1", description = "Treasure compass 00000
 map{ id = "old/treasure_compass_000001_1", description = "Treasure compass 000001 1" }
 map{ id = "dev/puzzles", description = "Puzzles" }
 map{ id = "components/treasure_open/treasure_open_000444_1", description = "Treasure open 000444 1" }
-map{ id = "components/obstacle_puzzle/obstacle_puzzle_northsoutheastwest_000700_1", description = "Puzzle 000700 1" }
+map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000700_1", description = "Puzzle 000700 1" }
 map{ id = "dev/obstacles", description = "Obstacles" }
-map{ id = "components/obstacle_puzzle/obstacle_puzzle_northsoutheastwest_000600_1", description = "Puzzle 000600 1" }
-map{ id = "components/obstacle_puzzle/obstacle_puzzle_northsoutheastwest_000300_1", description = "Puzzle 000300 1 " }
-map{ id = "components/obstacle_puzzle/obstacle_puzzle_northsoutheastwest_000111_1", description = "Puzzle 000111 1" }
+map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000600_1", description = "Puzzle 000600 1" }
+map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000300_1", description = "Puzzle 000300 1 " }
+map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000111_1", description = "Puzzle 000111 1" }
 map{ id = "components/treasure_open/treasure_open_000770_1", description = "Treasure open 000770 1" }
 map{ id = "components/treasure_open/treasure_open_000077_1", description = "Treasure open 000077 1" }
 map{ id = "components/treasure_open/treasure_open_200770_2", description = "Treasure open 200770 2" }
 map{ id = "components/enemy/enemy_fairy_000777_2", description = "Enemy fairy 000777 2" }
-map{ id = "components/obstacle_puzzle/obstacle_puzzle_northsoutheastwest_000777_1", description = "Puzzle 000777 1" }
-map{ id = "components/obstacle_puzzle/obstacle_puzzle_northsoutheastwest_000006_1", description = "Puzzle 000006 1" }
-map{ id = "components/obstacle_puzzle/obstacle_puzzle_northsoutheastwest_000003_1", description = "Puzzle 000003 1 " }
+map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000777_1", description = "Puzzle 000777 1" }
+map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000006_1", description = "Puzzle 000006 1" }
+map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000003_1", description = "Puzzle 000003 1 " }
 map{ id = "components/obstacle_weakwall/obstacle_weakwall_north_000400_1", description = "Obstacle weakwall north 000400 1" }
 map{ id = "components/obstacle_weakwall/obstacle_weakwall_northeast_210100_1", description = "Obstacle weakwall northeast 210100 1" }
 map{ id = "components/obstacle_weakwall/obstacle_weakwall_northwest_240400_1", description = "Obstacle weakwall northwest 240400 1" }
