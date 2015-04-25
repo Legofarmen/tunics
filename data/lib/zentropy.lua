@@ -756,7 +756,7 @@ local function get_random_treasure(rng)
         arrow = { 10/16, 5/16, 1/16 },
         magic_flask = { 7/8, 1/8 },
     }
-    local x = 4 * rng:random()
+    local x = 8 * rng:random()
     for item_name, probabilities in pairs(treasures) do
         if zentropy.game.game:get_item(item_name):is_obtainable() then
             for variant, p in ipairs(probabilities) do
