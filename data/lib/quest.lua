@@ -306,7 +306,7 @@ function Quest.Dependencies:multiple(name, count, factory, rng)
     return first, last
 end
 
-function Quest.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, treasure_items, brought_items)
+function Quest.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, max_heads, treasure_items, brought_items)
     brought_items = brought_items or {}
 
     function get_obstacle_types(item_name, has_map)
@@ -383,14 +383,14 @@ function Quest.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, treasure_items, b
     end
 
     local steps = Quest.sequence(rng:refine('steps'), d.result)
-    return Quest.render_steps(rng, steps, obstacle_types)
+    return Quest.render_steps(rng, steps, max_heads, obstacle_types)
 end
 
-function Quest.render_steps(rng, steps, filler_obstacle_types)
+function Quest.render_steps(rng, steps, max_heads, filler_obstacle_types)
     -- Build puzzle tree using the sequence of steps
     local heads = Tree.Room:new()
     for i, element in ipairs(steps) do
-        Quest.max_heads(rng:refine('step_' .. i), 6)(heads)
+        Quest.max_heads(rng:refine('step_' .. i), max_heads)(heads)
         element.step(heads)
     end
 
