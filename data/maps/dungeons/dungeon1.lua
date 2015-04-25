@@ -21,7 +21,7 @@ local layout = Layout.BidiVisitor
 local on_started_handlers = {}
 
 function get_enemy_ratio(tier)
-    return (3/10) * tier + (2/10)
+    return (3/15) * tier + (2/15)
 end
 
 function map:add_on_started(f)
