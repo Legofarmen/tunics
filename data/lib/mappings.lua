@@ -99,15 +99,27 @@ local family_destructibles = {
 
 local enemy_tier = {
     tentacle = 1,
+    keese = 1,
+    rat = 1,
+    octorok = 1,
     simple_green_soldier = 1,
-    ropa = 2,
+    bari_red = 2,
+    rope = 2,
+    crab = 2,
+    deadrock = 2,
     green_knight_soldier = 2,
+    poe = 3,
+    geldman = 3,
+    bari_blue = 3,
     blue_knight_soldier = 3,
     red_knight_soldier = 4,
-    red_hardhat_beetle = 4,
-    red_hemlasaur = 5,
+    snap_dragon = 4,
+    ropa = 4,
+    red_hardhat_beetle = 6,
+    red_hemlasaur = 6,
     bubble = 6,
     gibdo = 6,
+    lizalfos = 6,
 }
 
 local function choose_family(current_tier, rng)
