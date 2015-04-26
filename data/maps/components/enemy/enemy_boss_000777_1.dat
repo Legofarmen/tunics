@@ -547,15 +547,6 @@ tile{
   pattern = "wall_statue.1.2",
 }
 
-enemy{
-  layer = 1,
-  x = 176,
-  y = 141,
-  direction = 3,
-  breed = "green_knight_soldier",
-  rank = 2,
-}
-
 teletransporter{
   layer = 1,
   x = 152,
@@ -571,6 +562,48 @@ stairs{
   y = 16,
   direction = 1,
   subtype = "3",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 152,
+  y = 64,
+  width = 16,
+  height = 16,
+  name = "boss_1",
+  pattern = "floor_small.1",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 72,
+  y = 120,
+  width = 16,
+  height = 16,
+  name = "boss_2",
+  pattern = "floor_small.1",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 240,
+  y = 120,
+  width = 16,
+  height = 16,
+  name = "boss_3",
+  pattern = "floor_small.1",
+  enabled_at_start = false,
+}
+
+enemy{
+  layer = 1,
+  x = 160,
+  y = 157,
+  name = "agahnim",
+  direction = 3,
+  breed = "agahnim",
 }
 
 tile{

@@ -1,37 +1,32 @@
 local enemy = ...
 
+local zentropy = require "lib/zentropy"
+
 -- Agahnim (Boss of dungeon 5)
 
--- Possible positions where he appears.
-local positions = {
-  {x = 192, y = 277, direction4 = 3},
-  {x = 400, y = 277, direction4 = 3},
-  {x = 296, y = 373, direction4 = 1}
-}
-
 local nb_sons_created = 0
-local initial_life = 10
+local initial_life = 1
 local finished = false
 local blue_fireball_proba = 33  -- Percent.
 local vulnerable = false
 local sprite
 
 function enemy:on_created()
-
-  self:set_life(initial_life)
-  self:set_damage(12)
-  self:set_optimization_distance(0)
-  self:set_size(16, 16)
-  self:set_origin(8, 13)
-  self:set_invincible()
-  self:set_attack_consequence("sword", "protected")
-  self:set_attack_consequence("arrow", "protected")
-  self:set_attack_consequence("hookshot", "protected")
-  self:set_attack_consequence("boomerang", "protected")
-  self:set_pushed_back_when_hurt(false)
-  self:set_push_hero_on_sword(true)
-
-  sprite = self:create_sprite("enemies/agahnim")
+	zentropy.debug("created")
+	self.positions = {}
+	self:set_life(initial_life)
+	self:set_damage(12)
+	self:set_optimization_distance(0)
+	self:set_size(16, 16)
+	self:set_origin(8, 13)
+	self:set_invincible()
+	self:set_attack_consequence("sword", "protected")
+	self:set_attack_consequence("arrow", "protected")
+	self:set_attack_consequence("hookshot", "protected")
+	self:set_attack_consequence("boomerang", "protected")
+	self:set_pushed_back_when_hurt(false)
+	self:set_push_hero_on_sword(true)
+	sprite = self:create_sprite("enemies/agahnim")
 end
 
 function enemy:on_restarted()
@@ -59,8 +54,8 @@ function enemy:hide()
 end
 
 function enemy:unhide()
-	zentropy.debug('unhide')
-  local position = (positions[math.random(#positions)])
+ 	zentropy.debug_table('self.positions', self.positions)
+	local position = (self.positions[math.random(#self.positions)])
   self:set_position(position.x, position.y)
   sprite:set_animation("walking")
   sprite:set_direction(position.direction4)
@@ -146,8 +141,9 @@ function enemy:end_dialog()
 
   self:get_map():remove_entities("agahnim_fireball")
   sprite:set_ignore_suspend(true)
-  self:get_map():get_game():start_dialog("dungeon_5.agahnim_end")
-end
+  --self:get_map():get_game():start_dialog("dungeon_5.agahnim_end")
+  
+ end
 
 function enemy:escape()
 
