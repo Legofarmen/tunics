@@ -12,7 +12,6 @@ local vulnerable = false
 local sprite
 
 function enemy:on_created()
-	zentropy.debug("created")
 	self.positions = {}
 	self:set_life(initial_life)
 	self:set_damage(12)
@@ -30,21 +29,20 @@ function enemy:on_created()
 end
 
 function enemy:on_restarted()
+    vulnerable = false
 
-  vulnerable = false
-
-  if not finished then
-    sprite:set_animation("stopped")
-    sol.timer.start(self, 100, function()
-      sprite:fade_out(function() self:hide() end)
-    end)
-  else
-    sprite:set_animation("hurt")
-    self:get_map():get_entity("hero"):freeze()
-    sol.timer.start(self, 500, function() self:end_dialog() end)
-    sol.timer.start(self, 1000, function() sprite:fade_out() end)
-    sol.timer.start(self, 1500, function() self:escape() end)
-  end
+    if not finished then
+        sprite:set_animation("stopped")
+        sol.timer.start(self, 100, function()
+            sprite:fade_out(function() self:hide() end)
+        end)
+    else
+        sprite:set_animation("hurt")
+        self:get_map():get_entity("hero"):freeze()
+        sol.timer.start(self, 500, function() self:end_dialog() end)
+        sol.timer.start(self, 1000, function() sprite:fade_out() end)
+        sol.timer.start(self, 1500, function() self:escape() end)
+    end
 end
 
 function enemy:hide()
@@ -54,7 +52,6 @@ function enemy:hide()
 end
 
 function enemy:unhide()
- 	zentropy.debug_table('self.positions', self.positions)
 	local position = (self.positions[math.random(#self.positions)])
   self:set_position(position.x, position.y)
   sprite:set_animation("walking")
