@@ -386,7 +386,6 @@ sprite{ id = "hud/sword_icon_flip", description = "Sword icon flip" }
 sprite{ id = "enemies/bari_blue", description = "Bari blue" }
 sprite{ id = "enemies/bari_mini", description = "Bari mini" }
 sprite{ id = "enemies/bari_red", description = "Bari red" }
-sprite{ id = "enemies/chuchu_green", description = "Buzz blob" }
 sprite{ id = "enemies/crab", description = "Sand crab" }
 sprite{ id = "enemies/deadrock", description = "Deadrock" }
 sprite{ id = "enemies/keese", description = "Keese" }
@@ -578,7 +577,6 @@ enemy{ id = "keese", description = "Keese" }
 enemy{ id = "geldman", description = "Geldman" }
 enemy{ id = "deadrock", description = "Deadrock" }
 enemy{ id = "crab", description = "Sand crab" }
-enemy{ id = "chuchu_green", description = "Buzz blob" }
 enemy{ id = "bari_blue", description = "Bari blue" }
 enemy{ id = "bari_red", description = "Bari red" }
 enemy{ id = "bari_mini", description = "Bari mini" }
