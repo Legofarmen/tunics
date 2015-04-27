@@ -1,4 +1,10 @@
 dialog{
+  id = "_treasure.heart_container.1",
+  text = [[
+You got a heart container.
+]]
+}
+dialog{
   id = "try_again",
   question = true,
   text = [[

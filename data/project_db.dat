@@ -403,6 +403,8 @@ sprite{ id = "enemies/stalfos_head", description = "Stalfos head" }
 sprite{ id = "enemies/stalfos_knight", description = "Stalfos knight" }
 sprite{ id = "enemies/geldman", description = "Geldman" }
 sprite{ id = "enemies/hardhat_beetle_blue", description = "Hardhat beetle blue" }
+sprite{ id = "enemies/fireball", description = "Fireball" }
+sprite{ id = "enemies/fireball_tripple", description = "Fireball tripple" }
 
 music{ id = "agahnim", description = "Agahnim theme" }
 music{ id = "beginning", description = "Beginning" }

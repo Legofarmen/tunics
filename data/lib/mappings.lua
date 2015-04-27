@@ -42,25 +42,25 @@ local tier_complexity = {
         keys=1,
         culdesacs=0,
         fairies=0,
-        max_heads=2,
+        max_heads=3,
     },
     [3] = {
         keys=2,
         culdesacs=1,
         fairies=0,
-        max_heads=3,
+        max_heads=4,
     },
     [5] = {
         keys=3,
         culdesacs=2,
         fairies=1,
-        max_heads=4,
+        max_heads=5,
     },
     [10] = {
         keys=4,
         culdesacs=3,
         fairies=1,
-        max_heads=5,
+        max_heads=6,
     },
 }
 

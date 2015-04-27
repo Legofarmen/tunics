@@ -154,10 +154,10 @@ function enemy:escape()
     treasure_savegame_variable = "b521",
     x = x,
     y = y,
-    layer = 0
+    layer = 1
   }
   self:get_map():get_entity("hero"):unfreeze()
   --self:get_map():get_game():set_value("b520", true)
-  --self:remove()
+  self:remove()
 end
 
