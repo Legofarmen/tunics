@@ -6,6 +6,7 @@ local map_include = require 'lib/map_include'
 local dialog_box = require 'menus/dialog_box'
 local Pause = require 'menus/pause'
 local game_over_menu = require 'menus/game_over'
+local condition_manager = require 'hero_condition'
 
 bit32 = bit32 or bit
 
@@ -712,6 +713,7 @@ function zentropy.game.init(game)
         end
         self.dialog_box:initialize_dialog_box()
         self:initialize_hud()
+        condition_manager:initialize(self)
     end
 
     -- Called by the engine when a dialog starts.
