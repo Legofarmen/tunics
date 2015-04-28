@@ -518,6 +518,7 @@ end
 
 function zentropy.Room:treasure(treasure_data)
     zentropy.assert(not treasure_data.see)
+    zentropy.debug(treasure_data.item_name)
     local rng = self.rng:refine('treasure')
     local component_name, component_mask = zentropy.components:get_treasure(treasure_data.open, self.mask, rng)
     if not component_name then
