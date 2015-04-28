@@ -1,6 +1,7 @@
 local enemy = ...
 
 local la = require 'lib/la'
+local zentropy = require 'lib/zentropy'
 
 -- A bouncing triple fireball, usually shot by another enemy.
 
@@ -12,104 +13,166 @@ local sprite2 = nil
 local sprite3 = nil
 
 function enemy:on_created()
-  self:set_life(1)
-  self:set_damage(8)
-  self:create_sprite("enemies/fireball_triple")
-  self:set_size(16, 16)
-  self:set_origin(8, 8)
-  self:set_obstacle_behavior("flying")
-  self:set_invincible()
-  self:set_attack_consequence("sword", "custom")
+    zentropy.debug('on_created')
+    self:set_life(1)
+    self:set_damage(8)
+    self:create_sprite("enemies/fireball_triple")
+    self:set_size(16, 16)
+    self:set_origin(8, 8)
+    self:set_obstacle_behavior("flying")
+    self:set_invincible()
+    self:set_attack_consequence("sword", "custom")
 
-  -- Two smaller fireballs just for the displaying.
-  sprite2 = sol.sprite.create("enemies/fireball_triple")
-  sprite2:set_animation("small")
-  sprite3 = sol.sprite.create("enemies/fireball_triple")
-  sprite3:set_animation("tiny")
+    -- Two smaller fireballs just for the displaying.
+    sprite2 = sol.sprite.create("enemies/fireball_triple")
+    sprite2:set_animation("small")
+    sprite3 = sol.sprite.create("enemies/fireball_triple")
+    sprite3:set_animation("tiny")
 end
 
 function enemy:on_restarted()
-  local hero_x, hero_y = self:get_map():get_entity("hero"):get_position()
-  local angle = self:get_angle(hero_x, hero_y - 5)
-  local m = sol.movement.create("straight")
-  m:set_speed(speed)
-  m:set_angle(angle)
-  m:set_smooth(false)
-  m:start(self)
-end
-
-function enemy:on_position_changed()
-    self.last = 'position'
-end
-function enemy:on_obstacle_reached()
-  if bounces < max_bounces and self.last ~= 'obstacle' then
-    -- Compute the bouncing angle (works well with horizontal and vertical walls).
-    local m = self:get_movement()
-    local angle = m:get_angle()
-
-    self.bounce_xy = la.Vect2:new{ self:get_position() }
-    if angle < -math.pi then
-        angle = angle + math.pi
-    elseif angle > math.pi then
-        angle = angle - math.pi
-    end
-    print('before', math.deg(angle))
-    if self:test_obstacles(1, 0) then
-        if self:test_obstacles(0, 1) then
-            self.mirror = la.Matrix2.reflect2(self.bounce_xy[1], self.bounce_xy[2], self.bounce_xy[1] + 1, self.bounce_xy[2] + 1)
-            self.normal = la.Vect2:new{ -1, -1 }
-            angle = -angle + math.pi/2
-            print('SE')
-        elseif self:test_obstacles(0, -1) then
-            self.mirror = la.Matrix2.reflect2(self.bounce_xy[1], self.bounce_xy[2], self.bounce_xy[1] - 1, self.bounce_xy[2] + 1)
-            self.normal = la.Vect2:new{ -1, 1 }
-            angle = -angle - math.pi/2
-            print('NE')
-        else
-            self.mirror = la.Matrix2.reflect2(self.bounce_xy[1], self.bounce_xy[2], self.bounce_xy[1], self.bounce_xy[2] + 1)
-            self.normal = la.Vect2:new{ -1, 0 }
-            angle = math.pi - angle
-            print('E')
-        end
-    elseif self:test_obstacles(-1, 0) then
-        if self:test_obstacles(0, 1) then
-            self.mirror = la.Matrix2.reflect2(self.bounce_xy[1], self.bounce_xy[2], self.bounce_xy[1] + 1, self.bounce_xy[2] + 1)
-            self.normal = la.Vect2:new{ 1, -1 }
-            angle = -angle - math.pi/2
-            print('SW')
-        elseif self:test_obstacles(0, -1) then
-            self.mirror = la.Matrix2.reflect2(self.bounce_xy[1], self.bounce_xy[2], self.bounce_xy[1] - 1, self.bounce_xy[2] + 1)
-            self.normal = la.Vect2:new{ 1, 1 }
-            angle = -angle + math.pi/2
-            print('NW')
-        else
-            self.mirror = la.Matrix2.reflect2(self.bounce_xy[1], self.bounce_xy[2], self.bounce_xy[1], self.bounce_xy[2] + 1)
-            self.normal = la.Vect2:new{ 1, 0 }
-            angle = math.pi - angle
-            print('W')
-        end
-    elseif self:test_obstacles(0, 1) then
-        self.mirror = la.Matrix2.reflect2(self.bounce_xy[1], self.bounce_xy[2], self.bounce_xy[1] + 1, self.bounce_xy[2])
-        self.normal = la.Vect2:new{ 0, -1 }
-        angle = -angle
-        print('S')
-    elseif self:test_obstacles(0, -1) then
-        self.mirror = la.Matrix2.reflect2(self.bounce_xy[1], self.bounce_xy[2], self.bounce_xy[1] + 1, self.bounce_xy[2])
-        self.normal = la.Vect2:new{ 0, 1 }
-        angle = -angle
-        print('N')
-    end
-    print('after', math.deg(angle))
-
-    m:set_angle(angle)
+    zentropy.debug('on_restarted')
+    local hero_x, hero_y = self:get_map():get_entity("hero"):get_position()
+    local angle = self:get_angle(hero_x, hero_y - 5)
+    local m = sol.movement.create("straight")
     m:set_speed(speed)
+    m:set_angle(angle)
+    m:set_smooth(false)
+    m:start(self)
+end
 
-    bounces = bounces + 1
-    speed = speed + 48
-  else
-    self:remove()
-  end
-  self.last = 'obstacle'
+local directions = {
+    --[0]
+    [1]='nw',
+    [2]='ne',
+    [3]='n',
+    [4]='sw',
+    [5]='w',
+    --[6]
+    [7]='nw',
+    [8]='se',
+    --[9]
+    [10]='e',
+    [11]='ne',
+    [12]='s',
+    [13]='sw',
+    [14]='se',
+    --[15]
+}
+
+function enemy:get_obstacle_direction()
+    local bits = 0
+    if self:test_obstacles(-1, -1) then
+        bits = bits + 1
+    end
+    if self:test_obstacles( 1, -1) then
+        bits = bits + 2
+    end
+    if self:test_obstacles(-1,  1) then
+        bits = bits + 4
+    end
+    if self:test_obstacles( 1,  1) then
+        bits = bits + 8
+    end
+    if not directions[bits] then zentropy.debug('NO DIRECTION ' .. bits) end
+    return directions[bits]
+end
+
+function minrad(angle)
+    while angle <= -math.pi do
+        angle = angle + 2 * math.pi
+    end
+    while angle > math.pi do
+        angle = angle - 2 * math.pi
+    end
+    return angle
+end
+
+local bouncer = {}
+function bouncer.n(angle, x, y)
+    return {
+        mirror = la.Matrix2.reflect2(x, y, x + 1, y),
+        angle = -angle,
+        xy = la.Vect2:new{ x, y },
+        normal = la.Vect2:new{ 0, 1 },
+    }
+end
+function bouncer.s(angle, x, y)
+    return {
+        mirror = la.Matrix2.reflect2(x, y, x + 1, y),
+        angle = -angle,
+        xy = la.Vect2:new{ x, y },
+        normal = la.Vect2:new{ 0, -1 },
+    }
+end
+function bouncer.e(angle, x, y)
+    return {
+        mirror = la.Matrix2.reflect2(x, y, x, y + 1),
+        angle = math.pi - angle,
+        xy = la.Vect2:new{ x, y },
+        normal = la.Vect2:new{ -1, 0 },
+    }
+end
+function bouncer.w(angle, x, y)
+    return {
+        mirror = la.Matrix2.reflect2(x, y, x, y + 1),
+        angle = math.pi - angle,
+        xy = la.Vect2:new{ x, y },
+        normal = la.Vect2:new{ 1, 0 },
+    }
+end
+function bouncer.se(angle, x, y)
+    return {
+        mirror = la.Matrix2.reflect2(x, y, x + 1, y + 1),
+        angle = -angle + math.pi/2,
+        xy = la.Vect2:new{ x, y },
+        normal = la.Vect2:new{ -1, -1 },
+    }
+end
+function bouncer.ne(angle, x, y)
+    return {
+        mirror = la.Matrix2.reflect2(x, y, x - 1, y + 1),
+        angle = -angle - math.pi/2,
+        xy = la.Vect2:new{ x, y },
+        normal = la.Vect2:new{ -1, 1 },
+    }
+end
+function bouncer.sw(angle, x, y)
+    return {
+        mirror = la.Matrix2.reflect2(x, y, x + 1, y + 1),
+        angle = -angle - math.pi/2,
+        xy = la.Vect2:new{ x, y },
+        normal = la.Vect2:new{ 1, -1 },
+    }
+end
+function bouncer.nw(angle, x, y)
+    return {
+        mirror = la.Matrix2.reflect2(x, y, x - 1, y + 1),
+        angle = -angle + math.pi/2,
+        xy = la.Vect2:new{ x, y },
+        normal = la.Vect2:new{ 1, 1 },
+    }
+end
+
+function enemy:on_obstacle_reached()
+    zentropy.debug('on_obstacle_reached')
+    if bounces < max_bounces then
+        -- Compute the bouncing angle (works well with horizontal and vertical walls).
+        local m = self:get_movement()
+
+        local dir = self:get_obstacle_direction()
+        zentropy.assert(dir)
+        local info = bouncer[dir](minrad(m:get_angle()), self:get_position())
+
+        m:set_angle(info.angle)
+        m:set_speed(speed)
+
+        bounces = bounces + 1
+        speed = speed + 48
+    else
+        zentropy.debug('remove2')
+        self:remove()
+    end
 end
 
 function enemy:on_custom_attack_received(attack, sprite)
@@ -151,6 +214,7 @@ end
 
 -- Method called by other enemies.
 function enemy:bounce()
+  zentropy.debug('bounce')
   local m = self:get_movement()
   local angle = m:get_angle()
   angle = angle + math.pi

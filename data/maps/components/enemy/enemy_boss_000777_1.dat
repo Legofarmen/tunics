@@ -438,7 +438,7 @@ tile{
   height = 24,
   pattern = "wall.2",
 }
-
+--[[
 tile{
   layer = 1,
   x = 48,
@@ -510,7 +510,7 @@ tile{
   height = 16,
   pattern = "spikes",
 }
-
+]]
 tile{
   layer = 1,
   x = 88,
