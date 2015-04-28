@@ -1,4 +1,4 @@
-
+local color = require 'lib/color'
 
 local legofarmen_logo = {}
 
@@ -6,7 +6,7 @@ function legofarmen_logo:on_started()
 
   -- black screen during 0.3 seconds
 	self.phase = "black"
-	
+    local r, g, b = color.hslToRgb(math.random(), 179/255, 114/255, 1)
 	self.surface = sol.surface.create(320, 240)
 	sol.timer.start(self, 300, function()
 		self:show_logo()
