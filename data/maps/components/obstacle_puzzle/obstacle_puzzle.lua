@@ -64,18 +64,24 @@ function puzzle.init(map, data)
             zentropy.inject_pot(entity, data.rng:refine(entity:get_name()))
             table.insert(placeholders, entity)
         end
-        local hideout = placeholders[data.rng:random(#placeholders)]
+        for entity in map:get_entities('block_') do
+            table.insert(placeholders, entity)
+        end
 
-        hideout:set_enabled(false)
+        local hideout = placeholders[data.rng:refine('fsl'):random(#placeholders)]
+
         local x, y, layer = hideout:get_position()
         if zentropy.settings.debug_cheat then
             y = y + 4
         end
-        switch:set_position(x, y, layer)
+        local origin_x, origin_y = hideout:get_origin()
+        switch:set_position(x - origin_x, y - origin_y, layer)
 
-        local block = map:get_entity('block_' .. hideout:get_name())
-        if block then
-            block:set_pushable(true)
+        for entity in map:get_entities('block_') do
+            if entity:get_name() ~= hideout:get_name() then
+                entity:set_pushable(false)
+                entity:set_pullable(false)
+            end
         end
 
         data.room_events:add_door_sensor_activated_listener(function ()

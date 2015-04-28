@@ -7,155 +7,6 @@ properties{
   music = "same",
 }
 
-switch{
-  layer = 1,
-  x = 0,
-  y = 0,
-  name = "switch",
-  subtype = "walkable",
-  sprite = "entities/switch",
-  needs_block = false,
-  inactivate_when_leaving = false,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 64,
-  y = 80,
-  width = 16,
-  height = 16,
-  name = "placeholder_10",
-  pattern = "floor_small.2",
-  enabled_at_start = false,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 80,
-  y = 80,
-  width = 16,
-  height = 16,
-  name = "placeholder_11",
-  pattern = "floor_small.2",
-  enabled_at_start = false,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 112,
-  y = 80,
-  width = 16,
-  height = 16,
-  name = "placeholder_12",
-  pattern = "floor_small.2",
-  enabled_at_start = false,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 192,
-  y = 80,
-  width = 16,
-  height = 16,
-  name = "placeholder_13",
-  pattern = "floor_small.2",
-  enabled_at_start = false,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 224,
-  y = 80,
-  width = 16,
-  height = 16,
-  name = "placeholder_14",
-  pattern = "floor_small.2",
-  enabled_at_start = false,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 240,
-  y = 80,
-  width = 16,
-  height = 16,
-  name = "placeholder_15",
-  pattern = "floor_small.2",
-  enabled_at_start = false,
-}
-
-block{
-  layer = 1,
-  x = 72,
-  y = 93,
-  name = "block_placeholder_10",
-  direction = -1,
-  sprite = "entities/block",
-  pushable = false,
-  pullable = false,
-  maximum_moves = 1,
-}
-
-block{
-  layer = 1,
-  x = 88,
-  y = 93,
-  name = "block_placeholder_11",
-  direction = -1,
-  sprite = "entities/block",
-  pushable = false,
-  pullable = false,
-  maximum_moves = 1,
-}
-
-block{
-  layer = 1,
-  x = 120,
-  y = 93,
-  name = "block_placeholder_12",
-  direction = -1,
-  sprite = "entities/block",
-  pushable = false,
-  pullable = false,
-  maximum_moves = 1,
-}
-
-block{
-  layer = 1,
-  x = 200,
-  y = 93,
-  name = "block_placeholder_13",
-  direction = -1,
-  sprite = "entities/block",
-  pushable = false,
-  pullable = false,
-  maximum_moves = 1,
-}
-
-block{
-  layer = 1,
-  x = 232,
-  y = 93,
-  name = "block_placeholder_14",
-  direction = -1,
-  sprite = "entities/block",
-  pushable = false,
-  pullable = false,
-  maximum_moves = 1,
-}
-
-block{
-  layer = 1,
-  x = 248,
-  y = 93,
-  name = "block_placeholder_15",
-  direction = -1,
-  sprite = "entities/block",
-  pushable = false,
-  pullable = false,
-  maximum_moves = 1,
-}
-
 dynamic_tile{
   layer = 1,
   x = 128,
@@ -253,5 +104,88 @@ dynamic_tile{
   name = "pot_6",
   pattern = "floor_pot",
   enabled_at_start = true,
+}
+
+switch{
+  layer = 1,
+  x = 0,
+  y = 0,
+  name = "switch",
+  subtype = "walkable",
+  sprite = "entities/switch",
+  needs_block = false,
+  inactivate_when_leaving = false,
+}
+
+block{
+  layer = 1,
+  x = 72,
+  y = 93,
+  name = "block_1",
+  direction = -1,
+  sprite = "entities/block",
+  pushable = true,
+  pullable = false,
+  maximum_moves = 1,
+}
+
+block{
+  layer = 1,
+  x = 88,
+  y = 93,
+  name = "block_2",
+  direction = -1,
+  sprite = "entities/block",
+  pushable = true,
+  pullable = false,
+  maximum_moves = 1,
+}
+
+block{
+  layer = 1,
+  x = 120,
+  y = 93,
+  name = "block_3",
+  direction = -1,
+  sprite = "entities/block",
+  pushable = true,
+  pullable = false,
+  maximum_moves = 1,
+}
+
+block{
+  layer = 1,
+  x = 200,
+  y = 93,
+  name = "block_4",
+  direction = -1,
+  sprite = "entities/block",
+  pushable = true,
+  pullable = false,
+  maximum_moves = 1,
+}
+
+block{
+  layer = 1,
+  x = 232,
+  y = 93,
+  name = "block_5",
+  direction = -1,
+  sprite = "entities/block",
+  pushable = true,
+  pullable = false,
+  maximum_moves = 1,
+}
+
+block{
+  layer = 1,
+  x = 248,
+  y = 93,
+  name = "block_6",
+  direction = -1,
+  sprite = "entities/block",
+  pushable = true,
+  pullable = false,
+  maximum_moves = 1,
 }
 
