@@ -7,6 +7,17 @@ properties{
   music = "same",
 }
 
+switch{
+  layer = 1,
+  x = 0,
+  y = 0,
+  name = "switch_2",
+  subtype = "walkable",
+  sprite = "entities/switch",
+  needs_block = false,
+  inactivate_when_leaving = false,
+}
+
 block{
   layer = 1,
   x = 56,
