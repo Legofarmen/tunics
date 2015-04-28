@@ -115,11 +115,11 @@ local enemy_tier = {
     red_knight_soldier = 4,
     snap_dragon = 4,
     ropa = 4,
+    hardhat_beetle_blue = 4,
     red_hardhat_beetle = 6,
     red_hemlasaur = 6,
     bubble = 6,
     gibdo = 6,
-    lizalfos = 6,
 }
 
 local function choose_family(current_tier, rng)
