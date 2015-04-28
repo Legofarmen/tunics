@@ -16,39 +16,6 @@ tile{
   pattern = "tongue",
 }
 
-switch{
-  layer = 1,
-  x = 0,
-  y = 0,
-  name = "switch",
-  subtype = "walkable",
-  sprite = "entities/switch",
-  needs_block = false,
-  inactivate_when_leaving = false,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 152,
-  y = 72,
-  width = 16,
-  height = 16,
-  name = "treasure_obstacle_chest",
-  pattern = "carpet.1",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 184,
-  y = 72,
-  width = 16,
-  height = 16,
-  name = "treasure_open_chest",
-  pattern = "carpet.1",
-  enabled_at_start = true,
-}
-
 dynamic_tile{
   layer = 1,
   x = 216,
@@ -90,6 +57,39 @@ dynamic_tile{
   height = 16,
   name = "pot_6",
   pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+switch{
+  layer = 1,
+  x = 0,
+  y = 0,
+  name = "switch",
+  subtype = "walkable",
+  sprite = "entities/switch",
+  needs_block = false,
+  inactivate_when_leaving = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 152,
+  y = 72,
+  width = 16,
+  height = 16,
+  name = "treasure_obstacle_chest",
+  pattern = "carpet.1",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 184,
+  y = 72,
+  width = 16,
+  height = 16,
+  name = "treasure_open_chest",
+  pattern = "carpet.1",
   enabled_at_start = true,
 }
 

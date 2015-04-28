@@ -7,142 +7,6 @@ properties{
   music = "same",
 }
 
-switch{
-  layer = 1,
-  x = 0,
-  y = 0,
-  name = "switch",
-  subtype = "walkable",
-  sprite = "entities/switch",
-  needs_block = false,
-  inactivate_when_leaving = false,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 56,
-  y = 168,
-  width = 16,
-  height = 16,
-  name = "placeholder_5",
-  pattern = "floor_small.2",
-  enabled_at_start = false,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 56,
-  y = 56,
-  width = 16,
-  height = 16,
-  name = "placeholder_6",
-  pattern = "floor_small.2",
-  enabled_at_start = false,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 248,
-  y = 56,
-  width = 16,
-  height = 16,
-  name = "placeholder_7",
-  pattern = "floor_small.2",
-  enabled_at_start = false,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 248,
-  y = 168,
-  width = 16,
-  height = 16,
-  name = "placeholder_8",
-  pattern = "floor_small.2",
-  enabled_at_start = false,
-}
-
-block{
-  layer = 1,
-  x = 64,
-  y = 181,
-  name = "block_placeholder_5",
-  direction = -1,
-  sprite = "entities/block",
-  pushable = false,
-  pullable = false,
-  maximum_moves = 1,
-}
-
-block{
-  layer = 1,
-  x = 64,
-  y = 69,
-  name = "block_placeholder_6",
-  direction = -1,
-  sprite = "entities/block",
-  pushable = false,
-  pullable = false,
-  maximum_moves = 1,
-}
-
-block{
-  layer = 1,
-  x = 256,
-  y = 69,
-  name = "block_placeholder_7",
-  direction = -1,
-  sprite = "entities/block",
-  pushable = false,
-  pullable = false,
-  maximum_moves = 1,
-}
-
-block{
-  layer = 1,
-  x = 256,
-  y = 181,
-  name = "block_placeholder_8",
-  direction = -1,
-  sprite = "entities/block",
-  pushable = false,
-  pullable = false,
-  maximum_moves = 1,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 152,
-  y = 80,
-  width = 16,
-  height = 16,
-  name = "enemy",
-  pattern = "carpet.1",
-  enabled_at_start = false,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 152,
-  y = 112,
-  width = 16,
-  height = 16,
-  name = "treasure_obstacle_chest",
-  pattern = "carpet.1",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 184,
-  y = 112,
-  width = 16,
-  height = 16,
-  name = "treasure_open_chest",
-  pattern = "carpet.1",
-  enabled_at_start = true,
-}
-
 dynamic_tile{
   layer = 1,
   x = 40,
@@ -184,6 +48,98 @@ dynamic_tile{
   height = 16,
   name = "pot_5",
   pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+switch{
+  layer = 1,
+  x = 0,
+  y = 0,
+  name = "switch",
+  subtype = "walkable",
+  sprite = "entities/switch",
+  needs_block = false,
+  inactivate_when_leaving = false,
+}
+
+block{
+  layer = 1,
+  x = 64,
+  y = 181,
+  name = "block_3",
+  direction = -1,
+  sprite = "entities/block",
+  pushable = true,
+  pullable = false,
+  maximum_moves = 1,
+}
+
+block{
+  layer = 1,
+  x = 64,
+  y = 69,
+  name = "block_1",
+  direction = -1,
+  sprite = "entities/block",
+  pushable = true,
+  pullable = false,
+  maximum_moves = 1,
+}
+
+block{
+  layer = 1,
+  x = 256,
+  y = 69,
+  name = "block_2",
+  direction = -1,
+  sprite = "entities/block",
+  pushable = true,
+  pullable = false,
+  maximum_moves = 1,
+}
+
+block{
+  layer = 1,
+  x = 256,
+  y = 181,
+  name = "block_4",
+  direction = -1,
+  sprite = "entities/block",
+  pushable = true,
+  pullable = false,
+  maximum_moves = 1,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 152,
+  y = 80,
+  width = 16,
+  height = 16,
+  name = "enemy",
+  pattern = "carpet.1",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 152,
+  y = 112,
+  width = 16,
+  height = 16,
+  name = "treasure_obstacle_chest",
+  pattern = "carpet.1",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 184,
+  y = 112,
+  width = 16,
+  height = 16,
+  name = "treasure_open_chest",
+  pattern = "carpet.1",
   enabled_at_start = true,
 }
 
