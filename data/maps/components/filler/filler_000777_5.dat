@@ -3,7 +3,7 @@ properties{
   y = 0,
   width = 320,
   height = 240,
-  tileset = "dungeon_brick_blue_1",
+  tileset = "dungeon_brick_gray_1",
   music = "same",
 }
 
@@ -562,7 +562,7 @@ dynamic_tile{
   y = 112,
   width = 16,
   height = 16,
-  name = "enemy_2",
+  name = "enemy_4",
   pattern = "carpet.1",
   enabled_at_start = false,
 }
@@ -573,7 +573,7 @@ dynamic_tile{
   y = 112,
   width = 16,
   height = 16,
-  name = "enemy_3",
+  name = "enemy_2",
   pattern = "carpet.1",
   enabled_at_start = false,
 }
