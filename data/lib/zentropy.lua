@@ -260,6 +260,7 @@ function zentropy.db.Components:get_door(open, dir, mask, rng)
     if not self.doors[open] then
         return
     end
+    dir = string.sub(dir, 1, 1)
     if not self.doors[open][dir] then
         return
     end
