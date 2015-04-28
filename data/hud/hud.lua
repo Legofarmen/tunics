@@ -6,11 +6,11 @@ function game:initialize_hud()
   local hearts_builder = require("hud/hearts")
   local magic_bar_builder = require("hud/magic_bar")
   local small_keys_builder = require("hud/small_keys")
-  local floor_builder = require("hud/floor")
-  local attack_icon_builder = require("hud/attack_icon")
-  local pause_icon_builder = require("hud/pause_icon")
+  -- local floor_builder = require("hud/floor")
+  -- local attack_icon_builder = require("hud/attack_icon")
+  -- local pause_icon_builder = require("hud/pause_icon")
   local item_icon_builder = require("hud/item_icon")
-  local action_icon_builder = require("hud/action_icon")
+  -- local action_icon_builder = require("hud/action_icon")
 
   self.hud = {  -- Array for the hud elements, table for other hud info.
     showing_dialog = false,
@@ -23,42 +23,45 @@ function game:initialize_hud()
   self.hud[#self.hud + 1] = menu
 
   menu = magic_bar_builder:new(self)
-  menu:set_dst_position(-104, 27)
+  menu:set_dst_position(7, 7)
   self.hud[#self.hud + 1] = menu
 
   menu = small_keys_builder:new(self)
   menu:set_dst_position(-36, -18)
   self.hud[#self.hud + 1] = menu
 
-  menu = floor_builder:new(self)
+  --[[menu = floor_builder:new(self)
   menu:set_dst_position(5, 70)
   self.hud[#self.hud + 1] = menu
-
-  menu = pause_icon_builder:new(self)
+	]]
+	
+  --[[menu = pause_icon_builder:new(self)
   menu:set_dst_position(0, 7)
   self.hud[#self.hud + 1] = menu
   self.hud.pause_icon = menu
+  ]]
 
   menu = item_icon_builder:new(self, 1)
-  menu:set_dst_position(11, 29)
+  menu:set_dst_position(27, 7)
   self.hud[#self.hud + 1] = menu
   self.hud.item_icon_1 = menu
 
   menu = item_icon_builder:new(self, 2)
-  menu:set_dst_position(63, 29)
+  menu:set_dst_position(53, 7)
   self.hud[#self.hud + 1] = menu
   self.hud.item_icon_2 = menu
 
-  menu = attack_icon_builder:new(self)
+  --[[menu = attack_icon_builder:new(self)
   menu:set_dst_position(13, 29)
   self.hud[#self.hud + 1] = menu
   self.hud.attack_icon = menu
-
+		
   menu = action_icon_builder:new(self)
   menu:set_dst_position(26, 51)
   self.hud[#self.hud + 1] = menu
   self.hud.action_icon = menu
-
+	]]
+	
   self:set_hud_enabled(true)
 
   self:check_hud()
@@ -87,13 +90,13 @@ function game:check_hud()
 
     if self.hud.top_left_opacity == 255
         and not self:is_suspended()
-        and x < 88
-        and y < 80 then
+        and x < 84
+        and y < 48 then
       opacity = 96
     elseif self.hud.top_left_opacity == 96
         and (self:is_suspended()
-        or x >= 88
-        or y >= 80) then
+        or x >= 84
+        or y >= 48) then
       opacity = 255
     end
 
@@ -101,22 +104,23 @@ function game:check_hud()
       self.hud.top_left_opacity = opacity
       self.hud.item_icon_1.surface:set_opacity(opacity)
       self.hud.item_icon_2.surface:set_opacity(opacity)
-      self.hud.pause_icon.surface:set_opacity(opacity)
-      self.hud.attack_icon.surface:set_opacity(opacity)
-      self.hud.action_icon.surface:set_opacity(opacity)
-    end
+      --self.hud.pause_icon.surface:set_opacity(opacity)
+      --self.hud.attack_icon.surface:set_opacity(opacity)
+      --self.hud.action_icon.surface:set_opacity(opacity)
+    end 
+	
 
     -- During a dialog, move the action icon and the sword icon.
     if not self.hud.showing_dialog and
         game:is_dialog_enabled() then
       self.hud.showing_dialog = true
-      self.hud.action_icon:set_dst_position(0, 54)
-      self.hud.attack_icon:set_dst_position(0, 29)
+      --self.hud.action_icon:set_dst_position(0, 54)
+      --self.hud.attack_icon:set_dst_position(0, 29)
     elseif self.hud.showing_dialog and
         not game:is_dialog_enabled() then
       self.hud.showing_dialog = false
-      self.hud.action_icon:set_dst_position(26, 51)
-      self.hud.attack_icon:set_dst_position(13, 29)
+      --self.hud.action_icon:set_dst_position(26, 51)
+      --self.hud.attack_icon:set_dst_position(13, 29)
     end
   end
 

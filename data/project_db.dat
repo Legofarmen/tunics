@@ -385,8 +385,6 @@ sprite{ id = "enemies/pike_auto", description = "Pike auto" }
 sprite{ id = "enemies/pike_detect", description = "Pike detect" }
 sprite{ id = "hud/action_icon_flip", description = "Action icon flip" }
 sprite{ id = "hud/dialog_box_message_end", description = "Dialog box message end" }
-sprite{ id = "hud/empty_heart", description = "Empty heart" }
-sprite{ id = "hud/magic_bar", description = "Magic bar" }
 sprite{ id = "hud/pause_icon_flip", description = "Pause icon flip" }
 sprite{ id = "hud/sword_icon_flip", description = "Sword icon flip" }
 sprite{ id = "enemies/bari_blue", description = "Bari blue" }
@@ -410,6 +408,8 @@ sprite{ id = "enemies/geldman", description = "Geldman" }
 sprite{ id = "enemies/hardhat_beetle_blue", description = "Hardhat beetle blue" }
 sprite{ id = "enemies/fireball", description = "Fireball" }
 sprite{ id = "enemies/fireball_tripple", description = "Fireball tripple" }
+sprite{ id = "hud/magic_bar", description = "Magic bar" }
+sprite{ id = "hud/empty_heart", description = "Empty heart" }
 
 music{ id = "agahnim", description = "Agahnim theme" }
 music{ id = "beginning", description = "Beginning" }

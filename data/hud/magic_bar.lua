@@ -16,10 +16,12 @@ end
 function magic_bar:initialize(game)
 
   self.game = game
-  self.surface = sol.surface.create(88, 8)
+  self.surface = sol.surface.create(16, 40)
+  self.surface2 = sol.surface.create(16,40)
   self.magic_bar_img = sol.surface.create("hud/magic_bar.png")
   self.container_sprite = sol.sprite.create("hud/magic_bar")
   self.magic_displayed = game:get_magic()
+  --zentropy.debug(game:get_magic())
   self.max_magic_displayed = 0
 
   self:check()
@@ -42,7 +44,7 @@ function magic_bar:check()
     end
     self.max_magic_displayed = max_magic
     if max_magic > 0 then
-      self.container_sprite:set_direction(max_magic / 42 - 1)
+      self.container_sprite:set_direction(0)
     end
   end
 
@@ -78,15 +80,16 @@ end
 
 function magic_bar:rebuild_surface()
 
-  self.surface:clear()
+	self.surface:clear()
+	self.surface2:clear()
 
   -- Max magic.
   self.container_sprite:draw(self.surface)
 
   -- Current magic.
-  self.magic_bar_img:draw_region(46, 24, 2 + self.magic_displayed, 8, self.surface)
+  self.magic_bar_img:draw_region(16, -31 + self.magic_displayed, 16, 34, self.surface2)
 end
-
+ 
 function magic_bar:set_dst_position(x, y)
   self.dst_x = x
   self.dst_y = y
@@ -104,8 +107,9 @@ function magic_bar:on_draw(dst_surface)
     if y < 0 then
       y = height + y
     end
-
+	
     self.surface:draw(dst_surface, x, y)
+	self.surface2:draw(dst_surface, x, y+3)
   end
 end
 
