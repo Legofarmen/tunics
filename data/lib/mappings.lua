@@ -144,7 +144,7 @@ local function get_enemies(current_tier)
     local enemies = {}
     for enemy, tier in pairs(enemy_tier) do
         if tier <= current_tier then
-            table.insert(enemies, enemy)
+            enemies[enemy] = tier
         end
     end
     return enemies
