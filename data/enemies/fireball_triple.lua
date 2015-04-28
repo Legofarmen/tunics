@@ -11,9 +11,9 @@ local max_bounces = 3
 local used_sword = false
 local sprite2 = nil
 local sprite3 = nil
+local info = nil
 
 function enemy:on_created()
-    zentropy.debug('on_created')
     self:set_life(1)
     self:set_damage(8)
     self:create_sprite("enemies/fireball_triple")
@@ -31,7 +31,6 @@ function enemy:on_created()
 end
 
 function enemy:on_restarted()
-    zentropy.debug('on_restarted')
     local hero_x, hero_y = self:get_map():get_entity("hero"):get_position()
     local angle = self:get_angle(hero_x, hero_y - 5)
     local m = sol.movement.create("straight")
@@ -123,7 +122,7 @@ function bouncer.w(angle, x, y)
 end
 function bouncer.se(angle, x, y)
     return {
-        mirror = la.Matrix2.reflect2(x, y, x + 1, y + 1),
+        mirror = la.Matrix2.reflect2(x, y, x + 1, y - 1),
         angle = -angle + math.pi/2,
         xy = la.Vect2:new{ x, y },
         normal = la.Vect2:new{ -1, -1 },
@@ -131,7 +130,7 @@ function bouncer.se(angle, x, y)
 end
 function bouncer.ne(angle, x, y)
     return {
-        mirror = la.Matrix2.reflect2(x, y, x - 1, y + 1),
+        mirror = la.Matrix2.reflect2(x, y, x + 1, y + 1),
         angle = -angle - math.pi/2,
         xy = la.Vect2:new{ x, y },
         normal = la.Vect2:new{ -1, 1 },
@@ -147,7 +146,7 @@ function bouncer.sw(angle, x, y)
 end
 function bouncer.nw(angle, x, y)
     return {
-        mirror = la.Matrix2.reflect2(x, y, x - 1, y + 1),
+        mirror = la.Matrix2.reflect2(x, y, x + 1, y - 1),
         angle = -angle + math.pi/2,
         xy = la.Vect2:new{ x, y },
         normal = la.Vect2:new{ 1, 1 },
@@ -155,14 +154,12 @@ function bouncer.nw(angle, x, y)
 end
 
 function enemy:on_obstacle_reached()
-    zentropy.debug('on_obstacle_reached')
     if bounces < max_bounces then
         -- Compute the bouncing angle (works well with horizontal and vertical walls).
         local m = self:get_movement()
 
         local dir = self:get_obstacle_direction()
-        zentropy.assert(dir)
-        local info = bouncer[dir](minrad(m:get_angle()), self:get_position())
+        info = bouncer[dir](minrad(m:get_angle()), self:get_position())
 
         m:set_angle(info.angle)
         m:set_speed(speed)
@@ -170,7 +167,6 @@ function enemy:on_obstacle_reached()
         bounces = bounces + 1
         speed = speed + 48
     else
-        zentropy.debug('remove2')
         self:remove()
     end
 end
@@ -197,29 +193,34 @@ function enemy:on_collision_enemy(other_enemy, other_sprite, my_sprite)
   end
 end
 
+function is_outside(xy)
+    return info and la.Vect2:new{xy[1] - info.xy[1], xy[2] - info.xy[2]}:dot(info.normal) < 0
+end
+
 function enemy:on_pre_draw()
-  local m = self:get_movement()
-  local angle = m:get_angle()
-  local x, y = self:get_position()
+    local m = self:get_movement()
+    local angle = m:get_angle()
+    local x, y = self:get_position()
 
-  local x2 = x - math.cos(angle) * 12
-  local y2 = y + math.sin(angle) * 12
+    local v2 = la.Vect2:new{x - math.cos(angle) * 12, y + math.sin(angle) * 12}
+    if is_outside(v2) then v2 = info.mirror:vmul(v2) end
+    self:get_map():draw_sprite(sprite2, v2[1], v2[2])
+    --if is_outside(v2) then self:get_map():draw_sprite(sprite2, v2[1], v2[2]) end
 
-  local x3 = x - math.cos(angle) * 24
-  local y3 = y + math.sin(angle) * 24
-
-  self:get_map():draw_sprite(sprite2, x2, y2)
-  self:get_map():draw_sprite(sprite3, x3, y3)
+    local v3 = la.Vect2:new{x - math.cos(angle) * 24, y + math.sin(angle) * 24}
+    if is_outside(v3) then v3 = info.mirror:vmul(v3) end
+    self:get_map():draw_sprite(sprite3, v3[1], v3[2])
+    --if is_outside(v3) then self:get_map():draw_sprite(sprite3, v3[1], v3[2]) end
 end
 
 -- Method called by other enemies.
 function enemy:bounce()
-  zentropy.debug('bounce')
-  local m = self:get_movement()
-  local angle = m:get_angle()
-  angle = angle + math.pi
+    zentropy.debug('bounce')
+    local m = self:get_movement()
+    local angle = m:get_angle()
+    angle = angle + math.pi
 
-  m:set_angle(angle)
-  m:set_speed(speed)
-  used_sword = false
+    m:set_angle(angle)
+    m:set_speed(speed)
+    used_sword = false
 end

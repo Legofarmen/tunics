@@ -6,7 +6,7 @@ la.Vect2 = Class:new()
 la.Matrix2 = Class:new()
 
 function la.Vect2:dot(v)
-    return self[1] * v[1] + self[2] + v[2]
+    return self[1] * v[1] + self[2] * v[2]
 end
 
 function la.Vect2:__tostring()
