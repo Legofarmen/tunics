@@ -295,7 +295,7 @@ function dialog_box:show_more_lines()
   end
 
   -- Prepare the 3 lines.
-  for i = 1, nb_visible_lines do
+  for i = 1, math.min(nb_visible_lines, #self.line_surfaces) do
     self.line_surfaces[i]:set_font('dialog')
     self.line_surfaces[i]:set_text("")
     if self:has_more_lines() then
