@@ -1,0 +1,162 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  tileset = "dungeon_brick_gray_1",
+  music = "same",
+}
+
+block{
+  layer = 1,
+  x = 56,
+  y = 157,
+  name = "block_placeholder_1",
+  direction = -1,
+  sprite = "entities/block",
+  pushable = false,
+  pullable = false,
+  maximum_moves = 1,
+}
+
+block{
+  layer = 1,
+  x = 56,
+  y = 189,
+  name = "block_placeholder_2",
+  direction = -1,
+  sprite = "entities/block",
+  pushable = false,
+  pullable = false,
+  maximum_moves = 1,
+}
+
+block{
+  layer = 1,
+  x = 72,
+  y = 173,
+  name = "block_placeholder_3",
+  direction = -1,
+  sprite = "entities/block",
+  pushable = false,
+  pullable = false,
+  maximum_moves = 1,
+}
+
+block{
+  layer = 1,
+  x = 88,
+  y = 189,
+  name = "block_placeholder_4",
+  direction = -1,
+  sprite = "entities/block",
+  pushable = false,
+  pullable = false,
+  maximum_moves = 1,
+}
+
+block{
+  layer = 1,
+  x = 88,
+  y = 157,
+  name = "block_placeholder_5",
+  direction = -1,
+  sprite = "entities/block",
+  pushable = false,
+  pullable = false,
+  maximum_moves = 1,
+}
+
+block{
+  layer = 1,
+  x = 232,
+  y = 157,
+  name = "block_placeholder_6",
+  direction = -1,
+  sprite = "entities/block",
+  pushable = false,
+  pullable = false,
+  maximum_moves = 1,
+}
+
+block{
+  layer = 1,
+  x = 232,
+  y = 189,
+  name = "block_placeholder_7",
+  direction = -1,
+  sprite = "entities/block",
+  pushable = false,
+  pullable = false,
+  maximum_moves = 1,
+}
+
+block{
+  layer = 1,
+  x = 248,
+  y = 173,
+  name = "block_placeholder_8",
+  direction = -1,
+  sprite = "entities/block",
+  pushable = false,
+  pullable = false,
+  maximum_moves = 1,
+}
+
+block{
+  layer = 1,
+  x = 264,
+  y = 189,
+  name = "block_placeholder_9",
+  direction = -1,
+  sprite = "entities/block",
+  pushable = false,
+  pullable = false,
+  maximum_moves = 1,
+}
+
+block{
+  layer = 1,
+  x = 264,
+  y = 157,
+  name = "block_placeholder_10",
+  direction = -1,
+  sprite = "entities/block",
+  pushable = false,
+  pullable = false,
+  maximum_moves = 1,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 152,
+  y = 144,
+  width = 16,
+  height = 16,
+  name = "enemy",
+  pattern = "carpet.1",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 192,
+  y = 160,
+  width = 16,
+  height = 16,
+  name = "treasure_obstacle_chest",
+  pattern = "carpet.1",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 112,
+  y = 160,
+  width = 16,
+  height = 16,
+  name = "treasure_open_chest",
+  pattern = "carpet.1",
+  enabled_at_start = true,
+}
+
