@@ -18,7 +18,7 @@ function item_icon:initialize(game, slot)
   self.game = game
   self.slot = slot
   self.surface = sol.surface.create(32, 28)
-  self.background_img = sol.surface.create("hud/item_icon_" .. slot .. ".png")
+  self.background_img = sol.surface.create("hud/item_icon.png")
   self.item_sprite = sol.sprite.create("entities/items")
   self.item_displayed = nil
   self.item_variant_displayed = 0
@@ -98,8 +98,8 @@ function item_icon:rebuild_surface()
 
   if self.item_displayed ~= nil then
     -- Item.
-    self.item_sprite:draw(self.surface, 12, 17)
-    if self.amount_displayed ~= nil then
+    self.item_sprite:draw(self.surface, 11, 16)
+    --[[if self.amount_displayed ~= nil then
       -- Amount.
       self.amount_text:set_text(tostring(self.amount_displayed))
       if self.amount_displayed == self.max_amount_displayed then
@@ -109,6 +109,7 @@ function item_icon:rebuild_surface()
       end
       self.amount_text:draw(self.surface, 18, 16)
     end
+	]]
   end
 end
 

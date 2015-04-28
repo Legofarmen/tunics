@@ -16,13 +16,14 @@ end
 function hearts:initialize(game)
 
   self.game = game
-  self.surface = sol.surface.create(90, 18)
+  self.surface = sol.surface.create(71, 25)
   self.dst_x = 0
   self.dst_y = 0
   self.empty_heart_sprite = sol.sprite.create("hud/empty_heart")
   self.nb_max_hearts_displayed = game:get_max_life() / 4
   self.nb_current_hearts_displayed = game:get_life()
   self.all_hearts_img = sol.surface.create("hud/hearts.png")
+  self.hearts_title_img = sol.surface.create("hud/hearts_title.png")
 end
 
 function hearts:on_started()
@@ -35,6 +36,7 @@ function hearts:on_started()
   self.danger_sound_timer = nil
   self:check()
   self:rebuild_surface()
+  self.hearts_title_img:draw_region(0, 0, 44, 10, self.surface, 14, 0)
 end
 
 -- Checks whether the view displays the correct info
@@ -78,18 +80,18 @@ function hearts:check()
     if self.game:get_life() <= self.game:get_max_life() / 4
         and not self.game:is_suspended() then
       need_rebuild = true
-      if self.empty_heart_sprite:get_animation() ~= "danger" then
+      --[[if self.empty_heart_sprite:get_animation() ~= "danger" then
         self.empty_heart_sprite:set_animation("danger")
-      end
+      end]]
       if self.danger_sound_timer == nil then
         self.danger_sound_timer = sol.timer.start(self, 250, function()
           self:repeat_danger_sound()
         end)
         self.danger_sound_timer:set_suspended_with_map(true)
       end
-    elseif self.empty_heart_sprite:get_animation() ~= "normal" then
+    --[[elseif self.empty_heart_sprite:get_animation() ~= "normal" then
       need_rebuild = true
-      self.empty_heart_sprite:set_animation("normal")
+      self.empty_heart_sprite:set_animation("normal")]]
     end
   end
 
@@ -124,11 +126,11 @@ function hearts:rebuild_surface()
 
   -- Display the hearts.
   for i = 0, self.nb_max_hearts_displayed - 1 do
-    local x, y = (i % 10) * 9, math.floor(i / 10) * 9
+    local x, y = (i % 10) * 8, math.floor(i / 10) * 8 + 10
     self.empty_heart_sprite:draw(self.surface, x, y)
     if i < math.floor(self.nb_current_hearts_displayed / 4) then
       -- This heart is full.
-      self.all_hearts_img:draw_region(27, 0, 9, 9, self.surface, x, y)
+      self.all_hearts_img:draw_region(21, 0, 8, 7, self.surface, x, y)
     end
   end
 
@@ -136,8 +138,8 @@ function hearts:rebuild_surface()
   local i = math.floor(self.nb_current_hearts_displayed / 4)
   local remaining_fraction = self.nb_current_hearts_displayed % 4
   if remaining_fraction ~= 0 then
-    local x, y = (i % 10) * 9, math.floor(i / 10) * 9
-    self.all_hearts_img:draw_region((remaining_fraction - 1) * 9, 0, 9, 9, self.surface, x, y)
+    local x, y = (i % 10) * 8, math.floor(i / 10) * 8 + 10
+    self.all_hearts_img:draw_region((remaining_fraction - 1) * 7, 0, 7, 7, self.surface, x, y)
   end
 end
 

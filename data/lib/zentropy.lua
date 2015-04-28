@@ -783,7 +783,7 @@ function zentropy.inject_enemy(placeholder, rng)
         local map = placeholder:get_map()
         local x, y, layer = placeholder:get_position()
         local treasure_name, treasure_variant = get_random_treasure(rng2:refine('drop'))
-        local _, breed = rng2:refine('breed'):ichoose(zentropy.Room.enemies)
+        local breed, treshold = rng2:refine('breed'):choose(zentropy.Room.enemies)
         local enemy = map:create_enemy{
             layer=layer,
             x=x,
@@ -795,6 +795,9 @@ function zentropy.inject_enemy(placeholder, rng)
         }
         local origin_x, origin_y = enemy:get_origin()
         enemy:set_position(x + origin_x, y + origin_y)
+        local factor = math.pow(math.pow(3, 1/5), zentropy.game.game:get_value('tier') - treshold)
+        enemy:set_damage(math.floor(factor * enemy:get_damage() + 0.5))
+        enemy:set_life(math.floor(factor * enemy:get_life() + 0.5))
         r = r - 1
         rng2 = rng:refine(r)
     end

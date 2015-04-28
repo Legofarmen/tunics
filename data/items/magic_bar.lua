@@ -10,7 +10,7 @@ function item:on_variant_changed(variant)
     local game = self:get_game()
 
     -- Obtaining a magic bar changes the max magic.
-    local max_magics = {42, 84}
+    local max_magics = {34, 84}
     local max_magic = max_magics[variant]
     if max_magic == nil then
         error("Invalid variant '" .. variant .. "' for item 'magic_bar'")
