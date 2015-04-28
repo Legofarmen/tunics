@@ -269,6 +269,9 @@ map{ id = "tompa/draft_7_2", description = "Draft 7 2 corridor ns" }
 map{ id = "components/obstacle_flippers/obstacle_flippers_sew_052777_1", description = "Obstacle flippers sew 052777 1" }
 map{ id = "tompa/obstacle_glove_temp2", description = "Obstacle glove temp" }
 map{ id = "tompa/draft_8", description = "Draft 8" }
+map{ id = "components/filler/filler_050777_1", description = "Filler 050777 1" }
+map{ id = "components/filler/filler_202777_2", description = "Filler 202777 2" }
+map{ id = "components/filler/filler_000777_5", description = "Filler 000777 5" }
 
 tileset{ id = "light_world", description = "Light World" }
 tileset{ id = "dungeon_brick_gray_1", description = "Dungeon brick gray 1" }
