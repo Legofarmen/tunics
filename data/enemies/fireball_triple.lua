@@ -40,43 +40,6 @@ function enemy:on_restarted()
     m:start(self)
 end
 
-local directions = {
-    --[0]
-    [1]='nw',
-    [2]='ne',
-    [3]='n',
-    [4]='sw',
-    [5]='w',
-    --[6]
-    [7]='nw',
-    [8]='se',
-    --[9]
-    [10]='e',
-    [11]='ne',
-    [12]='s',
-    [13]='sw',
-    [14]='se',
-    --[15]
-}
-
-function enemy:get_obstacle_direction()
-    local bits = 0
-    if self:test_obstacles(-1, -1) then
-        bits = bits + 1
-    end
-    if self:test_obstacles( 1, -1) then
-        bits = bits + 2
-    end
-    if self:test_obstacles(-1,  1) then
-        bits = bits + 4
-    end
-    if self:test_obstacles( 1,  1) then
-        bits = bits + 8
-    end
-    if not directions[bits] then zentropy.debug('NO DIRECTION ' .. bits) end
-    return directions[bits]
-end
-
 function minrad(angle)
     while angle <= -math.pi do
         angle = angle + 2 * math.pi
@@ -86,6 +49,10 @@ function minrad(angle)
     end
     return angle
 end
+
+local directions = {
+    'ne', 'n', 'nw', 'w', 'sw', 's', 'se', [0] = 'e'
+}
 
 local bouncer = {}
 function bouncer.n(angle, x, y)
@@ -158,14 +125,17 @@ function enemy:on_obstacle_reached()
         -- Compute the bouncing angle (works well with horizontal and vertical walls).
         local m = self:get_movement()
 
-        local dir = self:get_obstacle_direction()
-        info = bouncer[dir](minrad(m:get_angle()), self:get_position())
+        local dir = self:get_obstacle_direction8()
+        if dir ~= -1 then
+            print(dir, directions[dir])
+            info = bouncer[directions[dir]](minrad(m:get_angle()), self:get_position())
 
-        m:set_angle(info.angle)
-        m:set_speed(speed)
+            m:set_angle(info.angle)
+            m:set_speed(speed)
 
-        bounces = bounces + 1
-        speed = speed + 48
+            bounces = bounces + 1
+            speed = speed + 48
+        end
     else
         self:remove()
     end

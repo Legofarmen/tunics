@@ -3,8 +3,11 @@ local title_screen = require 'menus/title_screen'
 local solarus_logo = require 'menus/solarus_logo'
 local legofarmen_logo = require 'menus/legofarmen_logo'
 local game_menu = require 'menus/game_menu'
+local entity_mixin = require 'lib/entity_mixin'
 
 function sol.main:on_started()
+
+    entity_mixin.mixin(sol.main.get_metatable('enemy'))
 	
     zentropy.init()
 		    
