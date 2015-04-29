@@ -6,7 +6,6 @@ function legofarmen_logo:on_started()
 
   -- black screen during 0.3 seconds
 	self.phase = "black"
-    local r, g, b = color.hslToRgb(math.random(), 179/255, 114/255, 1)
 	self.surface = sol.surface.create(320, 240)
 	sol.timer.start(self, 300, function()
 		self:show_logo()
@@ -26,6 +25,11 @@ function legofarmen_logo:show_logo()
 
 	local width, height = self.lego_presents_img:get_size()
 	self.lego_presents_pos = { 160 - width / 2, 120 - height / 2 }
+
+    math.randomseed(os.time())
+    local r, g, b = color.hslToRgb(math.random(), 179/255, 114/255, 1)
+	self.background_img = sol.surface.create(width, height)
+    self.background_img:fill_color({r, g, b})
 	
 	sol.timer.start(self, 2000, function()
 		self.surface:fade_out(10)
@@ -38,6 +42,7 @@ end
 function legofarmen_logo:on_draw(dst_surface)
 
   if self.phase == "lego_presents" then
+    self.background_img:draw(self.surface, self.lego_presents_pos[1], self.lego_presents_pos[2])
     self.lego_presents_img:draw(self.surface, self.lego_presents_pos[1], self.lego_presents_pos[2])
   end
   local width, height = dst_surface:get_size()
