@@ -97,8 +97,6 @@ end
 
 function magic_bar:on_draw(dst_surface)
 
-  -- Is there a magic bar to show?
-  if self.max_magic_displayed > 0 then
     local x, y = self.dst_x, self.dst_y
     local width, height = dst_surface:get_size()
     if x < 0 then
@@ -110,7 +108,6 @@ function magic_bar:on_draw(dst_surface)
 	
     self.surface:draw(dst_surface, x, y)
 	self.surface2:draw(dst_surface, x, y+3)
-  end
 end
 
 return magic_bar

@@ -99,17 +99,6 @@ function item_icon:rebuild_surface()
   if self.item_displayed ~= nil then
     -- Item.
     self.item_sprite:draw(self.surface, 11, 16)
-    --[[if self.amount_displayed ~= nil then
-      -- Amount.
-      self.amount_text:set_text(tostring(self.amount_displayed))
-      if self.amount_displayed == self.max_amount_displayed then
-        self.amount_text:set_font("green_digits")
-      else
-        self.amount_text:set_font("white_digits")
-      end
-      self.amount_text:draw(self.surface, 18, 16)
-    end
-	]]
   end
 end
 
