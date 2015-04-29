@@ -50,74 +50,29 @@ function minrad(angle)
     return angle
 end
 
-local directions = {
-    'ne', 'n', 'nw', 'w', 'sw', 's', 'se', [0] = 'e'
+local dirs = {
+    [0]=la.Vect2:new{1, 0},
+    la.Vect2:new{1, -1},
+    la.Vect2:new{0, -1},
+    la.Vect2:new{-1, -1},
+    la.Vect2:new{-1, 0},
+    la.Vect2:new{-1, 1},
+    la.Vect2:new{0, 1},
+    la.Vect2:new{1, 1},
 }
 
-local bouncer = {}
-function bouncer.n(angle, x, y)
+function get_bounce_info(dir8, x, y)
+    local wall = dirs[(dir8 + 2) % 8]
+    local normal = dirs[(dir8 + 4) % 8]
     return {
-        mirror = la.Matrix2.reflect2(x, y, x + 1, y),
-        angle = -angle,
         xy = la.Vect2:new{ x, y },
-        normal = la.Vect2:new{ 0, 1 },
+        normal = normal,
+        mirror = la.Matrix2.reflect2(x, y, x + wall[1], y + wall[2]),
     }
 end
-function bouncer.s(angle, x, y)
-    return {
-        mirror = la.Matrix2.reflect2(x, y, x + 1, y),
-        angle = -angle,
-        xy = la.Vect2:new{ x, y },
-        normal = la.Vect2:new{ 0, -1 },
-    }
-end
-function bouncer.e(angle, x, y)
-    return {
-        mirror = la.Matrix2.reflect2(x, y, x, y + 1),
-        angle = math.pi - angle,
-        xy = la.Vect2:new{ x, y },
-        normal = la.Vect2:new{ -1, 0 },
-    }
-end
-function bouncer.w(angle, x, y)
-    return {
-        mirror = la.Matrix2.reflect2(x, y, x, y + 1),
-        angle = math.pi - angle,
-        xy = la.Vect2:new{ x, y },
-        normal = la.Vect2:new{ 1, 0 },
-    }
-end
-function bouncer.se(angle, x, y)
-    return {
-        mirror = la.Matrix2.reflect2(x, y, x + 1, y - 1),
-        angle = -angle + math.pi/2,
-        xy = la.Vect2:new{ x, y },
-        normal = la.Vect2:new{ -1, -1 },
-    }
-end
-function bouncer.ne(angle, x, y)
-    return {
-        mirror = la.Matrix2.reflect2(x, y, x + 1, y + 1),
-        angle = -angle - math.pi/2,
-        xy = la.Vect2:new{ x, y },
-        normal = la.Vect2:new{ -1, 1 },
-    }
-end
-function bouncer.sw(angle, x, y)
-    return {
-        mirror = la.Matrix2.reflect2(x, y, x + 1, y + 1),
-        angle = -angle - math.pi/2,
-        xy = la.Vect2:new{ x, y },
-        normal = la.Vect2:new{ 1, -1 },
-    }
-end
-function bouncer.nw(angle, x, y)
-    return {
-        mirror = la.Matrix2.reflect2(x, y, x + 1, y - 1),
-        angle = -angle + math.pi/2,
-        xy = la.Vect2:new{ x, y },
-        normal = la.Vect2:new{ 1, 1 },
-    }
+
+function get_bounce_angle(dir8, angle)
+    return ((2 + dir8) * math.pi / 2) - angle
 end
 
 function enemy:on_obstacle_reached()
@@ -127,10 +82,9 @@ function enemy:on_obstacle_reached()
 
         local dir = self:get_obstacle_direction8()
         if dir ~= -1 then
-            print(dir, directions[dir])
-            info = bouncer[directions[dir]](minrad(m:get_angle()), self:get_position())
+            info = get_bounce_info(dir, self:get_position())
 
-            m:set_angle(info.angle)
+            m:set_angle(get_bounce_angle(dir, m:get_angle()))
             m:set_speed(speed)
 
             bounces = bounces + 1
