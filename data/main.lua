@@ -11,6 +11,7 @@ function sol.main:on_started()
     entity_mixin.mixin(sol.main.get_metatable('enemy'))
     bindings.mixin(solarus_logo)
     bindings.mixin(legofarmen_logo)
+    bindings.mixin(title_screen)
 	
     zentropy.init()
 		    
