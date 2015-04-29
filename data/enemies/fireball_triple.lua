@@ -10,7 +10,7 @@ local max_bounces = 3
 local used_sword = false
 local sprite2 = nil
 local sprite3 = nil
-local info = nil
+local bounce = nil
 
 local function minrad(angle)
     while angle <= -math.pi do
@@ -37,7 +37,7 @@ local function get_bounce_angle(dir8, angle)
 end
 
 local function is_outside(pos)
-    return info and la.Vect2:new{pos[1] - info.origin[1], pos[2] - info.origin[2]}:dot(info.normal) < 0
+    return bounce and bounce.normal:dot(pos - bounce.origin) < 0
 end
 
 local function get_speed()
@@ -81,7 +81,7 @@ function enemy:on_obstacle_reached()
             m:set_angle(get_bounce_angle(dir, m:get_angle()))
             m:set_speed(192 + 48 * bounces)
 
-            info = get_bounce_info(dir, self:get_position())
+            bounce = get_bounce_info(dir, self:get_position())
             bounces = bounces + 1
         end
     else
@@ -117,11 +117,11 @@ function enemy:on_pre_draw()
     local x, y = self:get_position()
 
     local v2 = la.Vect2:new{x - math.cos(angle) * 12, y + math.sin(angle) * 12}
-    if is_outside(v2) then v2 = info.mirror:vmul(v2) end
+    if is_outside(v2) then v2 = bounce.mirror:vmul(v2) end
     self:get_map():draw_sprite(sprite2, v2[1], v2[2])
 
     local v3 = la.Vect2:new{x - math.cos(angle) * 24, y + math.sin(angle) * 24}
-    if is_outside(v3) then v3 = info.mirror:vmul(v3) end
+    if is_outside(v3) then v3 = bounce.mirror:vmul(v3) end
     self:get_map():draw_sprite(sprite3, v3[1], v3[2])
 end
 

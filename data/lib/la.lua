@@ -13,6 +13,10 @@ function la.Vect2:__tostring()
     return string.format("(%6.2f %6.2f)", self[1], self[2])
 end
 
+function la.Vect2.__sub(lhs, rhs)
+    return la.Vect2:new{lhs[1] - rhs[1], lhs[2] - rhs[2]}
+end
+
 local cos45 = math.cos(math.pi/4)
 
 la.Vect2.direction8 = {
