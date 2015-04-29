@@ -7,7 +7,7 @@ local commands = {
     attack =    { buttons={4}, keys={'s'} },
     item_1 =    { buttons={5}, keys={'a'} },
     item_2 =    { buttons={6}, keys={'d'} },
-    action =    { buttons={7}, keys={'space', 'return', 'enter'} },
+    action =    { buttons={7}, keys={'space', 'return', 'kp return'} },
     up =        { keys={'up'} },
     down =      { keys={'down'} },
     left =      { keys={'left'} },
