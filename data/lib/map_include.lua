@@ -142,7 +142,6 @@ end
 local counter = 0
 
 function mapmeta:include(x, y, name, data)
-    print(name)
     local component_prefix = string.format('__include_%d_', counter)
     counter = counter + 1
 
