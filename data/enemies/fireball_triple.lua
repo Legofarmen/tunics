@@ -5,13 +5,44 @@ local zentropy = require 'lib/zentropy'
 
 -- A bouncing triple fireball, usually shot by another enemy.
 
-local speed = 192
 local bounces = 0
 local max_bounces = 3
 local used_sword = false
 local sprite2 = nil
 local sprite3 = nil
 local info = nil
+
+local function minrad(angle)
+    while angle <= -math.pi do
+        angle = angle + 2 * math.pi
+    end
+    while angle > math.pi do
+        angle = angle - 2 * math.pi
+    end
+    return angle
+end
+
+local function get_bounce_info(dir8, x, y)
+    local wall = la.Vect2.direction8[(dir8 + 2) % 8]
+    local normal = la.Vect2.direction8[(dir8 + 4) % 8]
+    return {
+        origin = la.Vect2:new{ x, y },
+        normal = normal,
+        mirror = la.Matrix2.reflect2(x, y, x + wall[1], y + wall[2]),
+    }
+end
+
+local function get_bounce_angle(dir8, angle)
+    return ((dir8 + 2) * math.pi / 2) - angle
+end
+
+local function is_outside(pos)
+    return info and la.Vect2:new{pos[1] - info.origin[1], pos[2] - info.origin[2]}:dot(info.normal) < 0
+end
+
+local function get_speed()
+    return 48 * bounces + 192
+end
 
 function enemy:on_created()
     self:set_life(1)
@@ -34,45 +65,10 @@ function enemy:on_restarted()
     local hero_x, hero_y = self:get_map():get_entity("hero"):get_position()
     local angle = self:get_angle(hero_x, hero_y - 5)
     local m = sol.movement.create("straight")
-    m:set_speed(speed)
+    m:set_speed(get_speed())
     m:set_angle(angle)
     m:set_smooth(false)
     m:start(self)
-end
-
-function minrad(angle)
-    while angle <= -math.pi do
-        angle = angle + 2 * math.pi
-    end
-    while angle > math.pi do
-        angle = angle - 2 * math.pi
-    end
-    return angle
-end
-
-local dirs = {
-    [0]=la.Vect2:new{1, 0},
-    la.Vect2:new{1, -1},
-    la.Vect2:new{0, -1},
-    la.Vect2:new{-1, -1},
-    la.Vect2:new{-1, 0},
-    la.Vect2:new{-1, 1},
-    la.Vect2:new{0, 1},
-    la.Vect2:new{1, 1},
-}
-
-function get_bounce_info(dir8, x, y)
-    local wall = dirs[(dir8 + 2) % 8]
-    local normal = dirs[(dir8 + 4) % 8]
-    return {
-        xy = la.Vect2:new{ x, y },
-        normal = normal,
-        mirror = la.Matrix2.reflect2(x, y, x + wall[1], y + wall[2]),
-    }
-end
-
-function get_bounce_angle(dir8, angle)
-    return ((2 + dir8) * math.pi / 2) - angle
 end
 
 function enemy:on_obstacle_reached()
@@ -82,13 +78,11 @@ function enemy:on_obstacle_reached()
 
         local dir = self:get_obstacle_direction8()
         if dir ~= -1 then
-            info = get_bounce_info(dir, self:get_position())
-
             m:set_angle(get_bounce_angle(dir, m:get_angle()))
-            m:set_speed(speed)
+            m:set_speed(192 + 48 * bounces)
 
+            info = get_bounce_info(dir, self:get_position())
             bounces = bounces + 1
-            speed = speed + 48
         end
     else
         self:remove()
@@ -101,7 +95,7 @@ function enemy:on_custom_attack_received(attack, sprite)
     local angle = self:get_angle(hero_x, hero_y - 5) + math.pi
     local m = sol.movement.create("straight")
     m:set_angle(angle)
-    m:set_speed(speed)
+    m:set_speed(get_speed())
     m:set_smooth(false)
     m:start(self)
     sol.audio.play_sound("boss_fireball")
@@ -117,10 +111,6 @@ function enemy:on_collision_enemy(other_enemy, other_sprite, my_sprite)
   end
 end
 
-function is_outside(xy)
-    return info and la.Vect2:new{xy[1] - info.xy[1], xy[2] - info.xy[2]}:dot(info.normal) < 0
-end
-
 function enemy:on_pre_draw()
     local m = self:get_movement()
     local angle = m:get_angle()
@@ -129,12 +119,10 @@ function enemy:on_pre_draw()
     local v2 = la.Vect2:new{x - math.cos(angle) * 12, y + math.sin(angle) * 12}
     if is_outside(v2) then v2 = info.mirror:vmul(v2) end
     self:get_map():draw_sprite(sprite2, v2[1], v2[2])
-    --if is_outside(v2) then self:get_map():draw_sprite(sprite2, v2[1], v2[2]) end
 
     local v3 = la.Vect2:new{x - math.cos(angle) * 24, y + math.sin(angle) * 24}
     if is_outside(v3) then v3 = info.mirror:vmul(v3) end
     self:get_map():draw_sprite(sprite3, v3[1], v3[2])
-    --if is_outside(v3) then self:get_map():draw_sprite(sprite3, v3[1], v3[2]) end
 end
 
 -- Method called by other enemies.
@@ -145,6 +133,6 @@ function enemy:bounce()
     angle = angle + math.pi
 
     m:set_angle(angle)
-    m:set_speed(speed)
+    m:set_speed(get_speed())
     used_sword = false
 end
