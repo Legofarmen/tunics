@@ -7,26 +7,25 @@ MapMenu.colors={
     entrance = {255,255,255},
 }
 
+local dungeon_items_x, dungeon_items_y, dungeon_items_yd = 224, 63, 32
+
 function MapMenu:on_started()
 
-  submenu.on_started(self)
+    submenu.on_started(self)
 
     local width, height = sol.video.get_quest_size()
     local center_x, center_y = width / 2, height / 2
-    self.backgrounds = sol.surface.create("pause_submenus.png", true)
     self.map_overlay = sol.surface.create("menus/dungeon_map_background.png")
     self.map_icons = sol.surface.create("menus/dungeon_map_icons.png")
     self.hero_point_sprite = sol.sprite.create("menus/hero_point")
-    self.map_overlay:set_xy(center_x - 112, center_y - 61)
     self.map_surface = sol.surface.create(118, 120)
-    self.map_surface:set_xy(center_x - 15, center_y - 55)
+    self.map_surface:set_xy(77, 59)
     self.small_keys_text = sol.text_surface.create{
-      font = "white_digits",
-      horizontal_alignment = "right",
-      vertical_alignment = "top",
-      text = self.game:get_value('small_key_amount')
+        font = "white_digits",
+        horizontal_alignment = "right",
+        vertical_alignment = "top",
+        text = self.game:get_value('small_key_amount')
     }
-    self.small_keys_text:set_xy(center_x - 20, center_y + 60)
 end
 
 function MapMenu:on_command_pressed(command)
@@ -36,7 +35,6 @@ end
 function MapMenu:on_draw(dst_surface)
     self.game:get_map():render_map(self)
     local width, height = dst_surface:get_size()
-    self.backgrounds:draw_region(320, 0, 320, 240, dst_surface, (width - 320) / 2, (height - 240) / 2)
     self.map_overlay:draw(dst_surface)
     self.map_surface:draw(dst_surface)
     self:draw_dungeon_items(dst_surface)
@@ -44,27 +42,27 @@ end
 
 function MapMenu:draw_dungeon_items(dst_surface)
 
-  local width, height = sol.video.get_quest_size()
-  local x, y = width / 2 - 110, height / 2 + 48
+    -- Map.
+    if self.game:get_value('map') then
+        self.map_icons:draw_region(0, 0, 17, 17, dst_surface, dungeon_items_x, dungeon_items_y)
+    end
 
-  -- Map.
-  if self.game:get_value('map') then
-    self.map_icons:draw_region(0, 0, 17, 17, dst_surface, x, y)
-  end
+    -- Compass.
+    if self.game:get_value('compass') then
+        self.map_icons:draw_region(17, 0, 17, 17, dst_surface, dungeon_items_x, dungeon_items_y + dungeon_items_yd)
+    end
 
-  -- Compass.
-  if self.game:get_value('compass') then
-    self.map_icons:draw_region(17, 0, 17, 17, dst_surface, x + 19, y)
-  end
+    -- Big key.
+    if self.game:get_value('bigkey') then
+        self.map_icons:draw_region(34, 0, 17, 17, dst_surface, dungeon_items_x, dungeon_items_y + 2*dungeon_items_yd)
+    end
 
-  -- Big key.
-  if self.game:get_value('bigkey') then
-    self.map_icons:draw_region(34, 0, 17, 17, dst_surface, x + 38, y)
-  end
-
-  -- Small keys.
-  self.map_icons:draw_region(68, 0, 9, 17, dst_surface, x + 76, y)
-  self.small_keys_text:draw(dst_surface)
+    -- Small keys.
+    if self.game:get_value('small_key') then
+        self.map_icons:draw_region(68, 0, 9, 17, dst_surface, dungeon_items_x+2, dungeon_items_y + 3*dungeon_items_yd-1)
+        self.small_keys_text:set_xy(dungeon_items_x+18, dungeon_items_y + 3*dungeon_items_yd+8)
+        self.small_keys_text:draw(dst_surface)
+    end
 end
 
 function MapMenu:clear_map()
