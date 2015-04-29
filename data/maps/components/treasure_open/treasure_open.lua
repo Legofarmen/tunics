@@ -2,29 +2,19 @@ local treasure = {}
 
 function treasure.init(map, data)
 
-    local chest = zentropy.inject_chest(map:get_entity('chest'), data)
+    local chest_placeholder = zentropy.assert(map:get_entity('chest'), 'entity not found: chest')
+    local chest = zentropy.inject_chest(chest_placeholder, data)
 
     for entity in map:get_entities('enemy') do
         zentropy.inject_enemy(entity, data.rng:refine(entity:get_name()))
     end
 
-    if map:has_entities('placeholder_') or map:has_entities('pot_') then
+    zentropy.pots(data.rng:refine('pots'), map:get_entities('pot_'))
+
+    if map:has_entities('switch') then
         local switch = map:get_entity('switch')
 
-        local placeholders = {}
-        for entity in map:get_entities('pot_') do
-            zentropy.inject_pot(entity, data.rng:refine(entity:get_name()))
-            table.insert(placeholders, entity)
-        end
-        local hideout = placeholders[data.rng:random(#placeholders)]
-
-        hideout:set_enabled(false)
-        switch:set_position(hideout:get_position())
-
-        local block = map:get_entity('block_' .. hideout:get_name())
-        if block then
-             block:set_pushable(true)
-        end
+        zentropy.hideout(data.rng:refine('hideout'), switch, map:get_entities('pot_'), map:get_entities('block_'))
 
         function switch:on_activated()
             chest:set_enabled(true)

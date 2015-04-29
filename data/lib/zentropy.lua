@@ -827,6 +827,7 @@ function zentropy.inject_pot(placeholder, rng)
 end
 
 function zentropy.inject_chest(placeholder, data)
+    assert(placeholder)
     local map = placeholder:get_map()
     local x, y, layer = placeholder:get_position()
     local chest = map:create_chest{
@@ -888,5 +889,41 @@ function zentropy.menu(text)
     return menu
 end
 
+function zentropy.pots(rng, ...)
+    for _, entities in ipairs{...} do
+        for entity in entities do
+            zentropy.inject_pot(entity, rng:refine(entity:get_name()))
+        end
+    end
+end
+
+function zentropy.hideout(rng, switch, ...)
+    local hideout_rng = rng:refine('hideout'):seq()
+    local hideout = nil
+    for _, entities in ipairs{...} do
+        for entity in entities do
+            if hideout_rng() then
+                hideout, entity = entity, hideout
+            end
+            if entity and entity:get_type() == 'block' then
+                entity:set_pushable(false)
+                entity:set_pullable(false)
+            end
+        end
+    end
+
+    local x, y, layer = hideout:get_position()
+    if zentropy.settings.debug_cheat then
+        y = y + 4
+    end
+    local origin_x, origin_y = hideout:get_origin()
+    switch:set_position(x - origin_x, y - origin_y, layer)
+
+    if hideout:get_type() == 'dynamic_tile' then
+        hideout:remove()
+    else
+        hideout:bring_to_front()
+    end
+end
 
 return zentropy
