@@ -28,20 +28,20 @@ function game_menu:on_started()
     end
 end
 
-function game_menu:on_key_pressed(key)
+function game_menu:on_command_pressed(key)
     local handled = false
     if key == "escape" then
         sol.main.exit()
         handled = true
-    elseif key == "space" then
+    elseif key == "action" then
         self.items[self.current_item].action()
         sol.audio.stop_music()
 		sol.menu.stop(self)
         handled = true
-    elseif key == 'up' then
+    elseif key == "up" then
         if self.current_item > 1 then self.current_item = self.current_item - 1 end
         handled = true
-    elseif key == 'down' then
+    elseif key == "down" then
         if self.current_item < #self.items then self.current_item = self.current_item + 1 end
         handled = true
     end

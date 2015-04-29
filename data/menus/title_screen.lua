@@ -87,15 +87,12 @@ function title_screen:draw_phase_title()
 	end
 end
 
-function title_screen:on_key_pressed(key)
-	local handled = false
-	if key == "space" or key == "return" then
-		handled = self:try_finish_title()
+function title_screen:on_command_pressed(command)
+	if command == "escape" then
+        sol.main.exit()
+    else
+		return self:try_finish_title()
 	end
-end
-
-function title_screen:on_joypad_button_pressed(button)
-	return self:try_finish_title()
 end
 
 function title_screen:try_finish_title()

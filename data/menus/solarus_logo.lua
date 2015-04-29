@@ -173,9 +173,9 @@ function solarus_logo_menu:on_draw(screen)
 end
 
 -- Called when a keyboard key is pressed.
-function solarus_logo_menu:on_key_pressed(key)
+function solarus_logo_menu:on_command_pressed(command)
 
-  if key == "escape" then
+  if command == "escape" then
     -- Escape: quit Solarus.
     sol.main.exit()
   else
