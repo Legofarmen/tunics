@@ -1,4 +1,44 @@
 dialog{
+  id = "game_complete_2_1",
+  text = [[
+Thank you for playing!
+]]
+}
+
+dialog{
+  id = "game_complete_1_1",
+  text = [[
+You're back!
+]]
+}
+
+dialog{
+  id = "game_complete_1_2",
+  text = [[
+Look at all the
+tunics I made
+for you.
+]]
+}
+
+dialog{
+  id = "game_complete_1_3",
+  question = true, 
+  text = [[
+Are you done?
+  Yes
+  Give me more!
+]]
+}
+
+dialog{
+  id = "game_complete_1_4",
+  text = [[
+Oh, fiddlesticks!
+]]
+}
+
+dialog{
   id = "_treasure.heart_container.1",
   text = [[
 You got a heart container.

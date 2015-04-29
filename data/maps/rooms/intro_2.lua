@@ -5,7 +5,6 @@ local game = map:get_game()
 local hero = map:get_game():get_hero()
 local zelda = map:get_entity('zelda')
 
-
 function map:on_started()
 
 end
@@ -31,13 +30,13 @@ function map:start_intro()
 		end)	
 		
 		local move_h = sol.movement.create("straight")
-		
 		local move_z_1 = sol.movement.create("target")
-		move_z_1:set_target(map:get_entity("target_1"))
+		move_z_1:set_target(map:get_entity("target_1"), 0, 5)
+		move_z_1:set_speed(128)
 		
 		local move_z_2 = sol.movement.create("target")
-		move_z_2:set_target(map:get_entity("target_2"))
-		move_z_2:set_speed(32)
+		move_z_2:set_target(map:get_entity("target_2"), 0, 5)
+		move_z_2:set_speed(64)
 		function move_z_1:on_finished()
 			zelda:get_sprite():set_animation("stopped")
 			game:start_dialog("intro_2_2")

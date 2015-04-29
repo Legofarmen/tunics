@@ -1,0 +1,25 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  tileset = "light_world",
+  music = "same",
+}
+
+destination{
+  layer = 0,
+  x = 8,
+  y = 13,
+  direction = 3,
+}
+
+tile{
+  layer = 2,
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  pattern = "real_black",
+}
+

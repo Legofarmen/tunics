@@ -54,15 +54,6 @@ tile{
 
 tile{
   layer = 0,
-  x = 192,
-  y = 16,
-  width = 48,
-  height = 16,
-  pattern = "grass.tree.roots.1",
-}
-
-tile{
-  layer = 0,
   x = 16,
   y = 32,
   width = 48,
@@ -77,15 +68,6 @@ tile{
   width = 48,
   height = 8,
   pattern = "grass.tree.roots.2",
-}
-
-tile{
-  layer = 0,
-  x = 80,
-  y = 16,
-  width = 48,
-  height = 16,
-  pattern = "grass.tree.roots.1",
 }
 
 tile{
@@ -144,7 +126,7 @@ tile{
 
 tile{
   layer = 0,
-  x = 16,
+  x = 8,
   y = 200,
   width = 8,
   height = 16,
@@ -288,6 +270,33 @@ tile{
 
 tile{
   layer = 0,
+  x = 184,
+  y = 0,
+  width = 8,
+  height = 16,
+  pattern = "forest",
+}
+
+tile{
+  layer = 0,
+  x = 128,
+  y = 0,
+  width = 8,
+  height = 16,
+  pattern = "forest",
+}
+
+tile{
+  layer = 0,
+  x = 128,
+  y = 0,
+  width = 8,
+  height = 8,
+  pattern = "forest.grass",
+}
+
+tile{
+  layer = 0,
   x = 120,
   y = 0,
   width = 16,
@@ -306,11 +315,38 @@ tile{
 
 tile{
   layer = 0,
-  x = 128,
-  y = 8,
-  width = 8,
+  x = 192,
+  y = 16,
+  width = 48,
   height = 16,
-  pattern = "grass.tree.roots.4",
+  pattern = "grass.tree.roots.1",
+}
+
+tile{
+  layer = 0,
+  x = 80,
+  y = 16,
+  width = 48,
+  height = 16,
+  pattern = "grass.tree.roots.1",
+}
+
+tile{
+  layer = 0,
+  x = 128,
+  y = -8,
+  width = 8,
+  height = 8,
+  pattern = "forest.grass",
+}
+
+tile{
+  layer = 0,
+  x = 184,
+  y = -8,
+  width = 8,
+  height = 8,
+  pattern = "forest.grass",
 }
 
 tile{
@@ -325,19 +361,52 @@ tile{
 tile{
   layer = 0,
   x = 128,
-  y = -8,
+  y = 8,
   width = 8,
-  height = 8,
-  pattern = "forest.grass",
+  height = 16,
+  pattern = "grass.tree.roots.4",
 }
 
-tile{
+destructible{
   layer = 0,
   x = 184,
-  y = -8,
-  width = 8,
-  height = 8,
-  pattern = "forest.grass",
+  y = 117,
+  sprite = "entities/tunic_1",
+}
+
+destructible{
+  layer = 0,
+  x = 168,
+  y = 117,
+  sprite = "entities/tunic_1",
+}
+
+destructible{
+  layer = 0,
+  x = 152,
+  y = 117,
+  sprite = "entities/tunic_1",
+}
+
+destructible{
+  layer = 0,
+  x = 136,
+  y = 117,
+  sprite = "entities/tunic_1",
+}
+
+destructible{
+  layer = 0,
+  x = 120,
+  y = 117,
+  sprite = "entities/tunic_1",
+}
+
+destructible{
+  layer = 0,
+  x = 200,
+  y = 117,
+  sprite = "entities/tunic_1",
 }
 
 tile{
@@ -1206,6 +1275,15 @@ tile{
 
 tile{
   layer = 1,
+  x = 152,
+  y = 24,
+  width = 16,
+  height = 64,
+  pattern = "grass.soil",
+}
+
+tile{
+  layer = 1,
   x = 136,
   y = 8,
   width = 16,
@@ -1220,6 +1298,15 @@ tile{
   width = 16,
   height = 16,
   pattern = "trunk.entrance.1.border.2",
+}
+
+tile{
+  layer = 1,
+  x = 152,
+  y = 8,
+  width = 16,
+  height = 16,
+  pattern = "trunk.entrance.1",
 }
 
 tile{
@@ -1242,15 +1329,6 @@ tile{
 
 tile{
   layer = 1,
-  x = 152,
-  y = 8,
-  width = 16,
-  height = 16,
-  pattern = "trunk.entrance.1",
-}
-
-tile{
-  layer = 1,
   x = 136,
   y = 40,
   width = 16,
@@ -1258,18 +1336,9 @@ tile{
   pattern = "grass.flower",
 }
 
-tile{
-  layer = 1,
-  x = 152,
-  y = 64,
-  width = 16,
-  height = 16,
-  pattern = "grass.weed_big",
-}
-
 dynamic_tile{
   layer = 1,
-  x = 112,
+  x = 152,
   y = 64,
   width = 16,
   height = 16,
@@ -1278,51 +1347,42 @@ dynamic_tile{
   enabled_at_start = true,
 }
 
-dynamic_tile{
-  layer = 1,
-  x = 136,
-  y = 72,
-  width = 8,
-  height = 8,
-  name = "target_1",
-  pattern = "black",
-  enabled_at_start = false,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 200,
-  y = 72,
-  width = 8,
-  height = 8,
-  name = "target_2",
-  pattern = "black",
-  enabled_at_start = false,
-}
-
 npc{
   layer = 1,
   x = 200,
   y = 77,
   name = "zelda",
-  direction = 2,
+  direction = 3,
   subtype = "0",
   sprite = "npc/zelda",
   behavior = "dialog#treasure_glove.1",
 }
 
-tile{
-  layer = 2,
-  x = 136,
-  y = 0,
-  width = 48,
-  height = 8,
-  pattern = "trunk.entrance.1.top",
+dynamic_tile{
+  layer = 1,
+  x = 112,
+  y = 64,
+  width = 16,
+  height = 16,
+  name = "hole_2",
+  pattern = "grass.hole",
+  enabled_at_start = true,
 }
 
 dynamic_tile{
-  layer = 2,
-  x = 112,
+  layer = 1,
+  x = 160,
+  y = 80,
+  width = 8,
+  height = 8,
+  name = "hero_1",
+  pattern = "black",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 152,
   y = 64,
   width = 16,
   height = 16,
@@ -1332,9 +1392,18 @@ dynamic_tile{
 }
 
 destination{
+  layer = 1,
+  x = 160,
+  y = 21,
+  direction = 3,
+}
+
+tile{
   layer = 2,
-  x = 120,
-  y = 77,
-  direction = 0,
+  x = 136,
+  y = 0,
+  width = 48,
+  height = 8,
+  pattern = "trunk.entrance.1.top",
 }
 

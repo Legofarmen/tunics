@@ -57,10 +57,7 @@ function map:on_opening_transition_finished()
 	local x, y, layer = map:get_entity('first'):get_position()
 	local tier = game:get_value('tier')
 	local tiern = 1
-	
-	zentropy.debug("tier " .. tier)
-	zentropy.debug("tiern " .. tiern)
-	
+
 	x = x + 8 
 	y = y + 13
 	
