@@ -74,24 +74,19 @@ function hearts:check()
     end
   end
 
-  -- If we are in-game, play an animation and a sound if the life is low.
+  -- If we are in-game, play a sound if the life is low.
   if self.game:is_started() then
 
     if self.game:get_life() <= self.game:get_max_life() / 4
         and not self.game:is_suspended() then
       need_rebuild = true
-      --[[if self.empty_heart_sprite:get_animation() ~= "danger" then
-        self.empty_heart_sprite:set_animation("danger")
-      end]]
+
       if self.danger_sound_timer == nil then
         self.danger_sound_timer = sol.timer.start(self, 250, function()
           self:repeat_danger_sound()
         end)
         self.danger_sound_timer:set_suspended_with_map(true)
       end
-    --[[elseif self.empty_heart_sprite:get_animation() ~= "normal" then
-      need_rebuild = true
-      self.empty_heart_sprite:set_animation("normal")]]
     end
   end
 
@@ -122,25 +117,27 @@ end
 
 function hearts:rebuild_surface()
 
-  self.surface:clear()
+	self.surface:clear()
 
-  -- Display the hearts.
-  for i = 0, self.nb_max_hearts_displayed - 1 do
-    local x, y = (i % 10) * 8, math.floor(i / 10) * 8 + 10
-    self.empty_heart_sprite:draw(self.surface, x, y)
-    if i < math.floor(self.nb_current_hearts_displayed / 4) then
-      -- This heart is full.
-      self.all_hearts_img:draw_region(21, 0, 8, 7, self.surface, x, y)
-    end
-  end
+	self.hearts_title_img:draw_region(0, 0, 44, 10, self.surface, 14, 0)
+  
+	-- Display the hearts.
+	for i = 0, self.nb_max_hearts_displayed - 1 do
+		local x, y = (i % 10) * 8, math.floor(i / 10) * 8 + 10
+		self.empty_heart_sprite:draw(self.surface, x, y)
+		if i < math.floor(self.nb_current_hearts_displayed / 4) then
+		-- This heart is full.
+		self.all_hearts_img:draw_region(21, 0, 8, 7, self.surface, x, y)
+		end
+	end
 
-  -- Last fraction of heart.
-  local i = math.floor(self.nb_current_hearts_displayed / 4)
-  local remaining_fraction = self.nb_current_hearts_displayed % 4
-  if remaining_fraction ~= 0 then
-    local x, y = (i % 10) * 8, math.floor(i / 10) * 8 + 10
-    self.all_hearts_img:draw_region((remaining_fraction - 1) * 7, 0, 7, 7, self.surface, x, y)
-  end
+	-- Last fraction of heart.
+	local i = math.floor(self.nb_current_hearts_displayed / 4)
+	local remaining_fraction = self.nb_current_hearts_displayed % 4
+	if remaining_fraction ~= 0 then
+		local x, y = (i % 10) * 8, math.floor(i / 10) * 8 + 10
+		self.all_hearts_img:draw_region((remaining_fraction - 1) * 7, 0, 7, 7, self.surface, x, y)
+	end
 end
 
 function hearts:set_dst_position(x, y)
