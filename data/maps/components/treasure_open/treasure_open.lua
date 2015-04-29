@@ -2,7 +2,8 @@ local treasure = {}
 
 function treasure.init(map, data)
 
-    local chest_placeholder = zentropy.assert(map:get_entity('chest'), 'entity not found: chest')
+    local chest_placeholder = map:get_entity('chest')
+    zentropy.assert(chest_placeholder, 'entity not found: chest')
     local chest = zentropy.inject_chest(chest_placeholder, data)
 
     for entity in map:get_entities('enemy') do

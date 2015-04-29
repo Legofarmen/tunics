@@ -827,7 +827,7 @@ function zentropy.inject_pot(placeholder, rng)
 end
 
 function zentropy.inject_chest(placeholder, data)
-    assert(placeholder)
+    zentropy.assert(placeholder)
     local map = placeholder:get_map()
     local x, y, layer = placeholder:get_position()
     local chest = map:create_chest{
