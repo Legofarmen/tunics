@@ -1,5 +1,4 @@
 local zentropy = require 'lib/zentropy'
-local bindings = require 'lib/bindings'
 
 local game_menu = {}
 
@@ -28,8 +27,6 @@ function game_menu:on_started()
         start_y = start_y + math.ceil(1.5 * item_height)
     end
 end
-
-bindings.mixin(game_menu)
 
 function game_menu:on_command_pressed(key)
     local handled = false

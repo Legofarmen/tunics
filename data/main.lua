@@ -12,6 +12,7 @@ function sol.main:on_started()
     bindings.mixin(solarus_logo)
     bindings.mixin(legofarmen_logo)
     bindings.mixin(title_screen)
+    bindings.mixin(game_menu)
 	
     zentropy.init()
 		    
