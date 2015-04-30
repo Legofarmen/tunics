@@ -7,44 +7,20 @@ properties{
   music = "same",
 }
 
-dynamic_tile{
+tile{
   layer = 1,
-  x = 56,
-  y = 72,
+  x = 32,
+  y = 192,
   width = 16,
   height = 16,
-  name = "pot_4",
-  pattern = "floor_pot",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 72,
-  y = 72,
-  width = 16,
-  height = 16,
-  name = "pot_2",
-  pattern = "floor_pot",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 88,
-  y = 72,
-  width = 16,
-  height = 16,
-  name = "pot_3",
-  pattern = "floor_pot",
-  enabled_at_start = true,
+  pattern = "block",
 }
 
 block{
   layer = 1,
-  x = 64,
-  y = 69,
-  name = "block_4",
+  x = 56,
+  y = 189,
+  name = "block_1",
   direction = -1,
   sprite = "entities/block",
   pushable = true,
@@ -54,8 +30,8 @@ block{
 
 block{
   layer = 1,
-  x = 80,
-  y = 69,
+  x = 72,
+  y = 173,
   name = "block_2",
   direction = -1,
   sprite = "entities/block",
@@ -66,55 +42,14 @@ block{
 
 block{
   layer = 1,
-  x = 96,
-  y = 69,
+  x = 88,
+  y = 157,
   name = "block_3",
   direction = -1,
   sprite = "entities/block",
   pushable = true,
   pullable = false,
   maximum_moves = 1,
-}
-
-enemy{
-  layer = 1,
-  x = 48,
-  y = 53,
-  direction = 3,
-  breed = "pike_detect",
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 120,
-  y = 56,
-  width = 16,
-  height = 16,
-  name = "treasure_obstacle_chest",
-  pattern = "carpet.1",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 152,
-  y = 56,
-  width = 16,
-  height = 16,
-  name = "treasure_open_chest",
-  pattern = "carpet.1",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 120,
-  y = 80,
-  width = 16,
-  height = 16,
-  name = "enemy",
-  pattern = "carpet.1",
-  enabled_at_start = false,
 }
 
 switch{
@@ -126,5 +61,38 @@ switch{
   sprite = "entities/switch",
   needs_block = false,
   inactivate_when_leaving = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 128,
+  y = 168,
+  width = 16,
+  height = 16,
+  name = "treasure_obstacle_chest",
+  pattern = "carpet.1",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 128,
+  y = 136,
+  width = 16,
+  height = 16,
+  name = "treasure_open_chest",
+  pattern = "carpet.1",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 96,
+  y = 136,
+  width = 16,
+  height = 16,
+  name = "enemy",
+  pattern = "carpet.1",
+  enabled_at_start = false,
 }
 
