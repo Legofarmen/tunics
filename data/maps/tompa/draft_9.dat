@@ -266,8 +266,8 @@ enemy{
 
 block{
   layer = 0,
-  x = 160,
-  y = 61,
+  x = 104,
+  y = 117,
   direction = -1,
   sprite = "entities/block",
   pushable = true,
@@ -277,8 +277,8 @@ block{
 
 block{
   layer = 0,
-  x = 144,
-  y = 77,
+  x = 120,
+  y = 133,
   direction = -1,
   sprite = "entities/block",
   pushable = true,
@@ -288,8 +288,8 @@ block{
 
 block{
   layer = 0,
-  x = 160,
-  y = 93,
+  x = 120,
+  y = 101,
   direction = -1,
   sprite = "entities/block",
   pushable = true,
@@ -299,8 +299,8 @@ block{
 
 block{
   layer = 0,
-  x = 176,
-  y = 77,
+  x = 136,
+  y = 117,
   direction = -1,
   sprite = "entities/block",
   pushable = true,
