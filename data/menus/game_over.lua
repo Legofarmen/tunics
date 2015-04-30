@@ -10,18 +10,6 @@ local fairy_sprite
 local cursor_position
 local state
 
--- state can be one of:
--- "waiting_start": The game-over scene will start soon.
--- "closing_game": Fade-out on the game screen.
--- "red_screen": Red screen during a small delay.
--- "opening_menu": Fade-in on the game-over menu.
--- "saved_by_fairy": The player is being saved by a fairy.
--- "waiting_end": The game will be resumed soon.
--- "resume_game": The game can be resumed.
--- "menu": The player can choose an option in the game-over menu.
--- "finished": An action was validated in the menu.
-
-
 function game_over_menu:on_started()
 	local game = zentropy.game.game
 	local hero = game:get_hero()

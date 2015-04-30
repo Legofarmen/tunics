@@ -1,4 +1,19 @@
 dialog{
+  id = "game_complete_3_1",
+  text = [[
+You again?
+]]
+}
+
+dialog{
+  id = "game_complete_3_2",
+  text = [[
+Best get to
+it then.
+]]
+}
+
+dialog{
   id = "game_complete_2_1",
   text = [[
 Thank you for playing!

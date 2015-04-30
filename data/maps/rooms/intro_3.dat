@@ -18,16 +18,16 @@ tile{
 
 tile{
   layer = 1,
-  x = 128,
+  x = 80,
   y = 16,
-  width = 80,
+  width = 144,
   height = 24,
   pattern = "wall.1",
 }
 
 tile{
   layer = 1,
-  x = 104,
+  x = 72,
   y = 40,
   width = 24,
   height = 16,
@@ -38,7 +38,7 @@ tile{
   layer = 1,
   x = 32,
   y = 72,
-  width = 96,
+  width = 64,
   height = 8,
   pattern = "wall_border.1",
 }
@@ -72,16 +72,16 @@ tile{
 
 tile{
   layer = 1,
-  x = 192,
+  x = 224,
   y = 72,
-  width = 80,
+  width = 48,
   height = 8,
   pattern = "wall_border.1",
 }
 
 tile{
   layer = 1,
-  x = 184,
+  x = 216,
   y = 40,
   width = 8,
   height = 32,
@@ -90,7 +90,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 128,
+  x = 96,
   y = 40,
   width = 8,
   height = 32,
@@ -99,7 +99,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 128,
+  x = 96,
   y = 40,
   width = 8,
   height = 8,
@@ -108,7 +108,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 184,
+  x = 216,
   y = 40,
   width = 8,
   height = 8,
@@ -117,9 +117,9 @@ tile{
 
 tile{
   layer = 1,
-  x = 136,
+  x = 104,
   y = 40,
-  width = 48,
+  width = 112,
   height = 8,
   pattern = "wall_border.1",
 }
@@ -146,14 +146,14 @@ tile{
   layer = 1,
   x = 48,
   y = 48,
-  width = 64,
+  width = 32,
   height = 24,
   pattern = "wall.1",
 }
 
 tile{
   layer = 1,
-  x = 104,
+  x = 72,
   y = 48,
   width = 24,
   height = 24,
@@ -198,16 +198,16 @@ tile{
 
 tile{
   layer = 1,
-  x = 208,
+  x = 240,
   y = 48,
-  width = 64,
+  width = 32,
   height = 24,
   pattern = "wall.1",
 }
 
 tile{
   layer = 1,
-  x = 104,
+  x = 72,
   y = 16,
   width = 24,
   height = 24,
@@ -216,7 +216,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 192,
+  x = 224,
   y = 24,
   width = 24,
   height = 32,
@@ -225,7 +225,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 192,
+  x = 224,
   y = 48,
   width = 24,
   height = 24,
@@ -234,7 +234,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 192,
+  x = 224,
   y = 16,
   width = 24,
   height = 24,
@@ -243,7 +243,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 128,
+  x = 96,
   y = 72,
   width = 8,
   height = 8,
@@ -252,7 +252,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 184,
+  x = 216,
   y = 72,
   width = 8,
   height = 8,
@@ -271,7 +271,7 @@ tile{
 tile{
   layer = 1,
   x = 88,
-  y = 112,
+  y = 104,
   width = 16,
   height = 16,
   pattern = "torch",
@@ -280,7 +280,7 @@ tile{
 tile{
   layer = 1,
   x = 216,
-  y = 112,
+  y = 104,
   width = 16,
   height = 16,
   pattern = "torch",
@@ -315,7 +315,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 144,
+  x = 112,
   y = 16,
   width = 32,
   height = 8,
@@ -342,7 +342,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 144,
+  x = 112,
   y = 24,
   width = 8,
   height = 16,
@@ -351,7 +351,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 168,
+  x = 136,
   y = 24,
   width = 8,
   height = 16,
@@ -360,7 +360,43 @@ tile{
 
 tile{
   layer = 1,
-  x = 152,
+  x = 120,
+  y = 24,
+  width = 16,
+  height = 16,
+  pattern = "door_stairs.straight_down.1",
+}
+
+tile{
+  layer = 1,
+  x = 176,
+  y = 16,
+  width = 32,
+  height = 8,
+  pattern = "door_top.closed.1",
+}
+
+tile{
+  layer = 1,
+  x = 176,
+  y = 24,
+  width = 8,
+  height = 16,
+  pattern = "door.1.support.1",
+}
+
+tile{
+  layer = 1,
+  x = 200,
+  y = 24,
+  width = 8,
+  height = 16,
+  pattern = "door.1.support.2",
+}
+
+tile{
+  layer = 1,
+  x = 184,
   y = 24,
   width = 16,
   height = 16,
@@ -369,7 +405,7 @@ tile{
 
 teletransporter{
   layer = 1,
-  x = 152,
+  x = 120,
   y = 16,
   width = 16,
   height = 16,
@@ -398,7 +434,7 @@ destination{
 
 stairs{
   layer = 1,
-  x = 152,
+  x = 120,
   y = 24,
   direction = 1,
   subtype = "3",
@@ -406,9 +442,9 @@ stairs{
 
 door{
   layer = 1,
-  x = 152,
+  x = 120,
   y = 24,
-  name = "door_2",
+  name = "first",
   direction = 1,
   sprite = "entities/door_normal",
 }
@@ -419,6 +455,52 @@ destination{
   y = 157,
   name = "retry",
   direction = 1,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 208,
+  y = 136,
+  width = 32,
+  height = 32,
+  name = "light_2",
+  pattern = "floor.18",
+  enabled_at_start = false,
+}
+
+destination{
+  layer = 1,
+  x = 224,
+  y = 157,
+  name = "endgame",
+  direction = 1,
+}
+
+teletransporter{
+  layer = 1,
+  x = 184,
+  y = 16,
+  width = 16,
+  height = 16,
+  name = "teletransporter_2",
+  destination_map = "dungeons/dungeon1",
+}
+
+stairs{
+  layer = 1,
+  x = 184,
+  y = 24,
+  direction = 1,
+  subtype = "3",
+}
+
+door{
+  layer = 1,
+  x = 184,
+  y = 24,
+  name = "game_complete",
+  direction = 1,
+  sprite = "entities/door_normal",
 }
 
 tile{
@@ -441,9 +523,9 @@ tile{
 
 tile{
   layer = 2,
-  x = 104,
+  x = 72,
   y = 0,
-  width = 112,
+  width = 176,
   height = 16,
   pattern = "ceiling",
 }
@@ -461,23 +543,32 @@ tile{
   layer = 2,
   x = 0,
   y = 0,
-  width = 104,
+  width = 72,
   height = 48,
   pattern = "ceiling",
 }
 
 tile{
   layer = 2,
-  x = 216,
+  x = 248,
   y = 0,
-  width = 104,
+  width = 72,
   height = 48,
   pattern = "ceiling",
 }
 
 tile{
   layer = 2,
-  x = 144,
+  x = 112,
+  y = 16,
+  width = 32,
+  height = 8,
+  pattern = "door_top.stairs.1",
+}
+
+tile{
+  layer = 2,
+  x = 176,
   y = 16,
   width = 32,
   height = 8,
