@@ -11,6 +11,9 @@ function puzzle.init(map, data)
         zentropy.inject_enemy(entity, data.rng:refine(entity:get_name()))
     end
 
+    zentropy.pots(data.rng:refine('pots'), map:get_entities('pot_'))
+
+
 	local doors = {}
 	for dir, door_data in util.pairs_by_keys(data.doors) do
         zentropy.assert((door_data.open or 'open') == 'open')
@@ -59,30 +62,7 @@ function puzzle.init(map, data)
     end
 
     if data.treasure1 or next(data.doors) then
-        local placeholders = {}
-        for entity in map:get_entities('pot_') do
-            zentropy.inject_pot(entity, data.rng:refine(entity:get_name()))
-            table.insert(placeholders, entity)
-        end
-        for entity in map:get_entities('block_') do
-            table.insert(placeholders, entity)
-        end
-
-        local hideout = placeholders[data.rng:refine('fsl'):random(#placeholders)]
-
-        local x, y, layer = hideout:get_position()
-        if zentropy.settings.debug_cheat then
-            y = y + 4
-        end
-        local origin_x, origin_y = hideout:get_origin()
-        switch:set_position(x - origin_x, y - origin_y, layer)
-
-        for entity in map:get_entities('block_') do
-            if entity:get_name() ~= hideout:get_name() then
-                entity:set_pushable(false)
-                entity:set_pullable(false)
-            end
-        end
+        zentropy.hideout(data.rng:refine('hideout'), switch, map:get_entities('pot_'), map:get_entities('block_'))
 
         data.room_events:add_door_sensor_activated_listener(function ()
             if not switch:is_activated() then

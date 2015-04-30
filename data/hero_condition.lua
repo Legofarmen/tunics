@@ -7,7 +7,6 @@ condition_manager.timers = {
   slow = nil,
   frozen = nil,
   poison = nil,
-  confusion = nil,
   electrocution = nil,
   cursed = nil
 }
@@ -18,7 +17,6 @@ function condition_manager:initialize(game)
     slow = false,
     frozen = false,
     poison = false,
-    confusion = false,
     electrocution = false,
     cursed = false
   }
@@ -30,69 +28,6 @@ function condition_manager:initialize(game)
   function hero:set_condition(condition, active)
       zentropy.debug('set_condition', active)
     hero.condition[condition] = active
-  end
-
-  function game:on_command_pressed(command)
-
-    if not hero:is_condition_active('confusion') or in_command_pressed or game:is_paused() then
-      return false
-    end
-
-    if command == "left" then
-      game:simulate_command_released("left")
-      in_command_pressed = true
-      game:simulate_command_pressed("right")
-      in_command_pressed = false
-      return true
-    elseif command == "right" then
-      game:simulate_command_released("right")
-      in_command_pressed = true
-      game:simulate_command_pressed("left")
-      in_command_pressed = false
-      return true
-    elseif command == "up" then
-      game:simulate_command_released("up")
-      in_command_pressed = true
-      game:simulate_command_pressed("down")
-      in_command_pressed = false
-      return true
-    elseif command == "down" then
-      game:simulate_command_released("down")
-      in_command_pressed = true
-      game:simulate_command_pressed("up")
-      in_command_pressed = false
-      return true
-    end
-    return false
-  end
-
-  function game:on_command_released(command)
-    if not hero:is_condition_active('confusion') or in_command_release or game:is_paused() then
-      return false
-    end
-
-    if command == "left" then
-      in_command_release = true
-      game:simulate_command_released("right")
-      in_command_release = false
-      return true
-    elseif command == "right" then
-      in_command_release = true
-      game:simulate_command_released("left")
-      in_command_release = false
-      return true
-    elseif command == "up" then
-      in_command_release = true
-      game:simulate_command_released("down")
-      in_command_release = false
-      return true
-    elseif command == "down" then
-      in_command_release = true
-      game:simulate_command_released("up")
-      in_command_release = false
-      return true
-    end
-    return false
   end
 
   function hero:on_taking_damage(in_damage)
@@ -121,43 +56,6 @@ function condition_manager:initialize(game)
     end
 
     game:remove_life(damage)
-  end
-
-  function hero:start_confusion(delay)
-    local aDirectionPressed = {
-      right = false,
-      left = false,
-      up = false,
-      down = false
-    }
-    local bAlreadyConfused = hero:is_condition_active('confusion')
-
-    if hero:is_condition_active('confusion') and condition_manager.timers['confusion'] ~= nil then
-      condition_manager.timers['confusion']:stop()
-    end
-
-    if not bAlreadyConfused then
-      for key, value in pairs(aDirectionPressed) do
-        if game:is_command_pressed(key) then
-          aDirectionPressed[key] = true
-          game:simulate_command_released(key)
-        end
-      end
-    end
-
-    hero:set_condition('confusion', true)
-
-    condition_manager.timers['confusion'] = sol.timer.start(hero, delay, function()
-      hero:stop_confusion()
-    end)
-
-    if not bAlreadyConfused then
-      for key, value in pairs(aDirectionPressed) do
-        if value then
-          game:simulate_command_pressed(key)
-        end
-      end
-    end
   end
 
   function hero:start_frozen(delay)
@@ -241,34 +139,6 @@ function condition_manager:initialize(game)
     condition_manager.timers['cursed'] = sol.timer.start(hero, delay, function()
       hero:stop_cursed()
     end)
-  end
-
-  function hero:stop_confusion()
-    local aDirectionPressed = {
-      right = {"left", false},
-      left = {"right", false},
-      up = {"down", false},
-      down = {"up", false}
-    }
-
-    if hero:is_condition_active('confusion') and condition_manager.timers['confusion'] ~= nil then
-      condition_manager.timers['confusion']:stop()
-    end
-
-    for key, value in pairs(aDirectionPressed) do
-      if game:is_command_pressed(key) then
-        aDirectionPressed[key][2] = true
-        game:simulate_command_released(key)
-      end
-    end
-
-    hero:set_condition('confusion', false)
-
-    for key, value in pairs(aDirectionPressed) do
-      if value[2] then
-        game:simulate_command_pressed(value[1])
-      end
-    end
   end
 
   function hero:stop_frozen()

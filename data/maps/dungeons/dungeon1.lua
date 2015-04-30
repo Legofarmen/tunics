@@ -88,7 +88,9 @@ end
 
 map:add_on_started(function ()
     solarus_layout:move_hero_to_start()
-
+	map:get_game():set_hud_enabled(true)
+	map:get_game():set_pause_allowed(true)
+	
     if zentropy.settings.debug_flying then
         local width, height = map:get_size()
         map:create_dynamic_tile{

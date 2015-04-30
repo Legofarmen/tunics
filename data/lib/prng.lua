@@ -83,4 +83,14 @@ function Prng:choose(t, w)
     end
 end
 
+function Prng:seq()
+    self:setup_mwc()
+    local total = 0
+    return function(weight)
+        weight = weight or 1
+        total = total + weight
+        return total * 2.328306e-10 * self.mwc() <= weight
+    end
+end
+
 return Prng

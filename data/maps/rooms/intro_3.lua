@@ -5,17 +5,32 @@ local start_destination = nil
 
 function map:on_started(destination)
     print(destination:get_name())
-        start_destination = destination:get_name()
-		sol.audio.set_music_volume(25)
-		hero:set_direction(0)
-		hero:set_animation("dead")
-		zentropy.debug("got to intro3")
-		
+	start_destination = destination:get_name()
+	sol.audio.set_music_volume(25)
+	hero:set_direction(0)
+	hero:set_animation("dead")
+	zentropy.debug("got to intro3")
+	if start_destination == 'endgame' then
+		map:set_entities_enabled('light_2', true)
+	end
 end
 
 function map:on_opening_transition_finished()
 	if start_destination == 'retry' then
 		map:get_sword()
+	elseif start_destination == 'endgame' then
+		sol.timer.start(500,function()
+			game:start_dialog("game_complete_3_1", function()
+				hero:set_animation("stopped")
+				hero:set_direction(1)
+				game:start_dialog("game_complete_3_2", function()
+					map:open_doors("game_complete")
+					sol.timer.start(300, function()
+						map.start_quest()
+					end)
+				end)
+			end)	
+		end)
 	else
 		hero:freeze()
 		hero:set_animation("dead")
@@ -36,13 +51,15 @@ function map:get_sword()
 		sol.timer.start(200,function()
 			hero:set_animation("stopped")
 			hero:set_direction(1)
-			map:open_doors("door")
+			map:open_doors("first")
 			sol.timer.start(300, function()
 				map.start_quest()
 			end)
 		end)
 	end)
 end
+
+
 
 function map:start_quest()
 
