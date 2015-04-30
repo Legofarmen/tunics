@@ -4811,7 +4811,7 @@ tile_pattern{
 
 tile_pattern{
   id = "grass.hole",
-  ground = "hole",
+  ground = "traversable",
   default_layer = 0,
   x = 96,
   y = 192,

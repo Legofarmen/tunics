@@ -5,7 +5,7 @@ local zentropy = require 'lib/zentropy'
 
 local game_over = {}
 local text = sol.language.get_dialog('game_over') 
-local text_show = text.text:gsub("X", zentropy.game.game:get_value('tier'))
+local text_show = text.text:gsub("X", zentropy.game.game:get_value('tier')-1)
 
 function map:on_started()
 	hero:set_animation("dead")
@@ -17,14 +17,13 @@ function map:on_opening_transition_finished()
 	hero:set_animation("dead")
 		
 	local x, y, layer = map:get_entity('first'):get_position()
-	local tier = game:get_value('tier')
-	local tiern = 1
-	
-	x = x + 8 
+	local tier = zentropy.game.game:get_value('tier') - 1
+
+	x = x + 16
 	y = y + 13
-	
-	for tiern = 0 , tier, 1 do
-		sol.audio.play_sound("heart")
+
+	for tiern = 1 , tier, 1 do
+		zentropy.debug(tier)
 		tunic = map:create_custom_entity{
 			sprite="entities/tunic_1",
 			direction=0,
@@ -32,6 +31,11 @@ function map:on_opening_transition_finished()
 			x = x,
 			y = y,
 		}
+		x=x-16
+		if tiern % 6 == 0 then
+			y=y+16
+			x=x+96
+		end
 	end
 	
 	sol.timer.start(800,function()
@@ -60,13 +64,11 @@ function game_over:menu()
     
 	game:start_dialog("try_again", function(answer)
 		if answer == 1 then
-			
-			--todo, NEW new game
-			
+
 			zentropy.game.new_game(true)
-			
+
 		else
-			
+
 			sol.main.reset()
 		end
 	end)
