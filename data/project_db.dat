@@ -306,6 +306,7 @@ map{ id = "components/filler/filler_202777_3", description = "Filler 202777 3 Pi
 map{ id = "tompa/draft_10", description = "Pikes and Abysses 2" }
 map{ id = "components/filler/filler_050777_2", description = "Filler 050777 2 Rats room" }
 map{ id = "components/filler/filler_000777_6", description = "Filler 000777 6 Barriers" }
+map{ id = "components/filler/filler_000020_1", description = "Filler 000020 1 enemy placeholder only" }
 
 tileset{ id = "light_world", description = "Light World" }
 tileset{ id = "dungeon_brick_gray_1", description = "Dungeon brick gray 1" }
