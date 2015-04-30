@@ -290,7 +290,10 @@ map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000001_1", descriptio
 map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000100_1", description = "Puzzle 000100 1" }
 map{ id = "rooms/game_complete_1", description = "Game complete 1" }
 map{ id = "rooms/game_complete_2", description = "Game complete 2" }
-map{ id = "components/obstacle_puzzle/obstacle_puzzle_new", description = "Obstacle puzzle new" }
+map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000100_2", description = "Puzzle 000100 2" }
+map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000001_2", description = "Puzzle 000001 2" }
+map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000004_2", description = "Puzzle 000004 2" }
+map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000400_2", description = "Puzzle 000400 2" }
 
 tileset{ id = "light_world", description = "Light World" }
 tileset{ id = "dungeon_brick_gray_1", description = "Dungeon brick gray 1" }
