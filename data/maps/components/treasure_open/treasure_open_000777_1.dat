@@ -193,7 +193,7 @@ dynamic_tile{
   y = 112,
   width = 16,
   height = 16,
-  name = "chest_3",
+  name = "chest",
   pattern = "carpet.2",
   enabled_at_start = true,
 }
@@ -202,11 +202,10 @@ block{
   layer = 1,
   x = 96,
   y = 125,
-  name = "Stone_2",
   direction = 3,
   sprite = "entities/block",
   pushable = true,
-  pullable = true,
+  pullable = false,
   maximum_moves = 1,
 }
 
