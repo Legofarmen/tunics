@@ -3,14 +3,14 @@ properties{
   y = 0,
   width = 320,
   height = 240,
-  tileset = "dungeon_brick_gray_1",
+  tileset = "dungeon_smoothbrick_green_1",
   music = "same",
 }
 
 tile{
   layer = 1,
-  x = 168,
-  y = 208,
+  x = 40,
+  y = -40,
   width = 8,
   height = 16,
   pattern = "door.2.support.2",
@@ -18,8 +18,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 144,
-  y = 208,
+  x = 16,
+  y = -40,
   width = 8,
   height = 16,
   pattern = "door.2.support.1",
@@ -27,8 +27,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 152,
-  y = 224,
+  x = 24,
+  y = -24,
   width = 16,
   height = 16,
   pattern = "floor.1",
@@ -36,8 +36,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 144,
-  y = 232,
+  x = 16,
+  y = -16,
   width = 8,
   height = 8,
   pattern = "barrier.1.2",
@@ -45,8 +45,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 168,
-  y = 232,
+  x = 40,
+  y = -16,
   width = 8,
   height = 8,
   pattern = "barrier.1.2",
@@ -54,8 +54,8 @@ tile{
 
 dynamic_tile{
   layer = 1,
-  x = 152,
-  y = 208,
+  x = 24,
+  y = -40,
   width = 16,
   height = 16,
   name = "door_open",
@@ -65,8 +65,8 @@ dynamic_tile{
 
 wall{
   layer = 1,
-  x = 152,
-  y = 208,
+  x = 24,
+  y = -40,
   width = 16,
   height = 16,
   stops_enemies = true,
@@ -74,8 +74,8 @@ wall{
 
 sensor{
   layer = 1,
-  x = 160,
-  y = 205,
+  x = 32,
+  y = -43,
   width = 16,
   height = 16,
   name = "sensor",
@@ -83,8 +83,8 @@ sensor{
 
 tile{
   layer = 2,
-  x = 120,
-  y = 224,
+  x = -8,
+  y = -24,
   width = 80,
   height = 8,
   pattern = "door_cache.2",
@@ -92,8 +92,8 @@ tile{
 
 tile{
   layer = 2,
-  x = 144,
-  y = 224,
+  x = 16,
+  y = -24,
   width = 32,
   height = 8,
   pattern = "door_top.closed.2",

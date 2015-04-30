@@ -1,5 +1,5 @@
 local map, data = ...
 
-local door_bigkey = require 'maps/components/door/door_bigkey'
+local door_closed = require 'maps/components/door/door_closed'
 
-return door_bigkey.init(map, data, 3)
+return door_closed.init(map, data, 3)

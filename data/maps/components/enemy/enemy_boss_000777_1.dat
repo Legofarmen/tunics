@@ -7,6 +7,15 @@ properties{
   music = "same",
 }
 
+sensor{
+  layer = 0,
+  x = 160,
+  y = 205,
+  width = 16,
+  height = 16,
+  name = "sensor",
+}
+
 tile{
   layer = 1,
   x = 248,
@@ -473,6 +482,26 @@ tile{
   width = 32,
   height = 24,
   pattern = "wall_statue.1.2",
+}
+
+tile{
+  layer = 1,
+  x = 152,
+  y = 16,
+  width = 16,
+  height = 16,
+  pattern = "door_stairs.spiral_up.1",
+}
+
+stream{
+  layer = 1,
+  x = 160,
+  y = 221,
+  direction = 2,
+  speed = 128,
+  allow_movement = false,
+  allow_attack = false,
+  allow_item = false,
 }
 
 teletransporter{
@@ -482,14 +511,6 @@ teletransporter{
   width = 16,
   height = 16,
   destination_map = "rooms/cutscene",
-}
-
-stairs{
-  layer = 1,
-  x = 152,
-  y = 16,
-  direction = 1,
-  subtype = "0",
 }
 
 dynamic_tile{
@@ -532,6 +553,25 @@ enemy{
   name = "agahnim",
   direction = 3,
   breed = "agahnim",
+}
+
+stream{
+  layer = 1,
+  x = 160,
+  y = 237,
+  direction = 2,
+  speed = 128,
+  allow_movement = false,
+  allow_attack = false,
+  allow_item = false,
+}
+
+stairs{
+  layer = 1,
+  x = 152,
+  y = 16,
+  direction = 1,
+  subtype = "0",
 }
 
 tile{

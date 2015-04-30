@@ -153,8 +153,11 @@ function enemy:escape()
     y = y,
     layer = 1
   }
-  self:get_map():get_entity("hero"):unfreeze()
-  --self:get_map():get_game():set_value("b520", true)
-  self:remove()
+    self:get_map():get_entity("hero"):unfreeze()
+    --self:get_map():get_game():set_value("b520", true)
+    if self.on_escape then
+        self:on_escape()
+    end
+    self:remove()
 end
 
