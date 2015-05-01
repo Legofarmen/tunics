@@ -287,7 +287,7 @@ map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000777_5", descriptio
 map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000004_1", description = "Puzzle 000004 1w" }
 map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000400_1", description = "Puzzle 000400 1w" }
 map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000001_1", description = "Puzzle 000001 1w" }
-map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000100_1", description = "Puzzle 000100 1" }
+map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000100_1", description = "Puzzle 000100 1w" }
 map{ id = "rooms/game_complete_1", description = "Game complete 1" }
 map{ id = "rooms/game_complete_2", description = "Game complete 2" }
 map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000100_2", description = "Puzzle 000100 2" }
@@ -309,6 +309,10 @@ map{ id = "components/filler/filler_000777_6", description = "Filler 000777 6 Ba
 map{ id = "components/filler/filler_000020_1", description = "Filler 000020 1 enemy placeholder only" }
 map{ id = "components/obstacle_flippers/obstacle_flippers_e_212777_1", description = "Obstacle flippers e 212777 1 New" }
 map{ id = "components/obstacle_flippers/obstacle_flippers_w_242777_1", description = "Obstacle flippers w 242777 1 New" }
+map{ id = "components/filler/filler_050777_3", description = "Filler 050777 3 Pikes" }
+map{ id = "components/filler/filler_202777_4", description = "Filler 202777 4 pikes" }
+map{ id = "tompa/piketest", description = "Piketest" }
+map{ id = "tompa/piketest_2", description = "Piketest 2" }
 
 tileset{ id = "light_world", description = "Light World" }
 tileset{ id = "dungeon_brick_gray_1", description = "Dungeon brick gray 1" }
