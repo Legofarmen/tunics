@@ -9,13 +9,7 @@ local text_show = text.text:gsub("X", zentropy.game.game:get_value('tier')-1)
 
 function map:on_started()
 	hero:set_animation("dead")
-		
-end
-
-function map:on_opening_transition_finished()
-	hero:freeze();
-	hero:set_animation("dead")
-		
+	sol.audio.play_music('game_over')
 	local x, y, layer = map:get_entity('first'):get_position()
 	local tier = zentropy.game.game:get_value('tier') - 1
 
@@ -37,7 +31,14 @@ function map:on_opening_transition_finished()
 			x=x+96
 		end
 	end
-	
+
+		
+end
+
+function map:on_opening_transition_finished()
+	hero:freeze();
+	hero:set_animation("dead")
+		
 	sol.timer.start(800,function()
 		sol.menu.start(map, game_over, true)
 	end)

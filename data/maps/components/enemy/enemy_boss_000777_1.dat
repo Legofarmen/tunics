@@ -484,15 +484,6 @@ tile{
   pattern = "wall_statue.1.2",
 }
 
-tile{
-  layer = 1,
-  x = 152,
-  y = 16,
-  width = 16,
-  height = 16,
-  pattern = "door_stairs.spiral_up.1",
-}
-
 stream{
   layer = 1,
   x = 160,
@@ -502,15 +493,6 @@ stream{
   allow_movement = false,
   allow_attack = false,
   allow_item = false,
-}
-
-teletransporter{
-  layer = 1,
-  x = 152,
-  y = 16,
-  width = 16,
-  height = 16,
-  destination_map = "rooms/cutscene",
 }
 
 dynamic_tile{
@@ -564,14 +546,6 @@ stream{
   allow_movement = false,
   allow_attack = false,
   allow_item = false,
-}
-
-stairs{
-  layer = 1,
-  x = 152,
-  y = 16,
-  direction = 1,
-  subtype = "0",
 }
 
 tile{

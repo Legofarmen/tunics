@@ -313,6 +313,7 @@ map{ id = "components/filler/filler_050777_3", description = "Filler 050777 3 Pi
 map{ id = "components/filler/filler_202777_4", description = "Filler 202777 4 pikes" }
 map{ id = "tompa/piketest", description = "Piketest" }
 map{ id = "tompa/piketest_2", description = "Piketest 2" }
+map{ id = "components/door/door_exit_n_200000_1", description = "Door exitquest_sword_ability" }
 
 tileset{ id = "light_world", description = "Light World" }
 tileset{ id = "dungeon_brick_gray_1", description = "Dungeon brick gray 1" }

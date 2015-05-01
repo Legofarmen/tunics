@@ -11,7 +11,7 @@ switch{
   layer = 1,
   x = 0,
   y = 0,
-  name = "switch_2",
+  name = "switch",
   subtype = "walkable",
   sprite = "entities/switch",
   needs_block = false,

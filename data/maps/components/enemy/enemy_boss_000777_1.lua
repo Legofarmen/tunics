@@ -2,7 +2,7 @@ local map, data = ...
 
 local util = require 'lib/util'
 
-local boss_exit = map:include(0, 0, 'components/door/door_closed_n_200000_1', {room_events=data.room_events, name="boss_exit"})
+local boss_exit = map:include(0, 0, 'components/door/door_exit_n_200000_1', {room_events=data.room_events, name="boss_exit"})
 local boss_entrance = map:include(0, 0, 'components/door/door_closed_s_002000_1', {room_events=data.room_events, name="boss_entrance"})
 
 local agahnim = map:get_entity("agahnim"):get_userdata()
@@ -26,13 +26,15 @@ local has_escaped = false
 function agahnim:on_escape()
 	has_escaped = true
     zentropy.debug("Agahnim escape")
+	sol.audio.stop_music()
 	boss_exit:open()	
 end
 
 data.room_events:add_door_sensor_activated_listener(function ()
     if not has_escaped then
         agahnim:set_enabled(true)
-        agahnim:restart()
+        sol.audio.play_music('agahnim')
+		agahnim:restart()
         zentropy.debug("Sensor triggered")
         boss_exit:close()
         boss_entrance:close()
