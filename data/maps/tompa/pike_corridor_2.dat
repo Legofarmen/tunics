@@ -412,3 +412,344 @@ tile{
   pattern = "door_top.low.2",
 }
 
+tile{
+  layer = 1,
+  x = 136,
+  y = 40,
+  width = 8,
+  height = 160,
+  pattern = "floor_border.1",
+}
+
+tile{
+  layer = 1,
+  x = 176,
+  y = 40,
+  width = 8,
+  height = 160,
+  pattern = "floor_border.1",
+}
+
+tile{
+  layer = 1,
+  x = 144,
+  y = 40,
+  width = 32,
+  height = 160,
+  pattern = "floor_small.2",
+}
+
+tile{
+  layer = 1,
+  x = 104,
+  y = 48,
+  width = 16,
+  height = 16,
+  pattern = "barrier_big.3.border.1",
+}
+
+tile{
+  layer = 1,
+  x = 200,
+  y = 32,
+  width = 16,
+  height = 16,
+  pattern = "barrier_big.3.border.1",
+}
+
+tile{
+  layer = 1,
+  x = 104,
+  y = 160,
+  width = 16,
+  height = 16,
+  pattern = "barrier_big.3.border.1",
+}
+
+tile{
+  layer = 1,
+  x = 104,
+  y = 184,
+  width = 16,
+  height = 24,
+  pattern = "barrier_big.3.border.2",
+}
+
+tile{
+  layer = 1,
+  x = 104,
+  y = 176,
+  width = 16,
+  height = 8,
+  pattern = "barrier_big.3.2",
+}
+
+tile{
+  layer = 1,
+  x = 200,
+  y = 96,
+  width = 16,
+  height = 16,
+  pattern = "barrier_big.3.border.1",
+}
+
+tile{
+  layer = 1,
+  x = 200,
+  y = 168,
+  width = 16,
+  height = 24,
+  pattern = "barrier_big.3.border.2",
+}
+
+tile{
+  layer = 1,
+  x = 200,
+  y = 112,
+  width = 16,
+  height = 56,
+  pattern = "barrier_big.3.2",
+}
+
+tile{
+  layer = 1,
+  x = 104,
+  y = 112,
+  width = 16,
+  height = 24,
+  pattern = "barrier_big.3.border.2",
+}
+
+tile{
+  layer = 1,
+  x = 200,
+  y = 56,
+  width = 16,
+  height = 24,
+  pattern = "barrier_big.3.border.2",
+}
+
+tile{
+  layer = 1,
+  x = 104,
+  y = 64,
+  width = 16,
+  height = 48,
+  pattern = "barrier_big.3.2",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 8,
+  width = 24,
+  height = 24,
+  pattern = "wall.corner.1",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 32,
+  width = 24,
+  height = 176,
+  pattern = "wall.3",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 208,
+  width = 24,
+  height = 24,
+  pattern = "wall.corner.3",
+}
+
+tile{
+  layer = 1,
+  x = 256,
+  y = 8,
+  width = 24,
+  height = 24,
+  pattern = "wall.corner.2",
+}
+
+tile{
+  layer = 1,
+  x = 256,
+  y = 208,
+  width = 24,
+  height = 24,
+  pattern = "wall.corner.4",
+}
+
+tile{
+  layer = 1,
+  x = 256,
+  y = 32,
+  width = 24,
+  height = 176,
+  pattern = "wall.4",
+}
+
+tile{
+  layer = 1,
+  x = 8,
+  y = 8,
+  width = 32,
+  height = 224,
+  pattern = "ceiling",
+}
+
+tile{
+  layer = 1,
+  x = 280,
+  y = 8,
+  width = 32,
+  height = 224,
+  pattern = "ceiling",
+}
+
+tile{
+  layer = 1,
+  x = 200,
+  y = 48,
+  width = 16,
+  height = 8,
+  pattern = "barrier_big.3.2",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 104,
+  y = 32,
+  width = 16,
+  height = 16,
+  name = "pot_2",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+enemy{
+  layer = 1,
+  x = 128,
+  y = 157,
+  direction = 3,
+  breed = "pike_auto",
+}
+
+enemy{
+  layer = 1,
+  x = 128,
+  y = 125,
+  direction = 3,
+  breed = "pike_auto",
+}
+
+enemy{
+  layer = 1,
+  x = 128,
+  y = 93,
+  direction = 3,
+  breed = "pike_auto",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 64,
+  y = 32,
+  width = 16,
+  height = 16,
+  name = "pot_3",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 240,
+  y = 32,
+  width = 16,
+  height = 16,
+  name = "pot_4",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 240,
+  y = 192,
+  width = 16,
+  height = 16,
+  name = "pot_5",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 64,
+  y = 192,
+  width = 16,
+  height = 16,
+  name = "pot_6",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+block{
+  layer = 1,
+  x = 112,
+  y = 157,
+  direction = -1,
+  sprite = "entities/statue",
+  pushable = true,
+  pullable = true,
+  maximum_moves = 2,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 72,
+  y = 104,
+  width = 16,
+  height = 16,
+  name = "enemy_3",
+  pattern = "carpet.1",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 232,
+  y = 104,
+  width = 16,
+  height = 16,
+  name = "enemy_2",
+  pattern = "carpet.1",
+  enabled_at_start = false,
+}
+
+block{
+  layer = 1,
+  x = 208,
+  y = 93,
+  direction = -1,
+  sprite = "entities/statue",
+  pushable = true,
+  pullable = true,
+  maximum_moves = 2,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 200,
+  y = 192,
+  width = 16,
+  height = 16,
+  name = "pot_7",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+

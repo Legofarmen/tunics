@@ -313,6 +313,12 @@ map{ id = "components/filler/filler_050777_3", description = "Filler 050777 3 Pi
 map{ id = "components/filler/filler_202777_4", description = "Filler 202777 4 pikes" }
 map{ id = "tompa/piketest", description = "Piketest" }
 map{ id = "tompa/piketest_2", description = "Piketest 2" }
+map{ id = "components/filler/filler_050777_6", description = "Filler 050777 6 Pike corridor" }
+map{ id = "tompa/pike_corridor", description = "Pike Corridor" }
+map{ id = "tompa/pike_corridor_2", description = "Pike Corridor 2" }
+map{ id = "components/treasure_open/treasure_open_000777_5", description = "Treasure open 000777 5" }
+map{ id = "tompa/pikes_in_water", description = "Pikes in water" }
+map{ id = "components/obstacle_puzzle/obstacle_puzzle_ne_210777_1", description = "Puzzle ne 210777 1" }
 
 tileset{ id = "light_world", description = "Light World" }
 tileset{ id = "dungeon_brick_gray_1", description = "Dungeon brick gray 1" }
