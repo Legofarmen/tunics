@@ -315,6 +315,13 @@ map{ id = "tompa/piketest", description = "Piketest" }
 map{ id = "tompa/piketest_2", description = "Piketest 2" }
 map{ id = "components/door/door_exit_n_200000_1", description = "Door exitquest_sword_ability" }
 map{ id = "tompa/test", description = "Test" }
+map{ id = "components/filler/filler_050777_6", description = "Filler 050777 6 Pikes and statues" }
+map{ id = "tompa/pikes_in_water", description = "Pikes in water" }
+map{ id = "tompa/pike_corridor", description = "Pike Corridor" }
+map{ id = "tompa/pike_corridor_2", description = "Pike Corridor 2" }
+map{ id = "tompa/obstacle_flippers_north_250777_1", description = "Obstacle flippers north" }
+map{ id = "tompa/obstacle_flippers_south_002067_1", description = "Obstacle flippers south" }
+map{ id = "tompa/obstacle_flippers_east_212777_1", description = "Obstacle flippers east" }
 
 tileset{ id = "light_world", description = "Light World" }
 tileset{ id = "dungeon_brick_gray_1", description = "Dungeon brick gray 1" }
