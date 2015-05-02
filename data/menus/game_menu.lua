@@ -13,7 +13,7 @@ function game_menu:on_started()
     end
     self.items = {}
     if zentropy.game.has_savegame() then
-        table.insert(self.items, { surface = create_surface('Continue'), action = zentropy.game.resume_game })
+        table.insert(self.items, { surface = create_surface('Continue (tier n)' ), action = zentropy.game.resume_game })
     end
     table.insert(self.items, { surface = create_surface('New game'), action = zentropy.game.new_game })
     self.current_item = 1

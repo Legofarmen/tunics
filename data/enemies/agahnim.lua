@@ -5,7 +5,7 @@ local zentropy = require "lib/zentropy"
 -- Agahnim (Boss of dungeon 5)
 
 local nb_sons_created = 0
-local initial_life = 1
+local initial_life = 1 * zentropy.game.game:get_value('tier')
 local finished = false
 local blue_fireball_proba = 33  -- Percent.
 local vulnerable = false
@@ -14,7 +14,7 @@ local sprite
 function enemy:on_created()
 	self.positions = {}
 	self:set_life(initial_life)
-	self:set_damage(12)
+	self:set_damage(6)
 	self:set_optimization_distance(0)
 	self:set_size(16, 16)
 	self:set_origin(8, 13)
@@ -39,9 +39,13 @@ function enemy:on_restarted()
     else
         sprite:set_animation("hurt")
         self:get_map():get_entity("hero"):freeze()
+		sol.audio.play_sound('boss_killed')
         sol.timer.start(self, 500, function() self:end_dialog() end)
         sol.timer.start(self, 1000, function() sprite:fade_out() end)
-        sol.timer.start(self, 1500, function() self:escape() end)
+        sol.timer.start(self, 1500, function() 
+			self:escape() 
+			sol.audio.play_sound('secret')
+		end)
     end
 end
 
@@ -148,7 +152,7 @@ function enemy:escape()
   self:get_map():create_pickable{
     treasure_name = "heart_container",
     treasure_variant = 1,
-    treasure_savegame_variable = "b521",
+    --treasure_savegame_variable = "b521",
     x = x,
     y = y,
     layer = 1

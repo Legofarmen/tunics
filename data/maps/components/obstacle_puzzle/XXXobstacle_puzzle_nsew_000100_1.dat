@@ -8,36 +8,45 @@ properties{
 }
 
 tile{
+  layer = 0,
+  x = 288,
+  y = 48,
+  width = 16,
+  height = 32,
+  pattern = "water_wall.drain_gate.4",
+}
+
+tile{
   layer = 1,
-  x = 56,
-  y = 88,
+  x = 184,
+  y = 32,
+  width = 96,
+  height = 64,
+  pattern = "water_shallow",
+}
+
+tile{
+  layer = 1,
+  x = 248,
+  y = 72,
+  width = 16,
+  height = 16,
+  pattern = "block",
+}
+
+tile{
+  layer = 1,
+  x = 216,
+  y = 40,
   width = 48,
   height = 16,
-  pattern = "water_shallow",
+  pattern = "block",
 }
 
 tile{
   layer = 1,
-  x = 104,
-  y = 40,
-  width = 32,
-  height = 64,
-  pattern = "water_shallow",
-}
-
-tile{
-  layer = 1,
-  x = 40,
-  y = 40,
-  width = 64,
-  height = 64,
-  pattern = "water_shallow",
-}
-
-tile{
-  layer = 1,
-  x = 88,
-  y = 80,
+  x = 216,
+  y = 72,
   width = 16,
   height = 16,
   pattern = "block",
@@ -45,35 +54,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 88,
-  y = 48,
-  width = 16,
-  height = 16,
-  pattern = "block",
-}
-
-tile{
-  layer = 1,
-  x = 56,
-  y = 48,
-  width = 16,
-  height = 16,
-  pattern = "block",
-}
-
-tile{
-  layer = 1,
-  x = 56,
-  y = 80,
-  width = 16,
-  height = 16,
-  pattern = "block",
-}
-
-tile{
-  layer = 1,
-  x = 32,
-  y = 96,
+  x = 176,
+  y = 88,
   width = 8,
   height = 8,
   pattern = "water_shallow.corner.3",
@@ -81,8 +63,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 32,
-  y = 40,
+  x = 176,
+  y = 32,
   width = 8,
   height = 56,
   pattern = "water_shallow.3",
@@ -90,8 +72,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 40,
-  y = 96,
+  x = 184,
+  y = 88,
   width = 96,
   height = 8,
   pattern = "water_shallow.2",
@@ -99,8 +81,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 136,
-  y = 96,
+  x = 280,
+  y = 88,
   width = 8,
   height = 8,
   pattern = "water_shallow.corner.4",
@@ -108,8 +90,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 136,
-  y = 40,
+  x = 280,
+  y = 32,
   width = 8,
   height = 56,
   pattern = "water_shallow.4",
@@ -117,8 +99,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 136,
-  y = 32,
+  x = 280,
+  y = 24,
   width = 8,
   height = 8,
   pattern = "water_shallow.corner.2",
@@ -126,8 +108,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 32,
-  y = 32,
+  x = 176,
+  y = 24,
   width = 8,
   height = 8,
   pattern = "water_shallow.corner.1",
@@ -135,8 +117,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 40,
-  y = 32,
+  x = 184,
+  y = 24,
   width = 96,
   height = 8,
   pattern = "water_shallow.1",
@@ -144,26 +126,17 @@ tile{
 
 tile{
   layer = 1,
-  x = 32,
-  y = 56,
+  x = 280,
+  y = 48,
   width = 8,
   height = 32,
-  pattern = "water_wall.drain.3",
+  pattern = "water_wall.drain.4",
 }
 
 tile{
   layer = 1,
-  x = 16,
-  y = 56,
-  width = 16,
-  height = 32,
-  pattern = "water_wall.drain_gate.3",
-}
-
-tile{
-  layer = 1,
-  x = 64,
-  y = 8,
+  x = 224,
+  y = 0,
   width = 32,
   height = 24,
   pattern = "wall_statue.6.1",
@@ -171,17 +144,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 64,
-  y = 32,
-  width = 32,
-  height = 8,
-  pattern = "waterfall.1.middle",
-}
-
-tile{
-  layer = 1,
-  x = 72,
-  y = 24,
+  x = 232,
+  y = 16,
   width = 16,
   height = 8,
   pattern = "waterfall.1.top",
@@ -189,8 +153,17 @@ tile{
 
 tile{
   layer = 1,
-  x = 64,
-  y = 40,
+  x = 224,
+  y = 24,
+  width = 32,
+  height = 8,
+  pattern = "waterfall.1.middle",
+}
+
+tile{
+  layer = 1,
+  x = 224,
+  y = 32,
   width = 32,
   height = 8,
   pattern = "waterfall.1.bottom",
@@ -198,20 +171,8 @@ tile{
 
 block{
   layer = 1,
-  x = 80,
-  y = 61,
-  name = "block_1",
-  direction = -1,
-  sprite = "entities/block",
-  pushable = true,
-  pullable = false,
-  maximum_moves = 1,
-}
-
-block{
-  layer = 1,
-  x = 96,
-  y = 77,
+  x = 256,
+  y = 69,
   name = "block_2",
   direction = -1,
   sprite = "entities/block",
@@ -222,8 +183,8 @@ block{
 
 block{
   layer = 1,
-  x = 80,
-  y = 93,
+  x = 240,
+  y = 85,
   name = "block_3",
   direction = -1,
   sprite = "entities/block",
@@ -234,8 +195,8 @@ block{
 
 block{
   layer = 1,
-  x = 64,
-  y = 77,
+  x = 224,
+  y = 69,
   name = "block_4",
   direction = -1,
   sprite = "entities/block",
@@ -246,8 +207,8 @@ block{
 
 dynamic_tile{
   layer = 1,
-  x = 104,
-  y = 48,
+  x = 200,
+  y = 40,
   width = 16,
   height = 16,
   name = "treasure_obstacle_chest",
@@ -257,8 +218,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 120,
-  y = 48,
+  x = 184,
+  y = 40,
   width = 16,
   height = 16,
   name = "treasure_open_chest",
@@ -268,8 +229,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 120,
-  y = 80,
+  x = 184,
+  y = 72,
   width = 16,
   height = 16,
   name = "enemy",
