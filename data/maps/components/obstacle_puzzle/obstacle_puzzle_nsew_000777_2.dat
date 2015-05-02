@@ -108,6 +108,7 @@ dynamic_tile{
   y = 72,
   width = 16,
   height = 16,
+  name = "pot_3",
   pattern = "floor_pot",
   enabled_at_start = true,
 }
@@ -129,6 +130,7 @@ dynamic_tile{
   y = 56,
   width = 16,
   height = 16,
+  name = "pot_4",
   pattern = "floor_pot",
   enabled_at_start = true,
 }
@@ -150,6 +152,7 @@ dynamic_tile{
   y = 56,
   width = 16,
   height = 16,
+  name = "pot_5",
   pattern = "floor_pot",
   enabled_at_start = true,
 }
@@ -160,6 +163,7 @@ dynamic_tile{
   y = 72,
   width = 16,
   height = 16,
+  name = "pot_6",
   pattern = "floor_pot",
   enabled_at_start = true,
 }

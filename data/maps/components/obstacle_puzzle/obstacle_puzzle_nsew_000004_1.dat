@@ -64,15 +64,6 @@ tile{
 tile{
   layer = 1,
   x = 88,
-  y = 176,
-  width = 16,
-  height = 16,
-  pattern = "block",
-}
-
-tile{
-  layer = 1,
-  x = 88,
   y = 144,
   width = 16,
   height = 16,
@@ -92,7 +83,7 @@ tile{
   layer = 1,
   x = 56,
   y = 176,
-  width = 16,
+  width = 48,
   height = 16,
   pattern = "block",
 }
@@ -222,18 +213,6 @@ block{
   x = 96,
   y = 173,
   name = "block_4",
-  direction = -1,
-  sprite = "entities/block",
-  pushable = true,
-  pullable = false,
-  maximum_moves = 1,
-}
-
-block{
-  layer = 1,
-  x = 80,
-  y = 189,
-  name = "block_3",
   direction = -1,
   sprite = "entities/block",
   pushable = true,

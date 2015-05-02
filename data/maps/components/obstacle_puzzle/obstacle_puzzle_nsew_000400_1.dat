@@ -45,18 +45,9 @@ tile{
 
 tile{
   layer = 1,
-  x = 88,
-  y = 48,
-  width = 16,
-  height = 16,
-  pattern = "block",
-}
-
-tile{
-  layer = 1,
   x = 56,
   y = 48,
-  width = 16,
+  width = 48,
   height = 16,
   pattern = "block",
 }
@@ -194,18 +185,6 @@ tile{
   width = 32,
   height = 8,
   pattern = "waterfall.1.bottom",
-}
-
-block{
-  layer = 1,
-  x = 80,
-  y = 61,
-  name = "block_1",
-  direction = -1,
-  sprite = "entities/block",
-  pushable = true,
-  pullable = false,
-  maximum_moves = 1,
 }
 
 block{
