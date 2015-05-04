@@ -229,7 +229,7 @@ tile{
   y = 160,
   width = 8,
   height = 8,
-  pattern = "floor_border.1",
+  pattern = "floor_border.2",
 }
 
 tile{
@@ -238,7 +238,7 @@ tile{
   y = 160,
   width = 8,
   height = 8,
-  pattern = "floor_border.1",
+  pattern = "floor_border.2",
 }
 
 tile{
@@ -247,7 +247,7 @@ tile{
   y = 72,
   width = 8,
   height = 8,
-  pattern = "floor_border.1",
+  pattern = "floor_border.2",
 }
 
 tile{
@@ -256,7 +256,7 @@ tile{
   y = 72,
   width = 8,
   height = 8,
-  pattern = "floor_border.1",
+  pattern = "floor_border.2",
 }
 
 tile{

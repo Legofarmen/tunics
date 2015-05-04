@@ -22,7 +22,7 @@ tile{
   y = 40,
   width = 8,
   height = 160,
-  pattern = "floor_border.1",
+  pattern = "floor_border.2",
 }
 
 tile{
@@ -31,7 +31,7 @@ tile{
   y = 40,
   width = 8,
   height = 160,
-  pattern = "floor_border.1",
+  pattern = "floor_border.2",
 }
 
 tile{

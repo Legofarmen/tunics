@@ -13,7 +13,7 @@ tile{
   y = 144,
   width = 96,
   height = 48,
-  pattern = "floor_border.1",
+  pattern = "floor_border.2",
 }
 
 tile{

@@ -502,7 +502,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "boss_1",
-  pattern = "floor_small.1",
+  pattern = "floor_small.2",
   enabled_at_start = false,
 }
 
@@ -513,7 +513,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "boss_2",
-  pattern = "floor_small.1",
+  pattern = "floor_small.2",
   enabled_at_start = false,
 }
 
@@ -524,7 +524,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "boss_3",
-  pattern = "floor_small.1",
+  pattern = "floor_small.2",
   enabled_at_start = false,
 }
 
