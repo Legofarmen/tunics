@@ -9,28 +9,19 @@ properties{
 
 tile{
   layer = 1,
+  x = 40,
+  y = 32,
+  width = 96,
+  height = 64,
+  pattern = "water_shallow",
+}
+
+tile{
+  layer = 1,
   x = 56,
   y = 88,
   width = 48,
   height = 16,
-  pattern = "water_shallow",
-}
-
-tile{
-  layer = 1,
-  x = 104,
-  y = 40,
-  width = 32,
-  height = 64,
-  pattern = "water_shallow",
-}
-
-tile{
-  layer = 1,
-  x = 40,
-  y = 40,
-  width = 64,
-  height = 64,
   pattern = "water_shallow",
 }
 
@@ -47,7 +38,7 @@ tile{
   layer = 1,
   x = 56,
   y = 48,
-  width = 48,
+  width = 16,
   height = 16,
   pattern = "block",
 }
@@ -187,40 +178,13 @@ tile{
   pattern = "waterfall.1.bottom",
 }
 
-block{
+tile{
   layer = 1,
-  x = 96,
-  y = 77,
-  name = "block_2",
-  direction = -1,
-  sprite = "entities/block",
-  pushable = true,
-  pullable = false,
-  maximum_moves = 1,
-}
-
-block{
-  layer = 1,
-  x = 80,
-  y = 93,
-  name = "block_3",
-  direction = -1,
-  sprite = "entities/block",
-  pushable = true,
-  pullable = false,
-  maximum_moves = 1,
-}
-
-block{
-  layer = 1,
-  x = 64,
-  y = 77,
-  name = "block_4",
-  direction = -1,
-  sprite = "entities/block",
-  pushable = true,
-  pullable = false,
-  maximum_moves = 1,
+  x = 88,
+  y = 48,
+  width = 16,
+  height = 16,
+  pattern = "block",
 }
 
 dynamic_tile{
@@ -265,5 +229,49 @@ switch{
   sprite = "entities/switch",
   needs_block = false,
   inactivate_when_leaving = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 72,
+  y = 48,
+  width = 16,
+  height = 16,
+  name = "pot_1",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 56,
+  y = 64,
+  width = 16,
+  height = 16,
+  name = "pot_2",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 88,
+  y = 64,
+  width = 16,
+  height = 16,
+  name = "pot_3",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 72,
+  y = 80,
+  width = 16,
+  height = 16,
+  name = "pot_4",
+  pattern = "floor_pot",
+  enabled_at_start = true,
 }
 

@@ -413,7 +413,7 @@ tile{
 }
 
 tile{
-  layer = 0,
+  layer = 1,
   x = 160,
   y = 104,
   width = 24,
@@ -422,7 +422,7 @@ tile{
 }
 
 tile{
-  layer = 0,
+  layer = 1,
   x = 136,
   y = 104,
   width = 24,
@@ -1420,6 +1420,42 @@ tile{
   pattern = "waterfall.3.bottom",
 }
 
+tile{
+  layer = 1,
+  x = 192,
+  y = 104,
+  width = 24,
+  height = 32,
+  pattern = "wall_statue.6.4",
+}
+
+tile{
+  layer = 1,
+  x = 192,
+  y = 112,
+  width = 8,
+  height = 16,
+  pattern = "waterfall.4.top",
+}
+
+tile{
+  layer = 1,
+  x = 184,
+  y = 104,
+  width = 8,
+  height = 32,
+  pattern = "waterfall.4.middle",
+}
+
+tile{
+  layer = 1,
+  x = 176,
+  y = 104,
+  width = 8,
+  height = 32,
+  pattern = "waterfall.4.bottom",
+}
+
 dynamic_tile{
   layer = 1,
   x = 96,
@@ -1451,5 +1487,25 @@ dynamic_tile{
   name = "enemy",
   pattern = "floor_small.2",
   enabled_at_start = false,
+}
+
+jumper{
+  layer = 1,
+  x = 136,
+  y = 128,
+  width = 48,
+  height = 8,
+  direction = 2,
+  jump_length = 16,
+}
+
+jumper{
+  layer = 1,
+  x = 136,
+  y = 104,
+  width = 48,
+  height = 8,
+  direction = 6,
+  jump_length = 40,
 }
 

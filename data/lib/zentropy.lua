@@ -612,7 +612,7 @@ function zentropy.game.new_game(is_retry)
     zentropy.game.setup_tier_initial(tier)
 
     if zentropy.settings.skip_cinematics then 
-		zentropy.game.game:set_starting_location('tompa/test')
+		zentropy.game.game:set_starting_location('dungeons/dungeon1')
 	elseif is_retry then
 		zentropy.game.game:set_starting_location('rooms/intro_3', 'retry')
     else
