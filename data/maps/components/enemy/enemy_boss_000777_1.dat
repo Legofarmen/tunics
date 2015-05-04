@@ -531,7 +531,7 @@ dynamic_tile{
 enemy{
   layer = 1,
   x = 160,
-  y = 157,
+  y = 133,
   name = "agahnim",
   direction = 3,
   breed = "agahnim",
