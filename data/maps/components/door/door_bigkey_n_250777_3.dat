@@ -9,6 +9,24 @@ properties{
 
 tile{
   layer = 1,
+  x = 56,
+  y = 56,
+  width = 16,
+  height = 128,
+  pattern = "floor.19",
+}
+
+tile{
+  layer = 1,
+  x = 248,
+  y = 56,
+  width = 16,
+  height = 128,
+  pattern = "floor.19",
+}
+
+tile{
+  layer = 1,
   x = 240,
   y = 8,
   width = 32,
@@ -68,15 +86,6 @@ tile{
   width = 16,
   height = 24,
   pattern = "wall_low.1",
-}
-
-tile{
-  layer = 1,
-  x = 248,
-  y = 56,
-  width = 16,
-  height = 128,
-  pattern = "hole",
 }
 
 tile{
@@ -266,15 +275,6 @@ tile{
   width = 16,
   height = 24,
   pattern = "wall_low.1",
-}
-
-tile{
-  layer = 1,
-  x = 56,
-  y = 56,
-  width = 16,
-  height = 128,
-  pattern = "hole",
 }
 
 tile{
@@ -616,7 +616,7 @@ dynamic_tile{
   y = 16,
   width = 16,
   height = 16,
-  name = "door_open_3",
+  name = "door_open",
   pattern = "door.1",
   enabled_at_start = true,
 }
@@ -636,7 +636,7 @@ sensor{
   y = 45,
   width = 16,
   height = 16,
-  name = "sensor_2",
+  name = "sensor",
 }
 
 tile{

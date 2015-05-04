@@ -265,7 +265,7 @@ dynamic_tile{
   y = 16,
   width = 16,
   height = 16,
-  name = "door_open_2",
+  name = "door_open",
   pattern = "door.1",
   enabled_at_start = true,
 }
@@ -285,7 +285,7 @@ sensor{
   y = 45,
   width = 16,
   height = 16,
-  name = "sensor_2",
+  name = "sensor",
 }
 
 tile{

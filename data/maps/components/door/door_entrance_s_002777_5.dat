@@ -328,7 +328,7 @@ dynamic_tile{
   y = 184,
   width = 32,
   height = 24,
-  name = "entrance_carpet_2",
+  name = "entrance_carpet",
   pattern = "door_main.2.floor.1",
   enabled_at_start = true,
 }
@@ -370,7 +370,7 @@ sensor{
   y = 205,
   width = 16,
   height = 16,
-  name = "sensor_2",
+  name = "sensor",
 }
 
 dynamic_tile{
