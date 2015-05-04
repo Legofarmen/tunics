@@ -1,0 +1,326 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  tileset = "dungeon_brick_gray_1",
+  music = "same",
+}
+
+tile{
+  layer = 1,
+  x = 120,
+  y = 40,
+  width = 80,
+  height = 96,
+  pattern = "floor_small.4",
+}
+
+tile{
+  layer = 1,
+  x = 192,
+  y = 40,
+  width = 8,
+  height = 96,
+  pattern = "floor_grid",
+}
+
+tile{
+  layer = 1,
+  x = 128,
+  y = 40,
+  width = 64,
+  height = 32,
+  pattern = "floor.20",
+}
+
+tile{
+  layer = 1,
+  x = 144,
+  y = 16,
+  width = 8,
+  height = 16,
+  pattern = "door.1.support.1",
+}
+
+tile{
+  layer = 1,
+  x = 168,
+  y = 16,
+  width = 8,
+  height = 16,
+  pattern = "door.1.support.2",
+}
+
+tile{
+  layer = 1,
+  x = 152,
+  y = 0,
+  width = 16,
+  height = 16,
+  pattern = "floor.1",
+}
+
+tile{
+  layer = 1,
+  x = 144,
+  y = 0,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.2",
+}
+
+tile{
+  layer = 1,
+  x = 168,
+  y = 0,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.2",
+}
+
+tile{
+  layer = 1,
+  x = 176,
+  y = 16,
+  width = 16,
+  height = 24,
+  pattern = "door_boss.1.pillar.2",
+}
+
+tile{
+  layer = 1,
+  x = 128,
+  y = 16,
+  width = 16,
+  height = 24,
+  pattern = "door_boss.1.pillar.1",
+}
+
+tile{
+  layer = 1,
+  x = 80,
+  y = 8,
+  width = 16,
+  height = 32,
+  pattern = "wall_pillar.1.1",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 8,
+  width = 16,
+  height = 32,
+  pattern = "wall_pillar.1.1",
+}
+
+tile{
+  layer = 1,
+  x = 224,
+  y = 8,
+  width = 16,
+  height = 32,
+  pattern = "wall_pillar.1.1",
+}
+
+tile{
+  layer = 1,
+  x = 272,
+  y = 8,
+  width = 16,
+  height = 32,
+  pattern = "wall_pillar.1.1",
+}
+
+tile{
+  layer = 1,
+  x = 120,
+  y = 40,
+  width = 8,
+  height = 96,
+  pattern = "floor_grid",
+}
+
+tile{
+  layer = 1,
+  x = 72,
+  y = 88,
+  width = 16,
+  height = 16,
+  pattern = "pillar.bottom",
+}
+
+tile{
+  layer = 1,
+  x = 72,
+  y = 152,
+  width = 16,
+  height = 16,
+  pattern = "pillar.bottom",
+}
+
+tile{
+  layer = 1,
+  x = 232,
+  y = 88,
+  width = 16,
+  height = 16,
+  pattern = "pillar.bottom",
+}
+
+tile{
+  layer = 1,
+  x = 232,
+  y = 152,
+  width = 16,
+  height = 16,
+  pattern = "pillar.bottom",
+}
+
+tile{
+  layer = 1,
+  x = 128,
+  y = 128,
+  width = 64,
+  height = 8,
+  pattern = "floor_grid",
+}
+
+tile{
+  layer = 1,
+  x = 96,
+  y = 8,
+  width = 32,
+  height = 32,
+  pattern = "drapes.3.1",
+}
+
+tile{
+  layer = 1,
+  x = 192,
+  y = 8,
+  width = 32,
+  height = 32,
+  pattern = "drapes.3.1",
+}
+
+tile{
+  layer = 1,
+  x = 240,
+  y = 8,
+  width = 32,
+  height = 32,
+  pattern = "drapes.3.1",
+}
+
+tile{
+  layer = 1,
+  x = 48,
+  y = 8,
+  width = 32,
+  height = 32,
+  pattern = "drapes.3.1",
+}
+
+tile{
+  layer = 1,
+  x = 72,
+  y = 72,
+  width = 16,
+  height = 16,
+  pattern = "pillar.top",
+}
+
+tile{
+  layer = 1,
+  x = 72,
+  y = 136,
+  width = 16,
+  height = 16,
+  pattern = "pillar.top",
+}
+
+tile{
+  layer = 1,
+  x = 232,
+  y = 72,
+  width = 16,
+  height = 16,
+  pattern = "pillar.top",
+}
+
+tile{
+  layer = 1,
+  x = 232,
+  y = 136,
+  width = 16,
+  height = 16,
+  pattern = "pillar.top",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 152,
+  y = 16,
+  width = 16,
+  height = 16,
+  name = "door_open_2",
+  pattern = "door.1",
+  enabled_at_start = true,
+}
+
+wall{
+  layer = 1,
+  x = 152,
+  y = 16,
+  width = 16,
+  height = 16,
+  stops_enemies = true,
+}
+
+sensor{
+  layer = 1,
+  x = 160,
+  y = 45,
+  width = 16,
+  height = 16,
+  name = "sensor_2",
+}
+
+tile{
+  layer = 2,
+  x = 120,
+  y = 8,
+  width = 80,
+  height = 8,
+  pattern = "door_cache.1",
+}
+
+tile{
+  layer = 2,
+  x = 144,
+  y = 8,
+  width = 32,
+  height = 8,
+  pattern = "door_top.closed.1",
+}
+
+tile{
+  layer = 2,
+  x = 128,
+  y = 8,
+  width = 16,
+  height = 8,
+  pattern = "door_boss.1.pillar.1.top",
+}
+
+tile{
+  layer = 2,
+  x = 176,
+  y = 8,
+  width = 16,
+  height = 8,
+  pattern = "door_boss.1.pillar.2.top",
+}
+
