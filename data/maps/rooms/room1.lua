@@ -42,7 +42,9 @@ end
 local walls = {}
 for _, dir in ipairs{'north','south','east','west'} do
     if data.doors[dir] then
-        room:hint_door(dir)
+        if not data.doors[dir].reach then
+            room:hint_door(dir)
+        end
     else
         table.insert(walls, dir)
     end
