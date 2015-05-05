@@ -448,9 +448,7 @@ end
 function zentropy.Room:delayed_door(data, dir)
     zentropy.assert(data.room_events)
     if not data then return end
-    zentropy.debug(util.fromoct(self.mask))
     self.mask = bit32.band(self.mask, bit32.bnot(zentropy.get_door_mask(dir)))
-    zentropy.debug(util.fromoct(self.mask))
     local component_name, component_mask = zentropy.components:get_door(data.open, dir, self.mask, self.rng:refine('door_' .. dir))
     if not component_name then
         self.data_messages('error', string.format("door not found: open=%s dir=%s mask=%06o", data.open, dir, self.mask))
@@ -523,7 +521,6 @@ end
 
 function zentropy.Room:treasure(treasure_data)
     zentropy.assert(not treasure_data.see)
-    zentropy.debug(treasure_data.item_name)
     local rng = self.rng:refine('treasure')
     local component_name, component_mask = zentropy.components:get_treasure(treasure_data.open, self.mask, rng)
     if not component_name then
