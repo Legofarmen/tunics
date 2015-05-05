@@ -40,21 +40,25 @@ end
 
 
 local walls = {}
-local delayed_doors = {}
 for _, dir in ipairs{'north','south','east','west'} do
     if data.doors[dir] then
-        if data.doors[dir].reach then
-            assert(not obstacle_item or obstacle_item == data.doors[dir].reach)
-            obstacle_item = data.doors[dir].reach
-        else
-            local door = room:delayed_door({open=data.doors[dir].open, name=data.doors[dir].name, room_events=room_events}, dir)
-            if not door then
-                error(util.table_string('messages', messages))
-            end
-            table.insert(delayed_doors, door)
-        end
+        room:hint_door(dir)
     else
         table.insert(walls, dir)
+    end
+end
+
+local delayed_doors = {}
+for dir, door in pairs(data.doors) do
+    if door.reach then
+        assert(not obstacle_item or obstacle_item == door.reach)
+        obstacle_item = door.reach
+    else
+        local door = room:delayed_door({open=door.open, name=door.name, room_events=room_events}, dir)
+        if not door then
+            error(util.table_string('messages', messages))
+        end
+        table.insert(delayed_doors, door)
     end
 end
 

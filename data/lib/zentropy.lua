@@ -278,36 +278,34 @@ function zentropy.db.Components:get_door(open, dir, mask, rng)
     return entry.id, entry.mask
 end
 
+function zentropy.get_door_mask(dir)
+    local door_mask = 0
+    if dir:find('north') then door_mask = bit32.bor(door_mask, util.oct('200000')) end
+    if dir:find('south') then door_mask = bit32.bor(door_mask, util.oct('002000')) end
+    if dir:find('east') then door_mask = bit32.bor(door_mask, util.oct('010000')) end
+    if dir:find('west') then door_mask = bit32.bor(door_mask, util.oct('040000')) end
+    return door_mask
+end
+
 function zentropy.db.Components:get_obstacle(item, dir, mask, rng)
     if not self.obstacles[item] then
         return
     end
-    local dir_bits = 0
-    local door_mask = 0
-    if string.gmatch(dir, 'north')() then
-        dir_bits = bit32.bor(dir_bits, 8)
-        door_mask = bit32.bor(door_mask, util.oct('200000'));
-    end
-    if string.gmatch(dir, 'south')() then
-        dir_bits = bit32.bor(dir_bits, 4)
-        door_mask = bit32.bor(door_mask, util.oct('040000'));
-    end
-    if string.gmatch(dir, 'east')() then
-        dir_bits = bit32.bor(dir_bits, 2)
-        door_mask = bit32.bor(door_mask, util.oct('010000'));
-    end
-    if string.gmatch(dir, 'west')() then
-        dir_bits = bit32.bor(dir_bits, 1)
-        door_mask = bit32.bor(door_mask, util.oct('002000'));
-    end
+
+    local door_bits = 0
+    if dir:find('north') then door_bits = door_bits + 8 end
+    if dir:find('south') then door_bits = door_bits + 4 end
+    if dir:find('east') then door_bits = door_bits + 2 end
+    if dir:find('west') then door_bits = door_bits + 1 end
+
     local doors = {}
     for i = 0, 15 do
+        local bits = bit32.bor(i, door_bits)
         local d = ''
-        local new_bits = bit32.bor(dir_bits, i)
-        if bit32.band(new_bits, 8) ~= 0 then d = d .. 'n' end
-        if bit32.band(new_bits, 4) ~= 0 then d = d .. 's' end
-        if bit32.band(new_bits, 2) ~= 0 then d = d .. 'e' end
-        if bit32.band(new_bits, 1) ~= 0 then d = d .. 'w' end
+        if bit32.band(bits, 8) ~= 0 then d = d .. 'n' end
+        if bit32.band(bits, 4) ~= 0 then d = d .. 's' end
+        if bit32.band(bits, 2) ~= 0 then d = d .. 'e' end
+        if bit32.band(bits, 1) ~= 0 then d = d .. 'w' end
         doors[d] = true
     end
 
@@ -323,7 +321,7 @@ function zentropy.db.Components:get_obstacle(item, dir, mask, rng)
         return
     end
     local entry = entries[rng:random(#entries)]
-    return entry.id, bit32.bor(entry.mask, door_mask)
+    return entry.id, bit32.bor(entry.mask, zentropy.get_door_mask(dir))
 end
 
 function zentropy.db.Components:get_filler(mask, rng)
@@ -443,9 +441,16 @@ function zentropy.Room:door(data, dir)
     return include()
 end
 
+function zentropy.Room:hint_door(dir)
+    self.mask = bit32.bor(self.mask, zentropy.get_door_mask(dir))
+end
+
 function zentropy.Room:delayed_door(data, dir)
     zentropy.assert(data.room_events)
     if not data then return end
+    zentropy.debug(util.fromoct(self.mask))
+    self.mask = bit32.band(self.mask, bit32.bnot(zentropy.get_door_mask(dir)))
+    zentropy.debug(util.fromoct(self.mask))
     local component_name, component_mask = zentropy.components:get_door(data.open, dir, self.mask, self.rng:refine('door_' .. dir))
     if not component_name then
         self.data_messages('error', string.format("door not found: open=%s dir=%s mask=%06o", data.open, dir, self.mask))
