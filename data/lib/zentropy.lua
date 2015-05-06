@@ -657,6 +657,8 @@ function zentropy.game.catch_up_on_items(tier)
             end
         end
     end
+    zentropy.game.game:set_max_life(4 * tier + 8)
+    zentropy.game.game:set_life(4 * tier + 8)
 end
 
 function zentropy.game.setup_tier_initial(tier)
