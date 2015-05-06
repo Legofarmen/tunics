@@ -5,10 +5,9 @@ local door_bigkey = {}
 function door_bigkey.init(map, data, direction)
 
     zentropy.inject_door(map:get_entity('door_open'), {
-        savegame_variable = data.name,
         direction = direction,
         sprite = "entities/door_big_key",
-        opening_method = "interaction_if_savegame_variable",
+        opening_method = "interaction_if_item",
         opening_condition = "bigkey",
     })
 
