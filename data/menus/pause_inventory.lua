@@ -20,12 +20,6 @@ function inventory_submenu:on_started()
         else
             table.insert(self.passive_items, item)
         end
-    end
-
-
-    for k = 1, #self.assignable_items do
-        -- Get the item, its possession state and amount.
-        local item = self.assignable_items[k]
         local variant = item:get_variant()
 
         if variant > 0 then
@@ -34,7 +28,7 @@ function inventory_submenu:on_started()
                 local amount = item:get_amount()
                 local maximum = item:get_max_amount()
 
-                self.counters[k] = sol.text_surface.create{
+                self.counters[item_name] = sol.text_surface.create{
                     horizontal_alignment = "center",
                     vertical_alignment = "top",
                     text = item:get_amount(),
@@ -43,9 +37,9 @@ function inventory_submenu:on_started()
             end
 
             -- Initialize the sprite and the caption string.
-            self.sprites[k] = sol.sprite.create("entities/items")
-            self.sprites[k]:set_animation(item:get_name())
-            self.sprites[k]:set_direction(variant - 1)
+            self.sprites[item_name] = sol.sprite.create("entities/items")
+            self.sprites[item_name]:set_animation(item:get_name())
+            self.sprites[item_name]:set_direction(variant - 1)
         end
     end
 
@@ -196,9 +190,9 @@ function inventory_submenu:on_draw(dst_surface)
         local item = self.assignable_items[k]
         if item:get_variant() > 0 then
           -- The player has this item: draw it.
-          self.sprites[k]:draw(dst_surface, x, y)
-          if self.counters[k] ~= nil then
-            self.counters[k]:draw(dst_surface, x + 8, y)
+          self.sprites[item:get_name()]:draw(dst_surface, x, y)
+          if self.counters[item:get_name()] ~= nil then
+            self.counters[item:get_name()]:draw(dst_surface, x + 8, y)
           end
         end
       end
@@ -207,7 +201,15 @@ function inventory_submenu:on_draw(dst_surface)
     y = y + 24
   end
 
-  -- Draw the cursor.
+    for i, item in ipairs(self.passive_items) do
+        if item:get_variant() > 0 then
+            local x = initial_x + delta_x * (i - 1)
+            local y = 172
+            self.sprites[item:get_name()]:draw(dst_surface, x, y)
+        end
+    end
+
+    -- Draw the cursor.
   self.cursor_sprite:draw(dst_surface, initial_x + delta_x * self.cursor_column, initial_y - 5 + delta_y * self.cursor_row)
 
   -- Draw the item being assigned if any.
