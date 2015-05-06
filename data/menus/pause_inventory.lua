@@ -52,6 +52,14 @@ function inventory_submenu:on_started()
         column = 0
     end
     self:set_cursor_position(row, column)
+
+    self.map_icons = sol.surface.create("menus/dungeon_map_icons.png")
+    self.small_keys_text = sol.text_surface.create{
+        font = "white_digits",
+        horizontal_alignment = "right",
+        vertical_alignment = "top",
+        text = self.game:get_value('small_key_amount')
+    }
 end
 
 function inventory_submenu:on_finished()
@@ -176,11 +184,13 @@ function inventory_submenu:on_draw(dst_surface)
   -- Draw each inventory item.
   local initial_x = 88
   local initial_y = 76
+  local dungeon_x = 201
+  local dungeon_y = 63
   local delta_x = 24
   local delta_y = 24
+
   local y = initial_y
   local k = 0
-
   for i = 0, 3 do
     local x = initial_x
 
@@ -216,6 +226,28 @@ function inventory_submenu:on_draw(dst_surface)
   if self:is_assigning_item() then
     self.item_assigned_sprite:draw(dst_surface)
   end
+
+        -- Map.
+    if self.game:get_value('map') then
+        self.map_icons:draw_region(0, 0, 17, 17, dst_surface, dungeon_x, dungeon_y)
+    end
+
+    -- Compass.
+    if self.game:get_value('compass') then
+        self.map_icons:draw_region(17, 0, 17, 17, dst_surface, dungeon_x, dungeon_y + delta_y)
+    end
+
+    -- Big key.
+    if self.game:get_value('bigkey') then
+        self.map_icons:draw_region(34, 0, 17, 17, dst_surface, dungeon_x + delta_x, dungeon_y)
+    end
+
+    -- Small keys.
+    if self.game:get_value('small_key') then
+        self.map_icons:draw_region(68, 0, 9, 17, dst_surface, dungeon_x + delta_x + 2, dungeon_y + delta_y - 1)
+        self.small_keys_text:set_xy(dungeon_x + delta_x + 18, dungeon_y + delta_y + 8)
+        self.small_keys_text:draw(dst_surface)
+    end
 
 end
 
