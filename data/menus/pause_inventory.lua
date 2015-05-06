@@ -43,6 +43,18 @@ function inventory_submenu:on_started()
         end
     end
 
+    if self.game:get_value('tier') >= 2 then
+        self.sprites.tunic = sol.sprite.create("entities/tunic_1")
+        if self.game:get_value('tier') > 6 then
+            self.counters.tunic = sol.text_surface.create{
+                horizontal_alignment = "center",
+                vertical_alignment = "top",
+                text = self.game:get_value('tier') - 1,
+                font = "white_digits",
+            }
+        end
+    end
+
     -- Initialize the cursor
     local index = self.game:get_value("pause_inventory_last_item_index") or 0
     local row = math.floor(index / 4)
@@ -181,13 +193,19 @@ function inventory_submenu:on_draw(dst_surface)
   self.background:draw(dst_surface, 0, 0)
   self:draw_caption(dst_surface)
 
-  -- Draw each inventory item.
-  local initial_x = 88
-  local initial_y = 76
-  local dungeon_x = 201
-  local dungeon_y = 63
-  local delta_x = 24
-  local delta_y = 24
+    -- Draw each inventory item.
+    local initial_x = 88
+    local initial_y = 76
+    local dungeon_x = 201
+    local dungeon_y = 63
+    local tunic_x = 220
+    local tunic_y = 160
+    local passive_x = 88
+    local passive_y = 172
+    local delta_x = 24
+    local delta_y = 24
+    local tunic_delta_x = 8
+    local tunic_delta_y = 4
 
   local y = initial_y
   local k = 0
@@ -213,8 +231,8 @@ function inventory_submenu:on_draw(dst_surface)
 
     for i, item in ipairs(self.passive_items) do
         if item:get_variant() > 0 then
-            local x = initial_x + delta_x * (i - 1)
-            local y = 172
+            local x = passive_x + delta_x * (i - 1)
+            local y = passive_y
             self.sprites[item:get_name()]:draw(dst_surface, x, y)
         end
     end
@@ -249,6 +267,19 @@ function inventory_submenu:on_draw(dst_surface)
         self.small_keys_text:draw(dst_surface)
     end
 
+    if self.game:get_value('tier') > 6 then
+        self.sprites.tunic:draw(dst_surface, tunic_x, tunic_y)
+        self.counters.tunic:draw(dst_surface, tunic_x + 8, tunic_y)
+    else
+        for i = 1, self.game:get_value('tier') - 1 do
+            local x = tunic_x + ((2 - self.game:get_value('tier')) / 2 + i - 1) * tunic_delta_x
+            local y = tunic_y
+            if self.game:get_value('tier') > 2 then
+                y = y - (i % 2) * tunic_delta_y + tunic_delta_y / 2
+            end
+            self.sprites.tunic:draw(dst_surface, x, y)
+        end
+    end
 end
 
 -- Shows a message describing the item currently selected.
