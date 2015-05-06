@@ -1,0 +1,125 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  floor = 0,
+  tileset = "dungeon_brick_gray_1",
+  music = "same",
+}
+
+enemy{
+  layer = 1,
+  x = 40,
+  y = 93,
+  direction = 3,
+  breed = "pike_fixed",
+}
+
+enemy{
+  layer = 1,
+  x = 40,
+  y = 77,
+  direction = 3,
+  breed = "pike_fixed",
+}
+
+enemy{
+  layer = 1,
+  x = 56,
+  y = 77,
+  direction = 3,
+  breed = "pike_fixed",
+}
+
+enemy{
+  layer = 1,
+  x = 40,
+  y = 61,
+  direction = 3,
+  breed = "pike_fixed",
+}
+
+enemy{
+  layer = 1,
+  x = 56,
+  y = 61,
+  direction = 3,
+  breed = "pike_fixed",
+}
+
+enemy{
+  layer = 1,
+  x = 72,
+  y = 61,
+  direction = 3,
+  breed = "pike_fixed",
+}
+
+enemy{
+  layer = 1,
+  x = 88,
+  y = 61,
+  direction = 3,
+  breed = "pike_fixed",
+}
+
+enemy{
+  layer = 1,
+  x = 120,
+  y = 45,
+  direction = 3,
+  breed = "pike_fixed",
+}
+
+enemy{
+  layer = 1,
+  x = 104,
+  y = 45,
+  direction = 3,
+  breed = "pike_fixed",
+}
+
+enemy{
+  layer = 1,
+  x = 88,
+  y = 45,
+  direction = 3,
+  breed = "pike_fixed",
+}
+
+enemy{
+  layer = 1,
+  x = 72,
+  y = 45,
+  direction = 3,
+  breed = "pike_fixed",
+}
+
+enemy{
+  layer = 1,
+  x = 56,
+  y = 45,
+  direction = 3,
+  breed = "pike_fixed",
+}
+
+enemy{
+  layer = 1,
+  x = 40,
+  y = 45,
+  direction = 3,
+  breed = "pike_fixed",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 88,
+  y = 72,
+  width = 16,
+  height = 16,
+  name = "enemy_2",
+  pattern = "carpet.1",
+  enabled_at_start = false,
+}
+
