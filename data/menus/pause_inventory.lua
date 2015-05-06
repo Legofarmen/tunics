@@ -11,6 +11,7 @@ local item_names = {
 function inventory_submenu:on_started()
 
     submenu.on_started(self)
+    self.background = sol.surface.create("inventory_menu.png", true)
 
     self.cursor_sprite = sol.sprite.create("menus/pause_cursor")
     self.sprites = {}
@@ -45,9 +46,9 @@ function inventory_submenu:on_started()
 
     -- Initialize the cursor
     local index = self.game:get_value("pause_inventory_last_item_index") or 0
-    local row = math.floor(index / 7)
+    local row = math.floor(index / 4)
     if self.from == 'right' then
-        column = 6
+        column = 3
     else
         column = 0
     end
@@ -75,7 +76,7 @@ function inventory_submenu:set_cursor_position(row, column)
   self.cursor_row = row
   self.cursor_column = column
 
-  local index = row * 7 + column
+  local index = row * 4 + column
   self.game:set_value("pause_inventory_last_item_index", index)
 
   -- Update the caption text and the action icon.
@@ -100,7 +101,7 @@ end
 
 function inventory_submenu:get_selected_index()
 
-  return self.cursor_row * 7 + self.cursor_column
+  return self.cursor_row * 4 + self.cursor_column
 end
 
 function inventory_submenu:is_item_selected()
@@ -144,7 +145,7 @@ function inventory_submenu:on_command_pressed(command)
       handled = true
 
     elseif command == "right" then
-      if self.cursor_column == 6 then
+      if self.cursor_column == 3 then
         self:next_submenu()
       else
         sol.audio.play_sound("cursor")
@@ -154,12 +155,12 @@ function inventory_submenu:on_command_pressed(command)
 
     elseif command == "up" then
       sol.audio.play_sound("cursor")
-      self:set_cursor_position((self.cursor_row + 3) % 4, self.cursor_column)
+      self:set_cursor_position((self.cursor_row + 2) % 3, self.cursor_column)
       handled = true
 
     elseif command == "down" then
       sol.audio.play_sound("cursor")
-      self:set_cursor_position((self.cursor_row + 1) % 4, self.cursor_column)
+      self:set_cursor_position((self.cursor_row + 1) % 3, self.cursor_column)
       handled = true
 
     end
@@ -170,20 +171,22 @@ end
 
 function inventory_submenu:on_draw(dst_surface)
 
-  self:draw_background(dst_surface)
+  --self:draw_background(dst_surface)
+  self.background:draw(dst_surface, 0, 0)
   self:draw_caption(dst_surface)
 
   -- Draw each inventory item.
-  local quest_width, quest_height = dst_surface:get_size()
-  local initial_x = quest_width / 2 - 96
-  local initial_y = quest_height / 2 - 38
+  local initial_x = 88
+  local initial_y = 76
+  local delta_x = 24
+  local delta_y = 24
   local y = initial_y
   local k = 0
 
   for i = 0, 3 do
     local x = initial_x
 
-    for j = 0, 6 do
+    for j = 0, 3 do
       k = k + 1
       if item_names[k] ~= nil then
         local item = self.game:get_item(item_names[k])
@@ -195,13 +198,13 @@ function inventory_submenu:on_draw(dst_surface)
           end
         end
       end
-      x = x + 32
+      x = x + 24
     end
-    y = y + 32
+    y = y + 24
   end
 
   -- Draw the cursor.
-  self.cursor_sprite:draw(dst_surface, initial_x + 32 * self.cursor_column, initial_y - 5 + 32 * self.cursor_row)
+  self.cursor_sprite:draw(dst_surface, initial_x + delta_x * self.cursor_column, initial_y - 5 + delta_y * self.cursor_row)
 
   -- Draw the item being assigned if any.
   if self:is_assigning_item() then
