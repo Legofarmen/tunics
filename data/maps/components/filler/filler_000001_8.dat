@@ -1,0 +1,70 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  tileset = "dungeon_brick_gray_1",
+  music = "same",
+}
+
+tile{
+  layer = 1,
+  x = 224,
+  y = 168,
+  width = 16,
+  height = 16,
+  pattern = "torch_big.bottom",
+}
+
+tile{
+  layer = 1,
+  x = 224,
+  y = 152,
+  width = 16,
+  height = 16,
+  pattern = "torch_big.top",
+}
+
+enemy{
+  layer = 1,
+  x = 280,
+  y = 149,
+  direction = 3,
+  breed = "pike_fixed",
+}
+
+enemy{
+  layer = 1,
+  x = 280,
+  y = 205,
+  direction = 3,
+  breed = "pike_fixed",
+}
+
+enemy{
+  layer = 1,
+  x = 184,
+  y = 205,
+  direction = 3,
+  breed = "pike_fixed",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 224,
+  y = 184,
+  width = 16,
+  height = 16,
+  name = "enemy",
+  pattern = "carpet.1",
+  enabled_at_start = false,
+}
+
+enemy{
+  layer = 1,
+  x = 184,
+  y = 149,
+  direction = 3,
+  breed = "pike_fixed",
+}
+
