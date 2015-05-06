@@ -665,7 +665,8 @@ function zentropy.game.setup_tier_initial(tier)
     local game = zentropy.game.game
 
     -- reset dungeon items
-    game:set_value('small_key_amount', 0)
+    game:set_value(game:get_item('smallkey'):get_savegame_variable(), nil)
+    game:set_value(game:get_item('smallkey'):get_amount_savegame_variable(), 0)
     game:set_value(game:get_item('bigkey'):get_savegame_variable(), nil)
     game:set_value(game:get_item('map'):get_savegame_variable(), nil)
     game:set_value(game:get_item('compass'):get_savegame_variable(), nil)
