@@ -1,0 +1,111 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  tileset = "dungeon_brick_gray_1",
+  music = "same",
+}
+
+tile{
+  layer = 1,
+  x = 96,
+  y = 24,
+  width = 16,
+  height = 16,
+  pattern = "barrier_big.3.border.1",
+}
+
+tile{
+  layer = 1,
+  x = 64,
+  y = 24,
+  width = 16,
+  height = 16,
+  pattern = "barrier_big.3.border.1",
+}
+
+tile{
+  layer = 1,
+  x = 64,
+  y = 72,
+  width = 16,
+  height = 24,
+  pattern = "barrier_big.3.border.2",
+}
+
+tile{
+  layer = 1,
+  x = 96,
+  y = 72,
+  width = 16,
+  height = 24,
+  pattern = "barrier_big.3.border.2",
+}
+
+tile{
+  layer = 1,
+  x = 64,
+  y = 40,
+  width = 16,
+  height = 32,
+  pattern = "barrier_big.3.2",
+}
+
+tile{
+  layer = 1,
+  x = 96,
+  y = 40,
+  width = 16,
+  height = 32,
+  pattern = "barrier_big.3.2",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 8,
+  width = 32,
+  height = 16,
+  pattern = "wall_torch.1",
+}
+
+tile{
+  layer = 1,
+  x = 104,
+  y = 8,
+  width = 32,
+  height = 16,
+  pattern = "wall_torch.1",
+}
+
+enemy{
+  layer = 1,
+  x = 88,
+  y = 45,
+  direction = 1,
+  breed = "pike_auto",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 32,
+  y = 32,
+  width = 16,
+  height = 16,
+  name = "pot_1",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 32,
+  y = 48,
+  width = 16,
+  height = 16,
+  name = "pot_2",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+

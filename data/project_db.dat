@@ -328,6 +328,10 @@ map{ id = "components/door/door_bigkey_n_200700_2", description = "Door bigkey n
 map{ id = "components/door/door_bigkey_n_250777_4", description = "Door bigkey n 250777 4" }
 map{ id = "components/door/door_entrance_s_002777_5", description = "Door entrance s 002777 5" }
 map{ id = "tompa/door_entrance_s_002777", description = "Door entrance s 002777" }
+map{ id = "components/filler/filler_000001_7", description = "Filler 000001 7" }
+map{ id = "components/filler/filler_000100_7", description = "Filler 000100 7" }
+map{ id = "components/filler/filler_000400_7", description = "Filler 000400 7" }
+map{ id = "components/filler/filler_000004_7", description = "Filler 000004 7" }
 
 tileset{ id = "light_world", description = "Light World" }
 tileset{ id = "dungeon_brick_gray_1", description = "Dungeon brick gray 1" }
