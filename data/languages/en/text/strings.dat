@@ -1,8 +1,3 @@
 text{ key = "tier", value = "Tier " }
 text{ key = "completed", value = " completed" }
 text{ key = "title_screen.press_space", value = "Press space to start" }
-text{ key = "inventory.caption.item.bombs_counter.1", value = "Bombs" }
-text{ key = "inventory.caption.item.bow.1", value = "Bow" }
-text{ key = "inventory.caption.item.bow.2", value = "Bow & Arrows" }
-text{ key = "inventory.caption.item.lamp.1", value = "Lamp" }
-text{ key = "inventory.caption.item.hookshot.1", value = "Hookshot" }

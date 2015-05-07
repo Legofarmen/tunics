@@ -8,8 +8,7 @@ function inventory_submenu:on_started()
 
     self.cursor_sprite = sol.sprite.create("menus/pause_cursor")
     self.sprites = {}
-    self.counters = {}
-    self.captions = {}
+    self.tunic_counter = nil
     self.assignable_items = {}
     self.passive_items = {}
 
@@ -23,20 +22,7 @@ function inventory_submenu:on_started()
         local variant = item:get_variant()
 
         if variant > 0 then
-            --[[if item:has_amount() then
-                -- Show a counter in this case.
-                local amount = item:get_amount()
-                local maximum = item:get_max_amount()
-
-                self.counters[item_name] = sol.text_surface.create{
-                    horizontal_alignment = "center",
-                    vertical_alignment = "top",
-                    text = item:get_amount(),
-                    font = (amount == maximum) and "green_digits" or "white_digits",
-                }
-            end]]
-
-            -- Initialize the sprite and the caption string.
+            -- Initialize the sprite.
             self.sprites[item_name] = sol.sprite.create("entities/items")
             self.sprites[item_name]:set_animation(item:get_name())
             self.sprites[item_name]:set_direction(variant - 1)
@@ -46,7 +32,7 @@ function inventory_submenu:on_started()
     if self.game:get_value('tier') >= 2 then
         self.sprites.tunic = sol.sprite.create("entities/tunic_1")
         if self.game:get_value('tier') > 6 then
-            self.counters.tunic = sol.text_surface.create{
+            self.tunic_counter = sol.text_surface.create{
                 horizontal_alignment = "center",
                 vertical_alignment = "top",
                 text = self.game:get_value('tier') - 1,
@@ -98,19 +84,17 @@ function inventory_submenu:set_cursor_position(row, column)
   local index = row * 4 + column
   self.game:set_value("pause_inventory_last_item_index", index)
 
-  -- Update the caption text and the action icon.
+  -- Update the action icon.
   local item = self.assignable_items[index + 1]
   local variant = item and item:get_variant() or 0
 
   local item_icon_opacity = 128
   if variant > 0 then
-    self:set_caption("inventory.caption.item." .. item:get_name() .. "." .. variant)
     self.game:set_custom_command_effect("action", "info")
     if item:is_assignable() then
       item_icon_opacity = 255
     end
   else
-    self:set_caption(nil)
     self.game:set_custom_command_effect("action", nil)
   end
   self.game.hud.item_icon_1.surface:set_opacity(item_icon_opacity)
@@ -191,7 +175,6 @@ function inventory_submenu:on_draw(dst_surface)
 
   --self:draw_background(dst_surface)
   self.background:draw(dst_surface, 0, 0)
-  self:draw_caption(dst_surface)
 
     -- Draw each inventory item.
     local initial_x = 88
@@ -219,9 +202,6 @@ function inventory_submenu:on_draw(dst_surface)
         if item:get_variant() > 0 then
           -- The player has this item: draw it.
           self.sprites[item:get_name()]:draw(dst_surface, x, y)
-          if self.counters[item:get_name()] ~= nil then
-            self.counters[item:get_name()]:draw(dst_surface, x + 8, y)
-          end
         end
       end
       x = x + 24
@@ -267,9 +247,9 @@ function inventory_submenu:on_draw(dst_surface)
         self.small_keys_text:draw(dst_surface)
     end
 
-    if self.game:get_value('tier') > 6 then
+    if self.tunic_counter then
         self.sprites.tunic:draw(dst_surface, tunic_x, tunic_y)
-        self.counters.tunic:draw(dst_surface, tunic_x + 8, tunic_y)
+        self.tunic_counter:draw(dst_surface, tunic_x + 8, tunic_y)
     else
         for i = 1, self.game:get_value('tier') - 1 do
             local x = tunic_x + ((2 - self.game:get_value('tier')) / 2 + i - 1) * tunic_delta_x

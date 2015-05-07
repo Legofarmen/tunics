@@ -30,58 +30,8 @@ function submenu:on_started()
     font = dialog_font,
   }
 
-  self.caption_text_1 = sol.text_surface.create{
-    horizontal_alignment = "center",
-    vertical_alignment = "middle",
-    font = menu_font,
-  }
-
-  self.caption_text_2 = sol.text_surface.create{
-    horizontal_alignment = "center",
-    vertical_alignment = "middle",
-    font = menu_font,
-  }
-
   self.game:set_custom_command_effect("action", nil)
   self.game:set_custom_command_effect("attack", "save")
-end
-
--- Sets the caption text.
--- The caption text can have one or two lines, with 20 characters maximum for each line.
--- If the text you want to display has two lines, use the '$' character to separate them.
--- A value of nil removes the previous caption if any.
-function submenu:set_caption(text_key)
-
-  if text_key == nil then
-    self.caption_text_1:set_text(nil)
-    self.caption_text_2:set_text(nil)
-  else
-    local text = sol.language.get_string(text_key)
-    assert(text, 'text key not found: ' .. text_key)
-    local line1, line2 = text:match("([^$]+)%$(.*)")
-    if line1 == nil then
-      -- Only one line.
-      self.caption_text_1:set_text(text)
-      self.caption_text_2:set_text(nil)
-    else
-      -- Two lines.
-      self.caption_text_1:set_text(line1)
-      self.caption_text_2:set_text(line2)
-    end
-  end
-end
-
--- Draw the caption text previously set.
-function submenu:draw_caption(dst_surface)
-
-  local width, height = dst_surface:get_size()
-
-  if self.caption_text_2:get_text():len() == 0 then
-    self.caption_text_1:draw(dst_surface, width / 2, height / 2 + 89)
-  else
-    self.caption_text_1:draw(dst_surface, width / 2, height / 2 + 83)
-    self.caption_text_2:draw(dst_surface, width / 2, height / 2 + 95)
-  end
 end
 
 function submenu:next_submenu()
