@@ -5,7 +5,7 @@ local game_menu = {}
 function game_menu:on_started()
     local function create_surface(text)
         return sol.text_surface.create{
-            font = "dialog",
+            font = "la",
             horizontal_alignment = "center",
             vertical_alignment = "middle",
             text = text,

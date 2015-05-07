@@ -45,6 +45,7 @@ local char_delays = {
 local letter_sound_delay = 100
 local box_width = 220
 local box_height = 60
+local dialog_font = 'la'
 
 -- Initializes the dialog box system.
 function dialog_box:initialize_dialog_box()
@@ -296,7 +297,7 @@ function dialog_box:show_more_lines()
 
   -- Prepare the 3 lines.
   for i = 1, math.min(nb_visible_lines, #self.line_surfaces) do
-    self.line_surfaces[i]:set_font('dialog')
+    self.line_surfaces[i]:set_font(dialog_font)
     self.line_surfaces[i]:set_text("")
     if self:has_more_lines() then
       self.lines[i] = self.next_line
