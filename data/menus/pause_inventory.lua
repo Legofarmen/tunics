@@ -23,7 +23,7 @@ function inventory_submenu:on_started()
         local variant = item:get_variant()
 
         if variant > 0 then
-            if item:has_amount() then
+            --[[if item:has_amount() then
                 -- Show a counter in this case.
                 local amount = item:get_amount()
                 local maximum = item:get_max_amount()
@@ -34,7 +34,7 @@ function inventory_submenu:on_started()
                     text = item:get_amount(),
                     font = (amount == maximum) and "green_digits" or "white_digits",
                 }
-            end
+            end]]
 
             -- Initialize the sprite and the caption string.
             self.sprites[item_name] = sol.sprite.create("entities/items")
