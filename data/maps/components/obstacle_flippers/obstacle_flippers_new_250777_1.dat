@@ -153,15 +153,6 @@ tile{
 
 tile{
   layer = 1,
-  x = 72,
-  y = 120,
-  width = 176,
-  height = 32,
-  pattern = "water.transparent",
-}
-
-tile{
-  layer = 1,
   x = 216,
   y = 152,
   width = 32,
@@ -221,6 +212,15 @@ tile{
   width = 32,
   height = 16,
   pattern = "water_pool_ladder.1",
+}
+
+tile{
+  layer = 1,
+  x = 72,
+  y = 120,
+  width = 176,
+  height = 32,
+  pattern = "water.transparent",
 }
 
 jumper{
