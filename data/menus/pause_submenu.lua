@@ -14,8 +14,8 @@ function submenu:on_started()
   self.background_surfaces = sol.surface.create("pause_submenus.png", true)
   self.background_surfaces:set_opacity(216)
 
-  local dialog_font = 'dialog'
-  local menu_font = 'fixed'
+  local dialog_font = 'la'
+  local menu_font = 'minecraftia'
 
   self.question_text_1 = sol.text_surface.create{
     horizontal_alignment = "center",
@@ -33,14 +33,12 @@ function submenu:on_started()
   self.caption_text_1 = sol.text_surface.create{
     horizontal_alignment = "center",
     vertical_alignment = "middle",
-    font = "fixed",
     font = menu_font,
   }
 
   self.caption_text_2 = sol.text_surface.create{
     horizontal_alignment = "center",
     vertical_alignment = "middle",
-    font = "fixed",
     font = menu_font,
   }
 

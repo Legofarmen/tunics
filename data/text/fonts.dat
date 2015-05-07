@@ -4,7 +4,7 @@ font{
 }
 
 font{
-  id = "fixed",
+  id = "minecraftia",
   file = "text/minecraftia.ttf",
   size = 8,
 }
@@ -25,7 +25,7 @@ font{
 }
 
 font{
-  id = "dialog",
+  id = "la",
   file = "text/la.ttf",
   size = 11,
   default = true
