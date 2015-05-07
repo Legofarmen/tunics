@@ -1,0 +1,80 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  tileset = "dungeon_brick_gray_1",
+  music = "same",
+}
+
+tile{
+  layer = 1,
+  x = 48,
+  y = 144,
+  width = 16,
+  height = 64,
+  pattern = "block",
+}
+
+tile{
+  layer = 1,
+  x = 80,
+  y = 160,
+  width = 16,
+  height = 48,
+  pattern = "block",
+}
+
+tile{
+  layer = 1,
+  x = 112,
+  y = 176,
+  width = 16,
+  height = 32,
+  pattern = "block",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 32,
+  y = 176,
+  width = 16,
+  height = 16,
+  name = "enemy_2",
+  pattern = "carpet.1",
+  enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 32,
+  y = 192,
+  width = 16,
+  height = 16,
+  name = "pot_1",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 64,
+  y = 192,
+  width = 16,
+  height = 16,
+  name = "pot_2",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 96,
+  y = 192,
+  width = 16,
+  height = 16,
+  name = "pot_3",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
