@@ -1,0 +1,204 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  tileset = "dungeon_brick_gray_1",
+  music = "same",
+}
+
+tile{
+  layer = 0,
+  x = 288,
+  y = 144,
+  width = 16,
+  height = 32,
+  pattern = "water_wall.drain_gate.4",
+}
+
+tile{
+  layer = 1,
+  x = 232,
+  y = 184,
+  width = 8,
+  height = 24,
+  pattern = "hole",
+}
+
+tile{
+  layer = 1,
+  x = 232,
+  y = 160,
+  width = 48,
+  height = 24,
+  pattern = "wall_low.1",
+}
+
+tile{
+  layer = 1,
+  x = 208,
+  y = 160,
+  width = 24,
+  height = 24,
+  pattern = "wall_low.corner.1",
+}
+
+tile{
+  layer = 1,
+  x = 208,
+  y = 184,
+  width = 24,
+  height = 24,
+  pattern = "wall_low.3",
+}
+
+tile{
+  layer = 1,
+  x = 176,
+  y = 144,
+  width = 112,
+  height = 16,
+  pattern = "water_shallow",
+}
+
+tile{
+  layer = 1,
+  x = 280,
+  y = 136,
+  width = 8,
+  height = 8,
+  pattern = "water_shallow.corner.2",
+}
+
+tile{
+  layer = 1,
+  x = 184,
+  y = 136,
+  width = 96,
+  height = 8,
+  pattern = "water_shallow.1",
+}
+
+tile{
+  layer = 1,
+  x = 208,
+  y = 160,
+  width = 80,
+  height = 16,
+  pattern = "water.transparent",
+}
+
+tile{
+  layer = 1,
+  x = 192,
+  y = 208,
+  width = 32,
+  height = 24,
+  pattern = "wall_statue.1.2",
+}
+
+tile{
+  layer = 1,
+  x = 200,
+  y = 208,
+  width = 16,
+  height = 8,
+  pattern = "waterfall.2.top",
+}
+
+tile{
+  layer = 1,
+  x = 176,
+  y = 136,
+  width = 8,
+  height = 8,
+  pattern = "water_shallow.corner.1",
+}
+
+tile{
+  layer = 1,
+  x = 208,
+  y = 176,
+  width = 32,
+  height = 32,
+  pattern = "water.transparent",
+}
+
+tile{
+  layer = 1,
+  x = 280,
+  y = 144,
+  width = 8,
+  height = 32,
+  pattern = "water_wall.drain.4",
+}
+
+tile{
+  layer = 1,
+  x = 240,
+  y = 176,
+  width = 48,
+  height = 32,
+  pattern = "floor.20",
+}
+
+tile{
+  layer = 1,
+  x = 176,
+  y = 160,
+  width = 32,
+  height = 48,
+  pattern = "water_shallow",
+}
+
+tile{
+  layer = 1,
+  x = 176,
+  y = 144,
+  width = 8,
+  height = 64,
+  pattern = "water_shallow.3",
+}
+
+tile{
+  layer = 1,
+  x = 192,
+  y = 200,
+  width = 32,
+  height = 8,
+  pattern = "waterfall.2.bottom",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 256,
+  y = 192,
+  width = 16,
+  height = 16,
+  name = "pot_2",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 272,
+  y = 192,
+  width = 16,
+  height = 16,
+  name = "pot_3",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 240,
+  y = 192,
+  width = 16,
+  height = 16,
+  name = "pot_1",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
