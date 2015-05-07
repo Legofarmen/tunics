@@ -1,7 +1,6 @@
 local game_over_menu = {}  -- The game-over menu.
 
 local music
-local background_img
 local hero_was_visible
 local hero_dead_sprite
 local hero_dead_x, hero_dead_y
@@ -21,7 +20,6 @@ function game_over_menu:on_started()
   hero:set_visible(false)
   music = sol.audio.get_music()
   fade_sprite = sol.sprite.create("hud/gameover_fade")
-  background_img = sol.surface.create("gameover_menu.png", true)
   local tunic = game:get_ability("tunic")
   hero_dead_sprite = sol.sprite.create("hero/tunic" .. tunic)
   hero_dead_sprite:set_animation("hurt")
@@ -70,7 +68,6 @@ local game = zentropy.game.game
     hero:set_visible(hero_was_visible)
   end
   music = nil
-  background_img = nil
   hero_dead_sprite = nil
   fade_sprite = nil
   fairy_sprite = nil

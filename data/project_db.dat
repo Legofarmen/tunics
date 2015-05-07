@@ -432,7 +432,6 @@ sprite{ id = "entities/bush_yellow", description = "Bush (yellow)" }
 sprite{ id = "entities/arrow", description = "Arrow" }
 sprite{ id = "entities/hookshot", description = "Hookshot" }
 sprite{ id = "entities/items", description = "Items" }
-sprite{ id = "entities/rupee_icon", description = "Rupee icon" }
 sprite{ id = "entities/shadow", description = "Shadow" }
 sprite{ id = "entities/sign", description = "Sign" }
 sprite{ id = "entities/star", description = "Star" }
@@ -481,10 +480,7 @@ sprite{ id = "enemies/red_hardhat_beetle", description = "Red hardhat beetle" }
 sprite{ id = "enemies/pike_fixed", description = "Pike fixed" }
 sprite{ id = "enemies/pike_auto", description = "Pike auto" }
 sprite{ id = "enemies/pike_detect", description = "Pike detect" }
-sprite{ id = "hud/action_icon_flip", description = "Action icon flip" }
 sprite{ id = "hud/dialog_box_message_end", description = "Dialog box message end" }
-sprite{ id = "hud/pause_icon_flip", description = "Pause icon flip" }
-sprite{ id = "hud/sword_icon_flip", description = "Sword icon flip" }
 sprite{ id = "enemies/bari_blue", description = "Bari blue" }
 sprite{ id = "enemies/bari_mini", description = "Bari mini" }
 sprite{ id = "enemies/bari_red", description = "Bari red" }

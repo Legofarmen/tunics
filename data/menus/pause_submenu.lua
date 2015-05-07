@@ -11,9 +11,6 @@ end
 
 function submenu:on_started()
 
-  self.background_surfaces = sol.surface.create("pause_submenus.png", true)
-  self.background_surfaces:set_opacity(216)
-
   local dialog_font = 'la'
   local menu_font = 'minecraftia'
 
@@ -56,15 +53,6 @@ function submenu:previous_submenu()
   self.game:set_value("pause_last_submenu", submenu_index)
   submenus[submenu_index].from = 'right'
   sol.menu.start(self.game, submenus[submenu_index], false)
-end
-
-function submenu:draw_background(dst_surface)
-
-  local submenu_index = self.game:get_value("pause_last_submenu")
-  local width, height = dst_surface:get_size()
-  self.background_surfaces:draw_region(
-      320 * (submenu_index - 1), 0, 320, 240,
-      dst_surface, (width - 320) / 2, (height - 240) / 2)
 end
 
 function submenu:on_command_pressed(command)
