@@ -1,6 +1,19 @@
 local submenu = require("menus/pause_submenu")
 local inventory_submenu = submenu:new()
 
+local initial_x = 88
+local initial_y = 76
+local dungeon_x = 201
+local dungeon_y = 63
+local tunic_x = 220
+local tunic_y = 160
+local passive_x = 88
+local passive_y = 172
+local delta_x = 24
+local delta_y = 24
+local tunic_delta_x = 8
+local tunic_delta_y = 4
+
 function inventory_submenu:on_started()
 
     submenu.on_started(self)
@@ -177,19 +190,6 @@ function inventory_submenu:on_draw(dst_surface)
   self.background:draw(dst_surface, 0, 0)
 
     -- Draw each inventory item.
-    local initial_x = 88
-    local initial_y = 76
-    local dungeon_x = 201
-    local dungeon_y = 63
-    local tunic_x = 220
-    local tunic_y = 160
-    local passive_x = 88
-    local passive_y = 172
-    local delta_x = 24
-    local delta_y = 24
-    local tunic_delta_x = 8
-    local tunic_delta_y = 4
-
   local y = initial_y
   local k = 0
   for i = 0, 3 do
@@ -317,10 +317,9 @@ function inventory_submenu:assign_item(slot)
   sol.audio.play_sound("throw")
 
   -- Compute the movement.
-  local x1 = 60 + 32 * self.cursor_column
-  local y1 = 75 + 32 * self.cursor_row
-  local x2 = (slot == 1) and 20 or 72
-  local y2 = 46
+  local x1 = initial_x + delta_x * self.cursor_column
+  local y1 = initial_y + delta_y * self.cursor_row
+  local x2, y2 = ((slot == 1) and self.game.hud.item_icon_1 or self.game.hud.item_icon_2):get_item_position()
 
   self.item_assigned_sprite:set_xy(x1, y1)
   local movement = sol.movement.create("target")

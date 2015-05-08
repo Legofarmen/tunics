@@ -1,6 +1,8 @@
 -- An icon that shows the inventory item assigned to a slot.
 
 local item_icon = {}
+local item_x = 11
+local item_y = 16
 
 function item_icon:new(game, slot)
 
@@ -98,13 +100,17 @@ function item_icon:rebuild_surface()
 
   if self.item_displayed ~= nil then
     -- Item.
-    self.item_sprite:draw(self.surface, 11, 16)
+    self.item_sprite:draw(self.surface, item_x, item_y)
   end
 end
 
 function item_icon:set_dst_position(x, y)
   self.dst_x = x
   self.dst_y = y
+end
+
+function item_icon:get_item_position()
+    return self.dst_x + item_x, self.dst_y + item_y
 end
 
 function item_icon:on_draw(dst_surface)
