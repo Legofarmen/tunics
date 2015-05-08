@@ -9,79 +9,79 @@ properties{
 
 tile{
   layer = 1,
-  x = 256,
-  y = 32,
-  width = 16,
-  height = 16,
-  pattern = "wall_diag.border.2",
-}
-
-tile{
-  layer = 1,
-  x = 240,
-  y = 72,
-  width = 16,
-  height = 16,
-  pattern = "block",
-}
-
-tile{
-  layer = 1,
-  x = 224,
+  x = 8,
   y = 56,
   width = 16,
   height = 16,
-  pattern = "block",
+  pattern = "wall_diag.1",
 }
 
 tile{
   layer = 1,
-  x = 208,
-  y = 72,
+  x = 8,
+  y = 64,
+  width = 24,
+  height = 16,
+  pattern = "wall.3",
+}
+
+tile{
+  layer = 1,
+  x = 16,
+  y = 48,
   width = 16,
   height = 16,
-  pattern = "block",
+  pattern = "wall_diag.1",
 }
 
 tile{
   layer = 1,
-  x = 224,
-  y = 88,
+  x = 24,
+  y = 40,
   width = 16,
   height = 16,
-  pattern = "block",
+  pattern = "wall_diag.1",
 }
 
 tile{
   layer = 1,
-  x = 208,
+  x = 32,
+  y = 32,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.1",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 24,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.1",
+}
+
+tile{
+  layer = 1,
+  x = 48,
+  y = 16,
+  width = 16,
+  height = 16,
+  pattern = "wall_diag.1",
+}
+
+tile{
+  layer = 1,
+  x = 56,
   y = 8,
-  width = 32,
-  height = 24,
-  pattern = "wall_statue.1.1",
-}
-
-tile{
-  layer = 1,
-  x = 176,
-  y = 72,
   width = 16,
   height = 16,
-  pattern = "block",
+  pattern = "wall_diag.1",
 }
 
 tile{
   layer = 1,
-  x = 248,
-  y = 8,
-  width = 16,
-  height = 16,
-  pattern = "wall_diag.2",
-}
-
-tile{
-  layer = 1,
-  x = 240,
+  x = 64,
   y = 8,
   width = 16,
   height = 24,
@@ -90,88 +90,34 @@ tile{
 
 tile{
   layer = 1,
-  x = 256,
-  y = 16,
+  x = 32,
+  y = 48,
   width = 16,
   height = 16,
-  pattern = "wall_diag.2",
+  pattern = "wall_diag.border.1",
 }
 
 tile{
   layer = 1,
-  x = 264,
-  y = 24,
+  x = 40,
+  y = 40,
   width = 16,
   height = 16,
-  pattern = "wall_diag.2",
+  pattern = "wall_diag.border.1",
 }
 
 tile{
   layer = 1,
-  x = 272,
+  x = 48,
   y = 32,
   width = 16,
   height = 16,
-  pattern = "wall_diag.2",
+  pattern = "wall_diag.border.1",
 }
 
 tile{
   layer = 1,
-  x = 280,
-  y = 40,
-  width = 16,
-  height = 16,
-  pattern = "wall_diag.2",
-}
-
-tile{
-  layer = 1,
-  x = 288,
-  y = 48,
-  width = 16,
-  height = 16,
-  pattern = "wall_diag.2",
-}
-
-tile{
-  layer = 1,
-  x = 296,
-  y = 56,
-  width = 16,
-  height = 16,
-  pattern = "wall_diag.2",
-}
-
-tile{
-  layer = 1,
-  x = 288,
-  y = 64,
-  width = 24,
-  height = 16,
-  pattern = "wall.4",
-}
-
-tile{
-  layer = 1,
-  x = 264,
-  y = 40,
-  width = 16,
-  height = 16,
-  pattern = "wall_diag.border.2",
-}
-
-tile{
-  layer = 1,
-  x = 272,
-  y = 48,
-  width = 16,
-  height = 16,
-  pattern = "wall_diag.border.2",
-}
-
-tile{
-  layer = 1,
-  x = 304,
+  x = 8,
   y = 8,
   width = 8,
   height = 48,
@@ -180,7 +126,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 296,
+  x = 16,
   y = 8,
   width = 8,
   height = 40,
@@ -189,7 +135,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 288,
+  x = 24,
   y = 8,
   width = 8,
   height = 32,
@@ -198,7 +144,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 280,
+  x = 32,
   y = 8,
   width = 8,
   height = 24,
@@ -207,7 +153,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 272,
+  x = 40,
   y = 8,
   width = 8,
   height = 16,
@@ -216,7 +162,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 264,
+  x = 48,
   y = 8,
   width = 8,
   height = 8,
@@ -225,20 +171,56 @@ tile{
 
 tile{
   layer = 1,
-  x = 224,
+  x = 120,
+  y = 56,
+  width = 16,
+  height = 16,
+  pattern = "block",
+}
+
+tile{
+  layer = 1,
+  x = 88,
+  y = 88,
+  width = 16,
+  height = 16,
+  pattern = "block",
+}
+
+tile{
+  layer = 1,
+  x = 120,
+  y = 88,
+  width = 16,
+  height = 16,
+  pattern = "block",
+}
+
+tile{
+  layer = 1,
+  x = 88,
+  y = 56,
+  width = 16,
+  height = 16,
+  pattern = "block",
+}
+
+tile{
+  layer = 1,
+  x = 104,
   y = 72,
   width = 16,
   height = 16,
-  pattern = "torch_big.top",
+  pattern = "torch",
 }
 
 dynamic_tile{
   layer = 1,
-  x = 192,
-  y = 48,
+  x = 56,
+  y = 72,
   width = 16,
   height = 16,
-  name = "enemy_2",
+  name = "enemy_3",
   pattern = "carpet.1",
   enabled_at_start = false,
 }

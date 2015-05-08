@@ -88,15 +88,6 @@ tile{
   pattern = "wall_hole.3",
 }
 
-tile{
-  layer = 1,
-  x = 56,
-  y = 8,
-  width = 32,
-  height = 16,
-  pattern = "wall_torch.1",
-}
-
 dynamic_tile{
   layer = 1,
   x = 80,

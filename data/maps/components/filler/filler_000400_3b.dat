@@ -1,0 +1,36 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  tileset = "dungeon_brick_gray_1",
+  music = "same",
+}
+
+tile{
+  layer = 1,
+  x = 64,
+  y = 8,
+  width = 32,
+  height = 24,
+  pattern = "wall_statue.3.1",
+}
+
+tile{
+  layer = 1,
+  x = 48,
+  y = 48,
+  width = 16,
+  height = 16,
+  pattern = "torch",
+}
+
+tile{
+  layer = 1,
+  x = 96,
+  y = 48,
+  width = 16,
+  height = 16,
+  pattern = "torch",
+}
+

@@ -18,7 +18,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 192,
+  x = 224,
   y = 208,
   width = 24,
   height = 24,
@@ -27,16 +27,16 @@ tile{
 
 tile{
   layer = 1,
-  x = 192,
+  x = 240,
   y = 144,
-  width = 96,
+  width = 48,
   height = 24,
   pattern = "wall.2",
 }
 
 tile{
   layer = 1,
-  x = 192,
+  x = 224,
   y = 160,
   width = 24,
   height = 48,
@@ -45,7 +45,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 192,
+  x = 224,
   y = 144,
   width = 24,
   height = 24,
@@ -54,16 +54,16 @@ tile{
 
 tile{
   layer = 1,
-  x = 192,
+  x = 224,
   y = 136,
-  width = 96,
+  width = 64,
   height = 8,
   pattern = "wall_border.2",
 }
 
 tile{
   layer = 1,
-  x = 184,
+  x = 216,
   y = 136,
   width = 8,
   height = 8,
@@ -72,7 +72,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 184,
+  x = 216,
   y = 144,
   width = 8,
   height = 64,
@@ -90,7 +90,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 184,
+  x = 216,
   y = 200,
   width = 8,
   height = 8,
@@ -98,10 +98,10 @@ tile{
 }
 
 tile{
-  layer = 2,
-  x = 216,
+  layer = 1,
+  x = 248,
   y = 168,
-  width = 104,
+  width = 72,
   height = 72,
   pattern = "ceiling",
 }

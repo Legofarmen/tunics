@@ -70,15 +70,6 @@ tile{
   pattern = "wall_torch.2",
 }
 
-tile{
-  layer = 1,
-  x = 184,
-  y = 216,
-  width = 32,
-  height = 16,
-  pattern = "wall_torch.2",
-}
-
 enemy{
   layer = 1,
   x = 232,

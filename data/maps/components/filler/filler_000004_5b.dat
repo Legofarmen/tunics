@@ -144,15 +144,6 @@ tile{
 
 tile{
   layer = 1,
-  x = 80,
-  y = 208,
-  width = 32,
-  height = 24,
-  pattern = "wall_statue.1.2",
-}
-
-tile{
-  layer = 1,
   x = 40,
   y = 184,
   width = 16,
@@ -180,25 +171,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 128,
-  y = 152,
-  width = 16,
-  height = 16,
-  pattern = "block",
-}
-
-tile{
-  layer = 1,
-  x = 96,
-  y = 152,
-  width = 16,
-  height = 16,
-  pattern = "block",
-}
-
-tile{
-  layer = 1,
-  x = 80,
+  x = 120,
   y = 136,
   width = 16,
   height = 16,
@@ -207,16 +180,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 64,
-  y = 152,
-  width = 16,
-  height = 16,
-  pattern = "block",
-}
-
-tile{
-  layer = 1,
-  x = 80,
+  x = 88,
   y = 168,
   width = 16,
   height = 16,
@@ -225,17 +189,35 @@ tile{
 
 tile{
   layer = 1,
-  x = 80,
+  x = 120,
+  y = 168,
+  width = 16,
+  height = 16,
+  pattern = "block",
+}
+
+tile{
+  layer = 1,
+  x = 88,
+  y = 136,
+  width = 16,
+  height = 16,
+  pattern = "block",
+}
+
+tile{
+  layer = 1,
+  x = 104,
   y = 152,
   width = 16,
   height = 16,
-  pattern = "torch_big.top",
+  pattern = "torch",
 }
 
 dynamic_tile{
   layer = 1,
-  x = 112,
-  y = 176,
+  x = 56,
+  y = 152,
   width = 16,
   height = 16,
   name = "enemy_3",
