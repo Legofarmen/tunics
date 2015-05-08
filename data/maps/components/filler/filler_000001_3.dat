@@ -9,33 +9,6 @@ properties{
 
 tile{
   layer = 1,
-  x = 184,
-  y = 144,
-  width = 96,
-  height = 8,
-  pattern = "barrier.1.1",
-}
-
-tile{
-  layer = 1,
-  x = 184,
-  y = 144,
-  width = 8,
-  height = 56,
-  pattern = "barrier.1.2",
-}
-
-tile{
-  layer = 1,
-  x = 184,
-  y = 144,
-  width = 8,
-  height = 8,
-  pattern = "barrier.1.border",
-}
-
-tile{
-  layer = 1,
   x = 208,
   y = 176,
   width = 16,
@@ -77,23 +50,5 @@ tile{
   width = 32,
   height = 24,
   pattern = "wall_statue.4.2",
-}
-
-tile{
-  layer = 1,
-  x = 280,
-  y = 144,
-  width = 8,
-  height = 8,
-  pattern = "barrier.1.border",
-}
-
-tile{
-  layer = 1,
-  x = 184,
-  y = 200,
-  width = 8,
-  height = 8,
-  pattern = "barrier.1.border",
 }
 

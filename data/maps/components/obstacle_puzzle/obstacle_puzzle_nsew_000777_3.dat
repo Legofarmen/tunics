@@ -9,8 +9,8 @@ properties{
 
 tile{
   layer = 1,
-  x = 120,
-  y = 40,
+  x = 112,
+  y = 32,
   width = 16,
   height = 80,
   pattern = "block",
@@ -18,9 +18,9 @@ tile{
 
 tile{
   layer = 1,
-  x = 136,
-  y = 104,
-  width = 64,
+  x = 128,
+  y = 96,
+  width = 80,
   height = 16,
   pattern = "block",
 }
@@ -36,8 +36,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 232,
-  y = 40,
+  x = 240,
+  y = 32,
   width = 16,
   height = 128,
   pattern = "block",
@@ -45,8 +45,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 72,
-  y = 72,
+  x = 64,
+  y = 80,
   width = 16,
   height = 96,
   pattern = "block",
@@ -54,8 +54,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 184,
-  y = 72,
+  x = 192,
+  y = 64,
   width = 16,
   height = 32,
   pattern = "block",
@@ -63,17 +63,28 @@ tile{
 
 tile{
   layer = 1,
-  x = 88,
-  y = 152,
-  width = 144,
+  x = 80,
+  y = 160,
+  width = 176,
   height = 16,
   pattern = "block",
 }
 
+switch{
+  layer = 1,
+  x = 0,
+  y = 0,
+  name = "switch",
+  subtype = "walkable",
+  sprite = "entities/switch",
+  needs_block = false,
+  inactivate_when_leaving = false,
+}
+
 dynamic_tile{
   layer = 1,
-  x = 248,
-  y = 40,
+  x = 256,
+  y = 32,
   width = 16,
   height = 16,
   name = "pot_5",
@@ -83,8 +94,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 264,
-  y = 40,
+  x = 272,
+  y = 32,
   width = 16,
   height = 16,
   name = "pot_2",
@@ -94,8 +105,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 248,
-  y = 56,
+  x = 256,
+  y = 48,
   width = 16,
   height = 16,
   name = "pot_3",
@@ -105,8 +116,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 264,
-  y = 56,
+  x = 272,
+  y = 48,
   width = 16,
   height = 16,
   name = "pot_4",
@@ -116,8 +127,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 184,
-  y = 48,
+  x = 192,
+  y = 40,
   width = 16,
   height = 16,
   name = "enemy_6",
@@ -138,7 +149,7 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 256,
+  x = 264,
   y = 80,
   width = 16,
   height = 16,
@@ -149,45 +160,12 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 152,
-  y = 168,
+  x = 40,
+  y = 184,
   width = 16,
   height = 16,
   name = "enemy_4",
   pattern = "carpet.1",
   enabled_at_start = false,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 104,
-  y = 72,
-  width = 16,
-  height = 16,
-  name = "treasure_open_chest",
-  pattern = "carpet.1",
-  enabled_at_start = false,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 216,
-  y = 88,
-  width = 16,
-  height = 16,
-  name = "treasure_obstacle_chest",
-  pattern = "carpet.1",
-  enabled_at_start = false,
-}
-
-switch{
-  layer = 1,
-  x = 0,
-  y = 0,
-  name = "switch",
-  subtype = "walkable",
-  sprite = "entities/switch",
-  needs_block = false,
-  inactivate_when_leaving = false,
 }
 

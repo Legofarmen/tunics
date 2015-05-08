@@ -1,0 +1,103 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  tileset = "dungeon_brick_gray_1",
+  music = "same",
+}
+
+tile{
+  layer = 1,
+  x = 208,
+  y = 176,
+  width = 32,
+  height = 16,
+  pattern = "block",
+}
+
+tile{
+  layer = 1,
+  x = 224,
+  y = 160,
+  width = 16,
+  height = 16,
+  pattern = "block",
+}
+
+tile{
+  layer = 1,
+  x = 240,
+  y = 192,
+  width = 32,
+  height = 16,
+  pattern = "block",
+}
+
+tile{
+  layer = 1,
+  x = 272,
+  y = 144,
+  width = 16,
+  height = 64,
+  pattern = "block",
+}
+
+tile{
+  layer = 1,
+  x = 240,
+  y = 160,
+  width = 32,
+  height = 32,
+  pattern = "floor_small.2",
+}
+
+tile{
+  layer = 1,
+  x = 240,
+  y = 144,
+  width = 32,
+  height = 16,
+  pattern = "block",
+}
+
+tile{
+  layer = 1,
+  x = 224,
+  y = 192,
+  width = 16,
+  height = 16,
+  pattern = "block",
+}
+
+tile{
+  layer = 1,
+  x = 192,
+  y = 192,
+  width = 32,
+  height = 16,
+  pattern = "block",
+}
+
+block{
+  layer = 1,
+  x = 256,
+  y = 181,
+  direction = -1,
+  sprite = "entities/statue",
+  pushable = false,
+  pullable = false,
+  maximum_moves = 0,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 208,
+  y = 144,
+  width = 16,
+  height = 16,
+  name = "enemy_2",
+  pattern = "carpet.1",
+  enabled_at_start = false,
+}
+

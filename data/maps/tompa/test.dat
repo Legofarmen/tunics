@@ -538,9 +538,117 @@ tile{
   pattern = "barrier.1.2",
 }
 
+tile{
+  layer = 0,
+  x = 216,
+  y = 176,
+  width = 72,
+  height = 32,
+  pattern = "hole",
+}
+
+tile{
+  layer = 0,
+  x = 216,
+  y = 152,
+  width = 72,
+  height = 24,
+  pattern = "wall_low.1",
+}
+
+tile{
+  layer = 0,
+  x = 192,
+  y = 152,
+  width = 24,
+  height = 24,
+  pattern = "wall_low.corner.1",
+}
+
+tile{
+  layer = 0,
+  x = 192,
+  y = 176,
+  width = 24,
+  height = 24,
+  pattern = "wall_low.3",
+}
+
+tile{
+  layer = 0,
+  x = 192,
+  y = 144,
+  width = 96,
+  height = 48,
+  pattern = "water.transparent",
+}
+
+tile{
+  layer = 0,
+  x = 192,
+  y = 192,
+  width = 48,
+  height = 16,
+  pattern = "water.transparent",
+}
+
+tile{
+  layer = 0,
+  x = 240,
+  y = 192,
+  width = 48,
+  height = 16,
+  pattern = "floor.20",
+}
+
+tile{
+  layer = 0,
+  x = 176,
+  y = 144,
+  width = 16,
+  height = 64,
+  pattern = "water_shallow",
+}
+
+tile{
+  layer = 0,
+  x = 176,
+  y = 136,
+  width = 112,
+  height = 16,
+  pattern = "water_shallow",
+}
+
+tile{
+  layer = 0,
+  x = 184,
+  y = 136,
+  width = 104,
+  height = 8,
+  pattern = "water_shallow.1",
+}
+
+tile{
+  layer = 0,
+  x = 176,
+  y = 136,
+  width = 8,
+  height = 8,
+  pattern = "water_shallow.corner.1",
+}
+
+tile{
+  layer = 0,
+  x = 176,
+  y = 144,
+  width = 8,
+  height = 64,
+  pattern = "water_shallow.3",
+}
+
 destination{
   layer = 0,
-  x = 88,
+  x = 184,
   y = 101,
   direction = 3,
 }
@@ -575,227 +683,22 @@ jumper{
   jump_length = 40,
 }
 
-stream{
-  layer = 0,
-  x = 48,
-  y = 69,
-  direction = 0,
-  speed = 10000,
-}
-
-stream{
-  layer = 0,
-  x = 64,
-  y = 69,
-  direction = 0,
-  speed = 10000,
-}
-
-stream{
-  layer = 0,
-  x = 80,
-  y = 69,
-  direction = 0,
-  speed = 10000,
-}
-
-stream{
-  layer = 0,
-  x = 96,
-  y = 69,
-  direction = 0,
-  speed = 10000,
-}
-
-stream{
-  layer = 0,
-  x = 112,
-  y = 69,
-  direction = 0,
-  speed = 10000,
-}
-
-stream{
-  layer = 0,
-  x = 128,
-  y = 69,
-  direction = 0,
-  speed = 10000,
-}
-
-stream{
-  layer = 0,
-  x = 144,
-  y = 69,
-  direction = 0,
-  speed = 10000,
-}
-
-stream{
-  layer = 0,
-  x = 160,
-  y = 69,
-  direction = 0,
-  speed = 10000,
-}
-
-stream{
-  layer = 0,
-  x = 176,
-  y = 69,
-  direction = 0,
-  speed = 10000,
-}
-
-stream{
-  layer = 0,
-  x = 192,
-  y = 69,
-  direction = 0,
-  speed = 10000,
-}
-
-stream{
-  layer = 0,
-  x = 208,
-  y = 69,
-  direction = 0,
-  speed = 10000,
-}
-
-stream{
-  layer = 0,
-  x = 224,
-  y = 69,
-  direction = 0,
-  speed = 10000,
-}
-
-stream{
+chest{
   layer = 0,
   x = 240,
-  y = 69,
-  direction = 0,
-  speed = 10000,
+  y = 77,
+  treasure_name = "flippers",
+  sprite = "entities/chest",
 }
 
-stream{
+dynamic_tile{
   layer = 0,
-  x = 256,
-  y = 69,
-  direction = 0,
-  speed = 10000,
-}
-
-stream{
-  layer = 0,
-  x = 48,
-  y = 117,
-  direction = 0,
-  speed = 100000,
-}
-
-stream{
-  layer = 0,
-  x = 64,
-  y = 117,
-  direction = 0,
-  speed = 100000,
-}
-
-stream{
-  layer = 0,
-  x = 80,
-  y = 117,
-  direction = 0,
-  speed = 100000,
-}
-
-stream{
-  layer = 0,
-  x = 96,
-  y = 117,
-  direction = 0,
-  speed = 100000,
-}
-
-stream{
-  layer = 0,
-  x = 112,
-  y = 117,
-  direction = 0,
-  speed = 100000,
-}
-
-stream{
-  layer = 0,
-  x = 128,
-  y = 117,
-  direction = 0,
-  speed = 100000,
-}
-
-stream{
-  layer = 0,
-  x = 144,
-  y = 117,
-  direction = 0,
-  speed = 100000,
-}
-
-stream{
-  layer = 0,
-  x = 160,
-  y = 117,
-  direction = 0,
-  speed = 100000,
-}
-
-stream{
-  layer = 0,
-  x = 176,
-  y = 117,
-  direction = 0,
-  speed = 100000,
-}
-
-stream{
-  layer = 0,
-  x = 192,
-  y = 117,
-  direction = 0,
-  speed = 100000,
-}
-
-stream{
-  layer = 0,
-  x = 208,
-  y = 117,
-  direction = 0,
-  speed = 100000,
-}
-
-stream{
-  layer = 0,
-  x = 224,
-  y = 117,
-  direction = 0,
-  speed = 100000,
-}
-
-stream{
-  layer = 0,
-  x = 240,
-  y = 117,
-  direction = 0,
-  speed = 100000,
-}
-
-stream{
-  layer = 0,
-  x = 256,
-  y = 117,
-  direction = 0,
-  speed = 100000,
+  x = 272,
+  y = 192,
+  width = 16,
+  height = 16,
+  name = "pot_2",
+  pattern = "floor_pot",
+  enabled_at_start = true,
 }
 
