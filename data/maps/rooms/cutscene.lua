@@ -22,7 +22,7 @@ end
 function cutscene:on_started()
 	cutscene.surface = sol.surface.create(320, 240)
 	cutscene.text = sol.text_surface.create{
-        font = "dialog",
+        font = "la",
 		horizontal_alignment = "center",
 		vertical_alignment = "middle",
 		text = text_show,

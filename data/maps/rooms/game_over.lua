@@ -48,7 +48,7 @@ end
 function game_over:on_started()
 	self.surface = sol.surface.create(320, 240)
 	self.text = sol.text_surface.create{
-        font = "dialog",
+        font = "la",
 		horizontal_alignment = "center",
 		vertical_alignment = "middle",
 		text = text_show,
