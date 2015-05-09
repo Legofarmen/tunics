@@ -25,10 +25,9 @@ function condition_manager:initialize(game)
     return hero.condition[condition]
   end
 
-  function hero:set_condition(condition, active)
-      zentropy.debug('set_condition', active)
-    hero.condition[condition] = active
-  end
+    function hero:set_condition(condition, active)
+        hero.condition[condition] = active
+    end
 
   function hero:on_taking_damage(in_damage)
     local damage = in_damage
