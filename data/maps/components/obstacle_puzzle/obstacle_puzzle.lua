@@ -6,6 +6,7 @@ local zentropy = require 'lib/zentropy'
 function puzzle.init(map, data)
 
     local switch = map:get_entity('switch')
+    assert(switch, "obstacle_puzzle components must contain a 'switch'")
 
     for entity in map:get_entities('enemy') do
         zentropy.inject_enemy(entity, data.rng:refine(entity:get_name()))
