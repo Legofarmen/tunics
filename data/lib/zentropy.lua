@@ -3,6 +3,7 @@ local util = require 'lib/util'
 local Prng = require 'lib/prng'
 local Quest = require 'lib/quest'
 local map_include = require 'lib/map_include'
+local bindings = require 'lib/bindings'
 local dialog_box = require 'menus/dialog_box'
 local Pause = require 'menus/pause'
 local game_over_menu = require 'menus/game_over'
@@ -638,6 +639,44 @@ end
 
 function zentropy.game.setup_quest_invariants()
     zentropy.game.items = zentropy.game.get_items_sequence(zentropy.game.get_rng())
+    bindings.mixin(zentropy.game.game)
+
+    local native = {
+        pause = true,
+        attack = true,
+        item_1 = true,
+        item_2 = true,
+        action = true,
+        up = true,
+        down = true,
+        left = true,
+        right = true,
+    }
+
+    local handling = false
+    function zentropy.game.game:on_command_pressed(command)
+        if handling then return end
+        if native[command] then
+            handling = true
+            self:simulate_command_pressed(command)
+            handling = false
+            return true
+        else
+            return true
+        end
+    end
+
+    function zentropy.game.game:on_command_released(command)
+        if handling then return end
+        if native[command] then
+            handling = true
+            self:simulate_command_released(command)
+            handling = false
+            return true
+        else
+            return true
+        end
+    end
 end
 
 function zentropy.game.setup_quest_initial()

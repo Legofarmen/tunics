@@ -3,7 +3,7 @@ local bindings = {}
 local commands = {
     escape =    { buttons={1}, keys={'escape'} },
     map =       { buttons={2}, keys={'tab'} },
-    inventory = { buttons={3}, keys={'w'} },
+    pause = { buttons={3}, keys={'w'} },
     attack =    { buttons={4}, keys={'s'} },
     item_1 =    { buttons={5}, keys={'a'} },
     item_2 =    { buttons={6}, keys={'d'} },
@@ -39,14 +39,22 @@ function bindings.mixin(o)
     local axis_state = {}
 
     function o:on_key_pressed(key, modifiers)
-        if keys[key] and self.on_command_pressed then
-            return self:on_command_pressed(keys[key])
+        if keys[key] then
+            if self.on_command_pressed then
+                return self:on_command_pressed(keys[key])
+            end
+        else
+            return true
         end
     end
 
     function o:on_key_released(key, modifiers)
-        if keys[key] and self.on_command_released then
-            return self:on_command_released(keys[key])
+        if keys[key] then
+            if self.on_command_released then
+                return self:on_command_released(keys[key])
+            end
+        else
+            return true
         end
     end
 
