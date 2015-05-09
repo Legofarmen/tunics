@@ -719,6 +719,7 @@ enemy{ id = "bari_mini", description = "Bari mini" }
 enemy{ id = "red_fireball_triple", description = "Red fireball triple" }
 enemy{ id = "blue_fireball_triple", description = "Blue fireball triple" }
 enemy{ id = "hardhat_beetle_blue", description = "Hardhat beetle blue" }
+enemy{ id = "fireball_triple_blue", description = "Blue fireball triple" }
 
 entity{ id = "torch", description = "Torch" }
 
