@@ -670,32 +670,44 @@ function zentropy.game.setup_quest_invariants()
     }
 
     local handling = false
-    local state = 'game'
     function zentropy.game.game:on_command_pressed(command)
-        if state ~= 'game' then return false end
         if command == 'map' then
-            zentropy.game.game:set_paused(true)
-            state = 'map'
-            map_menu:start(zentropy.game.game, function ()
-                zentropy.game.game:set_paused(false)
-                state = 'game'
-            end)
-            return true
+            if sol.menu.is_started(map_menu) then
+                sol.menu.stop(map_menu)
+            else
+                for i, menu in ipairs{map_menu, inventory_menu, save_menu} do
+                    sol.menu.stop(menu)
+                end
+                zentropy.game.game:set_paused(true)
+                map_menu:start(zentropy.game.game, function ()
+                    zentropy.game.game:set_paused(false)
+                end)
+                return true
+            end
         elseif command == 'inventory' then
-            zentropy.game.game:set_paused(true)
-            state = 'inventory'
-            inventory_menu:start(zentropy.game.game, function ()
-                zentropy.game.game:set_paused(false)
-                state = 'game'
-            end)
-            return true
+            if sol.menu.is_started(inventory_menu) then
+                sol.menu.stop(inventory_menu)
+            else
+                for i, menu in ipairs{map_menu, inventory_menu, save_menu} do
+                    sol.menu.stop(menu)
+                end
+                zentropy.game.game:set_paused(true)
+                inventory_menu:start(zentropy.game.game, function ()
+                    zentropy.game.game:set_paused(false)
+                end)
+                return true
+            end
         elseif command == 'escape' then
-            zentropy.game.game:set_paused(true)
-            state = 'save'
-            save_menu:start(zentropy.game.game, function ()
-                zentropy.game.game:set_paused(false)
-                state = 'game'
-            end)
+            if zentropy.game.game:is_paused() then
+                for i, menu in ipairs{map_menu, inventory_menu, save_menu} do
+                    sol.menu.stop(menu)
+                end
+            else
+                zentropy.game.game:set_paused(true)
+                save_menu:start(zentropy.game.game, function ()
+                    zentropy.game.game:set_paused(false)
+                end)
+            end
             return true
         elseif native[command] then
             if handling then
