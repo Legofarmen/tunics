@@ -15,6 +15,10 @@ function map_menu:start(game, on_finished_callback)
     sol.menu.start(game, self)
 end
 
+function map_menu:on_finished()
+    self.on_finished_callback()
+end
+
 function map_menu:on_started()
 
     self.map_overlay = sol.surface.create("menus/dungeon_map_background.png")
@@ -30,16 +34,6 @@ function map_menu:on_started()
     }
 end
 
-function map_menu:on_command_pressed(command)
-    local handled = false
-    if command == "escape" or command == "map" then
-        sol.menu.stop(self)
-        handled = true
-    end
-
-    return handled
-end
-
 function map_menu:on_draw(dst_surface)
     self.game:get_map():render_map(self)
     local width, height = dst_surface:get_size()
@@ -47,11 +41,6 @@ function map_menu:on_draw(dst_surface)
     self.map_surface:draw(dst_surface)
     self:draw_dungeon_items(dst_surface)
 end
-
-function map_menu:on_finished()
-    self.on_finished_callback()
-end
-
 
 function map_menu:draw_dungeon_items(dst_surface)
 
