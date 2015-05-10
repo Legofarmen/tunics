@@ -35,10 +35,9 @@ function cutscene:on_draw(dst_surface)
 	cutscene.text:draw(dst_surface)
 end
 
-function cutscene:on_key_pressed(key)
-    local handled = false
-	sol.menu.stop(self)		
-    return handled
+function cutscene:on_command_pressed(command)
+    sol.menu.stop(self)
+    return true
 end
 
 function cutscene:on_finished()
@@ -90,4 +89,3 @@ function map:on_opening_transition_finished()
 		end
 	end)
 end
-
