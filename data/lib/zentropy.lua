@@ -645,7 +645,6 @@ function zentropy.game.setup_quest_invariants()
     local save_menu = Menu:new{entries = { 'Resume', 'Save & Exit' }}
     function save_menu:on_action(action)
         if action == 'Save & Exit' then
-            zentropy.game.game:save()
             sol.main.exit()
         else
             sol.menu.stop(save_menu)
