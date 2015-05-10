@@ -1,8 +1,9 @@
 local map_menu = {}
 
 map_menu.colors={
-    [1] = {150,150,150},
-    [2] = {200,200,200},
+    [1] = {100,100,100},
+    [2] = {160,160,160},
+    [3] = {225,225,225},
     entrance = {255,255,255},
 }
 
@@ -72,6 +73,15 @@ function map_menu:clear_map()
 end
 
 function map_menu:draw_room(map_x, map_y, perception)
+    if self.game:get_value('compass') then
+        local hero_x, hero_y = self.game:get_hero():get_position()
+        local origin_x, origin_y = self.game:get_hero():get_origin()
+        local hero_map_x = math.floor((hero_x - origin_x + 8) / 320)
+        local hero_map_y = math.floor((hero_y - origin_y + 8) / 240)
+        if map_x == hero_map_x and map_y == hero_map_y then
+            perception = 3
+        end
+    end
     local x = 12 * map_x
     local y = 12 * map_y
     self.map_surface:fill_color(self.colors[perception], x, y, 10, 10)
@@ -116,8 +126,6 @@ function map_menu:draw_boss(map_x, map_y)
 end
 
 function map_menu:draw_hero_point()
-    local hero_x, hero_y = self.game:get_hero():get_position()
-    self.hero_point_sprite:draw(self.map_surface, 2 * math.floor(6 * (hero_x - 40) / 320), 2 * math.floor(6 * (hero_y - 40) / 240))
 end
 
 return map_menu
