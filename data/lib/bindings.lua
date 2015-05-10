@@ -42,10 +42,22 @@ function bindings.mixin(o)
         if keys[key] then
             if self.on_command_pressed then
                 return self:on_command_pressed(keys[key])
+            else
+                return false
             end
-        else
-            return true
+        elseif key == "f5" then
+            -- F5: change the video mode.
+            sol.video.switch_mode()
+        elseif key == "return" and (modifiers.alt or modifiers.control) or key == "f11" then
+            -- Alt + Return or Ctrl + Return or F11: switch fullscreen.
+            sol.video.set_fullscreen(not sol.video.is_fullscreen())
+        elseif key == "f4" and modifiers.alt then
+            -- Alt + F4: stop the program.
+            sol.main.exit()
+        elseif key == "h" then
+            zentropy.game.game:set_hud_enabled(false)
         end
+        return true
     end
 
     function o:on_key_released(key, modifiers)

@@ -36,28 +36,3 @@ function sol.main:on_started()
 	end
 
 end
-
-function sol.main:on_key_pressed(key, modifiers)
-
-  local handled = false
-
-  -- Normal features.
-  if not handled then
-
-    if key == "f5" then
-      -- F5: change the video mode.
-      sol.video.switch_mode()
-    elseif key == "return" and (modifiers.alt or modifiers.control)
-        or key == "f11" then
-      -- Alt + Return or Ctrl + Return or F11: switch fullscreen.
-      sol.video.set_fullscreen(not sol.video.is_fullscreen())
-    elseif key == "f4" and modifiers.alt then
-      -- Alt + F4: stop the program.
-      sol.main.exit()
-	elseif key == "h" then
-		zentropy.game.game:set_hud_enabled(false)
-    end
-  end
-
-  return handled
-end
