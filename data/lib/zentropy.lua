@@ -581,7 +581,19 @@ function zentropy.game.get_items_sequence(rng)
 end
 
 function zentropy.game.has_savegame()
-    return sol.game.exists(zentropy.game.savefile)
+    if sol.game.exists(zentropy.game.savefile) then
+        local env = {}
+        local luaf = sol.main.load_file(zentropy.game.savefile)
+        local result = { pcall(setfenv(luaf, env)) }
+        local success = table.remove(result, 1)
+        if success then
+            return env.tier
+        else
+            error("executing '" .. luafile .. "':\n" .. result[1])
+        end
+    else
+        return false
+    end
 end
 
 function zentropy.game.resume_game()
