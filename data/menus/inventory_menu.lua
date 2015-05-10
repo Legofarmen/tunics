@@ -76,27 +76,6 @@ function inventory_menu:on_started()
     }
 end
 
-function inventory_menu:on_command_pressed(key)
-    local handled = false
-    if key == "escape" then
-        sol.main.exit()
-        handled = true
-    elseif key == "action" then
-        self.items[self.current_item].action()
-        sol.audio.stop_music()
-		sol.menu.stop(self)
-        handled = true
-    elseif key == "up" then
-        if self.current_item > 1 then self.current_item = self.current_item - 1 end
-        handled = true
-    elseif key == "down" then
-        if self.current_item < #self.items then self.current_item = self.current_item + 1 end
-        handled = true
-    end
-	
-    return handled
-end
-
 function inventory_menu:on_draw(dst_surface)
     for i, item in ipairs(self.items) do
         if i == self.current_item then
@@ -201,9 +180,8 @@ function inventory_menu:on_command_pressed(command)
     elseif command == "inventory" or command == "escape" then
         sol.menu.stop(self)
         handled = true
-    
     end
- 
+
     return handled
 end
 
