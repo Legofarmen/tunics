@@ -35,4 +35,12 @@ function Pause:stop_pause_menu()
     self.game:set_custom_command_effect("attack", nil)
 end
 
+function Pause:on_command_pressed(command)
+    zentropy.debug('Pause:on_command_pressed', command)
+    if command == 'escape' then
+        self:stop_pause_menu()
+    end
+    return false
+end
+
 return Pause

@@ -56,7 +56,10 @@ function submenu:previous_submenu()
 end
 
 function submenu:on_command_pressed(command)
-    if command == 'attack' then
+    zentropy.debug('submenu:on_command_pressed', command)
+    if command == 'escape' then
+        sol.menu.stop(self)
+    elseif command == 'attack' then
         self.game:save()
         sol.main.reset()
     end

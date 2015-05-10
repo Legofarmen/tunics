@@ -4,9 +4,11 @@ local Prng = require 'lib/prng'
 local Quest = require 'lib/quest'
 local map_include = require 'lib/map_include'
 local bindings = require 'lib/bindings'
+local map_menu = require 'menus/map_menu'
+local inventory_menu = require 'menus/inventory_menu'
 local dialog_box = require 'menus/dialog_box'
-local Pause = require 'menus/pause'
 local game_over_menu = require 'menus/game_over'
+local Menu = require 'menus/menu'
 local condition_manager = require 'hero_condition'
 
 bit32 = bit32 or bit
@@ -639,7 +641,21 @@ end
 
 function zentropy.game.setup_quest_invariants()
     zentropy.game.items = zentropy.game.get_items_sequence(zentropy.game.get_rng())
+
+    local save_menu = Menu:new{entries = { 'Resume', 'Save & Exit' }}
+    function save_menu:on_action(action)
+        if action == 'Save & Exit' then
+            zentropy.game.game:save()
+            sol.main.exit()
+        else
+            sol.menu.stop(save_menu)
+        end
+    end
+
     bindings.mixin(zentropy.game.game)
+    bindings.mixin(map_menu)
+    bindings.mixin(inventory_menu)
+    bindings.mixin(save_menu)
 
     local native = {
         pause = true,
@@ -654,27 +670,56 @@ function zentropy.game.setup_quest_invariants()
     }
 
     local handling = false
+    local state = 'game'
     function zentropy.game.game:on_command_pressed(command)
-        if handling then return end
-        if native[command] then
-            handling = true
-            self:simulate_command_pressed(command)
-            handling = false
+        if state ~= 'game' then return false end
+        if command == 'map' then
+            zentropy.game.game:set_paused(true)
+            state = 'map'
+            map_menu:start(zentropy.game.game, function ()
+                zentropy.game.game:set_paused(false)
+                state = 'game'
+            end)
             return true
-        else
+        elseif command == 'inventory' then
+            zentropy.game.game:set_paused(true)
+            state = 'inventory'
+            inventory_menu:start(zentropy.game.game, function ()
+                zentropy.game.game:set_paused(false)
+                state = 'game'
+            end)
             return true
+        elseif command == 'escape' then
+            zentropy.game.game:set_paused(true)
+            state = 'save'
+            save_menu:start(zentropy.game.game, function ()
+                zentropy.game.game:set_paused(false)
+                state = 'game'
+            end)
+            return true
+        elseif native[command] then
+            if handling then
+                return false
+            else
+                handling = true
+                self:simulate_command_pressed(command)
+                handling = false
+                return true
+            end
         end
+        return false
     end
 
     function zentropy.game.game:on_command_released(command)
-        if handling then return end
         if native[command] then
-            handling = true
-            self:simulate_command_released(command)
-            handling = false
-            return true
-        else
-            return true
+            if handling then
+                return false
+            else
+                handling = true
+                self:simulate_command_released(command)
+                handling = false
+                return true
+            end
         end
     end
 end
@@ -739,18 +784,6 @@ function zentropy.game.init(game)
     sol.main.load_file("hud/hud")(game)
 
     game.dialog_box = dialog_box:new{game=game}
-
-    local pause = Pause:new{game=game}
-
-    function game:on_paused()
-        pause:start_pause_menu()
-        self:hud_on_paused()
-    end
-
-    function game:on_unpaused()
-        pause:stop_pause_menu()
-        self:hud_on_unpaused()
-    end
 
     function game:on_started()
         if zentropy.settings.debug_walking_speed then

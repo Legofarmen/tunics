@@ -3,7 +3,7 @@ local bindings = {}
 local commands = {
     escape =    { buttons={1}, keys={'escape'} },
     map =       { buttons={2}, keys={'tab'} },
-    pause = { buttons={3}, keys={'w'} },
+    inventory = { buttons={3}, keys={'w'} },
     attack =    { buttons={4}, keys={'s'} },
     item_1 =    { buttons={5}, keys={'a'} },
     item_2 =    { buttons={6}, keys={'d'} },
