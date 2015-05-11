@@ -9,7 +9,7 @@ properties{
 
 tile{
   layer = 1,
-  x = 184,
+  x = 104,
   y = 176,
   width = 32,
   height = 32,
@@ -18,7 +18,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 192,
+  x = 88,
   y = 136,
   width = 40,
   height = 24,
@@ -27,7 +27,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 240,
+  x = 32,
   y = 168,
   width = 48,
   height = 40,
@@ -36,7 +36,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 184,
+  x = 104,
   y = 176,
   width = 8,
   height = 8,
@@ -45,7 +45,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 240,
+  x = 32,
   y = 168,
   width = 8,
   height = 8,
@@ -54,7 +54,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 192,
+  x = 88,
   y = 136,
   width = 8,
   height = 8,
@@ -63,7 +63,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 208,
+  x = 128,
   y = 176,
   width = 8,
   height = 8,
@@ -72,7 +72,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 224,
+  x = 120,
   y = 136,
   width = 8,
   height = 8,
@@ -81,7 +81,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 280,
+  x = 72,
   y = 168,
   width = 8,
   height = 8,
@@ -90,7 +90,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 184,
+  x = 104,
   y = 200,
   width = 8,
   height = 8,
@@ -99,7 +99,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 240,
+  x = 32,
   y = 200,
   width = 8,
   height = 8,
@@ -108,7 +108,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 192,
+  x = 88,
   y = 152,
   width = 8,
   height = 8,
@@ -117,7 +117,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 224,
+  x = 120,
   y = 152,
   width = 8,
   height = 8,
@@ -126,7 +126,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 208,
+  x = 128,
   y = 200,
   width = 8,
   height = 8,
@@ -135,7 +135,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 280,
+  x = 72,
   y = 200,
   width = 8,
   height = 8,
@@ -144,7 +144,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 208,
+  x = 128,
   y = 184,
   width = 8,
   height = 16,
@@ -153,7 +153,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 280,
+  x = 72,
   y = 176,
   width = 8,
   height = 24,
@@ -162,7 +162,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 224,
+  x = 120,
   y = 144,
   width = 8,
   height = 8,
@@ -171,7 +171,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 248,
+  x = 40,
   y = 168,
   width = 32,
   height = 8,
@@ -180,7 +180,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 192,
+  x = 112,
   y = 176,
   width = 16,
   height = 8,
@@ -189,7 +189,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 200,
+  x = 96,
   y = 136,
   width = 24,
   height = 8,
@@ -198,7 +198,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 184,
+  x = 104,
   y = 184,
   width = 8,
   height = 16,
@@ -207,7 +207,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 240,
+  x = 32,
   y = 176,
   width = 8,
   height = 24,
@@ -216,7 +216,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 192,
+  x = 88,
   y = 144,
   width = 8,
   height = 8,
@@ -225,7 +225,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 192,
+  x = 112,
   y = 200,
   width = 16,
   height = 8,
@@ -234,7 +234,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 248,
+  x = 40,
   y = 200,
   width = 32,
   height = 8,
@@ -243,7 +243,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 200,
+  x = 96,
   y = 152,
   width = 24,
   height = 8,
@@ -252,11 +252,11 @@ tile{
 
 dynamic_tile{
   layer = 1,
-  x = 256,
+  x = 48,
   y = 136,
   width = 16,
   height = 16,
-  name = "enemy_2",
+  name = "enemy_3",
   pattern = "carpet.1",
   enabled_at_start = false,
 }

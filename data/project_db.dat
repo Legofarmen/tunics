@@ -434,6 +434,21 @@ map{ id = "components/filler/filler_000004_14b", description = "Filler 000004 14
 map{ id = "components/filler/filler_000100_14b", description = "Filler 000100 14b" }
 map{ id = "components/filler/filler_000400_14b", description = "Filler 000400 14b" }
 map{ id = "components/filler/filler_000001_15b", description = "Filler 000001 15b" }
+map{ id = "components/filler/filler_000004_15b", description = "Filler 000004 15b" }
+map{ id = "components/filler/filler_000100_15b", description = "Filler 000100 15b" }
+map{ id = "components/filler/filler_000400_15b", description = "Filler 000400 15b" }
+map{ id = "components/filler/filler_000001_16b", description = "Filler 000001 16b" }
+map{ id = "components/filler/filler_000004_16b", description = "Filler 000004 16b" }
+map{ id = "components/filler/filler_000100_16b", description = "Filler 000100 16b" }
+map{ id = "components/filler/filler_000400_16b", description = "Filler 000400 16b" }
+map{ id = "components/filler/filler_000001_17b", description = "Filler 000001 17b" }
+map{ id = "components/filler/filler_000004_17b", description = "Filler 000004 17b" }
+map{ id = "components/filler/filler_000100_17b", description = "Filler 000100 17b" }
+map{ id = "components/filler/filler_000400_17b", description = "Filler 000400 17b" }
+map{ id = "components/filler/filler_000001_20b", description = "Filler 000001 20b" }
+map{ id = "components/filler/filler_000004_20b", description = "Filler 000004 20b" }
+map{ id = "components/filler/filler_000400_20b", description = "Filler 000400 20b" }
+map{ id = "components/filler/filler_000100_20b", description = "Filler 000100 20b" }
 
 tileset{ id = "light_world", description = "Light World" }
 tileset{ id = "dungeon_brick_gray_1", description = "Dungeon brick gray 1" }
