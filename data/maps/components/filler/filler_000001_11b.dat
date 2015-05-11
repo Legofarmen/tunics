@@ -9,19 +9,10 @@ properties{
 
 tile{
   layer = 1,
-  x = 256,
-  y = 144,
-  width = 16,
-  height = 64,
-  pattern = "block",
-}
-
-tile{
-  layer = 1,
   x = 224,
-  y = 160,
-  width = 16,
-  height = 48,
+  y = 144,
+  width = 64,
+  height = 16,
   pattern = "block",
 }
 
@@ -29,40 +20,18 @@ tile{
   layer = 1,
   x = 192,
   y = 176,
-  width = 16,
-  height = 32,
+  width = 96,
+  height = 16,
   pattern = "block",
 }
 
 dynamic_tile{
   layer = 1,
-  x = 192,
-  y = 144,
-  width = 16,
-  height = 16,
-  name = "enemy_3",
-  pattern = "carpet.1",
-  enabled_at_start = false,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 208,
-  y = 192,
+  x = 272,
+  y = 160,
   width = 16,
   height = 16,
   name = "pot_1",
-  pattern = "floor_pot",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 240,
-  y = 192,
-  width = 16,
-  height = 16,
-  name = "pot_2",
   pattern = "floor_pot",
   enabled_at_start = true,
 }
@@ -73,8 +42,30 @@ dynamic_tile{
   y = 192,
   width = 16,
   height = 16,
+  name = "pot_2",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 256,
+  y = 192,
+  width = 16,
+  height = 16,
   name = "pot_3",
   pattern = "floor_pot",
   enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 192,
+  y = 144,
+  width = 16,
+  height = 16,
+  name = "enemy_2",
+  pattern = "carpet.1",
+  enabled_at_start = false,
 }
 

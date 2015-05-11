@@ -1,0 +1,180 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  tileset = "dungeon_brick_gray_1",
+  music = "same",
+}
+
+tile{
+  layer = 1,
+  x = 16,
+  y = 208,
+  width = 24,
+  height = 24,
+  pattern = "ceiling",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 208,
+  width = 24,
+  height = 24,
+  pattern = "wall.corner.3",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 192,
+  width = 24,
+  height = 16,
+  pattern = "wall.3",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 184,
+  width = 16,
+  height = 24,
+  pattern = "wall.2",
+}
+
+tile{
+  layer = 1,
+  x = 16,
+  y = 184,
+  width = 24,
+  height = 24,
+  pattern = "wall.corner.3",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 184,
+  width = 24,
+  height = 24,
+  pattern = "wall.corner_reverse.3",
+}
+
+tile{
+  layer = 1,
+  x = 64,
+  y = 176,
+  width = 8,
+  height = 8,
+  pattern = "wall_border.corner_reverse.3",
+}
+
+tile{
+  layer = 1,
+  x = 64,
+  y = 184,
+  width = 8,
+  height = 16,
+  pattern = "wall_border.3",
+}
+
+tile{
+  layer = 1,
+  x = 64,
+  y = 200,
+  width = 8,
+  height = 8,
+  pattern = "wall_border.corner.3",
+}
+
+tile{
+  layer = 1,
+  x = 48,
+  y = 176,
+  width = 16,
+  height = 8,
+  pattern = "wall_border.2",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 176,
+  width = 8,
+  height = 8,
+  pattern = "wall_border.corner.3",
+}
+
+tile{
+  layer = 1,
+  x = 88,
+  y = 144,
+  width = 32,
+  height = 32,
+  pattern = "floor_small.2",
+}
+
+tile{
+  layer = 1,
+  x = 80,
+  y = 136,
+  width = 8,
+  height = 48,
+  pattern = "floor_border.2",
+}
+
+tile{
+  layer = 1,
+  x = 88,
+  y = 136,
+  width = 32,
+  height = 8,
+  pattern = "floor_border.2",
+}
+
+tile{
+  layer = 1,
+  x = 88,
+  y = 176,
+  width = 32,
+  height = 8,
+  pattern = "floor_border.2",
+}
+
+tile{
+  layer = 1,
+  x = 96,
+  y = 152,
+  width = 16,
+  height = 16,
+  pattern = "tongue",
+}
+
+tile{
+  layer = 1,
+  x = 120,
+  y = 136,
+  width = 8,
+  height = 48,
+  pattern = "floor_border.2",
+}
+
+tile{
+  layer = 1,
+  x = 136,
+  y = 152,
+  width = 16,
+  height = 16,
+  pattern = "torch",
+}
+
+tile{
+  layer = 1,
+  x = 56,
+  y = 152,
+  width = 16,
+  height = 16,
+  pattern = "torch",
+}
+

@@ -9,25 +9,25 @@ properties{
 
 tile{
   layer = 1,
-  x = 224,
-  y = 64,
+  x = 80,
+  y = 32,
   width = 16,
   height = 16,
-  pattern = "torch_big.bottom",
+  pattern = "torch",
 }
 
 tile{
   layer = 1,
-  x = 224,
-  y = 48,
+  x = 32,
+  y = 56,
   width = 16,
   height = 16,
-  pattern = "torch_big.top",
+  pattern = "torch",
 }
 
 enemy{
   layer = 1,
-  x = 280,
+  x = 136,
   y = 45,
   direction = 3,
   breed = "pike_fixed",
@@ -35,34 +35,34 @@ enemy{
 
 enemy{
   layer = 1,
-  x = 280,
+  x = 88,
+  y = 69,
+  direction = 3,
+  breed = "pike_fixed",
+}
+
+enemy{
+  layer = 1,
+  x = 40,
   y = 101,
-  direction = 3,
-  breed = "pike_fixed",
-}
-
-enemy{
-  layer = 1,
-  x = 232,
-  y = 45,
   direction = 3,
   breed = "pike_fixed",
 }
 
 dynamic_tile{
   layer = 1,
-  x = 200,
-  y = 64,
+  x = 128,
+  y = 56,
   width = 16,
   height = 16,
-  name = "enemy",
+  name = "enemy_2",
   pattern = "carpet.1",
   enabled_at_start = false,
 }
 
 enemy{
   layer = 1,
-  x = 184,
+  x = 40,
   y = 45,
   direction = 3,
   breed = "pike_fixed",

@@ -1,0 +1,180 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  tileset = "dungeon_brick_gray_1",
+  music = "same",
+}
+
+tile{
+  layer = 1,
+  x = 208,
+  y = 144,
+  width = 32,
+  height = 32,
+  pattern = "floor_small.2",
+}
+
+tile{
+  layer = 1,
+  x = 200,
+  y = 136,
+  width = 8,
+  height = 48,
+  pattern = "floor_border.2",
+}
+
+tile{
+  layer = 1,
+  x = 208,
+  y = 136,
+  width = 32,
+  height = 8,
+  pattern = "floor_border.2",
+}
+
+tile{
+  layer = 1,
+  x = 208,
+  y = 176,
+  width = 32,
+  height = 8,
+  pattern = "floor_border.2",
+}
+
+tile{
+  layer = 1,
+  x = 216,
+  y = 152,
+  width = 16,
+  height = 16,
+  pattern = "tongue",
+}
+
+tile{
+  layer = 1,
+  x = 264,
+  y = 208,
+  width = 24,
+  height = 24,
+  pattern = "wall.corner.4",
+}
+
+tile{
+  layer = 1,
+  x = 264,
+  y = 192,
+  width = 24,
+  height = 16,
+  pattern = "wall.4",
+}
+
+tile{
+  layer = 1,
+  x = 280,
+  y = 184,
+  width = 16,
+  height = 24,
+  pattern = "wall.2",
+}
+
+tile{
+  layer = 1,
+  x = 264,
+  y = 184,
+  width = 24,
+  height = 24,
+  pattern = "wall.corner_reverse.4",
+}
+
+tile{
+  layer = 1,
+  x = 256,
+  y = 200,
+  width = 8,
+  height = 8,
+  pattern = "wall_border.corner.4",
+}
+
+tile{
+  layer = 1,
+  x = 280,
+  y = 176,
+  width = 8,
+  height = 8,
+  pattern = "wall_border.corner.4",
+}
+
+tile{
+  layer = 1,
+  x = 264,
+  y = 176,
+  width = 16,
+  height = 8,
+  pattern = "wall_border.2",
+}
+
+tile{
+  layer = 1,
+  x = 256,
+  y = 184,
+  width = 8,
+  height = 16,
+  pattern = "wall_border.4",
+}
+
+tile{
+  layer = 1,
+  x = 256,
+  y = 176,
+  width = 8,
+  height = 8,
+  pattern = "wall_border.corner.1",
+}
+
+tile{
+  layer = 1,
+  x = 240,
+  y = 136,
+  width = 8,
+  height = 48,
+  pattern = "floor_border.2",
+}
+
+tile{
+  layer = 1,
+  x = 256,
+  y = 152,
+  width = 16,
+  height = 16,
+  pattern = "torch",
+}
+
+tile{
+  layer = 1,
+  x = 288,
+  y = 208,
+  width = 24,
+  height = 24,
+  pattern = "ceiling",
+}
+
+tile{
+  layer = 1,
+  x = 176,
+  y = 152,
+  width = 16,
+  height = 16,
+  pattern = "torch",
+}
+
+tile{
+  layer = 1,
+  x = 288,
+  y = 184,
+  width = 24,
+  height = 24,
+  pattern = "wall.corner.4",
+}
+
