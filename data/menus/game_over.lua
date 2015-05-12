@@ -10,17 +10,16 @@ local cursor_position
 local state
 
 function game_over_menu:on_started()
-	local game = zentropy.game.game
-	local hero = game:get_hero()
+	local hero = self.game:get_hero()
   
-	game:set_hud_enabled(false)
-	game:set_pause_allowed(false)
+	self.game:set_hud_enabled(false)
+	self.game:set_pause_allowed(false)
   
   hero_was_visible = hero:is_visible()
   hero:set_visible(false)
   music = sol.audio.get_music()
   fade_sprite = sol.sprite.create("hud/gameover_fade")
-  local tunic = game:get_ability("tunic")
+  local tunic = self.game:get_ability("tunic")
   hero_dead_sprite = sol.sprite.create("hero/tunic" .. tunic)
   hero_dead_sprite:set_animation("hurt")
   hero_dead_sprite:set_direction(hero:get_direction())
@@ -30,7 +29,7 @@ function game_over_menu:on_started()
   fairy_sprite:set_animation("fairy")
   state = "waiting_start"
 
-  local map = game:get_map()
+  local map = self.game:get_map()
   local camera_x, camera_y = map:get_camera_position()
   local hero_x, hero_y = hero:get_position()
   hero_dead_x = hero_x - camera_x
@@ -53,7 +52,7 @@ function game_over_menu:on_started()
 		
         sol.timer.start(self, 2000, function()
           
-			game:get_hero():teleport('rooms/game_over')
+			self.game:get_hero():teleport('rooms/game_over')
 					  
         end)
       end
@@ -62,8 +61,7 @@ function game_over_menu:on_started()
 end
 
 function game_over_menu:on_finished()
-local game = zentropy.game.game
-  local hero = game:get_hero()
+  local hero = self.game:get_hero()
   if hero ~= nil then
     hero:set_visible(hero_was_visible)
   end

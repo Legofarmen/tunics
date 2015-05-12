@@ -835,7 +835,11 @@ function zentropy.game.init(game)
     end
 	
 	function game:on_game_over_started()
-		sol.menu.start(zentropy.game.game:get_map(),game_over_menu)
+		local map = zentropy.game.game:get_map()
+        game_over_menu.game = zentropy.game.game
+        zentropy.game.tier = zentropy.game.game:get_value('tier') - 1
+        zentropy.game.game = nil
+		sol.menu.start(map, game_over_menu)
 	end
 	
     function game:on_game_over_finished()
