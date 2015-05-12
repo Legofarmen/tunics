@@ -1,0 +1,522 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  tileset = "dungeon_brick_gray_1",
+  music = "same",
+}
+
+tile{
+  layer = 1,
+  x = 48,
+  y = 160,
+  width = 32,
+  height = 32,
+  pattern = "floor.20",
+}
+
+tile{
+  layer = 1,
+  x = 56,
+  y = 168,
+  width = 16,
+  height = 16,
+  pattern = "pillar.bottom",
+}
+
+tile{
+  layer = 1,
+  x = 240,
+  y = 160,
+  width = 32,
+  height = 32,
+  pattern = "floor.20",
+}
+
+tile{
+  layer = 1,
+  x = 248,
+  y = 168,
+  width = 16,
+  height = 16,
+  pattern = "pillar.bottom",
+}
+
+tile{
+  layer = 1,
+  x = 240,
+  y = 48,
+  width = 32,
+  height = 32,
+  pattern = "floor.20",
+}
+
+tile{
+  layer = 1,
+  x = 248,
+  y = 56,
+  width = 16,
+  height = 16,
+  pattern = "pillar.bottom",
+}
+
+tile{
+  layer = 1,
+  x = 48,
+  y = 48,
+  width = 32,
+  height = 32,
+  pattern = "floor.20",
+}
+
+tile{
+  layer = 1,
+  x = 56,
+  y = 56,
+  width = 16,
+  height = 16,
+  pattern = "pillar.bottom",
+}
+
+tile{
+  layer = 1,
+  x = 8,
+  y = 88,
+  width = 32,
+  height = 16,
+  pattern = "drapes.3.3",
+}
+
+tile{
+  layer = 1,
+  x = 8,
+  y = 136,
+  width = 32,
+  height = 16,
+  pattern = "drapes.3.3",
+}
+
+tile{
+  layer = 1,
+  x = 56,
+  y = 152,
+  width = 16,
+  height = 16,
+  pattern = "pillar.top",
+}
+
+tile{
+  layer = 1,
+  x = 248,
+  y = 152,
+  width = 16,
+  height = 16,
+  pattern = "pillar.top",
+}
+
+tile{
+  layer = 1,
+  x = 248,
+  y = 40,
+  width = 16,
+  height = 16,
+  pattern = "pillar.top",
+}
+
+tile{
+  layer = 1,
+  x = 56,
+  y = 40,
+  width = 16,
+  height = 16,
+  pattern = "pillar.top",
+}
+
+tile{
+  layer = 1,
+  x = 176,
+  y = 8,
+  width = 16,
+  height = 32,
+  pattern = "drapes.3.1",
+}
+
+tile{
+  layer = 1,
+  x = 128,
+  y = 8,
+  width = 16,
+  height = 32,
+  pattern = "drapes.3.1",
+}
+
+tile{
+  layer = 1,
+  x = 280,
+  y = 88,
+  width = 32,
+  height = 16,
+  pattern = "drapes.3.4",
+}
+
+tile{
+  layer = 1,
+  x = 280,
+  y = 136,
+  width = 32,
+  height = 16,
+  pattern = "drapes.3.4",
+}
+
+tile{
+  layer = 1,
+  x = 104,
+  y = 80,
+  width = 112,
+  height = 56,
+  pattern = "floor_small.4",
+}
+
+tile{
+  layer = 1,
+  x = 96,
+  y = 72,
+  width = 128,
+  height = 8,
+  pattern = "floor_border.1",
+}
+
+tile{
+  layer = 1,
+  x = 96,
+  y = 136,
+  width = 128,
+  height = 8,
+  pattern = "floor_border.1",
+}
+
+tile{
+  layer = 1,
+  x = 96,
+  y = 80,
+  width = 8,
+  height = 56,
+  pattern = "floor_border.1",
+}
+
+tile{
+  layer = 1,
+  x = 216,
+  y = 80,
+  width = 8,
+  height = 56,
+  pattern = "floor_border.1",
+}
+
+tile{
+  layer = 1,
+  x = 152,
+  y = 112,
+  width = 16,
+  height = 16,
+  pattern = "tongue",
+}
+
+tile{
+  layer = 1,
+  x = 128,
+  y = 168,
+  width = 32,
+  height = 48,
+  pattern = "door_main.2.floor.2",
+}
+
+tile{
+  layer = 1,
+  x = 160,
+  y = 176,
+  width = 32,
+  height = 40,
+  pattern = "door_main.2.floor.3",
+}
+
+tile{
+  layer = 1,
+  x = 120,
+  y = 176,
+  width = 8,
+  height = 24,
+  pattern = "floor_border.2",
+}
+
+tile{
+  layer = 1,
+  x = 192,
+  y = 176,
+  width = 8,
+  height = 24,
+  pattern = "floor_border.2",
+}
+
+tile{
+  layer = 1,
+  x = 120,
+  y = 168,
+  width = 80,
+  height = 8,
+  pattern = "floor_border.2",
+}
+
+tile{
+  layer = 1,
+  x = 152,
+  y = 208,
+  width = 16,
+  height = 32,
+  pattern = "floor_small.2",
+}
+
+tile{
+  layer = 1,
+  x = 144,
+  y = 232,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.2",
+}
+
+tile{
+  layer = 1,
+  x = 168,
+  y = 232,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.2",
+}
+
+tile{
+  layer = 1,
+  x = 152,
+  y = 240,
+  width = 16,
+  height = 8,
+  pattern = "barrier.1.1",
+}
+
+tile{
+  layer = 1,
+  x = 152,
+  y = 208,
+  width = 16,
+  height = 16,
+  pattern = "door_main.2",
+}
+
+tile{
+  layer = 1,
+  x = 120,
+  y = 112,
+  width = 16,
+  height = 16,
+  pattern = "tongue",
+}
+
+tile{
+  layer = 1,
+  x = 184,
+  y = 112,
+  width = 16,
+  height = 16,
+  pattern = "tongue",
+}
+
+tile{
+  layer = 1,
+  x = 152,
+  y = 88,
+  width = 16,
+  height = 16,
+  pattern = "tongue",
+}
+
+tile{
+  layer = 1,
+  x = 120,
+  y = 88,
+  width = 16,
+  height = 16,
+  pattern = "tongue",
+}
+
+tile{
+  layer = 1,
+  x = 184,
+  y = 88,
+  width = 16,
+  height = 16,
+  pattern = "tongue",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 144,
+  y = 184,
+  width = 32,
+  height = 24,
+  name = "entrance_carpet_2",
+  pattern = "door_main.2.floor.1",
+  enabled_at_start = true,
+}
+
+stream{
+  layer = 1,
+  x = 160,
+  y = 221,
+  direction = 2,
+  speed = 128,
+  allow_movement = false,
+  allow_attack = false,
+  allow_item = false,
+}
+
+wall{
+  layer = 1,
+  x = 152,
+  y = 208,
+  width = 16,
+  height = 16,
+  stops_enemies = true,
+}
+
+stream{
+  layer = 1,
+  x = 160,
+  y = 237,
+  direction = 2,
+  speed = 128,
+  allow_movement = false,
+  allow_attack = false,
+  allow_item = false,
+}
+
+sensor{
+  layer = 1,
+  x = 160,
+  y = 205,
+  width = 16,
+  height = 16,
+  name = "sensor_2",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 136,
+  y = 208,
+  width = 16,
+  height = 24,
+  name = "tile_7",
+  pattern = "wall.2",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 168,
+  y = 208,
+  width = 16,
+  height = 24,
+  name = "tile_2",
+  pattern = "wall.2",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 144,
+  y = 208,
+  width = 8,
+  height = 16,
+  name = "tile_3",
+  pattern = "door.2.support.1",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 168,
+  y = 208,
+  width = 8,
+  height = 16,
+  name = "tile_4",
+  pattern = "door.2.support.2",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 120,
+  y = 200,
+  width = 24,
+  height = 24,
+  name = "tile_5",
+  pattern = "entrance_pillar.1.1.bottom",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 176,
+  y = 200,
+  width = 24,
+  height = 24,
+  name = "tile_6",
+  pattern = "entrance_pillar.1.2.bottom",
+  enabled_at_start = true,
+}
+
+door{
+  layer = 1,
+  x = 152,
+  y = 208,
+  name = "door_entrance_2",
+  direction = 3,
+  sprite = "entities/door_normal",
+}
+
+tile{
+  layer = 2,
+  x = 144,
+  y = 224,
+  width = 32,
+  height = 8,
+  pattern = "door_cache.2",
+}
+
+tile{
+  layer = 2,
+  x = 120,
+  y = 224,
+  width = 24,
+  height = 8,
+  pattern = "entrance_pillar.1.1.top",
+}
+
+tile{
+  layer = 2,
+  x = 176,
+  y = 224,
+  width = 24,
+  height = 8,
+  pattern = "entrance_pillar.1.2.top",
+}
+
+tile{
+  layer = 2,
+  x = 144,
+  y = 224,
+  width = 32,
+  height = 8,
+  pattern = "door_top.closed.2",
+}
+
