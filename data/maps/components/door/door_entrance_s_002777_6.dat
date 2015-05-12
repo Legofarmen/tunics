@@ -406,7 +406,7 @@ sensor{
   y = 205,
   width = 16,
   height = 16,
-  name = "sensor_2",
+  name = "sensor",
 }
 
 dynamic_tile{
