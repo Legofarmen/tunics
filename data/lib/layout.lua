@@ -503,6 +503,7 @@ end
 function Layout.solarus_mixin(object, map, floors)
 
     local map_width, map_height = map:get_size()
+    local current_map_x, current_map_y = nil, nil
 
     function mark_known_room(x, y)
         map:get_game():set_value(string.format('room_%d_%d', x, y), true)
@@ -520,46 +521,49 @@ function Layout.solarus_mixin(object, map, floors)
     end
 
     function object:separator(map_x, map_y, dir)
-        local tag = string.format('%d_%d_%s', map_x, map_y, dir)
-        if not self.separators[tag] then
-            self.separators[tag] = true
-            if dir == 'north' then
+        if dir == 'north' then
+            local tag = string.format('north_%d', map_y)
+            if not self.separators[tag] then
+                self.separators[tag] = true
                 local properties = {
-                    x = 320 * map_x,
+                    x = 0,
                     y = 240 * map_y - 8,
                     layer = 1,
-                    width = 320,
+                    width = 3200,
                     height = 16,
                 }
                 local sep = map:create_separator(properties)
 
                 function sep:on_activated(dir)
-                    local my_y = (dir == Layout.DIRECTIONS.north) and map_y - 1 or map_y
-                    local my_x = (dir == Layout.DIRECTIONS.west) and map_x - 1 or map_x
-                    mark_known_room(my_x, my_y)
+                    current_map_y = (dir == Layout.DIRECTIONS.north) and map_y - 1 or map_y
+                    mark_known_room(current_map_x, current_map_y)
                 end
-            elseif dir == 'west' then
+            end
+        elseif dir == 'west' then
+            local tag = string.format('west_%d', map_x)
+            if not self.separators[tag] then
+                self.separators[tag] = true
                 local properties = {
                     x = 320 * map_x - 8,
-                    y = 240 * map_y,
+                    y = 0,
                     layer = 1,
                     width = 16,
-                    height = 240,
+                    height = 2400,
                 }
                 local sep = map:create_separator(properties)
                 function sep:on_activated(dir)
-                    local my_y = (dir == Layout.DIRECTIONS.north) and map_y - 1 or map_y
-                    local my_x = (dir == Layout.DIRECTIONS.west) and map_x - 1 or map_x
-                    mark_known_room(my_x, my_y)
+                    current_map_x = (dir == Layout.DIRECTIONS.west) and map_x - 1 or map_x
+                    mark_known_room(current_map_x, current_map_y)
                 end
-            else
-                error(string.format('unhandled dir: %s', dir))
             end
+        else
+            error(string.format('unhandled dir: %s', dir))
         end
     end
 
     function object:collect_on_finish()
-        mark_known_room(self:pos_from_native(0, 0))
+        current_map_x, current_map_y = object:pos_from_native(0, 0)
+        mark_known_room(current_map_x, current_map_y)
         self:each_room(function (depth, leaf, info)
             local map_x, map_y = self:pos_from_native(depth, leaf)
             self:separator(map_x, map_y, 'north')
