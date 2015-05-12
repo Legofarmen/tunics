@@ -56,7 +56,7 @@ Oh, fiddlesticks!
 dialog{
   id = "_treasure.heart_container.1",
   text = [[
-You got a heart container.
+Got a heart container!
 ]]
 }
 
@@ -301,7 +301,7 @@ dialog{
   icon = 73,
   skip = "all",
   text = [[
-Huh? It's locked!
-It's got a big key hole.
+It's locked!
+You need a big key.
 ]]
 }
