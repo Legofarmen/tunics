@@ -43,16 +43,16 @@ enemy{
 
 enemy{
   layer = 1,
-  x = 184,
-  y = 101,
+  x = 232,
+  y = 45,
   direction = 3,
   breed = "pike_fixed",
 }
 
 dynamic_tile{
   layer = 1,
-  x = 224,
-  y = 80,
+  x = 200,
+  y = 64,
   width = 16,
   height = 16,
   name = "enemy",

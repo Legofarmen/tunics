@@ -2,7 +2,7 @@ map{ id = "rooms/room1", description = "Room1" }
 map{ id = "dungeons/dungeon1", description = "Dungeon1" }
 map{ id = "components/door/door_open_n_200000_1", description = "Door open n 200000 1" }
 map{ id = "components/door/door_open_s_002000_1", description = "Door open s 002000 1" }
-map{ id = "components/door/door_entrance_s_002777_1", description = "Door entrance s 002007 1" }
+map{ id = "components/door/door_entrance_s_002777_1", description = "Door entrance s 002777 1" }
 map{ id = "components/door/door_open_w_040000_1", description = " Door open w 040000 1" }
 map{ id = "components/door/door_open_e_010000_1", description = "Door open e 010000 1" }
 map{ id = "components/door/door_bigkey_n_200700_1", description = "Door bigkey n 200700 1" }
@@ -327,7 +327,7 @@ map{ id = "components/door/door_bigkey_n_250777_3", description = "Door bigkey n
 map{ id = "components/door/door_bigkey_n_200700_2", description = "Door bigkey n 200700 2" }
 map{ id = "components/door/door_bigkey_n_250777_4", description = "Door bigkey n 250777 4" }
 map{ id = "components/door/door_entrance_s_002777_5", description = "Door entrance s 002777 5" }
-map{ id = "tompa/door_entrance_s_002777", description = "Door entrance s 002777" }
+map{ id = "components/door/door_entrance_s_002777_6", description = "Door entrance s 002777 6" }
 map{ id = "components/filler/filler_000001_7", description = "Filler 000001 7" }
 map{ id = "components/filler/filler_000100_7", description = "Filler 000100 7" }
 map{ id = "components/filler/filler_000400_7", description = "Filler 000400 7" }
@@ -405,6 +405,55 @@ map{ id = "components/filler/filler_000001_7b", description = "Filler 000001 7b"
 map{ id = "components/filler/filler_000004_7b", description = "Filler 000004 7b" }
 map{ id = "components/filler/filler_000100_7b", description = "Filler 000100 7b" }
 map{ id = "components/filler/filler_000400_7b", description = "Filler 000400 7b" }
+map{ id = "components/filler/filler_000001_8b", description = "Filler 000001 8b" }
+map{ id = "components/filler/filler_000004_8b", description = "Filler 000004 8b" }
+map{ id = "components/filler/filler_000100_8b", description = "Filler 000100 8b" }
+map{ id = "components/filler/filler_000400_8b", description = "Filler 000400 8b" }
+map{ id = "components/filler/filler_000001_9b", description = "Filler 000001 9b" }
+map{ id = "components/filler/filler_000004_9b", description = "Filler 000004 9b" }
+map{ id = "components/filler/filler_000100_9b", description = "Filler 000100 9b" }
+map{ id = "components/filler/filler_000400_9b", description = "Filler 000400 9b" }
+map{ id = "components/filler/filler_000001_10b", description = "Filler 000001 10b" }
+map{ id = "components/filler/filler_000004_10b", description = "Filler 000004 10b" }
+map{ id = "components/filler/filler_000400_10b", description = "Filler 000400 10b" }
+map{ id = "components/filler/filler_000100_10b", description = "Filler 000100 10b" }
+map{ id = "components/filler/filler_000001_11b", description = "Filler 000001 11b" }
+map{ id = "components/filler/filler_000004_11b", description = "Filler 000004 11b" }
+map{ id = "components/filler/filler_000100_11b", description = "Filler 000100 11b" }
+map{ id = "components/filler/filler_000400_11b", description = "Filler 000400 11b" }
+map{ id = "components/filler/filler_000001_12b", description = "Filler 000001 12b" }
+map{ id = "components/filler/filler_000004_12b", description = "Filler 000004 12b" }
+map{ id = "components/filler/filler_000100_12b", description = "Filler 000100 12b" }
+map{ id = "components/filler/filler_000400_12b", description = "Filler 000400 12b" }
+map{ id = "components/filler/filler_000004_13b", description = "Filler 000004 13b" }
+map{ id = "components/filler/filler_000001_13b", description = "Filler 000001 13b" }
+map{ id = "components/filler/filler_000100_13b", description = "Filler 000100 13b" }
+map{ id = "components/filler/filler_000400_13b", description = "Filler 000400 13b" }
+map{ id = "components/filler/filler_000001_14b", description = "Filler 000001 14b" }
+map{ id = "components/filler/filler_000004_14b", description = "Filler 000004 14b" }
+map{ id = "components/filler/filler_000100_14b", description = "Filler 000100 14b" }
+map{ id = "components/filler/filler_000400_14b", description = "Filler 000400 14b" }
+map{ id = "components/filler/filler_000001_15b", description = "Filler 000001 15b" }
+map{ id = "components/filler/filler_000004_15b", description = "Filler 000004 15b" }
+map{ id = "components/filler/filler_000100_15b", description = "Filler 000100 15b" }
+map{ id = "components/filler/filler_000400_15b", description = "Filler 000400 15b" }
+map{ id = "components/filler/filler_000001_16b", description = "Filler 000001 16b" }
+map{ id = "components/filler/filler_000004_16b", description = "Filler 000004 16b" }
+map{ id = "components/filler/filler_000100_16b", description = "Filler 000100 16b" }
+map{ id = "components/filler/filler_000400_16b", description = "Filler 000400 16b" }
+map{ id = "components/filler/filler_000001_17b", description = "Filler 000001 17b" }
+map{ id = "components/filler/filler_000004_17b", description = "Filler 000004 17b" }
+map{ id = "components/filler/filler_000100_17b", description = "Filler 000100 17b" }
+map{ id = "components/filler/filler_000400_17b", description = "Filler 000400 17b" }
+map{ id = "components/filler/filler_000001_20b", description = "Filler 000001 20b" }
+map{ id = "components/filler/filler_000004_20b", description = "Filler 000004 20b" }
+map{ id = "components/filler/filler_000400_20b", description = "Filler 000400 20b" }
+map{ id = "components/filler/filler_000100_20b", description = "Filler 000100 20b" }
+map{ id = "components/treasure_open/treasure_open_202777_1", description = "Treasure open 202777 1" }
+map{ id = "components/treasure_open/treasure_open_000777_5", description = "Treasure open 000777 5" }
+--map{ id = "components/treasure_open/treasure_open_000777_4", description = "Treasure open 000777 4" }
+map{ id = "components/door/door_entrance_s_002777_7", description = "Door entrance s 002777 7" }
+map{ id = "dev/sandbox", description = "Sandbox" }
 
 tileset{ id = "light_world", description = "Light World" }
 tileset{ id = "dungeon_brick_gray_1", description = "Dungeon brick gray 1" }
@@ -518,12 +567,10 @@ sprite{ id = "enemies/bari_blue", description = "Bari blue" }
 sprite{ id = "enemies/bari_mini", description = "Bari mini" }
 sprite{ id = "enemies/bari_red", description = "Bari red" }
 sprite{ id = "enemies/crab", description = "Sand crab" }
-sprite{ id = "enemies/deadrock", description = "Deadrock" }
 sprite{ id = "enemies/keese", description = "Keese" }
 sprite{ id = "enemies/lanmola", description = "Lanmola" }
 sprite{ id = "enemies/lanmola_body", description = "Lanmola body" }
 sprite{ id = "enemies/lanmola_tail", description = "Lanmola tail" }
-sprite{ id = "enemies/lizalfos", description = "Lizalfos" }
 sprite{ id = "enemies/octorok_red", description = "Octorok red" }
 sprite{ id = "enemies/poe", description = "Poe" }
 sprite{ id = "enemies/rat", description = "Rat" }
@@ -531,13 +578,11 @@ sprite{ id = "enemies/rock_small", description = "Rock small" }
 sprite{ id = "enemies/rope", description = "Rope" }
 sprite{ id = "enemies/stalfos_head", description = "Stalfos head" }
 sprite{ id = "enemies/stalfos_knight", description = "Stalfos knight" }
-sprite{ id = "enemies/geldman", description = "Geldman" }
 sprite{ id = "enemies/hardhat_beetle_blue", description = "Hardhat beetle blue" }
-sprite{ id = "enemies/fireball", description = "Fireball" }
-sprite{ id = "enemies/fireball_tripple", description = "Fireball tripple" }
 sprite{ id = "hud/magic_bar", description = "Magic bar" }
 sprite{ id = "hud/empty_heart", description = "Empty heart" }
 sprite{ id = "menus/pause_cursor", description = "Pause cursor" }
+sprite{ id = "enemies/agahnim", description = "Agahnim" }
 
 music{ id = "agahnim", description = "Agahnim theme" }
 music{ id = "beginning", description = "Beginning" }
@@ -705,13 +750,10 @@ enemy{ id = "rock_small", description = "Rock small" }
 enemy{ id = "rat", description = "Rat" }
 enemy{ id = "poe", description = "Poe" }
 enemy{ id = "octorok_red", description = "Octorok red" }
-enemy{ id = "lizalfos", description = "Lizalfos" }
 enemy{ id = "lanmola_tail", description = "Lanmola tail" }
 enemy{ id = "lanmola_body", description = "Lanmola body" }
 enemy{ id = "lanmola", description = "Lanmola" }
 enemy{ id = "keese", description = "Keese" }
-enemy{ id = "geldman", description = "Geldman" }
-enemy{ id = "deadrock", description = "Deadrock" }
 enemy{ id = "crab", description = "Sand crab" }
 enemy{ id = "bari_blue", description = "Bari blue" }
 enemy{ id = "bari_red", description = "Bari red" }

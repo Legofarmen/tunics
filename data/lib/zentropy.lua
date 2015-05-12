@@ -628,7 +628,9 @@ function zentropy.game.new_game(is_retry)
     zentropy.game.catch_up_on_items(tier)
     zentropy.game.setup_tier_initial(tier)
 
-    if zentropy.settings.skip_cinematics then 
+    if zentropy.settings.debug_starting_location then
+		zentropy.game.game:set_starting_location(zentropy.settings.debug_starting_location)
+    elseif zentropy.settings.skip_cinematics then
 		zentropy.game.game:set_starting_location('dungeons/dungeon1')
 	elseif is_retry then
 		zentropy.game.game:set_starting_location('rooms/intro_3', 'retry')
@@ -833,7 +835,11 @@ function zentropy.game.init(game)
     end
 	
 	function game:on_game_over_started()
-		sol.menu.start(zentropy.game.game:get_map(),game_over_menu)
+		local map = zentropy.game.game:get_map()
+        game_over_menu.game = zentropy.game.game
+        zentropy.game.tier = zentropy.game.game:get_value('tier') - 1
+        zentropy.game.game = nil
+		sol.menu.start(map, game_over_menu)
 	end
 	
     function game:on_game_over_finished()
@@ -893,8 +899,10 @@ function zentropy.inject_enemy(placeholder, rng)
             treasure_name=treasure_name,
             treasure_variant=treasure_variant,
         }
+        local placeholder_w, placeholder_h = placeholder:get_size()
         local origin_x, origin_y = enemy:get_origin()
-        enemy:set_position(x + origin_x, y + origin_y)
+        local enemy_w, enemy_h = enemy:get_size()
+        enemy:set_position(x + origin_x + (placeholder_w - enemy_w) / 2, y + origin_y + (placeholder_h - enemy_h) / 2)
         local factor = math.pow(math.pow(3, 1/5), zentropy.game.game:get_value('tier') - treshold)
         enemy:set_damage(math.floor(factor * enemy:get_damage() + 0.5))
         enemy:set_life(math.floor(factor * enemy:get_life() + 0.5))
@@ -957,6 +965,7 @@ function zentropy.inject_big_chest(placeholder, data)
         sprite='entities/big_chest',
         opening_method='interaction_if_savegame_variable',
         opening_condition='bigkey',
+        cannot_open_dialog="_big_key_required",
     }
     local origin_x, origin_y = chest:get_origin()
     chest:set_position(x + origin_x, y + origin_y)

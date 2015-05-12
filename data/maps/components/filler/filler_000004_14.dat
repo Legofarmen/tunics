@@ -45,8 +45,8 @@ tile{
 
 dynamic_tile{
   layer = 1,
-  x = 96,
-  y = 160,
+  x = 112,
+  y = 144,
   width = 16,
   height = 16,
   name = "enemy_3",

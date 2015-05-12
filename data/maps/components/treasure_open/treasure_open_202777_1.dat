@@ -1,0 +1,325 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  tileset = "dungeon_brick_gray_1",
+  music = "same",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 40,
+  width = 48,
+  height = 160,
+  pattern = "floor_small.2",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 40,
+  width = 8,
+  height = 160,
+  pattern = "floor_border.2",
+}
+
+tile{
+  layer = 1,
+  x = 88,
+  y = 40,
+  width = 8,
+  height = 160,
+  pattern = "floor_border.2",
+}
+
+tile{
+  layer = 1,
+  x = 96,
+  y = 32,
+  width = 16,
+  height = 16,
+  pattern = "barrier_big.3.border.1",
+}
+
+tile{
+  layer = 1,
+  x = 96,
+  y = 80,
+  width = 16,
+  height = 24,
+  pattern = "barrier_big.3.border.2",
+}
+
+tile{
+  layer = 1,
+  x = 96,
+  y = 48,
+  width = 16,
+  height = 32,
+  pattern = "barrier_big.3.2",
+}
+
+tile{
+  layer = 1,
+  x = 96,
+  y = 136,
+  width = 16,
+  height = 16,
+  pattern = "barrier_big.3.border.1",
+}
+
+tile{
+  layer = 1,
+  x = 96,
+  y = 184,
+  width = 16,
+  height = 24,
+  pattern = "barrier_big.3.border.2",
+}
+
+tile{
+  layer = 1,
+  x = 96,
+  y = 152,
+  width = 16,
+  height = 32,
+  pattern = "barrier_big.3.2",
+}
+
+tile{
+  layer = 1,
+  x = 144,
+  y = 32,
+  width = 16,
+  height = 16,
+  pattern = "barrier_big.3.border.1",
+}
+
+tile{
+  layer = 1,
+  x = 144,
+  y = 64,
+  width = 16,
+  height = 24,
+  pattern = "barrier_big.3.border.2",
+}
+
+tile{
+  layer = 1,
+  x = 144,
+  y = 48,
+  width = 16,
+  height = 16,
+  pattern = "barrier_big.3.2",
+}
+
+tile{
+  layer = 1,
+  x = 144,
+  y = 120,
+  width = 16,
+  height = 16,
+  pattern = "barrier_big.3.border.1",
+}
+
+tile{
+  layer = 1,
+  x = 144,
+  y = 184,
+  width = 16,
+  height = 24,
+  pattern = "barrier_big.3.border.2",
+}
+
+tile{
+  layer = 1,
+  x = 144,
+  y = 136,
+  width = 16,
+  height = 48,
+  pattern = "barrier_big.3.2",
+}
+
+tile{
+  layer = 1,
+  x = 192,
+  y = 152,
+  width = 16,
+  height = 16,
+  pattern = "barrier_big.3.border.1",
+}
+
+tile{
+  layer = 1,
+  x = 192,
+  y = 184,
+  width = 16,
+  height = 24,
+  pattern = "barrier_big.3.border.2",
+}
+
+tile{
+  layer = 1,
+  x = 192,
+  y = 168,
+  width = 16,
+  height = 16,
+  pattern = "barrier_big.3.2",
+}
+
+tile{
+  layer = 1,
+  x = 192,
+  y = 32,
+  width = 16,
+  height = 16,
+  pattern = "barrier_big.3.border.1",
+}
+
+tile{
+  layer = 1,
+  x = 192,
+  y = 96,
+  width = 16,
+  height = 24,
+  pattern = "barrier_big.3.border.2",
+}
+
+tile{
+  layer = 1,
+  x = 192,
+  y = 48,
+  width = 16,
+  height = 48,
+  pattern = "barrier_big.3.2",
+}
+
+tile{
+  layer = 1,
+  x = 240,
+  y = 32,
+  width = 16,
+  height = 16,
+  pattern = "barrier_big.3.border.1",
+}
+
+tile{
+  layer = 1,
+  x = 240,
+  y = 80,
+  width = 16,
+  height = 24,
+  pattern = "barrier_big.3.border.2",
+}
+
+tile{
+  layer = 1,
+  x = 240,
+  y = 48,
+  width = 16,
+  height = 32,
+  pattern = "barrier_big.3.2",
+}
+
+tile{
+  layer = 1,
+  x = 240,
+  y = 136,
+  width = 16,
+  height = 16,
+  pattern = "barrier_big.3.border.1",
+}
+
+tile{
+  layer = 1,
+  x = 240,
+  y = 184,
+  width = 16,
+  height = 24,
+  pattern = "barrier_big.3.border.2",
+}
+
+tile{
+  layer = 1,
+  x = 240,
+  y = 152,
+  width = 16,
+  height = 32,
+  pattern = "barrier_big.3.2",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 56,
+  y = 112,
+  width = 16,
+  height = 16,
+  name = "chest",
+  pattern = "carpet.2",
+  enabled_at_start = true,
+}
+
+block{
+  layer = 1,
+  x = 64,
+  y = 77,
+  direction = -1,
+  sprite = "entities/statue",
+  pushable = false,
+  pullable = false,
+  maximum_moves = 0,
+}
+
+block{
+  layer = 1,
+  x = 64,
+  y = 181,
+  direction = -1,
+  sprite = "entities/statue",
+  pushable = false,
+  pullable = false,
+  maximum_moves = 0,
+}
+
+enemy{
+  layer = 1,
+  x = 128,
+  y = 45,
+  direction = 3,
+  breed = "pike_auto",
+}
+
+enemy{
+  layer = 1,
+  x = 176,
+  y = 205,
+  direction = 1,
+  breed = "pike_auto",
+}
+
+enemy{
+  layer = 1,
+  x = 224,
+  y = 125,
+  direction = 1,
+  breed = "pike_auto",
+}
+
+enemy{
+  layer = 1,
+  x = 280,
+  y = 45,
+  direction = 3,
+  breed = "pike_fixed",
+}
+
+enemy{
+  layer = 1,
+  x = 280,
+  y = 205,
+  direction = 3,
+  breed = "pike_fixed",
+}
+
