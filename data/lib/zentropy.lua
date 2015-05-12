@@ -899,8 +899,10 @@ function zentropy.inject_enemy(placeholder, rng)
             treasure_name=treasure_name,
             treasure_variant=treasure_variant,
         }
+        local placeholder_w, placeholder_h = placeholder:get_size()
         local origin_x, origin_y = enemy:get_origin()
-        enemy:set_position(x + origin_x, y + origin_y)
+        local enemy_w, enemy_h = enemy:get_size()
+        enemy:set_position(x + origin_x + (placeholder_w - enemy_w) / 2, y + origin_y + (placeholder_h - enemy_h) / 2)
         local factor = math.pow(math.pow(3, 1/5), zentropy.game.game:get_value('tier') - treshold)
         enemy:set_damage(math.floor(factor * enemy:get_damage() + 0.5))
         enemy:set_life(math.floor(factor * enemy:get_life() + 0.5))
