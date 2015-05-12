@@ -96,20 +96,22 @@ end
 
 function enemy:check_hero()
 
-  local hero = self:get_map():get_entity("hero")
-  local _, _, layer = self:get_position()
-  local _, _, hero_layer = hero:get_position()
-  local near_hero = layer == hero_layer
-    and self:get_distance(hero) < 100
+    local hero = self:get_map():get_hero()
+    local _, _, layer = self:get_position()
+    local _, _, hero_layer = hero:get_position()
+    local near_hero =
+        layer == hero_layer
+        and self:get_distance(hero) < 100
+        and self:is_in_same_region(hero)
 
-  if near_hero and not going_hero then
-    self:go_hero()
-  elseif not near_hero and going_hero then
-    self:go_random()
-  end
+    if near_hero and not going_hero then
+        self:go_hero()
+    elseif not near_hero and going_hero then
+        self:go_random()
+    end
 
-  sol.timer.stop_all(self)
-  sol.timer.start(self, 100, function() self:check_hero() end)
+    sol.timer.stop_all(self)
+    sol.timer.start(self, 100, function() self:check_hero() end)
 end
 
 function enemy:go_random()

@@ -59,6 +59,7 @@ dialog{
 You got a heart container.
 ]]
 }
+
 dialog{
   id = "try_again",
   question = true,
@@ -76,7 +77,6 @@ Game over.
 You completed X tiers.
 ]]
 }
-
 
 dialog{
   id = "tier_complete",
@@ -96,7 +96,7 @@ dialog{
   id = "intro_1_2",
   text = [[
 It's a nice day 
-for a picninc...
+for a picnic...
 ]]
 }
 
@@ -134,20 +134,17 @@ he gets back.
 dialog{
   id = "intro_3_1",
   text = [[
-Hello there.
- 
- 
-Long time since an 
-adventurer came by.
+How nice, a visitor!
+Care for crackers?
 ]]
 }
 
 dialog{
   id = "intro_3_2",
   text = [[
-There is a way out, 
-you'll just have to 
-fight your way through.
+A royal picnic, you say?
+Shortest way out
+is up the stairs.
 
 Oh, one more thing...
 ]]
@@ -185,63 +182,63 @@ go alone. Take this.
 dialog{
   id = "_treasure.flippers.1",
   text = [[
-Got the flippers.
+Got the flippers!
 ]]
 }
 
 dialog{
   id = "_treasure.bow.1",
   text = [[
-Got the bow.
+Got the bow!
 ]]
 }
 
 dialog{
   id = "_treasure.lamp.1",
   text = [[
-Got the lamp.
+Got the lamp!
 ]]
 }
 
 dialog{
   id = "_treasure.bombs_counter.1",
   text = [[
-Got some bombs.
+Got bombs!
 ]]
 }
 
 dialog{
   id = "_treasure.hookshot.1",
   text = [[
-Got the hookshot.
+Got the hookshot!
 ]]
 }
 
 dialog{
   id = "_treasure.bigkey.1",
   text = [[
-Got the big key.
+Got the big key!
 ]]
 }
 
 dialog{
   id = "_treasure.compass.1",
   text = [[
-Got the compass.
+Got the compass!
 ]]
 }
 
 dialog{
   id = "_treasure.map.1",
   text = [[
-Got the map.
+Got the map!
 ]]
 }
 
 dialog{
   id = "_treasure.smallkey.1",
   text = [[
-Got a key.
+Got a key!
 ]]
 }
 
@@ -282,11 +279,9 @@ dialog{
   icon = 5,
   skip = "all",
   text = [[
-Brighten dark places
-and light torches
-with the Lamp, but
-watch your Magic
-Meter!
+Light torches with
+the Lamp, but watch
+your Magic Meter!
 ]]
 }
 
@@ -297,7 +292,16 @@ dialog{
   text = [[
 Hoist yourself up to
 inaccessible places
-with the help of the
-Hookshot.
+with the Hookshot.
+]]
+}
+
+dialog{
+  id = "_big_key_required",
+  icon = 73,
+  skip = "all",
+  text = [[
+Huh? It's locked!
+It's got a big key hole.
 ]]
 }

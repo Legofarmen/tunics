@@ -5,13 +5,13 @@ local zentropy = require 'lib/zentropy'
 
 local game_over = {}
 local text = sol.language.get_dialog('game_over') 
-local text_show = text.text:gsub("X", zentropy.game.game:get_value('tier')-1)
+local text_show = text.text:gsub("X", zentropy.game.tier)
 
 function map:on_started()
 	hero:set_animation("dead")
 	sol.audio.play_music('game_over')
 	local x, y, layer = map:get_entity('first'):get_position()
-	local tier = zentropy.game.game:get_value('tier') - 1
+	local tier = zentropy.game.tier
 
 	x = x + 16
 	y = y + 13

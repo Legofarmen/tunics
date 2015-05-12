@@ -360,15 +360,6 @@ tile{
 
 tile{
   layer = 1,
-  x = 120,
-  y = 24,
-  width = 16,
-  height = 16,
-  pattern = "door_stairs.straight_down.1",
-}
-
-tile{
-  layer = 1,
   x = 176,
   y = 16,
   width = 32,
@@ -401,6 +392,15 @@ tile{
   width = 16,
   height = 16,
   pattern = "door_stairs.straight_down.1",
+}
+
+tile{
+  layer = 1,
+  x = 120,
+  y = 24,
+  width = 16,
+  height = 16,
+  pattern = "door_stairs.straight_up.1",
 }
 
 teletransporter{
@@ -437,7 +437,7 @@ stairs{
   x = 120,
   y = 24,
   direction = 1,
-  subtype = "3",
+  subtype = "2",
 }
 
 door{
