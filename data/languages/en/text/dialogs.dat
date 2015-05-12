@@ -292,7 +292,16 @@ dialog{
   text = [[
 Hoist yourself up to
 inaccessible places
-with the help of the
-Hookshot.
+with the Hookshot.
+]]
+}
+
+dialog{
+  id = "_big_key_required",
+  icon = 73,
+  skip = "all",
+  text = [[
+Huh? It's locked!
+It's got a big key hole.
 ]]
 }

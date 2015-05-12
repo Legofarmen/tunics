@@ -957,6 +957,7 @@ function zentropy.inject_big_chest(placeholder, data)
         sprite='entities/big_chest',
         opening_method='interaction_if_savegame_variable',
         opening_condition='bigkey',
+        cannot_open_dialog="_big_key_required",
     }
     local origin_x, origin_y = chest:get_origin()
     chest:set_position(x + origin_x, y + origin_y)
