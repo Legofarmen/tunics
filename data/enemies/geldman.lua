@@ -21,19 +21,21 @@ function enemy:go_hero()
 end
 
 function enemy:check_hero()
-  enemy:get_sprite():set_animation("walking")
-  local hero = self:get_map():get_entity("hero")
-  local _, _, layer = self:get_position()
-  local _, _, hero_layer = hero:get_position()
-  local near_hero = layer == hero_layer
-    and self:get_distance(hero) < 200
+    local hero = self:get_map():get_hero()
+    enemy:get_sprite():set_animation("walking")
+    local _, _, layer = self:get_position()
+    local _, _, hero_layer = hero:get_position()
+    local near_hero =
+        layer == hero_layer
+        and self:get_distance(hero) < 200
+        and self:is_in_same_region(hero)
 
-  if near_hero and not going_hero then
-    self:go_hero()
-  elseif not near_hero and going_hero then
-    self:go_random()
-  end
-  timer = sol.timer.start(self, 2000, function() self:check_hero() end)
+    if near_hero and not going_hero then
+        self:go_hero()
+    elseif not near_hero and going_hero then
+        self:go_random()
+    end
+    timer = sol.timer.start(self, 2000, function() self:check_hero() end)
 end
 
 function enemy:on_created()

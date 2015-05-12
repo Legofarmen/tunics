@@ -15,7 +15,6 @@ function item:on_pickable_created(pickable)
    -- with a speed of 28 pixels per second.
   local movement = sol.movement.create("random")
   movement:set_speed(28)
-  movement:set_ignore_obstacles(true)
   movement:set_max_distance(40)  -- Don't go too far.
 
   -- Put the fairy on the highest layer to show it above all walls.
