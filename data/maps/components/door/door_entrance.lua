@@ -10,14 +10,15 @@ function door_entrance.init(map, data, direction)
         data.room_events:on_door_sensor_activated(direction)
 		map:close_doors("door_entrance")
 		local carpet = map:get_entity("entrance_carpet")
-		local x, y = carpet:get_position()
-		
-		carpet:set_position(x,y+8)
-		sol.timer.start(100, function()
-			carpet:set_position(x,y+24)
-		end)
-		
-		end
+        if carpet then
+            local x, y = carpet:get_position()
+            
+            carpet:set_position(x,y+8)
+            sol.timer.start(100, function()
+                carpet:set_position(x,y+24)
+            end)
+        end
+	end
 	
 	map:set_doors_open("door_entrance", true)
 	

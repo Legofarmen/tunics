@@ -267,3 +267,39 @@ tile{
   pattern = "ceiling",
 }
 
+tile{
+  layer = 2,
+  x = 8,
+  y = 72,
+  width = 8,
+  height = 96,
+  pattern = "door_cache.3",
+}
+
+tile{
+  layer = 2,
+  x = 120,
+  y = 224,
+  width = 80,
+  height = 8,
+  pattern = "door_cache.2",
+}
+
+tile{
+  layer = 2,
+  x = 120,
+  y = 8,
+  width = 80,
+  height = 8,
+  pattern = "door_cache.1",
+}
+
+tile{
+  layer = 2,
+  x = 304,
+  y = 72,
+  width = 8,
+  height = 80,
+  pattern = "door_cache.4",
+}
+
