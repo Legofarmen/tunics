@@ -582,6 +582,7 @@ sprite{ id = "enemies/fireball_tripple", description = "Fireball tripple" }
 sprite{ id = "hud/magic_bar", description = "Magic bar" }
 sprite{ id = "hud/empty_heart", description = "Empty heart" }
 sprite{ id = "menus/pause_cursor", description = "Pause cursor" }
+sprite{ id = "enemies/agahnim", description = "Agahnim" }
 
 music{ id = "agahnim", description = "Agahnim theme" }
 music{ id = "beginning", description = "Beginning" }
