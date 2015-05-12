@@ -196,6 +196,41 @@ dynamic_tile{
   enabled_at_start = false,
 }
 
+pickable{
+  layer = 1,
+  x = 144,
+  y = 181,
+  treasure_name = "hookshot",
+}
+
+pickable{
+  layer = 1,
+  x = 128,
+  y = 181,
+  treasure_name = "map",
+}
+
+pickable{
+  layer = 1,
+  x = 112,
+  y = 181,
+  treasure_name = "smallkey",
+}
+
+pickable{
+  layer = 1,
+  x = 96,
+  y = 181,
+  treasure_name = "bigkey",
+}
+
+pickable{
+  layer = 1,
+  x = 160,
+  y = 181,
+  treasure_name = "compass",
+}
+
 tile{
   layer = 2,
   x = 0,
