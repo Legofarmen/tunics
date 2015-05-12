@@ -283,7 +283,6 @@ map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000600_2", descriptio
 map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000300_2", description = "Puzzle 000300 2" }
 map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000006_2", description = "Puzzle 000006 2" }
 map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000003_2", description = "Puzzle 000003 2" }
-map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000777_5", description = "Puzzle 000777 5" }
 map{ id = "components/obstacle_puzzle/XXXobstacle_puzzle_nsew_000004_1", description = "Puzzle 000004 1w" }
 map{ id = "components/obstacle_puzzle/XXXobstacle_puzzle_nsew_000400_1", description = "Puzzle 000400 1w" }
 map{ id = "components/obstacle_puzzle/XXXobstacle_puzzle_nsew_000001_1", description = "Puzzle 000001 1w" }
