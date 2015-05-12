@@ -2913,8 +2913,8 @@ tile_pattern{
   id = "floor_pot",
   ground = "traversable",
   default_layer = 1,
-  x = 48,
-  y = 224,
+  x = 568,
+  y = 152,
   width = 16,
   height = 16,
 }
@@ -2933,26 +2933,6 @@ tile_pattern{
   id = "floor_small.1",
   ground = "traversable",
   default_layer = 1,
-  x = 24,
-  y = 224,
-  width = 8,
-  height = 8,
-}
-
-tile_pattern{
-  id = "floor_small.2",
-  ground = "traversable",
-  default_layer = 1,
-  x = 24,
-  y = 232,
-  width = 8,
-  height = 8,
-}
-
-tile_pattern{
-  id = "floor_small.3",
-  ground = "traversable",
-  default_layer = 1,
   x = 32,
   y = 224,
   width = 8,
@@ -2960,7 +2940,7 @@ tile_pattern{
 }
 
 tile_pattern{
-  id = "floor_small.4",
+  id = "floor_small.2",
   ground = "traversable",
   default_layer = 1,
   x = 32,
@@ -3292,6 +3272,146 @@ tile_pattern{
   default_layer = 2,
   x = 400,
   y = 248,
+  width = 16,
+  height = 16,
+}
+
+tile_pattern{
+  id = "placeholder_bigchest",
+  ground = "wall",
+  default_layer = 1,
+  x = 552,
+  y = 128,
+  width = 32,
+  height = 24,
+}
+
+tile_pattern{
+  id = "placeholder_boss_1",
+  ground = "traversable",
+  default_layer = 1,
+  x = 536,
+  y = 48,
+  width = 40,
+  height = 40,
+}
+
+tile_pattern{
+  id = "placeholder_enemy",
+  ground = "traversable",
+  default_layer = 1,
+  x = 584,
+  y = 96,
+  width = 32,
+  height = 32,
+}
+
+tile_pattern{
+  id = "placeholder_stone",
+  ground = "traversable",
+  default_layer = 1,
+  x = 552,
+  y = 152,
+  width = 16,
+  height = 16,
+}
+
+tile_pattern{
+  id = "placeholder_switch_blue",
+  ground = "wall",
+  default_layer = 0,
+  x = 552,
+  y = 184,
+  width = 16,
+  height = 16,
+}
+
+tile_pattern{
+  id = "placeholder_switch_red",
+  ground = "wall",
+  default_layer = 1,
+  x = 552,
+  y = 168,
+  width = 16,
+  height = 16,
+}
+
+tile_pattern{
+  id = "placeholder_switchblock_blue",
+  ground = "traversable",
+  default_layer = 1,
+  x = 568,
+  y = 184,
+  width = 16,
+  height = 16,
+}
+
+tile_pattern{
+  id = "placeholder_switchblock_red",
+  ground = "traversable",
+  default_layer = 1,
+  x = 568,
+  y = 168,
+  width = 16,
+  height = 16,
+}
+
+tile_pattern{
+  id = "placeholder_transporter",
+  ground = "traversable",
+  default_layer = 1,
+  x = 568,
+  y = 200,
+  width = 16,
+  height = 16,
+}
+
+tile_pattern{
+  id = "placeholder_transporter_destination",
+  ground = "traversable",
+  default_layer = 1,
+  x = 552,
+  y = 200,
+  width = 16,
+  height = 16,
+}
+
+tile_pattern{
+  id = "placeholder_treasure_block",
+  ground = "wall",
+  default_layer = 1,
+  x = 568,
+  y = 96,
+  width = 16,
+  height = 16,
+}
+
+tile_pattern{
+  id = "placeholder_treasure_obstacle",
+  ground = "wall",
+  default_layer = 1,
+  x = 552,
+  y = 96,
+  width = 16,
+  height = 16,
+}
+
+tile_pattern{
+  id = "placeholder_treasure_open",
+  ground = "wall",
+  default_layer = 1,
+  x = 552,
+  y = 112,
+  width = 16,
+  height = 16,
+}
+
+tile_pattern{
+  id = "placeholder_treasure_puzzle",
+  ground = "wall",
+  default_layer = 1,
+  x = 568,
+  y = 112,
   width = 16,
   height = 16,
 }
@@ -3961,6 +4081,16 @@ tile_pattern{
   ground = "wall",
   default_layer = 1,
   x = 424,
+  y = 0,
+  width = 32,
+  height = 32,
+}
+
+tile_pattern{
+  id = "statue.8",
+  ground = "wall",
+  default_layer = 1,
+  x = 488,
   y = 0,
   width = 32,
   height = 32,
@@ -5812,6 +5942,46 @@ tile_pattern{
   default_layer = 1,
   x = 328,
   y = 352,
+  width = 24,
+  height = 32,
+}
+
+tile_pattern{
+  id = "wall_statue.11.1",
+  ground = "wall",
+  default_layer = 1,
+  x = 296,
+  y = 408,
+  width = 32,
+  height = 24,
+}
+
+tile_pattern{
+  id = "wall_statue.11.2",
+  ground = "wall",
+  default_layer = 1,
+  x = 320,
+  y = 440,
+  width = 32,
+  height = 24,
+}
+
+tile_pattern{
+  id = "wall_statue.11.3",
+  ground = "wall",
+  default_layer = 1,
+  x = 296,
+  y = 432,
+  width = 24,
+  height = 32,
+}
+
+tile_pattern{
+  id = "wall_statue.11.4",
+  ground = "wall",
+  default_layer = 1,
+  x = 328,
+  y = 408,
   width = 24,
   height = 32,
 }

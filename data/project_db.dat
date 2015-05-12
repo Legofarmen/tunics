@@ -456,14 +456,19 @@ map{ id = "components/door/door_entrance_s_002777_7", description = "Door entran
 map{ id = "dev/sandbox", description = "Sandbox" }
 
 tileset{ id = "light_world", description = "Light World" }
-tileset{ id = "dungeon_brick_gray_1", description = "Dungeon brick gray 1" }
-tileset{ id = "dungeon_smoothbrick_green_1", description = "Dungeon smoothbrick green 1" }
-tileset{ id = "dungeon_smoothbrick_desert_1", description = "Dungeon smoothbrick desert 1" }
-tileset{ id = "dungeon_ganon_brown_1", description = "Dungeon ganon brown 1" }
 tileset{ id = "dungeon_brick_blue_1", description = "Dungeon brick blue 1" }
+tileset{ id = "dungeon_brick_brown_1", description = "Dungeon brick brown 1" }
+tileset{ id = "dungeon_brick_gray_1", description = "Dungeon brick gray 1" }
+tileset{ id = "dungeon_brick_gray_2", description = "Dungeon brick gray 2" }
+tileset{ id = "dungeon_brick_green_1", description = "Dungeon brick green 1" }
 tileset{ id = "dungeon_cave_brown_1", description = "Dungeon cave brown 1" }
+tileset{ id = "dungeon_ganon_brown_1", description = "Dungeon ganon brown 1" }
 tileset{ id = "dungeon_house_brown_1", description = "Dungeon house brown 1" }
 tileset{ id = "dungeon_ice_blue_1", description = "Dungeon ice blue 1" }
+tileset{ id = "dungeon_smoothbrick_brown_1", description = "Dungeon smoothbrick brown 1" }
+tileset{ id = "dungeon_smoothbrick_gold_1", description = "Dungeon smoothbrick gold 1" }
+tileset{ id = "dungeon_smoothbrick_green_1", description = "Dungeon smoothbrick green 1" }
+tileset{ id = "dungeon_smoothbrick_pink_1", description = "Dungeon smoothbrick pink 1" }
 
 sprite{ id = "entities/block", description = "Block" }
 sprite{ id = "entities/chest", description = "Chest" }
