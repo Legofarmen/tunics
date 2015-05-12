@@ -451,7 +451,7 @@ map{ id = "components/filler/filler_000400_20b", description = "Filler 000400 20
 map{ id = "components/filler/filler_000100_20b", description = "Filler 000100 20b" }
 map{ id = "components/treasure_open/treasure_open_202777_1", description = "Treasure open 202777 1" }
 map{ id = "components/treasure_open/treasure_open_000777_5", description = "Treasure open 000777 5" }
-map{ id = "components/treasure_open/treasure_open_000777_4", description = "Treasure open 000777 4" }
+--map{ id = "components/treasure_open/treasure_open_000777_4", description = "Treasure open 000777 4" }
 map{ id = "components/door/door_entrance_s_002777_7", description = "Door entrance s 002777 7" }
 map{ id = "dev/sandbox", description = "Sandbox" }
 
@@ -579,8 +579,6 @@ sprite{ id = "enemies/rope", description = "Rope" }
 sprite{ id = "enemies/stalfos_head", description = "Stalfos head" }
 sprite{ id = "enemies/stalfos_knight", description = "Stalfos knight" }
 sprite{ id = "enemies/hardhat_beetle_blue", description = "Hardhat beetle blue" }
-sprite{ id = "enemies/fireball", description = "Fireball" }
-sprite{ id = "enemies/fireball_tripple", description = "Fireball tripple" }
 sprite{ id = "hud/magic_bar", description = "Magic bar" }
 sprite{ id = "hud/empty_heart", description = "Empty heart" }
 sprite{ id = "menus/pause_cursor", description = "Pause cursor" }
