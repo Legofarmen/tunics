@@ -9,12 +9,13 @@ local last_direction8 = 0
 -- The enemy appears: set its properties.
 function enemy:on_created()
 
-  self:set_life(1)
-  self:create_sprite("enemies/bubble")
-  self:set_size(8, 8)
-  self:set_origin(4, 4)
-  self:set_can_hurt_hero_running(true)
-  self:set_invincible()
+    self:set_life(1)
+    self:create_sprite("enemies/bubble")
+    self:set_size(8, 8)
+    self:set_origin(4, 4)
+    self:set_can_hurt_hero_running(true)
+    self:set_invincible()
+    self:set_obstacle_behavior("flying")
 end
 
 -- The enemy was stopped for some reason and should restart.
