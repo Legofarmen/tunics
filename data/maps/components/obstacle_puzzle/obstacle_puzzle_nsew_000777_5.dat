@@ -155,7 +155,7 @@ switch{
   layer = 1,
   x = 0,
   y = 0,
-  name = "switch_2",
+  name = "switch",
   subtype = "walkable",
   sprite = "entities/switch",
   needs_block = false,
@@ -213,8 +213,8 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "treasure_obstacle_chest",
-  pattern = "carpet.1",
-  enabled_at_start = false,
+  pattern = "placeholder_treasure_puzzle",
+  enabled_at_start = true,
 }
 
 dynamic_tile{
@@ -224,8 +224,8 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "treasure_open_chest",
-  pattern = "carpet.1",
-  enabled_at_start = false,
+  pattern = "placeholder_treasure_open",
+  enabled_at_start = true,
 }
 
 tile{

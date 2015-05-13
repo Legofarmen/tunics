@@ -324,7 +324,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "stone_3",
-  pattern = "floor_small.4",
+  pattern = "floor_small.2",
   enabled_at_start = true,
 }
 
@@ -335,7 +335,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "stone_2",
-  pattern = "floor_small.4",
+  pattern = "floor_small.2",
   enabled_at_start = true,
 }
 

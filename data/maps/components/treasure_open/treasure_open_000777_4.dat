@@ -250,17 +250,6 @@ tile{
   pattern = "torch",
 }
 
-dynamic_tile{
-  layer = 1,
-  x = 152,
-  y = 80,
-  width = 16,
-  height = 16,
-  name = "chest_2",
-  pattern = "carpet.2",
-  enabled_at_start = true,
-}
-
 block{
   layer = 1,
   x = 128,
@@ -314,5 +303,16 @@ dynamic_tile{
   name = "enemy_3",
   pattern = "carpet.1",
   enabled_at_start = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 152,
+  y = 80,
+  width = 16,
+  height = 16,
+  name = "chest",
+  pattern = "placeholder_treasure_open",
+  enabled_at_start = true,
 }
 

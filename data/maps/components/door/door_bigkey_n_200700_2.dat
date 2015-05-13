@@ -13,7 +13,7 @@ tile{
   y = 40,
   width = 80,
   height = 96,
-  pattern = "floor_small.4",
+  pattern = "floor_small.2",
 }
 
 tile{

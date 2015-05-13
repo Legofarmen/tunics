@@ -25,7 +25,7 @@ block{
   name = "block_placeholder_1",
   direction = -1,
   sprite = "entities/block",
-  pushable = false,
+  pushable = true,
   pullable = false,
   maximum_moves = 1,
 }
@@ -37,7 +37,7 @@ block{
   name = "block_placeholder_2",
   direction = -1,
   sprite = "entities/block",
-  pushable = false,
+  pushable = true,
   pullable = false,
   maximum_moves = 1,
 }
@@ -49,7 +49,7 @@ block{
   name = "block_placeholder_3",
   direction = -1,
   sprite = "entities/block",
-  pushable = false,
+  pushable = true,
   pullable = false,
   maximum_moves = 1,
 }
@@ -61,7 +61,7 @@ block{
   name = "block_placeholder_4",
   direction = -1,
   sprite = "entities/block",
-  pushable = false,
+  pushable = true,
   pullable = false,
   maximum_moves = 1,
 }
@@ -73,7 +73,7 @@ block{
   name = "block_placeholder_5",
   direction = -1,
   sprite = "entities/block",
-  pushable = false,
+  pushable = true,
   pullable = false,
   maximum_moves = 1,
 }
@@ -85,7 +85,7 @@ block{
   name = "block_placeholder_6",
   direction = -1,
   sprite = "entities/block",
-  pushable = false,
+  pushable = true,
   pullable = false,
   maximum_moves = 1,
 }
@@ -97,7 +97,7 @@ block{
   name = "block_placeholder_7",
   direction = -1,
   sprite = "entities/block",
-  pushable = false,
+  pushable = true,
   pullable = false,
   maximum_moves = 1,
 }
@@ -109,7 +109,7 @@ block{
   name = "block_placeholder_8",
   direction = -1,
   sprite = "entities/block",
-  pushable = false,
+  pushable = true,
   pullable = false,
   maximum_moves = 1,
 }
@@ -121,7 +121,7 @@ block{
   name = "block_placeholder_9",
   direction = -1,
   sprite = "entities/block",
-  pushable = false,
+  pushable = true,
   pullable = false,
   maximum_moves = 1,
 }
@@ -133,7 +133,7 @@ block{
   name = "block_placeholder_10",
   direction = -1,
   sprite = "entities/block",
-  pushable = false,
+  pushable = true,
   pullable = false,
   maximum_moves = 1,
 }

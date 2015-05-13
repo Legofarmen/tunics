@@ -4,11 +4,10 @@ local door_closed = require 'maps/components/door/door_closed'
 
 local destination = ""
 
-if zentropy.game.game:get_value('tier') == 6 then
+if map:get_game():get_value('tier') == 6 then
 	destination = "rooms/game_complete_1"
 else
 	destination = "rooms/cutscene"
-
 end
 
 map:create_teletransporter({

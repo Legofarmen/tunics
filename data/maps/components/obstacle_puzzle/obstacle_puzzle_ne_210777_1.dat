@@ -259,28 +259,6 @@ block{
   maximum_moves = 2,
 }
 
-dynamic_tile{
-  layer = 1,
-  x = 208,
-  y = 64,
-  width = 16,
-  height = 16,
-  name = "treasure_obstacle_chest",
-  pattern = "carpet.1",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 48,
-  y = 32,
-  width = 16,
-  height = 16,
-  name = "treasure_open_chest",
-  pattern = "carpet.1",
-  enabled_at_start = true,
-}
-
 switch{
   layer = 1,
   x = 0,
@@ -290,5 +268,27 @@ switch{
   sprite = "entities/switch",
   needs_block = false,
   inactivate_when_leaving = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 48,
+  y = 32,
+  width = 16,
+  height = 16,
+  name = "treasure_open_chest",
+  pattern = "placeholder_treasure_open",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 208,
+  y = 64,
+  width = 16,
+  height = 16,
+  name = "treasure_obstacle_chest",
+  pattern = "placeholder_treasure_puzzle",
+  enabled_at_start = true,
 }
 

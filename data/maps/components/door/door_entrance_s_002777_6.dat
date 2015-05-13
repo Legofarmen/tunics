@@ -175,7 +175,7 @@ tile{
   y = 80,
   width = 112,
   height = 56,
-  pattern = "floor_small.4",
+  pattern = "floor_small.2",
 }
 
 tile{
