@@ -9,6 +9,15 @@ properties{
 
 tile{
   layer = 0,
+  x = 64,
+  y = 136,
+  width = 32,
+  height = 16,
+  pattern = "water_pool_ladder.1",
+}
+
+tile{
+  layer = 1,
   x = 32,
   y = 136,
   width = 80,
@@ -17,7 +26,7 @@ tile{
 }
 
 tile{
-  layer = 0,
+  layer = 1,
   x = 112,
   y = 136,
   width = 24,
@@ -26,21 +35,12 @@ tile{
 }
 
 tile{
-  layer = 0,
+  layer = 1,
   x = 112,
   y = 160,
   width = 24,
   height = 48,
   pattern = "wall_low.4",
-}
-
-tile{
-  layer = 0,
-  x = 64,
-  y = 136,
-  width = 32,
-  height = 16,
-  pattern = "water_pool_ladder.1",
 }
 
 tile{
