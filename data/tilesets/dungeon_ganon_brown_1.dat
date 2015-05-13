@@ -3257,6 +3257,16 @@ tile_pattern{
 }
 
 tile_pattern{
+  id = "pike",
+  ground = "prickles",
+  default_layer = 1,
+  x = 80,
+  y = 256,
+  width = 16,
+  height = 16,
+}
+
+tile_pattern{
   id = "pillar.bottom",
   ground = "wall",
   default_layer = 1,
