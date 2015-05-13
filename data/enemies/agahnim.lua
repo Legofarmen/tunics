@@ -6,6 +6,14 @@ local zentropy = require "lib/zentropy"
 
 local nb_sons_created = 0
 local initial_life = 1 * zentropy.game.game:get_value('tier')
+local treasure
+local treasure_count
+if zentropy.game.game:get_value('tier') < 18 then
+    treasure, treasure_count = "heart_container", 1
+else
+    treasure, treasure_count = "fairy", 3
+end
+
 local finished = false
 local blue_fireball_proba = 33  -- Percent.
 local vulnerable = false
@@ -144,19 +152,20 @@ function enemy:end_dialog()
   sprite:set_ignore_suspend(true)
   --self:get_map():get_game():start_dialog("dungeon_5.agahnim_end")
   
- end
+end
 
 function enemy:escape()
 
-  local x, y = self:get_position()
-  self:get_map():create_pickable{
-    treasure_name = "heart_container",
-    treasure_variant = 1,
-    --treasure_savegame_variable = "b521",
-    x = x,
-    y = y,
-    layer = 1
-  }
+    local x, y = self:get_position()
+    for i = 1, treasure_count do
+        self:get_map():create_pickable{
+            treasure_name = treasure,
+            treasure_variant = 1,
+            x = x,
+            y = y,
+            layer = 1
+        }
+    end
     self:get_map():get_entity("hero"):unfreeze()
     --self:get_map():get_game():set_value("b520", true)
     if self.on_escape then
@@ -164,4 +173,3 @@ function enemy:escape()
     end
     self:remove()
 end
-
