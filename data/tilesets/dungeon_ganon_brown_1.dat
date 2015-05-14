@@ -3302,8 +3302,8 @@ tile_pattern{
   default_layer = 1,
   x = 536,
   y = 48,
-  width = 40,
-  height = 40,
+  width = 32,
+  height = 32,
 }
 
 tile_pattern{
