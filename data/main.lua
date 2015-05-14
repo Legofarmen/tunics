@@ -8,13 +8,18 @@ local bindings = require 'lib/bindings'
 
 function sol.main:on_started()
 
+    zentropy.init()
+
+    if zentropy.settings.debug_validate then
+        require 'validate'
+        sol.main.exit()
+    end
+
     entity_mixin.mixin(sol.main.get_metatable('enemy'))
     bindings.mixin(solarus_logo)
     bindings.mixin(legofarmen_logo)
     bindings.mixin(title_screen)
     bindings.mixin(game_menu)
-
-    zentropy.init()
 
     sol.language.set_language("en")
     
