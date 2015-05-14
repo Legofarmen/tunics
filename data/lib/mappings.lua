@@ -1,8 +1,8 @@
 local family_tier = {
     cave = 1,
-    smoothbrick = 2,
     brick = 2,
-    ice = 2,
+    smoothbrick = 4,
+    ice = 4,
     ganon = 6,
     house = 10,
 }
@@ -115,7 +115,7 @@ local enemy_tier = {
     ropa = 4,
     hardhat_beetle_blue = 4,
     red_hardhat_beetle = 6,
-    red_hemlasaur = 6,
+    red_helmasaur = 6,
     bubble = 6,
     gibdo = 6,
 }
