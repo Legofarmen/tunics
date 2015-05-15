@@ -149,13 +149,6 @@ function validate_projectdb_components()
     for k, v in pairs(zentropy.components.fillers) do
         read_component_map(string.format(fmt, v.id), v.mask, tilesets, patterns)
     end
-    --[[
-    zentropy.debug_callback(function (write)
-        for id, size in pairs(patterns) do
-            write(string.format("%2dx%2d %s", size.width, size.height, id))
-        end
-    end)
-    ]]
 end
 
 function read_tileset_tiles(fname)
