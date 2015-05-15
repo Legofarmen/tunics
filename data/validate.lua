@@ -1,6 +1,6 @@
 local zentropy = require 'lib/zentropy'
 
-function intersects(r1, r2)
+local function intersects(r1, r2)
     if r1.x + r1.width <= r2.x then return false end
     if r1.x >= r2.x + r2.width then return false end
     if r1.y + r1.height <= r2.y then return false end
@@ -8,7 +8,7 @@ function intersects(r1, r2)
     return true
 end
 
-function contains(outer, inner)
+local function contains(outer, inner)
     --zentropy.debug(outer.x, inner.x, inner.x + inner.width, outer.x + outer.width)
     --zentropy.debug(outer.y, inner.y, inner.y + inner.height, outer.y + outer.height)
     if inner.x < outer.x then return false end
@@ -18,13 +18,13 @@ function contains(outer, inner)
     return true
 end
 
-function validate_entity_layer(fname, description, properties)
+local function validate_entity_layer(fname, description, properties)
     if properties.layer == 0 then
         zentropy.debug(string.format("%s at low layer in component: %s", description, fname))
     end
 end
 
-function validate_entity_mask(fname, description, properties, sections)
+local function validate_entity_mask(fname, description, properties, sections)
     local entire_room = { x = 0, y = 0, width = 320, height = 240, }
     for i, section in ipairs(sections) do
         if intersects(section, properties) then
@@ -36,7 +36,7 @@ function validate_entity_mask(fname, description, properties, sections)
     end
 end
 
-function validate_entity_pot(fname, description, properties)
+local function validate_entity_pot(fname, description, properties)
     if properties.pattern == 'floor_pot' then
         if not properties.name or not properties.name:find('^pot_') then
             zentropy.debug(string.format("%s not named pot_* in component: %s", description, fname))
@@ -46,7 +46,7 @@ function validate_entity_pot(fname, description, properties)
     end
 end
 
-function read_component_map(fname, mask, tilesets, patterns)
+local function validate_map(fname, mask, tilesets, patterns)
     local all_sections = {
         { x = 176, y = 136, width = 144, height = 104, },
         { x = 144, y = 136, width =  32, height = 104, },
@@ -136,36 +136,7 @@ function read_component_map(fname, mask, tilesets, patterns)
     setfenv(datf, mt)()
 end
 
-function validate_projectdb_components()
-    local tilesets, patterns = get_patterns(zentropy.tilesets)
-    --[[
-    for k, v in pairs(zentropy.components.floors) do
-        zentropy.debug('floor', k, v)
-    end
-    for k, v in pairs(zentropy.components.treasures) do
-        zentropy.debug('treasure', k, v)
-    end
-    for k, v in pairs(zentropy.components.doors) do
-        zentropy.debug('door', k, v)
-    end
-    for k, v in pairs(zentropy.components.enemies) do
-        zentropy.debug('enemy', k, v)
-    end
-    ]]
-    local fmt = "maps/%s.dat"
-    for obstacle_name, obstacle_data in pairs(zentropy.components.obstacles) do
-        for dir, obstacles in pairs(obstacle_data) do
-            for i, obstacle in ipairs(obstacles) do
-                read_component_map(string.format(fmt, obstacle.id), obstacle.mask, tilesets, patterns)
-            end
-        end
-    end
-    for k, v in pairs(zentropy.components.fillers) do
-        read_component_map(string.format(fmt, v.id), v.mask, tilesets, patterns)
-    end
-end
-
-function read_tileset_tiles(fname)
+local function read_tileset_tiles(fname)
     local datf = sol.main.load_file(fname)
     if not datf then
         error("error: loading file: " .. fname)
@@ -182,7 +153,7 @@ function read_tileset_tiles(fname)
     return patterns
 end
 
-function get_patterns(tilesets)
+local function get_patterns(tilesets)
     local patterns = {}
     local tileset_names = {}
     local tileset_count = 0
@@ -215,6 +186,37 @@ function get_patterns(tilesets)
         end
     end
     return tileset_names, patterns
+end
+
+local function validate_projectdb_components()
+    local tilesets, patterns = get_patterns(zentropy.tilesets)
+    --[[
+    for k, v in pairs(zentropy.components.floors) do
+        zentropy.debug('floor', k, v)
+    end
+    for k, v in pairs(zentropy.components.doors) do
+        zentropy.debug('door', k, v)
+    end
+    for k, v in pairs(zentropy.components.enemies) do
+        zentropy.debug('enemy', k, v)
+    end
+    ]]
+    local fmt = "maps/%s.dat"
+    for treasure_type, treasures in pairs(zentropy.components.treasures) do
+        for i, treasure in ipairs(treasures) do
+            validate_map(string.format(fmt, treasure.id), treasure.mask, tilesets, patterns)
+        end
+    end
+    for obstacle_name, obstacle_data in pairs(zentropy.components.obstacles) do
+        for dir, obstacles in pairs(obstacle_data) do
+            for i, obstacle in ipairs(obstacles) do
+                validate_map(string.format(fmt, obstacle.id), obstacle.mask, tilesets, patterns)
+            end
+        end
+    end
+    for k, v in pairs(zentropy.components.fillers) do
+        validate_map(string.format(fmt, v.id), v.mask, tilesets, patterns)
+    end
 end
 
 validate_projectdb_components()
