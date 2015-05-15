@@ -170,17 +170,6 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 112,
-  y = 112,
-  width = 16,
-  height = 16,
-  name = "enemy",
-  pattern = "carpet.1",
-  enabled_at_start = false,
-}
-
-dynamic_tile{
-  layer = 1,
   x = 152,
   y = 112,
   width = 16,
@@ -210,5 +199,49 @@ switch{
   sprite = "entities/switch",
   needs_block = false,
   inactivate_when_leaving = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 80,
+  y = 128,
+  width = 32,
+  height = 32,
+  name = "enemy_7",
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 200,
+  y = 128,
+  width = 32,
+  height = 32,
+  name = "enemy_2",
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 200,
+  y = 80,
+  width = 32,
+  height = 32,
+  name = "enemy_3",
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 80,
+  y = 80,
+  width = 32,
+  height = 32,
+  name = "enemy_4",
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
 }
 

@@ -81,50 +81,6 @@ dynamic_tile{
   enabled_at_start = true,
 }
 
-dynamic_tile{
-  layer = 1,
-  x = 72,
-  y = 56,
-  width = 16,
-  height = 16,
-  name = "enemy_6",
-  pattern = "carpet.1",
-  enabled_at_start = false,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 232,
-  y = 56,
-  width = 16,
-  height = 16,
-  name = "enemy_2",
-  pattern = "carpet.1",
-  enabled_at_start = false,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 232,
-  y = 168,
-  width = 16,
-  height = 16,
-  name = "enemy_3",
-  pattern = "carpet.1",
-  enabled_at_start = false,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 72,
-  y = 168,
-  width = 16,
-  height = 16,
-  name = "enemy_4",
-  pattern = "carpet.1",
-  enabled_at_start = false,
-}
-
 enemy{
   layer = 1,
   x = 40,
@@ -155,5 +111,49 @@ enemy{
   y = 45,
   direction = 3,
   breed = "pike_detect",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 64,
+  y = 48,
+  width = 32,
+  height = 32,
+  name = "enemy_5",
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 64,
+  y = 160,
+  width = 32,
+  height = 32,
+  name = "enemy_7",
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 224,
+  y = 48,
+  width = 32,
+  height = 32,
+  name = "enemy_8",
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 224,
+  y = 160,
+  width = 32,
+  height = 32,
+  name = "enemy_9",
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
 }
 

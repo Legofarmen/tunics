@@ -127,45 +127,45 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 192,
+  x = 32,
+  y = 176,
+  width = 32,
+  height = 32,
+  name = "enemy_7",
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 256,
+  y = 64,
+  width = 32,
+  height = 32,
+  name = "enemy_5",
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 184,
+  y = 32,
+  width = 32,
+  height = 32,
+  name = "enemy_8",
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 56,
   y = 40,
-  width = 16,
-  height = 16,
-  name = "enemy_6",
-  pattern = "carpet.1",
-  enabled_at_start = false,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 72,
-  y = 48,
-  width = 16,
-  height = 16,
-  name = "enemy_2",
-  pattern = "carpet.1",
-  enabled_at_start = false,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 264,
-  y = 80,
-  width = 16,
-  height = 16,
-  name = "enemy_3",
-  pattern = "carpet.1",
-  enabled_at_start = false,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 40,
-  y = 184,
-  width = 16,
-  height = 16,
-  name = "enemy_4",
-  pattern = "carpet.1",
-  enabled_at_start = false,
+  width = 32,
+  height = 32,
+  name = "enemy_9",
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
 }
 

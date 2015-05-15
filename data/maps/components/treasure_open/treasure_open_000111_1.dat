@@ -83,23 +83,23 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 224,
-  y = 88,
-  width = 16,
-  height = 16,
-  name = "enemy_2",
-  pattern = "carpet.1",
-  enabled_at_start = false,
+  x = 216,
+  y = 80,
+  width = 32,
+  height = 32,
+  name = "enemy_3",
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
 }
 
 dynamic_tile{
   layer = 1,
-  x = 224,
-  y = 136,
-  width = 16,
-  height = 16,
-  name = "enemy_3",
-  pattern = "carpet.1",
-  enabled_at_start = false,
+  x = 216,
+  y = 128,
+  width = 32,
+  height = 32,
+  name = "enemy_2",
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
 }
 
