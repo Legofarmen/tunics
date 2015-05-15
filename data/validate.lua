@@ -22,6 +22,16 @@ function validate_entity_mask(fname, description, properties, sections)
     end
 end
 
+function validate_entity_pot(fname, description, properties)
+    if properties.pattern == 'floor_pot' then
+        if not properties.name or not properties.name:find('^pot_') then
+            zentropy.debug(string.format("%s not named pot_* in component: %s", description, fname))
+        end
+    elseif properties.name and properties.name:find('^pot_') then
+        zentropy.debug(string.format("%s named pot_* in component: %s", description, fname))
+    end
+end
+
 function read_component_map(fname, mask, tilesets, patterns)
     local all_sections = {
         { x = 176, y = 136, width = 120, height = 80, },
@@ -67,6 +77,7 @@ function read_component_map(fname, mask, tilesets, patterns)
         local description = string.format("dynamic tile (%s)", properties.pattern)
         validate_entity_layer(fname, description, properties)
         validate_entity_mask(fname, description, properties, sections)
+        validate_entity_pot(fname, description, properties)
     end
     function mt.jumper(properties)
         local description = string.format("jumper (%s)", properties.pattern)
@@ -82,6 +93,7 @@ function read_component_map(fname, mask, tilesets, patterns)
         local description = string.format("tile (%s)", properties.pattern)
         validate_entity_layer(fname, description, properties)
         validate_entity_mask(fname, description, properties, sections)
+        validate_entity_pot(fname, description, properties)
     end
     function mt.wall(properties)
         local description = string.format("wall (%s)", properties.pattern)
