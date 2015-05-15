@@ -1,6 +1,21 @@
 local zentropy = require 'lib/zentropy'
 local util = require 'lib/util'
 
+local alignments = {
+    ["wall.1"] = {{ x=0, y=8, }},
+    ["wall.2"] = {{ x=0, y=0, }},
+    ["wall.3"] = {{ x=8, y=0, }},
+    ["wall.4"] = {{ x=0, y=0, }},
+    ["wall_diag.1"] = {{ x=0, y=0, }, { x=8, y=8, }},
+    ["wall_diag.2"] = {{ x=0, y=0, }, { x=8, y=8, }},
+    ["wall_diag.3"] = {{ x=0, y=0, }, { x=8, y=8, }},
+    ["wall_diag.4"] = {{ x=0, y=0, }, { x=8, y=8, }},
+    ["wall_diag.border.1"] = {{ x=0, y=0, }, { x=8, y=8, }},
+    ["wall_diag.border.2"] = {{ x=0, y=0, }, { x=8, y=8, }},
+    ["wall_diag.border.3"] = {{ x=0, y=0, }, { x=8, y=8, }},
+    ["wall_diag.border.4"] = {{ x=0, y=0, }, { x=8, y=8, }},
+}
+
 local function rect_string(rect)
     return string.format("(%3d;%3d)-(%3d;%3d)", rect.x, rect.y, rect.x + rect.width, rect.y + rect.height)
 end
@@ -48,6 +63,14 @@ local function validate_entity_pot(fname, description, properties)
         end
     elseif properties.name and properties.name:find('^pot_') then
         zentropy.debug(string.format("%s:  named pot_* in component: %s", description, fname))
+    end
+end
+
+local function validate_entity_alignment(fname, description, properties)
+    for i, alignment in ipairs(alignments[properties.pattern] or {}) do
+        if properties.x % 16 ~= alignment.x or properties.y % 16 ~= alignment.y then
+            zentropy.debug(string.format("%s:  misaligned: %s", description, fname))
+        end
     end
 end
 
@@ -106,6 +129,7 @@ local function validate_map(fname, mask, tilesets, patterns)
         validate_entity_layer(fname, description, properties)
         validate_entity_mask(fname, description, properties, sections)
         validate_entity_pot(fname, description, properties)
+        validate_entity_alignment(fname, description, properties)
     end
     function mt.jumper(properties)
         local description = string.format("jumper        %s", rect_string(properties))
@@ -133,6 +157,7 @@ local function validate_map(fname, mask, tilesets, patterns)
         validate_entity_layer(fname, description, properties)
         validate_entity_mask(fname, description, properties, sections)
         validate_entity_pot(fname, description, properties)
+        validate_entity_alignment(fname, description, properties)
     end
     function mt.wall(properties)
         local description = string.format("wall          %s", rect_string(properties))
