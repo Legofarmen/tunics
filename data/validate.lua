@@ -66,7 +66,7 @@ local function validate_entity_pot(fname, description, properties)
             zentropy.debug(string.format("%s:  not named pot_* in component: %s", description, fname))
         end
     elseif properties.name and properties.name:find('^pot_') then
-        zentropy.debug(string.format("%s:  named pot_* in component: %s", description, fname))
+        zentropy.debug(string.format("%s:  named pot* in component: %s", description, fname))
     end
 end
 
@@ -76,7 +76,7 @@ local function validate_entity_enemy(fname, description, properties)
             zentropy.debug(string.format("%s:  not named enemy_* in component: %s", description, fname))
         end
     elseif properties.name and properties.name:find('^enemy_') then
-        zentropy.debug(string.format("%s:  named enemy_* in component: %s", description, fname))
+        zentropy.debug(string.format("%s:  only tiles of pattern placeholder_enemy may be named enemy* in component: %s", description, fname))
     end
 end
 
