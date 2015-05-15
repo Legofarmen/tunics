@@ -1,26 +1,30 @@
 local zentropy = require 'lib/zentropy'
 
-local function intersects(r1, r2)
-    if r1.x + r1.width <= r2.x then return false end
-    if r1.x >= r2.x + r2.width then return false end
-    if r1.y + r1.height <= r2.y then return false end
-    if r1.y >= r2.y + r2.height then return false end
-    return true
+local function rect_string(rect)
+    return string.format("(%3d;%3d)-(%3d;%3d)", rect.x, rect.y, rect.x + rect.width, rect.y + rect.height)
+end
+
+local function intersects(a, b)
+    local result =
+        a.x < b.x + b.width and
+        b.x < a.x + a.width and
+        a.y < b.y + b.height and
+        b.y < a.y + a.height
+    return result
 end
 
 local function contains(outer, inner)
-    --zentropy.debug(outer.x, inner.x, inner.x + inner.width, outer.x + outer.width)
-    --zentropy.debug(outer.y, inner.y, inner.y + inner.height, outer.y + outer.height)
-    if inner.x < outer.x then return false end
-    if inner.x + inner.width > outer.x + outer.width then return false end
-    if inner.y < outer.y then return false end
-    if inner.y + inner.height > outer.y + outer.height then return false end
-    return true
+    local result =
+        inner.x >= outer.x and
+        inner.x + inner.width <= outer.x + outer.width and
+        inner.y >= outer.y and
+        inner.y + inner.height <= outer.y + outer.height
+    return result
 end
 
 local function validate_entity_layer(fname, description, properties)
     if properties.layer == 0 then
-        zentropy.debug(string.format("%s at low layer in component: %s", description, fname))
+        zentropy.debug(string.format("%s: low layer in component: %s", description, fname))
     end
 end
 
@@ -28,10 +32,10 @@ local function validate_entity_mask(fname, description, properties, sections)
     local entire_room = { x = 0, y = 0, width = 320, height = 240, }
     for i, section in ipairs(sections) do
         if intersects(section, properties) then
-            zentropy.debug(string.format("%s outside mask in component: %s", description, fname))
+            zentropy.debug(string.format("%s: intersects with %s in component: %s", description, rect_string(section), fname))
         end
         if not contains(entire_room, properties) then
-            zentropy.debug(string.format("%s outside room in component: %s", description, fname))
+            zentropy.debug(string.format("%s: not contained within %s in component: %s", description, rect_string(entire_room), fname))
         end
     end
 end
@@ -49,13 +53,13 @@ end
 local function validate_map(fname, mask, tilesets, patterns)
     local all_sections = {
         { x = 176, y = 136, width = 144, height = 104, },
-        { x = 144, y = 136, width =  32, height = 104, },
+        { x = 144, y = 136, width =  32, height = 72, },
         { x =   0, y = 136, width = 144, height = 104, },
-        { x = 176, y = 104, width = 144, height =  32, },
+        { x = 176, y = 104, width = 108, height =  32, },
         { x = 144, y = 104, width =  32, height =  32, },
-        { x =   0, y = 104, width = 144, height =  32, },
+        { x =  32, y = 104, width = 108, height =  32, },
         { x = 176, y =   0, width = 144, height = 104, },
-        { x = 144, y =   0, width =  32, height = 104, },
+        { x = 144, y =  32, width =  32, height = 72, },
         { x =   0, y =   0, width = 144, height = 104, },
     }
     local i = 1
@@ -83,34 +87,56 @@ local function validate_map(fname, mask, tilesets, patterns)
         end
     end
     function mt.custom_entity(properties)
-        local description = string.format("custom_entity (%s)", properties.pattern)
+        local description = string.format("custom entity %s", rect_string(properties))
+        if properties.name then
+            description = description .. string.format(" name=%s", properties.name)
+        end
         validate_entity_layer(fname, description, properties)
         validate_entity_mask(fname, description, properties, sections)
     end
     function mt.dynamic_tile(properties)
-        local description = string.format("dynamic tile (%s)", properties.pattern)
+        local description = string.format("dynamic tile  %s", rect_string(properties))
+        if properties.name then
+            description = description .. string.format(" name=%s", properties.name)
+        else
+            description = description .. string.format(" pattern=%s", properties.pattern)
+        end
         validate_entity_layer(fname, description, properties)
         validate_entity_mask(fname, description, properties, sections)
         validate_entity_pot(fname, description, properties)
     end
     function mt.jumper(properties)
-        local description = string.format("jumper (%s)", properties.pattern)
+        local description = string.format("jumper        %s", rect_string(properties))
+        if properties.name then
+            description = description .. string.format(" name=%s", properties.name)
+        end
         validate_entity_layer(fname, description, properties)
         validate_entity_mask(fname, description, properties, sections)
     end
     function mt.sensor(properties)
-        local description = string.format("sensor (%s)", properties.pattern)
+        local description = string.format("sensor        %s", rect_string(properties))
+        if properties.name then
+            description = description .. string.format(" name=%s", properties.name)
+        end
         validate_entity_layer(fname, description, properties)
         validate_entity_mask(fname, description, properties, sections)
     end
     function mt.tile(properties)
-        local description = string.format("tile (%s)", properties.pattern)
+        local description = string.format("tile          %s", rect_string(properties))
+        if properties.name then
+            description = description .. string.format(" name=%s", properties.name)
+        else
+            description = description .. string.format(" pattern=%s", properties.pattern)
+        end
         validate_entity_layer(fname, description, properties)
         validate_entity_mask(fname, description, properties, sections)
         validate_entity_pot(fname, description, properties)
     end
     function mt.wall(properties)
-        local description = string.format("wall (%s)", properties.pattern)
+        local description = string.format("wall          %s", rect_string(properties))
+        if properties.name then
+            description = description .. string.format(" name=%s", properties.name)
+        end
         validate_entity_layer(fname, description, properties)
         validate_entity_mask(fname, description, properties, sections)
     end
