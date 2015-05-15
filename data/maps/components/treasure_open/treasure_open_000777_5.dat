@@ -88,6 +88,28 @@ tile{
   pattern = "torch",
 }
 
+tile{
+  layer = 1,
+  x = 152,
+  y = 72,
+  width = 16,
+  height = 16,
+  pattern = "pike",
+}
+
+wall{
+  layer = 1,
+  x = 152,
+  y = 72,
+  width = 16,
+  height = 16,
+  stops_hero = true,
+  stops_enemies = true,
+  stops_npcs = true,
+  stops_blocks = true,
+  stops_projectiles = true,
+}
+
 dynamic_tile{
   layer = 1,
   x = 152,
@@ -113,14 +135,6 @@ enemy{
   y = 101,
   direction = 3,
   breed = "pike_detect",
-}
-
-enemy{
-  layer = 1,
-  x = 160,
-  y = 85,
-  direction = 3,
-  breed = "pike_fixed",
 }
 
 enemy{

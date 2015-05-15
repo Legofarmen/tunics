@@ -223,6 +223,42 @@ tile{
   pattern = "barrier_big.3.1",
 }
 
+tile{
+  layer = 1,
+  x = 32,
+  y = 32,
+  width = 16,
+  height = 16,
+  pattern = "pike",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 192,
+  width = 16,
+  height = 16,
+  pattern = "pike",
+}
+
+tile{
+  layer = 1,
+  x = 272,
+  y = 192,
+  width = 16,
+  height = 16,
+  pattern = "pike",
+}
+
+tile{
+  layer = 1,
+  x = 272,
+  y = 32,
+  width = 16,
+  height = 16,
+  pattern = "pike",
+}
+
 enemy{
   layer = 1,
   x = 120,
@@ -245,37 +281,5 @@ enemy{
   y = 85,
   direction = 0,
   breed = "pike_auto",
-}
-
-enemy{
-  layer = 1,
-  x = 40,
-  y = 45,
-  direction = 3,
-  breed = "pike_fixed",
-}
-
-enemy{
-  layer = 1,
-  x = 280,
-  y = 45,
-  direction = 3,
-  breed = "pike_fixed",
-}
-
-enemy{
-  layer = 1,
-  x = 40,
-  y = 205,
-  direction = 3,
-  breed = "pike_fixed",
-}
-
-enemy{
-  layer = 1,
-  x = 280,
-  y = 205,
-  direction = 3,
-  breed = "pike_fixed",
 }
 

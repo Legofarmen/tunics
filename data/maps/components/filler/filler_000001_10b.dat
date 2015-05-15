@@ -7,92 +7,40 @@ properties{
   music = "same",
 }
 
-enemy{
+tile{
   layer = 1,
-  x = 184,
-  y = 205,
-  direction = 3,
-  breed = "pike_fixed",
+  x = 176,
+  y = 144,
+  width = 80,
+  height = 16,
+  pattern = "pike",
 }
 
-enemy{
+tile{
   layer = 1,
-  x = 248,
-  y = 157,
-  direction = 3,
-  breed = "pike_fixed",
+  x = 176,
+  y = 160,
+  width = 48,
+  height = 16,
+  pattern = "pike",
 }
 
-enemy{
+tile{
   layer = 1,
-  x = 200,
-  y = 173,
-  direction = 3,
-  breed = "pike_fixed",
+  x = 176,
+  y = 176,
+  width = 32,
+  height = 16,
+  pattern = "pike",
 }
 
-enemy{
+tile{
   layer = 1,
-  x = 216,
-  y = 157,
-  direction = 3,
-  breed = "pike_fixed",
-}
-
-enemy{
-  layer = 1,
-  x = 232,
-  y = 157,
-  direction = 3,
-  breed = "pike_fixed",
-}
-
-enemy{
-  layer = 1,
-  x = 184,
-  y = 189,
-  direction = 3,
-  breed = "pike_fixed",
-}
-
-enemy{
-  layer = 1,
-  x = 184,
-  y = 173,
-  direction = 3,
-  breed = "pike_fixed",
-}
-
-enemy{
-  layer = 1,
-  x = 184,
-  y = 157,
-  direction = 3,
-  breed = "pike_fixed",
-}
-
-enemy{
-  layer = 1,
-  x = 200,
-  y = 189,
-  direction = 3,
-  breed = "pike_fixed",
-}
-
-enemy{
-  layer = 1,
-  x = 216,
-  y = 173,
-  direction = 3,
-  breed = "pike_fixed",
-}
-
-enemy{
-  layer = 1,
-  x = 200,
-  y = 157,
-  direction = 3,
-  breed = "pike_fixed",
+  x = 176,
+  y = 192,
+  width = 16,
+  height = 16,
+  pattern = "pike",
 }
 
 dynamic_tile{
@@ -115,5 +63,57 @@ dynamic_tile{
   name = "pot_1",
   pattern = "floor_pot",
   enabled_at_start = true,
+}
+
+wall{
+  layer = 1,
+  x = 176,
+  y = 144,
+  width = 80,
+  height = 16,
+  stops_hero = true,
+  stops_enemies = true,
+  stops_npcs = true,
+  stops_blocks = true,
+  stops_projectiles = true,
+}
+
+wall{
+  layer = 1,
+  x = 176,
+  y = 160,
+  width = 48,
+  height = 16,
+  stops_hero = true,
+  stops_enemies = true,
+  stops_npcs = true,
+  stops_blocks = true,
+  stops_projectiles = true,
+}
+
+wall{
+  layer = 1,
+  x = 176,
+  y = 176,
+  width = 32,
+  height = 16,
+  stops_hero = true,
+  stops_enemies = true,
+  stops_npcs = true,
+  stops_blocks = true,
+  stops_projectiles = true,
+}
+
+wall{
+  layer = 1,
+  x = 176,
+  y = 192,
+  width = 16,
+  height = 16,
+  stops_hero = true,
+  stops_enemies = true,
+  stops_npcs = true,
+  stops_blocks = true,
+  stops_projectiles = true,
 }
 

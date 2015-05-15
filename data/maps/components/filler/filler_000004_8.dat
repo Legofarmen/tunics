@@ -25,28 +25,40 @@ tile{
   pattern = "torch_big.top",
 }
 
-enemy{
+tile{
   layer = 1,
-  x = 88,
-  y = 205,
-  direction = 3,
-  breed = "pike_fixed",
+  x = 32,
+  y = 136,
+  width = 16,
+  height = 16,
+  pattern = "pike",
 }
 
-enemy{
+tile{
   layer = 1,
-  x = 136,
-  y = 205,
-  direction = 3,
-  breed = "pike_fixed",
+  x = 32,
+  y = 192,
+  width = 16,
+  height = 16,
+  pattern = "pike",
 }
 
-enemy{
+tile{
   layer = 1,
-  x = 40,
-  y = 205,
-  direction = 3,
-  breed = "pike_fixed",
+  x = 80,
+  y = 192,
+  width = 16,
+  height = 16,
+  pattern = "pike",
+}
+
+tile{
+  layer = 1,
+  x = 128,
+  y = 192,
+  width = 16,
+  height = 16,
+  pattern = "pike",
 }
 
 dynamic_tile{
@@ -60,11 +72,55 @@ dynamic_tile{
   enabled_at_start = false,
 }
 
-enemy{
+wall{
   layer = 1,
-  x = 40,
-  y = 149,
-  direction = 3,
-  breed = "pike_fixed",
+  x = 32,
+  y = 136,
+  width = 16,
+  height = 16,
+  stops_hero = true,
+  stops_enemies = true,
+  stops_npcs = true,
+  stops_blocks = true,
+  stops_projectiles = true,
+}
+
+wall{
+  layer = 1,
+  x = 32,
+  y = 192,
+  width = 16,
+  height = 16,
+  stops_hero = true,
+  stops_enemies = true,
+  stops_npcs = true,
+  stops_blocks = true,
+  stops_projectiles = true,
+}
+
+wall{
+  layer = 1,
+  x = 80,
+  y = 192,
+  width = 16,
+  height = 16,
+  stops_hero = true,
+  stops_enemies = true,
+  stops_npcs = true,
+  stops_blocks = true,
+  stops_projectiles = true,
+}
+
+wall{
+  layer = 1,
+  x = 128,
+  y = 192,
+  width = 16,
+  height = 16,
+  stops_hero = true,
+  stops_enemies = true,
+  stops_npcs = true,
+  stops_blocks = true,
+  stops_projectiles = true,
 }
 
