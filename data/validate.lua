@@ -1,4 +1,5 @@
 local zentropy = require 'lib/zentropy'
+local util = require 'lib/util'
 
 local function rect_string(rect)
     return string.format("(%3d;%3d)-(%3d;%3d)", rect.x, rect.y, rect.x + rect.width, rect.y + rect.height)
@@ -24,18 +25,18 @@ end
 
 local function validate_entity_layer(fname, description, properties)
     if properties.layer == 0 then
-        zentropy.debug(string.format("%s: low layer in component: %s", description, fname))
+        zentropy.debug(string.format("%s:  in low layer in component: %s", description, fname))
     end
 end
 
 local function validate_entity_mask(fname, description, properties, sections)
     local entire_room = { x = 0, y = 0, width = 320, height = 240, }
-    for i, section in ipairs(sections) do
-        if intersects(section, properties) then
-            zentropy.debug(string.format("%s: intersects with %s in component: %s", description, rect_string(section), fname))
+    for name, rect in pairs(sections) do
+        if intersects(rect, properties) then
+            zentropy.debug(string.format("%s:  intersects with %s in component: %s", description, name, fname))
         end
         if not contains(entire_room, properties) then
-            zentropy.debug(string.format("%s: not contained within %s in component: %s", description, rect_string(entire_room), fname))
+            zentropy.debug(string.format("%s:  not contained within %s in component: %s", description, rect_string(entire_room), fname))
         end
     end
 end
@@ -43,10 +44,10 @@ end
 local function validate_entity_pot(fname, description, properties)
     if properties.pattern == 'floor_pot' then
         if not properties.name or not properties.name:find('^pot_') then
-            zentropy.debug(string.format("%s not named pot_* in component: %s", description, fname))
+            zentropy.debug(string.format("%s:  not named pot_* in component: %s", description, fname))
         end
     elseif properties.name and properties.name:find('^pot_') then
-        zentropy.debug(string.format("%s named pot_* in component: %s", description, fname))
+        zentropy.debug(string.format("%s:  named pot_* in component: %s", description, fname))
     end
 end
 
@@ -65,8 +66,9 @@ local function validate_map(fname, mask, tilesets, patterns)
     local i = 1
     local sections = {}
     for i = 1, 9 do
-        if bit32.band(mask, bit32.lshift(1, i-1)) == 0 then
-            table.insert(sections, all_sections[i])
+        local section_mask = bit32.lshift(1, i-1)
+        if bit32.band(mask, section_mask) == 0 then
+            sections[util.fromoct(section_mask)] = all_sections[i]
         end
     end
 
