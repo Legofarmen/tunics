@@ -8,6 +8,16 @@ function intersects(r1, r2)
     return true
 end
 
+function contains(outer, inner)
+    --zentropy.debug(outer.x, inner.x, inner.x + inner.width, outer.x + outer.width)
+    --zentropy.debug(outer.y, inner.y, inner.y + inner.height, outer.y + outer.height)
+    if inner.x < outer.x then return false end
+    if inner.x + inner.width > outer.x + outer.width then return false end
+    if inner.y < outer.y then return false end
+    if inner.y + inner.height > outer.y + outer.height then return false end
+    return true
+end
+
 function validate_entity_layer(fname, description, properties)
     if properties.layer == 0 then
         zentropy.debug(string.format("%s at low layer in component: %s", description, fname))
@@ -15,9 +25,13 @@ function validate_entity_layer(fname, description, properties)
 end
 
 function validate_entity_mask(fname, description, properties, sections)
+    local entire_room = { x = 0, y = 0, width = 320, height = 240, }
     for i, section in ipairs(sections) do
         if intersects(section, properties) then
             zentropy.debug(string.format("%s outside mask in component: %s", description, fname))
+        end
+        if not contains(entire_room, properties) then
+            zentropy.debug(string.format("%s outside room in component: %s", description, fname))
         end
     end
 end
@@ -34,15 +48,15 @@ end
 
 function read_component_map(fname, mask, tilesets, patterns)
     local all_sections = {
-        { x = 176, y = 136, width = 120, height = 80, },
-        { x = 144, y = 136, width =  32, height = 80, },
-        { x =  24, y = 136, width = 120, height = 80, },
-        { x = 176, y = 104, width = 120, height = 32, },
-        { x = 144, y = 104, width =  32, height = 32, },
-        { x =  24, y = 104, width = 120, height = 32, },
-        { x = 176, y =  24, width = 120, height = 80, },
-        { x = 144, y =  24, width =  32, height = 80, },
-        { x =  24, y =  24, width = 120, height = 80, },
+        { x = 176, y = 136, width = 144, height = 104, },
+        { x = 144, y = 136, width =  32, height = 104, },
+        { x =   0, y = 136, width = 144, height = 104, },
+        { x = 176, y = 104, width = 144, height =  32, },
+        { x = 144, y = 104, width =  32, height =  32, },
+        { x =   0, y = 104, width = 144, height =  32, },
+        { x = 176, y =   0, width = 144, height = 104, },
+        { x = 144, y =   0, width =  32, height = 104, },
+        { x =   0, y =   0, width = 144, height = 104, },
     }
     local i = 1
     local sections = {}
