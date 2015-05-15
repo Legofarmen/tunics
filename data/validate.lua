@@ -131,9 +131,6 @@ function validate_projectdb_components()
     for k, v in pairs(zentropy.components.treasures) do
         zentropy.debug('treasure', k, v)
     end
-    for k, v in pairs(zentropy.components.obstacles) do
-        zentropy.debug('obstacle', k, v)
-    end
     for k, v in pairs(zentropy.components.doors) do
         zentropy.debug('door', k, v)
     end
@@ -142,6 +139,13 @@ function validate_projectdb_components()
     end
     ]]
     local fmt = "maps/%s.dat"
+    for obstacle_name, obstacle_data in pairs(zentropy.components.obstacles) do
+        for dir, obstacles in pairs(obstacle_data) do
+            for i, obstacle in ipairs(obstacles) do
+                read_component_map(string.format(fmt, obstacle.id), obstacle.mask, tilesets, patterns)
+            end
+        end
+    end
     for k, v in pairs(zentropy.components.fillers) do
         read_component_map(string.format(fmt, v.id), v.mask, tilesets, patterns)
     end
