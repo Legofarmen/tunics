@@ -67,10 +67,16 @@ local function validate_entity_pot(fname, description, properties)
 end
 
 local function validate_entity_alignment(fname, description, properties)
+    local is_aligned = nil
     for i, alignment in ipairs(alignments[properties.pattern] or {}) do
-        if properties.x % 16 ~= alignment.x or properties.y % 16 ~= alignment.y then
-            zentropy.debug(string.format("%s:  misaligned: %s", description, fname))
+        if is_aligned or (properties.x % 16 == alignment.x and properties.y % 16 == alignment.y) then
+            is_aligned = true
+        else
+            is_aligned = false
         end
+    end
+    if is_aligned == false then
+        zentropy.debug(string.format("%s:  misaligned: %s", description, fname))
     end
 end
 
@@ -167,6 +173,12 @@ local function validate_map(fname, mask, tilesets, patterns)
         validate_entity_layer(fname, description, properties)
         validate_entity_mask(fname, description, properties, sections)
     end
+    function mt.enemy(properties)
+        local description = string.format("enemy         breed=%s", properties.breed)
+        if properties.breed == 'pike_fixed' then
+            zentropy.debug(string.format('%s:  use pike tile instead in component: %s', description, fname))
+        end
+    end
     function mt.block(properties) end
     function mt.bomb(properties) end
     function mt.chest(properties) end
@@ -175,7 +187,6 @@ local function validate_map(fname, mask, tilesets, patterns)
     function mt.destination(properties) end
     function mt.destructible(properties) end
     function mt.door(properties) end
-    function mt.enemy(properties) end
     function mt.explosion(properties) end
     function mt.fire(properties) end
     function mt.npc(properties) end
