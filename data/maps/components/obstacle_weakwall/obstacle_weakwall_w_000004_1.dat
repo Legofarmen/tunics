@@ -61,35 +61,3 @@ dynamic_tile{
   enabled_at_start = true,
 }
 
-dynamic_tile{
-  layer = 1,
-  x = 8,
-  y = 104,
-  width = 24,
-  height = 32,
-  name = "door_west_closed",
-  pattern = "wall.3",
-  enabled_at_start = true,
-}
-
-door{
-  layer = 1,
-  x = 16,
-  y = 112,
-  name = "door_west",
-  direction = 2,
-  sprite = "entities/door_weak_wall",
-  opening_method = "explosion",
-}
-
-dynamic_tile{
-  layer = 2,
-  x = 8,
-  y = 104,
-  width = 8,
-  height = 32,
-  name = "top_west_open",
-  pattern = "door_top.blast.3",
-  enabled_at_start = false,
-}
-

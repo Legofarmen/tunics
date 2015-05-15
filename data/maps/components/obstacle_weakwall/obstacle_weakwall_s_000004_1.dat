@@ -63,44 +63,12 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 144,
-  y = 208,
-  width = 32,
-  height = 24,
-  name = "door_south_closed",
-  pattern = "wall.2",
-  enabled_at_start = true,
-}
-
-door{
-  layer = 1,
-  x = 152,
-  y = 208,
-  name = "door_south",
-  direction = 3,
-  sprite = "entities/door_weak_wall",
-  opening_method = "explosion",
-}
-
-dynamic_tile{
-  layer = 1,
   x = 128,
   y = 152,
   width = 16,
   height = 16,
   name = "enemy_3",
   pattern = "carpet.1",
-  enabled_at_start = false,
-}
-
-dynamic_tile{
-  layer = 2,
-  x = 144,
-  y = 224,
-  width = 32,
-  height = 8,
-  name = "top_south_open",
-  pattern = "door_top.blast.2",
   enabled_at_start = false,
 }
 
