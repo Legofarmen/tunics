@@ -20,6 +20,10 @@ local function rect_string(rect)
     return string.format("(%3d;%3d)-(%3d;%3d)", rect.x, rect.y, rect.x + rect.width, rect.y + rect.height)
 end
 
+local function coord_string(coord)
+    return string.format("(%3d;%3d)", coord.x, coord.y)
+end
+
 local function intersects(a, b)
     local result =
         a.x < b.x + b.width and
@@ -174,7 +178,7 @@ local function validate_map(fname, mask, tilesets, patterns)
         validate_entity_mask(fname, description, properties, sections)
     end
     function mt.enemy(properties)
-        local description = string.format("enemy         breed=%s", properties.breed)
+        local description = string.format("enemy         %s breed=%s", coord_string(properties), properties.breed)
         if properties.breed == 'pike_fixed' then
             zentropy.debug(string.format('%s:  use pike tile instead in component: %s', description, fname))
         end
