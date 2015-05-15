@@ -70,6 +70,16 @@ local function validate_entity_pot(fname, description, properties)
     end
 end
 
+local function validate_entity_enemy(fname, description, properties)
+    if properties.pattern == 'placeholder_enemy' then
+        if not properties.name or not properties.name:find('^enemy_') then
+            zentropy.debug(string.format("%s:  not named enemy_* in component: %s", description, fname))
+        end
+    elseif properties.name and properties.name:find('^enemy_') then
+        zentropy.debug(string.format("%s:  named enemy_* in component: %s", description, fname))
+    end
+end
+
 local function validate_entity_alignment(fname, description, properties)
     local is_aligned = nil
     for i, alignment in ipairs(alignments[properties.pattern] or {}) do
@@ -139,6 +149,7 @@ local function validate_map(fname, mask, tilesets, patterns)
         validate_entity_layer(fname, description, properties)
         validate_entity_mask(fname, description, properties, sections)
         validate_entity_pot(fname, description, properties)
+        validate_entity_enemy(fname, description, properties)
         validate_entity_alignment(fname, description, properties)
     end
     function mt.jumper(properties)
@@ -167,6 +178,7 @@ local function validate_map(fname, mask, tilesets, patterns)
         validate_entity_layer(fname, description, properties)
         validate_entity_mask(fname, description, properties, sections)
         validate_entity_pot(fname, description, properties)
+        validate_entity_enemy(fname, description, properties)
         validate_entity_alignment(fname, description, properties)
     end
     function mt.wall(properties)
