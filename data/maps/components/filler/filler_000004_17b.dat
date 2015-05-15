@@ -8,15 +8,6 @@ properties{
 }
 
 tile{
-  layer = 0,
-  x = 64,
-  y = 136,
-  width = 32,
-  height = 16,
-  pattern = "water_pool_ladder.1",
-}
-
-tile{
   layer = 1,
   x = 32,
   y = 136,
@@ -68,6 +59,15 @@ tile{
   width = 32,
   height = 16,
   pattern = "floor.20",
+}
+
+tile{
+  layer = 1,
+  x = 64,
+  y = 136,
+  width = 32,
+  height = 16,
+  pattern = "water_pool_ladder.1",
 }
 
 dynamic_tile{

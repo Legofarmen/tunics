@@ -8,7 +8,7 @@ properties{
 }
 
 tile{
-  layer = 0,
+  layer = 1,
   x = 168,
   y = 96,
   width = 24,
@@ -17,7 +17,7 @@ tile{
 }
 
 tile{
-  layer = 0,
+  layer = 1,
   x = 128,
   y = 96,
   width = 24,
@@ -26,7 +26,7 @@ tile{
 }
 
 tile{
-  layer = 0,
+  layer = 1,
   x = 128,
   y = 120,
   width = 24,
@@ -35,7 +35,7 @@ tile{
 }
 
 tile{
-  layer = 0,
+  layer = 1,
   x = 168,
   y = 120,
   width = 24,
@@ -44,7 +44,7 @@ tile{
 }
 
 tile{
-  layer = 0,
+  layer = 1,
   x = 152,
   y = 120,
   width = 16,
@@ -53,7 +53,7 @@ tile{
 }
 
 tile{
-  layer = 0,
+  layer = 1,
   x = 152,
   y = 96,
   width = 16,
