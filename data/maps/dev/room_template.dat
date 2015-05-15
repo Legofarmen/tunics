@@ -3,7 +3,7 @@ properties{
   y = 0,
   width = 320,
   height = 240,
-  tileset = "dungeon_cave_brown_1",
+  tileset = "dungeon_smoothbrick_brown_1",
   music = "same",
 }
 
@@ -18,7 +18,7 @@ tile{
 
 tile{
   layer = 0,
-  x = 176,
+  x = 168,
   y = 24,
   width = 128,
   height = 80,
