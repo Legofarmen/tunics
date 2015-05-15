@@ -152,6 +152,7 @@ function zentropy.db.Components:obstacle(id, iterator)
     local item = iterator()
     local dir = iterator()
     local mask_string = iterator()
+    if not dir:find('^n?s?e?w?$') then return false end
     if mask_string == nil then return false end
     local mask = util.oct(mask_string)
     self.obstacles[item] = self.obstacles[item] or {}
