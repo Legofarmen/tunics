@@ -18,42 +18,6 @@ tile{
 
 tile{
   layer = 1,
-  x = 208,
-  y = 160,
-  width = 80,
-  height = 8,
-  pattern = "wall_border.2",
-}
-
-tile{
-  layer = 1,
-  x = 200,
-  y = 168,
-  width = 8,
-  height = 32,
-  pattern = "wall_border.4",
-}
-
-tile{
-  layer = 1,
-  x = 200,
-  y = 200,
-  width = 8,
-  height = 8,
-  pattern = "wall_border.corner.4",
-}
-
-tile{
-  layer = 1,
-  x = 200,
-  y = 160,
-  width = 8,
-  height = 8,
-  pattern = "wall_border.corner_reverse.4",
-}
-
-tile{
-  layer = 1,
   x = 272,
   y = 192,
   width = 16,
@@ -81,21 +45,39 @@ tile{
 
 tile{
   layer = 1,
-  x = 280,
-  y = 160,
+  x = 208,
+  y = 168,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.4",
+  pattern = "hole.corner.1",
+}
+
+tile{
+  layer = 1,
+  x = 216,
+  y = 168,
+  width = 72,
+  height = 8,
+  pattern = "hole.1",
+}
+
+tile{
+  layer = 1,
+  x = 208,
+  y = 176,
+  width = 8,
+  height = 32,
+  pattern = "hole.3",
 }
 
 dynamic_tile{
   layer = 1,
-  x = 224,
-  y = 144,
-  width = 16,
-  height = 16,
-  name = "enemy_3",
-  pattern = "carpet.1",
-  enabled_at_start = false,
+  x = 192,
+  y = 136,
+  width = 32,
+  height = 32,
+  name = "enemy",
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
 }
 

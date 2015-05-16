@@ -63,8 +63,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 248,
-  y = 216,
+  x = 256,
+  y = 208,
   width = 32,
   height = 16,
   pattern = "wall_torch.2",
@@ -80,8 +80,8 @@ enemy{
 
 dynamic_tile{
   layer = 1,
-  x = 272,
-  y = 176,
+  x = 264,
+  y = 168,
   width = 16,
   height = 16,
   name = "pot_1",
@@ -91,8 +91,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 272,
-  y = 192,
+  x = 264,
+  y = 184,
   width = 16,
   height = 16,
   name = "pot_2",

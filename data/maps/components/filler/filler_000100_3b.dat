@@ -9,17 +9,17 @@ properties{
 
 tile{
   layer = 1,
-  x = 224,
-  y = 8,
-  width = 32,
-  height = 24,
-  pattern = "wall_statue.3.1",
+  x = 200,
+  y = 56,
+  width = 64,
+  height = 32,
+  pattern = "floor_small.2",
 }
 
 tile{
   layer = 1,
   x = 208,
-  y = 48,
+  y = 64,
   width = 16,
   height = 16,
   pattern = "torch",
@@ -27,10 +27,66 @@ tile{
 
 tile{
   layer = 1,
-  x = 256,
-  y = 48,
+  x = 240,
+  y = 64,
   width = 16,
   height = 16,
   pattern = "torch",
+}
+
+tile{
+  layer = 1,
+  x = 216,
+  y = 8,
+  width = 32,
+  height = 24,
+  pattern = "wall_statue.1.1",
+}
+
+tile{
+  layer = 1,
+  x = 192,
+  y = 48,
+  width = 8,
+  height = 48,
+  pattern = "floor_border.2",
+}
+
+tile{
+  layer = 1,
+  x = 264,
+  y = 48,
+  width = 8,
+  height = 48,
+  pattern = "floor_border.2",
+}
+
+tile{
+  layer = 1,
+  x = 200,
+  y = 48,
+  width = 64,
+  height = 8,
+  pattern = "floor_border.2",
+}
+
+tile{
+  layer = 1,
+  x = 200,
+  y = 88,
+  width = 64,
+  height = 8,
+  pattern = "floor_border.2",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 256,
+  y = 72,
+  width = 32,
+  height = 32,
+  name = "enemy",
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
 }
 

@@ -3,7 +3,7 @@ properties{
   y = 0,
   width = 320,
   height = 240,
-  tileset = "dungeon_cave_brown_1",
+  tileset = "dungeon_house_brown_1",
   music = "same",
 }
 
@@ -153,13 +153,13 @@ tile{
 
 dynamic_tile{
   layer = 1,
-  x = 72,
-  y = 152,
-  width = 16,
-  height = 16,
+  x = 64,
+  y = 144,
+  width = 32,
+  height = 32,
   name = "enemy",
-  pattern = "carpet.1",
-  enabled_at_start = false,
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
 }
 
 tile{
