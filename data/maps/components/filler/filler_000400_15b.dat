@@ -36,38 +36,11 @@ tile{
 
 tile{
   layer = 1,
-  x = 104,
-  y = 32,
-  width = 8,
-  height = 8,
-  pattern = "hole.corner.1",
-}
-
-tile{
-  layer = 1,
-  x = 32,
-  y = 32,
-  width = 8,
-  height = 8,
-  pattern = "hole.corner.1",
-}
-
-tile{
-  layer = 1,
   x = 88,
   y = 80,
   width = 8,
   height = 8,
   pattern = "hole.corner.1",
-}
-
-tile{
-  layer = 1,
-  x = 128,
-  y = 32,
-  width = 8,
-  height = 8,
-  pattern = "hole.corner.2",
 }
 
 tile{
@@ -81,26 +54,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 72,
-  y = 32,
-  width = 8,
-  height = 8,
-  pattern = "hole.corner.2",
-}
-
-tile{
-  layer = 1,
   x = 104,
   y = 56,
-  width = 8,
-  height = 8,
-  pattern = "hole.corner.3",
-}
-
-tile{
-  layer = 1,
-  x = 32,
-  y = 64,
   width = 8,
   height = 8,
   pattern = "hole.corner.3",
@@ -140,24 +95,6 @@ tile{
   width = 8,
   height = 8,
   pattern = "hole.corner.4",
-}
-
-tile{
-  layer = 1,
-  x = 128,
-  y = 40,
-  width = 8,
-  height = 16,
-  pattern = "hole.4",
-}
-
-tile{
-  layer = 1,
-  x = 72,
-  y = 40,
-  width = 8,
-  height = 24,
-  pattern = "hole.4",
 }
 
 tile{
@@ -171,47 +108,11 @@ tile{
 
 tile{
   layer = 1,
-  x = 40,
-  y = 32,
-  width = 32,
-  height = 8,
-  pattern = "hole.1",
-}
-
-tile{
-  layer = 1,
-  x = 112,
-  y = 32,
-  width = 16,
-  height = 8,
-  pattern = "hole.1",
-}
-
-tile{
-  layer = 1,
   x = 96,
   y = 80,
   width = 24,
   height = 8,
   pattern = "hole.1",
-}
-
-tile{
-  layer = 1,
-  x = 104,
-  y = 40,
-  width = 8,
-  height = 16,
-  pattern = "hole.3",
-}
-
-tile{
-  layer = 1,
-  x = 32,
-  y = 40,
-  width = 8,
-  height = 24,
-  pattern = "hole.3",
 }
 
 tile{
@@ -234,30 +135,93 @@ tile{
 
 tile{
   layer = 1,
-  x = 40,
-  y = 64,
-  width = 32,
+  x = 96,
+  y = 96,
+  width = 24,
   height = 8,
   pattern = "hole.2",
 }
 
 tile{
   layer = 1,
-  x = 96,
-  y = 96,
-  width = 24,
+  x = 32,
+  y = 32,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.corner.1",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 48,
+  width = 16,
+  height = 24,
+  pattern = "wall_hole.3",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 64,
+  width = 40,
   height = 8,
   pattern = "hole.2",
+}
+
+tile{
+  layer = 1,
+  x = 48,
+  y = 32,
+  width = 32,
+  height = 16,
+  pattern = "wall_hole.1",
+}
+
+tile{
+  layer = 1,
+  x = 72,
+  y = 32,
+  width = 8,
+  height = 32,
+  pattern = "hole.4",
+}
+
+tile{
+  layer = 1,
+  x = 104,
+  y = 32,
+  width = 32,
+  height = 16,
+  pattern = "wall_hole.1",
+}
+
+tile{
+  layer = 1,
+  x = 104,
+  y = 32,
+  width = 8,
+  height = 24,
+  pattern = "hole.3",
+}
+
+tile{
+  layer = 1,
+  x = 128,
+  y = 32,
+  width = 8,
+  height = 24,
+  pattern = "hole.4",
 }
 
 dynamic_tile{
   layer = 1,
-  x = 48,
-  y = 88,
-  width = 16,
-  height = 16,
-  name = "enemy_2",
-  pattern = "carpet.1",
-  enabled_at_start = false,
+  x = 40,
+  y = 72,
+  width = 32,
+  height = 32,
+  name = "enemy",
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
 }
 

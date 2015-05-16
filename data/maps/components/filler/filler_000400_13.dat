@@ -9,8 +9,8 @@ properties{
 
 tile{
   layer = 1,
-  x = 48,
-  y = 32,
+  x = 56,
+  y = 40,
   width = 8,
   height = 8,
   pattern = "barrier.1.border",
@@ -18,8 +18,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 72,
-  y = 32,
+  x = 80,
+  y = 40,
   width = 8,
   height = 8,
   pattern = "barrier.1.border",
@@ -27,8 +27,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 96,
-  y = 32,
+  x = 104,
+  y = 40,
   width = 8,
   height = 8,
   pattern = "barrier.1.border",
@@ -36,7 +36,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 48,
+  x = 56,
   y = 96,
   width = 8,
   height = 8,
@@ -45,7 +45,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 72,
+  x = 80,
   y = 80,
   width = 8,
   height = 8,
@@ -54,7 +54,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 96,
+  x = 104,
   y = 64,
   width = 8,
   height = 8,
@@ -63,62 +63,35 @@ tile{
 
 tile{
   layer = 1,
-  x = 48,
-  y = 40,
-  width = 8,
-  height = 56,
-  pattern = "barrier.1.2",
-}
-
-tile{
-  layer = 1,
-  x = 72,
-  y = 40,
-  width = 8,
-  height = 40,
-  pattern = "barrier.1.2",
-}
-
-tile{
-  layer = 1,
-  x = 96,
-  y = 40,
-  width = 8,
-  height = 24,
-  pattern = "barrier.1.2",
-}
-
-tile{
-  layer = 1,
-  x = 120,
-  y = 32,
-  width = 8,
-  height = 8,
-  pattern = "barrier.1.border",
-}
-
-tile{
-  layer = 1,
-  x = 120,
+  x = 56,
   y = 48,
   width = 8,
-  height = 8,
-  pattern = "barrier.1.border",
+  height = 48,
+  pattern = "barrier.1.2",
 }
 
 tile{
   layer = 1,
-  x = 120,
-  y = 40,
+  x = 80,
+  y = 48,
   width = 8,
-  height = 8,
+  height = 32,
+  pattern = "barrier.1.2",
+}
+
+tile{
+  layer = 1,
+  x = 104,
+  y = 48,
+  width = 8,
+  height = 16,
   pattern = "barrier.1.2",
 }
 
 dynamic_tile{
   layer = 1,
-  x = 32,
-  y = 32,
+  x = 40,
+  y = 40,
   width = 16,
   height = 16,
   name = "pot_1",
@@ -128,8 +101,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 56,
-  y = 32,
+  x = 64,
+  y = 40,
   width = 16,
   height = 16,
   name = "pot_2",
@@ -139,8 +112,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 80,
-  y = 32,
+  x = 88,
+  y = 40,
   width = 16,
   height = 16,
   name = "pot_3",
@@ -150,8 +123,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 104,
-  y = 32,
+  x = 112,
+  y = 40,
   width = 16,
   height = 16,
   name = "pot_4",
@@ -161,23 +134,12 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 128,
-  y = 88,
-  width = 16,
-  height = 16,
-  name = "enemy_2",
-  pattern = "carpet.1",
-  enabled_at_start = false,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 128,
-  y = 32,
-  width = 16,
-  height = 16,
-  name = "pot_5",
-  pattern = "floor_pot",
+  x = 112,
+  y = 72,
+  width = 32,
+  height = 32,
+  name = "enemy",
+  pattern = "placeholder_enemy",
   enabled_at_start = true,
 }
 

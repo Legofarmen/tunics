@@ -9,8 +9,8 @@ properties{
 
 tile{
   layer = 1,
-  x = 32,
-  y = 192,
+  x = 40,
+  y = 184,
   width = 96,
   height = 16,
   pattern = "block",
@@ -18,8 +18,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 64,
-  y = 176,
+  x = 72,
+  y = 168,
   width = 64,
   height = 16,
   pattern = "block",
@@ -27,8 +27,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 112,
-  y = 144,
+  x = 120,
+  y = 136,
   width = 16,
   height = 16,
   pattern = "block",
@@ -36,8 +36,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 96,
-  y = 160,
+  x = 104,
+  y = 152,
   width = 32,
   height = 16,
   pattern = "block",
@@ -45,12 +45,12 @@ tile{
 
 dynamic_tile{
   layer = 1,
-  x = 56,
-  y = 144,
-  width = 16,
-  height = 16,
-  name = "enemy_3",
-  pattern = "carpet.1",
-  enabled_at_start = false,
+  x = 40,
+  y = 136,
+  width = 32,
+  height = 32,
+  name = "enemy",
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
 }
 
