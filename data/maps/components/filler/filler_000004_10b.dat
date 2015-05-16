@@ -9,8 +9,8 @@ properties{
 
 tile{
   layer = 1,
-  x = 64,
-  y = 144,
+  x = 56,
+  y = 136,
   width = 80,
   height = 16,
   pattern = "pike",
@@ -18,8 +18,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 96,
-  y = 160,
+  x = 88,
+  y = 152,
   width = 48,
   height = 16,
   pattern = "pike",
@@ -27,8 +27,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 112,
-  y = 176,
+  x = 104,
+  y = 168,
   width = 32,
   height = 16,
   pattern = "pike",
@@ -36,8 +36,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 128,
-  y = 192,
+  x = 120,
+  y = 184,
   width = 16,
   height = 16,
   pattern = "pike",
@@ -45,19 +45,8 @@ tile{
 
 dynamic_tile{
   layer = 1,
-  x = 56,
-  y = 176,
-  width = 16,
-  height = 16,
-  name = "enemy_2",
-  pattern = "carpet.1",
-  enabled_at_start = false,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 32,
-  y = 192,
+  x = 40,
+  y = 184,
   width = 16,
   height = 16,
   name = "pot_1",
@@ -67,8 +56,8 @@ dynamic_tile{
 
 wall{
   layer = 1,
-  x = 128,
-  y = 192,
+  x = 120,
+  y = 184,
   width = 16,
   height = 16,
   stops_hero = true,
@@ -80,8 +69,8 @@ wall{
 
 wall{
   layer = 1,
-  x = 112,
-  y = 176,
+  x = 104,
+  y = 168,
   width = 32,
   height = 16,
   stops_hero = true,
@@ -93,8 +82,8 @@ wall{
 
 wall{
   layer = 1,
-  x = 96,
-  y = 160,
+  x = 88,
+  y = 152,
   width = 48,
   height = 16,
   stops_hero = true,
@@ -106,8 +95,8 @@ wall{
 
 wall{
   layer = 1,
-  x = 64,
-  y = 144,
+  x = 56,
+  y = 136,
   width = 80,
   height = 16,
   stops_hero = true,
@@ -115,5 +104,16 @@ wall{
   stops_npcs = true,
   stops_blocks = true,
   stops_projectiles = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 40,
+  y = 152,
+  width = 32,
+  height = 32,
+  name = "enemy",
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
 }
 
