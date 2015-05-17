@@ -960,8 +960,8 @@ function zentropy.inject_big_chest(placeholder, data)
     local map = placeholder:get_map()
     local x, y, layer = placeholder:get_position()
     local chest = map:create_chest{
-        x=x,
-        y=y,
+        x = x,
+        y = y,
         layer=layer,
         treasure_name=data.item_name,
         treasure_variant=data.variant,
@@ -972,7 +972,7 @@ function zentropy.inject_big_chest(placeholder, data)
         cannot_open_dialog="_big_key_required",
     }
     local origin_x, origin_y = chest:get_origin()
-    chest:set_position(x + origin_x, y + origin_y)
+    chest:set_position(x + origin_x + 8, y + origin_y + 8)
     placeholder:remove()
     return chest
 end
