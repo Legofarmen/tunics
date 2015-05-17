@@ -456,8 +456,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 16,
-  y = 96,
+  x = 32,
+  y = 104,
   width = 32,
   height = 32,
   name = "enemy_1",
@@ -467,8 +467,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 272,
-  y = 80,
+  x = 256,
+  y = 104,
   width = 32,
   height = 32,
   name = "enemy_2",

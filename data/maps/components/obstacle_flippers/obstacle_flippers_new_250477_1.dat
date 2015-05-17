@@ -372,7 +372,7 @@ wall{
 dynamic_tile{
   layer = 1,
   x = 32,
-  y = 24,
+  y = 32,
   width = 32,
   height = 32,
   name = "enemy_2",

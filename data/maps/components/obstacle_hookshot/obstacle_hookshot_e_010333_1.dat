@@ -20,14 +20,14 @@ tile{
   layer = 1,
   x = 248,
   y = 88,
-  width = 32,
-  height = 80,
+  width = 16,
+  height = 64,
   pattern = "hole",
 }
 
 tile{
   layer = 1,
-  x = 264,
+  x = 248,
   y = 88,
   width = 16,
   height = 16,
@@ -36,8 +36,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 264,
-  y = 152,
+  x = 248,
+  y = 136,
   width = 16,
   height = 16,
   pattern = "wall_hole.corner.4",
@@ -45,10 +45,10 @@ tile{
 
 tile{
   layer = 1,
-  x = 264,
+  x = 248,
   y = 104,
   width = 16,
-  height = 48,
+  height = 32,
   pattern = "wall_hole.4",
 }
 
@@ -90,17 +90,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 248,
-  y = 88,
-  width = 16,
-  height = 16,
-  pattern = "wall_hole.1",
-}
-
-tile{
-  layer = 1,
   x = 232,
-  y = 152,
+  y = 136,
   width = 16,
   height = 16,
   pattern = "wall_hole.corner_reverse.4",
@@ -109,9 +100,9 @@ tile{
 tile{
   layer = 1,
   x = 232,
-  y = 168,
+  y = 152,
   width = 16,
-  height = 24,
+  height = 40,
   pattern = "wall_hole.4",
 }
 
@@ -140,15 +131,6 @@ tile{
   width = 16,
   height = 16,
   pattern = "wall_hole.corner.4",
-}
-
-tile{
-  layer = 1,
-  x = 248,
-  y = 152,
-  width = 16,
-  height = 16,
-  pattern = "wall_hole.2",
 }
 
 tile{
@@ -222,8 +204,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 264,
-  y = 176,
+  x = 248,
+  y = 168,
   width = 32,
   height = 32,
   name = "enemy_3",
