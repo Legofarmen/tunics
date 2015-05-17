@@ -105,32 +105,10 @@ block{
 dynamic_tile{
   layer = 1,
   x = 56,
-  y = 72,
-  width = 16,
-  height = 16,
-  name = "pot_3",
-  pattern = "floor_pot",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 56,
   y = 56,
   width = 16,
   height = 16,
   name = "pot_1",
-  pattern = "floor_pot",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 72,
-  y = 56,
-  width = 16,
-  height = 16,
-  name = "pot_4",
   pattern = "floor_pot",
   enabled_at_start = true,
 }
@@ -143,50 +121,6 @@ dynamic_tile{
   height = 16,
   name = "pot_2",
   pattern = "floor_pot",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 232,
-  y = 56,
-  width = 16,
-  height = 16,
-  name = "pot_5",
-  pattern = "floor_pot",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 248,
-  y = 72,
-  width = 16,
-  height = 16,
-  name = "pot_6",
-  pattern = "floor_pot",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 152,
-  y = 112,
-  width = 16,
-  height = 16,
-  name = "treasure_obstacle_chest",
-  pattern = "carpet.1",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 152,
-  y = 56,
-  width = 16,
-  height = 16,
-  name = "treasure_open_chest",
-  pattern = "carpet.1",
   enabled_at_start = true,
 }
 
@@ -242,6 +176,28 @@ dynamic_tile{
   height = 32,
   name = "enemy_4",
   pattern = "placeholder_enemy",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 152,
+  y = 112,
+  width = 16,
+  height = 16,
+  name = "treasure_obstacle_chest",
+  pattern = "placeholder_treasure_puzzle",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 152,
+  y = 56,
+  width = 16,
+  height = 16,
+  name = "treasure_open_chest",
+  pattern = "placeholder_treasure_open",
   enabled_at_start = true,
 }
 

@@ -72,17 +72,6 @@ tile{
 
 dynamic_tile{
   layer = 1,
-  x = 224,
-  y = 112,
-  width = 16,
-  height = 16,
-  name = "chest",
-  pattern = "carpet.2",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
   x = 216,
   y = 80,
   width = 32,
@@ -100,6 +89,17 @@ dynamic_tile{
   height = 32,
   name = "enemy_2",
   pattern = "placeholder_enemy",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 224,
+  y = 112,
+  width = 16,
+  height = 16,
+  name = "chest",
+  pattern = "placeholder_treasure_open",
   enabled_at_start = true,
 }
 

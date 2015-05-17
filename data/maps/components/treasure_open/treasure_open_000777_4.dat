@@ -289,7 +289,7 @@ dynamic_tile{
   y = 128,
   width = 32,
   height = 32,
-  name = "enemy_5",
+  name = "enemy_1",
   pattern = "placeholder_enemy",
   enabled_at_start = true,
 }
@@ -300,7 +300,7 @@ dynamic_tile{
   y = 128,
   width = 32,
   height = 32,
-  name = "enemy_6",
+  name = "enemy_2",
   pattern = "placeholder_enemy",
   enabled_at_start = true,
 }
@@ -311,7 +311,7 @@ dynamic_tile{
   y = 160,
   width = 32,
   height = 32,
-  name = "enemy_7",
+  name = "enemy_3",
   pattern = "placeholder_enemy",
   enabled_at_start = true,
 }

@@ -9,78 +9,101 @@ properties{
 
 tile{
   layer = 1,
-  x = 72,
-  y = 152,
-  width = 144,
+  x = 40,
+  y = 40,
+  width = 16,
   height = 16,
-  pattern = "block",
+  pattern = "torch",
+}
+
+tile{
+  layer = 1,
+  x = 264,
+  y = 40,
+  width = 16,
+  height = 16,
+  pattern = "torch",
+}
+
+tile{
+  layer = 1,
+  x = 264,
+  y = 184,
+  width = 16,
+  height = 16,
+  pattern = "torch",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 184,
+  width = 16,
+  height = 16,
+  pattern = "torch",
 }
 
 tile{
   layer = 1,
   x = 72,
   y = 72,
-  width = 144,
-  height = 16,
-  pattern = "block",
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
 }
 
 tile{
   layer = 1,
-  x = 40,
-  y = 40,
-  width = 16,
-  height = 16,
-  pattern = "torch",
+  x = 144,
+  y = 72,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
 }
 
 tile{
   layer = 1,
-  x = 264,
-  y = 40,
-  width = 16,
-  height = 16,
-  pattern = "torch",
+  x = 144,
+  y = 160,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
 }
 
 tile{
   layer = 1,
-  x = 264,
-  y = 184,
-  width = 16,
-  height = 16,
-  pattern = "torch",
+  x = 72,
+  y = 160,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
 }
 
 tile{
   layer = 1,
-  x = 40,
-  y = 184,
-  width = 16,
-  height = 16,
-  pattern = "torch",
+  x = 72,
+  y = 80,
+  width = 8,
+  height = 80,
+  pattern = "barrier.1.2",
 }
 
-dynamic_tile{
-  layer = 1,
-  x = 152,
-  y = 112,
-  width = 16,
-  height = 16,
-  name = "treasure_obstacle_chest",
-  pattern = "carpet.1",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
+tile{
   layer = 1,
   x = 80,
-  y = 48,
-  width = 16,
-  height = 16,
-  name = "treasure_open_chest",
-  pattern = "carpet.1",
-  enabled_at_start = true,
+  y = 72,
+  width = 64,
+  height = 8,
+  pattern = "barrier.1.1",
+}
+
+tile{
+  layer = 1,
+  x = 80,
+  y = 160,
+  width = 64,
+  height = 8,
+  pattern = "barrier.1.1",
 }
 
 block{
@@ -227,6 +250,28 @@ dynamic_tile{
   height = 32,
   name = "enemy_4",
   pattern = "placeholder_enemy",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 152,
+  y = 112,
+  width = 16,
+  height = 16,
+  name = "treasure_obstacle_chest",
+  pattern = "placeholder_treasure_puzzle",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 184,
+  y = 72,
+  width = 16,
+  height = 16,
+  name = "treasure_open_chest",
+  pattern = "placeholder_treasure_open",
   enabled_at_start = true,
 }
 

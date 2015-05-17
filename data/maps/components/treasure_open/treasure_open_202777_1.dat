@@ -268,17 +268,6 @@ tile{
   pattern = "pike",
 }
 
-dynamic_tile{
-  layer = 1,
-  x = 56,
-  y = 112,
-  width = 16,
-  height = 16,
-  name = "chest",
-  pattern = "carpet.2",
-  enabled_at_start = true,
-}
-
 block{
   layer = 1,
   x = 64,
@@ -320,8 +309,8 @@ enemy{
 enemy{
   layer = 1,
   x = 224,
-  y = 125,
-  direction = 1,
+  y = 45,
+  direction = 3,
   breed = "pike_auto",
 }
 
@@ -349,5 +338,16 @@ wall{
   stops_npcs = true,
   stops_blocks = true,
   stops_projectiles = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 56,
+  y = 112,
+  width = 16,
+  height = 16,
+  name = "chest",
+  pattern = "placeholder_treasure_open",
+  enabled_at_start = true,
 }
 

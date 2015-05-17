@@ -8,15 +8,6 @@ properties{
 }
 
 tile{
-  layer = 0,
-  x = 288,
-  y = 152,
-  width = 16,
-  height = 32,
-  pattern = "water_wall.drain_gate.4",
-}
-
-tile{
   layer = 1,
   x = 224,
   y = 208,
@@ -178,37 +169,13 @@ tile{
   pattern = "block",
 }
 
-dynamic_tile{
+tile{
   layer = 1,
-  x = 200,
-  y = 144,
+  x = 288,
+  y = 152,
   width = 16,
-  height = 16,
-  name = "treasure_obstacle_chest",
-  pattern = "carpet.1",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 184,
-  y = 144,
-  width = 16,
-  height = 16,
-  name = "treasure_open_chest",
-  pattern = "carpet.1",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 184,
-  y = 176,
-  width = 16,
-  height = 16,
-  name = "enemy",
-  pattern = "carpet.1",
-  enabled_at_start = false,
+  height = 32,
+  pattern = "water_wall.drain_gate.4",
 }
 
 switch{
@@ -263,6 +230,39 @@ dynamic_tile{
   height = 16,
   name = "pot_4",
   pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 184,
+  y = 144,
+  width = 16,
+  height = 16,
+  name = "treasure_open_chest",
+  pattern = "placeholder_treasure_open",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 176,
+  y = 168,
+  width = 32,
+  height = 32,
+  name = "enemy",
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 200,
+  y = 144,
+  width = 16,
+  height = 16,
+  name = "treasure_obstacle_chest",
+  pattern = "placeholder_treasure_puzzle",
   enabled_at_start = true,
 }
 

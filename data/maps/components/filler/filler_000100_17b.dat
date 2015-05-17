@@ -10,6 +10,15 @@ properties{
 tile{
   layer = 1,
   x = 208,
+  y = 32,
+  width = 80,
+  height = 48,
+  pattern = "floor.19",
+}
+
+tile{
+  layer = 1,
+  x = 208,
   y = 80,
   width = 80,
   height = 24,
@@ -63,9 +72,9 @@ tile{
 
 tile{
   layer = 1,
-  x = 256,
+  x = 240,
   y = 32,
-  width = 32,
+  width = 48,
   height = 16,
   pattern = "floor.20",
 }
@@ -77,6 +86,17 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "pot_3",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 240,
+  y = 32,
+  width = 16,
+  height = 16,
+  name = "pot_2",
   pattern = "floor_pot",
   enabled_at_start = true,
 }

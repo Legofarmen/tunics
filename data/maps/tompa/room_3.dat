@@ -3,71 +3,8 @@ properties{
   y = 0,
   width = 320,
   height = 240,
-  tileset = "dungeon_brick_gray_1",
+  tileset = "dungeon_brick_brown_1",
   music = "same",
-}
-
-tile{
-  layer = 0,
-  x = 40,
-  y = 40,
-  width = 128,
-  height = 64,
-  pattern = "floor.17",
-}
-
-tile{
-  layer = 0,
-  x = 168,
-  y = 40,
-  width = 112,
-  height = 64,
-  pattern = "floor.17",
-}
-
-tile{
-  layer = 0,
-  x = 144,
-  y = 24,
-  width = 32,
-  height = 80,
-  pattern = "floor_low.17",
-}
-
-tile{
-  layer = 0,
-  x = 40,
-  y = 136,
-  width = 112,
-  height = 64,
-  pattern = "floor.17",
-}
-
-tile{
-  layer = 0,
-  x = 168,
-  y = 136,
-  width = 112,
-  height = 64,
-  pattern = "floor.17",
-}
-
-tile{
-  layer = 0,
-  x = 24,
-  y = 104,
-  width = 128,
-  height = 32,
-  pattern = "floor_low.17",
-}
-
-tile{
-  layer = 0,
-  x = 168,
-  y = 104,
-  width = 112,
-  height = 32,
-  pattern = "floor_low.17",
 }
 
 tile{
@@ -198,29 +135,11 @@ tile{
 
 tile{
   layer = 0,
-  x = 144,
-  y = 104,
-  width = 32,
-  height = 32,
-  pattern = "floor.17",
-}
-
-tile{
-  layer = 0,
   x = 40,
   y = 200,
   width = 240,
   height = 8,
   pattern = "wall_border.2",
-}
-
-tile{
-  layer = 0,
-  x = 144,
-  y = 136,
-  width = 32,
-  height = 64,
-  pattern = "floor_low.17",
 }
 
 tile{
@@ -413,113 +332,11 @@ tile{
 }
 
 tile{
-  layer = 1,
-  x = 256,
-  y = 32,
-  width = 8,
-  height = 176,
-  pattern = "floor_border.2",
-}
-
-tile{
-  layer = 1,
-  x = 200,
-  y = 32,
-  width = 8,
-  height = 176,
-  pattern = "floor_border.2",
-}
-
-tile{
-  layer = 1,
-  x = 208,
-  y = 32,
-  width = 48,
-  height = 176,
-  pattern = "floor_small.2",
-}
-
-tile{
-  layer = 1,
-  x = 200,
-  y = 200,
-  width = 64,
-  height = 8,
-  pattern = "wall_border.2",
-}
-
-tile{
-  layer = 1,
-  x = 200,
-  y = 32,
-  width = 64,
-  height = 8,
-  pattern = "wall_border.1",
-}
-
-custom_entity{
-  layer = 1,
-  x = 232,
-  y = 77,
-  width = 16,
-  height = 16,
-  name = "torch_2",
-  direction = 3,
-  model = "torch",
-}
-
-custom_entity{
-  layer = 1,
-  x = 232,
-  y = 173,
-  width = 16,
-  height = 16,
-  name = "torch_1",
-  direction = 3,
-  model = "torch",
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 184,
-  y = 112,
-  width = 16,
-  height = 16,
-  name = "treasure_open_chest",
-  pattern = "placeholder_treasure_open",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 176,
-  y = 56,
-  width = 32,
-  height = 32,
-  name = "enemy_4",
-  pattern = "placeholder_enemy",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 176,
-  y = 152,
-  width = 32,
-  height = 32,
-  name = "enemy_2",
-  pattern = "placeholder_enemy",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 224,
-  y = 112,
-  width = 16,
-  height = 16,
-  name = "treasure_obstacle_chest",
-  pattern = "placeholder_treasure_obstacle",
-  enabled_at_start = true,
+  layer = 0,
+  x = 40,
+  y = 40,
+  width = 240,
+  height = 160,
+  pattern = "floor.3",
 }
 

@@ -86,7 +86,7 @@ map{ id = "components/treasure_open/treasure_open_200700_1", description = "Trea
 map{ id = "components/treasure_open/treasure_open_000111_1", description = "Treasure open 000111 1" }
 map{ id = "components/treasure_open/treasure_open_200770_1", description = "Treasure open 200770 1" }
 map{ id = "components/treasure_open/treasure_open_250777_1", description = "Treasure open 250777 1" }
-map{ id = "components/door/door_bigkey_n_200777_1", description = "Door bigkey n 250777 1" }
+map{ id = "components/door/door_bigkey_n_200777_1", description = "Door bigkey n 200777 1" }
 map{ id = "old/treasure_compass_000004_1", description = "Treasure compass 000004 1" }
 map{ id = "old/treasure_compass_000001_1", description = "Treasure compass 000001 1" }
 map{ id = "dev/puzzles", description = "Puzzles" }
@@ -161,7 +161,6 @@ map{ id = "components/filler/filler_000777_1", description = "Filler 000777 1" }
 map{ id = "components/filler/filler_000777_2", description = "Filler 000777 2" }
 map{ id = "components/filler/filler_200700_4", description = "Filler 200700 4" }
 map{ id = "components/filler/filler_000777_3", description = "Filler 000777 3" }
-map{ id = "components/filler/filler_210711_2", description = "Filler 210711 2" }
 map{ id = "components/filler/filler_210711_3", description = "Filler 210711 3" }
 map{ id = "components/filler/filler_240744_1", description = "Filler 240744 1" }
 map{ id = "components/filler/filler_042447_1", description = "Filler 042447 1" }
@@ -319,9 +318,9 @@ map{ id = "tompa/pike_corridor_2", description = "Pike Corridor 2" }
 map{ id = "tompa/obstacle_flippers_north_250777_1", description = "Obstacle flippers north" }
 map{ id = "tompa/obstacle_flippers_south_002067_1", description = "Obstacle flippers south" }
 map{ id = "tompa/obstacle_flippers_east_212777_1", description = "Obstacle flippers east" }
-map{ id = "components/door/door_bigkey_n_200777_2", description = "Door bigkey n 250777 2" }
+map{ id = "components/door/door_bigkey_n_250777_2", description = "Door bigkey n 250777 2" }
 map{ id = "components/door/door_bigkey_n_250777_3", description = "Door bigkey n 250777 3" }
-map{ id = "components/door/door_bigkey_n_200700_2", description = "Door bigkey n 200700 2" }
+map{ id = "components/door/door_bigkey_n_200777_5", description = "Door bigkey n 200777 5" }
 map{ id = "components/door/door_bigkey_n_250777_4", description = "Door bigkey n 250777 4" }
 map{ id = "components/door/door_entrance_s_002777_5", description = "Door entrance s 002777 5" }
 map{ id = "components/door/door_entrance_s_002777_6", description = "Door entrance s 002777 6" }
@@ -450,10 +449,13 @@ map{ id = "components/treasure_open/treasure_open_202777_1", description = "Trea
 map{ id = "components/treasure_open/treasure_open_000777_5", description = "Treasure open 000777 5" }
 map{ id = "components/door/door_entrance_s_002777_7", description = "Door entrance s 002777 7" }
 map{ id = "dev/sandbox", description = "Sandbox" }
-map{ id = "components/obstacle_puzzle/obstacle_puzzle_ne_210777_1", description = "Puzzle ne 210777 1" }
+map{ id = "components/obstacle_puzzle/obstacle_puzzle_sw_210777_1", description = "Puzzle 210777 1" }
 map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000777_5", description = "Puzzle 000777 5" }
-map{ id = "components/treasure_open/treasure_open_000777_4", description = "treasure_open_000777_4" }
+map{ id = "components/treasure_open/treasure_open_000777_4", description = "Treasure open 000777 4" }
 map{ id = "tompa/filler_y12", description = "Filler y12" }
+map{ id = "components/filler/filler_210711_2", description = "Filler 210711 2" }
+map{ id = "tompa/room_3", description = "Room 3" }
+map{ id = "tompa/door_bigkey_n_250777_4", description = "Door bigkey n 250777 4 backup" }
 
 tileset{ id = "light_world", description = "Light World" }
 tileset{ id = "dungeon_brick_blue_1", description = "Dungeon brick blue 1" }

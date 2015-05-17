@@ -574,42 +574,6 @@ tile{
   pattern = "water_wall.drain_gate.2",
 }
 
-tile{
-  layer = 1,
-  x = 104,
-  y = 56,
-  width = 16,
-  height = 16,
-  pattern = "torch_big.top",
-}
-
-tile{
-  layer = 1,
-  x = 200,
-  y = 56,
-  width = 16,
-  height = 16,
-  pattern = "torch_big.top",
-}
-
-tile{
-  layer = 1,
-  x = 104,
-  y = 136,
-  width = 16,
-  height = 16,
-  pattern = "torch_big.top",
-}
-
-tile{
-  layer = 1,
-  x = 200,
-  y = 136,
-  width = 16,
-  height = 16,
-  pattern = "torch_big.top",
-}
-
 dynamic_tile{
   layer = 1,
   x = 152,
@@ -664,5 +628,41 @@ tile{
   width = 16,
   height = 8,
   pattern = "door_boss.1.pillar.2.top",
+}
+
+tile{
+  layer = 2,
+  x = 104,
+  y = 56,
+  width = 16,
+  height = 16,
+  pattern = "torch_big.top",
+}
+
+tile{
+  layer = 2,
+  x = 200,
+  y = 56,
+  width = 16,
+  height = 16,
+  pattern = "torch_big.top",
+}
+
+tile{
+  layer = 2,
+  x = 104,
+  y = 136,
+  width = 16,
+  height = 16,
+  pattern = "torch_big.top",
+}
+
+tile{
+  layer = 2,
+  x = 200,
+  y = 136,
+  width = 16,
+  height = 16,
+  pattern = "torch_big.top",
 }
 

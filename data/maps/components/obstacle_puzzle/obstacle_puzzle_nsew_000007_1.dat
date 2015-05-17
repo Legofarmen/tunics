@@ -7,6 +7,78 @@ properties{
   music = "same",
 }
 
+tile{
+  layer = 1,
+  x = 56,
+  y = 136,
+  width = 16,
+  height = 16,
+  pattern = "torch",
+}
+
+tile{
+  layer = 1,
+  x = 88,
+  y = 136,
+  width = 16,
+  height = 16,
+  pattern = "torch",
+}
+
+tile{
+  layer = 1,
+  x = 56,
+  y = 168,
+  width = 16,
+  height = 16,
+  pattern = "torch",
+}
+
+tile{
+  layer = 1,
+  x = 88,
+  y = 168,
+  width = 16,
+  height = 16,
+  pattern = "torch",
+}
+
+tile{
+  layer = 1,
+  x = 216,
+  y = 136,
+  width = 16,
+  height = 16,
+  pattern = "torch",
+}
+
+tile{
+  layer = 1,
+  x = 248,
+  y = 136,
+  width = 16,
+  height = 16,
+  pattern = "torch",
+}
+
+tile{
+  layer = 1,
+  x = 248,
+  y = 168,
+  width = 16,
+  height = 16,
+  pattern = "torch",
+}
+
+tile{
+  layer = 1,
+  x = 216,
+  y = 168,
+  width = 16,
+  height = 16,
+  pattern = "torch",
+}
+
 switch{
   layer = 1,
   x = 0,
@@ -20,9 +92,9 @@ switch{
 
 block{
   layer = 1,
-  x = 56,
-  y = 157,
-  name = "block_placeholder_1",
+  x = 80,
+  y = 165,
+  name = "block_1",
   direction = -1,
   sprite = "entities/block",
   pushable = true,
@@ -32,105 +104,9 @@ block{
 
 block{
   layer = 1,
-  x = 56,
-  y = 189,
-  name = "block_placeholder_2",
-  direction = -1,
-  sprite = "entities/block",
-  pushable = true,
-  pullable = false,
-  maximum_moves = 1,
-}
-
-block{
-  layer = 1,
-  x = 72,
-  y = 173,
-  name = "block_placeholder_3",
-  direction = -1,
-  sprite = "entities/block",
-  pushable = true,
-  pullable = false,
-  maximum_moves = 1,
-}
-
-block{
-  layer = 1,
-  x = 88,
-  y = 189,
-  name = "block_placeholder_4",
-  direction = -1,
-  sprite = "entities/block",
-  pushable = true,
-  pullable = false,
-  maximum_moves = 1,
-}
-
-block{
-  layer = 1,
-  x = 88,
-  y = 157,
-  name = "block_placeholder_5",
-  direction = -1,
-  sprite = "entities/block",
-  pushable = true,
-  pullable = false,
-  maximum_moves = 1,
-}
-
-block{
-  layer = 1,
-  x = 232,
-  y = 157,
-  name = "block_placeholder_6",
-  direction = -1,
-  sprite = "entities/block",
-  pushable = true,
-  pullable = false,
-  maximum_moves = 1,
-}
-
-block{
-  layer = 1,
-  x = 232,
-  y = 189,
-  name = "block_placeholder_7",
-  direction = -1,
-  sprite = "entities/block",
-  pushable = true,
-  pullable = false,
-  maximum_moves = 1,
-}
-
-block{
-  layer = 1,
-  x = 248,
-  y = 173,
-  name = "block_placeholder_8",
-  direction = -1,
-  sprite = "entities/block",
-  pushable = true,
-  pullable = false,
-  maximum_moves = 1,
-}
-
-block{
-  layer = 1,
-  x = 264,
-  y = 189,
-  name = "block_placeholder_9",
-  direction = -1,
-  sprite = "entities/block",
-  pushable = true,
-  pullable = false,
-  maximum_moves = 1,
-}
-
-block{
-  layer = 1,
-  x = 264,
-  y = 157,
-  name = "block_placeholder_10",
+  x = 240,
+  y = 165,
+  name = "block_2",
   direction = -1,
   sprite = "entities/block",
   pushable = true,
@@ -140,34 +116,34 @@ block{
 
 dynamic_tile{
   layer = 1,
-  x = 152,
-  y = 144,
-  width = 16,
-  height = 16,
-  name = "enemy",
-  pattern = "carpet.1",
-  enabled_at_start = false,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 192,
-  y = 160,
-  width = 16,
-  height = 16,
-  name = "treasure_obstacle_chest",
-  pattern = "carpet.1",
+  x = 144,
+  y = 136,
+  width = 32,
+  height = 32,
+  name = "enemy_1",
+  pattern = "placeholder_enemy",
   enabled_at_start = true,
 }
 
 dynamic_tile{
   layer = 1,
-  x = 112,
-  y = 160,
+  x = 184,
+  y = 152,
+  width = 16,
+  height = 16,
+  name = "treasure_obstacle_chest",
+  pattern = "placeholder_treasure_puzzle",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 120,
+  y = 152,
   width = 16,
   height = 16,
   name = "treasure_open_chest",
-  pattern = "carpet.1",
+  pattern = "placeholder_treasure_open",
   enabled_at_start = true,
 }
 
