@@ -7,60 +7,24 @@ function hookshot.init(map, data)
 		data.room:door({open=door_data.open or 'open', name=door_data.name, room_events=data.room_events}, dir)
 	end
 
-    for entity in map:get_entities('enemy') do
+    for entity in map:get_entities('enemy_') do
         zentropy.inject_enemy(entity, data.rng:refine(entity:get_name()))
     end
 
-	local obstacle_x, obstacle_y = map:get_entity('treasure_obstacle_chest'):get_position()
-	obstacle_x, obstacle_y = obstacle_x + 8, obstacle_y + 13
-	
+	local treasure_obstacle_chest = map:get_entity('treasure_obstacle_chest')
 	if data.treasure1 then
-		map:create_chest{
-            sprite="entities/chest",
-            layer=1,
-            x = obstacle_x,
-            y = obstacle_y,
-            treasure_name=data.treasure1.item_name,
-            treasure_savegame_variable=data.treasure1.name,
-		}
-	map:set_entities_enabled('treasure_obstacle_', true)
+        zentropy.inject_chest(treasure_obstacle_chest, data.treasure1)
+        map:set_entities_enabled('treasure_obstacle_', true)
 	else
-		map:create_block{
-            layer = 1,
-            x = obstacle_x,
-            y = obstacle_y,
-            direction = -1,
-            sprite = "entities/block",
-            pushable = false,
-            pullable = false,
-            maximum_moves = 0,
-        }		
+        zentropy.inject_block(treasure_obstacle_chest)
 	end
 	
-	local open_x, open_y = map:get_entity('treasure_open_chest'):get_position()
-	open_x, open_y = open_x + 8, open_y + 13
-	
+	local treasure_open_chest = map:get_entity('treasure_open_chest')
 	if data.treasure2 then
-			map:create_chest{
-            sprite="entities/chest",
-            layer=1,
-            x = open_x,
-            y = open_y,
-            treasure_name=data.treasure2.item_name,
-            treasure_savegame_variable=data.treasure2.name,
-        }
-	map:set_entities_enabled('treasure_open_', true)
+        zentropy.inject_chest(treasure_open_chest, data.treasure2)
+        map:set_entities_enabled('treasure_open_', true)
 	else
-		map:create_block{
-            layer = 1,
-            x = open_x,
-            y = open_y,
-            direction = -1,
-            sprite = "entities/block",
-            pushable = false,
-            pullable = false,
-            maximum_moves = 0,
-        }
+        zentropy.inject_block(treasure_open_chest)
 	end
 	
 end

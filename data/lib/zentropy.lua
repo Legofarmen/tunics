@@ -883,7 +883,7 @@ local function get_random_treasure(rng)
 end
 
 function zentropy.inject_enemy(placeholder, rng)
-    zentropy.assert(placeholder)
+    zentropy.assert(placeholder, 'placeholder entity must be provided')
     local r = zentropy.Room.enemy_ratio
     local rng2 = rng:refine(r)
     while 1 <= r or rng2:random() < r do
@@ -918,7 +918,7 @@ function zentropy.inject_enemy(placeholder, rng)
 end
 
 function zentropy.inject_pot(placeholder, rng)
-    zentropy.assert(placeholder)
+    zentropy.assert(placeholder, 'placeholder entity must be provided')
     local map = placeholder:get_map()
     local x, y, layer = placeholder:get_position()
     local treasure_name, treasure_variant = get_random_treasure(rng:refine('treasure'))
@@ -937,8 +937,28 @@ function zentropy.inject_pot(placeholder, rng)
     return entity
 end
 
+function zentropy.inject_block(placeholder)
+    zentropy.assert(placeholder, 'placeholder entity must be provided')
+    local map = placeholder:get_map()
+    local x, y, layer = placeholder:get_position()
+    local entity = map:create_block{
+        layer = 1,
+        x = x,
+        y = y,
+        direction = -1,
+        sprite = "entities/block",
+        pushable = false,
+        pullable = false,
+        maximum_moves = 0,
+    }
+    local origin_x, origin_y = entity:get_origin()
+    entity:set_position(x + origin_x, y + origin_y)
+    placeholder:remove()
+    return entity
+end
+
 function zentropy.inject_chest(placeholder, data)
-    zentropy.assert(placeholder)
+    zentropy.assert(placeholder, 'placeholder entity must be provided')
     local map = placeholder:get_map()
     local x, y, layer = placeholder:get_position()
     local chest = map:create_chest{
