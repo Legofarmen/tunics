@@ -150,7 +150,7 @@ map{ id = "components/obstacle_bow/obstacle_bow_nsew_000444_1", description = "O
 map{ id = "components/filler/filler_000001_3", description = "Filler 000001 3" }
 map{ id = "components/filler/filler_000004_3", description = "Filler 000004 3" }
 map{ id = "components/filler/filler_000007_1", description = "Filler 000007 1" }
-map{ id = "components/filler/filler_002007_4", description = "Filler 002007 1" }
+map{ id = "components/filler/filler_002007_4", description = "Filler 002007 4" }
 map{ id = "components/filler/filler_000100_3", description = "Filler 000100 3" }
 map{ id = "components/filler/filler_000400_3", description = "Filler 000400 3" }
 map{ id = "components/filler/filler_000700_1", description = "Filler 000700 1" }
