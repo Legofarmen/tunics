@@ -3,7 +3,7 @@ properties{
   y = 0,
   width = 320,
   height = 240,
-  tileset = "dungeon_brick_gray_1",
+  tileset = "dungeon_cave_brown_1",
   music = "same",
 }
 
@@ -244,7 +244,7 @@ tile{
 tile{
   layer = 1,
   x = 152,
-  y = 160,
+  y = 152,
   width = 16,
   height = 24,
   pattern = "barrier_big.3.1",
@@ -253,7 +253,7 @@ tile{
 tile{
   layer = 1,
   x = 136,
-  y = 160,
+  y = 152,
   width = 16,
   height = 24,
   pattern = "barrier_big.3.border.2",
@@ -262,7 +262,7 @@ tile{
 tile{
   layer = 1,
   x = 168,
-  y = 160,
+  y = 152,
   width = 16,
   height = 24,
   pattern = "barrier_big.3.border.2",
@@ -302,6 +302,114 @@ tile{
   width = 32,
   height = 16,
   pattern = "wall_torch.2",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 168,
+  width = 32,
+  height = 8,
+  pattern = "hole.1",
+}
+
+tile{
+  layer = 1,
+  x = 256,
+  y = 168,
+  width = 32,
+  height = 8,
+  pattern = "hole.1",
+}
+
+tile{
+  layer = 1,
+  x = 248,
+  y = 32,
+  width = 8,
+  height = 32,
+  pattern = "hole.3",
+}
+
+tile{
+  layer = 1,
+  x = 248,
+  y = 176,
+  width = 8,
+  height = 32,
+  pattern = "hole.3",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 64,
+  width = 32,
+  height = 8,
+  pattern = "hole.2",
+}
+
+tile{
+  layer = 1,
+  x = 256,
+  y = 64,
+  width = 32,
+  height = 8,
+  pattern = "hole.2",
+}
+
+tile{
+  layer = 1,
+  x = 64,
+  y = 176,
+  width = 8,
+  height = 32,
+  pattern = "hole.4",
+}
+
+tile{
+  layer = 1,
+  x = 64,
+  y = 32,
+  width = 8,
+  height = 32,
+  pattern = "hole.4",
+}
+
+tile{
+  layer = 1,
+  x = 64,
+  y = 64,
+  width = 8,
+  height = 8,
+  pattern = "hole.corner.4",
+}
+
+tile{
+  layer = 1,
+  x = 248,
+  y = 168,
+  width = 8,
+  height = 8,
+  pattern = "hole.corner.1",
+}
+
+tile{
+  layer = 1,
+  x = 248,
+  y = 64,
+  width = 8,
+  height = 8,
+  pattern = "hole.corner.3",
+}
+
+tile{
+  layer = 1,
+  x = 64,
+  y = 168,
+  width = 8,
+  height = 8,
+  pattern = "hole.corner.2",
 }
 
 dynamic_tile{

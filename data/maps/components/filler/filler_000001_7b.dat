@@ -18,7 +18,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 216,
+  x = 224,
   y = 136,
   width = 16,
   height = 24,
@@ -45,7 +45,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 216,
+  x = 224,
   y = 176,
   width = 16,
   height = 24,
@@ -54,18 +54,18 @@ tile{
 
 tile{
   layer = 1,
-  x = 232,
+  x = 240,
   y = 136,
-  width = 40,
+  width = 32,
   height = 24,
   pattern = "barrier_big.3.1",
 }
 
 tile{
   layer = 1,
-  x = 232,
+  x = 240,
   y = 176,
-  width = 40,
+  width = 32,
   height = 24,
   pattern = "barrier_big.3.1",
 }
@@ -80,8 +80,8 @@ enemy{
 
 dynamic_tile{
   layer = 1,
-  x = 200,
-  y = 136,
+  x = 208,
+  y = 144,
   width = 16,
   height = 16,
   name = "pot_3",
@@ -91,7 +91,7 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 200,
+  x = 208,
   y = 184,
   width = 16,
   height = 16,
@@ -102,8 +102,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 184,
-  y = 152,
+  x = 176,
+  y = 168,
   width = 32,
   height = 32,
   name = "enemy_",
