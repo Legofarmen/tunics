@@ -993,7 +993,6 @@ function zentropy.inject_big_chest(placeholder, data)
     }
     local origin_x, origin_y = chest:get_origin()
     chest:set_position(x + origin_x + 8, y + origin_y + 8)
-    placeholder:remove()
     return chest
 end
 
