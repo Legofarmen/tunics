@@ -182,7 +182,7 @@ block{
   layer = 1,
   x = 96,
   y = 125,
-  direction = 3,
+  direction = -1,
   sprite = "entities/statue",
   pushable = true,
   pullable = true,
