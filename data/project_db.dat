@@ -36,7 +36,7 @@ map{ id = "components/door/door_weakwall_e_010000_1", description = "Door weakwa
 map{ id = "components/door/door_weakwall_w_040000_1", description = "Door weakwall w 040000 1" }
 map{ id = "components/obstacle_hookshot/obstacle_hookshot_s_002007_1", description = "Obstacle hookshot s 002007 1" }
 map{ id = "components/obstacle_hookshot/obstacle_hookshot_ne_210711_1", description = "Obstacle hookshot ne 210711 1" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_nw_240744_1", description = "Obstacle hookshot nw 240744 1" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_nw_240774_1", description = "Obstacle hookshot nw 240774 1" }
 map{ id = "components/filler/filler_200700_2", description = "Filler 200700 2" }
 map{ id = "components/enemy/enemy_boss_000777_1", description = "Enemy boss 000777 1" }
 map{ id = "components/filler/filler_000001_2", description = "Filler 000001 2" }
@@ -73,7 +73,7 @@ map{ id = "components/filler/filler_010111_3", description = "Filler 010111 3" }
 map{ id = "components/filler/filler_002007_3", description = "Filler 002007 3" }
 map{ id = "components/enemy/x_enemy_boss_000777_2", description = "Enemy boss 000777 2" }
 map{ id = "dev/tileset_test", description = "Tileset test" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_ew_050575_1", description = "Obstacle hookshot ew 050575 1" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_ew_050777_2", description = "Obstacle hookshot ew 050777 2" }
 map{ id = "components/obstacle_hookshot/obstacle_hookshot_ns_202777_1", description = "Obstacle hookshot ns 202777 1" }
 map{ id = "components/obstacle_hookshot/obstacle_hookshot_ew_050777_1", description = "Obstacle hookshot ew 050777 1" }
 map{ id = "components/obstacle_hookshot/obstacle_hookshot_n_200770_1", description = "Obstacle hookshot n 200770 1" }
@@ -193,18 +193,18 @@ map{ id = "components/filler/filler_000777_4", description = "Filler 000777 4" }
 map{ id = "rooms/intro_1", description = "Intro 1" }
 map{ id = "rooms/flippers_example", description = "Flippers example" }
 map{ id = "components/obstacle_flippers/obstacle_flippers_e_010331_1", description = "Obstacle flippers e 010331 1" }
-map{ id = "components/obstacle_flippers/obstacle_flippers_n_200771_1", description = "Obstacle flippers n 200771 1" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_n_200770_1", description = "Obstacle flippers n 200770 1" }
 map{ id = "components/obstacle_flippers/obstacle_flippers_s_002477_1", description = "Obstacle flippers s 002477 1" }
-map{ id = "components/obstacle_flippers/obstacle_flippers_w_040664_1", description = "Obstacle flippers w 040664 1" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_w_040666_1", description = "Obstacle flippers w 040666 1" }
 map{ id = "components/obstacle_flippers/obstacle_flippers_ns_202777_1", description = "Obstacle flippers ns 202777 1" }
 map{ id = "components/obstacle_flippers/obstacle_flippers_ew_050777_1", description = "Obstacle flippers ew 050777 1" }
 map{ id = "components/obstacle_flippers/obstacle_flippers_ne_210777_1", description = "Obstacle flippers ne 210777 1" }
 map{ id = "components/obstacle_flippers/obstacle_flippers_nw_240777_1", description = "Obstacle flippers nw 240777 1" }
 map{ id = "components/obstacle_flippers/obstacle_flippers_se_012777_1", description = "Obstacle flippers se 012777 1" }
 map{ id = "components/obstacle_flippers/obstacle_flippers_sw_012777_1", description = "Obstacle flippers sw 012777 1" }
-map{ id = "components/obstacle_flippers/obstacle_flippers_nsw_242777_1", description = "Obstacle flippers nsw 242777 1" }
-map{ id = "components/obstacle_flippers/obstacle_flippers_nse_212777_1", description = "Obstacle flippers nse 212777 1" }
-map{ id = "components/obstacle_flippers/obstacle_flippers_new_250777_1", description = "Obstacle flipperst new 250777 1" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_nsw_242333_1", description = "Obstacle flippers nsw 242333 1" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_nse_212666_1", description = "Obstacle flippers nse 212666 1" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_new_250477_1", description = "Obstacle flipperst new 250477 1" }
 map{ id = "tompa/filler_y6", description = "Filler Y6" }
 map{ id = "tompa/filler_y7", description = "Filler Y7" }
 map{ id = "tompa/obstacle_flippers_north_050777_1", description = "Obstacle flippers north 050777 1" }
@@ -263,7 +263,7 @@ map{ id = "components/obstacle_glove/obstacle_glove_new_250777_8", description =
 map{ id = "components/obstacle_glove/obstacle_glove_n_200700_7", description = "Obstacle glove n 200700 7" }
 map{ id = "tompa/draft_7", description = "Draft 7 - corridor" }
 map{ id = "tompa/draft_7_2", description = "Draft 7 2 corridor ns" }
-map{ id = "components/obstacle_flippers/obstacle_flippers_sew_052777_1", description = "Obstacle flippers sew 052777 1" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_sew_052770_1", description = "Obstacle flippers sew 052770 1" }
 map{ id = "tompa/obstacle_glove_temp2", description = "Obstacle glove temp" }
 map{ id = "tompa/draft_8", description = "Draft 8 Treasure open" }
 map{ id = "components/filler/filler_050777_1", description = "Filler 050777 1" }
