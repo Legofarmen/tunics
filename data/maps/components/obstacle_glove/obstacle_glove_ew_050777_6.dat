@@ -36,9 +36,9 @@ tile{
 
 tile{
   layer = 1,
-  x = 64,
+  x = 80,
   y = 168,
-  width = 80,
+  width = 64,
   height = 24,
   pattern = "hole",
 }
@@ -47,7 +47,7 @@ tile{
   layer = 1,
   x = 176,
   y = 48,
-  width = 80,
+  width = 64,
   height = 24,
   pattern = "hole",
 }
@@ -90,7 +90,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 64,
+  x = 80,
   y = 176,
   width = 16,
   height = 16,
@@ -99,7 +99,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 240,
+  x = 224,
   y = 48,
   width = 16,
   height = 16,
@@ -126,7 +126,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 64,
+  x = 80,
   y = 152,
   width = 16,
   height = 16,
@@ -155,14 +155,14 @@ tile{
   layer = 1,
   x = 176,
   y = 48,
-  width = 64,
+  width = 48,
   height = 16,
   pattern = "wall_hole.1",
 }
 
 tile{
   layer = 1,
-  x = 240,
+  x = 224,
   y = 64,
   width = 16,
   height = 8,
@@ -171,7 +171,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 240,
+  x = 224,
   y = 72,
   width = 16,
   height = 16,
@@ -198,9 +198,9 @@ tile{
 
 tile{
   layer = 1,
-  x = 80,
+  x = 96,
   y = 176,
-  width = 64,
+  width = 48,
   height = 16,
   pattern = "wall_hole.2",
 }
@@ -218,14 +218,14 @@ tile{
   layer = 1,
   x = 48,
   y = 152,
-  width = 16,
+  width = 32,
   height = 16,
   pattern = "wall_hole.2",
 }
 
 tile{
   layer = 1,
-  x = 64,
+  x = 80,
   y = 168,
   width = 16,
   height = 8,
@@ -234,9 +234,9 @@ tile{
 
 tile{
   layer = 1,
-  x = 256,
+  x = 240,
   y = 72,
-  width = 16,
+  width = 32,
   height = 16,
   pattern = "wall_hole.1",
 }
@@ -248,7 +248,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "stone_1",
-  pattern = "floor_small.2",
+  pattern = "placeholder_stone",
   enabled_at_start = true,
 }
 
@@ -259,7 +259,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "stone_2",
-  pattern = "floor_small.2",
+  pattern = "placeholder_stone",
   enabled_at_start = true,
 }
 
@@ -270,7 +270,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "stone_3",
-  pattern = "floor_small.2",
+  pattern = "placeholder_stone",
   enabled_at_start = true,
 }
 
@@ -281,7 +281,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "stone_4",
-  pattern = "floor_small.2",
+  pattern = "placeholder_stone",
   enabled_at_start = true,
 }
 
@@ -292,30 +292,19 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "treasure_obstacle_chest",
-  pattern = "floor_small.2",
+  pattern = "placeholder_treasure_obstacle",
   enabled_at_start = false,
 }
 
 dynamic_tile{
   layer = 1,
-  x = 48,
+  x = 56,
   y = 168,
   width = 16,
   height = 16,
   name = "treasure_open_chest",
-  pattern = "floor_small.2",
+  pattern = "placeholder_treasure_open",
   enabled_at_start = false,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 176,
-  y = 32,
-  width = 16,
-  height = 16,
-  name = "stone_5",
-  pattern = "floor_small.2",
-  enabled_at_start = true,
 }
 
 dynamic_tile{
@@ -326,6 +315,17 @@ dynamic_tile{
   height = 32,
   name = "enemy_6",
   pattern = "placeholder_enemy",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 176,
+  y = 32,
+  width = 16,
+  height = 16,
+  name = "stone_5",
+  pattern = "placeholder_stone",
   enabled_at_start = true,
 }
 

@@ -567,7 +567,7 @@ tile{
 
 dynamic_tile{
   layer = 1,
-  x = 120,
+  x = 104,
   y = 104,
   width = 32,
   height = 32,
@@ -578,8 +578,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 128,
-  y = 72,
+  x = 136,
+  y = 56,
   width = 16,
   height = 16,
   name = "stone_1",
@@ -589,18 +589,7 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 144,
-  y = 72,
-  width = 16,
-  height = 16,
-  name = "stone_2",
-  pattern = "placeholder_stone",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 160,
+  x = 152,
   y = 72,
   width = 16,
   height = 16,
@@ -611,8 +600,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 176,
-  y = 72,
+  x = 168,
+  y = 56,
   width = 16,
   height = 16,
   name = "stone_4",
@@ -622,8 +611,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 128,
-  y = 152,
+  x = 136,
+  y = 168,
   width = 16,
   height = 16,
   name = "stone_5",
@@ -633,18 +622,7 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 144,
-  y = 152,
-  width = 16,
-  height = 16,
-  name = "stone_6",
-  pattern = "placeholder_stone",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 160,
+  x = 152,
   y = 152,
   width = 16,
   height = 16,
@@ -655,8 +633,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 176,
-  y = 152,
+  x = 168,
+  y = 168,
   width = 16,
   height = 16,
   name = "stone_8",
@@ -666,8 +644,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 176,
-  y = 40,
+  x = 152,
+  y = 56,
   width = 16,
   height = 16,
   name = "treasure_obstacle_chest",
@@ -677,8 +655,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 240,
-  y = 96,
+  x = 152,
+  y = 112,
   width = 16,
   height = 16,
   name = "treasure_open_chest",

@@ -211,31 +211,9 @@ dynamic_tile{
   y = 48,
   width = 32,
   height = 32,
-  name = "treasure_obstacle_carpet_2",
+  name = "treasure_obstacle_carpet",
   pattern = "floor.20",
   enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 200,
-  y = 56,
-  width = 16,
-  height = 16,
-  name = "treasure_obstacle_chest",
-  pattern = "floor_small.2",
-  enabled_at_start = false,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 152,
-  y = 56,
-  width = 16,
-  height = 16,
-  name = "treasure_open_chest",
-  pattern = "floor_small.2",
-  enabled_at_start = false,
 }
 
 switch{
@@ -267,6 +245,28 @@ dynamic_tile{
   height = 32,
   name = "enemy_2",
   pattern = "placeholder_enemy",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 200,
+  y = 56,
+  width = 16,
+  height = 16,
+  name = "treasure_obstacle_chest",
+  pattern = "placeholder_treasure_obstacle",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 152,
+  y = 56,
+  width = 16,
+  height = 16,
+  name = "treasure_open_chest",
+  pattern = "placeholder_treasure_open",
   enabled_at_start = true,
 }
 
