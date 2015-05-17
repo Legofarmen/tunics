@@ -161,7 +161,6 @@ map{ id = "components/filler/filler_000777_1", description = "Filler 000777 1" }
 map{ id = "components/filler/filler_000777_2", description = "Filler 000777 2" }
 map{ id = "components/filler/filler_200700_4", description = "Filler 200700 4" }
 map{ id = "components/filler/filler_000777_3", description = "Filler 000777 3" }
-map{ id = "components/filler/filler_210711_2", description = "Filler 210711 2" }
 map{ id = "components/filler/filler_210711_3", description = "Filler 210711 3" }
 map{ id = "components/filler/filler_240744_1", description = "Filler 240744 1" }
 map{ id = "components/filler/filler_042447_1", description = "Filler 042447 1" }
@@ -454,6 +453,7 @@ map{ id = "components/obstacle_puzzle/obstacle_puzzle_ne_210777_1", description 
 map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000777_5", description = "Puzzle 000777 5" }
 map{ id = "components/treasure_open/treasure_open_000777_4", description = "treasure_open_000777_4" }
 map{ id = "tompa/filler_y12", description = "Filler y12" }
+map{ id = "components/filler/filler_210711_2", description = "Filler 210711 2" }
 
 tileset{ id = "light_world", description = "Light World" }
 tileset{ id = "dungeon_brick_blue_1", description = "Dungeon brick blue 1" }
