@@ -9,41 +9,8 @@ properties{
 
 dynamic_tile{
   layer = 1,
-  x = 128,
-  y = 48,
-  width = 16,
-  height = 16,
-  name = "enemy",
-  pattern = "carpet.1",
-  enabled_at_start = false,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 152,
-  y = 80,
-  width = 16,
-  height = 16,
-  name = "treasure_obstacle_chest",
-  pattern = "carpet.1",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 152,
-  y = 48,
-  width = 16,
-  height = 16,
-  name = "treasure_open_chest",
-  pattern = "carpet.1",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 64,
-  y = 48,
+  x = 56,
+  y = 56,
   width = 16,
   height = 16,
   name = "pot_7",
@@ -53,8 +20,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 96,
-  y = 48,
+  x = 88,
+  y = 56,
   width = 16,
   height = 16,
   name = "pot_2",
@@ -64,8 +31,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 112,
-  y = 48,
+  x = 104,
+  y = 56,
   width = 16,
   height = 16,
   name = "pot_3",
@@ -75,8 +42,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 192,
-  y = 48,
+  x = 200,
+  y = 56,
   width = 16,
   height = 16,
   name = "pot_4",
@@ -86,8 +53,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 208,
-  y = 48,
+  x = 216,
+  y = 56,
   width = 16,
   height = 16,
   name = "pot_5",
@@ -97,8 +64,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 240,
-  y = 48,
+  x = 248,
+  y = 56,
   width = 16,
   height = 16,
   name = "pot_6",
@@ -119,8 +86,8 @@ switch{
 
 block{
   layer = 1,
-  x = 72,
-  y = 93,
+  x = 64,
+  y = 101,
   name = "block_1",
   direction = -1,
   sprite = "entities/block",
@@ -131,8 +98,8 @@ block{
 
 block{
   layer = 1,
-  x = 88,
-  y = 93,
+  x = 80,
+  y = 101,
   name = "block_2",
   direction = -1,
   sprite = "entities/block",
@@ -143,8 +110,8 @@ block{
 
 block{
   layer = 1,
-  x = 120,
-  y = 93,
+  x = 112,
+  y = 101,
   name = "block_3",
   direction = -1,
   sprite = "entities/block",
@@ -155,8 +122,8 @@ block{
 
 block{
   layer = 1,
-  x = 200,
-  y = 93,
+  x = 208,
+  y = 101,
   name = "block_4",
   direction = -1,
   sprite = "entities/block",
@@ -167,8 +134,8 @@ block{
 
 block{
   layer = 1,
-  x = 232,
-  y = 93,
+  x = 240,
+  y = 101,
   name = "block_5",
   direction = -1,
   sprite = "entities/block",
@@ -179,13 +146,46 @@ block{
 
 block{
   layer = 1,
-  x = 248,
-  y = 93,
+  x = 256,
+  y = 101,
   name = "block_6",
   direction = -1,
   sprite = "entities/block",
   pushable = true,
   pullable = false,
   maximum_moves = 1,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 152,
+  y = 88,
+  width = 16,
+  height = 16,
+  name = "treasure_obstacle_chest",
+  pattern = "placeholder_treasure_puzzle",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 152,
+  y = 56,
+  width = 16,
+  height = 16,
+  name = "treasure_open_chest",
+  pattern = "placeholder_treasure_open",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 168,
+  y = 56,
+  width = 32,
+  height = 32,
+  name = "enemy_1",
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
 }
 
