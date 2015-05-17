@@ -10,16 +10,25 @@ properties{
 tile{
   layer = 1,
   x = 32,
-  y = 152,
-  width = 80,
+  y = 144,
+  width = 112,
+  height = 64,
+  pattern = "water_shallow",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 160,
+  width = 64,
   height = 24,
   pattern = "wall_low.1",
 }
 
 tile{
   layer = 1,
-  x = 112,
-  y = 152,
+  x = 96,
+  y = 160,
   width = 24,
   height = 24,
   pattern = "wall_low.corner.2",
@@ -27,38 +36,20 @@ tile{
 
 tile{
   layer = 1,
-  x = 104,
-  y = 176,
+  x = 96,
+  y = 184,
   width = 24,
-  height = 32,
+  height = 24,
   pattern = "wall_low.4",
-}
-
-tile{
-  layer = 1,
-  x = 128,
-  y = 144,
-  width = 16,
-  height = 64,
-  pattern = "water_shallow",
-}
-
-tile{
-  layer = 1,
-  x = 80,
-  y = 176,
-  width = 24,
-  height = 32,
-  pattern = "hole",
 }
 
 tile{
   layer = 1,
   x = 32,
   y = 176,
-  width = 48,
-  height = 16,
-  pattern = "hole",
+  width = 64,
+  height = 32,
+  pattern = "floor.19",
 }
 
 tile{
@@ -66,17 +57,8 @@ tile{
   x = 32,
   y = 144,
   width = 96,
-  height = 48,
+  height = 64,
   pattern = "water.transparent",
-}
-
-tile{
-  layer = 1,
-  x = 32,
-  y = 192,
-  width = 48,
-  height = 16,
-  pattern = "floor.20",
 }
 
 tile{
@@ -86,15 +68,6 @@ tile{
   width = 112,
   height = 16,
   pattern = "water_shallow",
-}
-
-tile{
-  layer = 1,
-  x = 80,
-  y = 192,
-  width = 48,
-  height = 16,
-  pattern = "water.transparent",
 }
 
 tile{
@@ -122,6 +95,26 @@ tile{
   width = 8,
   height = 64,
   pattern = "water_shallow.4",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 192,
+  width = 48,
+  height = 16,
+  pattern = "floor.20",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 64,
+  y = 192,
+  width = 16,
+  height = 16,
+  name = "pot_2",
+  pattern = "floor_pot",
+  enabled_at_start = true,
 }
 
 dynamic_tile{
