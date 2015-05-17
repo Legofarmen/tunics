@@ -45,57 +45,39 @@ tile{
 
 tile{
   layer = 1,
-  x = 112,
-  y = 160,
-  width = 8,
-  height = 8,
-  pattern = "wall_border.corner_reverse.3",
-}
-
-tile{
-  layer = 1,
-  x = 32,
-  y = 160,
-  width = 80,
-  height = 8,
-  pattern = "wall_border.2",
-}
-
-tile{
-  layer = 1,
-  x = 112,
+  x = 104,
   y = 168,
   width = 8,
-  height = 32,
-  pattern = "wall_border.3",
-}
-
-tile{
-  layer = 1,
-  x = 112,
-  y = 200,
-  width = 8,
   height = 8,
-  pattern = "wall_border.corner.3",
+  pattern = "hole.corner.2",
 }
 
 tile{
   layer = 1,
   x = 32,
-  y = 160,
-  width = 8,
+  y = 168,
+  width = 72,
   height = 8,
-  pattern = "wall_border.corner.3",
+  pattern = "hole.1",
+}
+
+tile{
+  layer = 1,
+  x = 104,
+  y = 176,
+  width = 8,
+  height = 32,
+  pattern = "hole.4",
 }
 
 dynamic_tile{
   layer = 1,
-  x = 80,
-  y = 144,
-  width = 16,
-  height = 16,
-  name = "enemy_3",
-  pattern = "carpet.1",
-  enabled_at_start = false,
+  x = 96,
+  y = 136,
+  width = 32,
+  height = 32,
+  name = "enemy",
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
 }
 

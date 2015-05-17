@@ -3,7 +3,7 @@ properties{
   y = 0,
   width = 320,
   height = 240,
-  tileset = "dungeon_brick_gray_1",
+  tileset = "dungeon_brick_blue_1",
   music = "same",
 }
 
@@ -412,137 +412,120 @@ tile{
   pattern = "door_top.low.2",
 }
 
-pickable{
-  layer = 0,
-  x = 152,
-  y = 101,
-  treasure_name = "flippers",
-}
-
-destination{
-  layer = 0,
-  x = 104,
-  y = 101,
-  direction = 3,
-  default = true,
-}
-
 tile{
   layer = 1,
-  x = 216,
-  y = 176,
-  width = 72,
-  height = 32,
+  x = 184,
+  y = 184,
+  width = 104,
+  height = 24,
   pattern = "hole",
-}
-
-tile{
-  layer = 1,
-  x = 216,
-  y = 152,
-  width = 72,
-  height = 24,
-  pattern = "wall_low.1",
-}
-
-tile{
-  layer = 1,
-  x = 192,
-  y = 152,
-  width = 24,
-  height = 24,
-  pattern = "wall_low.corner.1",
-}
-
-tile{
-  layer = 1,
-  x = 192,
-  y = 176,
-  width = 24,
-  height = 32,
-  pattern = "wall_low.3",
-}
-
-tile{
-  layer = 1,
-  x = 192,
-  y = 144,
-  width = 96,
-  height = 48,
-  pattern = "water.transparent",
-}
-
-tile{
-  layer = 1,
-  x = 192,
-  y = 192,
-  width = 48,
-  height = 16,
-  pattern = "water.transparent",
-}
-
-tile{
-  layer = 1,
-  x = 240,
-  y = 192,
-  width = 48,
-  height = 16,
-  pattern = "floor.20",
-}
-
-tile{
-  layer = 1,
-  x = 176,
-  y = 144,
-  width = 16,
-  height = 64,
-  pattern = "water_shallow",
-}
-
-tile{
-  layer = 1,
-  x = 176,
-  y = 136,
-  width = 112,
-  height = 16,
-  pattern = "water_shallow",
 }
 
 tile{
   layer = 1,
   x = 184,
   y = 136,
-  width = 104,
-  height = 8,
-  pattern = "water_shallow.1",
+  width = 32,
+  height = 16,
+  pattern = "pike",
 }
 
 tile{
   layer = 1,
-  x = 176,
-  y = 136,
-  width = 8,
-  height = 8,
-  pattern = "water_shallow.corner.1",
+  x = 256,
+  y = 152,
+  width = 32,
+  height = 32,
+  pattern = "hole",
 }
 
 tile{
-  layer = 1,
-  x = 176,
-  y = 144,
-  width = 8,
-  height = 64,
-  pattern = "water_shallow.3",
-}
-
-dynamic_tile{
   layer = 1,
   x = 272,
   y = 192,
   width = 16,
   height = 16,
-  name = "pot_2",
-  pattern = "floor_pot",
-  enabled_at_start = true,
+  pattern = "wall_hole.corner.4",
+}
+
+tile{
+  layer = 1,
+  x = 184,
+  y = 192,
+  width = 88,
+  height = 16,
+  pattern = "wall_hole.2",
+}
+
+tile{
+  layer = 1,
+  x = 272,
+  y = 152,
+  width = 16,
+  height = 40,
+  pattern = "wall_hole.4",
+}
+
+tile{
+  layer = 1,
+  x = 184,
+  y = 184,
+  width = 8,
+  height = 8,
+  pattern = "hole.corner.1",
+}
+
+tile{
+  layer = 1,
+  x = 256,
+  y = 152,
+  width = 8,
+  height = 8,
+  pattern = "hole.corner.1",
+}
+
+tile{
+  layer = 1,
+  x = 264,
+  y = 152,
+  width = 24,
+  height = 8,
+  pattern = "hole.1",
+}
+
+tile{
+  layer = 1,
+  x = 192,
+  y = 184,
+  width = 64,
+  height = 8,
+  pattern = "hole.1",
+}
+
+tile{
+  layer = 1,
+  x = 256,
+  y = 160,
+  width = 8,
+  height = 24,
+  pattern = "hole.3",
+}
+
+tile{
+  layer = 1,
+  x = 184,
+  y = 192,
+  width = 8,
+  height = 16,
+  pattern = "hole.3",
+}
+
+tile{
+  layer = 1,
+  x = 256,
+  y = 184,
+  width = 8,
+  height = 8,
+  pattern = "hole.corner_reverse.1",
 }
 

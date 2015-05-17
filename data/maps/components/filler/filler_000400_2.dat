@@ -9,6 +9,24 @@ properties{
 
 tile{
   layer = 1,
+  x = 32,
+  y = 8,
+  width = 40,
+  height = 40,
+  pattern = "ceiling",
+}
+
+tile{
+  layer = 1,
+  x = 8,
+  y = 8,
+  width = 24,
+  height = 64,
+  pattern = "ceiling",
+}
+
+tile{
+  layer = 1,
   x = 8,
   y = 72,
   width = 16,
@@ -153,84 +171,12 @@ tile{
 
 dynamic_tile{
   layer = 1,
-  x = 72,
-  y = 72,
-  width = 16,
-  height = 16,
-  name = "enemy",
-  pattern = "carpet.1",
-  enabled_at_start = false,
-}
-
-tile{
-  layer = 2,
-  x = 32,
-  y = 8,
-  width = 8,
-  height = 40,
-  pattern = "ceiling",
-}
-
-tile{
-  layer = 2,
-  x = 40,
-  y = 8,
-  width = 8,
-  height = 32,
-  pattern = "ceiling",
-}
-
-tile{
-  layer = 2,
-  x = 48,
-  y = 8,
-  width = 8,
-  height = 24,
-  pattern = "ceiling",
-}
-
-tile{
-  layer = 2,
-  x = 56,
-  y = 8,
-  width = 8,
-  height = 16,
-  pattern = "ceiling",
-}
-
-tile{
-  layer = 2,
   x = 64,
-  y = 8,
-  width = 8,
-  height = 8,
-  pattern = "ceiling",
-}
-
-tile{
-  layer = 2,
-  x = 8,
-  y = 8,
-  width = 8,
-  height = 64,
-  pattern = "ceiling",
-}
-
-tile{
-  layer = 2,
-  x = 16,
-  y = 8,
-  width = 8,
-  height = 56,
-  pattern = "ceiling",
-}
-
-tile{
-  layer = 2,
-  x = 24,
-  y = 8,
-  width = 8,
-  height = 48,
-  pattern = "ceiling",
+  y = 64,
+  width = 32,
+  height = 32,
+  name = "enemy",
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
 }
 

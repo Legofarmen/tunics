@@ -9,8 +9,8 @@ properties{
 
 tile{
   layer = 1,
-  x = 48,
-  y = 176,
+  x = 56,
+  y = 168,
   width = 16,
   height = 16,
   pattern = "torch_big.bottom",
@@ -18,8 +18,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 96,
-  y = 176,
+  x = 104,
+  y = 168,
   width = 16,
   height = 16,
   pattern = "torch_big.bottom",
@@ -27,28 +27,39 @@ tile{
 
 tile{
   layer = 1,
-  x = 96,
-  y = 160,
-  width = 16,
-  height = 16,
-  pattern = "torch_big.top",
-}
-
-tile{
-  layer = 1,
-  x = 48,
-  y = 160,
-  width = 16,
-  height = 16,
-  pattern = "torch_big.top",
-}
-
-tile{
-  layer = 1,
-  x = 64,
+  x = 72,
   y = 208,
   width = 32,
   height = 24,
-  pattern = "wall_statue.4.2",
+  pattern = "wall_statue.1.2",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 72,
+  y = 136,
+  width = 32,
+  height = 32,
+  name = "enemy",
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
+}
+
+tile{
+  layer = 2,
+  x = 56,
+  y = 152,
+  width = 16,
+  height = 16,
+  pattern = "torch_big.top",
+}
+
+tile{
+  layer = 2,
+  x = 104,
+  y = 152,
+  width = 16,
+  height = 16,
+  pattern = "torch_big.top",
 }
 

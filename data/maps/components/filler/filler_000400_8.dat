@@ -9,8 +9,8 @@ properties{
 
 tile{
   layer = 1,
-  x = 80,
-  y = 64,
+  x = 72,
+  y = 72,
   width = 16,
   height = 16,
   pattern = "torch_big.bottom",
@@ -18,16 +18,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 80,
-  y = 48,
-  width = 16,
-  height = 16,
-  pattern = "torch_big.top",
-}
-
-tile{
-  layer = 1,
-  x = 32,
+  x = 40,
   y = 88,
   width = 16,
   height = 16,
@@ -36,8 +27,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 32,
-  y = 32,
+  x = 40,
+  y = 40,
   width = 16,
   height = 16,
   pattern = "pike",
@@ -45,82 +36,69 @@ tile{
 
 tile{
   layer = 1,
-  x = 80,
-  y = 32,
+  x = 120,
+  y = 40,
   width = 16,
   height = 16,
   pattern = "pike",
 }
 
-tile{
+wall{
   layer = 1,
-  x = 128,
-  y = 32,
+  x = 40,
+  y = 88,
   width = 16,
   height = 16,
-  pattern = "pike",
+  stops_hero = true,
+  stops_enemies = true,
+  stops_npcs = true,
+  stops_blocks = true,
+  stops_projectiles = true,
+}
+
+wall{
+  layer = 1,
+  x = 40,
+  y = 40,
+  width = 16,
+  height = 16,
+  stops_hero = true,
+  stops_enemies = true,
+  stops_npcs = true,
+  stops_blocks = true,
+  stops_projectiles = true,
+}
+
+wall{
+  layer = 1,
+  x = 120,
+  y = 40,
+  width = 16,
+  height = 16,
+  stops_hero = true,
+  stops_enemies = true,
+  stops_npcs = true,
+  stops_blocks = true,
+  stops_projectiles = true,
 }
 
 dynamic_tile{
   layer = 1,
   x = 104,
-  y = 64,
-  width = 16,
-  height = 16,
+  y = 72,
+  width = 32,
+  height = 32,
   name = "enemy",
-  pattern = "carpet.1",
-  enabled_at_start = false,
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
 }
 
-wall{
-  layer = 1,
-  x = 32,
-  y = 88,
+tile{
+  layer = 2,
+  x = 72,
+  y = 56,
   width = 16,
   height = 16,
-  stops_hero = true,
-  stops_enemies = true,
-  stops_npcs = true,
-  stops_blocks = true,
-  stops_projectiles = true,
-}
-
-wall{
-  layer = 1,
-  x = 32,
-  y = 32,
-  width = 16,
-  height = 16,
-  stops_hero = true,
-  stops_enemies = true,
-  stops_npcs = true,
-  stops_blocks = true,
-  stops_projectiles = true,
-}
-
-wall{
-  layer = 1,
-  x = 80,
-  y = 32,
-  width = 16,
-  height = 16,
-  stops_hero = true,
-  stops_enemies = true,
-  stops_npcs = true,
-  stops_blocks = true,
-  stops_projectiles = true,
-}
-
-wall{
-  layer = 1,
-  x = 128,
-  y = 32,
-  width = 16,
-  height = 16,
-  stops_hero = true,
-  stops_enemies = true,
-  stops_npcs = true,
-  stops_blocks = true,
-  stops_projectiles = true,
+  pattern = "torch_big.top",
 }
 

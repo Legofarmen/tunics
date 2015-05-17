@@ -136,21 +136,10 @@ tile{
 dynamic_tile{
   layer = 1,
   x = 96,
-  y = 184,
-  width = 16,
-  height = 16,
-  name = "enemy",
-  pattern = "carpet.1",
-  enabled_at_start = false,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 96,
   y = 72,
   width = 16,
   height = 16,
-  name = "pot_5",
+  name = "pot_1",
   pattern = "floor_pot",
   enabled_at_start = true,
 }
@@ -190,34 +179,45 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 208,
-  y = 184,
-  width = 16,
-  height = 16,
-  name = "enemy_5",
-  pattern = "carpet.1",
-  enabled_at_start = false,
+  x = 144,
+  y = 56,
+  width = 32,
+  height = 32,
+  name = "enemy_1",
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
 }
 
 dynamic_tile{
   layer = 1,
-  x = 208,
-  y = 40,
-  width = 16,
-  height = 16,
+  x = 144,
+  y = 88,
+  width = 32,
+  height = 32,
   name = "enemy_2",
-  pattern = "carpet.1",
-  enabled_at_start = false,
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
 }
 
 dynamic_tile{
   layer = 1,
-  x = 96,
-  y = 40,
-  width = 16,
-  height = 16,
+  x = 144,
+  y = 120,
+  width = 32,
+  height = 32,
   name = "enemy_3",
-  pattern = "carpet.1",
-  enabled_at_start = false,
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 144,
+  y = 152,
+  width = 32,
+  height = 32,
+  name = "enemy_4",
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
 }
 

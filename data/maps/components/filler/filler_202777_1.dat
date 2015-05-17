@@ -331,43 +331,25 @@ tile{
   pattern = "wall_torch.2",
 }
 
-tile{
-  layer = 1,
-  x = 288,
-  y = 104,
-  width = 24,
-  height = 32,
-  pattern = "wall_pipe.4",
-}
-
-tile{
-  layer = 1,
-  x = 8,
-  y = 104,
-  width = 24,
-  height = 32,
-  pattern = "wall_pipe.3",
-}
-
 dynamic_tile{
   layer = 1,
-  x = 96,
-  y = 112,
-  width = 16,
-  height = 16,
+  x = 88,
+  y = 104,
+  width = 32,
+  height = 32,
   name = "enemy_3",
-  pattern = "carpet.1",
-  enabled_at_start = false,
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
 }
 
 dynamic_tile{
   layer = 1,
   x = 200,
-  y = 112,
-  width = 16,
-  height = 16,
+  y = 104,
+  width = 32,
+  height = 32,
   name = "enemy_2",
-  pattern = "carpet.1",
-  enabled_at_start = false,
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
 }
 

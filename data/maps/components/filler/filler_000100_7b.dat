@@ -10,7 +10,7 @@ properties{
 tile{
   layer = 1,
   x = 248,
-  y = 8,
+  y = 16,
   width = 32,
   height = 16,
   pattern = "wall_torch.1",
@@ -97,6 +97,17 @@ dynamic_tile{
   height = 16,
   name = "pot_5",
   pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 184,
+  y = 56,
+  width = 32,
+  height = 32,
+  name = "enemy",
+  pattern = "placeholder_enemy",
   enabled_at_start = true,
 }
 
