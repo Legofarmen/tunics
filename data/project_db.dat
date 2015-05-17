@@ -566,7 +566,6 @@ sprite{ id = "enemies/red_knight_soldier", description = "Red knight soldier" }
 sprite{ id = "enemies/red_helmasaur", description = "Red helmasaur" }
 sprite{ id = "enemies/simple_green_soldier", description = "Simple green soldier" }
 sprite{ id = "enemies/red_hardhat_beetle", description = "Red hardhat beetle" }
-sprite{ id = "enemies/pike_fixed", description = "Pike fixed" }
 sprite{ id = "enemies/pike_auto", description = "Pike auto" }
 sprite{ id = "enemies/pike_detect", description = "Pike detect" }
 sprite{ id = "hud/dialog_box_message_end", description = "Dialog box message end" }
@@ -746,7 +745,6 @@ enemy{ id = "ropa", description = "Ropa" }
 enemy{ id = "simple_green_soldier", description = "Simple green soldier" }
 enemy{ id = "snap_dragon", description = "Snap dragon" }
 enemy{ id = "pike_auto", description = "Pike auto" }
-enemy{ id = "pike_fixed", description = "Pike fixed" }
 enemy{ id = "pike_detect", description = "Pike detect" }
 enemy{ id = "bubble", description = "Bubble" }
 enemy{ id = "agahnim", description = "Agahnim" }

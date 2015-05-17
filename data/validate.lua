@@ -196,9 +196,6 @@ local function validate_map(fname, mask, tilesets, patterns)
     end
     function mt.enemy(properties)
         local description = string.format("enemy         %s breed=%s", coord_string(properties), properties.breed)
-        if properties.breed == 'pike_fixed' then
-            zentropy.debug(string.format('%s:  use pike tile instead in component: %s', description, fname))
-        end
     end
     function mt.block(properties) end
     function mt.bomb(properties) end
