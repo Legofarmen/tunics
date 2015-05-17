@@ -223,28 +223,6 @@ tile{
   pattern = "water_wall.drain_gate.2",
 }
 
-dynamic_tile{
-  layer = 1,
-  x = 248,
-  y = 168,
-  width = 16,
-  height = 16,
-  name = "treasure_obstacle_chest",
-  pattern = "floor_small.2",
-  enabled_at_start = false,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 56,
-  y = 56,
-  width = 16,
-  height = 16,
-  name = "treasure_open_chest",
-  pattern = "floor_small.2",
-  enabled_at_start = false,
-}
-
 jumper{
   layer = 1,
   x = 72,
@@ -325,50 +303,6 @@ jumper{
   jump_length = 40,
 }
 
-dynamic_tile{
-  layer = 1,
-  x = 104,
-  y = 56,
-  width = 16,
-  height = 16,
-  name = "enemy_5",
-  pattern = "carpet.1",
-  enabled_at_start = false,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 160,
-  y = 56,
-  width = 16,
-  height = 16,
-  name = "enemy_2",
-  pattern = "carpet.1",
-  enabled_at_start = false,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 144,
-  y = 168,
-  width = 16,
-  height = 16,
-  name = "enemy_3",
-  pattern = "carpet.1",
-  enabled_at_start = false,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 200,
-  y = 168,
-  width = 16,
-  height = 16,
-  name = "enemy_4",
-  pattern = "carpet.1",
-  enabled_at_start = false,
-}
-
 wall{
   layer = 1,
   x = 104,
@@ -385,5 +319,60 @@ wall{
   width = 8,
   height = 32,
   stops_enemies = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 248,
+  y = 168,
+  width = 16,
+  height = 16,
+  name = "treasure_obstacle_chest",
+  pattern = "placeholder_treasure_obstacle",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 56,
+  y = 56,
+  width = 16,
+  height = 16,
+  name = "treasure_open_chest",
+  pattern = "placeholder_treasure_open",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 120,
+  y = 56,
+  width = 32,
+  height = 32,
+  name = "enemy_1",
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 24,
+  y = 152,
+  width = 32,
+  height = 32,
+  name = "enemy_2",
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 264,
+  y = 32,
+  width = 32,
+  height = 32,
+  name = "enemy_4",
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
 }
 
