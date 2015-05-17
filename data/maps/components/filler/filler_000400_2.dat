@@ -175,7 +175,7 @@ dynamic_tile{
   y = 64,
   width = 32,
   height = 32,
-  name = "enemy",
+  name = "enemy_",
   pattern = "placeholder_enemy",
   enabled_at_start = true,
 }

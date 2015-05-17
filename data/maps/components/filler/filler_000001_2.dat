@@ -8,15 +8,6 @@ properties{
 }
 
 tile{
-  layer = 0,
-  x = 264,
-  y = 176,
-  width = 16,
-  height = 16,
-  pattern = "ceiling",
-}
-
-tile{
   layer = 1,
   x = 248,
   y = 192,
@@ -184,7 +175,7 @@ dynamic_tile{
   y = 144,
   width = 32,
   height = 32,
-  name = "enemy",
+  name = "enemy_",
   pattern = "placeholder_enemy",
   enabled_at_start = true,
 }

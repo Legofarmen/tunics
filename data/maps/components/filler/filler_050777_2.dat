@@ -162,42 +162,6 @@ tile{
 
 tile{
   layer = 1,
-  x = 72,
-  y = 40,
-  width = 16,
-  height = 16,
-  pattern = "floor_pot",
-}
-
-tile{
-  layer = 1,
-  x = 72,
-  y = 184,
-  width = 16,
-  height = 16,
-  pattern = "floor_pot",
-}
-
-tile{
-  layer = 1,
-  x = 232,
-  y = 184,
-  width = 16,
-  height = 16,
-  pattern = "floor_pot",
-}
-
-tile{
-  layer = 1,
-  x = 232,
-  y = 40,
-  width = 16,
-  height = 16,
-  pattern = "floor_pot",
-}
-
-tile{
-  layer = 1,
   x = 248,
   y = 32,
   width = 8,
@@ -298,6 +262,50 @@ dynamic_tile{
   height = 32,
   name = "enemy_3",
   pattern = "placeholder_enemy",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 232,
+  y = 40,
+  width = 16,
+  height = 16,
+  name = "pot__3",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 232,
+  y = 184,
+  width = 16,
+  height = 16,
+  name = "pot__4",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 72,
+  y = 184,
+  width = 16,
+  height = 16,
+  name = "pot__2",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 72,
+  y = 40,
+  width = 16,
+  height = 16,
+  name = "pot_",
+  pattern = "floor_pot",
   enabled_at_start = true,
 }
 
