@@ -17,6 +17,7 @@ local alignments = {
 }
 
 local function rect_string(rect)
+    zentropy.assert(rect)
     return string.format("(%3d;%3d)-(%3d;%3d)", rect.x, rect.y, rect.x + rect.width, rect.y + rect.height)
 end
 
@@ -71,9 +72,13 @@ local function validate_entity_pot(fname, description, properties)
 end
 
 local function validate_entity_enemy(fname, description, properties)
+    local enemy_area = { x = 32, y = 32, width = 256, height = 176, }
     if properties.pattern == 'placeholder_enemy' then
         if not properties.name or not properties.name:find('^enemy_') then
             zentropy.debug(string.format("%s:  not named enemy_* in component: %s", description, fname))
+        end
+        if not contains(enemy_area, properties) then
+            zentropy.debug(string.format("%s:  not contained within %s in component: %s", description, rect_string(enemy_area), fname))
         end
     elseif properties.name and properties.name:find('^enemy_') then
         zentropy.debug(string.format("%s:  only tiles of pattern placeholder_enemy may be named enemy* in component: %s", description, fname))
