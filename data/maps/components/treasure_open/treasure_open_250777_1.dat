@@ -383,7 +383,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "chest",
-  pattern = "carpet.2",
+  pattern = "placeholder_treasure_open",
   enabled_at_start = true,
 }
 

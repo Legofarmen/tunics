@@ -9,8 +9,8 @@ properties{
 
 tile{
   layer = 1,
-  x = 272,
-  y = 192,
+  x = 264,
+  y = 184,
   width = 16,
   height = 16,
   pattern = "block",
@@ -40,7 +40,7 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 208,
+  x = 200,
   y = 136,
   width = 16,
   height = 16,
@@ -62,8 +62,8 @@ switch{
 
 block{
   layer = 1,
-  x = 264,
-  y = 189,
+  x = 256,
+  y = 181,
   name = "block_1",
   direction = -1,
   sprite = "entities/block",
@@ -74,8 +74,8 @@ block{
 
 block{
   layer = 1,
-  x = 248,
-  y = 173,
+  x = 240,
+  y = 165,
   name = "block_2",
   direction = -1,
   sprite = "entities/block",
@@ -86,8 +86,8 @@ block{
 
 block{
   layer = 1,
-  x = 232,
-  y = 157,
+  x = 224,
+  y = 149,
   name = "block_3",
   direction = -1,
   sprite = "entities/block",

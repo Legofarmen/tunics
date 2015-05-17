@@ -162,8 +162,8 @@ tile{
 
 dynamic_tile{
   layer = 1,
-  x = 80,
-  y = 32,
+  x = 88,
+  y = 40,
   width = 16,
   height = 16,
   name = "pot_1",
@@ -173,8 +173,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 272,
-  y = 32,
+  x = 264,
+  y = 40,
   width = 16,
   height = 16,
   name = "pot_2",
@@ -206,8 +206,8 @@ switch{
 
 dynamic_tile{
   layer = 1,
-  x = 48,
-  y = 32,
+  x = 40,
+  y = 40,
   width = 16,
   height = 16,
   name = "treasure_open_chest",
