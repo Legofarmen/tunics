@@ -13,6 +13,15 @@ tile{
   y = 40,
   width = 80,
   height = 96,
+  pattern = "floor_border.2",
+}
+
+tile{
+  layer = 1,
+  x = 128,
+  y = 40,
+  width = 64,
+  height = 88,
   pattern = "floor_small.2",
 }
 
@@ -194,33 +203,6 @@ tile{
   width = 16,
   height = 16,
   pattern = "pillar.top",
-}
-
-tile{
-  layer = 1,
-  x = 120,
-  y = 40,
-  width = 8,
-  height = 96,
-  pattern = "floor_border.2",
-}
-
-tile{
-  layer = 1,
-  x = 192,
-  y = 40,
-  width = 8,
-  height = 96,
-  pattern = "floor_border.2",
-}
-
-tile{
-  layer = 1,
-  x = 128,
-  y = 128,
-  width = 64,
-  height = 8,
-  pattern = "floor_border.2",
 }
 
 tile{

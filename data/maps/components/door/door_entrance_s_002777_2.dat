@@ -223,15 +223,6 @@ tile{
   pattern = "barrier.1.2",
 }
 
-tile{
-  layer = 1,
-  x = 152,
-  y = 208,
-  width = 16,
-  height = 16,
-  pattern = "door_main.2",
-}
-
 dynamic_tile{
   layer = 1,
   x = 144,
@@ -245,22 +236,11 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 120,
+  x = 144,
   y = 208,
   width = 32,
   height = 24,
   name = "tile_7",
-  pattern = "wall.2",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 168,
-  y = 208,
-  width = 32,
-  height = 24,
-  name = "tile_2",
   pattern = "wall.2",
   enabled_at_start = true,
 }
@@ -329,15 +309,6 @@ dynamic_tile{
   enabled_at_start = true,
 }
 
-door{
-  layer = 1,
-  x = 152,
-  y = 208,
-  name = "door_entrance_2",
-  direction = 3,
-  sprite = "entities/door_normal",
-}
-
 dynamic_tile{
   layer = 1,
   x = 176,
@@ -347,6 +318,26 @@ dynamic_tile{
   name = "tile_6",
   pattern = "entrance_pillar.1.2.bottom",
   enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 152,
+  y = 208,
+  width = 16,
+  height = 32,
+  name = "tile",
+  pattern = "door_main.2",
+  enabled_at_start = true,
+}
+
+door{
+  layer = 1,
+  x = 152,
+  y = 208,
+  name = "door_entrance_2",
+  direction = 3,
+  sprite = "entities/door_normal",
 }
 
 tile{
