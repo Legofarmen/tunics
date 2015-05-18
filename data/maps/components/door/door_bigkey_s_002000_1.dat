@@ -7,10 +7,55 @@ properties{
   music = "same",
 }
 
+tile{
+  layer = 1,
+  x = 168,
+  y = 208,
+  width = 8,
+  height = 16,
+  pattern = "door.2.support.2",
+}
+
+tile{
+  layer = 1,
+  x = 144,
+  y = 208,
+  width = 8,
+  height = 16,
+  pattern = "door.2.support.1",
+}
+
+tile{
+  layer = 1,
+  x = 152,
+  y = 224,
+  width = 16,
+  height = 16,
+  pattern = "floor.1",
+}
+
+tile{
+  layer = 1,
+  x = 144,
+  y = 224,
+  width = 8,
+  height = 16,
+  pattern = "barrier.1.2",
+}
+
+tile{
+  layer = 1,
+  x = 168,
+  y = 224,
+  width = 8,
+  height = 16,
+  pattern = "barrier.1.2",
+}
+
 dynamic_tile{
   layer = 1,
-  x = -16,
-  y = -16,
+  x = 152,
+  y = 208,
   width = 16,
   height = 16,
   name = "door_open",
@@ -18,12 +63,30 @@ dynamic_tile{
   enabled_at_start = true,
 }
 
+wall{
+  layer = 1,
+  x = 152,
+  y = 208,
+  width = 16,
+  height = 16,
+  stops_enemies = true,
+}
+
 sensor{
   layer = 1,
-  x = -24,
-  y = -3,
+  x = 160,
+  y = 205,
   width = 16,
   height = 16,
   name = "sensor",
+}
+
+tile{
+  layer = 2,
+  x = 144,
+  y = 224,
+  width = 32,
+  height = 8,
+  pattern = "door_top.closed.2",
 }
 

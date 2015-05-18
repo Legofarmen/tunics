@@ -3,7 +3,7 @@ local map, data = ...
 local util = require 'lib/util'
 
 local boss_exit = map:include(0, 0, 'components/door/door_exit_n_200000_1', {room_events=data.room_events, name="boss_exit"})
-local boss_entrance = map:include(0, 0, 'components/door/door_closed_s_002000_1', {room_events=data.room_events, name="boss_entrance"})
+local boss_entrance = map:include(0, 0, 'components/door/door_bigkey_s_002000_1', {room_events=data.room_events, name="boss_entrance"})
 
 local agahnim = map:get_entity("agahnim"):get_userdata()
 agahnim:set_enabled(false)
@@ -37,6 +37,5 @@ data.room_events:add_door_sensor_activated_listener(function ()
 		agahnim:restart()
         zentropy.debug("Sensor triggered")
         boss_exit:close()
-        boss_entrance:close()
     end
 end)

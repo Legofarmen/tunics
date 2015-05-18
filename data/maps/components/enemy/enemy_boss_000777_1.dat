@@ -7,15 +7,6 @@ properties{
   music = "same",
 }
 
-sensor{
-  layer = 0,
-  x = 160,
-  y = 205,
-  width = 16,
-  height = 16,
-  name = "sensor",
-}
-
 tile{
   layer = 1,
   x = 248,
@@ -482,17 +473,6 @@ tile{
   width = 32,
   height = 24,
   pattern = "wall_statue.1.2",
-}
-
-stream{
-  layer = 1,
-  x = 160,
-  y = 221,
-  direction = 2,
-  speed = 128,
-  allow_movement = false,
-  allow_attack = false,
-  allow_item = false,
 }
 
 dynamic_tile{
@@ -535,17 +515,6 @@ enemy{
   name = "agahnim",
   direction = 3,
   breed = "agahnim",
-}
-
-stream{
-  layer = 1,
-  x = 160,
-  y = 237,
-  direction = 2,
-  speed = 128,
-  allow_movement = false,
-  allow_attack = false,
-  allow_item = false,
 }
 
 tile{
