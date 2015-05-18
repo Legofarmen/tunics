@@ -96,6 +96,18 @@ local function validate_entity_placeholder(fname, description, properties)
     elseif properties.name == 'treasure_obstacle_chest' then
         zentropy.debug(string.format("%s:  only tiles of pattern placeholder_treasure_obstacle or placeholder_treasure_puzzle may be named treasure_obstacle_chest in component: %s", description, fname))
     end
+
+    -- Entrance floor
+    if properties.pattern == 'door_main.2.floor.1' then
+        if properties.name ~= 'entrance_carpet' then
+            zentropy.debug(string.format("%s:  not named entrance_carpet in component: %s", description, fname))
+        end
+        if not contains(floor_area, properties) then
+            zentropy.debug(string.format("%s:  not contained within %s in component: %s", description, rect_string(floor_area), fname))
+        end
+    elseif properties.name == 'entrance_carpet' then
+        zentropy.debug(string.format("%s:  only tiles of pattern door_main.2.floor.1 may be named entrance_carpet in component: %s", description, fname))
+    end
 end
 
 local function validate_entity_alignment(fname, description, properties)
@@ -287,14 +299,18 @@ local function validate_projectdb_components()
     for k, v in pairs(zentropy.components.floors) do
         zentropy.debug('floor', k, v)
     end
-    for k, v in pairs(zentropy.components.doors) do
-        zentropy.debug('door', k, v)
-    end
     for k, v in pairs(zentropy.components.enemies) do
         zentropy.debug('enemy', k, v)
     end
     ]]
     local fmt = "maps/%s.dat"
+    for door_type, doors in pairs(zentropy.components.doors) do
+        for dir_name, dir_components in pairs(doors) do
+            for i, component in ipairs(dir_components) do
+                validate_map(string.format(fmt, component.id), component.mask, tilesets, patterns)
+            end
+        end
+    end
     for treasure_type, treasures in pairs(zentropy.components.treasures) do
         for i, treasure in ipairs(treasures) do
             validate_map(string.format(fmt, treasure.id), treasure.mask, tilesets, patterns)
