@@ -142,7 +142,7 @@ map{ id = "components/door/door_closed_w_040000_1", description = "Door closed w
 map{ id = "components/door/door_closed_e_010000_1", description = "Door closed e 010000 1" }
 map{ id = "components/obstacle_lamp/obstacle_lamp_nsew_000007_1", description = "Obstacle lamp nsew 000007 1" }
 map{ id = "components/obstacle_lamp/obstacle_lamp_nsew_000700_1", description = "Obstacle lamp nsew 000700 1" }
-map{ id = "components/obstacle_lamp/obstacle_lamp_eastwest_000111_1", description = "Obstacle lamp nsew 000111 1" }
+map{ id = "components/obstacle_lamp/obstacle_lamp_nsew_000111_1", description = "Obstacle lamp nsew 000111 1" }
 map{ id = "components/obstacle_lamp/obstacle_lamp_nsew_000444_1", description = "Obstacle lamp nsew 000444 1" }
 map{ id = "components/obstacle_bow/obstacle_bow_nsew_000111_1", description = "Obstacle bow nsew 000111 1" }
 map{ id = "components/obstacle_bow/obstacle_bow_nsew_000700_1", description = "Obstacle bow nsew 000700 1" }
@@ -280,10 +280,10 @@ map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000600_2", descriptio
 map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000300_2", description = "Puzzle 000300 2" }
 map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000006_2", description = "Puzzle 000006 2" }
 map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000003_2", description = "Puzzle 000003 2" }
-map{ id = "components/obstacle_puzzle/XXXobstacle_puzzle_nsew_000004_1", description = "Puzzle 000004 1w" }
-map{ id = "components/obstacle_puzzle/XXXobstacle_puzzle_nsew_000400_1", description = "Puzzle 000400 1w" }
-map{ id = "components/obstacle_puzzle/XXXobstacle_puzzle_nsew_000001_1", description = "Puzzle 000001 1w" }
-map{ id = "components/obstacle_puzzle/XXXobstacle_puzzle_nsew_000100_1", description = "Puzzle 000100 1w" }
+map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000004_1", description = "Puzzle 000004 1w" }
+map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000400_1", description = "Puzzle 000400 1w" }
+map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000001_1", description = "Puzzle 000001 1w" }
+map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000100_1", description = "Puzzle 000100 1w" }
 map{ id = "rooms/game_complete_1", description = "Game complete 1" }
 map{ id = "rooms/game_complete_2", description = "Game complete 2" }
 map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000100_2", description = "Puzzle 000100 2" }
