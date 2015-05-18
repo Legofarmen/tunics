@@ -1,13 +1,13 @@
 local bindings = {}
 
 local commands = {
-    escape =    { buttons={1}, keys={'escape'} },
+    escape =    { buttons={6}, keys={'escape'} },
     map =       { buttons={2}, keys={'tab'} },
     inventory = { buttons={3}, keys={'w'} },
-    attack =    { buttons={4}, keys={'s'} },
-    item_1 =    { buttons={5}, keys={'a'} },
-    item_2 =    { buttons={6}, keys={'d'} },
-    action =    { buttons={7}, keys={'space', 'return', 'kp return'} },
+    attack =    { buttons={0}, keys={'s'} },
+    item_1 =    { buttons={4}, keys={'a'} },
+    item_2 =    { buttons={5}, keys={'d'} },
+    action =    { buttons={1}, keys={'space', 'return', 'kp return'} },
     up =        { keys={'up'} },
     down =      { keys={'down'} },
     left =      { keys={'left'} },
