@@ -61,7 +61,10 @@ local function validate_entity_mask(fname, description, properties, sections)
     end
 end
 
-local function validate_entity_pot(fname, description, properties)
+local function validate_entity_placeholder(fname, description, properties)
+    local floor_area = { x = 32, y = 32, width = 256, height = 176, }
+
+    -- Pot
     if properties.pattern == 'floor_pot' then
         if not properties.name or not properties.name:find('^pot_') then
             zentropy.debug(string.format("%s:  not named pot_* in component: %s", description, fname))
@@ -69,19 +72,29 @@ local function validate_entity_pot(fname, description, properties)
     elseif properties.name and properties.name:find('^pot_') then
         zentropy.debug(string.format("%s:  named pot* in component: %s", description, fname))
     end
-end
 
-local function validate_entity_enemy(fname, description, properties)
-    local enemy_area = { x = 32, y = 32, width = 256, height = 176, }
+    -- Enemy
     if properties.pattern == 'placeholder_enemy' then
         if not properties.name or not properties.name:find('^enemy_') then
             zentropy.debug(string.format("%s:  not named enemy_* in component: %s", description, fname))
         end
-        if not contains(enemy_area, properties) then
-            zentropy.debug(string.format("%s:  not contained within %s in component: %s", description, rect_string(enemy_area), fname))
+        if not contains(floor_area, properties) then
+            zentropy.debug(string.format("%s:  not contained within %s in component: %s", description, rect_string(floor_area), fname))
         end
     elseif properties.name and properties.name:find('^enemy_') then
         zentropy.debug(string.format("%s:  only tiles of pattern placeholder_enemy may be named enemy* in component: %s", description, fname))
+    end
+
+    -- Treasure obstacle/puzzle
+    if properties.pattern == 'placeholder_treasure_obstacle' or properties.pattern == 'placeholder_treasure_puzzle' then
+        if properties.name ~= 'treasure_obstacle_chest' then
+            zentropy.debug(string.format("%s:  not named treasure_obstacle_chest in component: %s", description, fname))
+        end
+        if not contains(floor_area, properties) then
+            zentropy.debug(string.format("%s:  not contained within %s in component: %s", description, rect_string(floor_area), fname))
+        end
+    elseif properties.name == 'treasure_obstacle_chest' then
+        zentropy.debug(string.format("%s:  only tiles of pattern placeholder_treasure_obstacle or placeholder_treasure_puzzle may be named treasure_obstacle_chest in component: %s", description, fname))
     end
 end
 
@@ -153,8 +166,7 @@ local function validate_map(fname, mask, tilesets, patterns)
         end
         validate_entity_layer(fname, description, properties)
         validate_entity_mask(fname, description, properties, sections)
-        validate_entity_pot(fname, description, properties)
-        validate_entity_enemy(fname, description, properties)
+        validate_entity_placeholder(fname, description, properties)
         validate_entity_alignment(fname, description, properties)
     end
     function mt.jumper(properties)
@@ -182,8 +194,7 @@ local function validate_map(fname, mask, tilesets, patterns)
         end
         validate_entity_layer(fname, description, properties)
         validate_entity_mask(fname, description, properties, sections)
-        validate_entity_pot(fname, description, properties)
-        validate_entity_enemy(fname, description, properties)
+        validate_entity_placeholder(fname, description, properties)
         validate_entity_alignment(fname, description, properties)
     end
     function mt.wall(properties)
@@ -196,9 +207,6 @@ local function validate_map(fname, mask, tilesets, patterns)
     end
     function mt.enemy(properties)
         local description = string.format("enemy         %s breed=%s", coord_string(properties), properties.breed)
-        if properties.breed == 'pike_fixed' then
-            zentropy.debug(string.format('%s:  use pike tile instead in component: %s', description, fname))
-        end
     end
     function mt.block(properties) end
     function mt.bomb(properties) end

@@ -79,7 +79,8 @@ end
 
 function enemy:on_obstacle_reached()
 
-  self:go_back()
+    sol.audio.play_sound("sword_tapping")
+    self:go_back()
 end
 
 function enemy:on_movement_finished()
@@ -105,7 +106,6 @@ function enemy:go_back()
     m:set_target(initial_xy.x, initial_xy.y)
     m:set_smooth(false)
     m:start(self)
-    sol.audio.play_sound("sword_tapping")
 
   elseif state == "going_back" then
 

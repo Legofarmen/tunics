@@ -55,7 +55,7 @@ tile{
 tile{
   layer = 1,
   x = 184,
-  y = 136,
+  y = 144,
   width = 16,
   height = 16,
   pattern = "pike",
@@ -84,7 +84,7 @@ dynamic_tile{
 wall{
   layer = 1,
   x = 184,
-  y = 136,
+  y = 144,
   width = 16,
   height = 16,
   stops_hero = true,
