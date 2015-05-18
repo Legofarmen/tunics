@@ -1061,7 +1061,7 @@ function zentropy.hideout(rng, switch, ...)
 
     local x, y, layer = hideout:get_position()
     if zentropy.settings.debug_cheat then
-        y = y + 4
+        x, y = x + 4, y + 4
     end
     local origin_x, origin_y = hideout:get_origin()
     switch:set_position(x - origin_x, y - origin_y, layer)
