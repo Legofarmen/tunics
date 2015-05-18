@@ -61,7 +61,7 @@ local function validate_entity_mask(fname, description, properties, sections)
     end
 end
 
-local function validate_entity_placeholder(fname, description, properties)
+local function validate_entity_placeholder(fname, description, properties, counts)
     local floor_area = { x = 32, y = 32, width = 256, height = 176, }
 
     -- Pot
@@ -87,7 +87,9 @@ local function validate_entity_placeholder(fname, description, properties)
 
     -- Treasure obstacle/puzzle
     if properties.pattern == 'placeholder_treasure_obstacle' or properties.pattern == 'placeholder_treasure_puzzle' then
-        if properties.name ~= 'treasure_obstacle_chest' then
+        if properties.name == 'treasure_obstacle_chest' then
+            counts.treasure_obstacle_chest = (counts.treasure_obstacle_chest or 0) + 1
+        else
             zentropy.debug(string.format("%s:  not named treasure_obstacle_chest in component: %s", description, fname))
         end
         if not contains(floor_area, properties) then
@@ -99,21 +101,29 @@ local function validate_entity_placeholder(fname, description, properties)
 
     -- Treasure open
     if properties.pattern == 'placeholder_treasure_open' then
-        if properties.name ~= 'chest' and properties.name ~= 'treasure_open_chest' then
+        if properties.name == 'chest' then
+            counts.chest = (counts.chest or 0) + 1
+        elseif properties.name == 'treasure_open_chest' then
+            counts.treasure_open_chest = (counts.treasure_open_chest or 0) + 1
+        else
             zentropy.debug(string.format("%s:  named neither chest nor treasure_open_chest in component: %s", description, fname))
         end
         if not contains(floor_area, properties) then
             zentropy.debug(string.format("%s:  not contained within %s in component: %s", description, rect_string(floor_area), fname))
         end
     elseif properties.pattern == 'placeholder_treasure_block' then
-        if properties.name ~= 'treasure_open_chest' then
+        if properties.name == 'treasure_open_chest' then
+            counts.treasure_open_chest = (counts.treasure_open_chest or 0) + 1
+        else
             zentropy.debug(string.format("%s:  not named treasure_open_chest in component: %s", description, fname))
         end
         if not contains(floor_area, properties) then
             zentropy.debug(string.format("%s:  not contained within %s in component: %s", description, rect_string(floor_area), fname))
         end
     elseif properties.pattern == 'placeholder_bigchest' then
-        if properties.name ~= 'chest' then
+        if properties.name == 'chest' then
+            counts.chest = (counts.chest or 0) + 1
+        else
             zentropy.debug(string.format("%s:  not named chest in component: %s", description, fname))
         end
         if not contains(floor_area, properties) then
@@ -172,6 +182,7 @@ local function validate_map(fname, mask, tilesets, patterns)
             sections[util.fromoct(section_mask)] = all_sections[i]
         end
     end
+    local placeholder_counts = {}
 
     local datf = sol.main.load_file(fname)
     if not datf then
@@ -206,7 +217,7 @@ local function validate_map(fname, mask, tilesets, patterns)
         end
         validate_entity_layer(fname, description, properties)
         validate_entity_mask(fname, description, properties, sections)
-        validate_entity_placeholder(fname, description, properties)
+        validate_entity_placeholder(fname, description, properties, placeholder_counts)
         validate_entity_alignment(fname, description, properties)
     end
     function mt.jumper(properties)
@@ -233,7 +244,7 @@ local function validate_map(fname, mask, tilesets, patterns)
         end
         validate_entity_layer(fname, description, properties)
         validate_entity_mask(fname, description, properties, sections)
-        validate_entity_placeholder(fname, description, properties)
+        validate_entity_placeholder(fname, description, properties, placeholder_counts)
         validate_entity_alignment(fname, description, properties)
     end
     function mt.wall(properties)
@@ -266,6 +277,7 @@ local function validate_map(fname, mask, tilesets, patterns)
     function mt.switch(properties) end
     function mt.teletransporter(properties) end
     setfenv(datf, mt)()
+    return placeholder_counts
 end
 
 local function read_tileset_tiles(fname)
@@ -320,6 +332,16 @@ local function get_patterns(tilesets)
     return tileset_names, patterns
 end
 
+local count_validators = {}
+
+function count_validators.puzzle(fname, counts)
+    local treasure_open_chest = counts.treasure_open_chest or 0
+
+    if treasure_open_chest ~= 1 then
+        zentropy.debug(string.format("obstacle_puzzle:  expected 1 treasure_open_chest, got %d in component: %s", treasure_open_chest, fname))
+    end
+end
+
 local function validate_projectdb_components()
     local tilesets, patterns = get_patterns(zentropy.tilesets)
     --[[
@@ -334,24 +356,27 @@ local function validate_projectdb_components()
     for door_type, doors in pairs(zentropy.components.doors) do
         for dir_name, dir_components in pairs(doors) do
             for i, component in ipairs(dir_components) do
-                validate_map(string.format(fmt, component.id), component.mask, tilesets, patterns)
+                local counts = validate_map(string.format(fmt, component.id), component.mask, tilesets, patterns)
             end
         end
     end
     for treasure_type, treasures in pairs(zentropy.components.treasures) do
         for i, treasure in ipairs(treasures) do
-            validate_map(string.format(fmt, treasure.id), treasure.mask, tilesets, patterns)
+            local counts = validate_map(string.format(fmt, treasure.id), treasure.mask, tilesets, patterns)
         end
     end
     for obstacle_name, obstacle_data in pairs(zentropy.components.obstacles) do
+        local validate_counts = count_validators[obstacle_name] or function () return true end
         for dir, obstacles in pairs(obstacle_data) do
             for i, obstacle in ipairs(obstacles) do
-                validate_map(string.format(fmt, obstacle.id), obstacle.mask, tilesets, patterns)
+                local fname = string.format(fmt, obstacle.id)
+                local counts = validate_map(fname, obstacle.mask, tilesets, patterns)
+                validate_counts(fname, counts)
             end
         end
     end
     for k, v in pairs(zentropy.components.fillers) do
-        validate_map(string.format(fmt, v.id), v.mask, tilesets, patterns)
+        local counts = validate_map(string.format(fmt, v.id), v.mask, tilesets, patterns)
     end
 end
 
