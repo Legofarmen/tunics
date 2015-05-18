@@ -41,17 +41,6 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 88,
-  y = 48,
-  width = 16,
-  height = 16,
-  name = "treasure_open_chest",
-  pattern = "floor_small.2",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
   x = 112,
   y = 40,
   width = 32,
@@ -67,7 +56,7 @@ dynamic_tile{
   y = 48,
   width = 16,
   height = 16,
-  name = "treasure_open_chest_2",
+  name = "treasure_open_chest",
   pattern = "placeholder_treasure_open",
   enabled_at_start = true,
 }

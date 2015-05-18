@@ -97,6 +97,34 @@ local function validate_entity_placeholder(fname, description, properties)
         zentropy.debug(string.format("%s:  only tiles of pattern placeholder_treasure_obstacle or placeholder_treasure_puzzle may be named treasure_obstacle_chest in component: %s", description, fname))
     end
 
+    -- Treasure open
+    if properties.pattern == 'placeholder_treasure_open' then
+        if properties.name ~= 'chest' and properties.name ~= 'treasure_open_chest' then
+            zentropy.debug(string.format("%s:  named neither chest nor treasure_open_chest in component: %s", description, fname))
+        end
+        if not contains(floor_area, properties) then
+            zentropy.debug(string.format("%s:  not contained within %s in component: %s", description, rect_string(floor_area), fname))
+        end
+    elseif properties.pattern == 'placeholder_treasure_block' then
+        if properties.name ~= 'treasure_open_chest' then
+            zentropy.debug(string.format("%s:  not named treasure_open_chest in component: %s", description, fname))
+        end
+        if not contains(floor_area, properties) then
+            zentropy.debug(string.format("%s:  not contained within %s in component: %s", description, rect_string(floor_area), fname))
+        end
+    elseif properties.pattern == 'placeholder_bigchest' then
+        if properties.name ~= 'chest' then
+            zentropy.debug(string.format("%s:  not named chest in component: %s", description, fname))
+        end
+        if not contains(floor_area, properties) then
+            zentropy.debug(string.format("%s:  not contained within %s in component: %s", description, rect_string(floor_area), fname))
+        end
+    elseif properties.name == 'chest' then
+        zentropy.debug(string.format("%s:  only tiles of pattern placeholder_treasure_open or placeholder_bigchest may be named chest in component: %s", description, fname))
+    elseif properties.name == 'treasure_open_chest' then
+        zentropy.debug(string.format("%s:  only tiles of pattern placeholder_treasure_open or placeholder_treasure_block may be named treasure_open_chest in component: %s", description, fname))
+    end
+
     -- Entrance floor
     if properties.pattern == 'door_main.2.floor.1' then
         if properties.name ~= 'entrance_carpet' then
