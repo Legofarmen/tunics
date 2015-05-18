@@ -135,8 +135,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 176,
-  y = 96,
+  x = 168,
+  y = 104,
   width = 16,
   height = 16,
   pattern = "tongue",
@@ -378,8 +378,8 @@ tile{
 
 dynamic_tile{
   layer = 1,
-  x = 128,
-  y = 96,
+  x = 136,
+  y = 104,
   width = 16,
   height = 16,
   name = "chest",

@@ -9,47 +9,20 @@ properties{
 
 tile{
   layer = 1,
+  x = 128,
+  y = 88,
+  width = 64,
+  height = 64,
+  pattern = "floor_border.2",
+}
+
+tile{
+  layer = 1,
   x = 136,
   y = 96,
   width = 48,
   height = 48,
   pattern = "floor_small.2",
-}
-
-tile{
-  layer = 1,
-  x = 128,
-  y = 96,
-  width = 8,
-  height = 48,
-  pattern = "floor_border.2",
-}
-
-tile{
-  layer = 1,
-  x = 128,
-  y = 144,
-  width = 64,
-  height = 8,
-  pattern = "floor_border.2",
-}
-
-tile{
-  layer = 1,
-  x = 128,
-  y = 88,
-  width = 64,
-  height = 8,
-  pattern = "floor_border.2",
-}
-
-tile{
-  layer = 1,
-  x = 184,
-  y = 96,
-  width = 8,
-  height = 48,
-  pattern = "floor_border.2",
 }
 
 tile{
