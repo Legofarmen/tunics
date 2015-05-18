@@ -195,7 +195,6 @@ local function validate_map(fname, mask, tilesets, patterns)
             description = description .. string.format(" name=%s", properties.name)
         end
         validate_entity_layer(fname, description, properties)
-        validate_entity_mask(fname, description, properties, sections)
     end
     function mt.tile(properties)
         local description = string.format("tile          %s", rect_string(properties))
