@@ -1012,6 +1012,7 @@ function zentropy.inject_big_chest(placeholder, data)
 end
 
 function zentropy.inject_door(position_tile, properties)
+    zentropy.assert(position_tile)
     zentropy.assert(properties.direction)
     zentropy.assert(properties.sprite)
     local map = position_tile:get_map()
