@@ -8,15 +8,6 @@ properties{
 }
 
 tile{
-  layer = 0,
-  x = 288,
-  y = 48,
-  width = 16,
-  height = 32,
-  pattern = "water_wall.drain_gate.4",
-}
-
-tile{
   layer = 1,
   x = 184,
   y = 24,
@@ -176,6 +167,15 @@ tile{
   width = 16,
   height = 16,
   pattern = "block",
+}
+
+tile{
+  layer = 1,
+  x = 288,
+  y = 48,
+  width = 16,
+  height = 32,
+  pattern = "water_wall.drain_gate.4",
 }
 
 switch{

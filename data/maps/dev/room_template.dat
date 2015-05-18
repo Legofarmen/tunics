@@ -10,9 +10,36 @@ properties{
 tile{
   layer = 0,
   x = 24,
+  y = 136,
+  width = 112,
+  height = 80,
+  pattern = "floor.17",
+}
+
+tile{
+  layer = 0,
+  x = 184,
   y = 24,
-  width = 272,
-  height = 192,
+  width = 112,
+  height = 80,
+  pattern = "floor.17",
+}
+
+tile{
+  layer = 0,
+  x = 184,
+  y = 136,
+  width = 112,
+  height = 80,
+  pattern = "floor.17",
+}
+
+tile{
+  layer = 0,
+  x = 24,
+  y = 24,
+  width = 112,
+  height = 80,
   pattern = "floor.17",
 }
 
@@ -194,6 +221,15 @@ tile{
   width = 256,
   height = 24,
   pattern = "wall.1",
+}
+
+tile{
+  layer = 0,
+  x = 136,
+  y = 104,
+  width = 48,
+  height = 32,
+  pattern = "floor.17",
 }
 
 tile{

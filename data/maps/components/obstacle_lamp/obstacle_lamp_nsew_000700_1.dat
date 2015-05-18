@@ -49,17 +49,6 @@ custom_entity{
 
 dynamic_tile{
   layer = 1,
-  x = 152,
-  y = 64,
-  width = 16,
-  height = 16,
-  name = "treasure_obstacle_chest",
-  pattern = "floor_small.2",
-  enabled_at_start = false,
-}
-
-dynamic_tile{
-  layer = 1,
   x = 80,
   y = 56,
   width = 32,
@@ -97,7 +86,7 @@ dynamic_tile{
   y = 64,
   width = 16,
   height = 16,
-  name = "treasure_obstacle_chest_2",
+  name = "treasure_obstacle_chest",
   pattern = "placeholder_treasure_obstacle",
   enabled_at_start = true,
 }
