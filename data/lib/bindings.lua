@@ -39,7 +39,7 @@ function bindings.mixin(o)
     local axis_state = {}
 
     function o:on_key_pressed(key, modifiers)
-        if keys[key] then
+        if keys[key] and not modifiers.alt and not modifiers.control then
             if self.on_command_pressed then
                 return self:on_command_pressed(keys[key])
             else
@@ -48,7 +48,7 @@ function bindings.mixin(o)
         elseif key == "f5" then
             -- F5: change the video mode.
             sol.video.switch_mode()
-        elseif key == "return" and (modifiers.alt or modifiers.control) or key == "f11" then
+        elseif (key == "return" and (modifiers.alt or modifiers.control)) or key == "f11" then
             -- Alt + Return or Ctrl + Return or F11: switch fullscreen.
             sol.video.set_fullscreen(not sol.video.is_fullscreen())
         elseif key == "f4" and modifiers.alt then
