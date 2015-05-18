@@ -9,6 +9,15 @@ properties{
 
 tile{
   layer = 1,
+  x = 8,
+  y = 8,
+  width = 304,
+  height = 32,
+  pattern = "ceiling",
+}
+
+tile{
+  layer = 1,
   x = 200,
   y = 56,
   width = 16,
@@ -275,6 +284,15 @@ tile{
   width = 24,
   height = 24,
   pattern = "wall.corner.2",
+}
+
+tile{
+  layer = 1,
+  x = 144,
+  y = 32,
+  width = 32,
+  height = 8,
+  pattern = "wall_border.1",
 }
 
 dynamic_tile{

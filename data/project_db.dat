@@ -2,7 +2,6 @@ map{ id = "rooms/room1", description = "Room1" }
 map{ id = "dungeons/dungeon1", description = "Dungeon1" }
 map{ id = "components/door/door_open_n_200000_1", description = "Door open n 200000 1" }
 map{ id = "components/door/door_open_s_002000_1", description = "Door open s 002000 1" }
-map{ id = "components/door/door_entrance_s_002777_1", description = "Door entrance s 002777 1" }
 map{ id = "components/door/door_open_w_040000_1", description = " Door open w 040000 1" }
 map{ id = "components/door/door_open_e_010000_1", description = "Door open e 010000 1" }
 map{ id = "components/door/door_bigkey_n_200700_1", description = "Door bigkey n 200700 1" }
@@ -59,9 +58,6 @@ map{ id = "components/floor/floor_3", description = "Floor 3" }
 map{ id = "components/floor/floor_4", description = "Floor 4" }
 map{ id = "components/floor/floor_5", description = "Floor 5" }
 map{ id = "components/floor/floor_6", description = "Floor 6" }
-map{ id = "components/door/door_entrance_s_002777_2", description = "Door entrance s 002777 2" }
-map{ id = "components/door/door_entrance_s_002777_3", description = "Door entrance s 002777 3" }
-map{ id = "components/door/door_entrance_s_002777_4", description = "Door entrance s 002777 4" }
 map{ id = "rooms/intro_2", description = "Intro 2" }
 map{ id = "rooms/cutscene", description = "Cutscene" }
 map{ id = "rooms/title", description = "Title" }
@@ -323,6 +319,11 @@ map{ id = "components/door/door_bigkey_n_200777_5", description = "Door bigkey n
 map{ id = "components/door/door_bigkey_n_250777_4", description = "Door bigkey n 250777 4" }
 map{ id = "components/door/door_entrance_s_002777_5", description = "Door entrance s 002777 5" }
 map{ id = "components/door/door_entrance_s_002777_6", description = "Door entrance s 002777 6" }
+map{ id = "components/door/door_entrance_s_002777_2", description = "Door entrance s 002777 2" }
+map{ id = "components/door/door_entrance_s_002777_3", description = "Door entrance s 002777 3" }
+map{ id = "components/door/door_entrance_s_002777_4", description = "Door entrance s 002777 4" }
+map{ id = "components/door/door_entrance_s_002777_1", description = "Door entrance s 002777 1" }
+map{ id = "components/door/door_entrance_s_002777_7", description = "Door entrance s 002777 7" }
 map{ id = "components/filler/filler_000001_7", description = "F Pike moves out of mask Filler 000001 7" }
 map{ id = "components/filler/filler_000100_7", description = "Filler 000100 7" }
 map{ id = "components/filler/filler_000400_7", description = "Filler 000400 7" }
@@ -446,7 +447,6 @@ map{ id = "components/filler/filler_000400_20b", description = "Filler 000400 20
 map{ id = "components/filler/filler_000100_20b", description = "Filler 000100 20b" }
 map{ id = "components/treasure_open/treasure_open_202777_1", description = "Treasure open 202777 1" }
 map{ id = "components/treasure_open/treasure_open_000777_5", description = "Treasure open 000777 5" }
-map{ id = "components/door/door_entrance_s_002777_7", description = "Door entrance s 002777 7" }
 map{ id = "dev/sandbox", description = "Sandbox" }
 map{ id = "components/obstacle_puzzle/obstacle_puzzle_sw_210777_1", description = "Puzzle 210777 1" }
 map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000777_5", description = "Puzzle 000777 5" }
