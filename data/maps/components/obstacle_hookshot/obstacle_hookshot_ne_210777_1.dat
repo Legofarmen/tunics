@@ -192,7 +192,7 @@ tile{
   x = 88,
   y = 48,
   width = 16,
-  height = 80,
+  height = 88,
   pattern = "wall_hole.3",
 }
 

@@ -36,9 +36,9 @@ tile{
 
 tile{
   layer = 1,
-  x = 208,
+  x = 192,
   y = 192,
-  width = 64,
+  width = 80,
   height = 16,
   pattern = "wall_hole.2",
 }
@@ -65,81 +65,9 @@ tile{
   layer = 1,
   x = 192,
   y = 32,
-  width = 16,
-  height = 16,
-  pattern = "wall_hole.corner.1",
-}
-
-tile{
-  layer = 1,
-  x = 192,
-  y = 48,
-  width = 16,
-  height = 32,
-  pattern = "wall_hole.3",
-}
-
-tile{
-  layer = 1,
-  x = 208,
-  y = 32,
-  width = 64,
+  width = 80,
   height = 16,
   pattern = "wall_hole.1",
-}
-
-tile{
-  layer = 1,
-  x = 112,
-  y = 48,
-  width = 16,
-  height = 32,
-  pattern = "wall_hole.4",
-}
-
-tile{
-  layer = 1,
-  x = 112,
-  y = 32,
-  width = 16,
-  height = 16,
-  pattern = "wall_hole.corner.2",
-}
-
-tile{
-  layer = 1,
-  x = 192,
-  y = 144,
-  width = 16,
-  height = 16,
-  pattern = "wall_hole.corner_reverse.3",
-}
-
-tile{
-  layer = 1,
-  x = 112,
-  y = 80,
-  width = 16,
-  height = 16,
-  pattern = "wall_hole.corner_reverse.2",
-}
-
-tile{
-  layer = 1,
-  x = 128,
-  y = 80,
-  width = 64,
-  height = 16,
-  pattern = "wall_hole.1",
-}
-
-tile{
-  layer = 1,
-  x = 192,
-  y = 80,
-  width = 16,
-  height = 16,
-  pattern = "wall_hole.corner_reverse.1",
 }
 
 tile{
@@ -153,54 +81,9 @@ tile{
 
 tile{
   layer = 1,
-  x = 192,
-  y = 192,
-  width = 16,
-  height = 16,
-  pattern = "wall_hole.corner.3",
-}
-
-tile{
-  layer = 1,
-  x = 192,
-  y = 160,
-  width = 16,
-  height = 32,
-  pattern = "wall_hole.3",
-}
-
-tile{
-  layer = 1,
-  x = 128,
-  y = 144,
-  width = 64,
-  height = 16,
-  pattern = "wall_hole.2",
-}
-
-tile{
-  layer = 1,
-  x = 112,
-  y = 144,
-  width = 16,
-  height = 16,
-  pattern = "wall_hole.corner_reverse.4",
-}
-
-tile{
-  layer = 1,
-  x = 112,
-  y = 160,
-  width = 16,
-  height = 32,
-  pattern = "wall_hole.4",
-}
-
-tile{
-  layer = 1,
   x = 48,
   y = 32,
-  width = 64,
+  width = 80,
   height = 16,
   pattern = "wall_hole.1",
 }
@@ -218,18 +101,9 @@ tile{
   layer = 1,
   x = 48,
   y = 192,
-  width = 64,
+  width = 80,
   height = 16,
   pattern = "wall_hole.2",
-}
-
-tile{
-  layer = 1,
-  x = 112,
-  y = 192,
-  width = 16,
-  height = 16,
-  pattern = "wall_hole.corner.4",
 }
 
 tile{
@@ -253,7 +127,7 @@ tile{
 tile{
   layer = 1,
   x = 64,
-  y = 104,
+  y = 96,
   width = 32,
   height = 16,
   pattern = "wall_hole.1",
@@ -262,7 +136,7 @@ tile{
 tile{
   layer = 1,
   x = 64,
-  y = 168,
+  y = 160,
   width = 32,
   height = 16,
   pattern = "wall_hole.1",
@@ -271,7 +145,7 @@ tile{
 tile{
   layer = 1,
   x = 224,
-  y = 104,
+  y = 96,
   width = 32,
   height = 16,
   pattern = "wall_hole.1",
@@ -280,7 +154,7 @@ tile{
 tile{
   layer = 1,
   x = 224,
-  y = 168,
+  y = 160,
   width = 32,
   height = 16,
   pattern = "wall_hole.1",
@@ -325,7 +199,7 @@ tile{
 tile{
   layer = 1,
   x = 64,
-  y = 72,
+  y = 64,
   width = 32,
   height = 32,
   pattern = "statue.1",
@@ -334,7 +208,7 @@ tile{
 tile{
   layer = 1,
   x = 64,
-  y = 136,
+  y = 128,
   width = 32,
   height = 32,
   pattern = "statue.1",
@@ -343,7 +217,7 @@ tile{
 tile{
   layer = 1,
   x = 224,
-  y = 72,
+  y = 64,
   width = 32,
   height = 32,
   pattern = "statue.1",
@@ -352,7 +226,7 @@ tile{
 tile{
   layer = 1,
   x = 224,
-  y = 136,
+  y = 128,
   width = 32,
   height = 32,
   pattern = "statue.1",
@@ -392,6 +266,96 @@ tile{
   width = 32,
   height = 24,
   pattern = "wall_statue.1.2",
+}
+
+tile{
+  layer = 1,
+  x = 120,
+  y = 152,
+  width = 8,
+  height = 8,
+  pattern = "hole.corner_reverse.4",
+}
+
+tile{
+  layer = 1,
+  x = 192,
+  y = 152,
+  width = 8,
+  height = 8,
+  pattern = "hole.corner_reverse.3",
+}
+
+tile{
+  layer = 1,
+  x = 192,
+  y = 80,
+  width = 8,
+  height = 8,
+  pattern = "hole.corner_reverse.1",
+}
+
+tile{
+  layer = 1,
+  x = 120,
+  y = 80,
+  width = 8,
+  height = 8,
+  pattern = "hole.corner_reverse.2",
+}
+
+tile{
+  layer = 1,
+  x = 128,
+  y = 80,
+  width = 64,
+  height = 8,
+  pattern = "hole.1",
+}
+
+tile{
+  layer = 1,
+  x = 128,
+  y = 152,
+  width = 64,
+  height = 8,
+  pattern = "hole.2",
+}
+
+tile{
+  layer = 1,
+  x = 192,
+  y = 160,
+  width = 8,
+  height = 48,
+  pattern = "hole.3",
+}
+
+tile{
+  layer = 1,
+  x = 192,
+  y = 32,
+  width = 8,
+  height = 48,
+  pattern = "hole.3",
+}
+
+tile{
+  layer = 1,
+  x = 120,
+  y = 32,
+  width = 8,
+  height = 48,
+  pattern = "hole.4",
+}
+
+tile{
+  layer = 1,
+  x = 120,
+  y = 160,
+  width = 8,
+  height = 48,
+  pattern = "hole.4",
 }
 
 dynamic_tile{
