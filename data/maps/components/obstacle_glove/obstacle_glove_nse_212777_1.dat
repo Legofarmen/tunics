@@ -259,6 +259,24 @@ tile{
   pattern = "wall.1",
 }
 
+tile{
+  layer = 1,
+  x = 232,
+  y = 56,
+  width = 32,
+  height = 32,
+  pattern = "statue.1",
+}
+
+tile{
+  layer = 1,
+  x = 232,
+  y = 152,
+  width = 32,
+  height = 32,
+  pattern = "statue.1",
+}
+
 dynamic_tile{
   layer = 1,
   x = 80,
@@ -278,17 +296,6 @@ dynamic_tile{
   height = 32,
   name = "treasure_obstacle_canvas_2",
   pattern = "floor_small.2",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 56,
-  y = 88,
-  width = 16,
-  height = 16,
-  name = "stone_2",
-  pattern = "placeholder_stone",
   enabled_at_start = true,
 }
 
@@ -338,17 +345,6 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 40,
-  y = 152,
-  width = 16,
-  height = 16,
-  name = "stone_9",
-  pattern = "placeholder_stone",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
   x = 88,
   y = 40,
   width = 32,
@@ -371,8 +367,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 56,
-  y = 136,
+  x = 40,
+  y = 152,
   width = 16,
   height = 16,
   name = "stone_4",
@@ -387,6 +383,28 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "stone_6",
+  pattern = "placeholder_stone",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 56,
+  y = 88,
+  width = 16,
+  height = 16,
+  name = "stone_2",
+  pattern = "placeholder_stone",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 56,
+  y = 136,
+  width = 16,
+  height = 16,
+  name = "stone_7",
   pattern = "placeholder_stone",
   enabled_at_start = true,
 }

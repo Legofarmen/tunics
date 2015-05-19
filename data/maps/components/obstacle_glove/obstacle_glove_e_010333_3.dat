@@ -9,15 +9,6 @@ properties{
 
 tile{
   layer = 1,
-  x = 120,
-  y = 168,
-  width = 16,
-  height = 16,
-  pattern = "wall_diag.border.3",
-}
-
-tile{
-  layer = 1,
   x = 184,
   y = 168,
   width = 16,
@@ -32,15 +23,6 @@ tile{
   width = 8,
   height = 32,
   pattern = "wall_border.4",
-}
-
-tile{
-  layer = 1,
-  x = 128,
-  y = 176,
-  width = 8,
-  height = 32,
-  pattern = "wall_border.3",
 }
 
 tile{
@@ -63,24 +45,6 @@ tile{
 
 tile{
   layer = 1,
-  x = 120,
-  y = 56,
-  width = 16,
-  height = 16,
-  pattern = "wall_diag.border.1",
-}
-
-tile{
-  layer = 1,
-  x = 128,
-  y = 32,
-  width = 8,
-  height = 32,
-  pattern = "wall_border.3",
-}
-
-tile{
-  layer = 1,
   x = 216,
   y = 168,
   width = 96,
@@ -91,42 +55,6 @@ tile{
 tile{
   layer = 1,
   x = 216,
-  y = 8,
-  width = 96,
-  height = 64,
-  pattern = "ceiling",
-}
-
-tile{
-  layer = 1,
-  x = 88,
-  y = 88,
-  width = 16,
-  height = 16,
-  pattern = "wall_diag.border.1",
-}
-
-tile{
-  layer = 1,
-  x = 32,
-  y = 96,
-  width = 64,
-  height = 8,
-  pattern = "wall_border.1",
-}
-
-tile{
-  layer = 1,
-  x = 8,
-  y = 168,
-  width = 96,
-  height = 64,
-  pattern = "ceiling",
-}
-
-tile{
-  layer = 1,
-  x = 8,
   y = 8,
   width = 96,
   height = 64,
@@ -180,47 +108,11 @@ tile{
 
 tile{
   layer = 1,
-  x = 104,
-  y = 176,
-  width = 24,
-  height = 48,
-  pattern = "wall.3",
-}
-
-tile{
-  layer = 1,
-  x = 88,
-  y = 136,
-  width = 16,
-  height = 16,
-  pattern = "wall_diag.border.3",
-}
-
-tile{
-  layer = 1,
-  x = 32,
-  y = 144,
-  width = 64,
-  height = 24,
-  pattern = "wall.2",
-}
-
-tile{
-  layer = 1,
   x = 192,
   y = 176,
   width = 24,
   height = 32,
   pattern = "wall.4",
-}
-
-tile{
-  layer = 1,
-  x = 104,
-  y = 32,
-  width = 24,
-  height = 32,
-  pattern = "wall.3",
 }
 
 tile{
@@ -302,168 +194,6 @@ tile{
   width = 24,
   height = 24,
   pattern = "wall.corner.4",
-}
-
-tile{
-  layer = 1,
-  x = 104,
-  y = 208,
-  width = 24,
-  height = 24,
-  pattern = "wall.corner.3",
-}
-
-tile{
-  layer = 1,
-  x = 112,
-  y = 160,
-  width = 16,
-  height = 16,
-  pattern = "wall_diag.border.3",
-}
-
-tile{
-  layer = 1,
-  x = 104,
-  y = 152,
-  width = 16,
-  height = 16,
-  pattern = "wall_diag.border.3",
-}
-
-tile{
-  layer = 1,
-  x = 96,
-  y = 144,
-  width = 16,
-  height = 16,
-  pattern = "wall_diag.border.3",
-}
-
-tile{
-  layer = 1,
-  x = 128,
-  y = 200,
-  width = 8,
-  height = 8,
-  pattern = "wall_border.corner.3",
-}
-
-tile{
-  layer = 1,
-  x = 32,
-  y = 136,
-  width = 64,
-  height = 8,
-  pattern = "wall_border.2",
-}
-
-tile{
-  layer = 1,
-  x = 32,
-  y = 136,
-  width = 8,
-  height = 8,
-  pattern = "wall_border.corner.3",
-}
-
-tile{
-  layer = 1,
-  x = 8,
-  y = 144,
-  width = 24,
-  height = 24,
-  pattern = "wall.corner.3",
-}
-
-tile{
-  layer = 1,
-  x = 96,
-  y = 160,
-  width = 16,
-  height = 16,
-  pattern = "wall_diag.3",
-}
-
-tile{
-  layer = 1,
-  x = 32,
-  y = 72,
-  width = 64,
-  height = 24,
-  pattern = "wall.1",
-}
-
-tile{
-  layer = 1,
-  x = 8,
-  y = 72,
-  width = 24,
-  height = 24,
-  pattern = "wall.corner.1",
-}
-
-tile{
-  layer = 1,
-  x = 32,
-  y = 96,
-  width = 8,
-  height = 8,
-  pattern = "wall_border.corner.1",
-}
-
-tile{
-  layer = 1,
-  x = 96,
-  y = 80,
-  width = 16,
-  height = 16,
-  pattern = "wall_diag.border.1",
-}
-
-tile{
-  layer = 1,
-  x = 104,
-  y = 72,
-  width = 16,
-  height = 16,
-  pattern = "wall_diag.border.1",
-}
-
-tile{
-  layer = 1,
-  x = 96,
-  y = 64,
-  width = 16,
-  height = 16,
-  pattern = "wall_diag.1",
-}
-
-tile{
-  layer = 1,
-  x = 104,
-  y = 8,
-  width = 24,
-  height = 24,
-  pattern = "wall.corner.1",
-}
-
-tile{
-  layer = 1,
-  x = 128,
-  y = 32,
-  width = 8,
-  height = 8,
-  pattern = "wall_border.corner.1",
-}
-
-tile{
-  layer = 1,
-  x = 112,
-  y = 64,
-  width = 16,
-  height = 16,
-  pattern = "wall_diag.border.1",
 }
 
 tile{
@@ -567,8 +297,8 @@ tile{
 
 dynamic_tile{
   layer = 1,
-  x = 144,
-  y = 104,
+  x = 152,
+  y = 80,
   width = 32,
   height = 32,
   name = "enemy_3",
@@ -589,8 +319,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 56,
-  y = 104,
+  x = 152,
+  y = 112,
   width = 16,
   height = 16,
   name = "treasure_open_chest",
