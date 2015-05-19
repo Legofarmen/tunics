@@ -3,7 +3,7 @@ properties{
   y = 0,
   width = 320,
   height = 240,
-  tileset = "dungeon_brick_gray_1",
+  tileset = "dungeon_cave_brown_1",
   music = "same",
 }
 
@@ -164,7 +164,7 @@ tile{
   layer = 1,
   x = 48,
   y = 192,
-  width = 80,
+  width = 88,
   height = 16,
   pattern = "wall_hole.2",
 }
@@ -291,7 +291,7 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 144,
+  x = 136,
   y = 104,
   width = 32,
   height = 32,
@@ -303,7 +303,7 @@ dynamic_tile{
 dynamic_tile{
   layer = 1,
   x = 152,
-  y = 152,
+  y = 144,
   width = 16,
   height = 16,
   name = "stone_5",

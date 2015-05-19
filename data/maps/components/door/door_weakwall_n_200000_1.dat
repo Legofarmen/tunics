@@ -85,6 +85,15 @@ dynamic_tile{
   enabled_at_start = true,
 }
 
+tile{
+  layer = 2,
+  x = 120,
+  y = 8,
+  width = 80,
+  height = 8,
+  pattern = "door_cache.1",
+}
+
 dynamic_tile{
   layer = 2,
   x = 144,

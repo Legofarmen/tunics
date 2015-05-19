@@ -108,15 +108,6 @@ tile{
 
 tile{
   layer = 1,
-  x = 88,
-  y = 32,
-  width = 16,
-  height = 16,
-  pattern = "wall_hole.corner.2",
-}
-
-tile{
-  layer = 1,
   x = 104,
   y = 48,
   width = 112,
@@ -126,38 +117,11 @@ tile{
 
 tile{
   layer = 1,
-  x = 88,
-  y = 48,
-  width = 16,
-  height = 16,
-  pattern = "wall_hole.corner_reverse.2",
-}
-
-tile{
-  layer = 1,
   x = 216,
-  y = 48,
-  width = 16,
-  height = 16,
-  pattern = "wall_hole.corner_reverse.1",
-}
-
-tile{
-  layer = 1,
-  x = 232,
   y = 32,
-  width = 24,
+  width = 40,
   height = 16,
   pattern = "wall_hole.1",
-}
-
-tile{
-  layer = 1,
-  x = 216,
-  y = 32,
-  width = 16,
-  height = 16,
-  pattern = "wall_hole.corner.1",
 }
 
 tile{
@@ -218,7 +182,7 @@ tile{
   layer = 1,
   x = 64,
   y = 32,
-  width = 24,
+  width = 40,
   height = 16,
   pattern = "wall_hole.1",
 }

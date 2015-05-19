@@ -16,6 +16,32 @@ local alignments = {
     ["wall_diag.border.4"] = {{ x=0, y=0, }, { x=8, y=8, }},
 }
 
+local high_layer_tiles = {
+    ["ceiling"] = true,
+    ["door_boss.1.pillar.1.top"] = true,
+    ["door_boss.1.pillar.2.top"] = true,
+    ["door_cache.1"] = true,
+    ["door_cache.2"] = true,
+    ["door_cache.3"] = true,
+    ["door_cache.4"] = true,
+    ["door_top.blast.1"] = true,
+    ["door_top.blast.2"] = true,
+    ["door_top.blast.3"] = true,
+    ["door_top.blast.4"] = true,
+    ["door_top.closed.1"] = true,
+    ["door_top.closed.2"] = true,
+    ["door_top.closed.3"] = true,
+    ["door_top.closed.4"] = true,
+    ["door_top.low.1"] = true,
+    ["door_top.low.2"] = true,
+    ["door_top.low.3"] = true,
+    ["door_top.low.4"] = true,
+    ["entrance_pillar.1.1.top"] = true,
+    ["entrance_pillar.1.2.top"] = true,
+    ["pillar.top"] = true,
+    ["torch_big.top"] = true,
+}
+
 local function rect_string(rect)
     zentropy.assert(rect)
     return string.format("(%3d;%3d)-(%3d;%3d)", rect.x, rect.y, rect.x + rect.width, rect.y + rect.height)
@@ -47,10 +73,16 @@ local function validate_entity_layer(fname, description, properties)
     if properties.layer == 0 then
         zentropy.debug(string.format("%s:  in low layer in component: %s", description, fname))
     end
+    if properties.layer == 2 and not high_layer_tiles[properties.pattern] and properties.x ~= 0 and properties.x + properties.width ~= 320 then
+        zentropy.debug(string.format("%s:  in high layer in component: %s", description, fname))
+    end
 end
 
 local function validate_entity_mask(fname, description, properties, sections)
     local entire_room = { x = 0, y = 0, width = 320, height = 240, }
+    if properties.pattern and properties.pattern:find('^door_cache.') then
+        return
+    end
     for name, rect in pairs(sections) do
         if intersects(rect, properties) then
             zentropy.debug(string.format("%s:  intersects with %s in component: %s", description, name, fname))
@@ -345,15 +377,15 @@ local function get_patterns(tilesets)
     return tileset_names, patterns
 end
 
-local function validate_obstacle_counts(fname, description, counts)
+local function validate_obstacle_counts(fname, counts)
     local treasure_open_chest = counts.treasure_open_chest or 0
     local treasure_obstacle_chest = counts.treasure_obstacle_chest or 0
 
     if treasure_open_chest ~= 1 then
-        zentropy.debug(string.format("%s:  expected 1 treasure_open_chest, got %d in component: %s", description, treasure_open_chest, fname))
+        zentropy.debug(string.format("obstacle:  expected 1 treasure_open_chest, got %d in component: %s", treasure_open_chest, fname))
     end
     if treasure_obstacle_chest ~= 1 then
-        zentropy.debug(string.format("%s:  expected 1 treasure_obstacle_chest, got %d in component: %s", description, treasure_obstacle_chest, fname))
+        zentropy.debug(string.format("obstacle:  expected 1 treasure_obstacle_chest, got %d in component: %s", treasure_obstacle_chest, fname))
     end
 end
 
@@ -385,7 +417,7 @@ local function validate_projectdb_components()
             for i, obstacle in ipairs(obstacles) do
                 local fname = string.format(fmt, obstacle.id)
                 local counts = validate_map(fname, obstacle.mask, tilesets, patterns)
-                validate_obstacle_counts(fname, obstacle_name, counts)
+                validate_obstacle_counts(fname, counts)
             end
         end
     end

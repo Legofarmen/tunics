@@ -3,15 +3,24 @@ properties{
   y = 0,
   width = 320,
   height = 240,
-  tileset = "dungeon_brick_gray_1",
+  tileset = "dungeon_cave_brown_1",
   music = "same",
+}
+
+tile{
+  layer = 1,
+  x = 184,
+  y = 8,
+  width = 128,
+  height = 32,
+  pattern = "ceiling",
 }
 
 tile{
   layer = 1,
   x = 8,
   y = 8,
-  width = 304,
+  width = 128,
   height = 32,
   pattern = "ceiling",
 }

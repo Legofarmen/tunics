@@ -234,6 +234,15 @@ door{
 
 tile{
   layer = 2,
+  x = 136,
+  y = 224,
+  width = 48,
+  height = 8,
+  pattern = "door_cache.2",
+}
+
+tile{
+  layer = 2,
   x = 120,
   y = 224,
   width = 24,
