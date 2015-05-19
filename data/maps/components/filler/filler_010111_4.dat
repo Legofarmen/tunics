@@ -8,33 +8,6 @@ properties{
 }
 
 tile{
-  layer = 0,
-  x = 280,
-  y = 200,
-  width = 8,
-  height = 8,
-  pattern = "wall_border.corner.4",
-}
-
-tile{
-  layer = 0,
-  x = 280,
-  y = 32,
-  width = 8,
-  height = 8,
-  pattern = "wall_border.corner.2",
-}
-
-tile{
-  layer = 0,
-  x = 280,
-  y = 40,
-  width = 8,
-  height = 160,
-  pattern = "wall_border.4",
-}
-
-tile{
   layer = 1,
   x = 192,
   y = 32,

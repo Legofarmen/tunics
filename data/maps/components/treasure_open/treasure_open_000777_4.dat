@@ -12,7 +12,7 @@ tile{
   x = 104,
   y = 56,
   width = 112,
-  height = 64,
+  height = 48,
   pattern = "floor_border.2",
 }
 
@@ -21,7 +21,7 @@ tile{
   x = 112,
   y = 64,
   width = 96,
-  height = 48,
+  height = 32,
   pattern = "floor_small.2",
 }
 
@@ -226,7 +226,7 @@ tile{
 block{
   layer = 1,
   x = 128,
-  y = 93,
+  y = 85,
   direction = -1,
   sprite = "entities/statue",
   pushable = false,
@@ -237,7 +237,7 @@ block{
 block{
   layer = 1,
   x = 192,
-  y = 93,
+  y = 85,
   direction = -1,
   sprite = "entities/statue",
   pushable = false,
@@ -248,7 +248,7 @@ block{
 dynamic_tile{
   layer = 1,
   x = 152,
-  y = 80,
+  y = 72,
   width = 16,
   height = 16,
   name = "chest",
@@ -259,7 +259,7 @@ dynamic_tile{
 dynamic_tile{
   layer = 1,
   x = 112,
-  y = 128,
+  y = 112,
   width = 32,
   height = 32,
   name = "enemy_1",
@@ -270,7 +270,7 @@ dynamic_tile{
 dynamic_tile{
   layer = 1,
   x = 176,
-  y = 128,
+  y = 112,
   width = 32,
   height = 32,
   name = "enemy_2",

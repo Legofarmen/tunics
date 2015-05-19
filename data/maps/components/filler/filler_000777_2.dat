@@ -19,9 +19,9 @@ tile{
 tile{
   layer = 1,
   x = 248,
-  y = 88,
+  y = 120,
   width = 16,
-  height = 96,
+  height = 64,
   pattern = "block",
 }
 
@@ -55,9 +55,9 @@ tile{
 tile{
   layer = 1,
   x = 72,
-  y = 72,
+  y = 88,
   width = 16,
-  height = 64,
+  height = 48,
   pattern = "block",
 }
 

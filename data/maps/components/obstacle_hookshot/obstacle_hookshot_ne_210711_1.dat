@@ -196,15 +196,6 @@ tile{
   pattern = "hole.2",
 }
 
-tile{
-  layer = 1,
-  x = 144,
-  y = 152,
-  width = 8,
-  height = 8,
-  pattern = "hole.2",
-}
-
 dynamic_tile{
   layer = 1,
   x = 248,

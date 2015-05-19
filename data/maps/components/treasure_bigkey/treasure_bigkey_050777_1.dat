@@ -1,0 +1,389 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  tileset = "dungeon_brick_blue_1",
+  music = "same",
+}
+
+tile{
+  layer = 1,
+  x = 64,
+  y = 48,
+  width = 8,
+  height = 160,
+  pattern = "wall_border.3",
+}
+
+tile{
+  layer = 1,
+  x = 248,
+  y = 48,
+  width = 8,
+  height = 160,
+  pattern = "wall_border.4",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 32,
+  width = 24,
+  height = 176,
+  pattern = "wall.3",
+}
+
+tile{
+  layer = 1,
+  x = 256,
+  y = 32,
+  width = 24,
+  height = 176,
+  pattern = "wall.4",
+}
+
+tile{
+  layer = 1,
+  x = 128,
+  y = 88,
+  width = 64,
+  height = 56,
+  pattern = "stage_big_fill",
+}
+
+tile{
+  layer = 1,
+  x = 104,
+  y = 72,
+  width = 16,
+  height = 16,
+  pattern = "stage_big.corner.1",
+}
+
+tile{
+  layer = 1,
+  x = 104,
+  y = 152,
+  width = 16,
+  height = 16,
+  pattern = "stage_big.corner.3",
+}
+
+tile{
+  layer = 1,
+  x = 200,
+  y = 152,
+  width = 16,
+  height = 16,
+  pattern = "stage_big.corner.4",
+}
+
+tile{
+  layer = 1,
+  x = 200,
+  y = 72,
+  width = 16,
+  height = 16,
+  pattern = "stage_big.corner.2",
+}
+
+tile{
+  layer = 1,
+  x = 120,
+  y = 88,
+  width = 8,
+  height = 8,
+  pattern = "stage_big_fill.corner.1",
+}
+
+tile{
+  layer = 1,
+  x = 128,
+  y = 88,
+  width = 72,
+  height = 8,
+  pattern = "stage_big_fill.edge.1",
+}
+
+tile{
+  layer = 1,
+  x = 192,
+  y = 88,
+  width = 8,
+  height = 8,
+  pattern = "stage_big_fill.corner.2",
+}
+
+tile{
+  layer = 1,
+  x = 192,
+  y = 144,
+  width = 8,
+  height = 8,
+  pattern = "stage_big_fill.corner.4",
+}
+
+tile{
+  layer = 1,
+  x = 120,
+  y = 144,
+  width = 8,
+  height = 8,
+  pattern = "stage_big_fill.corner.3",
+}
+
+tile{
+  layer = 1,
+  x = 128,
+  y = 144,
+  width = 64,
+  height = 8,
+  pattern = "stage_big_fill.edge.3",
+}
+
+tile{
+  layer = 1,
+  x = 120,
+  y = 96,
+  width = 8,
+  height = 48,
+  pattern = "stage_big_fill.edge.4",
+}
+
+tile{
+  layer = 1,
+  x = 192,
+  y = 96,
+  width = 8,
+  height = 48,
+  pattern = "stage_big_fill.edge.2",
+}
+
+tile{
+  layer = 1,
+  x = 200,
+  y = 88,
+  width = 16,
+  height = 64,
+  pattern = "stage_big.4",
+}
+
+tile{
+  layer = 1,
+  x = 104,
+  y = 88,
+  width = 16,
+  height = 64,
+  pattern = "stage_big.3",
+}
+
+tile{
+  layer = 1,
+  x = 120,
+  y = 72,
+  width = 80,
+  height = 16,
+  pattern = "stage_big.1",
+}
+
+tile{
+  layer = 1,
+  x = 112,
+  y = 152,
+  width = 16,
+  height = 16,
+  pattern = "stage_big.2",
+}
+
+tile{
+  layer = 1,
+  x = 192,
+  y = 152,
+  width = 8,
+  height = 16,
+  pattern = "stage_big.2",
+}
+
+tile{
+  layer = 1,
+  x = 128,
+  y = 152,
+  width = 8,
+  height = 16,
+  pattern = "stage_big.end.2",
+}
+
+tile{
+  layer = 1,
+  x = 184,
+  y = 152,
+  width = 8,
+  height = 16,
+  pattern = "stage_big.end.1",
+}
+
+tile{
+  layer = 1,
+  x = 128,
+  y = 168,
+  width = 8,
+  height = 8,
+  pattern = "stage_big.steps_border.1",
+}
+
+tile{
+  layer = 1,
+  x = 184,
+  y = 168,
+  width = 8,
+  height = 8,
+  pattern = "stage_big.steps_border.2",
+}
+
+tile{
+  layer = 1,
+  x = 136,
+  y = 152,
+  width = 48,
+  height = 24,
+  pattern = "stage_big.steps",
+}
+
+tile{
+  layer = 1,
+  x = 64,
+  y = 200,
+  width = 8,
+  height = 8,
+  pattern = "wall_border.corner.3",
+}
+
+tile{
+  layer = 1,
+  x = 248,
+  y = 200,
+  width = 8,
+  height = 8,
+  pattern = "wall_border.corner.4",
+}
+
+tile{
+  layer = 1,
+  x = 248,
+  y = 40,
+  width = 8,
+  height = 8,
+  pattern = "wall_border.corner.2",
+}
+
+tile{
+  layer = 1,
+  x = 48,
+  y = 56,
+  width = 16,
+  height = 32,
+  pattern = "wall_torch.3",
+}
+
+tile{
+  layer = 1,
+  x = 48,
+  y = 152,
+  width = 16,
+  height = 32,
+  pattern = "wall_torch.3",
+}
+
+tile{
+  layer = 1,
+  x = 256,
+  y = 152,
+  width = 16,
+  height = 32,
+  pattern = "wall_torch.4",
+}
+
+tile{
+  layer = 1,
+  x = 256,
+  y = 56,
+  width = 16,
+  height = 32,
+  pattern = "wall_torch.4",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 8,
+  width = 24,
+  height = 24,
+  pattern = "wall.corner.1",
+}
+
+tile{
+  layer = 1,
+  x = 256,
+  y = 8,
+  width = 24,
+  height = 24,
+  pattern = "wall.corner.2",
+}
+
+tile{
+  layer = 1,
+  x = 256,
+  y = 208,
+  width = 24,
+  height = 24,
+  pattern = "wall.corner.4",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 208,
+  width = 24,
+  height = 24,
+  pattern = "wall.corner.3",
+}
+
+tile{
+  layer = 1,
+  x = 64,
+  y = 40,
+  width = 8,
+  height = 8,
+  pattern = "wall_border.corner.1",
+}
+
+tile{
+  layer = 1,
+  x = 8,
+  y = 8,
+  width = 32,
+  height = 224,
+  pattern = "ceiling",
+}
+
+tile{
+  layer = 1,
+  x = 280,
+  y = 8,
+  width = 32,
+  height = 224,
+  pattern = "ceiling",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 144,
+  y = 104,
+  width = 32,
+  height = 24,
+  name = "chest",
+  pattern = "placeholder_bigchest",
+  enabled_at_start = true,
+}
+

@@ -10,18 +10,18 @@ properties{
 tile{
   layer = 1,
   x = 128,
-  y = 88,
+  y = 96,
   width = 64,
-  height = 64,
+  height = 48,
   pattern = "floor_border.2",
 }
 
 tile{
   layer = 1,
   x = 136,
-  y = 96,
+  y = 104,
   width = 48,
-  height = 48,
+  height = 32,
   pattern = "floor_small.2",
 }
 
