@@ -859,7 +859,7 @@ dynamic_tile{
   y = 96,
   width = 48,
   height = 48,
-  name = "treasure_obstacle_canvas2",
+  name = "treasure_obstacle_canvas_2",
   pattern = "floor_border.2",
   enabled_at_start = true,
 }
@@ -870,7 +870,7 @@ dynamic_tile{
   y = 96,
   width = 48,
   height = 48,
-  name = "treasure_open_canvas2",
+  name = "treasure_open_canvas_2",
   pattern = "floor_border.2",
   enabled_at_start = true,
 }
@@ -881,7 +881,7 @@ dynamic_tile{
   y = 104,
   width = 32,
   height = 32,
-  name = "treasure_open_canvas1",
+  name = "treasure_open_canvas_1",
   pattern = "floor_small.2",
   enabled_at_start = true,
 }
@@ -892,7 +892,7 @@ dynamic_tile{
   y = 104,
   width = 32,
   height = 32,
-  name = "treasure_obstacle_canvas1",
+  name = "treasure_obstacle_canvas_1",
   pattern = "floor_small.2",
   enabled_at_start = true,
 }
@@ -939,5 +939,19 @@ dynamic_tile{
   name = "enemy_2",
   pattern = "placeholder_enemy",
   enabled_at_start = true,
+}
+
+destination{
+  layer = 1,
+  x = 56,
+  y = 77,
+  direction = 3,
+}
+
+pickable{
+  layer = 1,
+  x = 72,
+  y = 77,
+  treasure_name = "hookshot",
 }
 
