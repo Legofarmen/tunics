@@ -142,6 +142,24 @@ tile{
   pattern = "wall_pillar.1.1",
 }
 
+tile{
+  layer = 1,
+  x = 104,
+  y = 32,
+  width = 16,
+  height = 64,
+  pattern = "block",
+}
+
+tile{
+  layer = 1,
+  x = 104,
+  y = 96,
+  width = 32,
+  height = 16,
+  pattern = "block",
+}
+
 switch{
   layer = 1,
   x = 0,
@@ -239,23 +257,5 @@ dynamic_tile{
   name = "pot_2",
   pattern = "floor_pot",
   enabled_at_start = true,
-}
-
-tile{
-  layer = 2,
-  x = 104,
-  y = 96,
-  width = 32,
-  height = 16,
-  pattern = "block",
-}
-
-tile{
-  layer = 2,
-  x = 104,
-  y = 32,
-  width = 16,
-  height = 64,
-  pattern = "block",
 }
 
