@@ -256,7 +256,21 @@ local function validate_map(fname, mask, tilesets, patterns)
         validate_entity_mask(fname, description, properties, sections)
     end
     function mt.enemy(properties)
-        local description = string.format("enemy         %s breed=%s", coord_string(properties), properties.breed)
+        local description = string.format("enemy         %s", coord_string(properties))
+        if properties.name then
+            description = description .. string.format(" name=%s", properties.name)
+        else
+            description = description .. string.format(" breed=%s", properties.breed)
+        end
+    end
+    function mt.switch(properties)
+        local description = string.format("switch        %s", coord_string(properties))
+        if properties.name then
+            description = description .. string.format(" name=%s", properties.name)
+        end
+        if properties.name == 'switch' then
+            placeholder_counts.switch = (placeholder_counts.switch or 0) + 1
+        end
     end
     function mt.block(properties) end
     function mt.bomb(properties) end
@@ -274,7 +288,6 @@ local function validate_map(fname, mask, tilesets, patterns)
     function mt.shop_treasure(properties) end
     function mt.stairs(properties) end
     function mt.stream(properties) end
-    function mt.switch(properties) end
     function mt.teletransporter(properties) end
     setfenv(datf, mt)()
     return placeholder_counts
@@ -332,25 +345,15 @@ local function get_patterns(tilesets)
     return tileset_names, patterns
 end
 
-local count_validators = {}
-
-function count_validators.puzzle(fname, counts)
-    local treasure_open_chest = counts.treasure_open_chest or 0
-
-    if treasure_open_chest ~= 1 then
-        zentropy.debug(string.format("obstacle_puzzle:  expected 1 treasure_open_chest, got %d in component: %s", treasure_open_chest, fname))
-    end
-end
-
-function count_validators.hookshot(fname, counts)
+local function validate_obstacle_counts(fname, description, counts)
     local treasure_open_chest = counts.treasure_open_chest or 0
     local treasure_obstacle_chest = counts.treasure_obstacle_chest or 0
 
     if treasure_open_chest ~= 1 then
-        zentropy.debug(string.format("obstacle_puzzle:  expected 1 treasure_open_chest, got %d in component: %s", treasure_open_chest, fname))
+        zentropy.debug(string.format("%s:  expected 1 treasure_open_chest, got %d in component: %s", description, treasure_open_chest, fname))
     end
     if treasure_obstacle_chest ~= 1 then
-        zentropy.debug(string.format("obstacle_hookshot:  expected 1 treasure_obstacle_chest, got %d in component: %s", treasure_open_chest, fname))
+        zentropy.debug(string.format("%s:  expected 1 treasure_obstacle_chest, got %d in component: %s", description, treasure_obstacle_chest, fname))
     end
 end
 
@@ -378,12 +381,11 @@ local function validate_projectdb_components()
         end
     end
     for obstacle_name, obstacle_data in pairs(zentropy.components.obstacles) do
-        local validate_counts = count_validators[obstacle_name] or function () return true end
         for dir, obstacles in pairs(obstacle_data) do
             for i, obstacle in ipairs(obstacles) do
                 local fname = string.format(fmt, obstacle.id)
                 local counts = validate_map(fname, obstacle.mask, tilesets, patterns)
-                validate_counts(fname, counts)
+                validate_obstacle_counts(fname, obstacle_name, counts)
             end
         end
     end
