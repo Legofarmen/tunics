@@ -342,6 +342,18 @@ function count_validators.puzzle(fname, counts)
     end
 end
 
+function count_validators.hookshot(fname, counts)
+    local treasure_open_chest = counts.treasure_open_chest or 0
+    local treasure_obstacle_chest = counts.treasure_obstacle_chest or 0
+
+    if treasure_open_chest ~= 1 then
+        zentropy.debug(string.format("obstacle_puzzle:  expected 1 treasure_open_chest, got %d in component: %s", treasure_open_chest, fname))
+    end
+    if treasure_obstacle_chest ~= 1 then
+        zentropy.debug(string.format("obstacle_hookshot:  expected 1 treasure_obstacle_chest, got %d in component: %s", treasure_open_chest, fname))
+    end
+end
+
 local function validate_projectdb_components()
     local tilesets, patterns = get_patterns(zentropy.tilesets)
     --[[
