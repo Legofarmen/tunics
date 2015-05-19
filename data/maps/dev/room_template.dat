@@ -48,7 +48,7 @@ tile{
   x = 136,
   y = 136,
   width = 48,
-  height = 64,
+  height = 80,
   pattern = "floor_low.17",
 }
 
@@ -65,7 +65,7 @@ tile{
   layer = 0,
   x = 184,
   y = 104,
-  width = 96,
+  width = 112,
   height = 32,
   pattern = "floor_low.17",
 }
