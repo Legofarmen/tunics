@@ -194,6 +194,28 @@ local function validate_entity_alignment(fname, description, properties)
     end
 end
 
+local function mark_pike_tile(properties, pikes)
+    if properties.pattern == 'pike' then
+        local x, y = properties.x, properties.y
+        pikes[y] = pikes[y] or {}
+        pikes[y][x] = pikes[y][x] or {
+            pike = {},
+            wall = {},
+        }
+        table.insert(pikes[y][x].pike, properties)
+    end
+end
+
+local function mark_pike_wall(properties, pikes)
+    local x, y = properties.x, properties.y
+    pikes[y] = pikes[y] or {}
+    pikes[y][x] = pikes[y][x] or {
+        pike = {},
+        wall = {},
+    }
+    table.insert(pikes[y][x].wall, properties)
+end
+
 local function validate_map(fname, mask, tilesets, patterns)
     local all_sections = {
         { x = 176, y = 136, width = 144, height = 104, },
@@ -203,7 +225,7 @@ local function validate_map(fname, mask, tilesets, patterns)
         { x = 144, y = 104, width =  32, height =  32, },
         { x =  32, y = 104, width = 108, height =  32, },
         { x = 176, y =   0, width = 144, height = 104, },
-        { x = 144, y =  32, width =  32, height = 72, },
+        { x = 144, y =  32, width =  32, height =  72, },
         { x =   0, y =   0, width = 144, height = 104, },
     }
     local i = 1
@@ -215,6 +237,7 @@ local function validate_map(fname, mask, tilesets, patterns)
         end
     end
     local placeholder_counts = {}
+    local pikes = {}
 
     local datf = sol.main.load_file(fname)
     if not datf then
@@ -251,6 +274,7 @@ local function validate_map(fname, mask, tilesets, patterns)
         validate_entity_mask(fname, description, properties, sections)
         validate_entity_placeholder(fname, description, properties, placeholder_counts)
         validate_entity_alignment(fname, description, properties)
+        mark_pike_tile(properties, pikes)
     end
     function mt.jumper(properties)
         local description = string.format("jumper        %s", rect_string(properties))
@@ -278,6 +302,7 @@ local function validate_map(fname, mask, tilesets, patterns)
         validate_entity_mask(fname, description, properties, sections)
         validate_entity_placeholder(fname, description, properties, placeholder_counts)
         validate_entity_alignment(fname, description, properties)
+        mark_pike_tile(properties, pikes)
     end
     function mt.wall(properties)
         local description = string.format("wall          %s", rect_string(properties))
@@ -286,6 +311,7 @@ local function validate_map(fname, mask, tilesets, patterns)
         end
         validate_entity_layer(fname, description, properties)
         validate_entity_mask(fname, description, properties, sections)
+        mark_pike_wall(properties, pikes)
     end
     function mt.enemy(properties)
         local description = string.format("enemy         %s", coord_string(properties))
@@ -322,7 +348,7 @@ local function validate_map(fname, mask, tilesets, patterns)
     function mt.stream(properties) end
     function mt.teletransporter(properties) end
     setfenv(datf, mt)()
-    return placeholder_counts
+    return placeholder_counts, pikes
 end
 
 local function read_tileset_tiles(fname)
@@ -389,6 +415,40 @@ local function validate_obstacle_counts(fname, counts)
     end
 end
 
+local function validate_pikes(fname, pikes)
+    for y, row in pairs(pikes) do
+        for x, pos in pairs(row) do
+            local description = string.format("pike %s", coord_string{x=x, y=y})
+            pos.pike = pos.pike or {}
+            pos.wall = pos.wall or {}
+            if #pos.pike > 1 then
+                zentropy.debug(string.format("%s:  expected 1 or less pike tiles, got %d in component: %s", description, #pos.pike, fname))
+            elseif #pos.pike == 1 then
+                local description = string.format("pike %s", rect_string(pos.pike[1]))
+                if #pos.wall ~= 1 then
+                    zentropy.debug(string.format("%s:  expected 1 walls, got %d in component: %s", description, #pos.wall, fname))
+                else
+                    if pos.pike[1].width ~= pos.wall[1].width or pos.pike[1].height ~= pos.wall[1].height then
+                        zentropy.debug(string.format("%s:  pike tile %s and wall %s have different size in component: %s", description, rect_string(pos.pike[1]), rect_string(pos.wall[1]), fname))
+                    end
+                    if pos.wall[1].stops_hero then
+                        zentropy.debug(string.format("%s:  wall must not stop hero in component: %s", description, fname))
+                    end
+                    if not pos.wall[1].stops_enemies then
+                        zentropy.debug(string.format("%s:  wall must not stop enemies in component: %s", description, fname))
+                    end
+                    if not pos.wall[1].stops_blocks then
+                        zentropy.debug(string.format("%s:  wall must not stop blocks in component: %s", description, fname))
+                    end
+                    if not pos.wall[1].stops_projectiles then
+                        zentropy.debug(string.format("%s:  wall must not stop projectiles in component: %s", description, fname))
+                    end
+                end
+            end
+        end
+    end
+end
+
 local function validate_projectdb_components()
     local tilesets, patterns = get_patterns(zentropy.tilesets)
     --[[
@@ -403,26 +463,33 @@ local function validate_projectdb_components()
     for door_type, doors in pairs(zentropy.components.doors) do
         for dir_name, dir_components in pairs(doors) do
             for i, component in ipairs(dir_components) do
-                local counts = validate_map(string.format(fmt, component.id), component.mask, tilesets, patterns)
+                local fname = string.format(fmt, component.id)
+                local counts, pikes = validate_map(fname, component.mask, tilesets, patterns)
+                validate_pikes(fname, pikes)
             end
         end
     end
     for treasure_type, treasures in pairs(zentropy.components.treasures) do
-        for i, treasure in ipairs(treasures) do
-            local counts = validate_map(string.format(fmt, treasure.id), treasure.mask, tilesets, patterns)
+        for i, component in ipairs(treasures) do
+            local fname = string.format(fmt, component.id)
+            local counts, pikes = validate_map(fname, component.mask, tilesets, patterns)
+            validate_pikes(fname, pikes)
         end
     end
     for obstacle_name, obstacle_data in pairs(zentropy.components.obstacles) do
         for dir, obstacles in pairs(obstacle_data) do
             for i, obstacle in ipairs(obstacles) do
                 local fname = string.format(fmt, obstacle.id)
-                local counts = validate_map(fname, obstacle.mask, tilesets, patterns)
+                local counts, pikes = validate_map(fname, obstacle.mask, tilesets, patterns)
                 validate_obstacle_counts(fname, counts)
+                validate_pikes(fname, pikes)
             end
         end
     end
-    for k, v in pairs(zentropy.components.fillers) do
-        local counts = validate_map(string.format(fmt, v.id), v.mask, tilesets, patterns)
+    for k, component in pairs(zentropy.components.fillers) do
+        local fname = string.format(fmt, component.id)
+        local counts, pikes = validate_map(fname, component.mask, tilesets, patterns)
+        validate_pikes(fname, pikes)
     end
 end
 
