@@ -9,8 +9,8 @@ properties{
 
 tile{
   layer = 1,
-  x = 200,
-  y = 56,
+  x = 216,
+  y = 72,
   width = 16,
   height = 16,
   pattern = "torch_big.bottom",
@@ -19,7 +19,7 @@ tile{
 tile{
   layer = 1,
   x = 248,
-  y = 56,
+  y = 72,
   width = 16,
   height = 16,
   pattern = "torch_big.bottom",
@@ -27,7 +27,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 216,
+  x = 224,
   y = 8,
   width = 32,
   height = 24,
@@ -36,7 +36,7 @@ tile{
 
 dynamic_tile{
   layer = 1,
-  x = 216,
+  x = 184,
   y = 72,
   width = 32,
   height = 32,
@@ -47,8 +47,8 @@ dynamic_tile{
 
 tile{
   layer = 2,
-  x = 200,
-  y = 40,
+  x = 216,
+  y = 56,
   width = 16,
   height = 16,
   pattern = "torch_big.top",
@@ -57,7 +57,7 @@ tile{
 tile{
   layer = 2,
   x = 248,
-  y = 40,
+  y = 56,
   width = 16,
   height = 16,
   pattern = "torch_big.top",

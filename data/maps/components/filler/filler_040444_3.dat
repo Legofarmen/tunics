@@ -243,15 +243,6 @@ tile{
 
 tile{
   layer = 1,
-  x = 80,
-  y = 104,
-  width = 32,
-  height = 32,
-  pattern = "statue.2",
-}
-
-tile{
-  layer = 1,
   x = 40,
   y = 56,
   width = 16,
@@ -275,6 +266,15 @@ tile{
   width = 8,
   height = 112,
   pattern = "wall_border.3",
+}
+
+tile{
+  layer = 1,
+  x = 88,
+  y = 104,
+  width = 32,
+  height = 32,
+  pattern = "statue.1",
 }
 
 dynamic_tile{

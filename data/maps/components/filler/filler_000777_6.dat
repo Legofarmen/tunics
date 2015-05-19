@@ -9,27 +9,27 @@ properties{
 
 tile{
   layer = 1,
+  x = 96,
+  y = 168,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+tile{
+  layer = 1,
+  x = 216,
+  y = 168,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+tile{
+  layer = 1,
   x = 104,
   y = 168,
-  width = 8,
-  height = 8,
-  pattern = "barrier.1.border",
-}
-
-tile{
-  layer = 1,
-  x = 208,
-  y = 168,
-  width = 8,
-  height = 8,
-  pattern = "barrier.1.border",
-}
-
-tile{
-  layer = 1,
-  x = 112,
-  y = 168,
-  width = 96,
+  width = 112,
   height = 8,
   pattern = "barrier.1.1",
 }
@@ -63,7 +63,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 104,
+  x = 88,
   y = 128,
   width = 8,
   height = 8,
@@ -72,7 +72,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 208,
+  x = 224,
   y = 128,
   width = 8,
   height = 8,
@@ -101,16 +101,16 @@ tile{
   layer = 1,
   x = 72,
   y = 128,
-  width = 32,
+  width = 16,
   height = 8,
   pattern = "barrier.1.1",
 }
 
 tile{
   layer = 1,
-  x = 216,
+  x = 232,
   y = 128,
-  width = 32,
+  width = 16,
   height = 8,
   pattern = "barrier.1.1",
 }
@@ -126,7 +126,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 144,
+  x = 128,
   y = 56,
   width = 8,
   height = 8,
@@ -135,7 +135,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 168,
+  x = 184,
   y = 56,
   width = 8,
   height = 8,
@@ -144,7 +144,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 144,
+  x = 128,
   y = 64,
   width = 8,
   height = 48,
@@ -153,7 +153,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 168,
+  x = 184,
   y = 64,
   width = 8,
   height = 48,
@@ -162,7 +162,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 144,
+  x = 128,
   y = 112,
   width = 8,
   height = 8,
@@ -171,7 +171,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 168,
+  x = 184,
   y = 112,
   width = 8,
   height = 8,

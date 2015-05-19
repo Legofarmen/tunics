@@ -10,34 +10,25 @@ properties{
 tile{
   layer = 1,
   x = 136,
-  y = 40,
-  width = 8,
-  height = 160,
-  pattern = "floor_border.2",
-}
-
-tile{
-  layer = 1,
-  x = 176,
-  y = 40,
-  width = 8,
-  height = 160,
+  y = 32,
+  width = 48,
+  height = 176,
   pattern = "floor_border.2",
 }
 
 tile{
   layer = 1,
   x = 144,
-  y = 40,
+  y = 32,
   width = 32,
-  height = 160,
+  height = 176,
   pattern = "floor_small.2",
 }
 
 tile{
   layer = 1,
   x = 104,
-  y = 48,
+  y = 56,
   width = 16,
   height = 16,
   pattern = "barrier_big.3.border.1",
@@ -91,7 +82,7 @@ tile{
 tile{
   layer = 1,
   x = 200,
-  y = 168,
+  y = 160,
   width = 16,
   height = 24,
   pattern = "barrier_big.3.border.2",
@@ -102,7 +93,7 @@ tile{
   x = 200,
   y = 112,
   width = 16,
-  height = 56,
+  height = 48,
   pattern = "barrier_big.3.2",
 }
 
@@ -127,9 +118,9 @@ tile{
 tile{
   layer = 1,
   x = 104,
-  y = 64,
+  y = 72,
   width = 16,
-  height = 48,
+  height = 40,
   pattern = "barrier_big.3.2",
 }
 
@@ -214,10 +205,28 @@ tile{
   pattern = "barrier_big.3.2",
 }
 
+tile{
+  layer = 1,
+  x = 136,
+  y = 32,
+  width = 48,
+  height = 8,
+  pattern = "wall_border.1",
+}
+
+tile{
+  layer = 1,
+  x = 136,
+  y = 200,
+  width = 48,
+  height = 8,
+  pattern = "wall_border.2",
+}
+
 dynamic_tile{
   layer = 1,
   x = 104,
-  y = 32,
+  y = 40,
   width = 16,
   height = 16,
   name = "pot_8",
@@ -251,8 +260,8 @@ enemy{
 
 dynamic_tile{
   layer = 1,
-  x = 64,
-  y = 32,
+  x = 72,
+  y = 40,
   width = 16,
   height = 16,
   name = "pot_2",
@@ -262,8 +271,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 240,
-  y = 32,
+  x = 232,
+  y = 40,
   width = 16,
   height = 16,
   name = "pot_3",
@@ -273,8 +282,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 240,
-  y = 192,
+  x = 232,
+  y = 184,
   width = 16,
   height = 16,
   name = "pot_4",
@@ -284,8 +293,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 64,
-  y = 192,
+  x = 72,
+  y = 184,
   width = 16,
   height = 16,
   name = "pot_5",
@@ -318,7 +327,7 @@ block{
 dynamic_tile{
   layer = 1,
   x = 200,
-  y = 192,
+  y = 184,
   width = 16,
   height = 16,
   name = "pot_6",

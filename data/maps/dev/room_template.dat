@@ -421,11 +421,12 @@ tile{
   pattern = "wall.1",
 }
 
-door{
+tile{
   layer = 1,
-  x = 152,
-  y = 16,
-  direction = 1,
-  sprite = "entities/door_weak_wall",
+  x = 8,
+  y = 64,
+  width = 24,
+  height = 16,
+  pattern = "wall.3",
 }
 

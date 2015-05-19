@@ -3,7 +3,7 @@ properties{
   y = 0,
   width = 320,
   height = 240,
-  tileset = "dungeon_brick_gray_1",
+  tileset = "dungeon_brick_blue_1",
   music = "same",
 }
 
@@ -29,8 +29,8 @@ block{
   y = 85,
   direction = -1,
   sprite = "entities/statue",
-  pushable = true,
-  pullable = true,
+  pushable = false,
+  pullable = false,
   maximum_moves = 2,
 }
 

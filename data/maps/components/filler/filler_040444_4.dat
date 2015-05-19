@@ -1,0 +1,162 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  tileset = "dungeon_brick_blue_1",
+  music = "same",
+}
+
+tile{
+  layer = 0,
+  x = 120,
+  y = 200,
+  width = 8,
+  height = 8,
+  pattern = "wall_border.corner.4",
+}
+
+tile{
+  layer = 0,
+  x = 120,
+  y = 32,
+  width = 8,
+  height = 8,
+  pattern = "wall_border.corner.2",
+}
+
+tile{
+  layer = 0,
+  x = 120,
+  y = 40,
+  width = 8,
+  height = 160,
+  pattern = "wall_border.4",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 32,
+  width = 96,
+  height = 176,
+  pattern = "hole",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 32,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.corner.1",
+}
+
+tile{
+  layer = 1,
+  x = 112,
+  y = 32,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.corner.2",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 192,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.corner.3",
+}
+
+tile{
+  layer = 1,
+  x = 112,
+  y = 192,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.corner.4",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 48,
+  width = 16,
+  height = 144,
+  pattern = "wall_hole.3",
+}
+
+tile{
+  layer = 1,
+  x = 112,
+  y = 48,
+  width = 16,
+  height = 144,
+  pattern = "wall_hole.4",
+}
+
+tile{
+  layer = 1,
+  x = 48,
+  y = 192,
+  width = 64,
+  height = 16,
+  pattern = "wall_hole.2",
+}
+
+tile{
+  layer = 1,
+  x = 48,
+  y = 32,
+  width = 64,
+  height = 16,
+  pattern = "wall_hole.1",
+}
+
+tile{
+  layer = 1,
+  x = 64,
+  y = 128,
+  width = 32,
+  height = 16,
+  pattern = "wall_hole.1",
+}
+
+tile{
+  layer = 1,
+  x = 64,
+  y = 96,
+  width = 32,
+  height = 32,
+  pattern = "statue.1",
+}
+
+tile{
+  layer = 1,
+  x = 128,
+  y = 200,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+tile{
+  layer = 1,
+  x = 128,
+  y = 40,
+  width = 8,
+  height = 160,
+  pattern = "barrier.1.2",
+}
+
+tile{
+  layer = 1,
+  x = 128,
+  y = 32,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+

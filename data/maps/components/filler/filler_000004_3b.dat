@@ -9,6 +9,15 @@ properties{
 
 tile{
   layer = 1,
+  x = 48,
+  y = 144,
+  width = 80,
+  height = 48,
+  pattern = "floor_border.2",
+}
+
+tile{
+  layer = 1,
   x = 56,
   y = 152,
   width = 64,
@@ -32,42 +41,6 @@ tile{
   width = 16,
   height = 16,
   pattern = "torch",
-}
-
-tile{
-  layer = 1,
-  x = 48,
-  y = 144,
-  width = 8,
-  height = 48,
-  pattern = "floor_border.2",
-}
-
-tile{
-  layer = 1,
-  x = 120,
-  y = 144,
-  width = 8,
-  height = 48,
-  pattern = "floor_border.2",
-}
-
-tile{
-  layer = 1,
-  x = 56,
-  y = 144,
-  width = 64,
-  height = 8,
-  pattern = "floor_border.2",
-}
-
-tile{
-  layer = 1,
-  x = 56,
-  y = 184,
-  width = 64,
-  height = 8,
-  pattern = "floor_border.2",
 }
 
 tile{

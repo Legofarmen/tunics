@@ -18,7 +18,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 104,
+  x = 88,
   y = 168,
   width = 16,
   height = 16,
@@ -27,7 +27,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 72,
+  x = 64,
   y = 208,
   width = 32,
   height = 24,
@@ -36,7 +36,7 @@ tile{
 
 dynamic_tile{
   layer = 1,
-  x = 72,
+  x = 104,
   y = 136,
   width = 32,
   height = 32,
@@ -56,7 +56,7 @@ tile{
 
 tile{
   layer = 2,
-  x = 104,
+  x = 88,
   y = 152,
   width = 16,
   height = 16,
