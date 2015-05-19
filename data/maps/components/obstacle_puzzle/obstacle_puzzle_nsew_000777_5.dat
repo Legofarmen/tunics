@@ -258,7 +258,3 @@ dynamic_tile{
   pattern = "floor_pot",
   enabled_at_start = true,
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> 6b8aea7d8d6ce12d1aaf94bd53e83e8072ddbdcc
