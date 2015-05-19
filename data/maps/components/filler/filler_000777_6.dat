@@ -222,3 +222,14 @@ dynamic_tile{
   enabled_at_start = true,
 }
 
+dynamic_tile{
+  layer = 1,
+  x = 144,
+  y = 128,
+  width = 32,
+  height = 32,
+  name = "enemy_5",
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
+}
+
