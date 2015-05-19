@@ -9,6 +9,15 @@ properties{
 
 tile{
   layer = 1,
+  x = 120,
+  y = 40,
+  width = 80,
+  height = 176,
+  pattern = "floor_border.2",
+}
+
+tile{
+  layer = 1,
   x = 144,
   y = 16,
   width = 8,
@@ -153,24 +162,6 @@ tile{
 
 tile{
   layer = 1,
-  x = 120,
-  y = 40,
-  width = 8,
-  height = 160,
-  pattern = "floor_border.2",
-}
-
-tile{
-  layer = 1,
-  x = 192,
-  y = 40,
-  width = 8,
-  height = 160,
-  pattern = "floor_border.2",
-}
-
-tile{
-  layer = 1,
   x = 48,
   y = 200,
   width = 16,
@@ -210,17 +201,8 @@ tile{
   x = 128,
   y = 72,
   width = 64,
-  height = 128,
+  height = 136,
   pattern = "floor_small.2",
-}
-
-tile{
-  layer = 1,
-  x = 176,
-  y = 40,
-  width = 32,
-  height = 32,
-  pattern = "statue.4",
 }
 
 tile{
@@ -229,7 +211,16 @@ tile{
   y = 40,
   width = 32,
   height = 32,
-  pattern = "statue.4",
+  pattern = "statue.1",
+}
+
+tile{
+  layer = 1,
+  x = 176,
+  y = 40,
+  width = 32,
+  height = 32,
+  pattern = "statue.1",
 }
 
 dynamic_tile{

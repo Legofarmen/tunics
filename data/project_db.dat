@@ -2,7 +2,6 @@ map{ id = "rooms/room1", description = "Room1" }
 map{ id = "dungeons/dungeon1", description = "Dungeon1" }
 map{ id = "components/door/door_open_n_200000_1", description = "Door open n 200000 1" }
 map{ id = "components/door/door_open_s_002000_1", description = "Door open s 002000 1" }
-map{ id = "components/door/door_entrance_s_002777_1", description = "Door entrance s 002777 1" }
 map{ id = "components/door/door_open_w_040000_1", description = " Door open w 040000 1" }
 map{ id = "components/door/door_open_e_010000_1", description = "Door open e 010000 1" }
 map{ id = "components/door/door_bigkey_n_200700_1", description = "Door bigkey n 200700 1" }
@@ -24,14 +23,14 @@ map{ id = "components/treasure_bigkey/treasure_bigkey_000001_1", description = "
 map{ id = "components/treasure_bigkey/treasure_bigkey_000400_1", description = "Treasure bigkey 000400 1" }
 map{ id = "components/treasure_bigkey/treasure_bigkey_000004_1", description = "Treasure bigkey 000004 1" }
 map{ id = "components/treasure_bigkey/treasure_bigkey_000100_1", description = "Treasure bigkey  000100 1" }
-map{ id = "dev/room_template", description = "Room1 template" }
+map{ id = "dev/best_practice", description = "Best practice" }
 map{ id = "components/enemy/enemy_fairy_000777_1", description = "Enemy fairy 000777 1 " }
 map{ id = "old/chest_hookshot_777202", description = "Chest hookshoot 777202 " }
 map{ id = "components/obstacle_hookshot/obstacle_hookshot_n_200700_1", description = "Obstacle hookshot n 200700 1" }
 map{ id = "components/obstacle_hookshot/obstacle_hookshot_w_040444_1", description = "Obstacle hookshot w 040444 1" }
 map{ id = "components/obstacle_hookshot/obstacle_hookshot_e_010111_1", description = "Obstacle hookshot e 010111 1" }
 map{ id = "components/door/door_bigkey_s_002000_1", description = "Door bigkey s 002000 1" }
-map{ id = "components/sign", description = "Sign" }
+map{ id = "dev/sign", description = "Sign" }
 map{ id = "components/door/door_weakwall_e_010000_1", description = "Door weakwall e 010000 1" }
 map{ id = "components/door/door_weakwall_w_040000_1", description = "Door weakwall w 040000 1" }
 map{ id = "components/obstacle_hookshot/obstacle_hookshot_s_002007_1", description = "Obstacle hookshot s 002007 1" }
@@ -59,9 +58,6 @@ map{ id = "components/floor/floor_3", description = "Floor 3" }
 map{ id = "components/floor/floor_4", description = "Floor 4" }
 map{ id = "components/floor/floor_5", description = "Floor 5" }
 map{ id = "components/floor/floor_6", description = "Floor 6" }
-map{ id = "components/door/door_entrance_s_002777_2", description = "Door entrance s 002777 2" }
-map{ id = "components/door/door_entrance_s_002777_3", description = "Door entrance s 002777 3" }
-map{ id = "components/door/door_entrance_s_002777_4", description = "Door entrance s 002777 4" }
 map{ id = "rooms/intro_2", description = "Intro 2" }
 map{ id = "rooms/cutscene", description = "Cutscene" }
 map{ id = "rooms/title", description = "Title" }
@@ -71,7 +67,6 @@ map{ id = "components/filler/filler_200700_3", description = "Filler 200700 3" }
 map{ id = "components/filler/filler_040444_3", description = "Filler 040444 3" }
 map{ id = "components/filler/filler_010111_3", description = "Filler 010111 3" }
 map{ id = "components/filler/filler_002007_3", description = "Filler 002007 3" }
-map{ id = "components/enemy/x_enemy_boss_000777_2", description = "Enemy boss 000777 2" }
 map{ id = "dev/tileset_test", description = "Tileset test" }
 map{ id = "components/obstacle_hookshot/obstacle_hookshot_ew_050777_2", description = "Obstacle hookshot ew 050777 2" }
 map{ id = "components/obstacle_hookshot/obstacle_hookshot_ns_202777_1", description = "Obstacle hookshot ns 202777 1" }
@@ -185,7 +180,7 @@ map{ id = "tompa/filler_y5", description = "Filler Y5" }
 map{ id = "tompa/obstacle_hookshot_northwest_000777_1", description = "Obstacle hookshot northwest 000777 1" }
 map{ id = "components/obstacle_hookshot/obstacle_hookshot_nw_240777_1", description = "Obstacle hookshot nw 240777 1" }
 map{ id = "components/obstacle_hookshot/obstacle_hookshot_ne_210777_1", description = "Obstacle hookshot ne 210777 1" }
-map{ id = "components/filler/filler_000001_4", description = "Filler 000001 4" }
+map{ id = "components/filler/filler_000001_4", description = "F mixed hole Filler 000001 4" }
 map{ id = "components/filler/filler_000100_4", description = "Filler 000100 4" }
 map{ id = "components/filler/filler_000400_4", description = "Filler 000400 4" }
 map{ id = "components/filler/filler_000004_4", description = "Filler 000004 4" }
@@ -203,7 +198,7 @@ map{ id = "components/obstacle_flippers/obstacle_flippers_nw_240777_1", descript
 map{ id = "components/obstacle_flippers/obstacle_flippers_se_012777_1", description = "Obstacle flippers se 012777 1" }
 map{ id = "components/obstacle_flippers/obstacle_flippers_sw_012777_1", description = "Obstacle flippers sw 012777 1" }
 map{ id = "components/obstacle_flippers/obstacle_flippers_nsw_242333_1", description = "Obstacle flippers nsw 242333 1" }
-map{ id = "components/obstacle_flippers/obstacle_flippers_nse_212666_1", description = "Obstacle flippers nse 212666 1" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_nse_212777_1", description = "Obstacle flippers nse 212777 1" }
 map{ id = "components/obstacle_flippers/obstacle_flippers_new_250477_1", description = "Obstacle flipperst new 250477 1" }
 map{ id = "tompa/filler_y6", description = "Filler Y6" }
 map{ id = "tompa/filler_y7", description = "Filler Y7" }
@@ -324,7 +319,12 @@ map{ id = "components/door/door_bigkey_n_200777_5", description = "Door bigkey n
 map{ id = "components/door/door_bigkey_n_250777_4", description = "Door bigkey n 250777 4" }
 map{ id = "components/door/door_entrance_s_002777_5", description = "Door entrance s 002777 5" }
 map{ id = "components/door/door_entrance_s_002777_6", description = "Door entrance s 002777 6" }
-map{ id = "components/filler/filler_000001_7", description = "Filler 000001 7" }
+map{ id = "components/door/door_entrance_s_002777_2", description = "Door entrance s 002777 2" }
+map{ id = "components/door/door_entrance_s_002777_3", description = "Door entrance s 002777 3" }
+map{ id = "components/door/door_entrance_s_002777_4", description = "Door entrance s 002777 4" }
+map{ id = "components/door/door_entrance_s_002777_1", description = "Door entrance s 002777 1" }
+map{ id = "components/door/door_entrance_s_002777_7", description = "Door entrance s 002777 7" }
+map{ id = "components/filler/filler_000001_7", description = "F Pike moves out of mask Filler 000001 7" }
 map{ id = "components/filler/filler_000100_7", description = "Filler 000100 7" }
 map{ id = "components/filler/filler_000400_7", description = "Filler 000400 7" }
 map{ id = "components/filler/filler_000004_7", description = "Filler 000004 7" }
@@ -389,7 +389,7 @@ map{ id = "components/filler/filler_000001_3b", description = "Filler 000001 3b"
 map{ id = "components/filler/filler_000004_3b", description = "Filler 000004 3b" }
 map{ id = "components/filler/filler_000400_3b", description = "Filler 000400 3b" }
 map{ id = "components/filler/filler_000100_3b", description = "Filler 000100 3b" }
-map{ id = "components/filler/filler_000001_4b", description = "Filler 000001 4b" }
+map{ id = "components/filler/filler_000001_4b", description = "F mixed hole Filler 000001 4b" }
 map{ id = "components/filler/filler_000004_4b", description = "Filler 000004 4b" }
 map{ id = "components/filler/filler_000100_4b", description = "Filler 000100 4b" }
 map{ id = "components/filler/filler_000400_4b", description = "Filler 000400 4b" }
@@ -397,7 +397,7 @@ map{ id = "components/filler/filler_000001_5b", description = "Filler 000001 5b"
 map{ id = "components/filler/filler_000004_5b", description = "Filler 000004 5b" }
 map{ id = "components/filler/filler_000100_5b", description = "Filler 000100 5b" }
 map{ id = "components/filler/filler_000400_5b", description = "Filler 000400 5b" }
-map{ id = "components/filler/filler_000001_7b", description = "Filler 000001 7b" }
+map{ id = "components/filler/filler_000001_7b", description = "F Pike moves out of mask Filler 000001 7b" }
 map{ id = "components/filler/filler_000004_7b", description = "Filler 000004 7b" }
 map{ id = "components/filler/filler_000100_7b", description = "Filler 000100 7b" }
 map{ id = "components/filler/filler_000400_7b", description = "Filler 000400 7b" }
@@ -447,7 +447,6 @@ map{ id = "components/filler/filler_000400_20b", description = "Filler 000400 20
 map{ id = "components/filler/filler_000100_20b", description = "Filler 000100 20b" }
 map{ id = "components/treasure_open/treasure_open_202777_1", description = "Treasure open 202777 1" }
 map{ id = "components/treasure_open/treasure_open_000777_5", description = "Treasure open 000777 5" }
-map{ id = "components/door/door_entrance_s_002777_7", description = "Door entrance s 002777 7" }
 map{ id = "dev/sandbox", description = "Sandbox" }
 map{ id = "components/obstacle_puzzle/obstacle_puzzle_sw_210777_1", description = "Puzzle 210777 1" }
 map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000777_5", description = "Puzzle 000777 5" }
@@ -457,6 +456,7 @@ map{ id = "components/filler/filler_210711_2", description = "Filler 210711 2" }
 map{ id = "tompa/room_3", description = "Room 3" }
 map{ id = "tompa/door_bigkey_n_250777_4", description = "Door bigkey n 250777 4 backup" }
 map{ id = "components/filler/filler_000111_1", description = "Filler 000111 1" }
+map{ id = "dev/room_template", description = "Room1 template" }
 
 tileset{ id = "light_world", description = "Light World" }
 tileset{ id = "dungeon_brick_blue_1", description = "Dungeon brick blue 1" }

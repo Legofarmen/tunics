@@ -48,6 +48,7 @@ function puzzle.init(map, data)
 
     if data.treasure2 then
         local placeholder = map:get_entity('treasure_open_chest')
+        zentropy.assert(placeholder, 'treasure_open_chest must be provided')
         local x, y = placeholder:get_position()
         x, y = x + 8, y + 13
         map:create_chest{

@@ -72,7 +72,7 @@ tile{
 
 enemy{
   layer = 1,
-  x = 280,
+  x = 272,
   y = 173,
   direction = 2,
   breed = "pike_auto",

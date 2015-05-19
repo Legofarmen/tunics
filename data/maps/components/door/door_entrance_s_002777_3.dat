@@ -9,44 +9,44 @@ properties{
 
 tile{
   layer = 1,
-  x = 224,
-  y = 88,
+  x = 216,
+  y = 96,
   width = 24,
-  height = 48,
+  height = 32,
   pattern = "wall.3",
 }
 
 tile{
   layer = 1,
-  x = 88,
-  y = 72,
-  width = 144,
+  x = 96,
+  y = 80,
+  width = 128,
   height = 24,
   pattern = "wall.2",
 }
 
 tile{
   layer = 1,
-  x = 72,
-  y = 88,
+  x = 80,
+  y = 96,
   width = 24,
-  height = 48,
+  height = 32,
   pattern = "wall.4",
 }
 
 tile{
   layer = 1,
-  x = 88,
-  y = 128,
-  width = 144,
+  x = 96,
+  y = 120,
+  width = 128,
   height = 24,
   pattern = "wall.1",
 }
 
 tile{
   layer = 1,
-  x = 72,
-  y = 128,
+  x = 80,
+  y = 120,
   width = 24,
   height = 24,
   pattern = "wall.corner_reverse.2",
@@ -54,8 +54,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 72,
-  y = 72,
+  x = 80,
+  y = 80,
   width = 24,
   height = 24,
   pattern = "wall.corner_reverse.4",
@@ -63,8 +63,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 224,
-  y = 128,
+  x = 216,
+  y = 120,
   width = 24,
   height = 24,
   pattern = "wall.corner_reverse.1",
@@ -72,8 +72,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 224,
-  y = 72,
+  x = 216,
+  y = 80,
   width = 24,
   height = 24,
   pattern = "wall.corner_reverse.3",
@@ -81,44 +81,44 @@ tile{
 
 tile{
   layer = 1,
-  x = 248,
-  y = 72,
+  x = 240,
+  y = 80,
   width = 8,
-  height = 80,
+  height = 64,
   pattern = "wall_border.3",
 }
 
 tile{
   layer = 1,
-  x = 72,
-  y = 152,
-  width = 176,
+  x = 80,
+  y = 144,
+  width = 160,
   height = 8,
   pattern = "wall_border.1",
 }
 
 tile{
   layer = 1,
-  x = 64,
-  y = 72,
+  x = 72,
+  y = 80,
   width = 8,
-  height = 80,
+  height = 64,
   pattern = "wall_border.4",
 }
 
 tile{
   layer = 1,
-  x = 72,
-  y = 64,
-  width = 176,
+  x = 80,
+  y = 72,
+  width = 160,
   height = 8,
   pattern = "wall_border.2",
 }
 
 tile{
   layer = 1,
-  x = 248,
-  y = 152,
+  x = 240,
+  y = 144,
   width = 8,
   height = 8,
   pattern = "wall_border.corner_reverse.1",
@@ -126,8 +126,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 248,
-  y = 64,
+  x = 240,
+  y = 72,
   width = 8,
   height = 8,
   pattern = "wall_border.corner_reverse.3",
@@ -135,8 +135,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 64,
-  y = 64,
+  x = 72,
+  y = 72,
   width = 8,
   height = 8,
   pattern = "wall_border.corner_reverse.4",
@@ -144,8 +144,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 64,
-  y = 152,
+  x = 72,
+  y = 144,
   width = 8,
   height = 8,
   pattern = "wall_border.corner_reverse.2",
@@ -189,10 +189,19 @@ tile{
 
 tile{
   layer = 1,
-  x = 128,
+  x = 120,
   y = 168,
+  width = 80,
+  height = 32,
+  pattern = "floor_border.1",
+}
+
+tile{
+  layer = 1,
+  x = 128,
+  y = 176,
   width = 32,
-  height = 48,
+  height = 32,
   pattern = "door_main.2.floor.2",
 }
 
@@ -201,7 +210,7 @@ tile{
   x = 160,
   y = 176,
   width = 32,
-  height = 40,
+  height = 32,
   pattern = "door_main.2.floor.3",
 }
 
@@ -232,51 +241,6 @@ tile{
   pattern = "barrier.1.2",
 }
 
-tile{
-  layer = 1,
-  x = 152,
-  y = 240,
-  width = 16,
-  height = 8,
-  pattern = "barrier.1.1",
-}
-
-tile{
-  layer = 1,
-  x = 152,
-  y = 208,
-  width = 16,
-  height = 16,
-  pattern = "door_main.2",
-}
-
-tile{
-  layer = 1,
-  x = 120,
-  y = 168,
-  width = 80,
-  height = 8,
-  pattern = "floor_border.1",
-}
-
-tile{
-  layer = 1,
-  x = 120,
-  y = 176,
-  width = 8,
-  height = 24,
-  pattern = "floor_border.1",
-}
-
-tile{
-  layer = 1,
-  x = 192,
-  y = 176,
-  width = 8,
-  height = 24,
-  pattern = "floor_border.1",
-}
-
 dynamic_tile{
   layer = 1,
   x = 144,
@@ -288,24 +252,15 @@ dynamic_tile{
   enabled_at_start = true,
 }
 
-stream{
+dynamic_tile{
   layer = 1,
-  x = 160,
-  y = 221,
-  direction = 2,
-  speed = 128,
-  allow_movement = false,
-  allow_attack = false,
-  allow_item = false,
-}
-
-wall{
-  layer = 1,
-  x = 152,
+  x = 144,
   y = 208,
-  width = 16,
-  height = 16,
-  stops_enemies = true,
+  width = 32,
+  height = 24,
+  name = "tile_8",
+  pattern = "wall.2",
+  enabled_at_start = true,
 }
 
 stream{
@@ -319,6 +274,17 @@ stream{
   allow_item = false,
 }
 
+dynamic_tile{
+  layer = 1,
+  x = 120,
+  y = 200,
+  width = 24,
+  height = 24,
+  name = "tile_2",
+  pattern = "entrance_pillar.1.1.bottom",
+  enabled_at_start = true,
+}
+
 sensor{
   layer = 1,
   x = 160,
@@ -328,26 +294,15 @@ sensor{
   name = "sensor",
 }
 
-dynamic_tile{
+stream{
   layer = 1,
-  x = 136,
-  y = 208,
-  width = 16,
-  height = 24,
-  name = "tile_8",
-  pattern = "wall.2",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 168,
-  y = 208,
-  width = 16,
-  height = 24,
-  name = "tile_2",
-  pattern = "wall.2",
-  enabled_at_start = true,
+  x = 160,
+  y = 221,
+  direction = 2,
+  speed = 128,
+  allow_movement = false,
+  allow_attack = false,
+  allow_item = false,
 }
 
 dynamic_tile{
@@ -374,23 +329,23 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 120,
+  x = 176,
   y = 200,
   width = 24,
   height = 24,
   name = "tile_5",
-  pattern = "entrance_pillar.1.1.bottom",
+  pattern = "entrance_pillar.1.2.bottom",
   enabled_at_start = true,
 }
 
 dynamic_tile{
   layer = 1,
-  x = 176,
-  y = 200,
-  width = 24,
-  height = 24,
+  x = 152,
+  y = 208,
+  width = 16,
+  height = 32,
   name = "tile_6",
-  pattern = "entrance_pillar.1.2.bottom",
+  pattern = "door_main.2",
   enabled_at_start = true,
 }
 
@@ -398,27 +353,18 @@ door{
   layer = 1,
   x = 152,
   y = 208,
-  name = "door_entrance_3",
+  name = "door_entrance_2",
   direction = 3,
   sprite = "entities/door_normal",
 }
 
 tile{
   layer = 2,
-  x = 96,
-  y = 96,
-  width = 128,
-  height = 32,
+  x = 104,
+  y = 104,
+  width = 112,
+  height = 16,
   pattern = "ceiling",
-}
-
-tile{
-  layer = 2,
-  x = 144,
-  y = 224,
-  width = 32,
-  height = 8,
-  pattern = "door_cache.2",
 }
 
 tile{

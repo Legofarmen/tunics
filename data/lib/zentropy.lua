@@ -1012,6 +1012,7 @@ function zentropy.inject_big_chest(placeholder, data)
 end
 
 function zentropy.inject_door(position_tile, properties)
+    zentropy.assert(position_tile)
     zentropy.assert(properties.direction)
     zentropy.assert(properties.sprite)
     local map = position_tile:get_map()
@@ -1060,7 +1061,7 @@ function zentropy.hideout(rng, switch, ...)
 
     local x, y, layer = hideout:get_position()
     if zentropy.settings.debug_cheat then
-        y = y + 4
+        x, y = x + 4, y + 4
     end
     local origin_x, origin_y = hideout:get_origin()
     switch:set_position(x - origin_x, y - origin_y, layer)

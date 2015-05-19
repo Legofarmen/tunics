@@ -207,37 +207,10 @@ tile{
 
 tile{
   layer = 1,
-  x = 120,
+  x = 128,
   y = 136,
-  width = 80,
-  height = 8,
-  pattern = "floor_border.2",
-}
-
-tile{
-  layer = 1,
-  x = 120,
-  y = 184,
-  width = 80,
-  height = 8,
-  pattern = "floor_border.2",
-}
-
-tile{
-  layer = 1,
-  x = 120,
-  y = 136,
-  width = 8,
-  height = 48,
-  pattern = "floor_border.2",
-}
-
-tile{
-  layer = 1,
-  x = 192,
-  y = 136,
-  width = 8,
-  height = 48,
+  width = 64,
+  height = 56,
   pattern = "floor_border.2",
 }
 
@@ -261,9 +234,9 @@ tile{
 
 tile{
   layer = 1,
-  x = 128,
+  x = 136,
   y = 144,
-  width = 64,
+  width = 48,
   height = 40,
   pattern = "floor_small.2",
 }

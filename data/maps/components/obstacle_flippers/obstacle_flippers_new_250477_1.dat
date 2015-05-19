@@ -408,7 +408,7 @@ dynamic_tile{
   y = 168,
   width = 16,
   height = 16,
-  name = "tiletreasure_open_chest",
+  name = "treasure_open_chest",
   pattern = "placeholder_treasure_open",
   enabled_at_start = true,
 }

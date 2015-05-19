@@ -14,17 +14,15 @@ function flippers.init(map, data)
     local treasure_obstacle_chest = map:get_entity('treasure_obstacle_chest')
     if data.treasure1 then
         zentropy.inject_chest(treasure_obstacle_chest, data.treasure1)
-        map:set_entities_enabled('treasure_obstacle_', true)
     else
-        treasure_obstacle_chest:remove()
+        map:remove_entities('treasure_obstacle_')
     end
 
     local treasure_open_chest = map:get_entity('treasure_open_chest')
     if data.treasure2 then
         zentropy.inject_chest(treasure_open_chest, data.treasure2)
-        map:set_entities_enabled('treasure_open_', true)
     else
-        treasure_open_chest:remove()
+        map:remove_entities('treasure_open_')
     end
 end
 

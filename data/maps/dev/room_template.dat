@@ -3,61 +3,52 @@ properties{
   y = 0,
   width = 320,
   height = 240,
-  tileset = "dungeon_smoothbrick_brown_1",
+  tileset = "dungeon_brick_gray_1",
   music = "same",
 }
 
 tile{
   layer = 0,
   x = 24,
-  y = 24,
-  width = 128,
+  y = 136,
+  width = 112,
   height = 80,
   pattern = "floor.17",
 }
 
 tile{
   layer = 0,
-  x = 168,
+  x = 184,
   y = 24,
-  width = 128,
+  width = 112,
   height = 80,
   pattern = "floor.17",
 }
 
 tile{
   layer = 0,
-  x = 144,
-  y = 24,
-  width = 32,
+  x = 184,
+  y = 136,
+  width = 112,
   height = 80,
-  pattern = "floor_low.17",
+  pattern = "floor.17",
 }
 
 tile{
   layer = 0,
   x = 24,
-  y = 136,
-  width = 128,
-  height = 96,
-  pattern = "floor.17",
-}
-
-tile{
-  layer = 0,
-  x = 168,
-  y = 136,
-  width = 128,
-  height = 96,
-  pattern = "floor.17",
-}
-
-tile{
-  layer = 0,
-  x = 144,
-  y = 136,
-  width = 32,
+  y = 24,
+  width = 112,
   height = 80,
+  pattern = "floor.17",
+}
+
+tile{
+  layer = 0,
+  x = 136,
+  y = 136,
+  width = 48,
+  height = 64,
   pattern = "floor_low.17",
 }
 
@@ -65,36 +56,18 @@ tile{
   layer = 0,
   x = 24,
   y = 104,
-  width = 128,
+  width = 112,
   height = 32,
   pattern = "floor_low.17",
 }
 
 tile{
   layer = 0,
-  x = 168,
+  x = 184,
   y = 104,
-  width = 128,
+  width = 96,
   height = 32,
   pattern = "floor_low.17",
-}
-
-tile{
-  layer = 0,
-  x = 144,
-  y = 104,
-  width = 32,
-  height = 32,
-  pattern = "floor.17",
-}
-
-tile{
-  layer = 0,
-  x = 40,
-  y = 32,
-  width = 240,
-  height = 8,
-  pattern = "wall_border.1",
 }
 
 tile{
@@ -199,15 +172,6 @@ tile{
 tile{
   layer = 0,
   x = 32,
-  y = 8,
-  width = 256,
-  height = 24,
-  pattern = "wall.1",
-}
-
-tile{
-  layer = 0,
-  x = 32,
   y = 208,
   width = 256,
   height = 24,
@@ -232,68 +196,40 @@ tile{
   pattern = "wall.4",
 }
 
-door{
+tile{
   layer = 0,
-  x = 72,
-  y = 16,
-  direction = 1,
-  sprite = "entities/door_weak_wall",
+  x = 136,
+  y = 24,
+  width = 48,
+  height = 80,
+  pattern = "floor_low.17",
 }
 
-door{
+tile{
   layer = 0,
-  x = 96,
-  y = 16,
-  direction = 1,
-  sprite = "entities/door_weak_wall",
+  x = 40,
+  y = 32,
+  width = 240,
+  height = 8,
+  pattern = "wall_border.1",
 }
 
-door{
+tile{
   layer = 0,
-  x = 208,
-  y = 208,
-  direction = 3,
-  sprite = "entities/door_weak_wall",
+  x = 32,
+  y = 8,
+  width = 256,
+  height = 24,
+  pattern = "wall.1",
 }
 
-door{
+tile{
   layer = 0,
-  x = 232,
-  y = 208,
-  direction = 3,
-  sprite = "entities/door_weak_wall",
-}
-
-door{
-  layer = 0,
-  x = 288,
-  y = 48,
-  direction = 0,
-  sprite = "entities/door_weak_wall",
-}
-
-door{
-  layer = 0,
-  x = 288,
-  y = 72,
-  direction = 0,
-  sprite = "entities/door_weak_wall",
-}
-
-door{
-  layer = 0,
-  x = 16,
-  y = 152,
-  direction = 2,
-  sprite = "entities/door_weak_wall",
-}
-
-door{
-  layer = 0,
-  x = 16,
-  y = 176,
-  direction = 2,
-  sprite = "entities/door_weak_wall",
+  x = 136,
+  y = 104,
+  width = 48,
+  height = 32,
+  pattern = "floor.17",
 }
 
 tile{
@@ -303,78 +239,6 @@ tile{
   width = 32,
   height = 24,
   pattern = "wall.1",
-}
-
-tile{
-  layer = 1,
-  x = 288,
-  y = 152,
-  width = 16,
-  height = 16,
-  pattern = "crack_east",
-}
-
-tile{
-  layer = 1,
-  x = 288,
-  y = 176,
-  width = 16,
-  height = 16,
-  pattern = "crack_east",
-}
-
-tile{
-  layer = 1,
-  x = 16,
-  y = 72,
-  width = 16,
-  height = 16,
-  pattern = "crack_west",
-}
-
-tile{
-  layer = 1,
-  x = 16,
-  y = 48,
-  width = 16,
-  height = 16,
-  pattern = "crack_west",
-}
-
-tile{
-  layer = 1,
-  x = 200,
-  y = 16,
-  width = 16,
-  height = 16,
-  pattern = "crack_north",
-}
-
-tile{
-  layer = 1,
-  x = 224,
-  y = 16,
-  width = 16,
-  height = 16,
-  pattern = "crack_north",
-}
-
-tile{
-  layer = 1,
-  x = 64,
-  y = 208,
-  width = 16,
-  height = 16,
-  pattern = "crack_south",
-}
-
-tile{
-  layer = 1,
-  x = 88,
-  y = 208,
-  width = 16,
-  height = 16,
-  pattern = "crack_south",
 }
 
 door{
