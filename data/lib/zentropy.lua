@@ -328,7 +328,7 @@ function zentropy.db.Components:get_obstacle(item, dir, mask, rng)
     local seq = rng:seq()
     for d in util.pairs_by_keys(doors) do
         for _, entry in util.pairs_by_keys(self.obstacles[item][d] or {}) do
-            if bit32.band(mask, entry.mask) == 0 and seq(get_component_size(entry.mask) ^ 2) then
+            if bit32.band(mask, entry.mask) == 0 and seq(get_component_size(entry.mask) ^ 1.5) then
                 chosen = entry
             end
         end
@@ -344,7 +344,7 @@ function zentropy.db.Components:get_filler(mask, rng)
     local chosen = nil
     local seq = rng:seq()
     for _, entry in util.pairs_by_keys(self.fillers) do
-        if bit32.band(mask, entry.mask) == 0 and seq(get_component_size(entry.mask) ^ 2) then
+        if bit32.band(mask, entry.mask) == 0 and seq(get_component_size(entry.mask) ^ 1.5) then
             chosen = entry
         end
     end
@@ -359,7 +359,7 @@ function zentropy.db.Components:get_puzzle(mask, rng)
     local chosen = nil
     local seq = rng:seq()
     for _, entry in util.pairs_by_keys(self.obstacles.puzzle.northsoutheastwest) do
-        if bit32.band(mask, entry.mask) == 0 and seq(get_component_size(entry.mask) ^ 2) then
+        if bit32.band(mask, entry.mask) == 0 and seq(get_component_size(entry.mask) ^ 1.5) then
             chosen = entry
         end
     end
@@ -380,11 +380,11 @@ function zentropy.db.Components:get_treasure(open, mask, rng)
     for _, entry in util.pairs_by_keys(self.treasures[open]) do
         if entry.mask == 'any' then
             for _, section in ipairs(self.CORNER_SECTION_MASKS) do
-                if bit32.band(mask, section) == 0 and seq(get_component_size(entry.mask) ^ 2) then
+                if bit32.band(mask, section) == 0 and seq() then
                     chosen = {mask=section, id=entry.id}
                 end
             end
-        elseif bit32.band(mask, entry.mask) == 0 and seq(get_component_size(entry.mask) ^ 2) then
+        elseif bit32.band(mask, entry.mask) == 0 and seq() then
             chosen = entry
         end
     end
