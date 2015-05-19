@@ -3,7 +3,7 @@ properties{
   y = 0,
   width = 320,
   height = 240,
-  tileset = "dungeon_brick_gray_1",
+  tileset = "dungeon_smoothbrick_brown_1",
   music = "same",
 }
 
@@ -142,6 +142,15 @@ sensor{
   width = 16,
   height = 16,
   name = "sensor",
+}
+
+tile{
+  layer = 2,
+  x = 136,
+  y = 8,
+  width = 48,
+  height = 8,
+  pattern = "door_cache.1",
 }
 
 tile{

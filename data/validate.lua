@@ -20,6 +20,10 @@ local high_layer_tiles = {
     ["ceiling"] = true,
     ["door_boss.1.pillar.1.top"] = true,
     ["door_boss.1.pillar.2.top"] = true,
+    ["door_cache.1"] = true,
+    ["door_cache.2"] = true,
+    ["door_cache.3"] = true,
+    ["door_cache.4"] = true,
     ["door_top.blast.1"] = true,
     ["door_top.blast.2"] = true,
     ["door_top.blast.3"] = true,
@@ -76,6 +80,9 @@ end
 
 local function validate_entity_mask(fname, description, properties, sections)
     local entire_room = { x = 0, y = 0, width = 320, height = 240, }
+    if properties.pattern and properties.pattern:find('^door_cache.') then
+        return
+    end
     for name, rect in pairs(sections) do
         if intersects(rect, properties) then
             zentropy.debug(string.format("%s:  intersects with %s in component: %s", description, name, fname))
