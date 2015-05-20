@@ -93,13 +93,13 @@ table.insert(enemy_strategies, function ()
     if treshold0 > treshold1 then
         breed0, treshold0, breed1, treshold1 = breed1, treshold1, breed0, treshold0
     end
-    local i = -1
+    local i = 0
     return function (rng) -- majority
         i = (i + 1) % 4
-        if i < 3 then
-            return breed0, treshold0
-        else
+        if i == 0 then
             return breed1, treshold1
+        else
+            return breed0, treshold0
         end
     end
 end)
