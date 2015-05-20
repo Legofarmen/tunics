@@ -71,7 +71,7 @@ function enemy:go(direction4)
     local m = sol.movement.create("straight")
     m:set_speed(192)
     m:set_angle(angle)
-    m:set_max_distance(104)
+    m:set_max_distance(320)
     m:set_smooth(false)
     m:start(self)
   end
@@ -90,9 +90,10 @@ end
 
 function enemy:on_collision_enemy(other_enemy, other_sprite, my_sprite)
 
-  if other_enemy:get_breed() == self:get_breed() and state == "moving" then
-    self:go_back()
-  end
+    if other_enemy:get_breed() == self:get_breed() and state == "moving" then
+        sol.audio.play_sound("sword_tapping")
+        self:go_back()
+    end
 end
 
 function enemy:go_back()
