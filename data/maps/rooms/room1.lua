@@ -14,6 +14,99 @@ function data_messages(prefix, data, depth)
 end
 data_messages('data', data)
 
+local enemy_strategies = {}
+
+table.insert(enemy_strategies, function ()
+    local breed, treshold = rng:refine('enemy'):choose(zentropy.Room.enemies)
+    return function (rng) -- uniform
+        return breed, treshold
+    end
+end)
+table.insert(enemy_strategies, function ()
+    local breed0, treshold0 = rng:refine('enemy0'):choose(zentropy.Room.enemies)
+    local breed1, treshold1
+    for i = 1, 5 do
+        breed1, treshold1 = rng:refine('enemy1'):choose(zentropy.Room.enemies)
+        if breed1 ~= breed0 then
+            break
+        end
+    end
+    if treshold0 > treshold1 then
+        breed0, treshold0, breed1, treshold1 = breed1, treshold1, breed0, treshold0
+    end
+    local i = -1
+    return function (rng) -- halves
+        i = (i + 1) % 2
+        if i == 0 then
+            return breed0, treshold0
+        else
+            return breed1, treshold1
+        end
+    end
+end)
+table.insert(enemy_strategies, function ()
+    local breed0, treshold0 = rng:refine('enemy0'):choose(zentropy.Room.enemies)
+    local breed1, treshold1
+    local breed2, treshold2
+    for i = 1, 5 do
+        breed1, treshold1 = rng:refine('enemy1'):choose(zentropy.Room.enemies)
+        if breed1 ~= breed0 then
+            break
+        end
+    end
+    for i = 1, 5 do
+        breed2, treshold2 = rng:refine('enemy2'):choose(zentropy.Room.enemies)
+        if breed1 ~= breed0 then
+            break
+        end
+    end
+    if treshold0 > treshold1 then
+        breed0, treshold0, breed1, treshold1 = breed1, treshold1, breed0, treshold0
+    end
+    if treshold1 > treshold2 then
+        breed1, treshold1, breed2, treshold2 = breed2, treshold2, breed1, treshold1
+    end
+    if treshold0 > treshold1 then
+        breed0, treshold0, breed1, treshold1 = breed1, treshold1, breed0, treshold0
+    end
+    local i = -1
+    return function (rng) -- thirds
+        i = (i + 1) % 3
+        if i == 0 then
+            return breed0, treshold0
+        elseif i == 1 then
+            return breed1, treshold1
+        else
+            return breed2, treshold2
+        end
+    end
+end)
+table.insert(enemy_strategies, function ()
+    local breed0, treshold0 = rng:refine('enemy0'):choose(zentropy.Room.enemies)
+    local breed1, treshold1
+    for i = 1, 5 do
+        breed1, treshold1 = rng:refine('enemy1'):choose(zentropy.Room.enemies)
+        if breed1 ~= breed0 then
+            break
+        end
+    end
+    if treshold0 > treshold1 then
+        breed0, treshold0, breed1, treshold1 = breed1, treshold1, breed0, treshold0
+    end
+    local i = -1
+    return function (rng) -- majority
+        i = (i + 1) % 4
+        if i < 3 then
+            return breed0, treshold0
+        else
+            return breed1, treshold1
+        end
+    end
+end)
+local i, strategy_factory = rng:refine('enemy_strategy'):ichoose(enemy_strategies)
+zentropy.Room.next_enemy = strategy_factory()
+
+
 local room = zentropy.Room:new{rng=rng, map=map, data_messages=data_messages}
 
 function is_special_room(data)
@@ -37,7 +130,6 @@ end
 function room_events:add_door_sensor_activated_listener(listener)
     self.door_sensor_activated_listeners[listener] = true
 end
-
 
 local walls = {}
 for _, dir in ipairs{'north','south','east','west'} do
