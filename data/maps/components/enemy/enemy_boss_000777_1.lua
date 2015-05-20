@@ -16,26 +16,22 @@ local x3, y3 = map:get_entity('boss_3'):get_userdata():get_position()
 table.insert(agahnim.positions, {x = x3, y = y3, direction4 = 2})
 
 function agahnim:on_dying()
-	zentropy.debug("Agahnim dying")
 	boss_exit:open()
-	
 end
 
 local has_escaped = false
 
 function agahnim:on_escape()
 	has_escaped = true
-    zentropy.debug("Agahnim escape")
 	sol.audio.stop_music()
 	boss_exit:open()	
 end
 
 data.room_events:add_door_sensor_activated_listener(function ()
-    if not has_escaped then
+    if not agahnim:is_enabled() and not has_escaped then
         agahnim:set_enabled(true)
         sol.audio.play_music('agahnim')
 		agahnim:restart()
-        zentropy.debug("Sensor triggered")
         boss_exit:close()
     end
 end)
