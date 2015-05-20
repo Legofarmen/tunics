@@ -9,6 +9,10 @@ function treasure.init(map, data)
     for entity in map:get_entities('enemy') do
         zentropy.inject_enemy(entity, data.rng:refine(entity:get_name()))
     end
+	
+	for entity in map:get_entities('pot_') do
+        zentropy.inject_pot(entity, data.rng:refine(entity:get_name()))
+    end
 
 end
 

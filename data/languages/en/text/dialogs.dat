@@ -21,6 +21,13 @@ Thank you for playing!
 }
 
 dialog{
+  id = "_treasure.shield.1",
+  text = [[
+You got the shield!
+]]
+}
+
+dialog{
   id = "game_complete_1_1",
   text = [[
 You're back!

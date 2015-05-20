@@ -464,6 +464,7 @@ map{ id = "components/treasure_bigkey/treasure_bigkey_050777_1", description = "
 map{ id = "components/treasure_bigkey/treasure_bigkey_200777_1", description = "treasure bigkey 200777 1" }
 map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000111_1", description = "Puzzle 000111 1w" }
 map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000444_2", description = "Puzzle 000444 2" }
+map{ id = "components/enemy/enemy_boss_000777_2", description = "Enemy boss 000777 2" }
 
 tileset{ id = "light_world", description = "Light World" }
 tileset{ id = "dungeon_brick_blue_1", description = "Dungeon brick blue 1" }
@@ -741,6 +742,7 @@ item{ id = "flippers", description = "Flippers" }
 item{ id = "glove", description = "Glove" }
 item{ id = "bottle_1", description = "Bottle 1" }
 item{ id = "heart_container", description = "Heart container" }
+item{ id = "shield", description = "Shield" }
 
 enemy{ id = "tentacle", description = "Tentacle" }
 enemy{ id = "green_knight_soldier", description = "Green knight soldier" }

@@ -11,6 +11,10 @@ function obstacle_weakwall.init(map, data)
     for entity in map:get_entities('enemy') do
         zentropy.inject_enemy(entity, data.rng:refine(entity:get_name()))
     end
+	
+	for entity in map:get_entities('pot_') do
+        zentropy.inject_pot(entity, data.rng:refine(entity:get_name()))
+    end
 
 	if data.treasure1 then
 		local x, y = map:get_entity('treasure_obstacle_chest'):get_position()
