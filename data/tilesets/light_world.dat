@@ -9160,6 +9160,16 @@ tile_pattern{
 }
 
 tile_pattern{
+  id = "tunic",
+  ground = "wall",
+  default_layer = 0,
+  x = 48,
+  y = 456,
+  width = 16,
+  height = 16,
+}
+
+tile_pattern{
   id = "water",
   ground = "deep_water",
   default_layer = 0,
