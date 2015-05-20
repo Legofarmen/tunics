@@ -19,7 +19,7 @@ function enemy:on_dying()
         local mini = enemy:create_enemy({ breed = "bari_mini" })
         mini:set_invincible(true) -- make mini survive the initial attack
         sol.timer.start(mini, 300, function ()
-            mini:restart()
+            mini:shock()
         end)
         return mini
     end

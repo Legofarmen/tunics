@@ -2,15 +2,25 @@ local bari_mixin = {}
 
 function bari_mixin.mixin(enemy)
 
-    local shocking = false
+    local game = enemy:get_game()
+
+    function enemy:set_shocking(shocking)
+        if shocking then
+            self:get_sprite():set_animation("shaking")
+        else
+            self:get_sprite():set_animation("walking")
+        end
+    end
+
+    function enemy:is_shocking()
+        return self:get_sprite():get_animation() == "shaking"
+    end
 
     function enemy:shock()
         self:stop_movement()
-        shocking = true
-        self:get_sprite():set_animation("shaking")
-        sol.timer.start(self, 1000 + 1000 * math.random(), function()
-            self:get_sprite():set_animation("walking")
-            shocking = false
+        self:set_shocking(true)
+        sol.timer.start(self, 1000 + 1500 * math.random(), function()
+            self:set_shocking(false)
             self:restart()
         end)
     end
@@ -22,30 +32,31 @@ function bari_mixin.mixin(enemy)
         local m = sol.movement.create("path_finding")
         m:set_speed(32)
         m:start(self)
-        sol.timer.start(enemy, 1000 + 9000 * math.random(), function()
+        sol.timer.start(enemy, 2000 + 8000 * math.random(), function()
             self:shock()
         end)
     end
 
     function enemy:on_immobilized()
-      shocking = false
+        self:set_shocking(false)
     end
 
     function enemy:on_hurt_by_sword(hero, enemy_sprite)
-      if shocking == true then
-        hero:start_electrocution(1500)
-      else
-        self:hurt(1)
-        enemy:remove_life(1)
-      end
+        if self:is_shocking() then
+            hero:start_hurt(self:get_damage())
+            hero:start_electrocution(1500)
+        else
+            -- Why doesn't hurt() remove life?
+            self:hurt(game:get_ability('sword'))
+            self:remove_life(game:get_ability('sword'))
+        end
     end
 
     function enemy:on_attacking_hero(hero, enemy_sprite)
-      if shocking == true then
-        hero:start_electrocution(1500)
-      else
-        hero:start_hurt(1)
-      end
+        hero:start_hurt(self:get_damage())
+        if self:is_shocking() then
+            hero:start_electrocution(1500)
+        end
     end
 end
 
