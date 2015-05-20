@@ -12,7 +12,7 @@ function map:on_started(destination)
 	game.dialog_box:set_dialog_style("empty")
 	--game.dialog_box.set_dialog_style(game.dialog_box, "empty")
 	
-	sol.timer.start(1000, function()
+	sol.timer.start(500, function()
 		game:start_dialog("intro_1_1", function()
 			game:start_dialog("intro_1_2", function()
 				hero:teleport("rooms/intro_2")

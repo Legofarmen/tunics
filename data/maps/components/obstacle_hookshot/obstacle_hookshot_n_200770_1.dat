@@ -188,7 +188,7 @@ tile{
 
 dynamic_tile{
   layer = 1,
-  x = 176,
+  x = 168,
   y = 40,
   width = 16,
   height = 16,
@@ -199,7 +199,7 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 56,
+  x = 40,
   y = 40,
   width = 16,
   height = 16,
