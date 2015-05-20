@@ -905,7 +905,7 @@ function zentropy.inject_enemy(placeholder, rng)
         local map = placeholder:get_map()
         local x, y, layer = placeholder:get_position()
         local treasure_name, treasure_variant = get_random_treasure(rng2:refine('drop'))
-        local breed, treshold = rng2:refine('breed'):choose(zentropy.Room.enemies)
+        local breed, treshold = zentropy.Room.next_enemy(rng2:refine('breed'))
         local enemy = map:create_enemy{
             layer=layer,
             x=x,
