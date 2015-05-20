@@ -3,25 +3,43 @@ properties{
   y = 0,
   width = 320,
   height = 240,
-  tileset = "dungeon_brick_gray_1",
+  tileset = "dungeon_brick_blue_1",
   music = "same",
+}
+
+tile{
+  layer = 1,
+  x = 48,
+  y = 160,
+  width = 16,
+  height = 16,
+  pattern = "torch",
+}
+
+tile{
+  layer = 1,
+  x = 48,
+  y = 48,
+  width = 16,
+  height = 16,
+  pattern = "torch",
 }
 
 dynamic_tile{
   layer = 1,
-  x = 216,
-  y = 72,
+  x = 64,
+  y = 48,
   width = 16,
   height = 16,
-  name = "pot_5",
+  name = "pot_7",
   pattern = "floor_pot",
   enabled_at_start = true,
 }
 
 dynamic_tile{
   layer = 1,
-  x = 232,
-  y = 72,
+  x = 64,
+  y = 144,
   width = 16,
   height = 16,
   name = "pot_2",
@@ -31,8 +49,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 248,
-  y = 72,
+  x = 48,
+  y = 144,
   width = 16,
   height = 16,
   name = "pot_3",
@@ -40,48 +58,81 @@ dynamic_tile{
   enabled_at_start = true,
 }
 
-block{
+dynamic_tile{
   layer = 1,
-  x = 224,
-  y = 69,
-  name = "block_5",
-  direction = -1,
-  sprite = "entities/block",
-  pushable = true,
-  pullable = false,
-  maximum_moves = 1,
+  x = 48,
+  y = 64,
+  width = 16,
+  height = 16,
+  name = "pot_4",
+  pattern = "floor_pot",
+  enabled_at_start = true,
 }
 
-block{
+dynamic_tile{
   layer = 1,
-  x = 240,
-  y = 69,
-  name = "block_2",
-  direction = -1,
-  sprite = "entities/block",
-  pushable = true,
-  pullable = false,
-  maximum_moves = 1,
+  x = 64,
+  y = 64,
+  width = 16,
+  height = 16,
+  name = "pot_5",
+  pattern = "floor_pot",
+  enabled_at_start = true,
 }
 
-block{
+dynamic_tile{
   layer = 1,
-  x = 256,
-  y = 69,
-  name = "block_3",
-  direction = -1,
-  sprite = "entities/block",
-  pushable = true,
-  pullable = false,
-  maximum_moves = 1,
+  x = 64,
+  y = 160,
+  width = 16,
+  height = 16,
+  name = "pot_6",
+  pattern = "floor_pot",
+  enabled_at_start = true,
 }
 
-enemy{
+switch{
   layer = 1,
-  x = 272,
-  y = 53,
-  direction = 3,
-  breed = "pike_detect",
+  x = -160,
+  y = -8,
+  name = "switch_2",
+  subtype = "walkable",
+  sprite = "entities/switch",
+  needs_block = false,
+  inactivate_when_leaving = false,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 56,
+  y = 104,
+  width = 16,
+  height = 16,
+  name = "treasure_obstacle_chest",
+  pattern = "placeholder_treasure_puzzle",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 88,
+  y = 104,
+  width = 16,
+  height = 16,
+  name = "treasure_open_chest",
+  pattern = "placeholder_treasure_open",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 80,
+  y = 72,
+  width = 32,
+  height = 32,
+  name = "enemy_2",
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
 }
 
 switch{
@@ -93,38 +144,5 @@ switch{
   sprite = "entities/switch",
   needs_block = false,
   inactivate_when_leaving = false,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 184,
-  y = 88,
-  width = 16,
-  height = 16,
-  name = "treasure_obstacle_chest",
-  pattern = "placeholder_treasure_puzzle",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 200,
-  y = 88,
-  width = 16,
-  height = 16,
-  name = "treasure_open_chest",
-  pattern = "placeholder_treasure_open",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 144,
-  y = 72,
-  width = 32,
-  height = 32,
-  name = "enemy_2",
-  pattern = "placeholder_enemy",
-  enabled_at_start = true,
 }
 

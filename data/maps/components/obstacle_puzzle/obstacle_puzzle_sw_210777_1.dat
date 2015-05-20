@@ -47,14 +47,23 @@ tile{
   layer = 1,
   x = 80,
   y = 176,
-  width = 152,
+  width = 144,
   height = 8,
   pattern = "barrier.1.1",
 }
 
 tile{
   layer = 1,
-  x = 232,
+  x = 224,
+  y = 176,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+tile{
+  layer = 1,
+  x = 248,
   y = 176,
   width = 8,
   height = 8,
@@ -65,16 +74,7 @@ tile{
   layer = 1,
   x = 256,
   y = 176,
-  width = 8,
-  height = 8,
-  pattern = "barrier.1.border",
-}
-
-tile{
-  layer = 1,
-  x = 264,
-  y = 176,
-  width = 16,
+  width = 24,
   height = 8,
   pattern = "barrier.1.1",
 }
@@ -184,7 +184,7 @@ dynamic_tile{
 
 block{
   layer = 1,
-  x = 248,
+  x = 240,
   y = 181,
   direction = -1,
   sprite = "entities/statue",

@@ -815,3 +815,61 @@ dynamic_tile{
   enabled_at_start = true,
 }
 
+wall{
+  layer = 1,
+  x = 128,
+  y = 104,
+  width = 8,
+  height = 32,
+  stops_enemies = true,
+}
+
+wall{
+  layer = 1,
+  x = 184,
+  y = 104,
+  width = 8,
+  height = 32,
+  stops_enemies = true,
+}
+
+jumper{
+  layer = 1,
+  x = 184,
+  y = 88,
+  width = 8,
+  height = 16,
+  direction = 4,
+  jump_length = 40,
+}
+
+jumper{
+  layer = 1,
+  x = 184,
+  y = 136,
+  width = 8,
+  height = 16,
+  direction = 4,
+  jump_length = 40,
+}
+
+jumper{
+  layer = 1,
+  x = 128,
+  y = 136,
+  width = 8,
+  height = 16,
+  direction = 0,
+  jump_length = 40,
+}
+
+jumper{
+  layer = 1,
+  x = 128,
+  y = 88,
+  width = 8,
+  height = 16,
+  direction = 0,
+  jump_length = 40,
+}
+

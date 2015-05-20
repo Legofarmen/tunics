@@ -9,18 +9,18 @@ properties{
 
 dynamic_tile{
   layer = 1,
-  x = 216,
+  x = 56,
   y = 168,
   width = 16,
   height = 16,
-  name = "pot_4",
+  name = "pot_5",
   pattern = "floor_pot",
   enabled_at_start = true,
 }
 
 dynamic_tile{
   layer = 1,
-  x = 232,
+  x = 72,
   y = 168,
   width = 16,
   height = 16,
@@ -31,7 +31,7 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 248,
+  x = 88,
   y = 168,
   width = 16,
   height = 16,
@@ -42,9 +42,9 @@ dynamic_tile{
 
 block{
   layer = 1,
-  x = 224,
+  x = 64,
   y = 165,
-  name = "block_4",
+  name = "block_5",
   direction = -1,
   sprite = "entities/block",
   pushable = true,
@@ -54,7 +54,7 @@ block{
 
 block{
   layer = 1,
-  x = 240,
+  x = 80,
   y = 165,
   name = "block_2",
   direction = -1,
@@ -66,7 +66,7 @@ block{
 
 block{
   layer = 1,
-  x = 256,
+  x = 96,
   y = 165,
   name = "block_3",
   direction = -1,
@@ -78,8 +78,8 @@ block{
 
 switch{
   layer = 1,
-  x = 0,
-  y = 0,
+  x = 8,
+  y = 8,
   name = "switch",
   subtype = "walkable",
   sprite = "entities/switch",
@@ -89,27 +89,27 @@ switch{
 
 enemy{
   layer = 1,
-  x = 272,
+  x = 40,
   y = 197,
-  direction = 3,
-  breed = "pike_detect",
+  direction = 2,
+  breed = "pike_auto",
 }
 
 dynamic_tile{
   layer = 1,
-  x = 144,
-  y = 136,
+  x = 184,
+  y = 152,
   width = 32,
   height = 32,
-  name = "enemy_1",
+  name = "enemy_3",
   pattern = "placeholder_enemy",
   enabled_at_start = true,
 }
 
 dynamic_tile{
   layer = 1,
-  x = 184,
-  y = 136,
+  x = 152,
+  y = 152,
   width = 16,
   height = 16,
   name = "treasure_obstacle_chest",
@@ -119,12 +119,23 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 200,
-  y = 136,
+  x = 168,
+  y = 152,
   width = 16,
   height = 16,
   name = "treasure_open_chest",
   pattern = "placeholder_treasure_open",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 104,
+  y = 152,
+  width = 32,
+  height = 32,
+  name = "enemy_2",
+  pattern = "placeholder_enemy",
   enabled_at_start = true,
 }
 

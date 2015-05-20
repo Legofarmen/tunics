@@ -9,53 +9,17 @@ properties{
 
 tile{
   layer = 1,
-  x = 40,
-  y = 32,
-  width = 96,
-  height = 64,
-  pattern = "water_shallow",
-}
-
-tile{
-  layer = 1,
-  x = 56,
-  y = 88,
-  width = 48,
-  height = 16,
-  pattern = "water_shallow",
-}
-
-tile{
-  layer = 1,
-  x = 88,
-  y = 80,
-  width = 16,
-  height = 16,
-  pattern = "block",
-}
-
-tile{
-  layer = 1,
-  x = 56,
+  x = 48,
   y = 48,
-  width = 16,
-  height = 16,
-  pattern = "block",
+  width = 80,
+  height = 144,
+  pattern = "water_shallow",
 }
 
 tile{
   layer = 1,
-  x = 56,
-  y = 80,
-  width = 16,
-  height = 16,
-  pattern = "block",
-}
-
-tile{
-  layer = 1,
-  x = 32,
-  y = 96,
+  x = 48,
+  y = 184,
   width = 8,
   height = 8,
   pattern = "water_shallow.corner.3",
@@ -63,26 +27,26 @@ tile{
 
 tile{
   layer = 1,
-  x = 32,
-  y = 40,
+  x = 48,
+  y = 56,
   width = 8,
-  height = 56,
+  height = 128,
   pattern = "water_shallow.3",
 }
 
 tile{
   layer = 1,
-  x = 40,
-  y = 96,
-  width = 96,
+  x = 56,
+  y = 184,
+  width = 64,
   height = 8,
   pattern = "water_shallow.2",
 }
 
 tile{
   layer = 1,
-  x = 136,
-  y = 96,
+  x = 120,
+  y = 184,
   width = 8,
   height = 8,
   pattern = "water_shallow.corner.4",
@@ -90,17 +54,17 @@ tile{
 
 tile{
   layer = 1,
-  x = 136,
-  y = 40,
+  x = 120,
+  y = 56,
   width = 8,
-  height = 56,
+  height = 128,
   pattern = "water_shallow.4",
 }
 
 tile{
   layer = 1,
-  x = 136,
-  y = 32,
+  x = 120,
+  y = 48,
   width = 8,
   height = 8,
   pattern = "water_shallow.corner.2",
@@ -108,8 +72,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 32,
-  y = 32,
+  x = 48,
+  y = 48,
   width = 8,
   height = 8,
   pattern = "water_shallow.corner.1",
@@ -117,74 +81,29 @@ tile{
 
 tile{
   layer = 1,
-  x = 40,
-  y = 32,
-  width = 96,
+  x = 56,
+  y = 48,
+  width = 64,
   height = 8,
   pattern = "water_shallow.1",
 }
 
 tile{
   layer = 1,
-  x = 32,
-  y = 56,
-  width = 8,
-  height = 32,
-  pattern = "water_wall.drain.3",
-}
-
-tile{
-  layer = 1,
-  x = 16,
-  y = 56,
-  width = 16,
-  height = 32,
-  pattern = "water_wall.drain_gate.3",
-}
-
-tile{
-  layer = 1,
-  x = 64,
-  y = 8,
-  width = 32,
-  height = 24,
-  pattern = "wall_statue.6.1",
-}
-
-tile{
-  layer = 1,
-  x = 64,
-  y = 32,
-  width = 32,
-  height = 8,
-  pattern = "waterfall.1.middle",
-}
-
-tile{
-  layer = 1,
-  x = 72,
-  y = 24,
-  width = 16,
-  height = 8,
-  pattern = "waterfall.1.top",
-}
-
-tile{
-  layer = 1,
-  x = 64,
-  y = 40,
-  width = 32,
-  height = 8,
-  pattern = "waterfall.1.bottom",
-}
-
-tile{
-  layer = 1,
-  x = 88,
-  y = 48,
+  x = 80,
+  y = 144,
   width = 16,
   height = 16,
-  pattern = "block",
+  pattern = "tongue",
+}
+
+tile{
+  layer = 1,
+  x = 80,
+  y = 80,
+  width = 16,
+  height = 16,
+  pattern = "tongue",
 }
 
 switch{
@@ -200,8 +119,8 @@ switch{
 
 dynamic_tile{
   layer = 1,
-  x = 72,
-  y = 48,
+  x = 80,
+  y = 160,
   width = 16,
   height = 16,
   name = "pot_1",
@@ -211,7 +130,7 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 56,
+  x = 80,
   y = 64,
   width = 16,
   height = 16,
@@ -222,8 +141,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 88,
-  y = 64,
+  x = 96,
+  y = 80,
   width = 16,
   height = 16,
   name = "pot_3",
@@ -233,7 +152,7 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 72,
+  x = 64,
   y = 80,
   width = 16,
   height = 16,
@@ -244,8 +163,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 104,
-  y = 48,
+  x = 56,
+  y = 112,
   width = 16,
   height = 16,
   name = "treasure_open_chest",
@@ -255,8 +174,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 120,
-  y = 48,
+  x = 80,
+  y = 112,
   width = 16,
   height = 16,
   name = "treasure_obstacle_chest",
@@ -266,12 +185,34 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 112,
-  y = 72,
+  x = 96,
+  y = 104,
   width = 32,
   height = 32,
   name = "enemy_3",
   pattern = "placeholder_enemy",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 64,
+  y = 144,
+  width = 16,
+  height = 16,
+  name = "pot_5",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 96,
+  y = 144,
+  width = 16,
+  height = 16,
+  name = "pot_6",
+  pattern = "floor_pot",
   enabled_at_start = true,
 }
 
