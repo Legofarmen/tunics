@@ -6,32 +6,33 @@ local enemy = ...
 local shocking = false
 
 function enemy:on_created()
-  self:set_life(2)
-  self:set_damage(2)
-  self:create_sprite("enemies/bari_blue")
-  self:set_attack_consequence("hookshot", "immobilized")
-  self:set_size(16, 16)
-  self:set_origin(8, 13)
+    self:set_life(2)
+    self:set_damage(2)
+    self:create_sprite("enemies/bari_blue")
+    self:set_attack_consequence("hookshot", "immobilized")
+    self:set_size(16, 16)
+    self:set_origin(8, 13)
 end
 
 function enemy:shock()
-  shocking = true
-  enemy:get_sprite():set_animation("shaking")
-  sol.timer.start(enemy, math.random(10)*1000, function()
-    enemy:get_sprite():set_animation("walking")
-    shocking = false
-    sol.timer.start(enemy, math.random(10)*1000, function() enemy:restart() end)
-  end)
+    self:stop_movement()
+    shocking = true
+    self:get_sprite():set_animation("shaking")
+    sol.timer.start(self, 1000, function()
+        self:get_sprite():set_animation("walking")
+        shocking = false
+        self:restart()
+    end)
 end
 
 function enemy:on_restarted()
-  shocking = false
-  local m = sol.movement.create("path_finding")
-  m:set_speed(32)
-  m:start(self)
-  if math.random(10) < 5 then
-    enemy:shock()
-  end
+    shocking = false
+    local m = sol.movement.create("path_finding")
+    m:set_speed(32)
+    m:start(self)
+    sol.timer.start(enemy, 1000 + 5000 * math.random(), function()
+        self:shock()
+    end)
 end
 
 function enemy:on_immobilized()
@@ -55,7 +56,19 @@ function enemy:on_attacking_hero(hero, enemy_sprite)
 end
 
 function enemy:on_dying()
-  -- It splits into two mini baris when it dies
-  enemy:create_enemy({ breed = "bari_mini" })
-  enemy:create_enemy({ breed = "bari_mini" })
+    local function create_mini()
+        local mini = enemy:create_enemy({ breed = "bari_mini" })
+        mini:set_invincible(true) -- make mini survive the initial attack
+        sol.timer.start(mini, 200, function ()
+            mini:set_default_attack_consequences()
+            mini:set_attack_consequence("hookshot", "immobilized")
+            mini:restart()
+        end)
+        return mini
+    end
+    -- It splits into two mini baris when it dies
+    local mini1 = create_mini()
+    local mini2 = create_mini()
+    mini1:set_treasure(self:get_treasure())
+    self:set_treasure()
 end
