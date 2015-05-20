@@ -567,7 +567,7 @@ tile{
 
 dynamic_tile{
   layer = 1,
-  x = 120,
+  x = 176,
   y = 104,
   width = 32,
   height = 32,
@@ -611,8 +611,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 184,
-  y = 104,
+  x = 152,
+  y = 112,
   width = 16,
   height = 16,
   name = "treasure_open_chest",

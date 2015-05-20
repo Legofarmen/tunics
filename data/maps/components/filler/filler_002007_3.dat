@@ -45,9 +45,9 @@ tile{
 
 tile{
   layer = 1,
-  x = 144,
+  x = 136,
   y = 152,
-  width = 32,
+  width = 48,
   height = 32,
   pattern = "hole",
 }
@@ -153,7 +153,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 144,
+  x = 136,
   y = 152,
   width = 8,
   height = 8,
@@ -162,7 +162,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 168,
+  x = 176,
   y = 152,
   width = 8,
   height = 8,
@@ -171,7 +171,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 144,
+  x = 136,
   y = 176,
   width = 8,
   height = 8,
@@ -180,7 +180,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 168,
+  x = 176,
   y = 176,
   width = 8,
   height = 8,
@@ -189,7 +189,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 144,
+  x = 136,
   y = 160,
   width = 8,
   height = 16,
@@ -198,16 +198,16 @@ tile{
 
 tile{
   layer = 1,
-  x = 152,
+  x = 144,
   y = 152,
-  width = 16,
+  width = 32,
   height = 8,
   pattern = "hole.1",
 }
 
 tile{
   layer = 1,
-  x = 168,
+  x = 176,
   y = 160,
   width = 8,
   height = 16,
@@ -216,9 +216,9 @@ tile{
 
 tile{
   layer = 1,
-  x = 152,
+  x = 144,
   y = 176,
-  width = 16,
+  width = 32,
   height = 8,
   pattern = "hole.2",
 }

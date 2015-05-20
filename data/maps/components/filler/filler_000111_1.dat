@@ -29,8 +29,8 @@ block{
   y = 85,
   direction = -1,
   sprite = "entities/statue",
-  pushable = true,
-  pullable = true,
+  pushable = false,
+  pullable = false,
   maximum_moves = 2,
 }
 

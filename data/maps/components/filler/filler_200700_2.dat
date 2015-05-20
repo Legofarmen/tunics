@@ -27,24 +27,6 @@ tile{
 
 tile{
   layer = 1,
-  x = 32,
-  y = 88,
-  width = 16,
-  height = 16,
-  pattern = "wall_hole.corner.3",
-}
-
-tile{
-  layer = 1,
-  x = 272,
-  y = 88,
-  width = 16,
-  height = 16,
-  pattern = "wall_hole.corner.4",
-}
-
-tile{
-  layer = 1,
   x = 272,
   y = 32,
   width = 16,
@@ -56,18 +38,9 @@ tile{
   layer = 1,
   x = 48,
   y = 32,
-  width = 224,
+  width = 32,
   height = 16,
   pattern = "wall_hole.1",
-}
-
-tile{
-  layer = 1,
-  x = 48,
-  y = 88,
-  width = 224,
-  height = 16,
-  pattern = "wall_hole.2",
 }
 
 tile{
@@ -75,7 +48,7 @@ tile{
   x = 272,
   y = 48,
   width = 16,
-  height = 40,
+  height = 56,
   pattern = "wall_hole.4",
 }
 
@@ -84,14 +57,68 @@ tile{
   x = 32,
   y = 48,
   width = 16,
-  height = 40,
+  height = 56,
   pattern = "wall_hole.3",
 }
 
 tile{
   layer = 1,
-  x = 88,
-  y = 64,
+  x = 96,
+  y = 48,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.1",
+}
+
+tile{
+  layer = 1,
+  x = 208,
+  y = 48,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.1",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 96,
+  width = 256,
+  height = 8,
+  pattern = "hole.2",
+}
+
+tile{
+  layer = 1,
+  x = 96,
+  y = 32,
+  width = 16,
+  height = 16,
+  pattern = "tongue",
+}
+
+tile{
+  layer = 1,
+  x = 208,
+  y = 32,
+  width = 16,
+  height = 16,
+  pattern = "tongue",
+}
+
+tile{
+  layer = 1,
+  x = 128,
+  y = 32,
+  width = 64,
+  height = 16,
+  pattern = "wall_hole.1",
+}
+
+tile{
+  layer = 1,
+  x = 240,
+  y = 32,
   width = 32,
   height = 16,
   pattern = "wall_hole.1",
@@ -99,28 +126,73 @@ tile{
 
 tile{
   layer = 1,
-  x = 200,
-  y = 64,
-  width = 32,
+  x = 192,
+  y = 32,
+  width = 16,
   height = 16,
-  pattern = "wall_hole.1",
+  pattern = "wall_hole.corner.2",
 }
 
 tile{
   layer = 1,
-  x = 88,
+  x = 80,
   y = 32,
-  width = 32,
-  height = 32,
-  pattern = "statue.1",
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.corner.2",
 }
 
 tile{
   layer = 1,
-  x = 200,
+  x = 112,
   y = 32,
-  width = 32,
-  height = 32,
-  pattern = "statue.1",
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.corner.1",
+}
+
+tile{
+  layer = 1,
+  x = 224,
+  y = 32,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.corner.1",
+}
+
+tile{
+  layer = 1,
+  x = 112,
+  y = 48,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.corner_reverse.1",
+}
+
+tile{
+  layer = 1,
+  x = 224,
+  y = 48,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.corner_reverse.1",
+}
+
+tile{
+  layer = 1,
+  x = 80,
+  y = 48,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.corner_reverse.2",
+}
+
+tile{
+  layer = 1,
+  x = 192,
+  y = 48,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.corner_reverse.2",
 }
 

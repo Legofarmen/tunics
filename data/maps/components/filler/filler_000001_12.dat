@@ -9,6 +9,15 @@ properties{
 
 tile{
   layer = 1,
+  x = 224,
+  y = 144,
+  width = 48,
+  height = 48,
+  pattern = "floor_border.2",
+}
+
+tile{
+  layer = 1,
   x = 232,
   y = 152,
   width = 32,
@@ -23,42 +32,6 @@ tile{
   width = 16,
   height = 16,
   pattern = "tongue",
-}
-
-tile{
-  layer = 1,
-  x = 224,
-  y = 144,
-  width = 8,
-  height = 48,
-  pattern = "floor_border.2",
-}
-
-tile{
-  layer = 1,
-  x = 264,
-  y = 144,
-  width = 8,
-  height = 48,
-  pattern = "floor_border.2",
-}
-
-tile{
-  layer = 1,
-  x = 232,
-  y = 144,
-  width = 32,
-  height = 8,
-  pattern = "floor_border.2",
-}
-
-tile{
-  layer = 1,
-  x = 232,
-  y = 184,
-  width = 32,
-  height = 8,
-  pattern = "floor_border.2",
 }
 
 dynamic_tile{
