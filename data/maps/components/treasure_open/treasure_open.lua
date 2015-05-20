@@ -15,7 +15,8 @@ function treasure.init(map, data)
     if map:has_entities('switch') then
         local switch = map:get_entity('switch')
 
-        zentropy.hideout(data.rng:refine('hideout'), switch, map:get_entities('pot_'), map:get_entities('block_'))
+        local hideout = zentropy.hideout(data.rng:refine('hideout'):seq(), map:get_entities('pot_'), map:get_entities('block_'))
+        zentropy.hide_switch(switch, hideout)
 
         function switch:on_activated()
             chest:set_enabled(true)
@@ -29,6 +30,8 @@ function treasure.init(map, data)
                 chest:set_enabled(false)
             end
         end)
+    else
+        zentropy.hideout(function () return false end, map:get_entities('pot_'), map:get_entities('block_'))
     end
 end
 

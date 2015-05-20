@@ -1050,12 +1050,11 @@ function zentropy.pots(rng, ...)
     end
 end
 
-function zentropy.hideout(rng, switch, ...)
-    local hideout_rng = rng:refine('hideout'):seq()
+function zentropy.hideout(rng_seq, ...)
     local hideout = nil
     for _, entities in ipairs{...} do
         for entity in entities do
-            if hideout_rng() then
+            if rng_seq() then
                 hideout, entity = entity, hideout
             end
             if entity and entity:get_type() == 'block' then
@@ -1064,7 +1063,10 @@ function zentropy.hideout(rng, switch, ...)
             end
         end
     end
+    return hideout
+end
 
+function zentropy.hide_switch(switch, hideout)
     local x, y, layer = hideout:get_position()
     if zentropy.settings.debug_cheat then
         x, y = x + 4, y + 4
