@@ -562,9 +562,9 @@ dynamic_tile{
   y = 96,
   width = 48,
   height = 48,
-  name = "boss_1",
+  name = "boss_2",
   pattern = "placeholder_boss_1",
-  enabled_at_start = true,
+  enabled_at_start = false,
 }
 
 dynamic_tile{
@@ -573,9 +573,9 @@ dynamic_tile{
   y = 48,
   width = 48,
   height = 48,
-  name = "boss_2",
+  name = "boss_1",
   pattern = "placeholder_boss_1",
-  enabled_at_start = true,
+  enabled_at_start = false,
 }
 
 dynamic_tile{
@@ -586,6 +586,6 @@ dynamic_tile{
   height = 48,
   name = "boss_3",
   pattern = "placeholder_boss_1",
-  enabled_at_start = true,
+  enabled_at_start = false,
 }
 
