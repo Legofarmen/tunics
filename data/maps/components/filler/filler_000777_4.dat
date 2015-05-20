@@ -174,14 +174,14 @@ tile{
   x = 216,
   y = 104,
   width = 16,
-  height = 32,
+  height = 16,
   pattern = "barrier_big.1.2",
 }
 
 tile{
   layer = 1,
   x = 216,
-  y = 128,
+  y = 120,
   width = 16,
   height = 24,
   pattern = "barrier_big.3.border.2",
@@ -201,14 +201,14 @@ tile{
   x = 88,
   y = 104,
   width = 16,
-  height = 32,
+  height = 16,
   pattern = "barrier_big.1.2",
 }
 
 tile{
   layer = 1,
   x = 88,
-  y = 128,
+  y = 120,
   width = 16,
   height = 24,
   pattern = "barrier_big.3.border.2",
