@@ -139,7 +139,6 @@ function zentropy.db.Components:new(o)
     o.doors = o.doors or {}
     o.fillers = o.fillers or {}
     o.enemies = o.enemies or {}
-    o.puzzles = o.puzzles or {}
     return Class.new(self, o)
 end
 
@@ -346,6 +345,13 @@ function zentropy.db.Components:get_filler(mask, rng)
     for _, entry in util.pairs_by_keys(self.fillers) do
         if bit32.band(mask, entry.mask) == 0 and seq(get_component_size(entry.mask) ^ 1.5) then
             chosen = entry
+        end
+    end
+    for _, obstacle_data in util.pairs_by_keys(self.obstacles.puzzle) do
+        for dir, entry in pairs(obstacle_data) do
+            if bit32.band(mask, entry.mask) == 0 and seq(get_component_size(entry.mask) ^ 1.5) then
+                chosen = entry
+            end
         end
     end
     if chosen then
