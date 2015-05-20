@@ -9,6 +9,15 @@ properties{
 
 tile{
   layer = 1,
+  x = 64,
+  y = 64,
+  width = 192,
+  height = 112,
+  pattern = "water_shallow",
+}
+
+tile{
+  layer = 1,
   x = 128,
   y = 96,
   width = 64,
@@ -43,10 +52,82 @@ tile{
   pattern = "wall_statue.1.1",
 }
 
+tile{
+  layer = 1,
+  x = 56,
+  y = 56,
+  width = 8,
+  height = 8,
+  pattern = "water_shallow.corner.1",
+}
+
+tile{
+  layer = 1,
+  x = 56,
+  y = 64,
+  width = 8,
+  height = 112,
+  pattern = "water_shallow.3",
+}
+
+tile{
+  layer = 1,
+  x = 64,
+  y = 56,
+  width = 192,
+  height = 8,
+  pattern = "water_shallow.1",
+}
+
+tile{
+  layer = 1,
+  x = 256,
+  y = 56,
+  width = 8,
+  height = 8,
+  pattern = "water_shallow.corner.2",
+}
+
+tile{
+  layer = 1,
+  x = 256,
+  y = 176,
+  width = 8,
+  height = 8,
+  pattern = "water_shallow.corner.4",
+}
+
+tile{
+  layer = 1,
+  x = 56,
+  y = 176,
+  width = 8,
+  height = 8,
+  pattern = "water_shallow.corner.3",
+}
+
+tile{
+  layer = 1,
+  x = 64,
+  y = 176,
+  width = 192,
+  height = 8,
+  pattern = "water_shallow.2",
+}
+
+tile{
+  layer = 1,
+  x = 256,
+  y = 64,
+  width = 8,
+  height = 112,
+  pattern = "water_shallow.4",
+}
+
 dynamic_tile{
   layer = 1,
   x = 64,
-  y = 48,
+  y = 64,
   width = 32,
   height = 32,
   name = "enemy_6",
@@ -57,7 +138,7 @@ dynamic_tile{
 dynamic_tile{
   layer = 1,
   x = 64,
-  y = 160,
+  y = 144,
   width = 32,
   height = 32,
   name = "enemy_7",
@@ -68,7 +149,7 @@ dynamic_tile{
 dynamic_tile{
   layer = 1,
   x = 224,
-  y = 160,
+  y = 144,
   width = 32,
   height = 32,
   name = "enemy_8",
@@ -78,8 +159,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 224,
-  y = 48,
+  x = 208,
+  y = 64,
   width = 32,
   height = 32,
   name = "enemy_9",
