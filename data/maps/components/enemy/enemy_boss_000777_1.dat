@@ -9,6 +9,78 @@ properties{
 
 tile{
   layer = 1,
+  x = 264,
+  y = 8,
+  width = 8,
+  height = 8,
+  pattern = "ceiling",
+}
+
+tile{
+  layer = 1,
+  x = 272,
+  y = 8,
+  width = 40,
+  height = 48,
+  pattern = "ceiling",
+}
+
+tile{
+  layer = 1,
+  x = 272,
+  y = 184,
+  width = 40,
+  height = 48,
+  pattern = "ceiling",
+}
+
+tile{
+  layer = 1,
+  x = 264,
+  y = 224,
+  width = 8,
+  height = 8,
+  pattern = "ceiling",
+}
+
+tile{
+  layer = 1,
+  x = 8,
+  y = 184,
+  width = 40,
+  height = 48,
+  pattern = "ceiling",
+}
+
+tile{
+  layer = 1,
+  x = 48,
+  y = 224,
+  width = 8,
+  height = 8,
+  pattern = "ceiling",
+}
+
+tile{
+  layer = 1,
+  x = 48,
+  y = 8,
+  width = 8,
+  height = 8,
+  pattern = "ceiling",
+}
+
+tile{
+  layer = 1,
+  x = 8,
+  y = 8,
+  width = 40,
+  height = 48,
+  pattern = "ceiling",
+}
+
+tile{
+  layer = 1,
   x = 248,
   y = 216,
   width = 16,
@@ -473,263 +545,47 @@ tile{
   width = 32,
   height = 24,
   pattern = "wall_statue.1.2",
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 152,
-  y = 64,
-  width = 16,
-  height = 16,
-  name = "boss_1",
-  pattern = "floor_small.2",
-  enabled_at_start = false,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 72,
-  y = 120,
-  width = 16,
-  height = 16,
-  name = "boss_2",
-  pattern = "floor_small.2",
-  enabled_at_start = false,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 240,
-  y = 120,
-  width = 16,
-  height = 16,
-  name = "boss_3",
-  pattern = "floor_small.2",
-  enabled_at_start = false,
 }
 
 enemy{
   layer = 1,
   x = 160,
-  y = 133,
+  y = 141,
   name = "agahnim",
   direction = 3,
   breed = "agahnim",
 }
 
-tile{
-  layer = 2,
-  x = 8,
-  y = 184,
-  width = 8,
-  height = 48,
-  pattern = "ceiling",
-}
-
-tile{
-  layer = 2,
-  x = 8,
-  y = 8,
-  width = 8,
-  height = 48,
-  pattern = "ceiling",
-}
-
-tile{
-  layer = 2,
-  x = 304,
-  y = 184,
-  width = 8,
-  height = 48,
-  pattern = "ceiling",
-}
-
-tile{
-  layer = 2,
-  x = 304,
-  y = 8,
-  width = 8,
-  height = 48,
-  pattern = "ceiling",
-}
-
-tile{
-  layer = 2,
-  x = 296,
-  y = 8,
-  width = 8,
-  height = 40,
-  pattern = "ceiling",
-}
-
-tile{
-  layer = 2,
-  x = 288,
-  y = 8,
-  width = 8,
-  height = 32,
-  pattern = "ceiling",
-}
-
-tile{
-  layer = 2,
-  x = 280,
-  y = 8,
-  width = 8,
-  height = 24,
-  pattern = "ceiling",
-}
-
-tile{
-  layer = 2,
-  x = 264,
-  y = 8,
-  width = 8,
-  height = 8,
-  pattern = "ceiling",
-}
-
-tile{
-  layer = 2,
-  x = 272,
-  y = 8,
-  width = 8,
-  height = 16,
-  pattern = "ceiling",
-}
-
-tile{
-  layer = 2,
-  x = 296,
-  y = 192,
-  width = 8,
-  height = 40,
-  pattern = "ceiling",
-}
-
-tile{
-  layer = 2,
-  x = 288,
-  y = 200,
-  width = 8,
-  height = 32,
-  pattern = "ceiling",
-}
-
-tile{
-  layer = 2,
-  x = 280,
-  y = 208,
-  width = 8,
-  height = 24,
-  pattern = "ceiling",
-}
-
-tile{
-  layer = 2,
-  x = 264,
-  y = 224,
-  width = 8,
-  height = 8,
-  pattern = "ceiling",
-}
-
-tile{
-  layer = 2,
-  x = 272,
-  y = 216,
-  width = 8,
-  height = 16,
-  pattern = "ceiling",
-}
-
-tile{
-  layer = 2,
-  x = 16,
-  y = 192,
-  width = 8,
-  height = 40,
-  pattern = "ceiling",
-}
-
-tile{
-  layer = 2,
-  x = 24,
-  y = 200,
-  width = 8,
-  height = 32,
-  pattern = "ceiling",
-}
-
-tile{
-  layer = 2,
-  x = 32,
-  y = 208,
-  width = 8,
-  height = 24,
-  pattern = "ceiling",
-}
-
-tile{
-  layer = 2,
-  x = 40,
-  y = 216,
-  width = 8,
-  height = 16,
-  pattern = "ceiling",
-}
-
-tile{
-  layer = 2,
+dynamic_tile{
+  layer = 1,
   x = 48,
-  y = 224,
-  width = 8,
-  height = 8,
-  pattern = "ceiling",
+  y = 96,
+  width = 48,
+  height = 48,
+  name = "boss_2",
+  pattern = "placeholder_boss_1",
+  enabled_at_start = false,
 }
 
-tile{
-  layer = 2,
-  x = 16,
-  y = 8,
-  width = 8,
-  height = 40,
-  pattern = "ceiling",
+dynamic_tile{
+  layer = 1,
+  x = 136,
+  y = 48,
+  width = 48,
+  height = 48,
+  name = "boss_1",
+  pattern = "placeholder_boss_1",
+  enabled_at_start = false,
 }
 
-tile{
-  layer = 2,
-  x = 24,
-  y = 8,
-  width = 8,
-  height = 32,
-  pattern = "ceiling",
-}
-
-tile{
-  layer = 2,
-  x = 32,
-  y = 8,
-  width = 8,
-  height = 24,
-  pattern = "ceiling",
-}
-
-tile{
-  layer = 2,
-  x = 40,
-  y = 8,
-  width = 8,
-  height = 16,
-  pattern = "ceiling",
-}
-
-tile{
-  layer = 2,
-  x = 48,
-  y = 8,
-  width = 8,
-  height = 8,
-  pattern = "ceiling",
+dynamic_tile{
+  layer = 1,
+  x = 224,
+  y = 96,
+  width = 48,
+  height = 48,
+  name = "boss_3",
+  pattern = "placeholder_boss_1",
+  enabled_at_start = false,
 }
 

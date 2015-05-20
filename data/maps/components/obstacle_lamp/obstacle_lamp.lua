@@ -15,6 +15,10 @@ function lamp.init(map, data, timeout)
         zentropy.inject_enemy(entity, data.rng:refine(entity:get_name()))
     end
 
+	for entity in map:get_entities('pot_') do
+        zentropy.inject_pot(entity, data.rng:refine(entity:get_name()))
+    end
+	
 	local hidden_chest = nil
 
 	if data.treasure1 then

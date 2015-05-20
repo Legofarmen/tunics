@@ -9,6 +9,15 @@ properties{
 
 tile{
   layer = 0,
+  x = -8,
+  y = -8,
+  width = 336,
+  height = 248,
+  pattern = "grass.soil",
+}
+
+tile{
+  layer = 0,
   x = 272,
   y = 56,
   width = 8,
@@ -367,46 +376,58 @@ tile{
   pattern = "grass.tree.roots.4",
 }
 
-destructible{
+tile{
   layer = 0,
-  x = 184,
-  y = 117,
-  sprite = "entities/tunic_1",
+  x = 112,
+  y = 104,
+  width = 16,
+  height = 16,
+  pattern = "tunic",
 }
 
-destructible{
+tile{
   layer = 0,
-  x = 168,
-  y = 117,
-  sprite = "entities/tunic_1",
+  x = 128,
+  y = 104,
+  width = 16,
+  height = 16,
+  pattern = "tunic",
 }
 
-destructible{
+tile{
   layer = 0,
-  x = 152,
-  y = 117,
-  sprite = "entities/tunic_1",
+  x = 144,
+  y = 104,
+  width = 16,
+  height = 16,
+  pattern = "tunic",
 }
 
-destructible{
+tile{
   layer = 0,
-  x = 136,
-  y = 117,
-  sprite = "entities/tunic_1",
+  x = 160,
+  y = 104,
+  width = 16,
+  height = 16,
+  pattern = "tunic",
 }
 
-destructible{
+tile{
   layer = 0,
-  x = 120,
-  y = 117,
-  sprite = "entities/tunic_1",
+  x = 176,
+  y = 104,
+  width = 16,
+  height = 16,
+  pattern = "tunic",
 }
 
-destructible{
+tile{
   layer = 0,
-  x = 200,
-  y = 117,
-  sprite = "entities/tunic_1",
+  x = 192,
+  y = 104,
+  width = 16,
+  height = 16,
+  pattern = "tunic",
 }
 
 tile{

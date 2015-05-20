@@ -65,7 +65,7 @@ end
 
 function enemy:unhide()
 	local position = (self.positions[math.random(#self.positions)])
-  self:set_position(position.x, position.y)
+  self:set_position(position.x + 24, position.y + 32)
   sprite:set_animation("walking")
   sprite:set_direction(position.direction4)
   sprite:fade_in()

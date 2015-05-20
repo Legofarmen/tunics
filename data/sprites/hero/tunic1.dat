@@ -337,7 +337,7 @@ animation{
 animation{
   name = "walking",
   src_image = "hero/walking.tunic.png",
-  frame_delay = 55,
+  frame_delay = 50,
   frame_to_loop_on = 0,
   directions = {
     { x = 0, y = 0, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 29, num_frames = 8 },
@@ -361,7 +361,7 @@ animation{
 animation{
   name = "walking_with_shield",
   src_image = "hero/walking.tunic.png",
-  frame_delay = 100,
+  frame_delay = 50,
   frame_to_loop_on = 0,
   directions = {
     { x = 0, y = 0, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 29, num_frames = 8 },

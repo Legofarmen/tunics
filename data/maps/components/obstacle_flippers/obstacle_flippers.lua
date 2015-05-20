@@ -11,6 +11,10 @@ function flippers.init(map, data)
         zentropy.inject_enemy(entity, data.rng:refine(entity:get_name()))
     end
 
+	for entity in map:get_entities('pot_') do
+        zentropy.inject_pot(entity, data.rng:refine(entity:get_name()))
+    end
+	
     local treasure_obstacle_chest = map:get_entity('treasure_obstacle_chest')
     if data.treasure1 then
         zentropy.inject_chest(treasure_obstacle_chest, data.treasure1)
