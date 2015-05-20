@@ -54,8 +54,6 @@ function bindings.mixin(o)
         elseif key == "f4" and modifiers.alt then
             -- Alt + F4: stop the program.
             sol.main.exit()
-        elseif key == "h" then
-            zentropy.game.game:set_hud_enabled(false)
         end
         return true
     end
