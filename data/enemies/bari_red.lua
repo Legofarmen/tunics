@@ -7,7 +7,7 @@ local bari_mixin = require 'enemies/bari_mixin'
 
 function enemy:on_created()
     self:set_life(3)
-    self:set_damage(2)
+    self:set_damage(3)
     self:create_sprite("enemies/bari_red")
     self:set_size(16, 16)
     self:set_origin(8, 13)
