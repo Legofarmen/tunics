@@ -8,7 +8,7 @@ setmetatable(HideTreasuresVisitor, HideTreasuresVisitor)
 function HideTreasuresVisitor:visit_room(room)
     room:each_child(function (key, child)
         if child.class == 'Treasure' and child:is_normal() then
-            room:update_child(key, child:with_needs{reach='puzzle',open='open'})
+            room:update_child(key, child:with_needs{reach='puzzle',open='nothing'})
         end
         child:accept(self)
     end)
@@ -82,13 +82,13 @@ function FillerObstacleVisitor:visit_room(room)
     local obstacle = self.obstacles[self.rng:refine('' .. self.counter):random(2 * #self.obstacles)]
     local need = {}
     if obstacle == 'trap' then
-        need.open = 'open'
+        need.open = 'nothing'
         need.reach = 'puzzle'
     elseif obstacle and obstacle:find('wall$') then
         need.open = obstacle
         need.reach = obstacle
     else
-        need.open = 'open'
+        need.open = 'nothing'
         need.reach = obstacle
     end
     local old_metric = room:get_children_metric()
@@ -99,7 +99,7 @@ function FillerObstacleVisitor:visit_room(room)
                 if obstacle ~= 'trap' then
                     child:with_needs(need)
                     old_metric = new_metric
-                elseif not room.open or room.open == 'open' then
+                elseif not room.open or room.open == 'nothing' then
                     child:with_needs(need)
                     old_metric = new_metric
                     room.exit = 'puzzle'
@@ -123,7 +123,7 @@ function Quest.boss_step(root)
 end
 
 function Quest.fairy_step(root)
-    root:add_child(Tree.Enemy:new{name='fairy'}:with_needs{reach='puzzle',open='open'})
+    root:add_child(Tree.Enemy:new{name='fairy'}:with_needs{reach='puzzle',open='nothing'})
 end
 
 function Quest.culdesac_step(root)
@@ -326,7 +326,7 @@ function Quest.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, max_heads, treasu
         elseif obstacle_type == 'veryweakwall' then
             open = 'veryweakwall'
         else
-            open = 'open'
+            open = 'nothing'
         end
         return Quest.obstacle_step(obstacle_type, open)
     end

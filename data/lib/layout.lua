@@ -195,13 +195,14 @@ function collect_mixin(object)
         local from_dir = self.reverse(native_dir)
         local parent_depth, parent_leaf = self.step(depth, leaf, from_dir)
         local native_pos = { depth=depth, leaf=leaf, dir=native_dir }
+        local entrance_door = {
+            native_pos=native_pos,
+        }
+        if room.open ~= 'nothing' then entrance_door.open = room.open end
+        if room.exit ~= 'nothing' then entrance_door.exit = room.exit end
         local info = {
             doors={
-                [from_dir]={
-                    native_pos=native_pos,
-                    open=room.open,
-                    reach=room.exit,
-                },
+                [from_dir]=entrance_door,
             },
             treasures={},
             enemies={},
