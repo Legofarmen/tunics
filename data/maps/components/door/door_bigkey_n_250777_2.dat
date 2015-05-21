@@ -252,6 +252,17 @@ sensor{
   name = "sensor",
 }
 
+stream{
+  layer = 1,
+  x = 160,
+  y = 13,
+  direction = 2,
+  speed = 128,
+  allow_movement = false,
+  allow_attack = false,
+  allow_item = false,
+}
+
 tile{
   layer = 2,
   x = 136,
