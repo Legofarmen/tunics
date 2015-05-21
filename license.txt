@@ -282,3 +282,7 @@ Data files under CC BY-SA 3.0:
 ------------------------------
 sprites/hud/dialog_box.png
 text/minecraftia.png                                Andrew Tyler: http://www.andrewtyler.net
+
+Data files under CC BY 3.0:
+------------------------------
+lib/color.lua                                       Emmanuel Oga: http://emmanueloga.com/
