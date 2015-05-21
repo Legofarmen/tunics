@@ -281,3 +281,4 @@ tilesets/light_world.tiles.png
 Data files under CC BY-SA 3.0:
 ------------------------------
 sprites/hud/dialog_box.png
+text/minecraftia.png                                Andrew Tyler: http://www.andrewtyler.net
