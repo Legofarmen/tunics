@@ -8,15 +8,6 @@ properties{
 }
 
 tile{
-  layer = 0,
-  x = 112,
-  y = 80,
-  width = 96,
-  height = 128,
-  pattern = "floor.17",
-}
-
-tile{
   layer = 1,
   x = 112,
   y = 144,
