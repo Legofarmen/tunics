@@ -24,7 +24,6 @@ function map_menu:on_started()
 
     self.map_overlay = sol.surface.create("menus/dungeon_map_background.png")
     self.map_icons = sol.surface.create("menus/dungeon_map_icons.png")
-    self.hero_point_sprite = sol.sprite.create("menus/hero_point")
     self.map_surface = sol.surface.create(118, 120)
     self.map_surface:set_xy(77, 59)
     self.small_keys_text = sol.text_surface.create{

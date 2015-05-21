@@ -561,7 +561,6 @@ sprite{ id = "hud/gameover_fade", description = "HUD: Game-over fade" }
 sprite{ id = "enemies/enemy_killed", description = "Enemy killed" }
 sprite{ id = "enemies/tentacle", description = "Tentacle" }
 sprite{ id = "menus/hero_head", description = "Menu: hero head" }
-sprite{ id = "menus/hero_point", description = "Menu: Hero point" }
 sprite{ id = "entities/big_chest", description = "Big chest" }
 sprite{ id = "enemies/green_knight_soldier", description = "Green knight soldier" }
 sprite{ id = "enemies/green_knight_soldier_sword", description = "Green knight soldier (sword)" }

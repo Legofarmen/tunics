@@ -277,3 +277,7 @@ tilesets/dungeon_smoothbrick_pink_1.entities.png
 tilesets/dungeon_smoothbrick_pink_1.tiles.png
 tilesets/light_world.entities.png
 tilesets/light_world.tiles.png
+
+Data files under CC BY-SA 3.0:
+------------------------------
+sprites/hud/dialog_box.png
