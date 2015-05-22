@@ -10,10 +10,12 @@ else
 	destination = "rooms/cutscene"
 end
 
+local x, y, layer = map:get_entity('stairs'):get_position()
+
 map:create_teletransporter({
-		layer = 1,
-		x = 152,
-		y = 16,
+		layer = layer,
+		x = x,
+		y = y,
 		width = 16,
 		height = 16,
 		destination_map = destination,

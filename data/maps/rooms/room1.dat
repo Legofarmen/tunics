@@ -196,13 +196,6 @@ dynamic_tile{
   enabled_at_start = false,
 }
 
-pickable{
-  layer = 1,
-  x = 56,
-  y = 189,
-  treasure_name = "shield",
-}
-
 tile{
   layer = 2,
   x = 0,
