@@ -80,7 +80,7 @@ function FillerObstacleVisitor:visit_treasure(treasure) end
 function FillerObstacleVisitor:visit_enemy(enemy) end
 function FillerObstacleVisitor:visit_room(room)
     local obstacle = self.obstacles[self.rng:refine('' .. self.counter):random(2 * #self.obstacles)]
-    if obstacle and self.open ~= 'entrance' then
+    if obstacle then
         local need = {}
         if obstacle == 'trap' then
             need.open = 'nothing'
@@ -92,42 +92,38 @@ function FillerObstacleVisitor:visit_room(room)
             need.open = 'nothing'
             need.reach = obstacle
         end
-        local old_metric = room:get_children_metric()
-        local incomplete_ambush = false
-        local treasures = {}
-        room:each_child(function (key, child)
-            if child.class == 'Treasure' then
-                if child:can_need(need) then
-                    table.insert(treasures, child)
-                end
-            elseif child:can_need(need) then
-                local new_metric = old_metric - child:get_node_metric() + child:get_node_metric_with(need)
-                if new_metric:is_valid() then
-                    if obstacle == 'trap' then
-                        if not room.open or room.open == 'nothing' then
-                            child:with_needs(need)
-                            old_metric = new_metric
-                            room.exit = 'puzzle'
-                        else
-                            incomplete_ambush = true
-                        end
-                    else
+
+        if obstacle ~= 'trap' or (room:get_children_metric() + Tree.Metric:new{ obstacle_doors={puzzle=1} }):is_valid() then
+            local old_metric = room:get_children_metric()
+            local incomplete_ambush = false
+            local treasures = {}
+            room:each_child(function (key, child)
+                if child.class == 'Treasure' then
+                    if child:can_need(need) then
+                        table.insert(treasures, child)
+                    end
+                elseif child:can_need(need) then
+                    local new_metric = old_metric - child:get_node_metric() + child:get_node_metric_with(need)
+                    if new_metric:is_valid() and not (obstacle == 'trap' and room.open and room.open ~= 'nothing') then
                         child:with_needs(need)
                         old_metric = new_metric
+                    else
+                        incomplete_ambush = true
                     end
                 else
                     incomplete_ambush = true
                 end
-            else
-                incomplete_ambush = true
+            end)
+            if obstacle == 'trap' and not incomplete_ambush then
+                room.exit = 'puzzle'
             end
-        end)
-        if not incomplete_ambush then
-            for i, child in ipairs(treasures) do
-                local new_metric = old_metric - child:get_node_metric() + child:get_node_metric_with(need)
-                if new_metric:is_valid() then
-                    child:with_needs(need)
-                    old_metric = new_metric
+            if not need.reach == 'puzzle' then
+                for i, child in ipairs(treasures) do
+                    local new_metric = old_metric - child:get_node_metric() + child:get_node_metric_with(need)
+                    if new_metric:is_valid() then
+                        child:with_needs(need)
+                        old_metric = new_metric
+                    end
                 end
             end
         end

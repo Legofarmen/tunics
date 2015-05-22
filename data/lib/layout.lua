@@ -199,7 +199,7 @@ function collect_mixin(object)
             native_pos=native_pos,
         }
         if room.open ~= 'nothing' then entrance_door.open = room.open end
-        if room.exit ~= 'nothing' then entrance_door.exit = room.exit end
+        if room.exit ~= 'nothing' then entrance_door.reach = room.exit end
         local info = {
             doors={
                 [from_dir]=entrance_door,
@@ -214,7 +214,6 @@ function collect_mixin(object)
             }
             if room.reach ~= 'nothing' then data.reach = room.reach end
             if room.open ~= 'nothing' then data.open = room.open end
-            if room.exit ~= 'nothing' then data.exit = room.exit end
             self:get_room(parent_depth, parent_leaf).doors[native_dir] = data
         end
     end
@@ -587,7 +586,6 @@ function Layout.solarus_mixin(object, map, floors)
                     name=door_name,
                     reach=native_door.reach,
                     open=native_door.open,
-                    exit=native_door.exit,
                 }
             end
             for n, treasure in ipairs(info.treasures) do
