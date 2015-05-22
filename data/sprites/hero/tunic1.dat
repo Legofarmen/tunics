@@ -62,7 +62,7 @@ animation{
 animation{
   name = "carrying_walking",
   src_image = "hero/carrying.png",
-  frame_delay = 100,
+  frame_delay = 75,
   frame_to_loop_on = 0,
   directions = {
     { x = 0, y = 0, frame_width = 24, frame_height = 24, origin_x = 12, origin_y = 21, num_frames = 3 },
@@ -84,11 +84,13 @@ animation{
 animation{
   name = "electrocuted",
   src_image = "hero/miscellaneous.png",
+  frame_delay = 70,
+  frame_to_loop_on = 0,
   directions = {
-    { x = 0, y = 152, frame_width = 24, frame_height = 24, origin_x = 12, origin_y = 21 },
-    { x = 24, y = 152, frame_width = 24, frame_height = 24, origin_x = 12, origin_y = 21 },
-    { x = 48, y = 152, frame_width = 24, frame_height = 24, origin_x = 12, origin_y = 21 },
-    { x = 72, y = 152, frame_width = 24, frame_height = 24, origin_x = 12, origin_y = 21 },
+    { x = 0, y = 104, frame_width = 24, frame_height = 24, origin_x = 12, origin_y = 21, num_frames = 2, num_columns = 1 },
+    { x = 24, y = 104, frame_width = 24, frame_height = 24, origin_x = 12, origin_y = 21, num_frames = 2, num_columns = 1 },
+    { x = 48, y = 104, frame_width = 24, frame_height = 24, origin_x = 12, origin_y = 21, num_frames = 2, num_columns = 1 },
+    { x = 72, y = 104, frame_width = 24, frame_height = 24, origin_x = 12, origin_y = 21, num_frames = 2, num_columns = 1 },
   },
 }
 animation{
@@ -349,7 +351,7 @@ animation{
 animation{
   name = "walking_diagonal",
   src_image = "hero/walking.tunic.png",
-  frame_delay = 100,
+  frame_delay = 50,
   frame_to_loop_on = 0,
   directions = {
     { x = 192, y = 0, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 29, num_frames = 3 },
