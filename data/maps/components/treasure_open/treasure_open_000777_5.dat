@@ -12,7 +12,7 @@ tile{
   x = 120,
   y = 56,
   width = 80,
-  height = 80,
+  height = 64,
   pattern = "floor_border.2",
 }
 
@@ -21,7 +21,7 @@ tile{
   x = 128,
   y = 64,
   width = 64,
-  height = 64,
+  height = 48,
   pattern = "floor_small.2",
 }
 
@@ -72,8 +72,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 128,
-  y = 88,
+  x = 136,
+  y = 80,
   width = 16,
   height = 16,
   pattern = "pike",
@@ -81,8 +81,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 176,
-  y = 88,
+  x = 168,
+  y = 80,
   width = 16,
   height = 16,
   pattern = "pike",
@@ -103,7 +103,7 @@ wall{
 enemy{
   layer = 1,
   x = 160,
-  y = 125,
+  y = 109,
   direction = 3,
   breed = "pike_detect",
 }
@@ -111,7 +111,7 @@ enemy{
 dynamic_tile{
   layer = 1,
   x = 104,
-  y = 136,
+  y = 120,
   width = 16,
   height = 16,
   name = "pot_1",
@@ -122,7 +122,7 @@ dynamic_tile{
 dynamic_tile{
   layer = 1,
   x = 200,
-  y = 136,
+  y = 120,
   width = 16,
   height = 16,
   name = "pot_2",
@@ -176,8 +176,8 @@ dynamic_tile{
 
 wall{
   layer = 1,
-  x = 128,
-  y = 88,
+  x = 136,
+  y = 80,
   width = 16,
   height = 16,
   stops_enemies = true,
@@ -188,8 +188,8 @@ wall{
 
 wall{
   layer = 1,
-  x = 176,
-  y = 88,
+  x = 168,
+  y = 80,
   width = 16,
   height = 16,
   stops_enemies = true,
@@ -201,7 +201,7 @@ wall{
 dynamic_tile{
   layer = 1,
   x = 152,
-  y = 88,
+  y = 80,
   width = 16,
   height = 16,
   name = "chest",
