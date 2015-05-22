@@ -52,6 +52,7 @@ end
 
 function map:get_sword()
 	hero:start_treasure('sword', 1, "i1129",function()
+    zentropy.game.game:set_ability('shield', 1)
 		sol.timer.start(200,function()
 			hero:set_animation("stopped")
 			hero:set_direction(1)
