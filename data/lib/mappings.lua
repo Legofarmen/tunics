@@ -101,7 +101,6 @@ local enemy_tier = {
     tentacle = 1,
     keese = 1,
     rat = 1,
-    octorok = 1,
     simple_green_soldier = 1,
     bari_blue = 2,
     rope = 2,
