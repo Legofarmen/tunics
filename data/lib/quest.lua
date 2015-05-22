@@ -306,30 +306,30 @@ function Quest.Dependencies:multiple(name, count, factory, rng)
     return first, last
 end
 
-function Quest.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, max_heads, treasure_items, brought_items)
-    brought_items = brought_items or {}
-
-    function get_obstacle_types(item_name, has_map)
-        if item_name ~= 'bombs_counter' then
-            return {item_name}
-        elseif has_map then
-            return {'veryweakwall','weakwall'}
-        else
-            return {'veryweakwall'}
-        end
+local function get_obstacle_types(item_name, has_map)
+    if item_name ~= 'bombs_counter' then
+        return {item_name}
+    elseif has_map then
+        return {'veryweakwall','weakwall'}
+    else
+        return {'veryweakwall'}
     end
+end
 
-    function get_obstacle_step(obstacle_type)
-        local open
-        if obstacle_type == 'weakwall' then
-            open = 'weakwall'
-        elseif obstacle_type == 'veryweakwall' then
-            open = 'veryweakwall'
-        else
-            open = 'nothing'
-        end
-        return Quest.obstacle_step(obstacle_type, open)
+local function get_obstacle_step(obstacle_type)
+    local open
+    if obstacle_type == 'weakwall' then
+        open = 'weakwall'
+    elseif obstacle_type == 'veryweakwall' then
+        open = 'veryweakwall'
+    else
+        open = 'nothing'
     end
+    return Quest.obstacle_step(obstacle_type, open)
+end
+
+
+function Quest.outline_graph(rng, nkeys, nfairies, nculdesacs, treasure_items)
 
     local d = Quest.Dependencies:new()
 
@@ -375,23 +375,18 @@ function Quest.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, max_heads, treasu
     d:multiple('culdesac', nculdesacs, function () return Quest.culdesac_step end)
     d:multiple('fairy', nfairies, function () return Quest.fairy_step end)
 
-    local obstacle_types = {'trap'}
-    for _, item_name in ipairs(brought_items) do
+    return d.result
+end
+
+function Quest.render_steps(rng, steps, max_heads, filler_items)
+
+    local filler_obstacle_types = {'trap'}
+    for _, item_name in ipairs(filler_items) do
         for _, obstacle in ipairs(get_obstacle_types(item_name, false)) do
-            table.insert(obstacle_types, obstacle)
+            table.insert(filler_obstacle_types, obstacle)
         end
     end
 
-    local steps = Quest.sequence(rng:refine('steps'), d.result)
-    --[[
-    for i, element in ipairs(steps) do
-        zentropy.debug(i, element.name)
-    end
-    ]]
-    return Quest.render_steps(rng, steps, max_heads, obstacle_types)
-end
-
-function Quest.render_steps(rng, steps, max_heads, filler_obstacle_types)
     -- Build puzzle tree using the sequence of steps
     local heads = Tree.Room:new()
     for i, element in ipairs(steps) do
