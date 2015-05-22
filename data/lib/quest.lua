@@ -117,7 +117,7 @@ function FillerObstacleVisitor:visit_room(room)
             if obstacle == 'trap' and not incomplete_ambush then
                 room.exit = 'puzzle'
             end
-            if not incomplete_ambush then
+            if not need.reach == 'puzzle' then
                 for i, child in ipairs(treasures) do
                     local new_metric = old_metric - child:get_node_metric() + child:get_node_metric_with(need)
                     if new_metric:is_valid() then
