@@ -364,7 +364,7 @@ dynamic_tile{
   y = 96,
   width = 48,
   height = 48,
-  name = "boss_3",
+  name = "boss_2",
   pattern = "placeholder_boss_1",
   enabled_at_start = false,
 }
@@ -375,7 +375,7 @@ dynamic_tile{
   y = 96,
   width = 48,
   height = 48,
-  name = "boss_4",
+  name = "boss_3",
   pattern = "placeholder_boss_1",
   enabled_at_start = false,
 }

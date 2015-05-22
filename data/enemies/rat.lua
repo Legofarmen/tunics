@@ -1,18 +1,48 @@
 local enemy = ...
 
--- Rat: a basic enemy.
+-- Enemy: rat
 
-sol.main.load_file("enemies/generic_towards_hero")(enemy)
-enemy:set_properties({
-  sprite = "enemies/rat",
-  life = 1,
-  damage = 2,
-  normal_speed = 32,
-  faster_speed = 48,
-  hurt_style = "monster",
-  push_hero_on_sword = false,
-  movement_create = function()
-    local m = sol.movement.create("path_finding")
-    return m
-  end
-})
+enemy:set_life(1)
+enemy:set_damage(1)
+
+local sprite = enemy:create_sprite("enemies/rat")
+
+-- The enemy was stopped for some reason and should restart.
+function enemy:on_restarted()
+   local m = sol.movement.create("straight")
+   m:start(self)
+   self:go()
+end
+
+-- An obstacle is reached: try a new direction
+function enemy:on_obstacle_reached()
+    self:go()
+end
+
+-- Stop for a while, then keep going or change direction
+function enemy:on_movement_finished()
+    sprite:set_animation("shaking")
+        sol.timer.start(self, math.random(600,1200), function() 
+            self:go()
+    end)
+end
+
+-- Makes the rat walk towards a direction.
+function enemy:go()
+
+    -- Set the sprite.
+    sprite:set_animation("walking")
+    local direction = sprite:get_direction()
+ 
+    local directions = { ((direction + 3) % 4), ((direction + 1) % 4), ((direction) % 4) }
+    local direction4 = directions[math.random(3)]
+
+    sprite:set_direction(direction4)
+  
+    -- Set the movement.
+    local m = self:get_movement()
+    local max_distance = 72 + math.random(128)
+    m:set_speed(88)
+    m:set_max_distance(max_distance)
+    m:set_angle(direction4 * math.pi / 2)
+end
