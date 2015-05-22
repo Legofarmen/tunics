@@ -32,7 +32,7 @@ function enemy:on_update()
         m:set_speed(56)
         m:start(self)
         state = "going"
-        
+                
     elseif self:get_distance(hero) > 144 then
         self:get_sprite():set_animation("stopped")
         state = "stopped"
@@ -44,6 +44,7 @@ function enemy:on_update()
         m:set_speed(24)
         m:start(self)
         state = "random"
+        sol.audio.play_sound("keese")
         
     end    
 end
