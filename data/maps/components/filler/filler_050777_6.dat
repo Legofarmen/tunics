@@ -223,6 +223,60 @@ tile{
   pattern = "wall_border.2",
 }
 
+tile{
+  layer = 1,
+  x = 64,
+  y = 32,
+  width = 8,
+  height = 8,
+  pattern = "wall_border.corner.1",
+}
+
+tile{
+  layer = 1,
+  x = 64,
+  y = 200,
+  width = 8,
+  height = 8,
+  pattern = "wall_border.corner.3",
+}
+
+tile{
+  layer = 1,
+  x = 248,
+  y = 200,
+  width = 8,
+  height = 8,
+  pattern = "wall_border.corner.4",
+}
+
+tile{
+  layer = 1,
+  x = 248,
+  y = 32,
+  width = 8,
+  height = 8,
+  pattern = "wall_border.corner.2",
+}
+
+tile{
+  layer = 1,
+  x = 64,
+  y = 40,
+  width = 8,
+  height = 160,
+  pattern = "wall_border.3",
+}
+
+tile{
+  layer = 1,
+  x = 248,
+  y = 40,
+  width = 8,
+  height = 160,
+  pattern = "wall_border.4",
+}
+
 dynamic_tile{
   layer = 1,
   x = 104,
@@ -238,7 +292,7 @@ enemy{
   layer = 1,
   x = 128,
   y = 157,
-  direction = 3,
+  direction = 0,
   breed = "pike_auto",
 }
 
@@ -246,7 +300,7 @@ enemy{
   layer = 1,
   x = 128,
   y = 125,
-  direction = 3,
+  direction = 0,
   breed = "pike_auto",
 }
 
@@ -254,7 +308,7 @@ enemy{
   layer = 1,
   x = 128,
   y = 93,
-  direction = 3,
+  direction = 0,
   breed = "pike_auto",
 }
 
