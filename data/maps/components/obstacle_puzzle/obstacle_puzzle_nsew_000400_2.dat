@@ -9,7 +9,7 @@ properties{
 
 tile{
   layer = 1,
-  x = 40,
+  x = 72,
   y = 40,
   width = 16,
   height = 16,
@@ -30,7 +30,7 @@ switch{
 block{
   layer = 1,
   x = 64,
-  y = 69,
+  y = 85,
   name = "block_1",
   direction = -1,
   sprite = "entities/block",
@@ -41,21 +41,9 @@ block{
 
 block{
   layer = 1,
-  x = 80,
-  y = 85,
-  name = "block_2",
-  direction = -1,
-  sprite = "entities/block",
-  pushable = true,
-  pullable = false,
-  maximum_moves = 1,
-}
-
-block{
-  layer = 1,
   x = 96,
-  y = 101,
-  name = "block_3",
+  y = 69,
+  name = "block_2",
   direction = -1,
   sprite = "entities/block",
   pushable = true,
@@ -66,7 +54,7 @@ block{
 dynamic_tile{
   layer = 1,
   x = 88,
-  y = 56,
+  y = 72,
   width = 32,
   height = 32,
   name = "enemy_1",
