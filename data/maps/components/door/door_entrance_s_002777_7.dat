@@ -3,7 +3,7 @@ properties{
   y = 0,
   width = 320,
   height = 240,
-  tileset = "dungeon_brick_green_1",
+  tileset = "dungeon_smoothbrick_pink_1",
   music = "same",
 }
 
@@ -41,60 +41,6 @@ tile{
   width = 24,
   height = 24,
   pattern = "wall.corner.4",
-}
-
-tile{
-  layer = 1,
-  x = 104,
-  y = 8,
-  width = 16,
-  height = 32,
-  pattern = "wall_pillar.7.1",
-}
-
-tile{
-  layer = 1,
-  x = 72,
-  y = 8,
-  width = 16,
-  height = 32,
-  pattern = "wall_pillar.7.1",
-}
-
-tile{
-  layer = 1,
-  x = 40,
-  y = 8,
-  width = 16,
-  height = 32,
-  pattern = "wall_pillar.7.1",
-}
-
-tile{
-  layer = 1,
-  x = 264,
-  y = 8,
-  width = 16,
-  height = 32,
-  pattern = "wall_pillar.7.1",
-}
-
-tile{
-  layer = 1,
-  x = 232,
-  y = 8,
-  width = 16,
-  height = 32,
-  pattern = "wall_pillar.7.1",
-}
-
-tile{
-  layer = 1,
-  x = 200,
-  y = 8,
-  width = 16,
-  height = 32,
-  pattern = "wall_pillar.7.1",
 }
 
 tile{
@@ -392,6 +338,60 @@ tile{
   width = 64,
   height = 64,
   pattern = "ceiling",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 8,
+  width = 16,
+  height = 32,
+  pattern = "wall_pillar.1.1",
+}
+
+tile{
+  layer = 1,
+  x = 72,
+  y = 8,
+  width = 16,
+  height = 32,
+  pattern = "wall_pillar.1.1",
+}
+
+tile{
+  layer = 1,
+  x = 104,
+  y = 8,
+  width = 16,
+  height = 32,
+  pattern = "wall_pillar.1.1",
+}
+
+tile{
+  layer = 1,
+  x = 200,
+  y = 8,
+  width = 16,
+  height = 32,
+  pattern = "wall_pillar.1.1",
+}
+
+tile{
+  layer = 1,
+  x = 232,
+  y = 8,
+  width = 16,
+  height = 32,
+  pattern = "wall_pillar.1.1",
+}
+
+tile{
+  layer = 1,
+  x = 264,
+  y = 8,
+  width = 16,
+  height = 32,
+  pattern = "wall_pillar.1.1",
 }
 
 dynamic_tile{
