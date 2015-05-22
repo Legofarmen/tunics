@@ -27,20 +27,23 @@ function enemy:on_update()
     end
     -- Check whether the hero is close.
     if self:get_distance(hero) <= 96 and state ~= "going" then
-        if sprite == "enemies/keese" then self:get_sprite():set_animation("walking") end
         local m = sol.movement.create("target")
+        self:get_sprite():set_animation("walking")
         m:set_speed(64)
         m:start(self)
         state = "going"
+        
+    elseif self:get_distance(hero) > 144 then
+        self:get_sprite():set_animation("stopped")
+        state = "stopped"
+        self:stop_movement()
+        
     elseif self:get_distance(hero) > 96 and state ~= "random" then
-        if sprite == "enemies/keese" then self:get_sprite():set_animation("walking") end
         local m = sol.movement.create("random")
+        self:get_sprite():set_animation("walking")
         m:set_speed(56)
         m:start(self)
         state = "random"
-    elseif self:get_distance(hero) > 144 then
-        if sprite == "enemies/keese" then self:get_sprite():set_animation("stopped") end
-        state = "stopped"
-        self:stop_movement()
-    end
+        
+    end    
 end

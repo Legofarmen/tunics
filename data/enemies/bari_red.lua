@@ -12,20 +12,28 @@ function enemy:on_created()
     self:set_size(16, 16)
     self:set_origin(8, 13)
     bari_mixin.mixin(self)
+    self:set_treasure()
+
 end
 
 function enemy:on_dying()
-    local function create_mini()
-        local mini = enemy:create_enemy({ breed = "bari_mini" })
-        mini:set_invincible(true) -- make mini survive the initial attack
-        sol.timer.start(mini, 300, function ()
-            mini:shock()
+    local function create_mini(angle)
+        sol.timer.start(1000, function ()
+            local mini = enemy:create_enemy({ breed = "bari_mini" })
+            local move = sol.movement.create("straight")
+            move:set_angle(angle)
+            move:set_max_distance(16)
+            move:set_speed(64)
+            move:start(mini)
+            mini:set_invincible(true) -- make mini survive the initial attack
+            sol.timer.start(mini, 300, function ()
+                mini:shock()
+            end)
+            return mini
         end)
-        return mini
     end
     -- It splits into two mini baris when it dies
-    local mini1 = create_mini()
-    local mini2 = create_mini()
-    mini1:set_treasure(self:get_treasure())
-    self:set_treasure()
+    local mini1 = create_mini(0)
+    local mini2 = create_mini(math.pi)
+        
 end
