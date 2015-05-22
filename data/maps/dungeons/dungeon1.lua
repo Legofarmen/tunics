@@ -62,7 +62,9 @@ local nfairies = zentropy.settings.tier_fairies or mapping.complexity.fairies
 local nculdesacs = zentropy.settings.tier_culdesacs or mapping.complexity.culdesacs
 local max_heads = zentropy.settings.tier_max_heads or mapping.complexity.max_heads
 
-local puzzle = Quest.alpha_dungeon(puzzle_rng, nkeys, nfairies, nculdesacs, max_heads, treasure_items, brought_items)
+local step_deps = Quest.outline_graph(puzzle_rng, nkeys, nfairies, nculdesacs, treasure_items)
+local steps = Quest.sequence(puzzle_rng:refine('steps'), step_deps)
+local puzzle = Quest.render_steps(puzzle_rng, steps, max_heads, brought_items)
 --puzzle:accept(Tree.PrintVisitor:new{})
 
 if tileset_override then
