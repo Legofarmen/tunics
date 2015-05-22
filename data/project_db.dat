@@ -4,7 +4,7 @@ map{ id = "components/door/door_open_n_200000_1", description = "Door open n 200
 map{ id = "components/door/door_open_s_002000_1", description = "Door open s 002000 1" }
 map{ id = "components/door/door_open_w_040000_1", description = " Door open w 040000 1" }
 map{ id = "components/door/door_open_e_010000_1", description = "Door open e 010000 1" }
-map{ id = "components/door/door_bigkey_n_200700_1", description = "Door bigkey n 200700 1" }
+map{ id = "components/door/door_bigkey_n_200777_6", description = "Door bigkey n 200777 6" }
 map{ id = "components/door/door_weakwall_n_200000_1", description = "Door weakwall n 200000 1" }
 map{ id = "components/door/door_weakwall_s_002000_1", description = "Door weakwall s 002000 1" }
 map{ id = "components/filler/filler_000400_1", description = "Filler 000400 1" }
