@@ -114,7 +114,7 @@ function FillerObstacleVisitor:visit_room(room)
                     incomplete_ambush = true
                 end
             end)
-            if obstacle == 'trap' and not incomplete_ambush then
+            if obstacle == 'trap' and (not room.open or room.open == 'nothing') and not incomplete_ambush then
                 room.exit = 'puzzle'
             end
             if not need.reach == 'puzzle' then
