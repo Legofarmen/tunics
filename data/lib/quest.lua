@@ -93,7 +93,7 @@ function FillerObstacleVisitor:visit_room(room)
     end
     local old_metric = room:get_children_metric()
     room:each_child(function (key, child)
-        if obstacle and child:can_need(need) and self.open ~= 'entrance' then
+        if obstacle and child:can_need(need) and self.open ~= 'entrance' and not (obstacle == 'puzzle' and child.class == 'Treasure') then
             local new_metric = old_metric - child:get_node_metric() + child:get_node_metric_with(need)
             if new_metric:is_valid() then
                 if obstacle ~= 'trap' then
@@ -383,6 +383,11 @@ function Quest.alpha_dungeon(rng, nkeys, nfairies, nculdesacs, max_heads, treasu
     end
 
     local steps = Quest.sequence(rng:refine('steps'), d.result)
+    --[[
+    for i, element in ipairs(steps) do
+        zentropy.debug(i, element.name)
+    end
+    ]]
     return Quest.render_steps(rng, steps, max_heads, obstacle_types)
 end
 
