@@ -12,8 +12,8 @@ function enemy:on_created()
     self:set_size(16, 16)
     self:set_origin(8, 13)
     bari_mixin.mixin(self)
+    self:set_obstacle_behavior("flying")
     self:set_treasure()
-
 end
 
 function enemy:on_dying()

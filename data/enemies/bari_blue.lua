@@ -11,5 +11,6 @@ function enemy:on_created()
     self:create_sprite("enemies/bari_blue")
     self:set_size(16, 16)
     self:set_origin(8, 13)
+    self:set_obstacle_behavior("flying")
     bari_mixin.mixin(self)
 end
