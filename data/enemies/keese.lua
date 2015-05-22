@@ -29,7 +29,7 @@ function enemy:on_update()
     if self:get_distance(hero) <= 96 and state ~= "going" then
         local m = sol.movement.create("target")
         self:get_sprite():set_animation("walking")
-        m:set_speed(64)
+        m:set_speed(56)
         m:start(self)
         state = "going"
         
@@ -41,9 +41,15 @@ function enemy:on_update()
     elseif self:get_distance(hero) > 96 and state ~= "random" then
         local m = sol.movement.create("random")
         self:get_sprite():set_animation("walking")
-        m:set_speed(56)
+        m:set_speed(24)
         m:start(self)
         state = "random"
         
     end    
+end
+
+function enemy:on_restarted()
+    self:get_sprite():set_animation("stopped")
+    state = "stopped"
+
 end
