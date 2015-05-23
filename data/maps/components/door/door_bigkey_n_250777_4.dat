@@ -362,3 +362,57 @@ tile{
   pattern = "wall.2",
 }
 
+tile{
+  layer = 2,
+  x = 0,
+  y = 32,
+  width = 8,
+  height = 176,
+  pattern = "hole",
+}
+
+tile{
+  layer = 2,
+  x = 0,
+  y = 32,
+  width = 8,
+  height = 16,
+  pattern = "wall_hole.1",
+}
+
+tile{
+  layer = 2,
+  x = 0,
+  y = 192,
+  width = 8,
+  height = 16,
+  pattern = "wall_hole.2",
+}
+
+tile{
+  layer = 2,
+  x = 312,
+  y = 32,
+  width = 8,
+  height = 176,
+  pattern = "hole",
+}
+
+tile{
+  layer = 2,
+  x = 312,
+  y = 32,
+  width = 8,
+  height = 16,
+  pattern = "wall_hole.1",
+}
+
+tile{
+  layer = 2,
+  x = 312,
+  y = 192,
+  width = 8,
+  height = 16,
+  pattern = "wall_hole.2",
+}
+
