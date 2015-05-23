@@ -387,3 +387,25 @@ dynamic_tile{
   enabled_at_start = true,
 }
 
+dynamic_tile{
+  layer = 1,
+  x = 72,
+  y = 160,
+  width = 32,
+  height = 32,
+  name = "enemy_1",
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 216,
+  y = 48,
+  width = 32,
+  height = 32,
+  name = "enemy_2",
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
+}
+

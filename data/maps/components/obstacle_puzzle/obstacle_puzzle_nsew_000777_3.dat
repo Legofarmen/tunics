@@ -70,6 +70,15 @@ tile{
   pattern = "block",
 }
 
+tile{
+  layer = 1,
+  x = 8,
+  y = 8,
+  width = 24,
+  height = 24,
+  pattern = "wall.corner.1",
+}
+
 switch{
   layer = 1,
   x = 0,
@@ -182,8 +191,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 128,
-  y = 120,
+  x = 40,
+  y = 40,
   width = 16,
   height = 16,
   name = "treasure_open_chest",

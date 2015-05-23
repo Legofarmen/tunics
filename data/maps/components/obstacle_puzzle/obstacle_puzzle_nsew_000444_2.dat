@@ -146,3 +146,14 @@ switch{
   inactivate_when_leaving = false,
 }
 
+dynamic_tile{
+  layer = 1,
+  x = 80,
+  y = 120,
+  width = 32,
+  height = 32,
+  name = "enemy_3",
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
+}
+
