@@ -33,7 +33,6 @@ function door_closed.init(map, data, direction)
     component:set_open(true)
 
     function door:on_opened()
-        print('on_opened')
         map:remove_entities('stream_')
     end
 
