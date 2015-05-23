@@ -3,7 +3,7 @@ properties{
   y = 0,
   width = 320,
   height = 240,
-  tileset = "dungeon_smoothbrick_brown_1",
+  tileset = "dungeon_ganon_brown_1",
   music = "same",
 }
 
@@ -113,123 +113,6 @@ tile{
   width = 24,
   height = 24,
   pattern = "wall_low.corner.4",
-}
-
-tile{
-  layer = 1,
-  x = 224,
-  y = 96,
-  width = 8,
-  height = 8,
-  pattern = "barrier.3.border",
-}
-
-tile{
-  layer = 1,
-  x = 224,
-  y = 56,
-  width = 8,
-  height = 8,
-  pattern = "barrier.3.border",
-}
-
-tile{
-  layer = 1,
-  x = 224,
-  y = 64,
-  width = 8,
-  height = 32,
-  pattern = "barrier.3.2",
-}
-
-tile{
-  layer = 1,
-  x = 224,
-  y = 176,
-  width = 8,
-  height = 8,
-  pattern = "barrier.3.border",
-}
-
-tile{
-  layer = 1,
-  x = 224,
-  y = 136,
-  width = 8,
-  height = 8,
-  pattern = "barrier.3.border",
-}
-
-tile{
-  layer = 1,
-  x = 224,
-  y = 144,
-  width = 8,
-  height = 32,
-  pattern = "barrier.3.2",
-}
-
-tile{
-  layer = 1,
-  x = 88,
-  y = 96,
-  width = 8,
-  height = 8,
-  pattern = "barrier.3.border",
-}
-
-tile{
-  layer = 1,
-  x = 88,
-  y = 56,
-  width = 8,
-  height = 8,
-  pattern = "barrier.3.border",
-}
-
-tile{
-  layer = 1,
-  x = 88,
-  y = 64,
-  width = 8,
-  height = 32,
-  pattern = "barrier.3.2",
-}
-
-tile{
-  layer = 1,
-  x = 88,
-  y = 176,
-  width = 8,
-  height = 8,
-  pattern = "barrier.3.border",
-}
-
-tile{
-  layer = 1,
-  x = 88,
-  y = 136,
-  width = 8,
-  height = 8,
-  pattern = "barrier.3.border",
-}
-
-tile{
-  layer = 1,
-  x = 88,
-  y = 144,
-  width = 8,
-  height = 32,
-  pattern = "barrier.3.2",
-}
-
-tile{
-  layer = 1,
-  x = 144,
-  y = 104,
-  width = 32,
-  height = 32,
-  pattern = "placeholder_enemy",
 }
 
 tile{
@@ -374,6 +257,114 @@ tile{
   width = 32,
   height = 16,
   pattern = "wall_torch.2",
+}
+
+tile{
+  layer = 1,
+  x = 88,
+  y = 56,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+tile{
+  layer = 1,
+  x = 88,
+  y = 96,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+tile{
+  layer = 1,
+  x = 88,
+  y = 136,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+tile{
+  layer = 1,
+  x = 88,
+  y = 176,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+tile{
+  layer = 1,
+  x = 224,
+  y = 56,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+tile{
+  layer = 1,
+  x = 224,
+  y = 96,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+tile{
+  layer = 1,
+  x = 224,
+  y = 136,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+tile{
+  layer = 1,
+  x = 224,
+  y = 176,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+tile{
+  layer = 1,
+  x = 88,
+  y = 64,
+  width = 8,
+  height = 32,
+  pattern = "barrier.1.2",
+}
+
+tile{
+  layer = 1,
+  x = 88,
+  y = 144,
+  width = 8,
+  height = 32,
+  pattern = "barrier.1.2",
+}
+
+tile{
+  layer = 1,
+  x = 224,
+  y = 144,
+  width = 8,
+  height = 32,
+  pattern = "barrier.1.2",
+}
+
+tile{
+  layer = 1,
+  x = 224,
+  y = 64,
+  width = 8,
+  height = 32,
+  pattern = "barrier.1.2",
 }
 
 jumper{
@@ -597,6 +588,17 @@ block{
   pushable = true,
   pullable = false,
   maximum_moves = 1,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 144,
+  y = 104,
+  width = 32,
+  height = 32,
+  name = "enemy_1",
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
 }
 
 tile{

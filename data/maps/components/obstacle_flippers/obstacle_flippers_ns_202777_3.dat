@@ -700,15 +700,6 @@ tile{
   pattern = "floor_grid",
 }
 
-tile{
-  layer = 1,
-  x = 128,
-  y = 104,
-  width = 32,
-  height = 32,
-  pattern = "placeholder_enemy",
-}
-
 dynamic_tile{
   layer = 1,
   x = 248,
@@ -809,6 +800,17 @@ wall{
   width = 8,
   height = 16,
   stops_enemies = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 128,
+  y = 104,
+  width = 32,
+  height = 32,
+  name = "enemy_1",
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
 }
 
 tile{
