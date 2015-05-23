@@ -81,6 +81,28 @@ sensor{
   name = "sensor",
 }
 
+stream{
+  layer = 1,
+  x = 160,
+  y = 13,
+  name = "stream_1",
+  direction = 6,
+  allow_movement = false,
+  allow_attack = false,
+  allow_item = false,
+}
+
+stream{
+  layer = 1,
+  x = 160,
+  y = 29,
+  name = "stream_2",
+  direction = 6,
+  allow_movement = false,
+  allow_attack = false,
+  allow_item = false,
+}
+
 tile{
   layer = 2,
   x = 120,
