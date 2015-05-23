@@ -470,6 +470,8 @@ map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000077_1", descriptio
 map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000333_1", description = "Puzzle 000333 1" }
 map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000666_1", description = "Puzzle 000666 1" }
 map{ id = "components/enemy/enemy_boss_000777_3", description = "Enemy boss 000777 3" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_ns_202777_2", description = "Obstacle flippers ns 202777 2 New" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_ns_202777_3", description = "Obstacle flippers ns 202777 3 New" }
 
 tileset{ id = "light_world", description = "Light World" }
 tileset{ id = "dungeon_brick_blue_1", description = "Dungeon brick blue 1" }
