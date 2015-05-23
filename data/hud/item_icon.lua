@@ -58,9 +58,9 @@ function item_icon:check()
       self.item_variant_displayed = item_variant
       self.item_sprite:set_direction(item_variant - 1)
     end
-
+   
     -- Amount.
-    if item:has_amount() then
+    --[[if item:has_amount() then
       local amount = item:get_amount()
       local max_amount = item:get_max_amount()
       if self.amount_displayed ~= amount
@@ -77,7 +77,7 @@ function item_icon:check()
   elseif self.amount_displayed ~= nil then
     need_rebuild = true
     self.amount_displayed = nil
-    self.max_amount_displayed = nil
+    self.max_amount_displayed = nil ]]
   end
 
   -- Redraw the surface only if something has changed.
@@ -93,15 +93,17 @@ end
 
 function item_icon:rebuild_surface()
 
-  self.surface:clear()
+	self.surface:clear()
 
-  -- Background image.
-  self.background_img:draw(self.surface)
-
-  if self.item_displayed ~= nil then
-    -- Item.
-    self.item_sprite:draw(self.surface, item_x, item_y)
-  end
+	if self.item_displayed ~= nil then
+		self.background_img:set_opacity(255)
+		self.background_img:draw(self.surface)
+		self.item_sprite:draw(self.surface, item_x, item_y)
+	else
+		self.background_img:set_opacity(128)
+		self.background_img:draw(self.surface)
+	end
+  
 end
 
 function item_icon:set_dst_position(x, y)
