@@ -9,7 +9,7 @@ local inventory_menu = require 'menus/inventory_menu'
 local dialog_box = require 'menus/dialog_box'
 local game_over_menu = require 'menus/game_over'
 local Menu = require 'menus/menu'
-local condition_manager = require 'hero_condition'
+local condition_manager = require 'lib/hero_condition'
 
 bit32 = bit32 or bit
 
