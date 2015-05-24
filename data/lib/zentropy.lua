@@ -26,6 +26,7 @@ zentropy = zentropy or {
         },
         Tilesets = Class:new{},
     },
+    enemy_strategies = {},
     game = {
         savefile = 'save.dat',
     },
@@ -454,8 +455,8 @@ end
 zentropy.Room = Class:new()
 
 function zentropy.Room:new(o)
-    zentropy.assert(o.rng)
-    zentropy.assert(o.map)
+    zentropy.assert(o.rng, 'property not found: o.rng')
+    zentropy.assert(o.map, 'property not found: o.map')
     o.mask = o.mask or 0
     o.data_messages = o.data_messages or function () end
     return Class.new(self, o)
@@ -516,7 +517,8 @@ function zentropy.Room:filler(n)
     if component_name then
         local filler_data = {
             rng=rng:refine('component'),
-            doors = {},
+            doors={},
+            room=self,
         }
         self.map:include(0, 0, component_name, filler_data)
         self.mask = bit32.bor(self.mask, component_mask)
@@ -903,15 +905,15 @@ local function get_random_treasure(rng)
     return nil, nil
 end
 
-function zentropy.inject_enemy(placeholder, rng)
+function zentropy.Room:inject_enemy(placeholder, rng)
     zentropy.assert(placeholder, 'placeholder entity must be provided')
-    local r = zentropy.Room.enemy_ratio
+    local r = self.enemy_ratio or 1
     local rng2 = rng:refine(r)
     while 1 <= r or rng2:random() < r do
         local map = placeholder:get_map()
         local x, y, layer = placeholder:get_position()
         local treasure_name, treasure_variant = get_random_treasure(rng2:refine('drop'))
-        local breed, treshold = zentropy.Room.next_enemy(rng2:refine('breed'))
+        local breed, treshold = self.next_enemy(rng2:refine('breed'), zentropy.Room.enemies)
         local enemy = map:create_enemy{
             layer=layer,
             x=x,
@@ -1078,6 +1080,100 @@ function zentropy.hide_switch(switch, hideout)
         hideout:remove()
     else
         hideout:bring_to_front()
+    end
+end
+
+function zentropy.enemy_strategies.create_uniform(rng, enemies)
+    zentropy.assert(enemies, 'uninitialized: enemies')
+    local breed, treshold = rng:refine('enemy'):choose(enemies)
+    return function (rng)
+        return breed, treshold
+    end
+end
+
+function zentropy.enemy_strategies.create_halves(rng, enemies)
+    local breed0, treshold0 = rng:refine('0'):choose(enemies)
+    local breed1, treshold1
+    for i = 1, 5 do
+        breed1, treshold1 = rng:refine(i):choose(enemies)
+        if breed1 ~= breed0 then
+            break
+        end
+    end
+    if treshold0 > treshold1 then
+        breed0, treshold0, breed1, treshold1 = breed1, treshold1, breed0, treshold0
+    end
+    local i = -1
+    return function (rng)
+        i = (i + 1) % 2
+        if i == 0 then
+            return breed0, treshold0
+        else
+            return breed1, treshold1
+        end
+    end
+end
+
+function zentropy.enemy_strategies.create_thirds(rng, enemies)
+    local breed0, treshold0 = rng:refine('0'):choose(enemies)
+    local breed1, treshold1
+    local breed2, treshold2
+    local i1
+    for i = 1, 5 do
+        i1 = i
+        breed1, treshold1 = rng:refine(i):choose(enemies)
+        if breed1 ~= breed0 then
+            break
+        end
+    end
+    for j = i1+1, i1+5 do
+        breed2, treshold2 = rng:refine(j):choose(enemies)
+        if breed2 ~= breed0 and breed2 ~= breed1 then
+            break
+        end
+    end
+    if treshold0 > treshold1 then
+        breed0, treshold0, breed1, treshold1 = breed1, treshold1, breed0, treshold0
+    end
+    if treshold1 > treshold2 then
+        breed1, treshold1, breed2, treshold2 = breed2, treshold2, breed1, treshold1
+    end
+    if treshold0 > treshold1 then
+        breed0, treshold0, breed1, treshold1 = breed1, treshold1, breed0, treshold0
+    end
+    local i = -1
+    return function (rng)
+        i = (i + 1) % 3
+        if i == 0 then
+            return breed0, treshold0
+        elseif i == 1 then
+            return breed1, treshold1
+        else
+            return breed2, treshold2
+        end
+    end
+end
+
+function zentropy.enemy_strategies.create_majority(rng, enemies)
+    local breed0, treshold0 = rng:refine('0'):choose(enemies)
+    local breed1, treshold1
+    for i = 1, 5 do
+        breed1, treshold1 = rng:refine(i):choose(enemies)
+        if breed1 ~= breed0 then
+            break
+        end
+    end
+    if treshold0 > treshold1 then
+        breed0, treshold0, breed1, treshold1 = breed1, treshold1, breed0, treshold0
+    end
+    local i = 0
+    return function (rng)
+        i = (i + 1) % 4
+        if i == 0 then
+            return breed1, treshold1
+        else
+            return breed0, treshold0
+        end
     end
 end
 

@@ -9,7 +9,7 @@ function puzzle.init(map, data)
     assert(switch, "obstacle_puzzle components must contain a 'switch'")
 
     for entity in map:get_entities('enemy') do
-        zentropy.inject_enemy(entity, data.rng:refine(entity:get_name()))
+        data.room:inject_enemy(entity, data.rng:refine(entity:get_name()))
     end
 
     zentropy.pots(data.rng:refine('pots'), map:get_entities('pot_'))

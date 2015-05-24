@@ -6,7 +6,7 @@ local zentropy = require 'lib/zentropy'
 function glove.init(map, data)
 
     for entity in map:get_entities('enemy') do
-        zentropy.inject_enemy(entity, data.rng:refine(entity:get_name()))
+        data.room:inject_enemy(entity, data.rng:refine(entity:get_name()))
     end
 
 	local door_names = {}
