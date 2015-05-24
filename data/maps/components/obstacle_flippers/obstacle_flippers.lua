@@ -7,8 +7,8 @@ function flippers.init(map, data)
         data.room:door({open=door_data.open or 'open', name=door_data.name, room_events=data.room_events}, dir)
     end
 
-    for entity in map:get_entities('enemy') do
-        zentropy.inject_enemy(entity, data.rng:refine(entity:get_name()))
+    for entity in map:get_entities('enemy_') do
+        data.room:inject_enemy(entity, data.rng:refine(entity:get_name()))
     end
 
 	for entity in map:get_entities('pot_') do

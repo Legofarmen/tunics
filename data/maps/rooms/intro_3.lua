@@ -4,7 +4,6 @@ local game = map:get_game()
 local start_destination = nil
 
 function map:on_started(destination)
-    print(destination:get_name())
 	start_destination = destination:get_name()
 	sol.audio.set_music_volume(25)
 	
