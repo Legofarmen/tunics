@@ -96,7 +96,11 @@ function magic_bar:set_dst_position(x, y)
 end
 
 function magic_bar:on_draw(dst_surface)
-
+	local opacity = 64
+	if self.max_magic_displayed > 0 then
+		opacity = 255
+	end
+	self.surface:set_opacity(opacity)
     local x, y = self.dst_x, self.dst_y
     local width, height = dst_surface:get_size()
     if x < 0 then
