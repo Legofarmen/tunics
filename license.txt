@@ -290,3 +290,4 @@ lib/color.lua                                       Emmanuel Oga: http://emmanue
 Files under MIT:
 ------------------------------
 lib/CRC32.lua                                       Neil Richardson: https://github.com/nrich/luamemcached/blob/master/CRC32.lua
+lib/mwc_rng.lua                                     Steven Johnson: https://github.com/ggcrunchy/number_sequences/blob/master/mwc_rng.lua
