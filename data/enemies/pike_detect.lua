@@ -6,12 +6,50 @@ local zentropy = require 'lib/zentropy'
 
 local state = "stopped"  -- "stopped", "moving", "going_back" or "paused".
 local initial_xy = {}
-local size = 16
 local activation_distance = 24
-local reference_speed = enemy:get_game():get_hero():get_walking_speed()
+local last_direction4
 
 function enemy:get_speed(direction4)
-    return reference_speed * (self:get_door_distance(direction4) - size) / (activation_distance + size)
+    local hero = enemy:get_game():get_hero()
+    local hero_speed = hero:get_walking_speed() -- assume hero walking speed doesn't change
+    local hero_w, hero_h = hero:get_size() -- assume hero size doesn't change
+    local pike_w, pike_h = enemy:get_size()
+
+    local door_distance, size
+    if direction4 % 2 == 0 then
+        door_distance = 120
+        size = (hero_h + pike_h) / 2
+    else
+        door_distance = 80
+        size = (hero_w + pike_w) / 2
+    end
+    return hero_speed * (door_distance - size) / (activation_distance + size)
+end
+
+function enemy:get_direction4(dest_x, dest_y)
+    local x, y = self:get_position()
+    local dx, dy = math.abs(dest_x - x), math.abs(dest_y - y)
+    if dx < dy then
+        if dx < activation_distance then
+            if y < dest_y then
+                return 3
+            else
+                return 1
+            end
+        else
+            return nil
+        end
+    else
+        if dy < activation_distance then
+            if x < dest_x then
+                return 0
+            else
+                return 2
+            end
+        else
+            return nil
+        end
+    end
 end
 
 function enemy:on_created()
@@ -31,40 +69,16 @@ function enemy:on_created()
   self:set_attack_consequence("boomerang", "protected")
 
   initial_xy.x, initial_xy.y = self:get_position()
-  zentropy.debug('HERE')
 end
 
 function enemy:on_update()
 
-  local hero = self:get_map():get_entity("hero")
-  if state == "stopped" and self:get_distance(hero) <= 192 then
-    -- Check whether the hero is close.
-    local x, y = self:get_position()
-    local hero_x, hero_y = hero:get_position()
-    local dx, dy = hero_x - x, hero_y - y
-
-    if math.abs(dy) < activation_distance then
-      if dx > 0 then
-	self:go(0)
-      else
-	self:go(2)
-      end
-    end
-    if state == "stopped" and math.abs(dx) < activation_distance then
-      if dy > 0 then
-	self:go(3)
-      else
-	self:go(1)
-      end
-    end
-  end
-end
-
-function enemy:get_door_distance(direction4)
-    if direction4 % 2 == 0 then
-        return 120
-    else
-        return 80
+    local hero = self:get_map():get_entity("hero")
+    if state == "stopped" and self:is_in_same_region(hero) then
+        local direction4 = self:get_direction4(hero:get_position())
+        if direction4 then
+            self:go(direction4)
+        end
     end
 end
 
@@ -115,24 +129,24 @@ end
 
 function enemy:go_back()
 
-  if state == "moving" then
+    if state == "moving" then
 
-    state = "going_back"
+        state = "going_back"
+        local direction4 = self:get_direction4(initial_xy.x, initial_xy.y)
+        zentropy.assert(direction4)
+        local m = sol.movement.create("target")
+        m:set_speed(self:get_speed(direction4) / 3)
+        m:set_target(initial_xy.x, initial_xy.y)
+        m:set_smooth(false)
+        m:start(self)
 
-    local m = sol.movement.create("target")
-    m:set_speed(self:get_movement():get_speed() / 3)
-    m:set_target(initial_xy.x, initial_xy.y)
-    m:set_smooth(false)
-    m:start(self)
+    elseif state == "going_back" then
 
-  elseif state == "going_back" then
-
-    state = "paused"
-    sol.timer.start(self, 500, function() self:unpause() end)
-  end
+        state = "paused"
+        sol.timer.start(self, 500, function() self:unpause() end)
+    end
 end
 
 function enemy:unpause()
   state = "stopped"
 end
-
