@@ -278,11 +278,15 @@ tilesets/dungeon_smoothbrick_pink_1.tiles.png
 tilesets/light_world.entities.png
 tilesets/light_world.tiles.png
 
-Data files under CC BY-SA 3.0:
+Files under CC BY-SA 3.0:
 ------------------------------
 sprites/hud/dialog_box.png
 text/minecraftia.png                                Andrew Tyler: http://www.andrewtyler.net
 
-Data files under CC BY 3.0:
+Files under CC BY 3.0:
 ------------------------------
 lib/color.lua                                       Emmanuel Oga: http://emmanueloga.com/
+
+Files under MIT:
+------------------------------
+lib/CRC32.lua                                       Neil Richardson: https://github.com/nrich/luamemcached/blob/master/CRC32.lua
