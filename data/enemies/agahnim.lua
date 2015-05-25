@@ -27,13 +27,18 @@ function enemy:on_created()
 	self:set_size(16, 16)
 	self:set_origin(8, 13)
 	self:set_invincible()
-	self:set_attack_consequence("sword", "protected")
+	self:set_attack_consequence("sword", "custom")
 	self:set_attack_consequence("arrow", "protected")
 	self:set_attack_consequence("hookshot", "protected")
 	self:set_attack_consequence("boomerang", "protected")
 	self:set_pushed_back_when_hurt(false)
 	self:set_push_hero_on_sword(true)
 	sprite = self:create_sprite("enemies/agahnim")
+end
+
+function enemy:on_custom_attack_received()
+		self:get_map():get_entity("hero"):start_hurt(self:get_damage())
+		self:get_map():get_entity("hero"):start_electrocution(500)
 end
 
 function enemy:on_restarted()
