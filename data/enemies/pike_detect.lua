@@ -11,8 +11,8 @@ local last_direction4
 
 function enemy:get_speed(direction4)
     local hero = enemy:get_game():get_hero()
-    local hero_speed = hero:get_walking_speed() -- assume hero walking speed doesn't change
-    local hero_w, hero_h = hero:get_size() -- assume hero size doesn't change
+    local hero_speed = hero:get_walking_speed()
+    local hero_w, hero_h = hero:get_size()
     local pike_w, pike_h = enemy:get_size()
 
     local door_distance, size
