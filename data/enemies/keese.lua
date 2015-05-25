@@ -26,27 +26,28 @@ function enemy:on_update()
         return
     end
     -- Check whether the hero is close.
-    if self:get_distance(hero) <= 96 and state ~= "going" then
-        local m = sol.movement.create("target")
-        self:get_sprite():set_animation("walking")
-        m:set_speed(56)
-        m:start(self)
-        state = "going"
-                
-    elseif self:get_distance(hero) > 144 then
-        self:get_sprite():set_animation("stopped")
-        state = "stopped"
-        self:stop_movement()
-        
-    elseif self:get_distance(hero) > 96 and state ~= "random" then
-        local m = sol.movement.create("random")
-        self:get_sprite():set_animation("walking")
-        m:set_speed(24)
-        m:start(self)
-        state = "random"
-        sol.audio.play_sound("keese")
-        
-    end    
+    if self:get_life() > 0 then
+		if self:get_distance(hero) <= 96 and state ~= "going" then
+			local m = sol.movement.create("target")
+			self:get_sprite():set_animation("walking")
+			m:set_speed(56)
+			m:start(self)
+			state = "going"
+					
+		elseif self:get_distance(hero) > 144 then
+			self:get_sprite():set_animation("stopped")
+			state = "stopped"
+			self:stop_movement()
+			
+		elseif self:get_distance(hero) > 96 and state ~= "random" then
+			local m = sol.movement.create("random")
+			self:get_sprite():set_animation("walking")
+			m:set_speed(24)
+			m:start(self)
+			state = "random"
+			sol.audio.play_sound("keese")
+		end    
+	end
 end
 
 function enemy:on_restarted()

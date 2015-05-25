@@ -6,6 +6,9 @@ local zentropy = require 'lib/zentropy'
 local game_over = {}
 local text = sol.language.get_dialog('game_over') 
 local text_show = text.text:gsub("X", zentropy.game.tier)
+if zentropy.game.tier == 1 then
+	text_show = text_show:gsub("tunics", "tunic")
+end
 
 function map:on_started()
 	hero:set_animation("dead")

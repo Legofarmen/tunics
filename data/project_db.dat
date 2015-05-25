@@ -727,6 +727,8 @@ sound{ id = "warp", description = "warp" }
 sound{ id = "world_warp", description = "world_warp" }
 sound{ id = "wrong", description = "wrong" }
 sound{ id = "zora", description = "zora" }
+sound{ id = "keese", description = "Keese" }
+sound{ id = "shock", description = "shock" }
 
 item{ id = "bomb", description = "Bomb" }
 item{ id = "hookshot", description = "Hookshot" }

@@ -81,7 +81,7 @@ dialog{
   id = "game_over",
   text = [[
 Game over.
-You got X tunics.
+X tunics completed.
 ]]
 }
 
