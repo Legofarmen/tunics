@@ -1,10 +1,18 @@
 local enemy = ...
 
+local zentropy = require 'lib/zentropy'
+
 -- Pike that moves when the hero is close.
 
 local state = "stopped"  -- "stopped", "moving", "going_back" or "paused".
 local initial_xy = {}
+local size = 16
 local activation_distance = 24
+local reference_speed = enemy:get_game():get_hero():get_walking_speed()
+
+function enemy:get_speed(direction4)
+    return reference_speed * (self:get_door_distance(direction4) - size) / (activation_distance + size)
+end
 
 function enemy:on_created()
 
@@ -23,6 +31,7 @@ function enemy:on_created()
   self:set_attack_consequence("boomerang", "protected")
 
   initial_xy.x, initial_xy.y = self:get_position()
+  zentropy.debug('HERE')
 end
 
 function enemy:on_update()
@@ -51,6 +60,14 @@ function enemy:on_update()
   end
 end
 
+function enemy:get_door_distance(direction4)
+    if direction4 % 2 == 0 then
+        return 120
+    else
+        return 80
+    end
+end
+
 function enemy:go(direction4)
 
   local dxy = {
@@ -69,7 +86,7 @@ function enemy:go(direction4)
     local x, y = self:get_position()
     local angle = direction4 * math.pi / 2
     local m = sol.movement.create("straight")
-    m:set_speed(192)
+    m:set_speed(self:get_speed(direction4))
     m:set_angle(angle)
     m:set_max_distance(320)
     m:set_smooth(false)
@@ -103,7 +120,7 @@ function enemy:go_back()
     state = "going_back"
 
     local m = sol.movement.create("target")
-    m:set_speed(64)
+    m:set_speed(self:get_movement():get_speed() / 3)
     m:set_target(initial_xy.x, initial_xy.y)
     m:set_smooth(false)
     m:start(self)
