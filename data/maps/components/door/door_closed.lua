@@ -3,7 +3,6 @@ local zentropy = require 'lib/zentropy'
 local door_closed = {}
 
 function door_closed.init(map, data, direction4)
-    print(direction4)
 
     local door = zentropy.inject_door(map:get_entity('door_open'), {
         savegame_variable = data.name,
