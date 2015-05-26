@@ -94,10 +94,10 @@ function bindings.mixin(o)
         local old_state = axis_state[axis] or 0
         axis_state[axis] = state
         if state ~= 0 then
-            release(axis_commands[old_state])
-            return press(axis_commands[state])
+            release(axis_commands[axis][old_state])
+            return press(axis_commands[axis][state])
         elseif old_state ~= 0 then
-            release(axis_commands[old_state])
+            release(axis_commands[axis][old_state])
         end
     end
 
