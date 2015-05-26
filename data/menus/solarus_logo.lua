@@ -175,10 +175,7 @@ end
 -- Called when a keyboard key is pressed.
 function solarus_logo_menu:on_command_pressed(command)
 
-  if command == "escape" then
-    -- Escape: quit Solarus.
-    sol.main.exit()
-  else
+  
     -- If the timer exists (after step 1).
     if timer ~= nil then
       -- Stop the timer.
@@ -201,7 +198,7 @@ function solarus_logo_menu:on_command_pressed(command)
 
     -- Return true to indicate that the keyboard event was handled.
     return true
-  end
+  
 end
 
 -- Return the menu to the caller.

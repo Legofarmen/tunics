@@ -88,11 +88,8 @@ function title_screen:draw_phase_title()
 end
 
 function title_screen:on_command_pressed(command)
-	if command == "escape" then
-        sol.main.exit()
-    else
-		return self:try_finish_title()
-	end
+	return self:try_finish_title()
+	
 end
 
 function title_screen:try_finish_title()

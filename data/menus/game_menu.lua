@@ -19,7 +19,10 @@ function game_menu:on_started()
         table.insert(self.items, { surface = create_surface(title), action = zentropy.game.resume_game })
     end
     table.insert(self.items, { surface = create_surface('New game'), action = zentropy.game.new_game })
+    table.insert(self.items, { surface = create_surface('Exit'), action = sol.main.exit })
     self.current_item = 1
+    
+    
 
     local item_width, item_height = self.items[1].surface:get_size()
     local menu_height = item_height * #self.items + math.ceil(0.5 * item_height) * (#self.items - 1)
@@ -33,10 +36,7 @@ end
 
 function game_menu:on_command_pressed(key)
     local handled = false
-    if key == "escape" then
-        sol.main.exit()
-        handled = true
-    elseif key == "action" then
+    if key == "action" then
         self.items[self.current_item].action()
         sol.audio.stop_music()
 		sol.menu.stop(self)

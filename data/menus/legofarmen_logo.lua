@@ -60,14 +60,10 @@ function legofarmen_logo:finish()
 end
 
 function legofarmen_logo:on_command_pressed(command)
-    if command == 'escape' then
-        sol.main.exit()
-    else
-        if self.phase == 'show_logo' then
-            self.timer:stop()
-            self:fade_out()
-            return true
-        end
+    if self.phase == 'show_logo' then
+        self.timer:stop()
+        self:fade_out()
+        return true
     end
 end
 
