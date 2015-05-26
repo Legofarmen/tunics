@@ -33,7 +33,7 @@ function legofarmen_logo:show_logo()
         self:fade_out()
 	end)
 
-    sol.audio.play_music("title_screen")
+    sol.audio.play_sound("intro")
 end
 
 function legofarmen_logo:fade_out()
