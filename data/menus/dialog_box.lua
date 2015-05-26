@@ -82,7 +82,7 @@ function dialog_box:set_dialog_style(style)
   self.style = style
   if style == "box" then
     -- Make the dialog box slightly transparent.
-    self.dialog_surface:set_opacity(216)
+    self.dialog_surface:set_opacity(255)
   end
 end
 
