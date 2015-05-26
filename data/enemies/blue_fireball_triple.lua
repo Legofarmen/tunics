@@ -11,7 +11,7 @@ local sprite3 = nil
 function enemy:on_created()
 
   self:set_life(1)
-  self:set_damage(8)
+  self:set_damage(4)
   self:create_sprite("enemies/blue_fireball_triple")
   self:set_size(16, 16)
   self:set_origin(8, 8)
