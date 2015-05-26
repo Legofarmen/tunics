@@ -38,13 +38,25 @@ function bindings.mixin(o)
     end
     local axis_state = {}
 
+    local function press(command)
+        if o.on_command_pressed then
+            return o:on_command_pressed(command)
+        else
+            return false
+        end
+    end
+
+    local function release(command)
+        if o.on_command_released then
+            return o:on_command_released(command)
+        else
+            return false
+        end
+    end
+
     function o:on_key_pressed(key, modifiers)
         if keys[key] and not modifiers.alt and not modifiers.control then
-            if self.on_command_pressed then
-                return self:on_command_pressed(keys[key])
-            else
-                return false
-            end
+            return press(keys[key])
         elseif key == "f5" then
             -- F5: change the video mode.
             sol.video.switch_mode()
@@ -60,23 +72,21 @@ function bindings.mixin(o)
 
     function o:on_key_released(key, modifiers)
         if keys[key] then
-            if self.on_command_released then
-                return self:on_command_released(keys[key])
-            end
+            return release(keys[key])
         else
             return true
         end
     end
 
     function o:on_joypad_button_pressed(button, modifiers)
-        if buttons[button] and self.on_command_pressed then
-            return self:on_command_pressed(buttons[button])
+        if buttons[button] then
+            return press(buttons[button])
         end
     end
 
     function o:on_joypad_button_released(button, modifiers)
-        if buttons[button] and self.on_command_released then
-            return self:on_command_released(buttons[button])
+        if buttons[button] then
+            return release(buttons[button])
         end
     end
 
@@ -84,16 +94,10 @@ function bindings.mixin(o)
         local old_state = axis_state[axis] or 0
         axis_state[axis] = state
         if state ~= 0 then
-            if self.on_command_released then
-                self:on_command_released(axis_commands[old_state])
-            end
-            if self.on_command_pressed then
-                return self:on_command_pressed(axis_commands[state])
-            end
+            release(axis_commands[old_state])
+            return press(axis_commands[state])
         elseif old_state ~= 0 then
-            if self.on_command_released then
-                return self:on_command_released(axis_commands[old_state])
-            end
+            release(axis_commands[old_state])
         end
     end
 
