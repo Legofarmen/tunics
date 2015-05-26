@@ -75,6 +75,7 @@ sounds/internal_stairs_up.ogg
 sounds/intro.ogg
 sounds/item_in_water.ogg
 sounds/jump.ogg
+sounds/keese.ogg
 sounds/lamp.ogg
 sounds/lift.ogg
 sounds/magic_bar.ogg
@@ -96,6 +97,7 @@ sounds/rupee_counter.ogg
 sounds/rupee_counter_end.ogg
 sounds/secret.ogg
 sounds/shield.ogg
+sounds/shock.ogg
 sounds/solarus_logo.ogg
 sounds/spark.ogg
 sounds/splash.ogg
@@ -136,14 +138,19 @@ sprites/enemies/cave.png
 sprites/enemies/crab.png
 sprites/enemies/enemy_killed.png
 sprites/enemies/fireball_triple.png
+sprites/enemies/gibdo.png
+sprites/enemies/hardhat_beetle.png
+sprites/enemies/keese.png
 sprites/enemies/lanmola.png
 sprites/enemies/octorok.png
 sprites/enemies/pike.png
 sprites/enemies/poe.png
+sprites/enemies/red_helmasaur.png
 sprites/enemies/ropa.png
 sprites/enemies/rope.png
 sprites/enemies/simple_green_soldier.png
 sprites/enemies/snap_dragon.png
+sprites/enemies/stalfos_knight.png
 sprites/enemies/tentacle.png
 sprites/entities/arrow.png
 sprites/entities/bomb.png
@@ -161,6 +168,7 @@ sprites/entities/miscellaneous.png
 sprites/entities/shadow.png
 sprites/entities/stone.png
 sprites/entities/teletransporter.png
+sprites/entities/torch.png
 sprites/entities/vase.png
 sprites/hero/boomerang.shield.png
 sprites/hero/boomerang.tunic.png
@@ -232,10 +240,12 @@ sprites/hero/victory.sword.png
 sprites/hero/victory.tunic.png
 sprites/hero/walking.shield.png
 sprites/hero/walking.tunic.png
+sprites/hud/amounts.png
 sprites/hud/dialog_box.png
 sprites/hud/dialog_icons.png
 sprites/hud/gameover_fade.png
 sprites/hud/hearts.png
+sprites/hud/hearts_title.png
 sprites/hud/small_key_icon.png
 sprites/menus/dungeon_map_icons.png
 sprites/menus/fairy_cursor.png
@@ -278,16 +288,78 @@ tilesets/dungeon_smoothbrick_pink_1.tiles.png
 tilesets/light_world.entities.png
 tilesets/light_world.tiles.png
 
+Files under CC BY-NC-SA 3.0:
+------------------------------
+languages/en/images/legofarmen_logo.png
+
 Files under CC BY-SA 3.0:
 ------------------------------
+languages/en/text/dialogs.dat
+languages/en/text/strings.dat
+maps/**.dat
+project_db.dat
+quest.dat
+sprites/**.dat
+sprites/enemies/agahnim.png
+sprites/enemies/blue_knight_soldier.png
+sprites/enemies/green_knight_soldier.png
+sprites/enemies/red_knight_soldier.png
+sprites/hud/black.png
 sprites/hud/dialog_box.png
-text/minecraftia.png                                Andrew Tyler: http://www.andrewtyler.net
+sprites/hud/item_icon.png
+sprites/hud/magic_bar.png
+sprites/menus/dungeon_map_background.png
+sprites/menus/help.png
+sprites/menus/pause_cursor.png
+text/fonts.dat
+text/minecraftia.ttf                                Andrew Tyler: http://www.andrewtyler.net
+tilesets/*.dat
 
 Files under CC BY 3.0:
 ------------------------------
 lib/color.lua                                       Emmanuel Oga: http://emmanueloga.com/
+sprites/menus/solarus_logo.png
 
 Files under MIT:
 ------------------------------
 lib/CRC32.lua                                       Neil Richardson: https://github.com/nrich/luamemcached/blob/master/CRC32.lua
-lib/mwc_rng.lua                                     Steven Johnson: https://github.com/ggcrunchy/number_sequences/blob/master/mwc_rng.lua
+lib/mwc_rng.lua                                     Steven Johnson: https://github.com/ggcrunchy/number_sequences/blob/master/mwc_rng.lua++ fin	2015-05-26 13:18:34.245920561 +0200
+
+Files under GPL 3.0:
+------------------------------
+enemies/*.lua
+hud/amounts.lua
+hud/floor.lua
+hud/hearts.lua
+hud/hud.lua
+hud/item_icon.lua
+hud/magic_bar.lua
+items/*.lua
+languages/en/images/inventory_menu.png
+lib/bindings.lua
+lib/class.lua
+lib/entity_mixin.lua
+lib/hero_condition.lua
+lib/la.lua
+lib/layout.lua
+lib/map_include.lua
+lib/mappings.lua
+lib/prng.lua
+lib/quest.lua
+lib/tree.lua
+lib/util.lua
+lib/zentropy.lua
+main.lua
+maps/**.lua
+menus/dialog_box.lua
+menus/game_menu.lua
+menus/game_over.lua
+menus/inventory_menu.lua
+menus/legofarmen_logo.lua
+menus/map_menu.lua
+menus/menu.lua
+menus/save_menu.lua
+menus/solarus_logo.lua
+menus/title_screen.lua
+validate.lua
+
