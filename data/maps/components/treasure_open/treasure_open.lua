@@ -3,6 +3,7 @@ local treasure = {}
 function treasure.init(map, data)
 
     zentropy.assert(data.room, 'property not found: data.room')
+    zentropy.assert(map.add_on_started, 'method not found: map.add_on_started')
 
     local chest_placeholder = map:get_entity('chest')
     zentropy.assert(chest_placeholder, 'entity not found: chest')
