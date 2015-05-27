@@ -177,8 +177,6 @@ sprites/hero/carrying.png
 sprites/hero/dying.png
 sprites/hero/falling.png
 sprites/hero/grabbing.png
-sprites/hero/ground1.dat
-sprites/hero/ground2.dat
 sprites/hero/hookshot.shield.png
 sprites/hero/hookshot.tunic.png
 sprites/hero/jumping.png
@@ -200,9 +198,6 @@ sprites/hero/plunging.png
 sprites/hero/pulling.png
 sprites/hero/pushing.png
 sprites/hero/running.png
-sprites/hero/shield1.dat
-sprites/hero/shield2.dat
-sprites/hero/shield3.dat
 sprites/hero/spin_attack.sword1.png
 sprites/hero/spin_attack.sword2.png
 sprites/hero/spin_attack.sword3.png
@@ -223,25 +218,14 @@ sprites/hero/sword.sword4.png
 sprites/hero/sword.tunic1.png
 sprites/hero/sword.tunic2.png
 sprites/hero/sword.tunic3.png
-sprites/hero/sword1.dat
-sprites/hero/sword2.dat
-sprites/hero/sword3.dat
-sprites/hero/sword4.dat
-sprites/hero/sword_stars1.dat
-sprites/hero/sword_stars2.dat
 sprites/hero/sword_tapping.shield.png
 sprites/hero/sword_tapping.sword.png
 sprites/hero/sword_tapping.tunic.png
-sprites/hero/trail.dat
-sprites/hero/tunic1.dat
-sprites/hero/tunic2.dat
-sprites/hero/tunic3.dat
 sprites/hero/victory.sword.png
 sprites/hero/victory.tunic.png
 sprites/hero/walking.shield.png
 sprites/hero/walking.tunic.png
 sprites/hud/amounts.png
-sprites/hud/dialog_box.png
 sprites/hud/dialog_icons.png
 sprites/hud/gameover_fade.png
 sprites/hud/hearts.png
@@ -311,23 +295,25 @@ sprites/hud/magic_bar.png
 sprites/menus/dungeon_map_background.png
 sprites/menus/help.png
 sprites/menus/pause_cursor.png
+sprites/menus/title_borders.png
 text/fonts.dat
-text/minecraftia.ttf                                Andrew Tyler: http://www.andrewtyler.net
+text/minecraftia.ttf
 tilesets/*.dat
 
 Files under CC BY 3.0:
 ------------------------------
-lib/color.lua                                       Emmanuel Oga: http://emmanueloga.com/
+lib/color.lua
 sprites/menus/solarus_logo.png
 
 Files under MIT:
 ------------------------------
-lib/CRC32.lua                                       Neil Richardson: https://github.com/nrich/luamemcached/blob/master/CRC32.lua
-lib/mwc_rng.lua                                     Steven Johnson: https://github.com/ggcrunchy/number_sequences/blob/master/mwc_rng.lua++ fin	2015-05-26 13:18:34.245920561 +0200
+lib/CRC32.lua
+lib/mwc_rng.lua
 
 Files under GPL 3.0:
 ------------------------------
 enemies/*.lua
+entities/*.lua
 hud/amounts.lua
 hud/floor.lua
 hud/hearts.lua
@@ -362,4 +348,3 @@ menus/save_menu.lua
 menus/solarus_logo.lua
 menus/title_screen.lua
 validate.lua
-
