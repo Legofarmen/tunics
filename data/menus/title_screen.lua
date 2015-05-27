@@ -11,10 +11,49 @@ function title_screen:title()
 
 	self.phase = "title"
 
-	self.background_img = sol.surface.create("menus/title_bg.png")
-	self.bg_img = sol.surface.create("menus/title_bg.png")
 	self.logo_img = sol.surface.create("menus/title_logo.png")
 	self.borders_img = sol.surface.create("menus/title_borders.png")
+
+    local angle = math.pi + math.atan(2)
+    local tunic_w, tunic_h = 16, 16
+    local tunic_x, tunic_y = 8, 13
+    local max_dist = (240 + tunic_h) / -math.sin(angle)
+    local max_x = 320 + max_dist * -math.cos(angle)
+    local start_y = tunic_y - tunic_h
+
+    function start_movement(sprite)
+        local m = sol.movement.create('straight')
+        m:set_speed(100)
+        m:set_angle(angle)
+        m:set_max_distance(max_dist)
+        function m:on_finished()
+            start_movement(sprite)
+        end
+        sprite:set_xy(math.random() * max_x, start_y)
+        m:start(sprite)
+    end
+
+    self.tunics = {}
+
+    local tunic_count = 2000
+    local tunic_delay = 1000
+
+    function new_tunic(counter)
+        local tunic = sol.sprite.create('entities/items')
+        tunic:set_animation('tunic')
+        start_movement(tunic)
+        table.insert(self.tunics, tunic)
+        if counter > 0 then
+            sol.timer.start(tunic_delay, function ()
+                new_tunic(counter - 1)
+            end)
+        else
+            print('done')
+        end
+    end
+    sol.timer.start(tunic_delay, function ()
+        new_tunic(3000)
+    end)
 
 	self.press_space_img = sol.text_surface.create{
 		color = {255, 255, 255},
@@ -35,16 +74,6 @@ function title_screen:title()
 	end
 	sol.timer.start(self, 3000, switch_logo)
 	
-	self.bg_xy = {x = 0, y = 0}
-	function move_bg()
-		self.bg_xy.y = self.bg_xy.y + 1
-		if self.bg_xy.y > 480 then
-			self.bg_xy.y = self.bg_xy.y - 481
-		end
-		sol.timer.start(self, 50, move_bg)
-	end
-	sol.timer.start(self, 50, move_bg)
-
 	self.surface:fade_in(50)
 
 	self.allow_skip = false
@@ -63,18 +92,9 @@ end
 
 function title_screen:draw_phase_title()
 	self.surface:fill_color({0, 0, 0})
-	self.background_img:draw(self.surface)
-  
-	local x, y = self.bg_xy.x, self.bg_xy.y
-	self.bg_img:draw(self.surface, x, y)
-	x = self.bg_xy.x - 320
-	self.bg_img:draw(self.surface, x, y)
-	x = self.bg_xy.x
-	y = self.bg_xy.y - 480
-	self.bg_img:draw(self.surface, x, y)
-	x = self.bg_xy.x - 320
-	y = self.bg_xy.y - 480
-	self.bg_img:draw(self.surface, x, y)
+    for i, tunic in ipairs(self.tunics) do
+        tunic:draw(self.surface)
+    end
 
 	self.borders_img:draw(self.surface, 0, 0)
 	
@@ -82,9 +102,7 @@ function title_screen:draw_phase_title()
 		self.press_space_img:draw(self.surface, 160, 200)
 	end
 	
-	if self.show_logo then
-		self.logo_img:draw(self.surface)
-	end
+    self.logo_img:draw(self.surface)
 end
 
 function title_screen:on_command_pressed(command)
