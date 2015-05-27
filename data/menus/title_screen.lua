@@ -82,17 +82,37 @@ function title_screen:title()
 		self.show_press_space = not self.show_press_space
 		sol.timer.start(self, 500, switch_press_space)
 	end
+
+
 	
 	self.surface:fade_in(50, function()
-        local music = math.random() < 0.5 and 'mini_game' or 'fortune_teller'
-        sol.audio.play_music(music)
+        local musics = {
+            {
+                id = 'fortune_teller',
+                first_delay = 1550,
+                delay = 1550,
+                speed_up_time = 9400,
+            },
+            {
+                id = 'mini_game',
+                first_delay = 1800,
+                delay = 1280,
+                speed_up_time = 12000,
+            },
+        }
+        local music = musics[math.random(#musics)]
+
+        sol.audio.play_music(music.id)
 
         sol.timer.start(self, 6500, switch_press_space)
 
-        local delay = 1550
-        sol.timer.start(delay - 400, function ()
-            trickle_tunics(9400 / delay - 2, delay, false, function ()
-                trickle_tunics(max_tunics, delay / 12, true)
+        local border_delay = 400
+
+        local speed_up_count = music.speed_up_time / music.delay - 2
+
+        sol.timer.start(music.first_delay - border_delay, function ()
+            trickle_tunics(speed_up_count, music.delay, false, function ()
+                trickle_tunics(max_tunics, music.delay / 12, true)
             end)
         end)
     end)
