@@ -80,7 +80,8 @@ function title_screen:title()
 	end
 	
 	self.surface:fade_in(50, function()
-        sol.audio.play_music('fortune_teller')
+        local music = math.random() < 0.5 and 'mini_game' or 'fortune_teller'
+        sol.audio.play_music(music)
 
         sol.timer.start(self, 6500, switch_press_space)
 
