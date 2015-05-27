@@ -21,39 +21,51 @@ function title_screen:title()
     local max_x = 320 + max_dist * -math.cos(angle)
     local start_y = tunic_y - tunic_h
 
-    function start_movement(sprite)
+    function start_movement(sprite, callback)
         local m = sol.movement.create('straight')
         m:set_speed(100)
         m:set_angle(angle)
         m:set_max_distance(max_dist)
-        function m:on_finished()
-            start_movement(sprite)
-        end
-        sprite:set_xy(math.random() * max_x, start_y)
+        m.on_finished = callback
+        local a = 1 / (#self.tunics + 1)
+        local b = a * 0.5 + (1 - a) * math.random()
+        sprite:set_xy(b * max_x, start_y)
         m:start(sprite)
     end
 
     self.tunics = {}
 
-    local tunic_count = 2000
-    local tunic_delay = 1000
-
-    function new_tunic(counter)
+    function add_tunic(repeating)
         local tunic = sol.sprite.create('entities/items')
         tunic:set_animation('tunic')
-        start_movement(tunic)
         table.insert(self.tunics, tunic)
-        if counter > 0 then
-            sol.timer.start(tunic_delay, function ()
-                new_tunic(counter - 1)
-            end)
+        if repeating then
+            local function restart()
+                start_movement(tunic, restart)
+            end
+            restart()
         else
-            print('done')
+            start_movement(tunic, function ()
+                for i, t in ipairs(self.tunics) do
+                    if tunic == t then
+                        table.remove(self.tunics, i)
+                        break
+                    end
+                end
+            end)
         end
     end
-    sol.timer.start(tunic_delay, function ()
-        new_tunic(3000)
-    end)
+
+    function trickle_tunic(counter, delay, repeating, callback)
+        if counter > 0 then
+            add_tunic(repeating)
+            sol.timer.start(delay, function ()
+                trickle_tunic(counter - 1, delay, repeating, callback)
+            end)
+        elseif callback then
+            callback()
+        end
+    end
 
 	self.press_space_img = sol.text_surface.create{
 		color = {255, 255, 255},
@@ -66,15 +78,19 @@ function title_screen:title()
 		self.show_press_space = not self.show_press_space
 		sol.timer.start(self, 500, switch_press_space)
 	end
-	sol.timer.start(self, 6500, switch_press_space)
 	
-	self.show_logo = false
-	function switch_logo()
-		self.show_logo = not self.show_logo
-	end
-	sol.timer.start(self, 3000, switch_logo)
-	
-	self.surface:fade_in(50)
+	self.surface:fade_in(50, function()
+        sol.audio.play_music('fortune_teller')
+
+        sol.timer.start(self, 6500, switch_press_space)
+
+        local delay = 3180
+        sol.timer.start(2800, function ()
+            trickle_tunic(2, delay, false, function ()
+                trickle_tunic(2000, delay / 6, true)
+            end)
+        end)
+    end)
 
 	self.allow_skip = false
 	sol.timer.start(self, 2000, function()
