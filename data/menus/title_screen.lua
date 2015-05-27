@@ -20,6 +20,7 @@ function title_screen:title()
     local max_dist = (240 + tunic_h) / -math.sin(angle)
     local max_x = 320 + max_dist * -math.cos(angle)
     local start_y = tunic_y - tunic_h
+    local counter = 1
 
     function start_movement(sprite, callback)
         local m = sol.movement.create('straight')
@@ -27,10 +28,11 @@ function title_screen:title()
         m:set_angle(angle)
         m:set_max_distance(max_dist)
         m.on_finished = callback
-        local a = 1 / (#self.tunics + 1)
+        local a = 1 / counter
         local b = a * 0.5 + (1 - a) * math.random()
         sprite:set_xy(b * max_x, start_y)
         m:start(sprite)
+        counter = counter + 1
     end
 
     self.tunics = {}
@@ -56,11 +58,11 @@ function title_screen:title()
         end
     end
 
-    function trickle_tunic(counter, delay, repeating, callback)
+    function trickle_tunics(counter, delay, repeating, callback)
         if counter > 0 then
             add_tunic(repeating)
             sol.timer.start(delay, function ()
-                trickle_tunic(counter - 1, delay, repeating, callback)
+                trickle_tunics(counter - 1, delay, repeating, callback)
             end)
         elseif callback then
             callback()
@@ -85,10 +87,10 @@ function title_screen:title()
 
         sol.timer.start(self, 6500, switch_press_space)
 
-        local delay = 3180
-        sol.timer.start(2800, function ()
-            trickle_tunic(2, delay, false, function ()
-                trickle_tunic(2000, delay / 6, true)
+        local delay = 1550
+        sol.timer.start(delay - 400, function ()
+            trickle_tunics(9400 / delay - 2, delay, false, function ()
+                trickle_tunics(500, delay / 12, true)
             end)
         end)
     end)
