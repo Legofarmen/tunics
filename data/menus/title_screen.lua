@@ -1,5 +1,7 @@
 local title_screen = {}
 
+local max_tunics = 500
+
 function title_screen:on_started()
 	self.surface = sol.surface.create(320, 240)
 	sol.timer.start(self, 300, function()
@@ -90,7 +92,7 @@ function title_screen:title()
         local delay = 1550
         sol.timer.start(delay - 400, function ()
             trickle_tunics(9400 / delay - 2, delay, false, function ()
-                trickle_tunics(500, delay / 12, true)
+                trickle_tunics(max_tunics, delay / 12, true)
             end)
         end)
     end)
