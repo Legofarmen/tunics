@@ -1,4 +1,4 @@
-This package contains the data files of the game Zelda: Mystery of Solarus DX.
+This package contains the data files of the game Tunics!
 This quest is a free, open-source game that works with Solarus,
 an open-source Zelda-like 2D game engine.
 To play this game, you need Solarus.
@@ -28,7 +28,7 @@ solarus accepts two forms of quest paths:
 - a directory having a subdirectory named "data" with all data inside,
 - a directory having a zip archive "data.solarus" with all data inside.
 
-Thus, to run zsdx, if the current directory is the one that
+Thus, to run tunics, if the current directory is the one that
 contains the "data" subdirectory (and this readme), you can type
 
 $ solarus .
@@ -48,7 +48,7 @@ if solarus was compiled with the default quest set to ".".
 2.1  Default settings
 ----------------------
 
-If you want to install zsdx, cmake and zip are recommended.
+If you want to install tunics, cmake and zip are recommended.
 Just type
 
 $ cmake .
@@ -62,23 +62,23 @@ of the quest. You can then install it with
 This installs the following files (assuming that the install directory
 is /usr/local):
 - the quest data archive ("data.solarus") in /usr/local/share/solarus/zsdx/
-- a script called "zsdx" in /usr/local/bin/
+- a script called "tunics" in /usr/local/bin/
 
-The zsdx script launches solarus with the appropriate command-line argument
+The tunics script launches solarus with the appropriate command-line argument
 to specify the quest path.
-This means that you can launch the zsdx quest with the command:
+This means that you can launch the tunics quest with the command:
 
-$ zsdx
+$ tunics
 
 which is equivalent to:
 
-$ solarus /usr/local/share/solarus/zsdx
+$ solarus /usr/local/share/solarus/tunics
 
 
 3.2  Change the install directory
 ---------------------------------
 
-You may want to install zsdx in another directory
+You may want to install tunics in another directory
 (e.g. so that no root access is necessary). You can specify this directory
 as a parameter of cmake:
 
