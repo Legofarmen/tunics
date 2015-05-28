@@ -37,8 +37,7 @@ function enemy:on_created()
 end
 
 function enemy:on_custom_attack_received()
-		self:get_map():get_entity("hero"):start_hurt(self:get_damage())
-		self:get_map():get_entity("hero"):start_electrocution(500)
+    self:get_map():get_entity("hero"):start_electrocution(500, self:get_damage())
 end
 
 function enemy:on_restarted()

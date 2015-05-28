@@ -46,7 +46,7 @@ function condition_manager:initialize(game)
     game:remove_life(damage)
   end
 
-  function hero:start_electrocution(delay)
+  function hero:start_electrocution(delay, damage)
     if hero:is_condition_active('electrocution') then
       return
     end
@@ -57,7 +57,7 @@ function condition_manager:initialize(game)
 
     hero:set_condition('electrocution', true)
     condition_manager.timers['electrocution'] = sol.timer.start(hero, delay, function()
-      hero:stop_electrocution()
+      hero:stop_electrocution(damage)
     end)
   end
 
@@ -76,13 +76,14 @@ function condition_manager:initialize(game)
     end)
   end
 
-  function hero:stop_electrocution()
+  function hero:stop_electrocution(damage)
     if hero:is_condition_active('electrocution') and condition_manager.timers['electrocution'] ~= nil then
       condition_manager.timers['electrocution']:stop()
     end
 
     hero:unfreeze()
     hero:set_animation("walking")
+    hero:start_hurt(damage)
     hero:set_condition('electrocution', false)
   end
 

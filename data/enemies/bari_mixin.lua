@@ -43,8 +43,7 @@ function bari_mixin.mixin(enemy)
 
     function enemy:on_hurt_by_sword(hero, enemy_sprite)
         if self:is_shocking() then
-            hero:start_hurt(self:get_damage())
-            hero:start_electrocution(500)
+            hero:start_electrocution(500, self:get_damage())
         else
             -- Why doesn't hurt() remove life?
             self:hurt(game:get_ability('sword'))
@@ -53,9 +52,10 @@ function bari_mixin.mixin(enemy)
     end
 
     function enemy:on_attacking_hero(hero, enemy_sprite)
-        hero:start_hurt(self:get_damage())
         if self:is_shocking() then
-            hero:start_electrocution(500)
+            hero:start_electrocution(500, self:get_damage())
+        else
+            hero:start_hurt(self:get_damage())
         end
     end
 end
