@@ -8,7 +8,7 @@ SDL*
 sola*
 w*
 z*
-data/.DS_Store
+.DS_Store
 .*.swp
 ChangeLog
 check-license.sh*
