@@ -10,3 +10,17 @@ w*
 z*
 data/.DS_Store
 .*.swp
+ChangeLog
+check-license.sh*
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+CMakeLists.txt
+data/
+data.solarus
+license.txt
+Makefile
+make_quest_package
+make_zip
+README.txt
+tunics
