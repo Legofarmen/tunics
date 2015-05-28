@@ -2,10 +2,11 @@ This package contains the data files of the game Tunics!
 This quest is a free, open-source game that works with Solarus,
 an open-source Zelda-like 2D game engine.
 To play this game, you need Solarus.
-We assume in this readme that Solarus is already installed.
 
 The current version of Tunics! only runs under Solarus 1.3.x
 which can be found here: http://www.solarus-games.org/downloads/solarus/
+
+We assume in this readme that Solarus is already installed.
 
 See http://www.solarus-games.org for more information and 
 documentation about Solarus.
@@ -78,7 +79,7 @@ which is equivalent to:
 $ solarus /usr/local/share/solarus/tunics
 
 
-3.2  Change the install directory (Linux)
+2.2  Change the install directory 
 ---------------------------------
 
 You may want to install tunics in another directory
