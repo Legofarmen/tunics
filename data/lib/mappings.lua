@@ -98,16 +98,15 @@ local family_destructibles = {
 }
 
 local enemy_tier = {
-    bari_blue = 1,
-    bari_red = 1,
-    --[[
     tentacle = 1,
     keese = 1,
     rat = 1,
     simple_green_soldier = 1,
+    bari_blue = 2,
     rope = 2,
     crab = 2,
     green_knight_soldier = 2,
+    bari_red = 3,
     poe = 3,
     blue_knight_soldier = 3,
     red_knight_soldier = 4,
@@ -118,7 +117,6 @@ local enemy_tier = {
     red_hardhat_beetle = 6,
     red_helmasaur = 6,
     bubble = 6,
-    ]]
 }
 
 local function choose_family(current_tier, rng)
