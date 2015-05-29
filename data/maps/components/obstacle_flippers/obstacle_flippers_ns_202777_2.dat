@@ -171,7 +171,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 144,
+  x = 160,
   y = 56,
   width = 32,
   height = 16,
@@ -180,7 +180,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 144,
+  x = 128,
   y = 136,
   width = 32,
   height = 16,
@@ -189,7 +189,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 144,
+  x = 128,
   y = 88,
   width = 32,
   height = 16,
@@ -198,7 +198,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 144,
+  x = 160,
   y = 168,
   width = 32,
   height = 16,
@@ -371,7 +371,7 @@ jumper{
   layer = 1,
   x = 104,
   y = 56,
-  width = 40,
+  width = 56,
   height = 8,
   direction = 6,
   jump_length = 40,
@@ -381,7 +381,7 @@ jumper{
   layer = 1,
   x = 104,
   y = 96,
-  width = 40,
+  width = 24,
   height = 8,
   direction = 2,
   jump_length = 40,
@@ -391,7 +391,7 @@ jumper{
   layer = 1,
   x = 104,
   y = 136,
-  width = 40,
+  width = 24,
   height = 8,
   direction = 6,
   jump_length = 40,
@@ -401,7 +401,7 @@ jumper{
   layer = 1,
   x = 104,
   y = 176,
-  width = 40,
+  width = 56,
   height = 8,
   direction = 2,
   jump_length = 40,
@@ -409,9 +409,9 @@ jumper{
 
 jumper{
   layer = 1,
-  x = 168,
+  x = 192,
   y = 176,
-  width = 48,
+  width = 24,
   height = 8,
   direction = 2,
   jump_length = 40,
@@ -419,9 +419,9 @@ jumper{
 
 jumper{
   layer = 1,
-  x = 176,
+  x = 160,
   y = 136,
-  width = 40,
+  width = 56,
   height = 8,
   direction = 6,
   jump_length = 40,
@@ -429,9 +429,9 @@ jumper{
 
 jumper{
   layer = 1,
-  x = 176,
+  x = 160,
   y = 96,
-  width = 40,
+  width = 56,
   height = 8,
   direction = 2,
   jump_length = 40,
@@ -439,9 +439,9 @@ jumper{
 
 jumper{
   layer = 1,
-  x = 176,
+  x = 192,
   y = 56,
-  width = 40,
+  width = 24,
   height = 8,
   direction = 6,
   jump_length = 40,
@@ -449,7 +449,7 @@ jumper{
 
 wall{
   layer = 1,
-  x = 144,
+  x = 160,
   y = 56,
   width = 32,
   height = 8,
@@ -457,7 +457,7 @@ wall{
 
 wall{
   layer = 1,
-  x = 144,
+  x = 128,
   y = 96,
   width = 32,
   height = 8,
@@ -466,7 +466,7 @@ wall{
 
 wall{
   layer = 1,
-  x = 144,
+  x = 128,
   y = 136,
   width = 32,
   height = 8,
@@ -474,7 +474,7 @@ wall{
 
 wall{
   layer = 1,
-  x = 144,
+  x = 160,
   y = 176,
   width = 32,
   height = 8,
