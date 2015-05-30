@@ -6,16 +6,40 @@ local zentropy = require "lib/zentropy"
 
 local nb_sons_created = 0
 local initial_life = 1 * zentropy.game.game:get_value('tier')
-local treasure
-local treasure_count
-if zentropy.game.game:get_value('tier') < 18 then
-    treasure, treasure_count = "heart_container", 1
-else
+
+local treasure, treasure_count
+if zentropy.game.game:get_value('tier') >= 18 then
     treasure, treasure_count = "fairy", 3
+else
+    treasure, treasure_count = "heart_container", 1
 end
-local blue_fireball_high_health_proba = 0.33
-local blue_fireball_low_health_proba = 0.5
-local low_health_fireball_count = 3
+
+local blue_fireball_high_health_proba, blue_fireball_low_health_proba
+if zentropy.game.game:get_value('tier') >= 4 then
+    blue_fireball_high_health_proba, blue_fireball_low_health_proba = 0.33, 0.5
+else
+    blue_fireball_high_health_proba, blue_fireball_low_health_proba = 0, 0
+end
+
+local low_health_fireball_count
+if zentropy.game.game:get_value('tier') >= 6 then
+    low_health_fireball_count = 1
+elseif zentropy.game.game:get_value('tier') >= 3 then
+    low_health_fireball_count = 2
+else
+    low_health_fireball_count = 3
+end
+
+local fireball_bounces
+if zentropy.game.game:get_value('tier') >= 5 then
+    fireball_bounces = 3
+elseif zentropy.game.game:get_value('tier') >= 3 then
+    fireball_bounces = 2
+elseif zentropy.game.game:get_value('tier') >= 2 then
+    fireball_bounces = 1
+else
+    fireball_bounces = 0
+end
 
 local finished = false
 local vulnerable = false
@@ -120,7 +144,7 @@ function enemy:fire_step_3()
             x = 0,
             y = -21
         }
-        fireball.max_bounces = 2
+        fireball.max_bounces = fireball_bounces
     end
 
     local function trickle(count, delay, callback)
