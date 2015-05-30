@@ -16,7 +16,6 @@ CMakeCache.txt
 CMakeFiles/
 cmake_install.cmake
 CMakeLists.txt
-data/
 data.solarus
 license.txt
 Makefile
