@@ -5,6 +5,7 @@ local Quest = require 'lib/quest'
 local map_include = require 'lib/map_include'
 local bindings = require 'lib/bindings'
 local map_menu = require 'menus/map_menu'
+local help_menu = require 'menus/help_menu'
 local inventory_menu = require 'menus/inventory_menu'
 local dialog_box = require 'menus/dialog_box'
 local game_over_menu = require 'menus/game_over'
@@ -680,10 +681,12 @@ end
 function zentropy.game.setup_quest_invariants()
     zentropy.game.items = zentropy.game.get_items_sequence(zentropy.game.get_rng())
 
-    local save_menu = Menu:new{entries = { 'Resume', 'Save & Exit' }}
+    local save_menu = Menu:new{entries = { 'Resume', 'Controls', 'Save & Exit' }}
     function save_menu:on_action(action)
         if action == 'Save & Exit' then
             sol.main.exit()
+        elseif action == 'Controls' then
+            help_menu:start(self, zentropy.game.game)
         else
             sol.menu.stop(save_menu)
         end
@@ -693,6 +696,7 @@ function zentropy.game.setup_quest_invariants()
     bindings.mixin(map_menu)
     bindings.mixin(inventory_menu)
     bindings.mixin(save_menu)
+    bindings.mixin(help_menu)
 
     local native = {
         pause = true,
