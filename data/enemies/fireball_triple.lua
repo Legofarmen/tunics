@@ -6,7 +6,6 @@ local zentropy = require 'lib/zentropy'
 -- A bouncing triple fireball, usually shot by another enemy.
 
 local bounces = 0
-local max_bounces = 3
 local used_sword = false
 local sprite2 = nil
 local sprite3 = nil
@@ -53,6 +52,7 @@ function enemy:on_created()
     self:set_obstacle_behavior("flying")
     self:set_invincible()
     self:set_attack_consequence("sword", "custom")
+    self.max_bounces = self.max_bounces or 3
 
     -- Two smaller fireballs just for the displaying.
     sprite2 = sol.sprite.create("enemies/fireball_triple")
@@ -72,7 +72,7 @@ function enemy:on_restarted()
 end
 
 function enemy:on_obstacle_reached()
-    if bounces < max_bounces then
+    if bounces < self.max_bounces then
         -- Compute the bouncing angle (works well with horizontal and vertical walls).
         local m = self:get_movement()
 
