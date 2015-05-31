@@ -16,10 +16,6 @@ function enemy_boss.init(map, data)
     local x3, y3 = map:get_entity('boss_3'):get_userdata():get_position()
     table.insert(agahnim.positions, {x = x3, y = y3, direction4 = 2})
 
-    function agahnim:on_dying()
-        boss_exit:open()
-    end
-
     local has_escaped = false
 
     function agahnim:on_escape()
