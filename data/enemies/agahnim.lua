@@ -49,13 +49,34 @@ function enemy:on_restarted()
             sprite:fade_out(function() self:hide() end)
         end)
     else
+        self:get_map():remove_entities("agahnim_fireball")
         sprite:set_animation("hurt")
         self:get_map():get_entity("hero"):freeze()
 		sol.audio.play_sound('boss_killed')
-        sol.timer.start(self, 500, function() self:end_dialog() end)
-        sol.timer.start(self, 1000, function() sprite:fade_out() end)
+        sol.timer.start(self, 500, function()
+            self:get_map():remove_entities("agahnim_fireball")
+            sprite:set_ignore_suspend(true)
+        end)
+        sol.timer.start(self, 1000, function()
+            sprite:fade_out()
+        end)
         sol.timer.start(self, 1500, function() 
-			self:escape() 
+            local x, y = self:get_position()
+            for i = 1, treasure_count do
+                self:get_map():create_pickable{
+                    treasure_name = treasure,
+                    treasure_variant = 1,
+                    x = x,
+                    y = y,
+                    layer = 1
+                }
+            end
+            self:get_map():get_entity("hero"):unfreeze()
+            --self:get_map():get_game():set_value("b520", true)
+            if self.on_escape then
+                self:on_escape()
+            end
+            self:remove()
 		end)
     end
 end
@@ -141,38 +162,9 @@ function enemy:on_hurt(attack)
 
   local life = self:get_life()
   if life <= 0 then
-    self:get_map():remove_entities("agahnim_fireball")
     self:set_life(1)
     finished = true
   elseif life <= initial_life / 3 then
     blue_fireball_proba = 50
   end
-end
-
-function enemy:end_dialog()
-
-  self:get_map():remove_entities("agahnim_fireball")
-  sprite:set_ignore_suspend(true)
-  --self:get_map():get_game():start_dialog("dungeon_5.agahnim_end")
-  
-end
-
-function enemy:escape()
-
-    local x, y = self:get_position()
-    for i = 1, treasure_count do
-        self:get_map():create_pickable{
-            treasure_name = treasure,
-            treasure_variant = 1,
-            x = x,
-            y = y,
-            layer = 1
-        }
-    end
-    self:get_map():get_entity("hero"):unfreeze()
-    --self:get_map():get_game():set_value("b520", true)
-    if self.on_escape then
-        self:on_escape()
-    end
-    self:remove()
 end
