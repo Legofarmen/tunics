@@ -56,7 +56,6 @@ function enemy:on_restarted()
         sol.timer.start(self, 1000, function() sprite:fade_out() end)
         sol.timer.start(self, 1500, function() 
 			self:escape() 
-			sol.audio.play_sound('secret')
 		end)
     end
 end

@@ -22,6 +22,7 @@ function enemy_boss.init(map, data)
         has_escaped = true
         sol.audio.stop_music()
         boss_exit:open()
+        sol.audio.play_sound('secret')
     end
 
     data.room_events:add_door_sensor_activated_listener(function ()
