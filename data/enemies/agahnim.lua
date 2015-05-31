@@ -76,7 +76,7 @@ function enemy:on_restarted()
             if self.on_escape then
                 self:on_escape()
             end
-            self:remove()
+            self:set_life(0)
 		end)
     end
 end
