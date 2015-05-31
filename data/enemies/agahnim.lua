@@ -72,10 +72,6 @@ function enemy:on_restarted()
                 }
             end
             self:get_map():get_entity("hero"):unfreeze()
-            --self:get_map():get_game():set_value("b520", true)
-            if self.on_escape then
-                self:on_escape()
-            end
             self:set_life(0)
 		end)
     end

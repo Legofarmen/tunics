@@ -33,7 +33,7 @@ function enemy_boss.init_agahnim(agahnim, boss_exit)
     local x3, y3 = map:get_entity('boss_3'):get_userdata():get_position()
     table.insert(agahnim_u.positions, {x = x3, y = y3, direction4 = 2})
 
-    function agahnim_u:on_escape()
+    function agahnim_u:on_dead()
         sol.audio.stop_music()
         boss_exit:open()
         sol.audio.play_sound('secret')
