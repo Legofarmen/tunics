@@ -82,7 +82,7 @@ tile{
 tile{
   layer = 1,
   x = 112,
-  y = 56,
+  y = 120,
   width = 16,
   height = 32,
   pattern = "water_pool_ladder.4",
@@ -172,7 +172,7 @@ tile{
 tile{
   layer = 1,
   x = 80,
-  y = 96,
+  y = 88,
   width = 16,
   height = 32,
   pattern = "water_pool_ladder.3",
@@ -199,7 +199,7 @@ tile{
 tile{
   layer = 1,
   x = 72,
-  y = 88,
+  y = 80,
   width = 8,
   height = 8,
   pattern = "barrier.1.border",
@@ -210,44 +210,113 @@ tile{
   x = 72,
   y = 40,
   width = 8,
-  height = 48,
+  height = 40,
   pattern = "barrier.1.2",
 }
 
-jumper{
+tile{
   layer = 1,
-  x = 80,
-  y = 128,
+  x = 72,
+  y = 120,
   width = 8,
-  height = 32,
-  direction = 0,
-  jump_length = 40,
+  height = 8,
+  pattern = "barrier.1.border",
 }
 
-jumper{
+tile{
   layer = 1,
-  x = 120,
-  y = 88,
+  x = 72,
+  y = 152,
   width = 8,
-  height = 112,
-  direction = 4,
-  jump_length = 40,
+  height = 8,
+  pattern = "barrier.1.border",
 }
 
-jumper{
+tile{
   layer = 1,
-  x = 120,
+  x = 32,
+  y = 152,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+tile{
+  layer = 1,
+  x = 128,
+  y = 32,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+tile{
+  layer = 1,
+  x = 128,
+  y = 112,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+tile{
+  layer = 1,
+  x = 128,
+  y = 152,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+tile{
+  layer = 1,
+  x = 128,
+  y = 200,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+tile{
+  layer = 1,
+  x = 128,
+  y = 160,
+  width = 8,
+  height = 40,
+  pattern = "barrier.1.2",
+}
+
+tile{
+  layer = 1,
+  x = 128,
   y = 40,
   width = 8,
-  height = 16,
-  direction = 4,
-  jump_length = 40,
+  height = 72,
+  pattern = "barrier.1.2",
+}
+
+tile{
+  layer = 1,
+  x = 72,
+  y = 128,
+  width = 8,
+  height = 24,
+  pattern = "barrier.1.2",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 152,
+  width = 32,
+  height = 8,
+  pattern = "barrier.1.1",
 }
 
 wall{
   layer = 1,
   x = 120,
-  y = 56,
+  y = 120,
   width = 8,
   height = 32,
   stops_enemies = true,
@@ -256,20 +325,10 @@ wall{
 wall{
   layer = 1,
   x = 80,
-  y = 96,
+  y = 88,
   width = 8,
   height = 32,
   stops_enemies = true,
-}
-
-jumper{
-  layer = 1,
-  x = 40,
-  y = 160,
-  width = 40,
-  height = 8,
-  direction = 6,
-  jump_length = 40,
 }
 
 dynamic_tile{
@@ -307,8 +366,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 128,
-  y = 104,
+  x = 136,
+  y = 40,
   width = 32,
   height = 32,
   name = "enemy_2",

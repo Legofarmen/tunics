@@ -9,25 +9,25 @@ properties{
 
 tile{
   layer = 1,
-  x = 104,
+  x = 112,
   y = 96,
-  width = 128,
+  width = 112,
   height = 24,
   pattern = "wall_low.1",
 }
 
 tile{
   layer = 1,
-  x = 88,
+  x = 96,
   y = 120,
-  width = 128,
+  width = 112,
   height = 24,
   pattern = "wall_low.2",
 }
 
 tile{
   layer = 1,
-  x = 208,
+  x = 200,
   y = 136,
   width = 24,
   height = 48,
@@ -36,7 +36,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 72,
+  x = 80,
   y = 8,
   width = 32,
   height = 24,
@@ -45,7 +45,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 80,
+  x = 88,
   y = 24,
   width = 16,
   height = 8,
@@ -54,7 +54,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 64,
+  x = 72,
   y = 32,
   width = 24,
   height = 24,
@@ -63,7 +63,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 88,
+  x = 96,
   y = 32,
   width = 24,
   height = 24,
@@ -72,7 +72,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 64,
+  x = 72,
   y = 56,
   width = 24,
   height = 64,
@@ -81,7 +81,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 64,
+  x = 72,
   y = 120,
   width = 24,
   height = 24,
@@ -90,7 +90,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 232,
+  x = 224,
   y = 96,
   width = 24,
   height = 24,
@@ -99,7 +99,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 232,
+  x = 224,
   y = 184,
   width = 24,
   height = 24,
@@ -108,7 +108,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 208,
+  x = 200,
   y = 184,
   width = 24,
   height = 24,
@@ -117,7 +117,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 232,
+  x = 224,
   y = 120,
   width = 24,
   height = 64,
@@ -126,7 +126,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 208,
+  x = 200,
   y = 120,
   width = 24,
   height = 24,
@@ -135,7 +135,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 88,
+  x = 96,
   y = 56,
   width = 24,
   height = 48,
@@ -144,7 +144,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 88,
+  x = 96,
   y = 96,
   width = 24,
   height = 24,
@@ -153,7 +153,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 208,
+  x = 200,
   y = 160,
   width = 16,
   height = 32,
@@ -162,7 +162,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 96,
+  x = 104,
   y = 48,
   width = 16,
   height = 32,
@@ -171,7 +171,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 72,
+  x = 80,
   y = 32,
   width = 32,
   height = 8,
@@ -180,7 +180,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 216,
+  x = 208,
   y = 200,
   width = 32,
   height = 16,
@@ -189,7 +189,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 80,
+  x = 88,
   y = 48,
   width = 16,
   height = 80,
@@ -198,7 +198,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 224,
+  x = 216,
   y = 112,
   width = 16,
   height = 80,
@@ -207,7 +207,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 96,
+  x = 104,
   y = 112,
   width = 128,
   height = 16,
@@ -216,7 +216,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 80,
+  x = 88,
   y = 112,
   width = 16,
   height = 16,
@@ -225,16 +225,16 @@ tile{
 
 tile{
   layer = 1,
-  x = 72,
+  x = 80,
   y = 104,
-  width = 176,
+  width = 160,
   height = 32,
   pattern = "water.transparent",
 }
 
 tile{
   layer = 1,
-  x = 216,
+  x = 208,
   y = 136,
   width = 32,
   height = 64,
@@ -243,7 +243,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 72,
+  x = 80,
   y = 40,
   width = 32,
   height = 64,
@@ -252,16 +252,70 @@ tile{
 
 tile{
   layer = 1,
-  x = 72,
+  x = 80,
   y = 40,
   width = 32,
   height = 8,
   pattern = "waterfall.1.bottom",
 }
 
+tile{
+  layer = 1,
+  x = 120,
+  y = 88,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+tile{
+  layer = 1,
+  x = 240,
+  y = 88,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+tile{
+  layer = 1,
+  x = 72,
+  y = 144,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+tile{
+  layer = 1,
+  x = 192,
+  y = 144,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+tile{
+  layer = 1,
+  x = 80,
+  y = 144,
+  width = 112,
+  height = 8,
+  pattern = "barrier.1.1",
+}
+
+tile{
+  layer = 1,
+  x = 128,
+  y = 88,
+  width = 112,
+  height = 8,
+  pattern = "barrier.1.1",
+}
+
 jumper{
   layer = 1,
-  x = 104,
+  x = 112,
   y = 40,
   width = 8,
   height = 8,
@@ -271,7 +325,7 @@ jumper{
 
 jumper{
   layer = 1,
-  x = 104,
+  x = 112,
   y = 80,
   width = 8,
   height = 16,
@@ -281,7 +335,7 @@ jumper{
 
 jumper{
   layer = 1,
-  x = 64,
+  x = 72,
   y = 40,
   width = 8,
   height = 96,
@@ -291,17 +345,7 @@ jumper{
 
 jumper{
   layer = 1,
-  x = 72,
-  y = 136,
-  width = 136,
-  height = 8,
-  direction = 2,
-  jump_length = 40,
-}
-
-jumper{
-  layer = 1,
-  x = 208,
+  x = 200,
   y = 144,
   width = 8,
   height = 16,
@@ -311,7 +355,7 @@ jumper{
 
 jumper{
   layer = 1,
-  x = 248,
+  x = 240,
   y = 104,
   width = 8,
   height = 96,
@@ -321,17 +365,7 @@ jumper{
 
 jumper{
   layer = 1,
-  x = 112,
-  y = 96,
-  width = 136,
-  height = 8,
-  direction = 6,
-  jump_length = 40,
-}
-
-jumper{
-  layer = 1,
-  x = 208,
+  x = 200,
   y = 192,
   width = 8,
   height = 8,
@@ -341,7 +375,7 @@ jumper{
 
 wall{
   layer = 1,
-  x = 104,
+  x = 112,
   y = 48,
   width = 8,
   height = 32,
@@ -350,7 +384,7 @@ wall{
 
 wall{
   layer = 1,
-  x = 208,
+  x = 200,
   y = 160,
   width = 8,
   height = 32,

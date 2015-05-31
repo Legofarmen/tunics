@@ -3,7 +3,7 @@ properties{
   y = 0,
   width = 320,
   height = 240,
-  tileset = "dungeon_cave_brown_1",
+  tileset = "dungeon_smoothbrick_brown_1",
   music = "same",
 }
 
@@ -205,34 +205,130 @@ tile{
   pattern = "water_wall.drain_gate.4",
 }
 
-jumper{
+tile{
   layer = 1,
-  x = 192,
+  x = 184,
+  y = 32,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+tile{
+  layer = 1,
+  x = 184,
+  y = 56,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+tile{
+  layer = 1,
+  x = 184,
+  y = 80,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+tile{
+  layer = 1,
+  x = 184,
+  y = 200,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+tile{
+  layer = 1,
+  x = 280,
+  y = 152,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+tile{
+  layer = 1,
+  x = 240,
+  y = 152,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+tile{
+  layer = 1,
+  x = 240,
+  y = 128,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+tile{
+  layer = 1,
+  x = 240,
+  y = 104,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+tile{
+  layer = 1,
+  x = 240,
+  y = 32,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+tile{
+  layer = 1,
+  x = 184,
   y = 40,
   width = 8,
   height = 16,
-  direction = 0,
-  jump_length = 40,
+  pattern = "barrier.1.2",
 }
 
-jumper{
+tile{
   layer = 1,
-  x = 232,
-  y = 40,
-  width = 8,
-  height = 64,
-  direction = 4,
-  jump_length = 40,
-}
-
-jumper{
-  layer = 1,
-  x = 192,
+  x = 184,
   y = 88,
   width = 8,
   height = 112,
-  direction = 0,
-  jump_length = 40,
+  pattern = "barrier.1.2",
+}
+
+tile{
+  layer = 1,
+  x = 240,
+  y = 40,
+  width = 8,
+  height = 64,
+  pattern = "barrier.1.2",
+}
+
+tile{
+  layer = 1,
+  x = 240,
+  y = 136,
+  width = 8,
+  height = 16,
+  pattern = "barrier.1.2",
+}
+
+tile{
+  layer = 1,
+  x = 248,
+  y = 152,
+  width = 32,
+  height = 8,
+  pattern = "barrier.1.1",
 }
 
 wall{
@@ -295,25 +391,5 @@ dynamic_tile{
   name = "enemy_2",
   pattern = "placeholder_enemy",
   enabled_at_start = true,
-}
-
-jumper{
-  layer = 1,
-  x = 232,
-  y = 136,
-  width = 8,
-  height = 24,
-  direction = 4,
-  jump_length = 40,
-}
-
-jumper{
-  layer = 1,
-  x = 240,
-  y = 160,
-  width = 40,
-  height = 8,
-  direction = 6,
-  jump_length = 40,
 }
 
