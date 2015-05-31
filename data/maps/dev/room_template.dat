@@ -9,37 +9,19 @@ properties{
 
 tile{
   layer = 0,
-  x = 24,
-  y = 136,
-  width = 112,
-  height = 80,
-  pattern = "floor.17",
-}
-
-tile{
-  layer = 0,
-  x = 184,
-  y = 24,
-  width = 112,
-  height = 80,
-  pattern = "floor.17",
-}
-
-tile{
-  layer = 0,
-  x = 184,
-  y = 136,
-  width = 112,
-  height = 80,
-  pattern = "floor.17",
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  pattern = "ceiling",
 }
 
 tile{
   layer = 0,
   x = 24,
   y = 24,
-  width = 112,
-  height = 80,
+  width = 272,
+  height = 192,
   pattern = "floor.17",
 }
 
@@ -72,9 +54,9 @@ tile{
 
 tile{
   layer = 0,
-  x = 40,
+  x = 32,
   y = 200,
-  width = 240,
+  width = 256,
   height = 8,
   pattern = "wall_border.2",
 }
@@ -82,54 +64,18 @@ tile{
 tile{
   layer = 0,
   x = 32,
-  y = 40,
+  y = 32,
   width = 8,
-  height = 160,
+  height = 176,
   pattern = "wall_border.3",
 }
 
 tile{
   layer = 0,
-  x = 32,
-  y = 32,
-  width = 8,
-  height = 8,
-  pattern = "wall_border.corner.1",
-}
-
-tile{
-  layer = 0,
-  x = 32,
-  y = 200,
-  width = 8,
-  height = 8,
-  pattern = "wall_border.corner.3",
-}
-
-tile{
-  layer = 0,
-  x = 280,
-  y = 200,
-  width = 8,
-  height = 8,
-  pattern = "wall_border.corner.4",
-}
-
-tile{
-  layer = 0,
   x = 280,
   y = 32,
   width = 8,
-  height = 8,
-  pattern = "wall_border.corner.2",
-}
-
-tile{
-  layer = 0,
-  x = 280,
-  y = 40,
-  width = 8,
-  height = 160,
+  height = 176,
   pattern = "wall_border.4",
 }
 
@@ -207,9 +153,9 @@ tile{
 
 tile{
   layer = 0,
-  x = 40,
+  x = 32,
   y = 32,
-  width = 240,
+  width = 256,
   height = 8,
   pattern = "wall_border.1",
 }
@@ -221,15 +167,6 @@ tile{
   width = 256,
   height = 24,
   pattern = "wall.1",
-}
-
-tile{
-  layer = 0,
-  x = 136,
-  y = 104,
-  width = 48,
-  height = 32,
-  pattern = "floor.17",
 }
 
 tile{
@@ -378,37 +315,37 @@ tile{
 
 tile{
   layer = 0,
-  x = 0,
-  y = 8,
+  x = 32,
+  y = 32,
   width = 8,
-  height = 224,
-  pattern = "ceiling",
+  height = 8,
+  pattern = "wall_border.corner.1",
 }
 
 tile{
   layer = 0,
-  x = 312,
-  y = 8,
+  x = 32,
+  y = 200,
   width = 8,
-  height = 224,
-  pattern = "ceiling",
+  height = 8,
+  pattern = "wall_border.corner.3",
 }
 
 tile{
   layer = 0,
-  x = 0,
-  y = 0,
-  width = 320,
+  x = 280,
+  y = 200,
+  width = 8,
   height = 8,
-  pattern = "ceiling",
+  pattern = "wall_border.corner.4",
 }
 
 tile{
   layer = 0,
-  x = 0,
-  y = 232,
-  width = 320,
+  x = 280,
+  y = 32,
+  width = 8,
   height = 8,
-  pattern = "ceiling",
+  pattern = "wall_border.corner.2",
 }
 
