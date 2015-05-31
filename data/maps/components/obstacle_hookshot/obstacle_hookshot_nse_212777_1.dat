@@ -223,10 +223,19 @@ tile{
   pattern = "block",
 }
 
-dynamic_tile{
+tile{
   layer = 1,
   x = 152,
   y = 104,
+  width = 16,
+  height = 16,
+  pattern = "block",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 152,
+  y = 120,
   width = 16,
   height = 16,
   name = "treasure_obstacle_chest",
