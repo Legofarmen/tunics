@@ -554,6 +554,7 @@ enemy{
   name = "agahnim",
   direction = 3,
   breed = "agahnim",
+  savegame_variable = "room_boss",
 }
 
 dynamic_tile{
