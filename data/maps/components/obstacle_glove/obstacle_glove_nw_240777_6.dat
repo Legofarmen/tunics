@@ -519,7 +519,7 @@ dynamic_tile{
 dynamic_tile{
   layer = 1,
   x = 152,
-  y = 40,
+  y = 56,
   width = 16,
   height = 16,
   name = "stone_7",

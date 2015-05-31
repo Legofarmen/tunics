@@ -224,3 +224,25 @@ dynamic_tile{
   enabled_at_start = true,
 }
 
+dynamic_tile{
+  layer = 1,
+  x = 56,
+  y = 40,
+  width = 16,
+  height = 16,
+  name = "pot_1",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 56,
+  y = 184,
+  width = 16,
+  height = 16,
+  name = "pot_2",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
