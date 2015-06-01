@@ -304,6 +304,27 @@ with the Hookshot.
 }
 
 dialog{
+  id = "_item_description.flippers.1",
+  icon = "26",
+  skip = "all",
+  text = [[
+Swim in deep waters
+with these flippers.
+]]
+}
+
+dialog{
+  id = "_item_description.glove.1",
+  icon = "32",
+  skip = "all",
+  text = [[
+These Iron Gloves
+will let you lift
+rocks.
+]]
+}
+
+dialog{
   id = "_big_key_required",
   icon = 73,
   skip = "all",
