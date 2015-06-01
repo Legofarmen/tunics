@@ -39,7 +39,9 @@ function door_closed.init(map, data, direction4)
         m:set_max_distance(48)
         function m:on_finished()
             hero:unfreeze()
+            hero:set_invincible(false)
         end
+        hero:set_invincible(true, 9000)  -- Workaround for Solarus-bug: 9000ms is large enough to pass for unlimited
         m:start(hero)
     end
 
