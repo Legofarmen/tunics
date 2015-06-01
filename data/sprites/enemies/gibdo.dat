@@ -1,7 +1,7 @@
 animation{
   name = "walking",
   src_image = "enemies/gibdo.png",
-  frame_delay = 200,
+  frame_delay = 300,
   frame_to_loop_on = 0,
   directions = {
     { x = 0, y = 0, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 29, num_frames = 2 },
@@ -10,31 +10,6 @@ animation{
     { x = 0, y = 96, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 29, num_frames = 2 },
   },
 }
-
-animation{
-  name = "immobilized",
-  src_image = "enemies/gibdo.png",
-  directions = {
-    { x = 96, y = 0, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 29 },
-    { x = 96, y = 32, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 29 },
-    { x = 96, y = 64, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 29 },
-    { x = 96, y = 96, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 29 },
-  },
-}
-
-animation{
-  name = "shaking",
-  src_image = "enemies/gibdo.png",
-  frame_delay = 50,
-  frame_to_loop_on = 0,
-  directions = {
-    { x = 96, y = 0, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 29, num_frames = 2 },
-    { x = 96, y = 32, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 29, num_frames = 2 },
-    { x = 96, y = 64, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 29, num_frames = 2 },
-    { x = 96, y = 96, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 29, num_frames = 2 },
-  },
-}
-
 animation{
   name = "hurt",
   src_image = "enemies/gibdo.png",
@@ -47,4 +22,35 @@ animation{
     { x = 48, y = 96, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 29, num_frames = 3 },
   },
 }
-
+animation{
+  name = "immobilized",
+  src_image = "enemies/gibdo.png",
+  directions = {
+    { x = 96, y = 0, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 29 },
+    { x = 96, y = 32, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 29 },
+    { x = 96, y = 64, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 29 },
+    { x = 96, y = 96, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 29 },
+  },
+}
+animation{
+  name = "shaking",
+  src_image = "enemies/gibdo.png",
+  frame_delay = 50,
+  frame_to_loop_on = 0,
+  directions = {
+    { x = 96, y = 0, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 29, num_frames = 2 },
+    { x = 96, y = 32, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 29, num_frames = 2 },
+    { x = 96, y = 64, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 29, num_frames = 2 },
+    { x = 96, y = 96, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 29, num_frames = 2 },
+  },
+}
+animation{
+  name = "stopped",
+  src_image = "enemies/gibdo.png",
+  directions = {
+    { x = 0, y = 0, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 29 },
+    { x = 0, y = 32, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 29 },
+    { x = 0, y = 64, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 29 },
+    { x = 0, y = 96, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 29 },
+  },
+}

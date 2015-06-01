@@ -90,4 +90,8 @@ function util.ijoin(sep, t)
     end
 end
 
+function util.get_direction4(angle)
+    return math.floor( angle / ( math.pi / 2 ) + 0.5 ) % 4
+end
+
 return util
