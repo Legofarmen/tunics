@@ -502,18 +502,18 @@ dynamic_tile{
 
 wall{
   layer = 1,
-  x = 64,
-  y = 144,
-  width = 32,
+  x = 72,
+  y = 136,
+  width = 16,
   height = 8,
   stops_enemies = true,
 }
 
 wall{
   layer = 1,
-  x = 224,
-  y = 144,
-  width = 32,
+  x = 232,
+  y = 136,
+  width = 16,
   height = 8,
   stops_enemies = true,
 }

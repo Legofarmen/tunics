@@ -387,15 +387,6 @@ tile{
 
 tile{
   layer = 1,
-  x = 144,
-  y = 160,
-  width = 8,
-  height = 8,
-  pattern = "barrier.1.border",
-}
-
-tile{
-  layer = 1,
   x = 120,
   y = 160,
   width = 24,
@@ -479,15 +470,6 @@ tile{
   layer = 1,
   x = 280,
   y = 152,
-  width = 8,
-  height = 8,
-  pattern = "barrier.3.border",
-}
-
-tile{
-  layer = 1,
-  x = 168,
-  y = 160,
   width = 8,
   height = 8,
   pattern = "barrier.3.border",
@@ -583,11 +565,29 @@ tile{
   pattern = "barrier.1.2",
 }
 
+tile{
+  layer = 1,
+  x = 144,
+  y = 160,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+tile{
+  layer = 1,
+  x = 168,
+  y = 160,
+  width = 8,
+  height = 8,
+  pattern = "barrier.3.border",
+}
+
 wall{
   layer = 1,
-  x = 104,
-  y = 112,
-  width = 32,
+  x = 112,
+  y = 104,
+  width = 16,
   height = 8,
   stops_enemies = true,
 }
@@ -595,7 +595,7 @@ wall{
 wall{
   layer = 1,
   x = 152,
-  y = 152,
+  y = 160,
   width = 16,
   height = 8,
   stops_enemies = true,

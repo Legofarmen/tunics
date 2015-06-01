@@ -162,29 +162,11 @@ tile{
 
 tile{
   layer = 1,
-  x = 40,
-  y = 168,
-  width = 48,
-  height = 32,
-  pattern = "water.transparent",
-}
-
-tile{
-  layer = 1,
   x = 80,
   y = 88,
   width = 16,
   height = 32,
   pattern = "water_pool_ladder.3",
-}
-
-tile{
-  layer = 1,
-  x = 88,
-  y = 40,
-  width = 32,
-  height = 160,
-  pattern = "water.transparent",
 }
 
 tile{
@@ -313,9 +295,36 @@ tile{
   pattern = "barrier.1.1",
 }
 
+tile{
+  layer = 1,
+  x = 48,
+  y = 176,
+  width = 16,
+  height = 16,
+  pattern = "floor_water_drain",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 168,
+  width = 48,
+  height = 32,
+  pattern = "water.transparent",
+}
+
+tile{
+  layer = 1,
+  x = 88,
+  y = 40,
+  width = 32,
+  height = 160,
+  pattern = "water.transparent",
+}
+
 wall{
   layer = 1,
-  x = 120,
+  x = 128,
   y = 120,
   width = 8,
   height = 32,
@@ -324,7 +333,7 @@ wall{
 
 wall{
   layer = 1,
-  x = 80,
+  x = 72,
   y = 88,
   width = 8,
   height = 32,
