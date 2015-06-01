@@ -3,48 +3,21 @@ properties{
   y = 0,
   width = 320,
   height = 240,
-  tileset = "dungeon_brick_gray_1",
+  tileset = "dungeon_ganon_brown_1",
 }
 
 tile{
   layer = 1,
-  x = 88,
+  x = 32,
   y = 32,
-  width = 48,
-  height = 88,
-  pattern = "hole",
-}
-
-tile{
-  layer = 1,
-  x = 136,
-  y = 72,
-  width = 64,
-  height = 48,
-  pattern = "hole",
-}
-
-tile{
-  layer = 1,
-  x = 200,
-  y = 32,
-  width = 88,
-  height = 88,
-  pattern = "hole",
-}
-
-tile{
-  layer = 1,
-  x = 272,
-  y = 48,
-  width = 16,
+  width = 56,
   height = 72,
-  pattern = "wall_hole.4",
+  pattern = "hole",
 }
 
 tile{
   layer = 1,
-  x = 200,
+  x = 32,
   y = 32,
   width = 16,
   height = 16,
@@ -53,83 +26,128 @@ tile{
 
 tile{
   layer = 1,
-  x = 200,
+  x = 32,
   y = 48,
   width = 16,
-  height = 24,
+  height = 56,
   pattern = "wall_hole.3",
 }
 
 tile{
   layer = 1,
-  x = 120,
-  y = 48,
-  width = 16,
-  height = 24,
-  pattern = "wall_hole.4",
-}
-
-tile{
-  layer = 1,
-  x = 120,
+  x = 184,
   y = 32,
-  width = 16,
-  height = 16,
-  pattern = "wall_hole.corner.2",
+  width = 48,
+  height = 72,
+  pattern = "hole",
 }
 
 tile{
   layer = 1,
-  x = 120,
-  y = 72,
-  width = 16,
-  height = 16,
-  pattern = "wall_hole.corner_reverse.2",
-}
-
-tile{
-  layer = 1,
-  x = 200,
-  y = 72,
-  width = 16,
-  height = 16,
-  pattern = "wall_hole.corner_reverse.1",
-}
-
-tile{
-  layer = 1,
-  x = 272,
+  x = 48,
   y = 32,
-  width = 16,
+  width = 40,
   height = 16,
-  pattern = "wall_hole.corner.2",
+  pattern = "wall_hole.1",
+}
+
+tile{
+  layer = 1,
+  x = 184,
+  y = 32,
+  width = 48,
+  height = 16,
+  pattern = "wall_hole.1",
+}
+
+tile{
+  layer = 1,
+  x = 80,
+  y = 72,
+  width = 8,
+  height = 8,
+  pattern = "hole.corner_reverse.2",
+}
+
+tile{
+  layer = 1,
+  x = 184,
+  y = 72,
+  width = 8,
+  height = 8,
+  pattern = "hole.corner_reverse.1",
 }
 
 tile{
   layer = 1,
   x = 88,
-  y = 32,
-  width = 32,
-  height = 16,
-  pattern = "wall_hole.1",
-}
-
-tile{
-  layer = 1,
-  x = 136,
   y = 72,
-  width = 64,
-  height = 16,
-  pattern = "wall_hole.1",
+  width = 96,
+  height = 32,
+  pattern = "hole",
 }
 
 tile{
   layer = 1,
-  x = 216,
+  x = 80,
   y = 32,
-  width = 56,
+  width = 8,
+  height = 40,
+  pattern = "hole.4",
+}
+
+tile{
+  layer = 1,
+  x = 184,
+  y = 32,
+  width = 8,
+  height = 40,
+  pattern = "hole.3",
+}
+
+tile{
+  layer = 1,
+  x = 88,
+  y = 72,
+  width = 96,
+  height = 8,
+  pattern = "hole.1",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 96,
+  width = 192,
+  height = 8,
+  pattern = "hole.2",
+}
+
+tile{
+  layer = 1,
+  x = 224,
+  y = 32,
+  width = 8,
+  height = 64,
+  pattern = "hole.4",
+}
+
+tile{
+  layer = 1,
+  x = 224,
+  y = 96,
+  width = 8,
+  height = 8,
+  pattern = "hole.corner.4",
+}
+
+tile{
+  layer = 1,
+  x = 104,
+  y = 40,
+  width = 16,
   height = 16,
-  pattern = "wall_hole.1",
+  pattern = "block",
 }
 
 tile{
@@ -152,43 +170,25 @@ tile{
 
 tile{
   layer = 1,
-  x = 288,
-  y = 48,
-  width = 24,
-  height = 32,
-  pattern = "wall_statue.6.4",
+  x = 48,
+  y = 16,
+  width = 32,
+  height = 16,
+  pattern = "wall_torch.1",
 }
 
 tile{
   layer = 1,
-  x = 88,
-  y = 112,
-  width = 8,
-  height = 8,
-  pattern = "hole.corner.3",
-}
-
-tile{
-  layer = 1,
-  x = 96,
-  y = 112,
-  width = 192,
-  height = 8,
-  pattern = "hole.2",
-}
-
-tile{
-  layer = 1,
-  x = 88,
-  y = 32,
-  width = 8,
-  height = 80,
-  pattern = "hole.3",
+  x = 240,
+  y = 16,
+  width = 32,
+  height = 16,
+  pattern = "wall_torch.1",
 }
 
 dynamic_tile{
   layer = 1,
-  x = 168,
+  x = 88,
   y = 40,
   width = 16,
   height = 16,
@@ -199,23 +199,45 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 40,
-  y = 40,
-  width = 16,
-  height = 16,
-  name = "treasure_open_chest",
-  pattern = "placeholder_treasure_open",
+  x = 240,
+  y = 64,
+  width = 32,
+  height = 32,
+  name = "enemy_1",
+  pattern = "placeholder_enemy",
   enabled_at_start = true,
 }
 
 dynamic_tile{
   layer = 1,
-  x = 32,
-  y = 88,
-  width = 32,
-  height = 32,
-  name = "enemy_1",
-  pattern = "placeholder_enemy",
+  x = 264,
+  y = 40,
+  width = 16,
+  height = 16,
+  name = "treasure_open_chest",
+  pattern = "placeholder_treasure_block",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 248,
+  y = 40,
+  width = 16,
+  height = 16,
+  name = "pot_2",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 120,
+  y = 40,
+  width = 16,
+  height = 16,
+  name = "pot_3",
+  pattern = "floor_pot",
   enabled_at_start = true,
 }
 

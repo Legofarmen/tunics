@@ -3,7 +3,7 @@ properties{
   y = 0,
   width = 320,
   height = 240,
-  tileset = "dungeon_brick_gray_1",
+  tileset = "dungeon_ice_blue_1",
   music = "same",
 }
 
@@ -12,16 +12,7 @@ tile{
   x = 72,
   y = 32,
   width = 48,
-  height = 88,
-  pattern = "hole",
-}
-
-tile{
-  layer = 1,
-  x = 72,
-  y = 120,
-  width = 176,
-  height = 48,
+  height = 120,
   pattern = "hole",
 }
 
@@ -30,7 +21,16 @@ tile{
   x = 200,
   y = 32,
   width = 48,
-  height = 88,
+  height = 120,
+  pattern = "hole",
+}
+
+tile{
+  layer = 1,
+  x = 120,
+  y = 104,
+  width = 80,
+  height = 48,
   pattern = "hole",
 }
 
@@ -66,7 +66,7 @@ tile{
   x = 232,
   y = 48,
   width = 16,
-  height = 104,
+  height = 88,
   pattern = "wall_hole.4",
 }
 
@@ -75,7 +75,7 @@ tile{
   x = 72,
   y = 48,
   width = 16,
-  height = 104,
+  height = 88,
   pattern = "wall_hole.3",
 }
 
@@ -91,7 +91,7 @@ tile{
 tile{
   layer = 1,
   x = 72,
-  y = 152,
+  y = 136,
   width = 16,
   height = 16,
   pattern = "wall_hole.corner.3",
@@ -100,7 +100,7 @@ tile{
 tile{
   layer = 1,
   x = 232,
-  y = 152,
+  y = 136,
   width = 16,
   height = 16,
   pattern = "wall_hole.corner.4",
@@ -109,7 +109,7 @@ tile{
 tile{
   layer = 1,
   x = 88,
-  y = 152,
+  y = 136,
   width = 144,
   height = 16,
   pattern = "wall_hole.2",
@@ -118,7 +118,7 @@ tile{
 tile{
   layer = 1,
   x = 112,
-  y = 120,
+  y = 104,
   width = 8,
   height = 8,
   pattern = "hole.corner_reverse.2",
@@ -127,7 +127,7 @@ tile{
 tile{
   layer = 1,
   x = 200,
-  y = 120,
+  y = 104,
   width = 8,
   height = 8,
   pattern = "hole.corner_reverse.1",
@@ -136,7 +136,7 @@ tile{
 tile{
   layer = 1,
   x = 120,
-  y = 120,
+  y = 104,
   width = 80,
   height = 8,
   pattern = "hole.1",
@@ -147,7 +147,7 @@ tile{
   x = 200,
   y = 32,
   width = 8,
-  height = 88,
+  height = 72,
   pattern = "hole.3",
 }
 
@@ -156,13 +156,58 @@ tile{
   x = 112,
   y = 32,
   width = 8,
-  height = 88,
+  height = 72,
   pattern = "hole.4",
+}
+
+tile{
+  layer = 1,
+  x = 64,
+  y = 208,
+  width = 32,
+  height = 24,
+  pattern = "wall_statue.1.2",
+}
+
+tile{
+  layer = 1,
+  x = 224,
+  y = 208,
+  width = 32,
+  height = 24,
+  pattern = "wall_statue.1.2",
+}
+
+tile{
+  layer = 1,
+  x = 264,
+  y = 40,
+  width = 16,
+  height = 16,
+  pattern = "torch_big.bottom",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 40,
+  width = 16,
+  height = 16,
+  pattern = "torch_big.bottom",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 56,
+  width = 16,
+  height = 16,
+  pattern = "block",
 }
 
 dynamic_tile{
   layer = 1,
-  x = 136,
+  x = 152,
   y = 72,
   width = 16,
   height = 16,
@@ -173,8 +218,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 168,
-  y = 184,
+  x = 264,
+  y = 56,
   width = 16,
   height = 16,
   name = "treasure_obstacle_chest",
@@ -213,5 +258,155 @@ dynamic_tile{
   name = "enemy_3",
   pattern = "placeholder_enemy",
   enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 136,
+  y = 72,
+  width = 16,
+  height = 16,
+  name = "pot_1",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 168,
+  y = 72,
+  width = 16,
+  height = 16,
+  name = "pot_2",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 40,
+  y = 184,
+  width = 16,
+  height = 16,
+  name = "pot_3",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 56,
+  y = 184,
+  width = 16,
+  height = 16,
+  name = "pot_4",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 72,
+  y = 184,
+  width = 16,
+  height = 16,
+  name = "pot_5",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 88,
+  y = 184,
+  width = 16,
+  height = 16,
+  name = "pot_6",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 104,
+  y = 184,
+  width = 16,
+  height = 16,
+  name = "pot_7",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 200,
+  y = 184,
+  width = 16,
+  height = 16,
+  name = "pot_8",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 216,
+  y = 184,
+  width = 16,
+  height = 16,
+  name = "pot_9",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 232,
+  y = 184,
+  width = 16,
+  height = 16,
+  name = "pot_10",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 248,
+  y = 184,
+  width = 16,
+  height = 16,
+  name = "pot_11",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 264,
+  y = 184,
+  width = 16,
+  height = 16,
+  name = "pot_12",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+tile{
+  layer = 2,
+  x = 264,
+  y = 24,
+  width = 16,
+  height = 16,
+  pattern = "torch_big.top",
+}
+
+tile{
+  layer = 2,
+  x = 40,
+  y = 24,
+  width = 16,
+  height = 16,
+  pattern = "torch_big.top",
 }
 
