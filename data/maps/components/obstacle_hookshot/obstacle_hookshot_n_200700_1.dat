@@ -180,15 +180,6 @@ tile{
 
 tile{
   layer = 1,
-  x = 40,
-  y = 40,
-  width = 16,
-  height = 16,
-  pattern = "block",
-}
-
-tile{
-  layer = 1,
   x = 120,
   y = 88,
   width = 16,
@@ -236,5 +227,16 @@ dynamic_tile{
   name = "treasure_open_chest",
   pattern = "placeholder_treasure_block",
   enabled_at_start = true,
+}
+
+block{
+  layer = 1,
+  x = 48,
+  y = 53,
+  direction = -1,
+  sprite = "entities/block",
+  pushable = false,
+  pullable = false,
+  maximum_moves = 1,
 }
 

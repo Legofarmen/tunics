@@ -143,15 +143,6 @@ tile{
 
 tile{
   layer = 1,
-  x = 104,
-  y = 40,
-  width = 16,
-  height = 16,
-  pattern = "block",
-}
-
-tile{
-  layer = 1,
   x = 96,
   y = 16,
   width = 32,
@@ -239,5 +230,16 @@ dynamic_tile{
   name = "pot_3",
   pattern = "floor_pot",
   enabled_at_start = true,
+}
+
+block{
+  layer = 1,
+  x = 112,
+  y = 53,
+  direction = -1,
+  sprite = "entities/block",
+  pushable = false,
+  pullable = false,
+  maximum_moves = 1,
 }
 
