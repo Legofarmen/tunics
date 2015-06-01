@@ -3,10 +3,11 @@ local enemy = ...
 local util = require 'lib/util'
 
 -- Gibdo.
-local started = false
-local turning = false
+
+local state = "not_started"
+
 function enemy:on_created()
-  self:set_life(14)
+  self:set_life(4)
   self:set_damage(4)
   self:set_pushed_back_when_hurt(false)
   self:set_push_hero_on_sword(false)
@@ -17,27 +18,15 @@ end
 local sprite = enemy:create_sprite("enemies/gibdo")
 
 function enemy:on_restarted()
-    turning = false
-    self:on_movement_finished()
+    self:turn_and_go()
 end
 
 function enemy:on_obstacle_reached()
-    
-    self:on_movement_finished()
+    self:turn_and_go()
 end
 
 function enemy:on_movement_finished()
-    local hero = self:get_map():get_hero()
-    local _, _, layer = self:get_position()
-    local _, _, hero_layer = hero:get_position()
-    local near_hero =
-        layer == hero_layer
-        and self:is_in_same_region(hero)
-
-    if near_hero and not turning then
-        started = true
-        self:turn_and_go()           
-    end
+    self:turn_and_go()
 end
 
 function enemy:turn_and_go()
@@ -50,29 +39,31 @@ function enemy:turn_and_go()
     local m = sol.movement.create("straight")
     local turn_direction4 = direction4
 
-    sol.timer.start(self, 120, function()
-        if turn_direction4 == new_direction4 then
-            turning = false
-            sprite:set_direction (turn_direction4) 
-            m:set_angle(new_direction4 * math.pi / 2 )
-            m:set_speed(54)
-            m:set_max_distance(math.random(30,100))
-            m:start(self)
-                        
-            return false
-        else
-            turning = true
-            turn_direction4 = ( turn_direction4 + 1 ) % 4 
-            sprite:set_direction (turn_direction4) 
-            
-            return true     
-        end
-    end)
+    if state ~= "turning" then
+        sol.timer.start(self, 120, function()
+            if turn_direction4 == new_direction4 then
+                state = "walking"
+                sprite:set_direction (turn_direction4)
+                m:set_angle(new_direction4 * math.pi / 2 )
+                m:set_speed(54)
+                m:set_max_distance(math.random(30,100))
+                m:start(self)
+
+                return false
+            else
+                state ="turning"
+                turn_direction4 = ( turn_direction4 + 1 ) % 4
+                sprite:set_direction (turn_direction4)
+
+                return true
+            end
+        end)
+    end
 end
 
 function enemy:on_update()
-    if not started then
-        self:on_movement_finished()
+    if state == "not_started" then
+        state = "started"
+        self:turn_and_go()
     end
-end    
-     
+end
