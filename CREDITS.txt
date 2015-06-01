@@ -1,0 +1,19 @@
+Tunics! core team:
+  Mattias Päivärinta
+  Jan Sandström
+  Thomas Kwarnmark
+
+Game engine:
+  Christopho and the Solarus community
+
+Game assets:
+  Christopho - zsdx, alttp-resource-pack
+  Wrightmat - zbom
+
+Implementations of standard algorithms:
+  Neil Richardson - CRC32 implementation
+  Steven Johnson - MWC implementation
+  Emmanuel Oga - HSL-to-RGB implementation
+
+Legend of Zelda: A link to the past
+  Nintendo - Sounds, pixels, behaviours and general awesomeness
