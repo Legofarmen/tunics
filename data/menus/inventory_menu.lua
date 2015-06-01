@@ -12,6 +12,9 @@ local delta_x = 24
 local delta_y = 24
 local tunic_delta_x = 8
 local tunic_delta_y = 4
+local description_x = 80
+local description_y = 176
+local description_dy = 12
 local num_columns = 4
 local num_rows = 3
 local num_active_rows = 2
@@ -77,6 +80,14 @@ function inventory_menu:on_started()
         vertical_alignment = "top",
         text = self.game:get_value('small_key_amount')
     }
+    self.description_texts = {}
+    for i = 0, 3 do
+        local surface = sol.text_surface.create{
+            font = 'la',
+        }
+        surface:set_xy(description_x, description_y + i * description_dy)
+        table.insert(self.description_texts, surface)
+    end
 end
 
 function inventory_menu:on_draw(dst_surface)
@@ -131,7 +142,18 @@ end
 
 function inventory_menu:get_selected_index()
 
-  return self.cursor_row * 4 + self.cursor_column
+  return self.cursor_row * num_columns + self.cursor_column
+end
+
+function inventory_menu:get_selected_item()
+
+    local row, items
+    if self.cursor_row < num_active_rows then
+        items, row = self.assignable_items, self.cursor_row
+    else
+        items, row = self.passive_items, self.cursor_row - num_active_rows
+    end
+    return items[num_columns * row + self.cursor_column + 1]
 end
 
 function inventory_menu:is_item_selected()
@@ -235,6 +257,21 @@ function inventory_menu:on_draw(dst_surface)
         self.cursor_sprite:set_opacity(128)
     end
     self.cursor_sprite:draw(dst_surface, cursor_x - 16, cursor_y - 21)
+
+    local selected_item = self:get_selected_item()
+    if selected_item then
+        local dialog = sol.language.get_dialog(string.format('_item_description.%s.%s', selected_item:get_name(), selected_item:get_variant()))
+        local lines = dialog.text:gmatch('[^\n]+')
+        for i, surface in ipairs(self.description_texts) do
+            local line = lines()
+            if line then
+                surface:set_text(line)
+                surface:draw(dst_surface)
+            else
+                break
+            end
+        end
+    end
 
     -- Draw the item being assigned if any.
     if self:is_assigning_item() then
