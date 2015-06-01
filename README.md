@@ -14,11 +14,18 @@ documentation about Solarus.
 # Play Tunics!
 
 ## Windows
-
+ 
+ 1. Clone the tunics repository.
+ 
+ 2. Download the latest Solarus 1.3.x package from http://www.solarus-games.org/downloads/solarus/win32/ 
+ 
+ 3. Extract the Solarus package to the root of the cloned repository.
+ 
+ 4. Run solarus.exe
 
 ## Debian Linux
 
- 1. Download and install the latest Solarus 1.3.x binary distribution from
+ 1. Download and install the latest Solarus 1.3.x package from
     http://www.solarus-games.org/downloads/solarus/debian-amd64 or
     http://www.solarus-games.org/downloads/solarus/debian-i386.
 
