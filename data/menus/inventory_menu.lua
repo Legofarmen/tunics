@@ -163,14 +163,7 @@ function inventory_menu:is_item_selected()
 end
 
 function inventory_menu:on_command_pressed(command)
-    if command == "action" then
-      if self.game:get_command_effect("action") == nil
-            and self.game:get_custom_command_effect("action") == "info" then
-        self:show_info_message()
-        handled = true
-      end
-
-    elseif command == "item_1" then
+    if command == "item_1" then
       if self:is_item_selected() then
         self:assign_item(1)
         handled = true
@@ -313,31 +306,6 @@ function inventory_menu:on_draw(dst_surface)
             self.sprites.tunic:draw(dst_surface, x, y)
         end
     end
-end
-
--- Shows a message describing the item currently selected.
--- The player is supposed to have this item.
-function inventory_menu:show_info_message()
-
-  local item = self.assignable_items[self:get_selected_index() + 1]
-  local variant = item:get_variant()
-  local map = self.game:get_map()
-
-  -- Position of the dialog (top or bottom).
-  if self.cursor_row >= 2 then
-    self.game.dialog_box:set_dialog_position("top")  -- Top of the screen.
-  else
-    self.game.dialog_box:set_dialog_position("bottom")  -- Bottom of the screen.
-  end
-
-  self.game:set_custom_command_effect("action", nil)
-  self.game:set_custom_command_effect("attack", nil)
-  self.game:start_dialog("_item_description." .. item:get_name() .. "." .. variant, function()
-    self.game:set_custom_command_effect("action", "info")
-    self.game:set_custom_command_effect("attack", "save")
-    self.game.dialog_box:set_dialog_position("auto")  -- Back to automatic position.
-  end)
-
 end
 
 -- Assigns the selected item to a slot (1 or 2).
