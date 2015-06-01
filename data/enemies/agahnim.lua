@@ -6,23 +6,49 @@ local zentropy = require "lib/zentropy"
 
 local nb_sons_created = 0
 local initial_life = 1 * zentropy.game.game:get_value('tier')
-local treasure
-local treasure_count
-if zentropy.game.game:get_value('tier') < 18 then
-    treasure, treasure_count = "heart_container", 1
-else
+
+local treasure, treasure_count
+if zentropy.game.game:get_value('tier') >= 18 then
     treasure, treasure_count = "fairy", 3
+else
+    treasure, treasure_count = "heart_container", 1
+end
+
+local blue_fireball_high_health_proba, blue_fireball_low_health_proba
+if zentropy.game.game:get_value('tier') >= 4 then
+    blue_fireball_high_health_proba, blue_fireball_low_health_proba = 0.33, 0.5
+else
+    blue_fireball_high_health_proba, blue_fireball_low_health_proba = 0, 0
+end
+
+local low_health_fireball_count
+if zentropy.game.game:get_value('tier') >= 6 then
+    low_health_fireball_count = 1
+elseif zentropy.game.game:get_value('tier') >= 3 then
+    low_health_fireball_count = 2
+else
+    low_health_fireball_count = 3
+end
+
+local fireball_bounces
+if zentropy.game.game:get_value('tier') >= 5 then
+    fireball_bounces = 3
+elseif zentropy.game.game:get_value('tier') >= 3 then
+    fireball_bounces = 2
+elseif zentropy.game.game:get_value('tier') >= 2 then
+    fireball_bounces = 1
+else
+    fireball_bounces = 0
 end
 
 local finished = false
-local blue_fireball_proba = 33  -- Percent.
 local vulnerable = false
 local sprite
 
 function enemy:on_created()
 	self.positions = {}
 	self:set_life(initial_life)
-	self:set_damage(6)
+	self:set_damage(2)
 	self:set_optimization_distance(0)
 	self:set_size(16, 16)
 	self:set_origin(8, 13)
@@ -84,47 +110,55 @@ end
 
 function enemy:fire_step_2()
 
-  if math.random(100) <= blue_fireball_proba then
-    sprite:set_animation("preparing_blue_fireball")
-  else
-    sprite:set_animation("preparing_red_fireball")
-  end
-  sol.audio.play_sound("boss_charge")
-  sol.timer.start(self, 1500, function() self:fire_step_3() end)
+    local proba = self:has_low_health() and blue_fireball_high_health_proba or blue_fireball_low_health_proba
+    if math.random() <= proba then
+        sprite:set_animation("preparing_blue_fireball")
+    else
+        sprite:set_animation("preparing_red_fireball")
+    end
+    sol.audio.play_sound("boss_charge")
+    sol.timer.start(self, 1500, function() self:fire_step_3() end)
 end
 
 function enemy:fire_step_3()
 
-  local sound, breed
-  if sprite:get_animation() == "preparing_blue_fireball" then
-    sound = "cane"
-    breed = "fireball_triple_blue"
-  else
-    sound = "boss_fireball"
-    breed = "fireball_triple"
-  end
-  sprite:set_animation("stopped")
-  sol.audio.play_sound(sound)
+    local sound, breed
+    if sprite:get_animation() == "preparing_blue_fireball" then
+        sound = "cane"
+        breed = "fireball_triple_blue"
+    else
+        sound = "boss_fireball"
+        breed = "fireball_triple_red"
+    end
+    sprite:set_animation("stopped")
+    sol.audio.play_sound(sound)
 
-  vulnerable = true
-  sol.timer.start(self, 1300, function() self:restart() end)
+    vulnerable = true
+    sol.timer.start(self, 1300, function() self:restart() end)
 
-  local function throw_fire()
+    local function throw_fire()
+        nb_sons_created = nb_sons_created + 1
+        local fireball = self:create_enemy{
+            name = "agahnim_fireball_" .. nb_sons_created,
+            breed = breed,
+            x = 0,
+            y = -21
+        }
+        fireball.max_bounces = fireball_bounces
+    end
 
-    nb_sons_created = nb_sons_created + 1
-    self:create_enemy{
-      name = "agahnim_fireball_" .. nb_sons_created,
-      breed = breed,
-      x = 0,
-      y = -21
-    }
-  end
+    local function trickle(count, delay, callback)
+        if count <= 0 then return end
+        callback()
+        sol.timer.start(self, delay, function() trickle(count - 1, delay, callback) end)
+    end
 
-  throw_fire()
-  if self:get_life() <= initial_life / 2 then
-    sol.timer.start(self, 200, function() throw_fire() end)
-    sol.timer.start(self, 400, function() throw_fire() end)
-  end
+    local count = self:has_low_health() and 3 or 1
+    trickle(count, 200, throw_fire)
+end
+
+function enemy:has_low_health()
+    return self:get_life() <= initial_life / 2
 end
 
 function enemy:receive_bounced_fireball(fireball)
@@ -145,8 +179,6 @@ function enemy:on_hurt(attack)
     self:get_map():remove_entities("agahnim_fireball")
     self:set_life(1)
     finished = true
-  elseif life <= initial_life / 3 then
-    blue_fireball_proba = 50
   end
 end
 

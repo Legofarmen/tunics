@@ -613,10 +613,9 @@ enemy{ id = "crab", description = "Sand crab" }
 enemy{ id = "bari_blue", description = "Bari blue" }
 enemy{ id = "bari_red", description = "Bari red" }
 enemy{ id = "bari_mini", description = "Bari mini" }
-enemy{ id = "red_fireball_triple", description = "Red fireball triple" }
-enemy{ id = "blue_fireball_triple", description = "Blue fireball triple" }
 enemy{ id = "hardhat_beetle_blue", description = "Hardhat beetle blue" }
-enemy{ id = "fireball_triple_blue", description = "Blue fireball triple" }
+enemy{ id = "fireball_triple_blue", description = "Fireball triple (blue)" }
+enemy{ id = "fireball_triple_red", description = "Fireball triple (red)" }
 
 entity{ id = "torch", description = "Torch" }
 
