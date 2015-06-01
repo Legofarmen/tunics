@@ -21,7 +21,7 @@ tile{
   x = 200,
   y = 152,
   width = 48,
-  height = 48,
+  height = 56,
   pattern = "hole",
 }
 
@@ -30,7 +30,7 @@ tile{
   x = 72,
   y = 152,
   width = 48,
-  height = 48,
+  height = 56,
   pattern = "hole",
 }
 
