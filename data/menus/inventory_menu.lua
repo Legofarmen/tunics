@@ -1,17 +1,20 @@
 local inventory_menu = {}
 
-local initial_x = 88
-local initial_y = 76
-local dungeon_x = 201
-local dungeon_y = 63
-local tunic_x = 220
-local tunic_y = 160
+local active_x = 88
+local active_y = 61
 local passive_x = 88
-local passive_y = 172
+local passive_y = 133
+local dungeon_x = 201
+local dungeon_y = 48
+local tunic_x = 220
+local tunic_y = 133
 local delta_x = 24
 local delta_y = 24
 local tunic_delta_x = 8
 local tunic_delta_y = 4
+local num_columns = 4
+local num_rows = 3
+local num_active_rows = 2
 
 function inventory_menu:start(game, on_finished_callback)
     self.game = game
@@ -22,7 +25,7 @@ end
 function inventory_menu:on_started()
     self.background = sol.surface.create("inventory_menu.png", true)
 
-    self.cursor_sprite = sol.sprite.create("menus/pause_cursor")
+    self.cursor_sprite = sol.surface.create("menus/pause_cursor.png", false)
     self.sprites = {}
     self.tunic_counter = nil
     self.assignable_items = {}
@@ -159,22 +162,22 @@ function inventory_menu:on_command_pressed(command)
 
     elseif command == "left" then
         sol.audio.play_sound("cursor")
-        self:set_cursor_position(self.cursor_row, (self.cursor_column + 3) % 4)
+        self:set_cursor_position(self.cursor_row, (self.cursor_column - 1) % num_columns)
         handled = true
 
     elseif command == "right" then
         sol.audio.play_sound("cursor")
-        self:set_cursor_position(self.cursor_row, (self.cursor_column + 1) % 4)
+        self:set_cursor_position(self.cursor_row, (self.cursor_column + 1) % num_columns)
         handled = true
 
     elseif command == "up" then
       sol.audio.play_sound("cursor")
-      self:set_cursor_position((self.cursor_row + 2) % 3, self.cursor_column)
+      self:set_cursor_position((self.cursor_row - 1) % num_rows, self.cursor_column)
       handled = true
 
     elseif command == "down" then
       sol.audio.play_sound("cursor")
-      self:set_cursor_position((self.cursor_row + 1) % 3, self.cursor_column)
+      self:set_cursor_position((self.cursor_row + 1) % num_rows, self.cursor_column)
       handled = true
 
     elseif command == "inventory" or command == "escape" then
@@ -191,10 +194,10 @@ function inventory_menu:on_draw(dst_surface)
   self.background:draw(dst_surface, 0, 0)
 
     -- Draw each inventory item.
-  local y = initial_y
+  local y = active_y
   local k = 0
   for i = 0, 3 do
-    local x = initial_x
+    local x = active_x
 
     for j = 0, 3 do
       k = k + 1
@@ -219,7 +222,19 @@ function inventory_menu:on_draw(dst_surface)
     end
 
     -- Draw the cursor.
-  self.cursor_sprite:draw(dst_surface, initial_x + delta_x * self.cursor_column, initial_y - 5 + delta_y * self.cursor_row)
+    local cursor_x = active_x + delta_x * self.cursor_column
+    local cursor_y
+    if self.cursor_row < num_active_rows then
+        cursor_y = active_y + delta_y * self.cursor_row
+    else
+        cursor_y = passive_y + delta_y * (self.cursor_row - num_active_rows)
+    end
+    if self:is_item_selected() then
+        self.cursor_sprite:set_opacity(255)
+    else
+        self.cursor_sprite:set_opacity(128)
+    end
+    self.cursor_sprite:draw(dst_surface, cursor_x - 16, cursor_y - 21)
 
   -- Draw the item being assigned if any.
   if self:is_assigning_item() then
@@ -318,8 +333,8 @@ function inventory_menu:assign_item(slot)
   sol.audio.play_sound("throw")
 
   -- Compute the movement.
-  local x1 = initial_x + delta_x * self.cursor_column
-  local y1 = initial_y + delta_y * self.cursor_row
+  local x1 = active_x + delta_x * self.cursor_column
+  local y1 = active_y + delta_y * self.cursor_row
   local x2, y2 = ((slot == 1) and self.game.hud.item_icon_1 or self.game.hud.item_icon_2):get_item_position()
 
   self.item_assigned_sprite:set_xy(x1, y1)
