@@ -77,7 +77,6 @@ function enemy:go_hero()
     t:start(self)
     direction4 = t:get_direction4()
     t:stop()
-    zentropy.debug(direction4)
     
     sprite:set_direction(direction4)
   
