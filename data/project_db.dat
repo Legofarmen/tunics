@@ -244,8 +244,8 @@ map{ id = "components/treasure_open/treasure_open_000777_3", description = "Trea
 map{ id = "components/filler/filler_050777_2", description = "Filler 050777 2 Rats room" }
 map{ id = "components/filler/filler_000777_6", description = "Filler 000777 6 Barriers" }
 map{ id = "components/filler/filler_000020_1", description = "Filler 000020 1 enemy" }
-map{ id = "components/obstacle_flippers/obstacle_flippers_e_212777_1", description = "Obstacle flippers e 212777 1 New" }
-map{ id = "components/obstacle_flippers/obstacle_flippers_w_242777_1", description = "Obstacle flippers w 242777 1 New" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_e_212777_1", description = "Obstacle flippers e 212777 1" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_w_242777_1", description = "Obstacle flippers w 242777 1" }
 map{ id = "components/filler/filler_202777_4", description = "Filler 202777 4 pikes" }
 map{ id = "components/door/door_exit_n_200000_1", description = "Door exitquest_sword_ability" }
 map{ id = "components/filler/filler_050777_6", description = "Filler 050777 6 Pikes and statues" }
@@ -303,7 +303,7 @@ map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000077_1", descriptio
 map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000333_1", description = "Puzzle 000333 1" }
 map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000666_1", description = "Puzzle 000666 1" }
 map{ id = "components/enemy/enemy_boss_000777_3", description = "Enemy boss 000777 3" }
-map{ id = "components/obstacle_flippers/obstacle_flippers_ns_202777_2", description = "Obstacle flippers ns 202777 2 New" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_ns_202777_2", description = "Obstacle flippers ns 202777 2" }
 
 tileset{ id = "light_world", description = "Light World" }
 tileset{ id = "dungeon_brick_blue_1", description = "Dungeon brick blue 1" }

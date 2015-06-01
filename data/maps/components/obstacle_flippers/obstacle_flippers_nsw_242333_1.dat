@@ -99,15 +99,6 @@ tile{
 
 tile{
   layer = 1,
-  x = 200,
-  y = 40,
-  width = 32,
-  height = 8,
-  pattern = "waterfall.1.bottom",
-}
-
-tile{
-  layer = 1,
   x = 232,
   y = 160,
   width = 32,
@@ -331,21 +322,30 @@ tile{
   pattern = "barrier.1.1",
 }
 
+tile{
+  layer = 1,
+  x = 200,
+  y = 40,
+  width = 32,
+  height = 8,
+  pattern = "waterfall.1.bottom",
+}
+
 wall{
   layer = 1,
-  x = 192,
-  y = 56,
+  x = 184,
+  y = 64,
   width = 8,
-  height = 32,
+  height = 16,
   stops_enemies = true,
 }
 
 wall{
   layer = 1,
-  x = 232,
-  y = 104,
+  x = 240,
+  y = 112,
   width = 8,
-  height = 32,
+  height = 16,
   stops_enemies = true,
 }
 

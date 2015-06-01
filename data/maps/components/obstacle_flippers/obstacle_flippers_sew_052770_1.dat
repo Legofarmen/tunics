@@ -595,7 +595,7 @@ wall{
 wall{
   layer = 1,
   x = 152,
-  y = 80,
+  y = 72,
   width = 16,
   height = 8,
   stops_enemies = true,
