@@ -143,7 +143,9 @@ function inventory_menu:set_cursor_position(row, column)
     local selected_item = self:get_selected_item()
     local lines
     if selected_item then
-        local dialog = sol.language.get_dialog(string.format('_item_description.%s.%s', selected_item:get_name(), selected_item:get_variant()))
+        local dialog_id = string.format('_item_description.%s.%s', selected_item:get_name(), selected_item:get_variant())
+        local dialog = sol.language.get_dialog(dialog_id)
+        zentropy.assert(dialog, 'dialog not found: ' .. dialog_id)
         lines = dialog.text:gmatch('[^\n]+')
     else
         lines = function () end
@@ -166,7 +168,10 @@ function inventory_menu:get_selected_item()
     else
         items, row = self.passive_items, self.cursor_row - num_active_rows
     end
-    return items[num_columns * row + self.cursor_column + 1]
+    local item = items[num_columns * row + self.cursor_column + 1]
+    if item and item:get_variant() > 0 then
+        return item
+    end
 end
 
 function inventory_menu:is_item_selected()
