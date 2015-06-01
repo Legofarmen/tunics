@@ -646,6 +646,24 @@ tile{
   pattern = "wall_statue.1.4",
 }
 
+tile{
+  layer = 1,
+  x = 48,
+  y = 80,
+  width = 8,
+  height = 80,
+  pattern = "wall_border.3",
+}
+
+tile{
+  layer = 1,
+  x = 264,
+  y = 80,
+  width = 8,
+  height = 80,
+  pattern = "wall_border.4",
+}
+
 enemy{
   layer = 1,
   x = 160,
