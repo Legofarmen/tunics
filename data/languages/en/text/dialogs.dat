@@ -254,9 +254,8 @@ dialog{
   icon = 1,
   skip = "all",
   text = [[
-Use Bombs against
-enemies and to
-destroy obstacles.
+Blow things up with
+the Bombs.
 ]]
 }
 
@@ -275,9 +274,9 @@ dialog{
   icon = 3,
   skip = "all",
   text = [[
-Shoot Arrows to
-defeat tough
-enemies.
+Don't forget target
+practice with the
+Bow & Arrow.
 ]]
 }
 
@@ -287,8 +286,7 @@ dialog{
   skip = "all",
   text = [[
 Light torches with
-the Lamp, but watch
-your Magic Meter!
+the Lamp.
 ]]
 }
 
@@ -297,9 +295,29 @@ dialog{
   icon = 6,
   skip = "all",
   text = [[
-Hoist yourself up to
-inaccessible places
-with the Hookshot.
+Reach inaccessible
+places with the
+Hookshot.
+]]
+}
+
+dialog{
+  id = "_item_description.flippers.1",
+  icon = "26",
+  skip = "all",
+  text = [[
+Swim in deep waters
+with the Flippers.
+]]
+}
+
+dialog{
+  id = "_item_description.glove.1",
+  icon = "32",
+  skip = "all",
+  text = [[
+Lift heavy things
+with the Gloves.
 ]]
 }
 

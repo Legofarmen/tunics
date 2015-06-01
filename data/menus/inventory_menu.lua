@@ -1,17 +1,23 @@
 local inventory_menu = {}
 
-local initial_x = 88
-local initial_y = 76
-local dungeon_x = 201
-local dungeon_y = 63
-local tunic_x = 220
-local tunic_y = 160
+local active_x = 88
+local active_y = 61
 local passive_x = 88
-local passive_y = 172
+local passive_y = 133
+local dungeon_x = 201
+local dungeon_y = 48
+local tunic_x = 220
+local tunic_y = 133
 local delta_x = 24
 local delta_y = 24
 local tunic_delta_x = 8
 local tunic_delta_y = 4
+local description_x = 80
+local description_y = 176
+local description_dy = 12
+local num_columns = 4
+local num_rows = 3
+local num_active_rows = 2
 
 function inventory_menu:start(game, on_finished_callback)
     self.game = game
@@ -22,11 +28,20 @@ end
 function inventory_menu:on_started()
     self.background = sol.surface.create("inventory_menu.png", true)
 
-    self.cursor_sprite = sol.sprite.create("menus/pause_cursor")
+    self.cursor_sprite = sol.surface.create("menus/pause_cursor.png", false)
     self.sprites = {}
     self.tunic_counter = nil
     self.assignable_items = {}
     self.passive_items = {}
+
+    self.description_texts = {}
+    for i = 0, 3 do
+        local surface = sol.text_surface.create{
+            font = 'la',
+        }
+        surface:set_xy(description_x, description_y + i * description_dy)
+        table.insert(self.description_texts, surface)
+    end
 
     for i, item_name in ipairs(zentropy.game.items) do
         local item = self.game:get_item(item_name)
@@ -103,32 +118,55 @@ end
 
 function inventory_menu:set_cursor_position(row, column)
 
-  self.cursor_row = row
-  self.cursor_column = column
+    self.cursor_row = row
+    self.cursor_column = column
 
-  local index = row * 4 + column
-  self.game:set_value("pause_inventory_last_item_index", index)
+    local index = row * 4 + column
+    self.game:set_value("pause_inventory_last_item_index", index)
 
-  -- Update the action icon.
-  local item = self.assignable_items[index + 1]
-  local variant = item and item:get_variant() or 0
+    -- Update the action icon.
+    local item = self.assignable_items[index + 1]
+    local variant = item and item:get_variant() or 0
 
-  local item_icon_opacity = 128
-  if variant > 0 then
-    self.game:set_custom_command_effect("action", "info")
-    if item:is_assignable() then
-      item_icon_opacity = 255
+    local item_icon_opacity = 128
+    if variant > 0 then
+        self.game:set_custom_command_effect("action", "info")
+        if item:is_assignable() then
+            item_icon_opacity = 255
+        end
+    else
+        self.game:set_custom_command_effect("action", nil)
     end
-  else
-    self.game:set_custom_command_effect("action", nil)
-  end
-  self.game.hud.item_icon_1.surface:set_opacity(item_icon_opacity)
-  self.game.hud.item_icon_2.surface:set_opacity(item_icon_opacity)
+    self.game.hud.item_icon_1.surface:set_opacity(item_icon_opacity)
+    self.game.hud.item_icon_2.surface:set_opacity(item_icon_opacity)
+
+    local selected_item = self:get_selected_item()
+    local lines
+    if selected_item then
+        local dialog = sol.language.get_dialog(string.format('_item_description.%s.%s', selected_item:get_name(), selected_item:get_variant()))
+        lines = dialog.text:gmatch('[^\n]+')
+    else
+        lines = function () end
+    end
+    for i, surface in ipairs(self.description_texts) do
+        surface:set_text(lines())
+    end
 end
 
 function inventory_menu:get_selected_index()
 
-  return self.cursor_row * 4 + self.cursor_column
+  return self.cursor_row * num_columns + self.cursor_column
+end
+
+function inventory_menu:get_selected_item()
+
+    local row, items
+    if self.cursor_row < num_active_rows then
+        items, row = self.assignable_items, self.cursor_row
+    else
+        items, row = self.passive_items, self.cursor_row - num_active_rows
+    end
+    return items[num_columns * row + self.cursor_column + 1]
 end
 
 function inventory_menu:is_item_selected()
@@ -138,14 +176,7 @@ function inventory_menu:is_item_selected()
 end
 
 function inventory_menu:on_command_pressed(command)
-    if command == "action" then
-      if self.game:get_command_effect("action") == nil
-            and self.game:get_custom_command_effect("action") == "info" then
-        self:show_info_message()
-        handled = true
-      end
-
-    elseif command == "item_1" then
+    if command == "item_1" then
       if self:is_item_selected() then
         self:assign_item(1)
         handled = true
@@ -159,22 +190,22 @@ function inventory_menu:on_command_pressed(command)
 
     elseif command == "left" then
         sol.audio.play_sound("cursor")
-        self:set_cursor_position(self.cursor_row, (self.cursor_column + 3) % 4)
+        self:set_cursor_position(self.cursor_row, (self.cursor_column - 1) % num_columns)
         handled = true
 
     elseif command == "right" then
         sol.audio.play_sound("cursor")
-        self:set_cursor_position(self.cursor_row, (self.cursor_column + 1) % 4)
+        self:set_cursor_position(self.cursor_row, (self.cursor_column + 1) % num_columns)
         handled = true
 
     elseif command == "up" then
       sol.audio.play_sound("cursor")
-      self:set_cursor_position((self.cursor_row + 2) % 3, self.cursor_column)
+      self:set_cursor_position((self.cursor_row - 1) % num_rows, self.cursor_column)
       handled = true
 
     elseif command == "down" then
       sol.audio.play_sound("cursor")
-      self:set_cursor_position((self.cursor_row + 1) % 3, self.cursor_column)
+      self:set_cursor_position((self.cursor_row + 1) % num_rows, self.cursor_column)
       handled = true
 
     elseif command == "inventory" or command == "escape" then
@@ -187,28 +218,28 @@ end
 
 function inventory_menu:on_draw(dst_surface)
 
-  --self:draw_background(dst_surface)
-  self.background:draw(dst_surface, 0, 0)
+    --self:draw_background(dst_surface)
+    self.background:draw(dst_surface, 0, 0)
 
     -- Draw each inventory item.
-  local y = initial_y
-  local k = 0
-  for i = 0, 3 do
-    local x = initial_x
+    local y = active_y
+    local k = 0
+    for i = 0, 3 do
+        local x = active_x
 
-    for j = 0, 3 do
-      k = k + 1
-      if self.assignable_items[k] ~= nil then
-        local item = self.assignable_items[k]
-        if item:get_variant() > 0 then
-          -- The player has this item: draw it.
-          self.sprites[item:get_name()]:draw(dst_surface, x, y)
+        for j = 0, 3 do
+            k = k + 1
+            if self.assignable_items[k] ~= nil then
+                local item = self.assignable_items[k]
+                if item:get_variant() > 0 then
+                    -- The player has this item: draw it.
+                    self.sprites[item:get_name()]:draw(dst_surface, x, y)
+                end
+            end
+            x = x + 24
         end
-      end
-      x = x + 24
+        y = y + 24
     end
-    y = y + 24
-  end
 
     for i, item in ipairs(self.passive_items) do
         if item:get_variant() > 0 then
@@ -219,14 +250,30 @@ function inventory_menu:on_draw(dst_surface)
     end
 
     -- Draw the cursor.
-  self.cursor_sprite:draw(dst_surface, initial_x + delta_x * self.cursor_column, initial_y - 5 + delta_y * self.cursor_row)
+    local cursor_x = active_x + delta_x * self.cursor_column
+    local cursor_y
+    if self.cursor_row < num_active_rows then
+        cursor_y = active_y + delta_y * self.cursor_row
+    else
+        cursor_y = passive_y + delta_y * (self.cursor_row - num_active_rows)
+    end
+    if self:is_item_selected() then
+        self.cursor_sprite:set_opacity(255)
+    else
+        self.cursor_sprite:set_opacity(128)
+    end
+    self.cursor_sprite:draw(dst_surface, cursor_x - 16, cursor_y - 21)
 
-  -- Draw the item being assigned if any.
-  if self:is_assigning_item() then
-    self.item_assigned_sprite:draw(dst_surface)
-  end
+    for i, surface in ipairs(self.description_texts) do
+        surface:draw(dst_surface)
+    end
 
-        -- Map.
+    -- Draw the item being assigned if any.
+    if self:is_assigning_item() then
+        self.item_assigned_sprite:draw(dst_surface)
+    end
+
+    -- Map.
     if self.game:get_value('map') then
         self.map_icons:draw_region(0, 0, 17, 17, dst_surface, dungeon_x, dungeon_y)
     end
@@ -263,31 +310,6 @@ function inventory_menu:on_draw(dst_surface)
     end
 end
 
--- Shows a message describing the item currently selected.
--- The player is supposed to have this item.
-function inventory_menu:show_info_message()
-
-  local item = self.assignable_items[self:get_selected_index() + 1]
-  local variant = item:get_variant()
-  local map = self.game:get_map()
-
-  -- Position of the dialog (top or bottom).
-  if self.cursor_row >= 2 then
-    self.game.dialog_box:set_dialog_position("top")  -- Top of the screen.
-  else
-    self.game.dialog_box:set_dialog_position("bottom")  -- Bottom of the screen.
-  end
-
-  self.game:set_custom_command_effect("action", nil)
-  self.game:set_custom_command_effect("attack", nil)
-  self.game:start_dialog("_item_description." .. item:get_name() .. "." .. variant, function()
-    self.game:set_custom_command_effect("action", "info")
-    self.game:set_custom_command_effect("attack", "save")
-    self.game.dialog_box:set_dialog_position("auto")  -- Back to automatic position.
-  end)
-
-end
-
 -- Assigns the selected item to a slot (1 or 2).
 -- The operation does not take effect immediately: the item picture is thrown to
 -- its destination icon, then the assignment is done.
@@ -318,8 +340,8 @@ function inventory_menu:assign_item(slot)
   sol.audio.play_sound("throw")
 
   -- Compute the movement.
-  local x1 = initial_x + delta_x * self.cursor_column
-  local y1 = initial_y + delta_y * self.cursor_row
+  local x1 = active_x + delta_x * self.cursor_column
+  local y1 = active_y + delta_y * self.cursor_row
   local x2, y2 = ((slot == 1) and self.game.hud.item_icon_1 or self.game.hud.item_icon_2):get_item_position()
 
   self.item_assigned_sprite:set_xy(x1, y1)
