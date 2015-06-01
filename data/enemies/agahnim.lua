@@ -128,7 +128,7 @@ function enemy:fire_step_3()
         breed = "fireball_triple_blue"
     else
         sound = "boss_fireball"
-        breed = "fireball_triple"
+        breed = "fireball_triple_red"
     end
     sprite:set_animation("stopped")
     sol.audio.play_sound(sound)
