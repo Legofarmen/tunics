@@ -190,28 +190,28 @@ end
 
 function inventory_menu:on_draw(dst_surface)
 
-  --self:draw_background(dst_surface)
-  self.background:draw(dst_surface, 0, 0)
+    --self:draw_background(dst_surface)
+    self.background:draw(dst_surface, 0, 0)
 
     -- Draw each inventory item.
-  local y = active_y
-  local k = 0
-  for i = 0, 3 do
-    local x = active_x
+    local y = active_y
+    local k = 0
+    for i = 0, 3 do
+        local x = active_x
 
-    for j = 0, 3 do
-      k = k + 1
-      if self.assignable_items[k] ~= nil then
-        local item = self.assignable_items[k]
-        if item:get_variant() > 0 then
-          -- The player has this item: draw it.
-          self.sprites[item:get_name()]:draw(dst_surface, x, y)
+        for j = 0, 3 do
+            k = k + 1
+            if self.assignable_items[k] ~= nil then
+                local item = self.assignable_items[k]
+                if item:get_variant() > 0 then
+                    -- The player has this item: draw it.
+                    self.sprites[item:get_name()]:draw(dst_surface, x, y)
+                end
+            end
+            x = x + 24
         end
-      end
-      x = x + 24
+        y = y + 24
     end
-    y = y + 24
-  end
 
     for i, item in ipairs(self.passive_items) do
         if item:get_variant() > 0 then
@@ -236,12 +236,12 @@ function inventory_menu:on_draw(dst_surface)
     end
     self.cursor_sprite:draw(dst_surface, cursor_x - 16, cursor_y - 21)
 
-  -- Draw the item being assigned if any.
-  if self:is_assigning_item() then
-    self.item_assigned_sprite:draw(dst_surface)
-  end
+    -- Draw the item being assigned if any.
+    if self:is_assigning_item() then
+        self.item_assigned_sprite:draw(dst_surface)
+    end
 
-        -- Map.
+    -- Map.
     if self.game:get_value('map') then
         self.map_icons:draw_region(0, 0, 17, 17, dst_surface, dungeon_x, dungeon_y)
     end
