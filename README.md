@@ -43,6 +43,7 @@ documentation about Solarus.
 
 ## OS X
 
+todo
 
 # Packaging
 
