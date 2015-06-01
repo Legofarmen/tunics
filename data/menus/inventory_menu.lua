@@ -34,6 +34,15 @@ function inventory_menu:on_started()
     self.assignable_items = {}
     self.passive_items = {}
 
+    self.description_texts = {}
+    for i = 0, 3 do
+        local surface = sol.text_surface.create{
+            font = 'la',
+        }
+        surface:set_xy(description_x, description_y + i * description_dy)
+        table.insert(self.description_texts, surface)
+    end
+
     for i, item_name in ipairs(zentropy.game.items) do
         local item = self.game:get_item(item_name)
         if item:is_assignable() then
@@ -80,14 +89,6 @@ function inventory_menu:on_started()
         vertical_alignment = "top",
         text = self.game:get_value('small_key_amount')
     }
-    self.description_texts = {}
-    for i = 0, 3 do
-        local surface = sol.text_surface.create{
-            font = 'la',
-        }
-        surface:set_xy(description_x, description_y + i * description_dy)
-        table.insert(self.description_texts, surface)
-    end
 end
 
 function inventory_menu:on_draw(dst_surface)
@@ -117,27 +118,39 @@ end
 
 function inventory_menu:set_cursor_position(row, column)
 
-  self.cursor_row = row
-  self.cursor_column = column
+    self.cursor_row = row
+    self.cursor_column = column
 
-  local index = row * 4 + column
-  self.game:set_value("pause_inventory_last_item_index", index)
+    local index = row * 4 + column
+    self.game:set_value("pause_inventory_last_item_index", index)
 
-  -- Update the action icon.
-  local item = self.assignable_items[index + 1]
-  local variant = item and item:get_variant() or 0
+    -- Update the action icon.
+    local item = self.assignable_items[index + 1]
+    local variant = item and item:get_variant() or 0
 
-  local item_icon_opacity = 128
-  if variant > 0 then
-    self.game:set_custom_command_effect("action", "info")
-    if item:is_assignable() then
-      item_icon_opacity = 255
+    local item_icon_opacity = 128
+    if variant > 0 then
+        self.game:set_custom_command_effect("action", "info")
+        if item:is_assignable() then
+            item_icon_opacity = 255
+        end
+    else
+        self.game:set_custom_command_effect("action", nil)
     end
-  else
-    self.game:set_custom_command_effect("action", nil)
-  end
-  self.game.hud.item_icon_1.surface:set_opacity(item_icon_opacity)
-  self.game.hud.item_icon_2.surface:set_opacity(item_icon_opacity)
+    self.game.hud.item_icon_1.surface:set_opacity(item_icon_opacity)
+    self.game.hud.item_icon_2.surface:set_opacity(item_icon_opacity)
+
+    local selected_item = self:get_selected_item()
+    local lines
+    if selected_item then
+        local dialog = sol.language.get_dialog(string.format('_item_description.%s.%s', selected_item:get_name(), selected_item:get_variant()))
+        lines = dialog.text:gmatch('[^\n]+')
+    else
+        lines = function () end
+    end
+    for i, surface in ipairs(self.description_texts) do
+        surface:set_text(lines())
+    end
 end
 
 function inventory_menu:get_selected_index()
@@ -251,19 +264,8 @@ function inventory_menu:on_draw(dst_surface)
     end
     self.cursor_sprite:draw(dst_surface, cursor_x - 16, cursor_y - 21)
 
-    local selected_item = self:get_selected_item()
-    if selected_item then
-        local dialog = sol.language.get_dialog(string.format('_item_description.%s.%s', selected_item:get_name(), selected_item:get_variant()))
-        local lines = dialog.text:gmatch('[^\n]+')
-        for i, surface in ipairs(self.description_texts) do
-            local line = lines()
-            if line then
-                surface:set_text(line)
-                surface:draw(dst_surface)
-            else
-                break
-            end
-        end
+    for i, surface in ipairs(self.description_texts) do
+        surface:draw(dst_surface)
     end
 
     -- Draw the item being assigned if any.
