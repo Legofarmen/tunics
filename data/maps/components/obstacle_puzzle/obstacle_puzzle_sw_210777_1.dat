@@ -27,7 +27,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 272,
+  x = 280,
   y = 168,
   width = 8,
   height = 8,
@@ -74,7 +74,7 @@ tile{
   layer = 1,
   x = 240,
   y = 168,
-  width = 32,
+  width = 40,
   height = 8,
   pattern = "barrier.1.1",
 }
