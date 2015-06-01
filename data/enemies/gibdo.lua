@@ -4,7 +4,7 @@ local util = require 'lib/util'
 
 -- Gibdo.
 
-local state = "not_started"
+local state = "walking"
 
 function enemy:on_created()
   self:set_life(4)
@@ -13,6 +13,8 @@ function enemy:on_created()
   self:set_push_hero_on_sword(false)
   self:set_size(16, 24)
   self:set_origin(8, 21)
+  
+  self:turn_and_go()
 end
 
 local sprite = enemy:create_sprite("enemies/gibdo")
@@ -39,7 +41,7 @@ function enemy:turn_and_go()
     local m = sol.movement.create("straight")
     local turn_direction4 = direction4
 
-    if state ~= "turning" then
+    if state == "walking" then
         sol.timer.start(self, 120, function()
             if turn_direction4 == new_direction4 then
                 state = "walking"
@@ -62,8 +64,5 @@ function enemy:turn_and_go()
 end
 
 function enemy:on_update()
-    if state == "not_started" then
-        state = "started"
-        self:turn_and_go()
-    end
+    
 end
