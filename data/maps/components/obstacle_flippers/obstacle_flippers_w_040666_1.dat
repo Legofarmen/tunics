@@ -322,6 +322,15 @@ tile{
   pattern = "water.transparent",
 }
 
+tile{
+  layer = 1,
+  x = 88,
+  y = 40,
+  width = 32,
+  height = 8,
+  pattern = "waterfall.1.bottom",
+}
+
 wall{
   layer = 1,
   x = 128,
