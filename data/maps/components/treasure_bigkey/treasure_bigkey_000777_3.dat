@@ -178,6 +178,78 @@ tile{
   pattern = "hole.2",
 }
 
+tile{
+  layer = 1,
+  x = 72,
+  y = 8,
+  width = 16,
+  height = 32,
+  pattern = "wall_pillar.1.1",
+}
+
+tile{
+  layer = 1,
+  x = 232,
+  y = 8,
+  width = 16,
+  height = 32,
+  pattern = "wall_pillar.1.1",
+}
+
+tile{
+  layer = 1,
+  x = 280,
+  y = 56,
+  width = 32,
+  height = 16,
+  pattern = "wall_pillar.1.4",
+}
+
+tile{
+  layer = 1,
+  x = 280,
+  y = 168,
+  width = 32,
+  height = 16,
+  pattern = "wall_pillar.1.4",
+}
+
+tile{
+  layer = 1,
+  x = 8,
+  y = 168,
+  width = 32,
+  height = 16,
+  pattern = "wall_pillar.1.3",
+}
+
+tile{
+  layer = 1,
+  x = 8,
+  y = 56,
+  width = 32,
+  height = 16,
+  pattern = "wall_pillar.1.3",
+}
+
+tile{
+  layer = 1,
+  x = 72,
+  y = 200,
+  width = 16,
+  height = 32,
+  pattern = "wall_pillar.1.2",
+}
+
+tile{
+  layer = 1,
+  x = 232,
+  y = 200,
+  width = 16,
+  height = 32,
+  pattern = "wall_pillar.1.2",
+}
+
 dynamic_tile{
   layer = 1,
   x = 144,

@@ -178,24 +178,6 @@ tile{
   pattern = "torch_big.bottom",
 }
 
-tile{
-  layer = 1,
-  x = 48,
-  y = 8,
-  width = 64,
-  height = 32,
-  pattern = "drapes.3.1",
-}
-
-tile{
-  layer = 1,
-  x = 208,
-  y = 8,
-  width = 64,
-  height = 32,
-  pattern = "drapes.3.1",
-}
-
 dynamic_tile{
   layer = 1,
   x = 152,
@@ -306,5 +288,23 @@ tile{
   width = 16,
   height = 16,
   pattern = "torch_big.top",
+}
+
+tile{
+  layer = 2,
+  x = 48,
+  y = 8,
+  width = 64,
+  height = 32,
+  pattern = "drapes.1.1",
+}
+
+tile{
+  layer = 2,
+  x = 208,
+  y = 8,
+  width = 64,
+  height = 32,
+  pattern = "drapes.1.1",
 }
 
