@@ -520,6 +520,15 @@ tile{
   pattern = "waterfall.1.bottom",
 }
 
+tile{
+  layer = 1,
+  x = 280,
+  y = 40,
+  width = 16,
+  height = 32,
+  pattern = "water_wall.drain_gate.4",
+}
+
 wall{
   layer = 1,
   x = 144,

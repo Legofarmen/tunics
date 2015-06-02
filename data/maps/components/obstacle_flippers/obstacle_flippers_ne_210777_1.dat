@@ -304,6 +304,15 @@ tile{
   pattern = "barrier.1.1",
 }
 
+tile{
+  layer = 1,
+  x = 208,
+  y = 200,
+  width = 32,
+  height = 16,
+  pattern = "water_wall.drain_gate.2",
+}
+
 jumper{
   layer = 1,
   x = 112,
