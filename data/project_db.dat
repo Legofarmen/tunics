@@ -309,6 +309,7 @@ map{ id = "components/treasure_bigkey/treasure_bigkey_000777_2", description = "
 map{ id = "components/treasure_bigkey/treasure_bigkey_000777_3", description = "New Treasure bigkey 000777 3" }
 map{ id = "components/treasure_bigkey/treasure_bigkey_000077_1", description = "Update Treasure bigkey 000077 1" }
 map{ id = "components/treasure_bigkey/treasure_bigkey_202777_2", description = "New Treasure bigkey 202777 2" }
+map{ id = "components/treasure_bigkey/treasure_bigkey_000777_4", description = "New Treasure bigkey 000777 4" }
 
 tileset{ id = "light_world", description = "Light World" }
 tileset{ id = "dungeon_brick_blue_1", description = "Dungeon brick blue 1" }
