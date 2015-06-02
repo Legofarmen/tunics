@@ -61,6 +61,24 @@ tile{
   pattern = "wall_border.1",
 }
 
+tile{
+  layer = 1,
+  x = 216,
+  y = 56,
+  width = 32,
+  height = 32,
+  pattern = "statue.1",
+}
+
+tile{
+  layer = 1,
+  x = 216,
+  y = 152,
+  width = 32,
+  height = 32,
+  pattern = "statue.1",
+}
+
 dynamic_tile{
   layer = 1,
   x = 232,
