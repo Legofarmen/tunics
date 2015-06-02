@@ -279,15 +279,6 @@ tile{
 
 tile{
   layer = 1,
-  x = 120,
-  y = 200,
-  width = 80,
-  height = 8,
-  pattern = "wall_border.2",
-}
-
-tile{
-  layer = 1,
   x = 112,
   y = 56,
   width = 16,
