@@ -213,17 +213,6 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 24,
-  y = 96,
-  width = 32,
-  height = 32,
-  name = "enemy_2",
-  pattern = "placeholder_enemy",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
   x = 240,
   y = 80,
   width = 32,
