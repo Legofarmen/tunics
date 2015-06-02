@@ -402,9 +402,9 @@ jumper{
 jumper{
   layer = 1,
   x = 200,
-  y = 160,
+  y = 168,
   width = 8,
-  height = 40,
+  height = 32,
   direction = 0,
   jump_length = 40,
 }
@@ -422,9 +422,9 @@ jumper{
 jumper{
   layer = 1,
   x = 112,
-  y = 160,
+  y = 168,
   width = 8,
-  height = 40,
+  height = 32,
   direction = 4,
   jump_length = 40,
 }

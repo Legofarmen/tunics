@@ -140,7 +140,7 @@ function title_screen:draw_phase_title()
 	self.borders_img:draw(self.surface, 0, 0)
 	
 	if self.show_press_space then
-		self.press_space_img:draw(self.surface, 160, 200)
+		self.press_space_img:draw(self.surface, 160, 160)
 	end
 	
     self.logo_img:draw(self.surface)

@@ -207,15 +207,6 @@ tile{
 
 tile{
   layer = 1,
-  x = 40,
-  y = 152,
-  width = 240,
-  height = 48,
-  pattern = "water.transparent",
-}
-
-tile{
-  layer = 1,
   x = 232,
   y = 40,
   width = 48,
@@ -248,5 +239,23 @@ tile{
   width = 24,
   height = 32,
   pattern = "wall_pipe.4",
+}
+
+tile{
+  layer = 1,
+  x = 56,
+  y = 168,
+  width = 16,
+  height = 16,
+  pattern = "floor_water_drain",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 152,
+  width = 240,
+  height = 48,
+  pattern = "water.transparent",
 }
 

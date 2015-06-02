@@ -196,15 +196,6 @@ tile{
   pattern = "torch_big.bottom",
 }
 
-tile{
-  layer = 1,
-  x = 40,
-  y = 56,
-  width = 16,
-  height = 16,
-  pattern = "block",
-}
-
 dynamic_tile{
   layer = 1,
   x = 152,
@@ -390,6 +381,17 @@ dynamic_tile{
   name = "pot_12",
   pattern = "floor_pot",
   enabled_at_start = true,
+}
+
+block{
+  layer = 1,
+  x = 48,
+  y = 69,
+  direction = -1,
+  sprite = "entities/block",
+  pushable = false,
+  pullable = false,
+  maximum_moves = 1,
 }
 
 tile{
