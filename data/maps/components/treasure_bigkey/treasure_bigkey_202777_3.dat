@@ -1,0 +1,469 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  tileset = "dungeon_brick_brown_1",
+  music = "same",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 16,
+  width = 72,
+  height = 72,
+  pattern = "hole",
+}
+
+tile{
+  layer = 1,
+  x = 216,
+  y = 16,
+  width = 72,
+  height = 72,
+  pattern = "hole",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 152,
+  width = 72,
+  height = 72,
+  pattern = "hole",
+}
+
+tile{
+  layer = 1,
+  x = 216,
+  y = 152,
+  width = 72,
+  height = 72,
+  pattern = "hole",
+}
+
+tile{
+  layer = 1,
+  x = 104,
+  y = 16,
+  width = 112,
+  height = 40,
+  pattern = "hole",
+}
+
+tile{
+  layer = 1,
+  x = 104,
+  y = 184,
+  width = 112,
+  height = 40,
+  pattern = "hole",
+}
+
+tile{
+  layer = 1,
+  x = 272,
+  y = 16,
+  width = 16,
+  height = 72,
+  pattern = "wall_hole.4",
+}
+
+tile{
+  layer = 1,
+  x = 272,
+  y = 152,
+  width = 16,
+  height = 72,
+  pattern = "wall_hole.4",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 16,
+  width = 16,
+  height = 72,
+  pattern = "wall_hole.3",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 152,
+  width = 16,
+  height = 72,
+  pattern = "wall_hole.3",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 152,
+  width = 64,
+  height = 8,
+  pattern = "hole.1",
+}
+
+tile{
+  layer = 1,
+  x = 224,
+  y = 152,
+  width = 64,
+  height = 8,
+  pattern = "hole.1",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 80,
+  width = 64,
+  height = 8,
+  pattern = "hole.2",
+}
+
+tile{
+  layer = 1,
+  x = 224,
+  y = 80,
+  width = 64,
+  height = 8,
+  pattern = "hole.2",
+}
+
+tile{
+  layer = 1,
+  x = 104,
+  y = 48,
+  width = 112,
+  height = 8,
+  pattern = "hole.2",
+}
+
+tile{
+  layer = 1,
+  x = 104,
+  y = 184,
+  width = 112,
+  height = 8,
+  pattern = "hole.1",
+}
+
+tile{
+  layer = 1,
+  x = 216,
+  y = 160,
+  width = 8,
+  height = 24,
+  pattern = "hole.3",
+}
+
+tile{
+  layer = 1,
+  x = 216,
+  y = 56,
+  width = 8,
+  height = 24,
+  pattern = "hole.3",
+}
+
+tile{
+  layer = 1,
+  x = 96,
+  y = 56,
+  width = 8,
+  height = 24,
+  pattern = "hole.4",
+}
+
+tile{
+  layer = 1,
+  x = 96,
+  y = 160,
+  width = 8,
+  height = 24,
+  pattern = "hole.4",
+}
+
+tile{
+  layer = 1,
+  x = 216,
+  y = 184,
+  width = 8,
+  height = 8,
+  pattern = "hole.corner_reverse.1",
+}
+
+tile{
+  layer = 1,
+  x = 96,
+  y = 184,
+  width = 8,
+  height = 8,
+  pattern = "hole.corner_reverse.2",
+}
+
+tile{
+  layer = 1,
+  x = 216,
+  y = 48,
+  width = 8,
+  height = 8,
+  pattern = "hole.corner_reverse.3",
+}
+
+tile{
+  layer = 1,
+  x = 96,
+  y = 48,
+  width = 8,
+  height = 8,
+  pattern = "hole.corner_reverse.4",
+}
+
+tile{
+  layer = 1,
+  x = 216,
+  y = 80,
+  width = 8,
+  height = 8,
+  pattern = "hole.corner.3",
+}
+
+tile{
+  layer = 1,
+  x = 96,
+  y = 152,
+  width = 8,
+  height = 8,
+  pattern = "hole.corner.2",
+}
+
+tile{
+  layer = 1,
+  x = 96,
+  y = 80,
+  width = 8,
+  height = 8,
+  pattern = "hole.corner.4",
+}
+
+tile{
+  layer = 1,
+  x = 216,
+  y = 152,
+  width = 8,
+  height = 8,
+  pattern = "hole.corner.1",
+}
+
+tile{
+  layer = 1,
+  x = 120,
+  y = 72,
+  width = 80,
+  height = 64,
+  pattern = "floor_border.2",
+}
+
+tile{
+  layer = 1,
+  x = 128,
+  y = 80,
+  width = 64,
+  height = 48,
+  pattern = "floor_small.2",
+}
+
+tile{
+  layer = 1,
+  x = 152,
+  y = 152,
+  width = 16,
+  height = 16,
+  pattern = "tongue",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 144,
+  y = 88,
+  width = 32,
+  height = 24,
+  name = "chest",
+  pattern = "placeholder_bigchest",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 120,
+  y = 152,
+  width = 16,
+  height = 16,
+  name = "pot_5",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 136,
+  y = 152,
+  width = 16,
+  height = 16,
+  name = "pot_2",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 168,
+  y = 152,
+  width = 16,
+  height = 16,
+  name = "pot_3",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 184,
+  y = 152,
+  width = 16,
+  height = 16,
+  name = "pot_4",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+tile{
+  layer = 2,
+  x = 32,
+  y = 0,
+  width = 256,
+  height = 16,
+  pattern = "hole",
+}
+
+tile{
+  layer = 2,
+  x = 32,
+  y = 224,
+  width = 256,
+  height = 16,
+  pattern = "hole",
+}
+
+tile{
+  layer = 2,
+  x = 8,
+  y = 0,
+  width = 24,
+  height = 32,
+  pattern = "wall.3",
+}
+
+tile{
+  layer = 2,
+  x = 8,
+  y = 208,
+  width = 24,
+  height = 32,
+  pattern = "wall.3",
+}
+
+tile{
+  layer = 2,
+  x = 288,
+  y = 0,
+  width = 24,
+  height = 32,
+  pattern = "wall.4",
+}
+
+tile{
+  layer = 2,
+  x = 288,
+  y = 208,
+  width = 24,
+  height = 32,
+  pattern = "wall.4",
+}
+
+tile{
+  layer = 2,
+  x = 32,
+  y = 0,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.3",
+}
+
+tile{
+  layer = 2,
+  x = 32,
+  y = 224,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.3",
+}
+
+tile{
+  layer = 2,
+  x = 272,
+  y = 0,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.4",
+}
+
+tile{
+  layer = 2,
+  x = 272,
+  y = 224,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.4",
+}
+
+tile{
+  layer = 2,
+  x = 16,
+  y = 184,
+  width = 16,
+  height = 32,
+  pattern = "wall_torch.3",
+}
+
+tile{
+  layer = 2,
+  x = 16,
+  y = 24,
+  width = 16,
+  height = 32,
+  pattern = "wall_torch.3",
+}
+
+tile{
+  layer = 2,
+  x = 296,
+  y = 24,
+  width = 16,
+  height = 32,
+  pattern = "wall_torch.4",
+}
+
+tile{
+  layer = 2,
+  x = 296,
+  y = 184,
+  width = 16,
+  height = 32,
+  pattern = "wall_torch.4",
+}
+
