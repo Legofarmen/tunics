@@ -19,7 +19,7 @@ documentation about Solarus.
  
  2. Download the latest Solarus 1.3.x package from http://www.solarus-games.org/downloads/solarus/win32/ 
  
- 3. Extract the Solarus package to the root of the cloned repository.
+ 3. Extract the content of the solarus folder in the Solarus package to the root of the cloned repository.
  
  4. Run solarus.exe
 
