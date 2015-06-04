@@ -12,16 +12,6 @@ function fireball_triple.init(enemy)
     local sprite3 = nil
     local bounce = nil
 
-    local function minrad(angle)
-        while angle <= -math.pi do
-            angle = angle + 2 * math.pi
-        end
-        while angle > math.pi do
-            angle = angle - 2 * math.pi
-        end
-        return angle
-    end
-
     local function get_bounce_info(dir8, x, y)
         local wall = la.Vect2.direction8[(dir8 + 2) % 8]
         local normal = la.Vect2.direction8[(dir8 + 4) % 8]
