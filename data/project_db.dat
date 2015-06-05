@@ -243,7 +243,7 @@ map{ id = "components/filler/filler_000020_1", description = "Filler 000020 1 en
 map{ id = "components/obstacle_flippers/obstacle_flippers_e_212777_1", description = "Obstacle flippers e 212777 1" }
 map{ id = "components/obstacle_flippers/obstacle_flippers_w_242777_1", description = "Obstacle flippers w 242777 1" }
 map{ id = "components/filler/filler_202777_4", description = "Filler 202777 4 pikes" }
-map{ id = "components/door/door_exit_n_200000_1", description = "Door exitquest_sword_ability" }
+map{ id = "components/door/door_exit_n_200000_1", description = "Door exit" }
 map{ id = "components/filler/filler_050777_6", description = "Filler 050777 6 Pikes and statues" }
 map{ id = "components/door/door_bigkey_n_250777_2", description = "Door bigkey n 250777 2" }
 map{ id = "components/door/door_bigkey_n_250777_3", description = "Door bigkey n 250777 3" }

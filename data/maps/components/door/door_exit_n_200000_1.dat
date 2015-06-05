@@ -7,15 +7,6 @@ properties{
   music = "same",
 }
 
-sensor{
-  layer = 0,
-  x = 8,
-  y = 29,
-  width = 16,
-  height = 16,
-  name = "entering",
-}
-
 tile{
   layer = 1,
   x = 168,
@@ -97,6 +88,15 @@ stairs{
   name = "stairs",
   direction = 1,
   subtype = "0",
+}
+
+sensor{
+  layer = 1,
+  x = 8,
+  y = 29,
+  width = 16,
+  height = 16,
+  name = "entering",
 }
 
 tile{
