@@ -511,6 +511,78 @@ tile{
   pattern = "door_cache_low.1",
 }
 
+tile{
+  layer = 1,
+  x = 32,
+  y = 160,
+  width = 8,
+  height = 32,
+  pattern = "waterfall.3.middle",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 160,
+  width = 8,
+  height = 32,
+  pattern = "waterfall.3.bottom",
+}
+
+tile{
+  layer = 1,
+  x = 8,
+  y = 160,
+  width = 24,
+  height = 32,
+  pattern = "wall_statue.6.3",
+}
+
+tile{
+  layer = 1,
+  x = 24,
+  y = 168,
+  width = 8,
+  height = 16,
+  pattern = "waterfall.3.top",
+}
+
+tile{
+  layer = 1,
+  x = 32,
+  y = 48,
+  width = 8,
+  height = 32,
+  pattern = "waterfall.3.middle",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 48,
+  width = 8,
+  height = 32,
+  pattern = "waterfall.3.bottom",
+}
+
+tile{
+  layer = 1,
+  x = 8,
+  y = 48,
+  width = 24,
+  height = 32,
+  pattern = "wall_statue.6.3",
+}
+
+tile{
+  layer = 1,
+  x = 24,
+  y = 56,
+  width = 8,
+  height = 16,
+  pattern = "waterfall.3.top",
+}
+
 jumper{
   layer = 1,
   x = 40,
@@ -697,77 +769,5 @@ tile{
   width = 16,
   height = 16,
   pattern = "torch_big.top",
-}
-
-tile{
-  layer = 2,
-  x = 32,
-  y = 160,
-  width = 8,
-  height = 32,
-  pattern = "waterfall.3.middle",
-}
-
-tile{
-  layer = 2,
-  x = 40,
-  y = 160,
-  width = 8,
-  height = 32,
-  pattern = "waterfall.3.bottom",
-}
-
-tile{
-  layer = 2,
-  x = 8,
-  y = 160,
-  width = 24,
-  height = 32,
-  pattern = "wall_statue.6.3",
-}
-
-tile{
-  layer = 2,
-  x = 24,
-  y = 168,
-  width = 8,
-  height = 16,
-  pattern = "waterfall.3.top",
-}
-
-tile{
-  layer = 2,
-  x = 32,
-  y = 48,
-  width = 8,
-  height = 32,
-  pattern = "waterfall.3.middle",
-}
-
-tile{
-  layer = 2,
-  x = 40,
-  y = 48,
-  width = 8,
-  height = 32,
-  pattern = "waterfall.3.bottom",
-}
-
-tile{
-  layer = 2,
-  x = 8,
-  y = 48,
-  width = 24,
-  height = 32,
-  pattern = "wall_statue.6.3",
-}
-
-tile{
-  layer = 2,
-  x = 24,
-  y = 56,
-  width = 8,
-  height = 16,
-  pattern = "waterfall.3.top",
 }
 
