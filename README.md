@@ -25,11 +25,11 @@ documentation about Solarus.
 
 ## Debian Linux
 
- 1. Download and install the latest Solarus 1.3.x package from
+ 1. Clone the tunics repository.
+
+ 2. Download and install the latest Solarus 1.3.x package from
     http://www.solarus-games.org/downloads/solarus/debian-amd64 or
     http://www.solarus-games.org/downloads/solarus/debian-i386.
-
- 2. Clone the tunics repository.
 
  3. Run the following commands:
 
