@@ -16,7 +16,7 @@ documentation about Solarus.
 ## Windows
  
  1. Clone the tunics repository.
- 
+
  2. Download the latest Solarus 1.3.x package from http://www.solarus-games.org/downloads/solarus/win32/ 
  
  3. Extract the content of the solarus folder in the Solarus package to the root of the cloned repository.
@@ -43,7 +43,22 @@ documentation about Solarus.
 
 ## OS X
 
-todo
+ 1. Clone the tunics repository.
+
+ 2. Download the latest Solarus 1.3.x package from http://www.solarus-games.org/downloads/solarus/macosx/
+
+ 3. Copy the ”data” directory from the tunics repository.
+
+ 4. In the Solarus package, open the solars_bundle directory to find Solarus.app
+
+ 5. Right click on Solarus.app and click ”show contents of package”.
+
+ 6. Find the directory ”Resources” in ”Contents”. Paste ”data” into the ”Resources" directory.
+
+ 7. Run ”solarus” in the same directory to start the game.
+
+ 8. For reasons at the moment unknown, you can not start tunics by simply running Solarus.app, instead you always need to run ”solarus” in ”Resources”. You can, however create an alias(shortcut) directly to ”solarus”.
+
 
 # Packaging
 
