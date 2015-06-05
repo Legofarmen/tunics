@@ -38,8 +38,13 @@ local high_layer_tiles = {
     ["door_top.low.4"] = true,
     ["entrance_pillar.1.1.top"] = true,
     ["entrance_pillar.1.2.top"] = true,
+    ["hole"] = true,
     ["pillar.top"] = true,
     ["torch_big.top"] = true,
+    ["wall.3"] = true,
+    ["wall.4"] = true,
+    ["wall_hole.3"] = true,
+    ["wall_hole.4"] = true,
 }
 
 local function rect_string(rect)
