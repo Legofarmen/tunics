@@ -837,15 +837,6 @@ tile{
 
 tile{
   layer = 1,
-  x = 152,
-  y = 24,
-  width = 16,
-  height = 32,
-  pattern = "wall_pillar.8.1",
-}
-
-tile{
-  layer = 1,
   x = 200,
   y = 24,
   width = 16,
@@ -864,7 +855,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 152,
+  x = 200,
   y = 184,
   width = 16,
   height = 32,
@@ -873,7 +864,34 @@ tile{
 
 tile{
   layer = 1,
-  x = 200,
+  x = 120,
+  y = 24,
+  width = 80,
+  height = 32,
+  pattern = "drapes.1.1",
+}
+
+tile{
+  layer = 1,
+  x = 120,
+  y = 184,
+  width = 80,
+  height = 32,
+  pattern = "drapes.1.2",
+}
+
+tile{
+  layer = 1,
+  x = 152,
+  y = 24,
+  width = 16,
+  height = 32,
+  pattern = "wall_pillar.8.1",
+}
+
+tile{
+  layer = 1,
+  x = 152,
   y = 184,
   width = 16,
   height = 32,
@@ -955,77 +973,5 @@ dynamic_tile{
   name = "pot_4",
   pattern = "floor_pot",
   enabled_at_start = true,
-}
-
-tile{
-  layer = 2,
-  x = 120,
-  y = 24,
-  width = 16,
-  height = 32,
-  pattern = "drapes.1.1",
-}
-
-tile{
-  layer = 2,
-  x = 136,
-  y = 24,
-  width = 16,
-  height = 32,
-  pattern = "drapes.1.1",
-}
-
-tile{
-  layer = 2,
-  x = 168,
-  y = 24,
-  width = 16,
-  height = 32,
-  pattern = "drapes.1.1",
-}
-
-tile{
-  layer = 2,
-  x = 184,
-  y = 24,
-  width = 16,
-  height = 32,
-  pattern = "drapes.1.1",
-}
-
-tile{
-  layer = 2,
-  x = 120,
-  y = 184,
-  width = 16,
-  height = 32,
-  pattern = "drapes.1.2",
-}
-
-tile{
-  layer = 2,
-  x = 136,
-  y = 184,
-  width = 16,
-  height = 32,
-  pattern = "drapes.1.2",
-}
-
-tile{
-  layer = 2,
-  x = 168,
-  y = 184,
-  width = 16,
-  height = 32,
-  pattern = "drapes.1.2",
-}
-
-tile{
-  layer = 2,
-  x = 184,
-  y = 184,
-  width = 16,
-  height = 32,
-  pattern = "drapes.1.2",
 }
 
