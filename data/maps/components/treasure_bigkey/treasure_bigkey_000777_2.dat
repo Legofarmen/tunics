@@ -3,7 +3,7 @@ properties{
   y = 0,
   width = 320,
   height = 240,
-  tileset = "dungeon_brick_gray_1",
+  tileset = "dungeon_smoothbrick_green_1",
   music = "same",
 }
 
@@ -221,42 +221,6 @@ tile{
   width = 24,
   height = 24,
   pattern = "wall.corner_reverse.1",
-}
-
-tile{
-  layer = 1,
-  x = 56,
-  y = 56,
-  width = 32,
-  height = 32,
-  pattern = "statue.1",
-}
-
-tile{
-  layer = 1,
-  x = 56,
-  y = 152,
-  width = 32,
-  height = 32,
-  pattern = "statue.1",
-}
-
-tile{
-  layer = 1,
-  x = 232,
-  y = 56,
-  width = 32,
-  height = 32,
-  pattern = "statue.1",
-}
-
-tile{
-  layer = 1,
-  x = 232,
-  y = 152,
-  width = 32,
-  height = 32,
-  pattern = "statue.1",
 }
 
 tile{
@@ -605,8 +569,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 72,
-  y = 104,
+  x = 88,
+  y = 40,
   width = 16,
   height = 16,
   name = "pot_1",
@@ -616,8 +580,41 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 72,
-  y = 120,
+  x = 216,
+  y = 40,
+  width = 16,
+  height = 16,
+  name = "pot_4",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 88,
+  y = 184,
+  width = 16,
+  height = 16,
+  name = "pot_5",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 216,
+  y = 184,
+  width = 16,
+  height = 16,
+  name = "pot_8",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 104,
+  y = 40,
   width = 16,
   height = 16,
   name = "pot_2",
@@ -627,8 +624,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 232,
-  y = 104,
+  x = 200,
+  y = 40,
   width = 16,
   height = 16,
   name = "pot_3",
@@ -638,13 +635,156 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 232,
-  y = 120,
+  x = 104,
+  y = 184,
   width = 16,
   height = 16,
-  name = "pot_4",
+  name = "pot_6",
   pattern = "floor_pot",
   enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 200,
+  y = 184,
+  width = 16,
+  height = 16,
+  name = "pot_7",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+block{
+  layer = 1,
+  x = 48,
+  y = 85,
+  direction = -1,
+  sprite = "entities/statue",
+  pushable = false,
+  pullable = false,
+  maximum_moves = 1,
+}
+
+block{
+  layer = 1,
+  x = 64,
+  y = 69,
+  direction = -1,
+  sprite = "entities/statue",
+  pushable = false,
+  pullable = false,
+  maximum_moves = 1,
+}
+
+block{
+  layer = 1,
+  x = 80,
+  y = 53,
+  direction = -1,
+  sprite = "entities/statue",
+  pushable = false,
+  pullable = false,
+  maximum_moves = 1,
+}
+
+block{
+  layer = 1,
+  x = 240,
+  y = 53,
+  direction = -1,
+  sprite = "entities/statue",
+  pushable = false,
+  pullable = false,
+  maximum_moves = 1,
+}
+
+block{
+  layer = 1,
+  x = 256,
+  y = 69,
+  direction = -1,
+  sprite = "entities/statue",
+  pushable = false,
+  pullable = false,
+  maximum_moves = 1,
+}
+
+block{
+  layer = 1,
+  x = 272,
+  y = 85,
+  direction = -1,
+  sprite = "entities/statue",
+  pushable = false,
+  pullable = false,
+  maximum_moves = 1,
+}
+
+block{
+  layer = 1,
+  x = 272,
+  y = 165,
+  direction = -1,
+  sprite = "entities/statue",
+  pushable = false,
+  pullable = false,
+  maximum_moves = 1,
+}
+
+block{
+  layer = 1,
+  x = 256,
+  y = 181,
+  direction = -1,
+  sprite = "entities/statue",
+  pushable = false,
+  pullable = false,
+  maximum_moves = 1,
+}
+
+block{
+  layer = 1,
+  x = 240,
+  y = 197,
+  direction = -1,
+  sprite = "entities/statue",
+  pushable = false,
+  pullable = false,
+  maximum_moves = 1,
+}
+
+block{
+  layer = 1,
+  x = 80,
+  y = 197,
+  direction = -1,
+  sprite = "entities/statue",
+  pushable = false,
+  pullable = false,
+  maximum_moves = 1,
+}
+
+block{
+  layer = 1,
+  x = 64,
+  y = 181,
+  direction = -1,
+  sprite = "entities/statue",
+  pushable = false,
+  pullable = false,
+  maximum_moves = 1,
+}
+
+block{
+  layer = 1,
+  x = 48,
+  y = 165,
+  direction = -1,
+  sprite = "entities/statue",
+  pushable = false,
+  pullable = false,
+  maximum_moves = 1,
 }
 
 tile{
