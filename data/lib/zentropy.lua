@@ -964,6 +964,23 @@ function zentropy.inject_pot(placeholder, rng)
     return entity
 end
 
+function zentropy.Room:inject_stone(placeholder)
+    zentropy.assert(placeholder, 'placeholder entity must be provided')
+    local map = placeholder:get_map()
+    local x, y, layer = placeholder:get_position()
+    local stone = map:create_destructible{
+        layer = layer,
+        x = x,
+        y = y,
+        sprite = zentropy.Room.destructibles.stone1,
+        destruction_sound = 'stone',
+        weight = 1,
+    }
+    local x_origin, y_origin = stone:get_origin()
+    stone:set_position(x + x_origin, y + y_origin)
+    placeholder:remove()
+end
+
 function zentropy.inject_block(placeholder)
     zentropy.assert(placeholder, 'placeholder entity must be provided')
     local map = placeholder:get_map()
