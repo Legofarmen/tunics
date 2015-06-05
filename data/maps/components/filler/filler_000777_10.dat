@@ -1,0 +1,308 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  tileset = "dungeon_brick_blue_1",
+  music = "same",
+}
+
+tile{
+  layer = 1,
+  x = 80,
+  y = 80,
+  width = 160,
+  height = 80,
+  pattern = "hole",
+}
+
+tile{
+  layer = 1,
+  x = 80,
+  y = 80,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.corner.1",
+}
+
+tile{
+  layer = 1,
+  x = 80,
+  y = 144,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.corner.3",
+}
+
+tile{
+  layer = 1,
+  x = 224,
+  y = 144,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.corner.4",
+}
+
+tile{
+  layer = 1,
+  x = 224,
+  y = 80,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.corner.2",
+}
+
+tile{
+  layer = 1,
+  x = 96,
+  y = 80,
+  width = 128,
+  height = 16,
+  pattern = "wall_hole.1",
+}
+
+tile{
+  layer = 1,
+  x = 96,
+  y = 144,
+  width = 128,
+  height = 16,
+  pattern = "wall_hole.2",
+}
+
+tile{
+  layer = 1,
+  x = 224,
+  y = 96,
+  width = 16,
+  height = 48,
+  pattern = "wall_hole.4",
+}
+
+tile{
+  layer = 1,
+  x = 80,
+  y = 96,
+  width = 16,
+  height = 48,
+  pattern = "wall_hole.3",
+}
+
+tile{
+  layer = 1,
+  x = 72,
+  y = 72,
+  width = 8,
+  height = 8,
+  pattern = "barrier.3.border",
+}
+
+tile{
+  layer = 1,
+  x = 72,
+  y = 160,
+  width = 8,
+  height = 8,
+  pattern = "barrier.3.border",
+}
+
+tile{
+  layer = 1,
+  x = 240,
+  y = 160,
+  width = 8,
+  height = 8,
+  pattern = "barrier.3.border",
+}
+
+tile{
+  layer = 1,
+  x = 240,
+  y = 72,
+  width = 8,
+  height = 8,
+  pattern = "barrier.3.border",
+}
+
+tile{
+  layer = 1,
+  x = 80,
+  y = 72,
+  width = 160,
+  height = 8,
+  pattern = "barrier.3.1",
+}
+
+tile{
+  layer = 1,
+  x = 80,
+  y = 160,
+  width = 160,
+  height = 8,
+  pattern = "barrier.3.1",
+}
+
+tile{
+  layer = 1,
+  x = 72,
+  y = 80,
+  width = 8,
+  height = 80,
+  pattern = "barrier.3.2",
+}
+
+tile{
+  layer = 1,
+  x = 240,
+  y = 80,
+  width = 8,
+  height = 80,
+  pattern = "barrier.3.2",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 184,
+  width = 16,
+  height = 16,
+  pattern = "torch",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 40,
+  width = 16,
+  height = 16,
+  pattern = "torch",
+}
+
+tile{
+  layer = 1,
+  x = 264,
+  y = 40,
+  width = 16,
+  height = 16,
+  pattern = "torch",
+}
+
+tile{
+  layer = 1,
+  x = 264,
+  y = 184,
+  width = 16,
+  height = 16,
+  pattern = "torch",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 40,
+  y = 56,
+  width = 16,
+  height = 16,
+  name = "pot_9",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 56,
+  y = 40,
+  width = 16,
+  height = 16,
+  name = "pot_2",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 248,
+  y = 40,
+  width = 16,
+  height = 16,
+  name = "pot_3",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 264,
+  y = 56,
+  width = 16,
+  height = 16,
+  name = "pot_4",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 264,
+  y = 168,
+  width = 16,
+  height = 16,
+  name = "pot_5",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 248,
+  y = 184,
+  width = 16,
+  height = 16,
+  name = "pot_6",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 56,
+  y = 184,
+  width = 16,
+  height = 16,
+  name = "pot_7",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 40,
+  y = 168,
+  width = 16,
+  height = 16,
+  name = "pot_8",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 200,
+  y = 40,
+  width = 32,
+  height = 32,
+  name = "enemy_3",
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 88,
+  y = 168,
+  width = 32,
+  height = 32,
+  name = "enemy_2",
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
+}
+
