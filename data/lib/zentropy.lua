@@ -886,29 +886,6 @@ function zentropy.game.init(game)
     return game
 end
 
-local function get_random_treasure(rng)
-    local treasures = {
-        heart = { 3/4 }, fairy = { 1/4 },
-        bomb = { 8/12, 3/12, 1/12 },
-        arrow = { 10/16, 5/16, 1/16 },
-        magic_flask = { 7/8, 1/8 },
-    }
-    local x = 8 * rng:random()
-    for item_name, probabilities in pairs(treasures) do
-        if zentropy.game.game:get_item(item_name):is_obtainable() then
-            for variant, p in ipairs(probabilities) do
-                x = x - p
-                if x < 0 then
-                    return item_name, variant
-                end
-            end
-        else
-            x = x - 1
-        end
-    end
-    return nil, nil
-end
-
 function zentropy.Room:inject_enemy(placeholder, rng)
     zentropy.assert(placeholder, 'placeholder entity must be provided')
     local r = self.enemy_ratio or 1
@@ -916,7 +893,6 @@ function zentropy.Room:inject_enemy(placeholder, rng)
     while 1 <= r or rng2:random() < r do
         local map = placeholder:get_map()
         local x, y, layer = placeholder:get_position()
-        local treasure_name, treasure_variant = get_random_treasure(rng2:refine('drop'))
         local breed, treshold = self.next_enemy(rng2:refine('breed'), zentropy.Room.enemies)
         local enemy = map:create_enemy{
             layer=layer,
@@ -924,8 +900,7 @@ function zentropy.Room:inject_enemy(placeholder, rng)
             y=y,
             direction=3,
             breed=breed,
-            treasure_name=treasure_name,
-            treasure_variant=treasure_variant,
+            treasure_name='random',
         }
         local placeholder_w, placeholder_h = placeholder:get_size()
         local origin_x, origin_y = enemy:get_origin()
@@ -948,15 +923,13 @@ function zentropy.inject_pot(placeholder, rng)
     zentropy.assert(placeholder, 'placeholder entity must be provided')
     local map = placeholder:get_map()
     local x, y, layer = placeholder:get_position()
-    local treasure_name, treasure_variant = get_random_treasure(rng:refine('treasure'))
     local entity = map:create_destructible{
         layer=layer,
         x=x,
         y=y,
         destruction_sound='stone',
         sprite=zentropy.Room.destructibles.pot,
-        treasure_name=treasure_name,
-        treasure_variant=treasure_variant,
+        treasure_name='random',
     }
     local origin_x, origin_y = entity:get_origin()
     entity:set_position(x + origin_x, y + origin_y)
