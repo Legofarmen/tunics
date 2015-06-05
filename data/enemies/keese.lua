@@ -7,7 +7,7 @@ local timer
 
 function enemy:on_created()
   self:set_life(1)
-  self:set_damage(1)
+  self:set_damage(2)
   self:create_sprite("enemies/keese")
   self:set_hurt_style("monster")
   self:set_pushed_back_when_hurt(true)
