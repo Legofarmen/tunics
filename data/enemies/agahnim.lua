@@ -5,7 +5,7 @@ local zentropy = require "lib/zentropy"
 -- Agahnim
 
 local nb_sons_created = 0
-local initial_life = 1 * zentropy.game.game:get_value('tier')
+local initial_life = 2 + zentropy.game.game:get_value('tier')
 
 local treasure, treasure_count
 if zentropy.game.game:get_value('tier') >= 18 then
