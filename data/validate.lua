@@ -105,6 +105,15 @@ local function validate_entity_placeholder(fname, description, properties, count
         zentropy.debug(string.format("%s:  named pot* in component: %s", description, fname))
     end
 
+    -- Stone
+    if properties.pattern == 'placeholder_stone' then
+        if not properties.name or not properties.name:find('^stone_') then
+            zentropy.debug(string.format("%s:  not named stone_* in component: %s", description, fname))
+        end
+    elseif properties.name and properties.name:find('^stone_') then
+        zentropy.debug(string.format("%s:  named stone* in component: %s", description, fname))
+    end
+
     -- Enemy
     if properties.pattern == 'placeholder_enemy' then
         if not properties.name or not properties.name:find('^enemy_') then
@@ -216,7 +225,23 @@ local function mark_pike_wall(properties, pikes)
     table.insert(pikes[y][x].wall, properties)
 end
 
+local function validate_script(fname)
+    local luafname = 'data/' .. fname:gsub('.dat$', '.lua')
+    local f=io.open(luafname,"r")
+    if f then
+        if f:seek('end') == 0 then
+            zentropy.debug(string.format('map script empty: %s', luafname))
+        end
+        io.close(f)
+    else
+        zentropy.debug(string.format('map script not found: %s', luafname))
+    end
+end
+
 local function validate_map(fname, mask, tilesets, patterns)
+
+    validate_script(fname)
+
     local all_sections = {
         { x = 176, y = 136, width = 144, height = 104, },
         { x = 144, y = 136, width =  32, height = 72, },
