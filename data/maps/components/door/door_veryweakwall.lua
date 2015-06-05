@@ -12,6 +12,11 @@ function door_veryweakwall.init(map, data, direction)
         opening_method = "explosion",
     })
 
+    local door_u = door:get_userdata()
+    function door_u:on_opened()
+        sol.audio.play_sound('secret')
+    end
+
     local sensor = map:get_entity('sensor')
 
     function sensor:on_activated()
