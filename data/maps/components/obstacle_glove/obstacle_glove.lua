@@ -51,20 +51,9 @@ function glove.init(map, data)
     else
         map:set_entities_enabled('treasure_open_', false)
     end
-
+    
     for placeholder in map:get_entities('stone_') do
-        local x, y, layer = placeholder:get_position()
-        local stone = map:create_destructible{
-            layer = layer,
-            x = x,
-            y = y,
-            sprite = zentropy.Room.destructibles.stone1,
-            destruction_sound = 'stone',
-            weight = 1,
-        }
-        local x_origin, y_origin = stone:get_origin()
-        stone:set_position(x + x_origin, y + y_origin)
-        placeholder:remove()
+        data.room:inject_stone(placeholder)
     end
 
 end
