@@ -60,36 +60,29 @@ documentation about Solarus.
  8. For reasons at the moment unknown, you can not start tunics by simply running Solarus.app, instead you always need to run ”solarus” in ”Resources”. You can, however create an alias(shortcut) directly to ”solarus”.
 
 
-# Packaging
+# Install Tunics!
 
+ 1. Generate the "data.solarus" archive containing all data files of the quest:
 
-## Default settings
+        $ cmake .
+        $ make
 
-If you want to install tunics, cmake and zip are recommended.
-Just type
+ 2. Install the "data.solarus" archive:
 
-    $ cmake .
-    $ make
+        # make install
 
-This generates the "data.solarus" archive that contains all data files
-of the quest. You can then install it with
+    This installs the following files (assuming that the install directory
+    is /usr/local):
+      - the quest data archive ("data.solarus") in /usr/local/share/solarus/tunics/
+      - a script called "tunics" in /usr/local/bin/
 
-    # make install
+ 3. Start the quest:
 
-This installs the following files (assuming that the install directory
-is /usr/local):
-- the quest data archive ("data.solarus") in /usr/local/share/solarus/zsdx/
-- a script called "tunics" in /usr/local/bin/
+        $ tunics
 
-The tunics script launches solarus with the appropriate command-line argument
-to specify the quest path.
-This means that you can launch the tunics quest with the command:
+    which is equivalent to:
 
-    $ tunics
-
-which is equivalent to:
-
-    $ solarus /usr/local/share/solarus/tunics
+        $ solarus /usr/local/share/solarus/tunics
 
 
 ## Change the install directory 
@@ -105,23 +98,3 @@ as a parameter of cmake:
 This installs the files described above, with the
 /usr/local prefix replaced by the one you specified.
 The script generated runs solarus with the appropriate quest path.
-
-
-## Play directly
-
-You need to specify to the solarus binary the path of the quest data files to
-use.
-solarus accepts two forms of quest paths:
-- a directory having a subdirectory named "data" with all data inside,
-- a directory having a zip archive "data.solarus" with all data inside.
-
-Thus, to run tunics, if the current directory is the one that
-contains the "data" subdirectory (and this readme), you can type
-
-    $ solarus .
-
-or without arguments:
-
-    $ solarus
-
-if solarus was compiled with the default quest set to ".".
