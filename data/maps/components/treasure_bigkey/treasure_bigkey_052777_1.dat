@@ -12,7 +12,7 @@ tile{
   x = 80,
   y = 32,
   width = 40,
-  height = 192,
+  height = 208,
   pattern = "hole",
 }
 
@@ -21,16 +21,16 @@ tile{
   x = 200,
   y = 32,
   width = 40,
-  height = 192,
+  height = 208,
   pattern = "hole",
 }
 
 tile{
   layer = 1,
-  x = 16,
+  x = 0,
   y = 96,
-  width = 64,
-  height = 128,
+  width = 80,
+  height = 144,
   pattern = "hole",
 }
 
@@ -164,8 +164,8 @@ tile{
   layer = 1,
   x = 240,
   y = 96,
-  width = 64,
-  height = 128,
+  width = 80,
+  height = 144,
   pattern = "hole",
 }
 
@@ -174,7 +174,7 @@ tile{
   x = 120,
   y = 200,
   width = 80,
-  height = 24,
+  height = 40,
   pattern = "hole",
 }
 

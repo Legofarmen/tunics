@@ -10,9 +10,9 @@ properties{
 tile{
   layer = 1,
   x = 264,
-  y = 16,
+  y = 0,
   width = 24,
-  height = 80,
+  height = 96,
   pattern = "hole",
 }
 
@@ -21,16 +21,16 @@ tile{
   x = 264,
   y = 144,
   width = 24,
-  height = 80,
+  height = 96,
   pattern = "hole",
 }
 
 tile{
   layer = 1,
   x = 32,
-  y = 16,
+  y = 0,
   width = 80,
-  height = 72,
+  height = 88,
   pattern = "hole",
 }
 
@@ -39,16 +39,16 @@ tile{
   x = 32,
   y = 152,
   width = 80,
-  height = 72,
+  height = 88,
   pattern = "hole",
 }
 
 tile{
   layer = 1,
   x = 112,
-  y = 16,
+  y = 0,
   width = 152,
-  height = 208,
+  height = 240,
   pattern = "hole",
 }
 
