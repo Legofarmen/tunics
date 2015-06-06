@@ -403,14 +403,85 @@ tile{
   pattern = "wall.corner.4",
 }
 
-enemy{
+tile{
   layer = 1,
-  x = 160,
-  y = 141,
-  name = "agahnim",
-  direction = 3,
-  breed = "agahnim",
-  savegame_variable = "room_boss",
+  x = 136,
+  y = 96,
+  width = 48,
+  height = 48,
+  pattern = "hole",
+}
+
+tile{
+  layer = 1,
+  x = 144,
+  y = 96,
+  width = 32,
+  height = 8,
+  pattern = "hole.1",
+}
+
+tile{
+  layer = 1,
+  x = 136,
+  y = 96,
+  width = 8,
+  height = 8,
+  pattern = "hole.corner.1",
+}
+
+tile{
+  layer = 1,
+  x = 136,
+  y = 104,
+  width = 8,
+  height = 32,
+  pattern = "hole.3",
+}
+
+tile{
+  layer = 1,
+  x = 144,
+  y = 136,
+  width = 32,
+  height = 8,
+  pattern = "hole.2",
+}
+
+tile{
+  layer = 1,
+  x = 176,
+  y = 104,
+  width = 8,
+  height = 32,
+  pattern = "hole.4",
+}
+
+tile{
+  layer = 1,
+  x = 176,
+  y = 136,
+  width = 8,
+  height = 8,
+  pattern = "hole.corner.4",
+}
+
+tile{
+  layer = 1,
+  x = 176,
+  y = 96,
+  width = 8,
+  height = 8,
+  pattern = "hole.corner.2",
+}
+
+tile{
+  layer = 1,
+  x = 136,
+  y = 136,
+  width = 8,
+  height = 8,
+  pattern = "hole.corner.3",
 }
 
 dynamic_tile{
@@ -444,6 +515,16 @@ dynamic_tile{
   name = "boss_1",
   pattern = "placeholder_boss_1",
   enabled_at_start = false,
+}
+
+enemy{
+  layer = 1,
+  x = 160,
+  y = 85,
+  name = "agahnim",
+  direction = 3,
+  breed = "agahnim",
+  savegame_variable = "room_boss",
 }
 
 tile{
