@@ -277,7 +277,8 @@ tile{
   pattern = "wall_torch.2",
 }
 
-tile{
+dynamic_tile{
+  name = "stone_1",
   layer = 1,
   x = 136,
   y = 40,
@@ -286,7 +287,8 @@ tile{
   pattern = "placeholder_stone",
 }
 
-tile{
+dynamic_tile{
+  name = "stone_2",
   layer = 1,
   x = 152,
   y = 40,
@@ -295,7 +297,8 @@ tile{
   pattern = "placeholder_stone",
 }
 
-tile{
+dynamic_tile{
+  name = "stone_3",
   layer = 1,
   x = 168,
   y = 40,
@@ -304,7 +307,8 @@ tile{
   pattern = "placeholder_stone",
 }
 
-tile{
+dynamic_tile{
+  name = "stone_4",
   layer = 1,
   x = 136,
   y = 184,
@@ -313,7 +317,8 @@ tile{
   pattern = "placeholder_stone",
 }
 
-tile{
+dynamic_tile{
+  name = "stone_5",
   layer = 1,
   x = 152,
   y = 184,
@@ -322,7 +327,8 @@ tile{
   pattern = "placeholder_stone",
 }
 
-tile{
+dynamic_tile{
+  name = "stone_6",
   layer = 1,
   x = 168,
   y = 184,

@@ -286,6 +286,78 @@ tile{
   pattern = "tongue",
 }
 
+tile{
+  layer = 1,
+  x = 8,
+  y = 208,
+  width = 24,
+  height = 16,
+  pattern = "wall.3",
+}
+
+tile{
+  layer = 1,
+  x = 288,
+  y = 208,
+  width = 24,
+  height = 16,
+  pattern = "wall.4",
+}
+
+tile{
+  layer = 1,
+  x = 8,
+  y = 16,
+  width = 24,
+  height = 16,
+  pattern = "wall.3",
+}
+
+tile{
+  layer = 1,
+  x = 288,
+  y = 16,
+  width = 24,
+  height = 16,
+  pattern = "wall.4",
+}
+
+tile{
+  layer = 1,
+  x = 16,
+  y = 184,
+  width = 16,
+  height = 32,
+  pattern = "wall_torch.3",
+}
+
+tile{
+  layer = 1,
+  x = 16,
+  y = 24,
+  width = 16,
+  height = 32,
+  pattern = "wall_torch.3",
+}
+
+tile{
+  layer = 1,
+  x = 296,
+  y = 24,
+  width = 16,
+  height = 32,
+  pattern = "wall_torch.4",
+}
+
+tile{
+  layer = 1,
+  x = 296,
+  y = 184,
+  width = 16,
+  height = 32,
+  pattern = "wall_torch.4",
+}
+
 dynamic_tile{
   layer = 1,
   x = 144,
@@ -364,16 +436,16 @@ tile{
   x = 8,
   y = 0,
   width = 24,
-  height = 32,
+  height = 16,
   pattern = "wall.3",
 }
 
 tile{
   layer = 2,
   x = 8,
-  y = 208,
+  y = 224,
   width = 24,
-  height = 32,
+  height = 16,
   pattern = "wall.3",
 }
 
@@ -382,16 +454,16 @@ tile{
   x = 288,
   y = 0,
   width = 24,
-  height = 32,
+  height = 16,
   pattern = "wall.4",
 }
 
 tile{
   layer = 2,
   x = 288,
-  y = 208,
+  y = 224,
   width = 24,
-  height = 32,
+  height = 16,
   pattern = "wall.4",
 }
 
@@ -429,41 +501,5 @@ tile{
   width = 16,
   height = 16,
   pattern = "wall_hole.4",
-}
-
-tile{
-  layer = 2,
-  x = 16,
-  y = 184,
-  width = 16,
-  height = 32,
-  pattern = "wall_torch.3",
-}
-
-tile{
-  layer = 2,
-  x = 16,
-  y = 24,
-  width = 16,
-  height = 32,
-  pattern = "wall_torch.3",
-}
-
-tile{
-  layer = 2,
-  x = 296,
-  y = 24,
-  width = 16,
-  height = 32,
-  pattern = "wall_torch.4",
-}
-
-tile{
-  layer = 2,
-  x = 296,
-  y = 184,
-  width = 16,
-  height = 32,
-  pattern = "wall_torch.4",
 }
 

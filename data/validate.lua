@@ -38,8 +38,13 @@ local high_layer_tiles = {
     ["door_top.low.4"] = true,
     ["entrance_pillar.1.1.top"] = true,
     ["entrance_pillar.1.2.top"] = true,
+    ["hole"] = true,
     ["pillar.top"] = true,
     ["torch_big.top"] = true,
+    ["wall.3"] = true,
+    ["wall.4"] = true,
+    ["wall_hole.3"] = true,
+    ["wall_hole.4"] = true,
 }
 
 local function rect_string(rect)
@@ -103,6 +108,15 @@ local function validate_entity_placeholder(fname, description, properties, count
         end
     elseif properties.name and properties.name:find('^pot_') then
         zentropy.debug(string.format("%s:  named pot* in component: %s", description, fname))
+    end
+
+    -- Stone
+    if properties.pattern == 'placeholder_stone' then
+        if not properties.name or not properties.name:find('^stone_') then
+            zentropy.debug(string.format("%s:  not named stone_* in component: %s", description, fname))
+        end
+    elseif properties.name and properties.name:find('^stone_') then
+        zentropy.debug(string.format("%s:  named stone* in component: %s", description, fname))
     end
 
     -- Enemy
@@ -216,7 +230,23 @@ local function mark_pike_wall(properties, pikes)
     table.insert(pikes[y][x].wall, properties)
 end
 
+local function validate_script(fname)
+    local luafname = 'data/' .. fname:gsub('.dat$', '.lua')
+    local f=io.open(luafname,"r")
+    if f then
+        if f:seek('end') == 0 then
+            zentropy.debug(string.format('map script empty: %s', luafname))
+        end
+        io.close(f)
+    else
+        zentropy.debug(string.format('map script not found: %s', luafname))
+    end
+end
+
 local function validate_map(fname, mask, tilesets, patterns)
+
+    validate_script(fname)
+
     local all_sections = {
         { x = 176, y = 136, width = 144, height = 104, },
         { x = 144, y = 136, width =  32, height = 72, },

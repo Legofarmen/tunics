@@ -331,6 +331,78 @@ tile{
   pattern = "barrier.1.border",
 }
 
+tile{
+  layer = 1,
+  x = 288,
+  y = 16,
+  width = 24,
+  height = 16,
+  pattern = "wall.4",
+}
+
+tile{
+  layer = 1,
+  x = 8,
+  y = 16,
+  width = 24,
+  height = 16,
+  pattern = "wall.3",
+}
+
+tile{
+  layer = 1,
+  x = 288,
+  y = 208,
+  width = 24,
+  height = 16,
+  pattern = "wall.4",
+}
+
+tile{
+  layer = 1,
+  x = 8,
+  y = 208,
+  width = 24,
+  height = 16,
+  pattern = "wall.3",
+}
+
+tile{
+  layer = 1,
+  x = 288,
+  y = 24,
+  width = 16,
+  height = 32,
+  pattern = "wall_torch.4",
+}
+
+tile{
+  layer = 1,
+  x = 288,
+  y = 184,
+  width = 16,
+  height = 32,
+  pattern = "wall_torch.4",
+}
+
+tile{
+  layer = 1,
+  x = 8,
+  y = 24,
+  width = 16,
+  height = 32,
+  pattern = "wall_torch.3",
+}
+
+tile{
+  layer = 1,
+  x = 8,
+  y = 184,
+  width = 16,
+  height = 32,
+  pattern = "wall_torch.3",
+}
+
 dynamic_tile{
   layer = 1,
   x = 56,
@@ -383,35 +455,17 @@ tile{
   x = 288,
   y = 0,
   width = 24,
-  height = 32,
+  height = 16,
   pattern = "wall.4",
 }
 
 tile{
   layer = 2,
   x = 288,
-  y = 24,
-  width = 16,
-  height = 32,
-  pattern = "wall_torch.4",
-}
-
-tile{
-  layer = 2,
-  x = 288,
-  y = 208,
+  y = 224,
   width = 24,
-  height = 32,
+  height = 16,
   pattern = "wall.4",
-}
-
-tile{
-  layer = 2,
-  x = 288,
-  y = 184,
-  width = 16,
-  height = 32,
-  pattern = "wall_torch.4",
 }
 
 tile{
@@ -419,16 +473,16 @@ tile{
   x = 8,
   y = 0,
   width = 24,
-  height = 32,
+  height = 16,
   pattern = "wall.3",
 }
 
 tile{
   layer = 2,
   x = 8,
-  y = 208,
+  y = 224,
   width = 24,
-  height = 32,
+  height = 16,
   pattern = "wall.3",
 }
 
@@ -448,23 +502,5 @@ tile{
   width = 16,
   height = 16,
   pattern = "wall_hole.3",
-}
-
-tile{
-  layer = 2,
-  x = 8,
-  y = 24,
-  width = 16,
-  height = 32,
-  pattern = "wall_torch.3",
-}
-
-tile{
-  layer = 2,
-  x = 8,
-  y = 184,
-  width = 16,
-  height = 32,
-  pattern = "wall_torch.3",
 }
 

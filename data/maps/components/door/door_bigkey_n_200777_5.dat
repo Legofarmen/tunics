@@ -205,6 +205,42 @@ tile{
   pattern = "wall_pillar.5.1",
 }
 
+tile{
+  layer = 1,
+  x = 48,
+  y = 8,
+  width = 32,
+  height = 32,
+  pattern = "drapes.1.1",
+}
+
+tile{
+  layer = 1,
+  x = 96,
+  y = 8,
+  width = 32,
+  height = 32,
+  pattern = "drapes.1.1",
+}
+
+tile{
+  layer = 1,
+  x = 192,
+  y = 8,
+  width = 32,
+  height = 32,
+  pattern = "drapes.1.1",
+}
+
+tile{
+  layer = 1,
+  x = 240,
+  y = 8,
+  width = 32,
+  height = 32,
+  pattern = "drapes.1.1",
+}
+
 dynamic_tile{
   layer = 1,
   x = 152,
@@ -279,41 +315,5 @@ tile{
   width = 16,
   height = 8,
   pattern = "door_boss.1.pillar.2.top",
-}
-
-tile{
-  layer = 2,
-  x = 48,
-  y = 8,
-  width = 32,
-  height = 32,
-  pattern = "drapes.1.1",
-}
-
-tile{
-  layer = 2,
-  x = 96,
-  y = 8,
-  width = 32,
-  height = 32,
-  pattern = "drapes.1.1",
-}
-
-tile{
-  layer = 2,
-  x = 192,
-  y = 8,
-  width = 32,
-  height = 32,
-  pattern = "drapes.1.1",
-}
-
-tile{
-  layer = 2,
-  x = 240,
-  y = 8,
-  width = 32,
-  height = 32,
-  pattern = "drapes.1.1",
 }
 
