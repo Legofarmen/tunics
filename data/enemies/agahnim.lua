@@ -185,6 +185,7 @@ function enemy:receive_bounced_fireball(fireball)
     sol.timer.stop_all(self)
     fireball:remove()
     self:hurt(1)
+    sol.audio.play_sound('boss_hurt')
   end
 end
 
