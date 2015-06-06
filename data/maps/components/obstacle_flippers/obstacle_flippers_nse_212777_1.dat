@@ -18,7 +18,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 56,
+  x = 72,
   y = 32,
   width = 24,
   height = 24,
@@ -27,7 +27,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 56,
+  x = 72,
   y = 184,
   width = 24,
   height = 24,
@@ -45,7 +45,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 56,
+  x = 72,
   y = 56,
   width = 24,
   height = 128,
@@ -54,20 +54,11 @@ tile{
 
 tile{
   layer = 1,
-  x = 240,
-  y = 96,
+  x = 224,
+  y = 80,
   width = 24,
-  height = 64,
+  height = 80,
   pattern = "wall_low.4",
-}
-
-tile{
-  layer = 1,
-  x = 240,
-  y = 144,
-  width = 24,
-  height = 24,
-  pattern = "wall_low.corner.4",
 }
 
 tile{
@@ -90,25 +81,16 @@ tile{
 
 tile{
   layer = 1,
-  x = 80,
+  x = 96,
   y = 32,
-  width = 32,
+  width = 16,
   height = 24,
   pattern = "wall_low.1",
 }
 
 tile{
   layer = 1,
-  x = 240,
-  y = 72,
-  width = 24,
-  height = 24,
-  pattern = "wall_low.corner.2",
-}
-
-tile{
-  layer = 1,
-  x = 56,
+  x = 72,
   y = 104,
   width = 16,
   height = 32,
@@ -117,7 +99,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 248,
+  x = 232,
   y = 104,
   width = 16,
   height = 32,
@@ -126,9 +108,9 @@ tile{
 
 tile{
   layer = 1,
-  x = 80,
+  x = 96,
   y = 184,
-  width = 32,
+  width = 16,
   height = 24,
   pattern = "wall_low.2",
 }
@@ -181,15 +163,6 @@ tile{
 tile{
   layer = 1,
   x = 224,
-  y = 72,
-  width = 24,
-  height = 24,
-  pattern = "wall_low.corner_reverse.2",
-}
-
-tile{
-  layer = 1,
-  x = 224,
   y = 160,
   width = 24,
   height = 24,
@@ -198,18 +171,9 @@ tile{
 
 tile{
   layer = 1,
-  x = 224,
-  y = 144,
-  width = 24,
-  height = 24,
-  pattern = "wall_low.corner_reverse.4",
-}
-
-tile{
-  layer = 1,
-  x = 80,
+  x = 96,
   y = 56,
-  width = 32,
+  width = 16,
   height = 128,
   pattern = "floor.19",
 }
@@ -225,28 +189,10 @@ tile{
 
 tile{
   layer = 1,
-  x = 224,
-  y = 96,
-  width = 16,
-  height = 48,
-  pattern = "floor.19",
-}
-
-tile{
-  layer = 1,
-  x = 64,
+  x = 80,
   y = 40,
-  width = 64,
+  width = 48,
   height = 160,
-  pattern = "water.transparent",
-}
-
-tile{
-  layer = 1,
-  x = 240,
-  y = 80,
-  width = 16,
-  height = 80,
   pattern = "water.transparent",
 }
 
@@ -261,7 +207,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 80,
+  x = 88,
   y = 8,
   width = 32,
   height = 24,
@@ -270,7 +216,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 88,
+  x = 96,
   y = 24,
   width = 16,
   height = 8,
@@ -279,7 +225,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 80,
+  x = 88,
   y = 32,
   width = 32,
   height = 8,
@@ -288,7 +234,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 80,
+  x = 88,
   y = 40,
   width = 32,
   height = 8,
@@ -306,7 +252,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 80,
+  x = 88,
   y = 208,
   width = 32,
   height = 24,
@@ -315,7 +261,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 88,
+  x = 96,
   y = 208,
   width = 16,
   height = 8,
@@ -324,7 +270,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 80,
+  x = 88,
   y = 200,
   width = 32,
   height = 8,
@@ -333,7 +279,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 80,
+  x = 88,
   y = 192,
   width = 32,
   height = 8,
@@ -369,5 +315,85 @@ dynamic_tile{
   name = "treasure_open_chest",
   pattern = "placeholder_treasure_open",
   enabled_at_start = true,
+}
+
+jumper{
+  layer = 1,
+  x = 72,
+  y = 40,
+  width = 8,
+  height = 64,
+  direction = 0,
+  jump_length = 40,
+}
+
+jumper{
+  layer = 1,
+  x = 72,
+  y = 136,
+  width = 8,
+  height = 64,
+  direction = 0,
+  jump_length = 40,
+}
+
+jumper{
+  layer = 1,
+  x = 136,
+  y = 56,
+  width = 104,
+  height = 8,
+  direction = 6,
+  jump_length = 40,
+}
+
+jumper{
+  layer = 1,
+  x = 240,
+  y = 64,
+  width = 8,
+  height = 40,
+  direction = 4,
+  jump_length = 40,
+}
+
+jumper{
+  layer = 1,
+  x = 240,
+  y = 136,
+  width = 8,
+  height = 40,
+  direction = 4,
+  jump_length = 40,
+}
+
+jumper{
+  layer = 1,
+  x = 128,
+  y = 40,
+  width = 8,
+  height = 16,
+  direction = 4,
+  jump_length = 40,
+}
+
+jumper{
+  layer = 1,
+  x = 128,
+  y = 184,
+  width = 8,
+  height = 16,
+  direction = 4,
+  jump_length = 40,
+}
+
+jumper{
+  layer = 1,
+  x = 136,
+  y = 176,
+  width = 104,
+  height = 8,
+  direction = 2,
+  jump_length = 40,
 }
 
