@@ -384,7 +384,7 @@ enemy{
   layer = 1,
   x = 80,
   y = 197,
-  direction = 3,
+  direction = 1,
   breed = "pike_auto",
 }
 
@@ -392,7 +392,7 @@ enemy{
   layer = 1,
   x = 224,
   y = 197,
-  direction = 3,
+  direction = 1,
   breed = "pike_auto",
 }
 
