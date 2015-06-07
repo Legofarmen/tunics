@@ -941,13 +941,15 @@ function zentropy.Room:inject_stone(placeholder)
     zentropy.assert(placeholder, 'placeholder entity must be provided')
     local map = placeholder:get_map()
     local x, y, layer = placeholder:get_position()
+    local weight, sprite = 1, zentropy.Room.destructibles.stone1
     local stone = map:create_destructible{
         layer = layer,
         x = x,
         y = y,
-        sprite = zentropy.Room.destructibles.stone1,
         destruction_sound = 'stone',
-        weight = 1,
+        sprite = sprite,
+        weight = weight,
+        damage_on_enemies = 2 ^ weight,
     }
     local x_origin, y_origin = stone:get_origin()
     stone:set_position(x + x_origin, y + y_origin)
