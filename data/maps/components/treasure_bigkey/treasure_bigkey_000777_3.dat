@@ -3,7 +3,7 @@ properties{
   y = 0,
   width = 320,
   height = 240,
-  tileset = "dungeon_cave_brown_1",
+  tileset = "dungeon_ice_blue_1",
   music = "same",
 }
 
@@ -135,78 +135,6 @@ tile{
 
 tile{
   layer = 1,
-  x = 64,
-  y = 8,
-  width = 16,
-  height = 32,
-  pattern = "wall_pillar.1.1",
-}
-
-tile{
-  layer = 1,
-  x = 240,
-  y = 8,
-  width = 16,
-  height = 32,
-  pattern = "wall_pillar.1.1",
-}
-
-tile{
-  layer = 1,
-  x = 280,
-  y = 64,
-  width = 32,
-  height = 16,
-  pattern = "wall_pillar.1.4",
-}
-
-tile{
-  layer = 1,
-  x = 280,
-  y = 160,
-  width = 32,
-  height = 16,
-  pattern = "wall_pillar.1.4",
-}
-
-tile{
-  layer = 1,
-  x = 8,
-  y = 160,
-  width = 32,
-  height = 16,
-  pattern = "wall_pillar.1.3",
-}
-
-tile{
-  layer = 1,
-  x = 8,
-  y = 64,
-  width = 32,
-  height = 16,
-  pattern = "wall_pillar.1.3",
-}
-
-tile{
-  layer = 1,
-  x = 64,
-  y = 200,
-  width = 16,
-  height = 32,
-  pattern = "wall_pillar.1.2",
-}
-
-tile{
-  layer = 1,
-  x = 240,
-  y = 200,
-  width = 16,
-  height = 32,
-  pattern = "wall_pillar.1.2",
-}
-
-tile{
-  layer = 1,
   x = 56,
   y = 56,
   width = 16,
@@ -329,6 +257,78 @@ tile{
   width = 16,
   height = 24,
   pattern = "barrier_big.1.border.2",
+}
+
+tile{
+  layer = 1,
+  x = 88,
+  y = 8,
+  width = 32,
+  height = 24,
+  pattern = "wall_statue.1.1",
+}
+
+tile{
+  layer = 1,
+  x = 200,
+  y = 8,
+  width = 32,
+  height = 24,
+  pattern = "wall_statue.1.1",
+}
+
+tile{
+  layer = 1,
+  x = 88,
+  y = 208,
+  width = 32,
+  height = 24,
+  pattern = "wall_statue.1.2",
+}
+
+tile{
+  layer = 1,
+  x = 208,
+  y = 208,
+  width = 32,
+  height = 24,
+  pattern = "wall_statue.1.2",
+}
+
+tile{
+  layer = 1,
+  x = 8,
+  y = 152,
+  width = 24,
+  height = 32,
+  pattern = "wall_statue.1.3",
+}
+
+tile{
+  layer = 1,
+  x = 8,
+  y = 56,
+  width = 24,
+  height = 32,
+  pattern = "wall_statue.1.3",
+}
+
+tile{
+  layer = 1,
+  x = 288,
+  y = 56,
+  width = 24,
+  height = 32,
+  pattern = "wall_statue.1.4",
+}
+
+tile{
+  layer = 1,
+  x = 288,
+  y = 152,
+  width = 24,
+  height = 32,
+  pattern = "wall_statue.1.4",
 }
 
 dynamic_tile{
