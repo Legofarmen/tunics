@@ -396,6 +396,24 @@ dynamic_tile{
   enabled_at_start = true,
 }
 
+wall{
+  layer = 1,
+  x = 32,
+  y = 0,
+  width = 256,
+  height = 16,
+  stops_enemies = true,
+}
+
+wall{
+  layer = 1,
+  x = 32,
+  y = 224,
+  width = 256,
+  height = 16,
+  stops_enemies = true,
+}
+
 tile{
   layer = 2,
   x = 32,
