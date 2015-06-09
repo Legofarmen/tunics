@@ -19,6 +19,10 @@ function bow.init(map, data, timeout)
         zentropy.inject_pot(entity, data.rng:refine(entity:get_name()))
     end
 
+    for placeholder in map:get_entities('stone_') do
+        data.room:inject_stone(placeholder)
+    end
+
     local hidden_chest = nil
 
     local treasure_obstacle_chest = map:get_entity('treasure_obstacle_chest')

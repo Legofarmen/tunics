@@ -313,6 +313,8 @@ map{ id = "components/treasure_bigkey/treasure_bigkey_000777_6", description = "
 map{ id = "components/obstacle_flippers/obstacle_flippers_n_200700_2", description = "Obstacle flippers n 200700 2" }
 map{ id = "components/treasure_bigkey/treasure_bigkey_202777_water", description = "Treasure bigkey 202777 water" }
 map{ id = "components/door/door_bigkey_n_202777_water", description = "Door bigkey n 202777 water" }
+map{ id = "components/obstacle_bow/obstacle_bow_nsew_000777_lampbow", description = "Obstacle bow nsew 000777 lampbow" }
+map{ id = "components/obstacle_lamp/obstacle_lamp_nsew_000777_lampbow", description = "Obstacle lamp nsew 000777 lampbow" }
 
 tileset{ id = "light_world", description = "Light World" }
 tileset{ id = "dungeon_brick_blue_1", description = "Dungeon brick blue 1" }
