@@ -218,7 +218,6 @@ map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000700_4", descriptio
 map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000700_5", description = "Puzzle 000700 5 pike" }
 map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000007_4", description = "Puzzle 000007 4 pike" }
 map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000007_3", description = "Puzzle 000007 3 pike" }
-map{ id = "removed/obstacle_puzzle_nsew_000004_1", description = "Puzzle 000004 1w" }
 map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000444_1", description = "Puzzle 000444 1w" }
 map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000007_2", description = "Puzzle 000007 2w" }
 map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000700_3", description = "Puzzle 000700 3w" }
@@ -254,7 +253,6 @@ map{ id = "components/door/door_entrance_s_002777_3", description = "Door entran
 map{ id = "components/door/door_entrance_s_002777_4", description = "Door entrance s 002777 4" }
 map{ id = "components/door/door_entrance_s_002777_1", description = "Door entrance s 002777 1" }
 map{ id = "components/door/door_entrance_s_002777_7", description = "Door entrance s 002777 7" }
-map{ id = "removed/filler_000001_7", description = "F Pike moves out of mask Filler 000001 7" }
 map{ id = "components/filler/filler_000400_12", description = "Filler 000400 12" }
 map{ id = "components/filler/filler_000100_12", description = "Filler 000100 12" }
 map{ id = "components/filler/filler_000004_12", description = "Filler 000004 12" }
