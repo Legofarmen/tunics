@@ -230,8 +230,14 @@ local function mark_pike_wall(properties, pikes)
     table.insert(pikes[y][x].wall, properties)
 end
 
+function file_exists(name)
+    local f=io.open(name,"r")
+    if f~=nil then io.close(f) return true else return false end
+end
+
 local function validate_script(fname)
-    local luafname = 'data/' .. fname:gsub('.dat$', '.lua')
+    if not file_exists(fname) then return end
+    local luafname = '' .. fname:gsub('.dat$', '.lua')
     local f=io.open(luafname,"r")
     if f then
         if f:seek('end') == 0 then
@@ -249,7 +255,7 @@ local function validate_map(fname, mask, tilesets, patterns)
 
     local all_sections = {
         { x = 176, y = 136, width = 144, height = 104, },
-        { x = 144, y = 136, width =  32, height = 72, },
+        { x = 144, y = 136, width =  32, height =  72, },
         { x =   0, y = 136, width = 144, height = 104, },
         { x = 176, y = 104, width = 108, height =  32, },
         { x = 144, y = 104, width =  32, height =  32, },
@@ -480,6 +486,11 @@ local function validate_pikes(fname, pikes)
 end
 
 local function validate_projectdb_components()
+
+    if not file_exists('project_db.dat') then
+        zentropy.debug('WARNING: unable to validate scripts')
+    end
+
     local tilesets, patterns = get_patterns(zentropy.tilesets)
     --[[
     for k, v in pairs(zentropy.components.floors) do
