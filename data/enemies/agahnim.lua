@@ -2,10 +2,10 @@ local enemy = ...
 
 local zentropy = require "lib/zentropy"
 
--- Agahnim (Boss of dungeon 5)
+-- Agahnim
 
 local nb_sons_created = 0
-local initial_life = 1 * zentropy.game.game:get_value('tier')
+local initial_life = 2 + zentropy.game.game:get_value('tier')
 
 local treasure, treasure_count
 if zentropy.game.game:get_value('tier') >= 18 then
@@ -15,7 +15,7 @@ else
 end
 
 local blue_fireball_high_health_proba, blue_fireball_low_health_proba
-if zentropy.game.game:get_value('tier') >= 4 then
+if zentropy.game.game:get_value('tier') >= 2 then
     blue_fireball_high_health_proba, blue_fireball_low_health_proba = 0.33, 0.5
 else
     blue_fireball_high_health_proba, blue_fireball_low_health_proba = 0, 0
@@ -23,22 +23,22 @@ end
 
 local low_health_fireball_count
 if zentropy.game.game:get_value('tier') >= 6 then
-    low_health_fireball_count = 1
+    low_health_fireball_count = 3
 elseif zentropy.game.game:get_value('tier') >= 3 then
     low_health_fireball_count = 2
 else
-    low_health_fireball_count = 3
+    low_health_fireball_count = 1
 end
 
 local fireball_bounces
 if zentropy.game.game:get_value('tier') >= 5 then
-    fireball_bounces = 3
+    fireball_bounces = 4
 elseif zentropy.game.game:get_value('tier') >= 3 then
-    fireball_bounces = 2
+    fireball_bounces = 3
 elseif zentropy.game.game:get_value('tier') >= 2 then
-    fireball_bounces = 1
+    fireball_bounces = 2
 else
-    fireball_bounces = 0
+    fireball_bounces = 1
 end
 
 local finished = false
@@ -169,7 +169,7 @@ function enemy:fire_step_3()
         sol.timer.start(self, delay, function() trickle(count - 1, delay, callback) end)
     end
 
-    local count = self:has_low_health() and 3 or 1
+    local count = self:has_low_health() and low_health_fireball_count or 1
     trickle(count, 200, throw_fire)
 end
 
@@ -185,6 +185,7 @@ function enemy:receive_bounced_fireball(fireball)
     sol.timer.stop_all(self)
     fireball:remove()
     self:hurt(1)
+    sol.audio.play_sound('boss_hurt')
   end
 end
 

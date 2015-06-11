@@ -9,8 +9,8 @@ function enemy_boss.init(map, data)
     enemy_boss.init_agahnim(map:get_entity("agahnim"), boss_exit)
 
     data.room_events:add_door_sensor_activated_listener(function ()
-        if map:has_entity('agahnim') then
-            local agahnim = map:get_entity("agahnim")
+        local agahnim = map:get_entity("agahnim")
+        if agahnim and not agahnim:is_enabled() then
             agahnim:set_enabled(true)
             sol.audio.play_music('agahnim')
             agahnim:restart()
