@@ -593,6 +593,7 @@ item{ id = "glove", description = "Glove" }
 item{ id = "bottle_1", description = "Bottle 1" }
 item{ id = "heart_container", description = "Heart container" }
 item{ id = "shield", description = "Shield" }
+item{ id = "random", description = "Random" }
 
 enemy{ id = "tentacle", description = "Tentacle" }
 enemy{ id = "green_knight_soldier", description = "Green knight soldier" }
