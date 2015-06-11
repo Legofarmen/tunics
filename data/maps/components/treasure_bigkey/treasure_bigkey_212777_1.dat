@@ -10,9 +10,9 @@ properties{
 tile{
   layer = 1,
   x = 32,
-  y = 16,
-  width = 272,
-  height = 56,
+  y = 0,
+  width = 288,
+  height = 72,
   pattern = "hole",
 }
 
@@ -29,8 +29,8 @@ tile{
   layer = 1,
   x = 32,
   y = 168,
-  width = 272,
-  height = 56,
+  width = 288,
+  height = 72,
   pattern = "hole",
 }
 
@@ -47,7 +47,7 @@ tile{
   layer = 1,
   x = 136,
   y = 72,
-  width = 168,
+  width = 184,
   height = 96,
   pattern = "hole",
 }
@@ -196,6 +196,33 @@ dynamic_tile{
   name = "chest",
   pattern = "placeholder_bigchest",
   enabled_at_start = true,
+}
+
+wall{
+  layer = 1,
+  x = 32,
+  y = 0,
+  width = 288,
+  height = 16,
+  stops_enemies = true,
+}
+
+wall{
+  layer = 1,
+  x = 32,
+  y = 224,
+  width = 288,
+  height = 16,
+  stops_enemies = true,
+}
+
+wall{
+  layer = 1,
+  x = 304,
+  y = 16,
+  width = 16,
+  height = 208,
+  stops_enemies = true,
 }
 
 tile{

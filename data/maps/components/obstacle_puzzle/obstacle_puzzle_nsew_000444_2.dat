@@ -9,8 +9,8 @@ properties{
 
 tile{
   layer = 1,
-  x = 48,
-  y = 160,
+  x = 56,
+  y = 168,
   width = 16,
   height = 16,
   pattern = "torch",
@@ -18,8 +18,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 48,
-  y = 48,
+  x = 56,
+  y = 56,
   width = 16,
   height = 16,
   pattern = "torch",
@@ -27,8 +27,8 @@ tile{
 
 dynamic_tile{
   layer = 1,
-  x = 64,
-  y = 48,
+  x = 72,
+  y = 56,
   width = 16,
   height = 16,
   name = "pot_7",
@@ -38,8 +38,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 64,
-  y = 144,
+  x = 72,
+  y = 152,
   width = 16,
   height = 16,
   name = "pot_2",
@@ -49,8 +49,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 48,
-  y = 144,
+  x = 56,
+  y = 152,
   width = 16,
   height = 16,
   name = "pot_3",
@@ -60,8 +60,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 48,
-  y = 64,
+  x = 56,
+  y = 72,
   width = 16,
   height = 16,
   name = "pot_4",
@@ -71,8 +71,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 64,
-  y = 64,
+  x = 72,
+  y = 72,
   width = 16,
   height = 16,
   name = "pot_5",
@@ -82,8 +82,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 64,
-  y = 160,
+  x = 72,
+  y = 168,
   width = 16,
   height = 16,
   name = "pot_6",
@@ -104,8 +104,8 @@ switch{
 
 dynamic_tile{
   layer = 1,
-  x = 56,
-  y = 104,
+  x = 64,
+  y = 112,
   width = 16,
   height = 16,
   name = "treasure_obstacle_chest",
@@ -115,8 +115,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 88,
-  y = 104,
+  x = 96,
+  y = 112,
   width = 16,
   height = 16,
   name = "treasure_open_chest",
@@ -126,8 +126,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 80,
-  y = 72,
+  x = 88,
+  y = 80,
   width = 32,
   height = 32,
   name = "enemy_2",
@@ -148,8 +148,8 @@ switch{
 
 dynamic_tile{
   layer = 1,
-  x = 80,
-  y = 120,
+  x = 88,
+  y = 128,
   width = 32,
   height = 32,
   name = "enemy_3",

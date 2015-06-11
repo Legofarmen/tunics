@@ -469,7 +469,7 @@ tile{
 tile{
   layer = 1,
   x = 40,
-  y = 168,
+  y = 176,
   width = 80,
   height = 32,
   pattern = "water.transparent",

@@ -157,10 +157,8 @@ map{ id = "components/filler/filler_000777_4", description = "Filler 000777 4" }
 map{ id = "rooms/intro_1", description = "Intro 1" }
 map{ id = "rooms/flippers_example", description = "Flippers example" }
 map{ id = "components/obstacle_flippers/obstacle_flippers_e_010331_1", description = "Obstacle flippers e 010331 1" }
-map{ id = "components/obstacle_flippers/obstacle_flippers_n_200770_1", description = "Obstacle flippers n 200770 1" }
 map{ id = "components/obstacle_flippers/obstacle_flippers_s_002477_1", description = "Obstacle flippers s 002477 1" }
 map{ id = "components/obstacle_flippers/obstacle_flippers_w_040666_1", description = "Obstacle flippers w 040666 1" }
-map{ id = "components/obstacle_flippers/obstacle_flippers_ns_202777_1", description = "Obstacle flippers ns 202777 1" }
 map{ id = "components/obstacle_flippers/obstacle_flippers_ew_050777_1", description = "Obstacle flippers ew 050777 1" }
 map{ id = "components/obstacle_flippers/obstacle_flippers_ne_210777_1", description = "Obstacle flippers ne 210777 1" }
 map{ id = "components/obstacle_flippers/obstacle_flippers_nw_240777_1", description = "Obstacle flippers nw 240777 1" }
@@ -220,7 +218,6 @@ map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000700_4", descriptio
 map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000700_5", description = "Puzzle 000700 5 pike" }
 map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000007_4", description = "Puzzle 000007 4 pike" }
 map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000007_3", description = "Puzzle 000007 3 pike" }
-map{ id = "removed/obstacle_puzzle_nsew_000004_1", description = "Puzzle 000004 1w" }
 map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000444_1", description = "Puzzle 000444 1w" }
 map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000007_2", description = "Puzzle 000007 2w" }
 map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000700_3", description = "Puzzle 000700 3w" }
@@ -256,7 +253,6 @@ map{ id = "components/door/door_entrance_s_002777_3", description = "Door entran
 map{ id = "components/door/door_entrance_s_002777_4", description = "Door entrance s 002777 4" }
 map{ id = "components/door/door_entrance_s_002777_1", description = "Door entrance s 002777 1" }
 map{ id = "components/door/door_entrance_s_002777_7", description = "Door entrance s 002777 7" }
-map{ id = "removed/filler_000001_7", description = "F Pike moves out of mask Filler 000001 7" }
 map{ id = "components/filler/filler_000400_12", description = "Filler 000400 12" }
 map{ id = "components/filler/filler_000100_12", description = "Filler 000100 12" }
 map{ id = "components/filler/filler_000004_12", description = "Filler 000004 12" }
@@ -314,6 +310,7 @@ map{ id = "components/treasure_bigkey/treasure_bigkey_000777_5", description = "
 map{ id = "components/treasure_bigkey/treasure_bigkey_202777_3", description = "New Treasure bigkey 202777 3" }
 map{ id = "components/filler/filler_000777_10", description = "Filler 000777 10" }
 map{ id = "components/treasure_bigkey/treasure_bigkey_000777_6", description = "New Treasure bigkey 000777 6 - Eight statues" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_n_200700_2", description = "Obstacle flippers n 200700 2" }
 
 tileset{ id = "light_world", description = "Light World" }
 tileset{ id = "dungeon_brick_blue_1", description = "Dungeon brick blue 1" }

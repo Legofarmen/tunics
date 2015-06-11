@@ -3,7 +3,7 @@ properties{
   y = 0,
   width = 320,
   height = 240,
-  tileset = "dungeon_brick_blue_1",
+  tileset = "dungeon_cave_brown_1",
   music = "same",
 }
 
@@ -12,7 +12,7 @@ tile{
   x = 120,
   y = 40,
   width = 80,
-  height = 176,
+  height = 160,
   pattern = "floor_border.2",
 }
 
@@ -201,7 +201,7 @@ tile{
   x = 128,
   y = 72,
   width = 64,
-  height = 136,
+  height = 128,
   pattern = "floor_small.2",
 }
 

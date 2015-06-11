@@ -9,17 +9,17 @@ properties{
 
 tile{
   layer = 1,
-  x = 80,
-  y = 80,
-  width = 160,
-  height = 80,
+  x = 96,
+  y = 64,
+  width = 128,
+  height = 112,
   pattern = "hole",
 }
 
 tile{
   layer = 1,
-  x = 80,
-  y = 80,
+  x = 96,
+  y = 64,
   width = 16,
   height = 16,
   pattern = "wall_hole.corner.1",
@@ -27,8 +27,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 80,
-  y = 144,
+  x = 96,
+  y = 160,
   width = 16,
   height = 16,
   pattern = "wall_hole.corner.3",
@@ -36,8 +36,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 224,
-  y = 144,
+  x = 208,
+  y = 160,
   width = 16,
   height = 16,
   pattern = "wall_hole.corner.4",
@@ -45,8 +45,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 224,
-  y = 80,
+  x = 208,
+  y = 64,
   width = 16,
   height = 16,
   pattern = "wall_hole.corner.2",
@@ -54,44 +54,44 @@ tile{
 
 tile{
   layer = 1,
-  x = 96,
-  y = 80,
-  width = 128,
+  x = 112,
+  y = 64,
+  width = 96,
   height = 16,
   pattern = "wall_hole.1",
 }
 
 tile{
   layer = 1,
-  x = 96,
-  y = 144,
-  width = 128,
+  x = 112,
+  y = 160,
+  width = 96,
   height = 16,
   pattern = "wall_hole.2",
 }
 
 tile{
   layer = 1,
-  x = 224,
-  y = 96,
+  x = 208,
+  y = 80,
   width = 16,
-  height = 48,
+  height = 80,
   pattern = "wall_hole.4",
 }
 
 tile{
   layer = 1,
-  x = 80,
-  y = 96,
+  x = 96,
+  y = 80,
   width = 16,
-  height = 48,
+  height = 80,
   pattern = "wall_hole.3",
 }
 
 tile{
   layer = 1,
-  x = 72,
-  y = 72,
+  x = 88,
+  y = 56,
   width = 8,
   height = 8,
   pattern = "barrier.3.border",
@@ -99,8 +99,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 72,
-  y = 160,
+  x = 88,
+  y = 176,
   width = 8,
   height = 8,
   pattern = "barrier.3.border",
@@ -108,8 +108,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 240,
-  y = 160,
+  x = 224,
+  y = 176,
   width = 8,
   height = 8,
   pattern = "barrier.3.border",
@@ -117,8 +117,8 @@ tile{
 
 tile{
   layer = 1,
-  x = 240,
-  y = 72,
+  x = 224,
+  y = 56,
   width = 8,
   height = 8,
   pattern = "barrier.3.border",
@@ -126,37 +126,37 @@ tile{
 
 tile{
   layer = 1,
-  x = 80,
-  y = 72,
-  width = 160,
+  x = 96,
+  y = 56,
+  width = 128,
   height = 8,
   pattern = "barrier.3.1",
 }
 
 tile{
   layer = 1,
-  x = 80,
-  y = 160,
-  width = 160,
+  x = 96,
+  y = 176,
+  width = 128,
   height = 8,
   pattern = "barrier.3.1",
 }
 
 tile{
   layer = 1,
-  x = 72,
-  y = 80,
+  x = 88,
+  y = 64,
   width = 8,
-  height = 80,
+  height = 112,
   pattern = "barrier.3.2",
 }
 
 tile{
   layer = 1,
-  x = 240,
-  y = 80,
+  x = 224,
+  y = 64,
   width = 8,
-  height = 80,
+  height = 112,
   pattern = "barrier.3.2",
 }
 
@@ -209,8 +209,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 56,
-  y = 40,
+  x = 40,
+  y = 72,
   width = 16,
   height = 16,
   name = "pot_2",
@@ -220,8 +220,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 248,
-  y = 40,
+  x = 264,
+  y = 72,
   width = 16,
   height = 16,
   name = "pot_3",
@@ -253,8 +253,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 248,
-  y = 184,
+  x = 264,
+  y = 152,
   width = 16,
   height = 16,
   name = "pot_6",
@@ -264,8 +264,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 56,
-  y = 184,
+  x = 40,
+  y = 152,
   width = 16,
   height = 16,
   name = "pot_7",
@@ -286,8 +286,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 200,
-  y = 40,
+  x = 240,
+  y = 104,
   width = 32,
   height = 32,
   name = "enemy_3",
@@ -297,8 +297,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 88,
-  y = 168,
+  x = 48,
+  y = 104,
   width = 32,
   height = 32,
   name = "enemy_2",

@@ -10,9 +10,9 @@ properties{
 tile{
   layer = 1,
   x = 200,
-  y = 16,
+  y = 0,
   width = 120,
-  height = 96,
+  height = 112,
   pattern = "hole",
 }
 
@@ -37,9 +37,9 @@ tile{
 tile{
   layer = 1,
   x = 0,
-  y = 16,
+  y = 0,
   width = 120,
-  height = 96,
+  height = 112,
   pattern = "hole",
 }
 
@@ -208,9 +208,9 @@ tile{
 tile{
   layer = 1,
   x = 120,
-  y = 16,
+  y = 0,
   width = 80,
-  height = 88,
+  height = 104,
   pattern = "hole",
 }
 
@@ -342,6 +342,60 @@ dynamic_tile{
   enabled_at_start = true,
 }
 
+wall{
+  layer = 1,
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 16,
+  stops_enemies = true,
+}
+
+wall{
+  layer = 1,
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 16,
+  stops_enemies = true,
+}
+
+wall{
+  layer = 1,
+  x = 0,
+  y = 16,
+  width = 16,
+  height = 96,
+  stops_enemies = true,
+}
+
+wall{
+  layer = 1,
+  x = 0,
+  y = 16,
+  width = 16,
+  height = 96,
+  stops_enemies = true,
+}
+
+wall{
+  layer = 1,
+  x = 304,
+  y = 16,
+  width = 16,
+  height = 96,
+  stops_enemies = true,
+}
+
+wall{
+  layer = 1,
+  x = 304,
+  y = 16,
+  width = 16,
+  height = 96,
+  stops_enemies = true,
+}
+
 tile{
   layer = 2,
   x = 0,
@@ -403,5 +457,41 @@ tile{
   width = 32,
   height = 24,
   pattern = "wall.2",
+}
+
+tile{
+  layer = 2,
+  x = 0,
+  y = 16,
+  width = 16,
+  height = 96,
+  pattern = "hole",
+}
+
+tile{
+  layer = 2,
+  x = 304,
+  y = 16,
+  width = 16,
+  height = 96,
+  pattern = "hole",
+}
+
+tile{
+  layer = 2,
+  x = 0,
+  y = 96,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.2",
+}
+
+tile{
+  layer = 2,
+  x = 304,
+  y = 96,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.2",
 }
 
