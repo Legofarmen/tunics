@@ -315,6 +315,10 @@ map{ id = "components/filler/filler_000001_stones", description = "Filler 000001
 map{ id = "components/filler/filler_000004_stones", description = "Filler 000004 stones" }
 map{ id = "components/filler/filler_000100_stones", description = "Filler 000100 stones" }
 map{ id = "components/filler/filler_000400_stones", description = "Filler 000400 stones" }
+map{ id = "components/treasure_bigkey/treasure_bigkey_202777_water", description = "Treasure bigkey 202777 water" }
+map{ id = "components/door/door_bigkey_n_202777_water", description = "Door bigkey n 202777 water" }
+map{ id = "components/obstacle_bow/obstacle_bow_nsew_000777_lampbow", description = "Obstacle bow nsew 000777 lampbow" }
+map{ id = "components/obstacle_lamp/obstacle_lamp_nsew_000777_lampbow", description = "Obstacle lamp nsew 000777 lampbow" }
 
 tileset{ id = "light_world", description = "Light World" }
 tileset{ id = "dungeon_brick_blue_1", description = "Dungeon brick blue 1" }

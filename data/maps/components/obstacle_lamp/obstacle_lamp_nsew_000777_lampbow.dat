@@ -1,0 +1,237 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  tileset = "dungeon_brick_blue_1",
+  music = "same",
+}
+
+tile{
+  layer = 1,
+  x = 144,
+  y = 104,
+  width = 32,
+  height = 24,
+  pattern = "bow_target.top",
+}
+
+tile{
+  layer = 1,
+  x = 144,
+  y = 128,
+  width = 32,
+  height = 8,
+  pattern = "bow_target.bottom",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 80,
+  y = 104,
+  width = 32,
+  height = 32,
+  name = "enemy_5",
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 248,
+  y = 40,
+  width = 16,
+  height = 16,
+  name = "treasure_open_chest",
+  pattern = "placeholder_treasure_open",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 56,
+  y = 40,
+  width = 16,
+  height = 16,
+  name = "treasure_obstacle_chest",
+  pattern = "placeholder_treasure_obstacle",
+  enabled_at_start = true,
+}
+
+wall{
+  layer = 1,
+  x = 144,
+  y = 128,
+  width = 32,
+  height = 8,
+  stops_hero = true,
+  stops_enemies = true,
+  stops_npcs = true,
+  stops_blocks = true,
+}
+
+custom_entity{
+  layer = 1,
+  x = 208,
+  y = 85,
+  width = 16,
+  height = 16,
+  name = "torch_5",
+  direction = 3,
+  model = "torch",
+}
+
+custom_entity{
+  layer = 1,
+  x = 112,
+  y = 85,
+  width = 16,
+  height = 16,
+  name = "torch_2",
+  direction = 3,
+  model = "torch",
+}
+
+custom_entity{
+  layer = 1,
+  x = 208,
+  y = 165,
+  width = 16,
+  height = 16,
+  name = "torch_3",
+  direction = 3,
+  model = "torch",
+}
+
+custom_entity{
+  layer = 1,
+  x = 112,
+  y = 165,
+  width = 16,
+  height = 16,
+  name = "torch_4",
+  direction = 3,
+  model = "torch",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 208,
+  y = 104,
+  width = 32,
+  height = 32,
+  name = "enemy_2",
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 144,
+  y = 48,
+  width = 32,
+  height = 32,
+  name = "enemy_3",
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 144,
+  y = 160,
+  width = 32,
+  height = 32,
+  name = "enemy_4",
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 40,
+  y = 40,
+  width = 16,
+  height = 16,
+  name = "stone_3",
+  pattern = "placeholder_stone",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 264,
+  y = 40,
+  width = 16,
+  height = 16,
+  name = "stone_2",
+  pattern = "placeholder_stone",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 264,
+  y = 184,
+  width = 16,
+  height = 16,
+  name = "stone_4",
+  pattern = "placeholder_stone",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 40,
+  y = 184,
+  width = 16,
+  height = 16,
+  name = "stone_5",
+  pattern = "placeholder_stone",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 40,
+  y = 56,
+  width = 16,
+  height = 16,
+  name = "pot_5",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 40,
+  y = 168,
+  width = 16,
+  height = 16,
+  name = "pot_2",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 264,
+  y = 168,
+  width = 16,
+  height = 16,
+  name = "pot_3",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 264,
+  y = 56,
+  width = 16,
+  height = 16,
+  name = "pot_4",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
