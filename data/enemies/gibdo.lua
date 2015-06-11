@@ -7,14 +7,15 @@ local util = require 'lib/util'
 local state = "walking"
 
 function enemy:on_created()
-  self:set_life(4)
-  self:set_damage(4)
-  self:set_pushed_back_when_hurt(false)
-  self:set_push_hero_on_sword(false)
-  self:set_size(16, 24)
-  self:set_origin(8, 21)
-  
-  self:turn_and_go()
+    self:set_life(4)
+    self:set_damage(4)
+    self:set_attack_consequence('fire', 'custom')
+    self:set_pushed_back_when_hurt(false)
+    self:set_push_hero_on_sword(false)
+    self:set_size(16, 24)
+    self:set_origin(8, 21)
+
+    self:turn_and_go()
 end
 
 local sprite = enemy:create_sprite("enemies/gibdo")
@@ -29,6 +30,12 @@ end
 
 function enemy:on_movement_finished()
     self:turn_and_go()
+end
+
+function enemy:on_custom_attack_received(attack, sprite)
+    if attack == 'fire' then
+        self:remove_life(self:get_life())
+    end
 end
 
 function enemy:turn_and_go()
