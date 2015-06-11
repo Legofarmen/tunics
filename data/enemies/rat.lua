@@ -3,7 +3,7 @@ local enemy = ...
 -- Enemy: rat
 
 enemy:set_life(1)
-enemy:set_damage(1)
+enemy:set_damage(2)
 
 local sprite = enemy:create_sprite("enemies/rat")
 
