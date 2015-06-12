@@ -185,15 +185,15 @@ function enemy:receive_bounced_fireball(fireball)
     sol.timer.stop_all(self)
     fireball:remove()
     self:hurt(1)
-    sol.audio.play_sound('boss_hurt')
   end
 end
 
 function enemy:on_hurt(attack)
 
-  local life = self:get_life()
-  if life <= 0 then
-    self:set_life(1)
-    finished = true
-  end
+    local life = self:get_life()
+    if life <= 0 then
+        self:set_life(1)
+        finished = true
+    end
+    sol.audio.play_sound('boss_hurt')
 end
