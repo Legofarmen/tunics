@@ -373,7 +373,7 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 160,
+  x = 152,
   y = 96,
   width = 32,
   height = 32,
