@@ -164,7 +164,7 @@ map{ id = "components/obstacle_flippers/obstacle_flippers_ne_210777_1", descript
 map{ id = "components/obstacle_flippers/obstacle_flippers_nw_240777_1", description = "Obstacle flippers nw 240777 1" }
 map{ id = "components/obstacle_flippers/obstacle_flippers_se_012777_1", description = "Obstacle flippers se 012777 1" }
 map{ id = "components/obstacle_flippers/obstacle_flippers_sw_012777_1", description = "Obstacle flippers sw 012777 1" }
-map{ id = "components/obstacle_flippers/obstacle_flippers_nsw_242333_1", description = "Obstacle flippers nsw 242333 1" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_nsw_242777_1", description = "Obstacle flippers nsw 242777 1" }
 map{ id = "components/obstacle_flippers/obstacle_flippers_nse_212777_1", description = "Obstacle flippers nse 212777 1" }
 map{ id = "components/obstacle_flippers/obstacle_flippers_new_250477_1", description = "Obstacle flipperst new 250477 1" }
 map{ id = "rooms/game_over", description = "Game over" }
