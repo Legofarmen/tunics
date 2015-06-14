@@ -126,63 +126,63 @@ tile{
 
 tile{
   layer = 1,
-  x = 32,
-  y = 8,
-  width = 16,
-  height = 32,
-  pattern = "wall_pillar.1.1",
-}
-
-tile{
-  layer = 1,
-  x = 272,
-  y = 8,
-  width = 16,
-  height = 32,
-  pattern = "wall_pillar.1.1",
-}
-
-tile{
-  layer = 1,
-  x = 120,
-  y = 104,
-  width = 16,
-  height = 16,
-  pattern = "torch_big.bottom",
-}
-
-tile{
-  layer = 1,
-  x = 184,
-  y = 104,
-  width = 16,
-  height = 16,
-  pattern = "torch_big.bottom",
-}
-
-tile{
-  layer = 1,
-  x = 184,
-  y = 152,
-  width = 16,
-  height = 16,
-  pattern = "torch_big.bottom",
-}
-
-tile{
-  layer = 1,
-  x = 120,
-  y = 152,
-  width = 16,
-  height = 16,
-  pattern = "torch_big.bottom",
-}
-
-tile{
-  layer = 1,
   x = 48,
   y = 8,
-  width = 64,
+  width = 16,
+  height = 32,
+  pattern = "wall_pillar.1.1",
+}
+
+tile{
+  layer = 1,
+  x = 256,
+  y = 8,
+  width = 16,
+  height = 32,
+  pattern = "wall_pillar.1.1",
+}
+
+tile{
+  layer = 1,
+  x = 120,
+  y = 104,
+  width = 16,
+  height = 16,
+  pattern = "torch_big.bottom",
+}
+
+tile{
+  layer = 1,
+  x = 184,
+  y = 104,
+  width = 16,
+  height = 16,
+  pattern = "torch_big.bottom",
+}
+
+tile{
+  layer = 1,
+  x = 184,
+  y = 152,
+  width = 16,
+  height = 16,
+  pattern = "torch_big.bottom",
+}
+
+tile{
+  layer = 1,
+  x = 120,
+  y = 152,
+  width = 16,
+  height = 16,
+  pattern = "torch_big.bottom",
+}
+
+tile{
+  layer = 1,
+  x = 64,
+  y = 8,
+  width = 48,
   height = 32,
   pattern = "drapes.1.1",
 }
@@ -191,7 +191,7 @@ tile{
   layer = 1,
   x = 208,
   y = 8,
-  width = 64,
+  width = 48,
   height = 32,
   pattern = "drapes.1.1",
 }
