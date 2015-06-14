@@ -139,7 +139,7 @@ map{ id = "components/filler/filler_000777_7", description = "Filler 000777 7" }
 map{ id = "components/filler/filler_000777_8", description = "Filler 000777 8" }
 map{ id = "components/filler/filler_000777_9", description = "Filler 000777 9" }
 map{ id = "components/filler/filler_000777_3", description = "Filler 000777 3" }
-map{ id = "components/filler/filler_210711_1", description = "Filler 210711 3 water corner" }
+map{ id = "components/filler/filler_210711_1", description = "Filler 210711 1 water corner" }
 map{ id = "components/filler/filler_042447_1", description = "Filler 042447 1 water corner" }
 map{ id = "components/filler/filler_012117_1", description = "Filler 012117 1 water corner" }
 map{ id = "components/filler/filler_210711_4", description = "Filler 210711 2" }
@@ -168,7 +168,7 @@ map{ id = "components/obstacle_flippers/obstacle_flippers_nsw_242777_1", descrip
 map{ id = "components/obstacle_flippers/obstacle_flippers_nse_212777_1", description = "Obstacle flippers nse 212777 1" }
 map{ id = "components/obstacle_flippers/obstacle_flippers_new_250477_1", description = "Obstacle flipperst new 250477 1" }
 map{ id = "rooms/game_over", description = "Game over" }
-map{ id = "components/filler/filler_240744_1", description = "Filler 240744 3 water corner" }
+map{ id = "components/filler/filler_240744_1", description = "Filler 240744 1 water corner" }
 map{ id = "components/filler/filler_240744_4", description = "Filler 240744 2" }
 map{ id = "components/filler/filler_000400_5", description = "Filler 000400 5" }
 map{ id = "components/filler/filler_000100_5", description = "Filler 000100 5" }
