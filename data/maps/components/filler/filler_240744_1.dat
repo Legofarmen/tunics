@@ -3,7 +3,7 @@ properties{
   y = 0,
   width = 320,
   height = 240,
-  tileset = "dungeon_smoothbrick_green_1",
+  tileset = "dungeon_ganon_brown_1",
   music = "same",
 }
 
@@ -110,45 +110,9 @@ tile{
   layer = 1,
   x = 104,
   y = 96,
-  width = 184,
+  width = 176,
   height = 8,
   pattern = "barrier.1.1",
-}
-
-tile{
-  layer = 1,
-  x = 96,
-  y = 96,
-  width = 8,
-  height = 104,
-  pattern = "barrier.3.2",
-}
-
-tile{
-  layer = 1,
-  x = 280,
-  y = 96,
-  width = 8,
-  height = 8,
-  pattern = "barrier.3.border",
-}
-
-tile{
-  layer = 1,
-  x = 96,
-  y = 96,
-  width = 8,
-  height = 8,
-  pattern = "barrier.3.border",
-}
-
-tile{
-  layer = 1,
-  x = 96,
-  y = 200,
-  width = 8,
-  height = 8,
-  pattern = "barrier.3.border",
 }
 
 tile{
@@ -257,5 +221,41 @@ tile{
   width = 48,
   height = 112,
   pattern = "water.transparent",
+}
+
+tile{
+  layer = 1,
+  x = 96,
+  y = 96,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+tile{
+  layer = 1,
+  x = 96,
+  y = 200,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+tile{
+  layer = 1,
+  x = 280,
+  y = 96,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+tile{
+  layer = 1,
+  x = 96,
+  y = 104,
+  width = 8,
+  height = 96,
+  pattern = "barrier.1.2",
 }
 

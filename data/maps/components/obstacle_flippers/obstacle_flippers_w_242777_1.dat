@@ -3,7 +3,7 @@ properties{
   y = 0,
   width = 320,
   height = 240,
-  tileset = "dungeon_brick_blue_1",
+  tileset = "dungeon_ganon_brown_1",
   music = "same",
 }
 
@@ -288,42 +288,6 @@ tile{
 
 tile{
   layer = 1,
-  x = 40,
-  y = 136,
-  width = 24,
-  height = 8,
-  pattern = "barrier.3.1",
-}
-
-tile{
-  layer = 1,
-  x = 96,
-  y = 136,
-  width = 24,
-  height = 8,
-  pattern = "barrier.3.1",
-}
-
-tile{
-  layer = 1,
-  x = 200,
-  y = 136,
-  width = 24,
-  height = 8,
-  pattern = "barrier.3.1",
-}
-
-tile{
-  layer = 1,
-  x = 256,
-  y = 136,
-  width = 24,
-  height = 8,
-  pattern = "barrier.3.1",
-}
-
-tile{
-  layer = 1,
   x = 64,
   y = 208,
   width = 32,
@@ -410,6 +374,42 @@ tile{
   width = 32,
   height = 8,
   pattern = "waterfall.2.bottom",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 136,
+  width = 24,
+  height = 8,
+  pattern = "barrier.1.1",
+}
+
+tile{
+  layer = 1,
+  x = 96,
+  y = 136,
+  width = 24,
+  height = 8,
+  pattern = "barrier.1.1",
+}
+
+tile{
+  layer = 1,
+  x = 200,
+  y = 136,
+  width = 24,
+  height = 8,
+  pattern = "barrier.1.1",
+}
+
+tile{
+  layer = 1,
+  x = 256,
+  y = 136,
+  width = 24,
+  height = 8,
+  pattern = "barrier.1.1",
 }
 
 dynamic_tile{

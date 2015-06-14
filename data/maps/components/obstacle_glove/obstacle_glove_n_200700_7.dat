@@ -3,44 +3,8 @@ properties{
   y = 0,
   width = 320,
   height = 240,
-  tileset = "dungeon_brick_gray_1",
+  tileset = "dungeon_ganon_brown_1",
   music = "same",
-}
-
-tile{
-  layer = 1,
-  x = 120,
-  y = 80,
-  width = 16,
-  height = 24,
-  pattern = "barrier_big.3.border.2",
-}
-
-tile{
-  layer = 1,
-  x = 120,
-  y = 40,
-  width = 16,
-  height = 40,
-  pattern = "barrier_big.3.2",
-}
-
-tile{
-  layer = 1,
-  x = 184,
-  y = 80,
-  width = 16,
-  height = 24,
-  pattern = "barrier_big.3.border.2",
-}
-
-tile{
-  layer = 1,
-  x = 184,
-  y = 40,
-  width = 16,
-  height = 40,
-  pattern = "barrier_big.3.2",
 }
 
 tile{
@@ -103,7 +67,7 @@ tile{
   y = 24,
   width = 16,
   height = 16,
-  pattern = "barrier_big.3.border.1",
+  pattern = "barrier_big.1.border.1",
 }
 
 tile{
@@ -112,7 +76,43 @@ tile{
   y = 24,
   width = 16,
   height = 16,
-  pattern = "barrier_big.3.border.1",
+  pattern = "barrier_big.1.border.1",
+}
+
+tile{
+  layer = 1,
+  x = 120,
+  y = 40,
+  width = 16,
+  height = 40,
+  pattern = "barrier_big.1.2",
+}
+
+tile{
+  layer = 1,
+  x = 184,
+  y = 40,
+  width = 16,
+  height = 40,
+  pattern = "barrier_big.1.2",
+}
+
+tile{
+  layer = 1,
+  x = 120,
+  y = 80,
+  width = 16,
+  height = 24,
+  pattern = "barrier_big.1.border.2",
+}
+
+tile{
+  layer = 1,
+  x = 184,
+  y = 80,
+  width = 16,
+  height = 24,
+  pattern = "barrier_big.1.border.2",
 }
 
 dynamic_tile{
