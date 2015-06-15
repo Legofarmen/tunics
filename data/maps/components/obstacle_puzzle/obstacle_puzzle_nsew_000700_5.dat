@@ -78,10 +78,10 @@ block{
 
 enemy{
   layer = 1,
-  x = 280,
+  x = 272,
   y = 53,
   direction = 2,
-  breed = "pike_auto",
+  breed = "pike_detect",
 }
 
 switch{
@@ -137,5 +137,28 @@ dynamic_tile{
   name = "enemy_3",
   pattern = "placeholder_enemy",
   enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 264,
+  y = 56,
+  width = 16,
+  height = 16,
+  name = "pot_4",
+  pattern = "floor_pot",
+  enabled_at_start = true,
+}
+
+block{
+  layer = 1,
+  x = 272,
+  y = 85,
+  name = "block_4",
+  direction = -1,
+  sprite = "entities/block",
+  pushable = true,
+  pullable = false,
+  maximum_moves = 1,
 }
 
