@@ -1,0 +1,127 @@
+properties{
+  x = 0,
+  y = 0,
+  width = 320,
+  height = 240,
+  tileset = "dungeon_brick_blue_1",
+  music = "same",
+}
+
+tile{
+  layer = 1,
+  x = 248,
+  y = 168,
+  width = 40,
+  height = 40,
+  pattern = "hole",
+}
+
+tile{
+  layer = 1,
+  x = 272,
+  y = 192,
+  width = 16,
+  height = 16,
+  pattern = "wall_hole.corner.4",
+}
+
+tile{
+  layer = 1,
+  x = 272,
+  y = 168,
+  width = 16,
+  height = 24,
+  pattern = "wall_hole.4",
+}
+
+tile{
+  layer = 1,
+  x = 248,
+  y = 192,
+  width = 24,
+  height = 16,
+  pattern = "wall_hole.2",
+}
+
+tile{
+  layer = 1,
+  x = 248,
+  y = 168,
+  width = 8,
+  height = 8,
+  pattern = "hole.corner.1",
+}
+
+tile{
+  layer = 1,
+  x = 248,
+  y = 176,
+  width = 8,
+  height = 32,
+  pattern = "hole.3",
+}
+
+tile{
+  layer = 1,
+  x = 256,
+  y = 168,
+  width = 32,
+  height = 8,
+  pattern = "hole.1",
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 248,
+  y = 152,
+  width = 16,
+  height = 16,
+  name = "stone_1",
+  pattern = "placeholder_stone",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 264,
+  y = 152,
+  width = 16,
+  height = 16,
+  name = "stone_2",
+  pattern = "placeholder_stone",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 232,
+  y = 168,
+  width = 16,
+  height = 16,
+  name = "stone_3",
+  pattern = "placeholder_stone",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 232,
+  y = 184,
+  width = 16,
+  height = 16,
+  name = "stone_4",
+  pattern = "placeholder_stone",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 200,
+  y = 168,
+  width = 32,
+  height = 32,
+  name = "enemy_1",
+  pattern = "placeholder_enemy",
+  enabled_at_start = true,
+}
+

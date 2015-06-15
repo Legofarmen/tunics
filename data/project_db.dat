@@ -315,6 +315,24 @@ map{ id = "components/treasure_bigkey/treasure_bigkey_202777_water", description
 map{ id = "components/door/door_bigkey_n_202777_water", description = "Door bigkey n 202777 water" }
 map{ id = "components/obstacle_bow/obstacle_bow_nsew_000777_lampbow", description = "Obstacle bow nsew 000777 lampbow" }
 map{ id = "components/obstacle_lamp/obstacle_lamp_nsew_000777_lampbow", description = "Obstacle lamp nsew 000777 lampbow" }
+map{ id = "components/filler/filler_000444_carpetstones", description = "Filler 000444 carpetstones" }
+map{ id = "components/filler/filler_000111_carpetstones", description = "Filler 000111 carpetstones" }
+map{ id = "components/filler/filler_000001_statuestones", description = "Filler 000001 statuestones" }
+map{ id = "components/filler/filler_000100_statuestones", description = "Filler 000100 statuestones" }
+map{ id = "components/filler/filler_000004_statuestones", description = "Filler 000004 statuestones" }
+map{ id = "components/filler/filler_000400_statuestones", description = "Filler 000400 statuestones" }
+map{ id = "components/filler/filler_000001_holestones", description = "Filler 000001 holestones" }
+map{ id = "components/filler/filler_000004_holestones", description = "Filler 000004 holestones" }
+map{ id = "components/filler/filler_000100_holestones", description = "Filler 000100 holestones" }
+map{ id = "components/filler/filler_000400_holestones", description = "Filler 000400 holestones" }
+map{ id = "components/filler/filler_000444_barrierstones", description = "Filler 000444 barrierstones" }
+map{ id = "components/filler/filler_000111_barrierstones", description = "Filler 000111 barrierstones" }
+map{ id = "components/filler/filler_000007_barrierstones", description = "Filler 000007 barrierstones" }
+map{ id = "components/filler/filler_000700_barrierstones", description = "Filler 000700 barrierstones" }
+map{ id = "components/filler/filler_000001_torchstones", description = "Filler 000001 torchstones" }
+map{ id = "components/filler/filler_000004_torchstone", description = "Filler 000004 torchstone" }
+map{ id = "components/filler/filler_000100_torchstones", description = "Filler 000100 torchstones" }
+map{ id = "components/filler/filler_000400_torchstones", description = "Filler 000400 torchstones" }
 
 tileset{ id = "light_world", description = "Light World" }
 tileset{ id = "dungeon_brick_blue_1", description = "Dungeon brick blue 1" }
