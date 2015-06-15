@@ -144,15 +144,6 @@ tile{
 
 tile{
   layer = 1,
-  x = 144,
-  y = 56,
-  width = 32,
-  height = 16,
-  pattern = "water_pool_ladder.1",
-}
-
-tile{
-  layer = 1,
   x = 64,
   y = 136,
   width = 32,
@@ -487,15 +478,6 @@ tile{
 tile{
   layer = 1,
   x = 40,
-  y = 64,
-  width = 176,
-  height = 32,
-  pattern = "water.transparent",
-}
-
-tile{
-  layer = 1,
-  x = 40,
   y = 32,
   width = 80,
   height = 32,
@@ -549,6 +531,33 @@ tile{
 
 tile{
   layer = 1,
+  x = 8,
+  y = 48,
+  width = 24,
+  height = 32,
+  pattern = "wall_statue.6.3",
+}
+
+tile{
+  layer = 1,
+  x = 144,
+  y = 56,
+  width = 32,
+  height = 16,
+  pattern = "water_pool_ladder.1",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 64,
+  width = 176,
+  height = 32,
+  pattern = "water.transparent",
+}
+
+tile{
+  layer = 1,
   x = 32,
   y = 48,
   width = 8,
@@ -563,15 +572,6 @@ tile{
   width = 8,
   height = 32,
   pattern = "waterfall.3.bottom",
-}
-
-tile{
-  layer = 1,
-  x = 8,
-  y = 48,
-  width = 24,
-  height = 32,
-  pattern = "wall_statue.6.3",
 }
 
 tile{
