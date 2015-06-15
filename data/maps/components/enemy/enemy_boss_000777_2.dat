@@ -351,42 +351,6 @@ tile{
 
 tile{
   layer = 1,
-  x = 104,
-  y = 8,
-  width = 16,
-  height = 32,
-  pattern = "wall_pillar.7.1",
-}
-
-tile{
-  layer = 1,
-  x = 200,
-  y = 8,
-  width = 16,
-  height = 32,
-  pattern = "wall_pillar.7.1",
-}
-
-tile{
-  layer = 1,
-  x = 104,
-  y = 200,
-  width = 16,
-  height = 32,
-  pattern = "wall_pillar.7.2",
-}
-
-tile{
-  layer = 1,
-  x = 200,
-  y = 200,
-  width = 16,
-  height = 32,
-  pattern = "wall_pillar.7.2",
-}
-
-tile{
-  layer = 1,
   x = 48,
   y = 64,
   width = 8,
@@ -495,11 +459,47 @@ tile{
 
 tile{
   layer = 1,
+  x = 104,
+  y = 8,
+  width = 16,
+  height = 32,
+  pattern = "wall_pillar.5.1",
+}
+
+tile{
+  layer = 1,
+  x = 200,
+  y = 8,
+  width = 16,
+  height = 32,
+  pattern = "wall_pillar.5.1",
+}
+
+tile{
+  layer = 1,
+  x = 104,
+  y = 200,
+  width = 16,
+  height = 32,
+  pattern = "wall_pillar.5.2",
+}
+
+tile{
+  layer = 1,
+  x = 200,
+  y = 200,
+  width = 16,
+  height = 32,
+  pattern = "wall_pillar.5.2",
+}
+
+tile{
+  layer = 1,
   x = 264,
   y = 80,
   width = 32,
   height = 16,
-  pattern = "wall_pillar.7.4",
+  pattern = "wall_pillar.5.4",
 }
 
 tile{
@@ -508,16 +508,7 @@ tile{
   y = 144,
   width = 32,
   height = 16,
-  pattern = "wall_pillar.7.4",
-}
-
-tile{
-  layer = 1,
-  x = 24,
-  y = 144,
-  width = 32,
-  height = 16,
-  pattern = "wall_pillar.7.3",
+  pattern = "wall_pillar.5.4",
 }
 
 tile{
@@ -526,7 +517,16 @@ tile{
   y = 80,
   width = 32,
   height = 16,
-  pattern = "wall_pillar.7.3",
+  pattern = "wall_pillar.5.3",
+}
+
+tile{
+  layer = 1,
+  x = 24,
+  y = 144,
+  width = 32,
+  height = 16,
+  pattern = "wall_pillar.5.3",
 }
 
 enemy{
