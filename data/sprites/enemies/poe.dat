@@ -4,30 +4,30 @@ animation{
   frame_delay = 200,
   frame_to_loop_on = 0,
   directions = {
-    { x = 72, y = 80, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 21, num_frames = 3 },
-    { x = 72, y = 80, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 21, num_frames = 3 },
-    { x = 0, y = 80, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 21, num_frames = 3 },
-    { x = 0, y = 80, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 21, num_frames = 3 },
+    { x = 72, y = 80, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 28, num_frames = 3 },
+    { x = 72, y = 80, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 28, num_frames = 3 },
+    { x = 0, y = 80, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 28, num_frames = 3 },
+    { x = 0, y = 80, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 28, num_frames = 3 },
   },
 }
 animation{
   name = "hurt",
   src_image = "enemies/poe.png",
   directions = {
-    { x = 120, y = 80, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 21 },
-    { x = 120, y = 80, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 21 },
-    { x = 48, y = 80, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 21 },
-    { x = 48, y = 80, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 21 },
+    { x = 120, y = 80, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 28 },
+    { x = 120, y = 80, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 28 },
+    { x = 48, y = 80, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 28 },
+    { x = 48, y = 80, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 28 },
   },
 }
 animation{
   name = "immobilized",
   src_image = "enemies/poe.png",
   directions = {
-    { x = 72, y = 80, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 21 },
-    { x = 72, y = 80, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 21 },
-    { x = 0, y = 80, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 21 },
-    { x = 0, y = 80, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 21 },
+    { x = 72, y = 80, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 28 },
+    { x = 72, y = 80, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 28 },
+    { x = 0, y = 80, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 28 },
+    { x = 0, y = 80, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 28 },
   },
 }
 animation{
@@ -36,9 +36,9 @@ animation{
   frame_delay = 70,
   frame_to_loop_on = 0,
   directions = {
-    { x = 96, y = 80, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 21, num_frames = 2 },
-    { x = 96, y = 80, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 21, num_frames = 2 },
-    { x = 24, y = 80, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 21, num_frames = 2 },
-    { x = 24, y = 80, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 21, num_frames = 2 },
+    { x = 96, y = 80, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 28, num_frames = 2 },
+    { x = 96, y = 80, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 28, num_frames = 2 },
+    { x = 24, y = 80, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 28, num_frames = 2 },
+    { x = 24, y = 80, frame_width = 24, frame_height = 32, origin_x = 12, origin_y = 28, num_frames = 2 },
   },
 }
