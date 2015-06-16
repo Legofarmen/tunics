@@ -72,8 +72,7 @@ documentation about Solarus.
 
  1. Install build dependencies
 
-        $ sudo apt-get install
-        $ sudo apt-get install cmake build-essential -y
+        $ sudo apt-get install cmake
 
  2. Generate the "data.solarus" archive containing all data files of the quest:
 

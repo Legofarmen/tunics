@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.6)
-project(LAFD)
+project(LAFD NONE)
 
 set(quest_name "tunics")
 
