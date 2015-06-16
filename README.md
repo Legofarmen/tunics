@@ -4,7 +4,7 @@
 
  * Tunics requires Solarus 1.3.x.
 
- * Tunics consists in part of materials under various free and open-source and public licenses, and in part of copyrighted materials under fair use. See license.txt for details.
+ * Tunics consists in part of materials under various free and open-source and public licenses, and in part of unlicensed materials under fair use. See license.txt for details.
 
 
 # Play Tunics!
