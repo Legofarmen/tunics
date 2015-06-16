@@ -68,39 +68,22 @@ documentation about Solarus.
 
 # Install Tunics!
 
- 1. Generate the "data.solarus" archive containing all data files of the quest:
+## Ubuntu
+
+ 1. Install build dependencies
+
+        $ sudo apt-get install
+        $ sudo apt-get install cmake build-essential -y
+
+ 2. Generate the "data.solarus" archive containing all data files of the quest:
 
         $ cmake .
         $ make
 
- 2. Install the "data.solarus" archive:
+ 3. Install the "tunics" launch script and the "data.solarus" archive:
 
-        # make install
+        $ sudo make install
 
-    This installs the following files (assuming that the install directory
-    is /usr/local):
-      - the quest data archive ("data.solarus") in /usr/local/share/solarus/tunics/
-      - a script called "tunics" in /usr/local/bin/
-
- 3. Start the quest:
+ 4. Play Tunics!
 
         $ tunics
-
-    which is equivalent to:
-
-        $ solarus /usr/local/share/solarus/tunics
-
-
-## Change the install directory 
-
-You may want to install tunics in another directory
-(e.g. so that no root access is necessary). You can specify this directory
-as a parameter of cmake:
-
-    $ cmake -D CMAKE_INSTALL_PREFIX=/home/your_directory .
-    $ make
-    $ make install
-
-This installs the files described above, with the
-/usr/local prefix replaced by the one you specified.
-The script generated runs solarus with the appropriate quest path.
