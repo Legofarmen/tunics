@@ -23,15 +23,21 @@ documentation about Solarus.
  
  4. Run solarus.exe
 
-## Debian Linux
+## Ubuntu
 
  1. Clone the tunics repository.
+ 
+ 2. Add repositories (to satisfy libluajit and libstdc++6 >= 4.9)
 
- 2. Download and install the latest Solarus 1.3.x package from
-    http://www.solarus-games.org/downloads/solarus/debian-amd64 or
-    http://www.solarus-games.org/downloads/solarus/debian-i386.
+        sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) universe"
+        sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+        sudo apt-get update
 
- 3. Run the following commands:
+ 3. Download and install the latest Solarus 1.3.x package from here:
+    * [amd64](http://www.solarus-games.org/downloads/solarus/debian-amd64) or
+    * [i386](http://www.solarus-games.org/downloads/solarus/debian-i386)
+
+ 4. Run the following commands:
 
         $ solarus $PATH_TO_REPOSITORY
 
