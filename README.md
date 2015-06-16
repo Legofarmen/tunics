@@ -1,14 +1,10 @@
-# About
+# About Tunics!
 
-This package contains the data files of the game Tunics!
+ * Tunics is a roguelike-like Zelda game for the [Solarus](http://solarus-games.org) game engine.
 
-This quest is a free, open-source game that works with Solarus, an open-source
-Zelda-like 2D game engine. To play this game, you need Solarus.
+ * Tunics requires Solarus 1.3.x.
 
-The current version of Tunics! only runs under Solarus 1.3.x.
-
-See http://www.solarus-games.org for more information and 
-documentation about Solarus.
+ * Tunics consists in part of materials under various free and open-source and public licenses, and in part of copyrighted materials under fair use. See license.txt for details.
 
 
 # Play Tunics!
