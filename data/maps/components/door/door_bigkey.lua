@@ -4,6 +4,10 @@ local door_bigkey = {}
 
 function door_bigkey.init(map, data, direction)
 
+    for entity in map:get_entities('pot_') do
+        zentropy.inject_pot(entity, data.rng:refine(entity:get_name()))
+    end
+
     if direction == 1 then
         zentropy.inject_door(map:get_entity('door_open'), {
             name = 'door',

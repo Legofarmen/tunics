@@ -214,24 +214,6 @@ tile{
   pattern = "stage_big_fill",
 }
 
-tile{
-  layer = 1,
-  x = 56,
-  y = 56,
-  width = 16,
-  height = 16,
-  pattern = "torch_big.top",
-}
-
-tile{
-  layer = 1,
-  x = 248,
-  y = 56,
-  width = 16,
-  height = 16,
-  pattern = "torch_big.top",
-}
-
 switch{
   layer = 1,
   x = 0,
@@ -340,5 +322,23 @@ dynamic_tile{
   name = "chest",
   pattern = "placeholder_treasure_open",
   enabled_at_start = true,
+}
+
+tile{
+  layer = 2,
+  x = 56,
+  y = 56,
+  width = 16,
+  height = 16,
+  pattern = "torch_big.top",
+}
+
+tile{
+  layer = 2,
+  x = 248,
+  y = 56,
+  width = 16,
+  height = 16,
+  pattern = "torch_big.top",
 }
 

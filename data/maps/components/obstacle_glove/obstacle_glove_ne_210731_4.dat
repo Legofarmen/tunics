@@ -207,15 +207,6 @@ tile{
 
 tile{
   layer = 1,
-  x = 72,
-  y = 32,
-  width = 8,
-  height = 24,
-  pattern = "hole.4",
-}
-
-tile{
-  layer = 1,
   x = 224,
   y = 64,
   width = 8,
@@ -266,6 +257,15 @@ tile{
   width = 32,
   height = 16,
   pattern = "wall_hole.1",
+}
+
+tile{
+  layer = 1,
+  x = 72,
+  y = 32,
+  width = 8,
+  height = 24,
+  pattern = "hole.4",
 }
 
 dynamic_tile{

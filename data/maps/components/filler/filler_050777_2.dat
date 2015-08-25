@@ -10,9 +10,9 @@ properties{
 tile{
   layer = 1,
   x = 128,
-  y = 32,
+  y = 40,
   width = 64,
-  height = 176,
+  height = 160,
   pattern = "floor_border.2",
 }
 
@@ -156,6 +156,60 @@ tile{
   x = 248,
   y = 32,
   width = 8,
+  height = 176,
+  pattern = "wall_border.4",
+}
+
+tile{
+  layer = 1,
+  x = 64,
+  y = 32,
+  width = 8,
+  height = 176,
+  pattern = "wall_border.3",
+}
+
+tile{
+  layer = 1,
+  x = 8,
+  y = 8,
+  width = 32,
+  height = 224,
+  pattern = "ceiling",
+}
+
+tile{
+  layer = 1,
+  x = 280,
+  y = 8,
+  width = 32,
+  height = 224,
+  pattern = "ceiling",
+}
+
+tile{
+  layer = 1,
+  x = 128,
+  y = 32,
+  width = 64,
+  height = 8,
+  pattern = "wall_border.1",
+}
+
+tile{
+  layer = 1,
+  x = 128,
+  y = 200,
+  width = 64,
+  height = 8,
+  pattern = "wall_border.2",
+}
+
+tile{
+  layer = 1,
+  x = 248,
+  y = 32,
+  width = 8,
   height = 8,
   pattern = "wall_border.corner.2",
 }
@@ -185,60 +239,6 @@ tile{
   width = 8,
   height = 8,
   pattern = "wall_border.corner.4",
-}
-
-tile{
-  layer = 1,
-  x = 248,
-  y = 40,
-  width = 8,
-  height = 160,
-  pattern = "wall_border.4",
-}
-
-tile{
-  layer = 1,
-  x = 64,
-  y = 40,
-  width = 8,
-  height = 160,
-  pattern = "wall_border.3",
-}
-
-tile{
-  layer = 1,
-  x = 8,
-  y = 8,
-  width = 32,
-  height = 224,
-  pattern = "ceiling",
-}
-
-tile{
-  layer = 1,
-  x = 280,
-  y = 8,
-  width = 32,
-  height = 224,
-  pattern = "ceiling",
-}
-
-tile{
-  layer = 1,
-  x = 128,
-  y = 200,
-  width = 64,
-  height = 8,
-  pattern = "wall_border.1",
-}
-
-tile{
-  layer = 1,
-  x = 128,
-  y = 32,
-  width = 64,
-  height = 8,
-  pattern = "wall_border.2",
 }
 
 dynamic_tile{

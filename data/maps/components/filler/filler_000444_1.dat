@@ -9,34 +9,45 @@ properties{
 
 enemy{
   layer = 1,
-  x = 48,
-  y = 53,
-  direction = 3,
+  x = 128,
+  y = 45,
+  direction = 1,
   breed = "pike_auto",
 }
 
 enemy{
   layer = 1,
-  x = 128,
-  y = 197,
-  direction = 1,
+  x = 64,
+  y = 205,
+  direction = 3,
   breed = "pike_auto",
 }
 
 block{
   layer = 1,
-  x = 64,
-  y = 85,
+  x = 96,
+  y = 197,
   direction = -1,
   sprite = "entities/statue",
   pushable = false,
   pullable = false,
-  maximum_moves = 2,
+  maximum_moves = 0,
 }
 
 block{
   layer = 1,
-  x = 64,
+  x = 96,
+  y = 53,
+  direction = -1,
+  sprite = "entities/statue",
+  pushable = false,
+  pullable = false,
+  maximum_moves = 0,
+}
+
+block{
+  layer = 1,
+  x = 96,
   y = 165,
   direction = -1,
   sprite = "entities/statue",
@@ -47,8 +58,8 @@ block{
 
 block{
   layer = 1,
-  x = 112,
-  y = 165,
+  x = 96,
+  y = 85,
   direction = -1,
   sprite = "entities/statue",
   pushable = false,
@@ -56,14 +67,91 @@ block{
   maximum_moves = 0,
 }
 
-block{
+dynamic_tile{
   layer = 1,
-  x = 112,
-  y = 85,
-  direction = -1,
-  sprite = "entities/statue",
-  pushable = false,
-  pullable = false,
-  maximum_moves = 0,
+  x = 72,
+  y = 40,
+  width = 16,
+  height = 16,
+  name = "stone_1",
+  pattern = "placeholder_stone",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 104,
+  y = 40,
+  width = 16,
+  height = 16,
+  name = "stone_2",
+  pattern = "placeholder_stone",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 72,
+  y = 72,
+  width = 16,
+  height = 16,
+  name = "stone_3",
+  pattern = "placeholder_stone",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 104,
+  y = 72,
+  width = 16,
+  height = 16,
+  name = "stone_4",
+  pattern = "placeholder_stone",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 72,
+  y = 152,
+  width = 16,
+  height = 16,
+  name = "stone_5",
+  pattern = "placeholder_stone",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 104,
+  y = 152,
+  width = 16,
+  height = 16,
+  name = "stone_6",
+  pattern = "placeholder_stone",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 72,
+  y = 184,
+  width = 16,
+  height = 16,
+  name = "stone_7",
+  pattern = "placeholder_stone",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  layer = 1,
+  x = 104,
+  y = 184,
+  width = 16,
+  height = 16,
+  name = "stone_8",
+  pattern = "placeholder_stone",
+  enabled_at_start = true,
 }
 

@@ -3,7 +3,7 @@ properties{
   y = 0,
   width = 320,
   height = 240,
-  tileset = "dungeon_brick_gray_1",
+  tileset = "dungeon_ganon_brown_1",
   music = "same",
 }
 
@@ -100,34 +100,34 @@ tile{
 tile{
   layer = 1,
   x = 88,
+  y = 176,
+  width = 40,
+  height = 8,
+  pattern = "barrier.1.1",
+}
+
+tile{
+  layer = 1,
+  x = 192,
   y = 56,
   width = 40,
   height = 8,
-  pattern = "barrier.3.1",
+  pattern = "barrier.1.1",
+}
+
+tile{
+  layer = 1,
+  x = 192,
+  y = 176,
+  width = 40,
+  height = 8,
+  pattern = "barrier.1.1",
 }
 
 tile{
   layer = 1,
   x = 88,
-  y = 176,
-  width = 40,
-  height = 8,
-  pattern = "barrier.1.1",
-}
-
-tile{
-  layer = 1,
-  x = 192,
   y = 56,
-  width = 40,
-  height = 8,
-  pattern = "barrier.1.1",
-}
-
-tile{
-  layer = 1,
-  x = 192,
-  y = 176,
   width = 40,
   height = 8,
   pattern = "barrier.1.1",

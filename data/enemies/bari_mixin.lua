@@ -28,7 +28,7 @@ function bari_mixin.mixin(enemy)
     function enemy:on_restarted()
         shocking = false
         self:set_default_attack_consequences()
-        self:set_attack_consequence("hookshot", "immobilized")
+        self:set_attack_consequence("hookshot", 1)
         local m = sol.movement.create("path_finding")
         m:set_speed(16)
         m:start(self)

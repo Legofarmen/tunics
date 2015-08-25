@@ -3,7 +3,7 @@ properties{
   y = 0,
   width = 320,
   height = 240,
-  tileset = "dungeon_brick_gray_1",
+  tileset = "dungeon_ganon_brown_1",
   music = "same",
 }
 
@@ -163,37 +163,10 @@ tile{
 tile{
   layer = 1,
   x = 216,
-  y = 88,
-  width = 16,
-  height = 16,
-  pattern = "barrier_big.3.border.1",
-}
-
-tile{
-  layer = 1,
-  x = 216,
   y = 104,
   width = 16,
   height = 16,
   pattern = "barrier_big.1.2",
-}
-
-tile{
-  layer = 1,
-  x = 216,
-  y = 120,
-  width = 16,
-  height = 24,
-  pattern = "barrier_big.3.border.2",
-}
-
-tile{
-  layer = 1,
-  x = 144,
-  y = 48,
-  width = 24,
-  height = 24,
-  pattern = "barrier_big.3.1",
 }
 
 tile{
@@ -207,70 +180,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 88,
-  y = 120,
-  width = 16,
-  height = 24,
-  pattern = "barrier_big.3.border.2",
-}
-
-tile{
-  layer = 1,
-  x = 88,
-  y = 88,
-  width = 16,
-  height = 16,
-  pattern = "barrier_big.3.border.1",
-}
-
-tile{
-  layer = 1,
-  x = 136,
-  y = 48,
-  width = 16,
-  height = 24,
-  pattern = "barrier_big.3.border.2",
-}
-
-tile{
-  layer = 1,
-  x = 168,
-  y = 48,
-  width = 16,
-  height = 24,
-  pattern = "barrier_big.3.border.2",
-}
-
-tile{
-  layer = 1,
-  x = 152,
-  y = 160,
-  width = 16,
-  height = 24,
-  pattern = "barrier_big.3.1",
-}
-
-tile{
-  layer = 1,
-  x = 136,
-  y = 160,
-  width = 16,
-  height = 24,
-  pattern = "barrier_big.3.border.2",
-}
-
-tile{
-  layer = 1,
-  x = 168,
-  y = 160,
-  width = 16,
-  height = 24,
-  pattern = "barrier_big.3.border.2",
-}
-
-tile{
-  layer = 1,
-  x = 56,
+  x = 80,
   y = 16,
   width = 32,
   height = 16,
@@ -279,7 +189,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 232,
+  x = 208,
   y = 16,
   width = 32,
   height = 16,
@@ -396,7 +306,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 56,
+  x = 80,
   y = 208,
   width = 32,
   height = 16,
@@ -405,11 +315,101 @@ tile{
 
 tile{
   layer = 1,
-  x = 232,
+  x = 208,
   y = 208,
   width = 32,
   height = 16,
   pattern = "wall_torch.2",
+}
+
+tile{
+  layer = 1,
+  x = 88,
+  y = 88,
+  width = 16,
+  height = 16,
+  pattern = "barrier_big.1.border.1",
+}
+
+tile{
+  layer = 1,
+  x = 216,
+  y = 88,
+  width = 16,
+  height = 16,
+  pattern = "barrier_big.1.border.1",
+}
+
+tile{
+  layer = 1,
+  x = 88,
+  y = 120,
+  width = 16,
+  height = 24,
+  pattern = "barrier_big.1.border.2",
+}
+
+tile{
+  layer = 1,
+  x = 136,
+  y = 160,
+  width = 16,
+  height = 24,
+  pattern = "barrier_big.1.border.2",
+}
+
+tile{
+  layer = 1,
+  x = 168,
+  y = 160,
+  width = 16,
+  height = 24,
+  pattern = "barrier_big.1.border.2",
+}
+
+tile{
+  layer = 1,
+  x = 216,
+  y = 120,
+  width = 16,
+  height = 24,
+  pattern = "barrier_big.1.border.2",
+}
+
+tile{
+  layer = 1,
+  x = 136,
+  y = 48,
+  width = 16,
+  height = 24,
+  pattern = "barrier_big.1.border.2",
+}
+
+tile{
+  layer = 1,
+  x = 168,
+  y = 48,
+  width = 16,
+  height = 24,
+  pattern = "barrier_big.1.border.2",
+}
+
+tile{
+  layer = 1,
+  x = 152,
+  y = 48,
+  width = 16,
+  height = 24,
+  pattern = "barrer_big.1.1",
+}
+
+tile{
+  layer = 1,
+  x = 152,
+  y = 160,
+  width = 16,
+  height = 24,
+  pattern = "barrer_big.1.1",
 }
 
 dynamic_tile{
@@ -425,7 +425,7 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 256,
+  x = 248,
   y = 104,
   width = 32,
   height = 32,
