@@ -45,8 +45,6 @@ function bari_mixin.mixin(enemy)
         if self:is_shocking() then
             hero:start_electrocution(500, self:get_damage())
         else
-            -- Why doesn't hurt() remove life?
-            self:hurt(game:get_ability('sword'))
             self:remove_life(game:get_ability('sword'))
         end
     end
