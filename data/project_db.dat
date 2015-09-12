@@ -651,3 +651,9 @@ entity{ id = "torch", description = "Torch" }
 
 language{ id = "en", description = "English" }
 
+font{ id = "8_bit", description = "8_bit" }
+font{ id = "alttp", description = "alttp" }
+font{ id = "green_digits", description = "green_digits" }
+font{ id = "la", description = "la" }
+font{ id = "minecraftia", description = "minecraftia" }
+font{ id = "white_digits", description = "white_digits" }
