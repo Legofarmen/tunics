@@ -10,9 +10,9 @@ properties{
 tile{
   layer = 1,
   x = 136,
-  y = 32,
+  y = 40,
   width = 48,
-  height = 176,
+  height = 160,
   pattern = "floor_border.2",
 }
 
@@ -99,18 +99,18 @@ tile{
 
 tile{
   layer = 1,
-  x = 136,
+  x = 144,
   y = 32,
-  width = 48,
+  width = 32,
   height = 8,
   pattern = "wall_border.1",
 }
 
 tile{
   layer = 1,
-  x = 136,
+  x = 144,
   y = 200,
-  width = 48,
+  width = 32,
   height = 8,
   pattern = "wall_border.2",
 }
@@ -278,13 +278,13 @@ tile{
 }
 
 dynamic_tile{
+  name = "pot_8",
   layer = 1,
   x = 104,
   y = 40,
+  pattern = "floor_pot",
   width = 16,
   height = 16,
-  name = "pot_8",
-  pattern = "floor_pot",
   enabled_at_start = true,
 }
 
@@ -313,46 +313,46 @@ enemy{
 }
 
 dynamic_tile{
-  layer = 1,
-  x = 72,
-  y = 40,
-  width = 16,
-  height = 16,
   name = "pot_2",
+  layer = 1,
+  x = 72,
+  y = 40,
   pattern = "floor_pot",
+  width = 16,
+  height = 16,
   enabled_at_start = true,
 }
 
 dynamic_tile{
+  name = "pot_3",
   layer = 1,
   x = 232,
   y = 40,
+  pattern = "floor_pot",
   width = 16,
   height = 16,
-  name = "pot_3",
-  pattern = "floor_pot",
   enabled_at_start = true,
 }
 
 dynamic_tile{
+  name = "pot_4",
   layer = 1,
   x = 232,
   y = 184,
+  pattern = "floor_pot",
   width = 16,
   height = 16,
-  name = "pot_4",
-  pattern = "floor_pot",
   enabled_at_start = true,
 }
 
 dynamic_tile{
+  name = "pot_5",
   layer = 1,
   x = 72,
   y = 184,
+  pattern = "floor_pot",
   width = 16,
   height = 16,
-  name = "pot_5",
-  pattern = "floor_pot",
   enabled_at_start = true,
 }
 
@@ -360,7 +360,6 @@ block{
   layer = 1,
   x = 112,
   y = 157,
-  direction = -1,
   sprite = "entities/statue",
   pushable = true,
   pullable = true,
@@ -371,7 +370,6 @@ block{
   layer = 1,
   x = 208,
   y = 93,
-  direction = -1,
   sprite = "entities/statue",
   pushable = true,
   pullable = true,
@@ -379,35 +377,35 @@ block{
 }
 
 dynamic_tile{
+  name = "pot_6",
   layer = 1,
   x = 200,
   y = 184,
+  pattern = "floor_pot",
   width = 16,
   height = 16,
-  name = "pot_6",
-  pattern = "floor_pot",
   enabled_at_start = true,
 }
 
 dynamic_tile{
+  name = "enemy_1",
   layer = 1,
   x = 64,
   y = 104,
+  pattern = "placeholder_enemy",
   width = 32,
   height = 32,
-  name = "enemy_1",
-  pattern = "placeholder_enemy",
   enabled_at_start = true,
 }
 
 dynamic_tile{
+  name = "enemy_2",
   layer = 1,
   x = 224,
   y = 104,
+  pattern = "placeholder_enemy",
   width = 32,
   height = 32,
-  name = "enemy_2",
-  pattern = "placeholder_enemy",
   enabled_at_start = true,
 }
 
