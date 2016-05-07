@@ -49,6 +49,10 @@ local high_layer_tiles = {
 
 local function rect_string(rect)
     zentropy.assert(rect)
+    zentropy.assert(rect.x)
+    zentropy.assert(rect.y)
+    zentropy.assert(rect.width)
+    zentropy.assert(rect.height)
     return string.format("(%3d;%3d)-(%3d;%3d)", rect.x, rect.y, rect.x + rect.width, rect.y + rect.height)
 end
 
@@ -292,12 +296,16 @@ local function validate_map(fname, mask, tilesets, patterns)
         end
     end
     function mt.custom_entity(properties)
-        local description = string.format("custom entity %s", rect_string(properties))
-        if properties.name then
-            description = description .. string.format(" name=%s", properties.name)
+        local my_properties = {
+            ["width"] = 16, ["height"] = 16,
+        }
+        for k,v in pairs(properties) do my_properties[k] = v end
+        local description = string.format("custom entity %s", rect_string(my_properties))
+        if my_properties.name then
+            description = description .. string.format(" name=%s", my_properties.name)
         end
-        validate_entity_layer(fname, description, properties)
-        validate_entity_mask(fname, description, properties, sections)
+        validate_entity_layer(fname, description, my_properties)
+        validate_entity_mask(fname, description, my_properties, sections)
     end
     function mt.dynamic_tile(properties)
         local description = string.format("dynamic tile  %s", rect_string(properties))
