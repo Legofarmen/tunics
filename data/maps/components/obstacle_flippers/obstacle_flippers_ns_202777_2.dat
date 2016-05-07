@@ -451,37 +451,10 @@ tile{
 tile{
   layer = 1,
   x = 40,
-  y = 144,
-  width = 176,
-  height = 32,
-  pattern = "water.transparent",
-}
-
-tile{
-  layer = 1,
-  x = 40,
-  y = 176,
-  width = 80,
-  height = 32,
-  pattern = "water.transparent",
-}
-
-tile{
-  layer = 1,
-  x = 40,
   y = 200,
   width = 80,
   height = 8,
   pattern = "door_cache_low.2",
-}
-
-tile{
-  layer = 1,
-  x = 40,
-  y = 32,
-  width = 80,
-  height = 32,
-  pattern = "water.transparent",
 }
 
 tile{
@@ -500,15 +473,6 @@ tile{
   width = 8,
   height = 32,
   pattern = "waterfall.3.middle",
-}
-
-tile{
-  layer = 1,
-  x = 40,
-  y = 160,
-  width = 8,
-  height = 32,
-  pattern = "waterfall.3.bottom",
 }
 
 tile{
@@ -549,29 +513,11 @@ tile{
 
 tile{
   layer = 1,
-  x = 40,
-  y = 64,
-  width = 176,
-  height = 32,
-  pattern = "water.transparent",
-}
-
-tile{
-  layer = 1,
   x = 32,
   y = 48,
   width = 8,
   height = 32,
   pattern = "waterfall.3.middle",
-}
-
-tile{
-  layer = 1,
-  x = 40,
-  y = 48,
-  width = 8,
-  height = 32,
-  pattern = "waterfall.3.bottom",
 }
 
 tile{
@@ -583,118 +529,148 @@ tile{
   pattern = "waterfall.3.top",
 }
 
-jumper{
+tile{
   layer = 1,
-  x = 40,
-  y = 96,
-  width = 24,
-  height = 8,
-  direction = 2,
-  jump_length = 40,
+  x = 32,
+  y = 32,
+  width = 96,
+  height = 72,
+  pattern = "floor_small.5",
 }
 
-jumper{
+tile{
   layer = 1,
-  x = 40,
+  x = 32,
   y = 136,
-  width = 24,
-  height = 8,
-  direction = 6,
-  jump_length = 40,
+  width = 96,
+  height = 72,
+  pattern = "floor_small.5",
 }
 
-jumper{
+tile{
   layer = 1,
-  x = 176,
-  y = 176,
-  width = 40,
-  height = 8,
-  direction = 2,
-  jump_length = 40,
-}
-
-jumper{
-  layer = 1,
-  x = 96,
-  y = 136,
-  width = 120,
-  height = 8,
-  direction = 6,
-  jump_length = 40,
-}
-
-jumper{
-  layer = 1,
-  x = 96,
-  y = 96,
-  width = 120,
-  height = 8,
-  direction = 2,
-  jump_length = 40,
-}
-
-jumper{
-  layer = 1,
-  x = 176,
+  x = 128,
   y = 56,
-  width = 40,
-  height = 8,
-  direction = 6,
-  jump_length = 40,
+  width = 96,
+  height = 48,
+  pattern = "floor_small.5",
+}
+
+tile{
+  layer = 1,
+  x = 128,
+  y = 136,
+  width = 96,
+  height = 48,
+  pattern = "floor_small.5",
+}
+
+tile{
+  layer = 1,
+  x = 120,
+  y = 144,
+  width = 96,
+  height = 32,
+  pattern = "water.transparent",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 144,
+  width = 80,
+  height = 64,
+  pattern = "water.transparent",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 40,
+  width = 80,
+  height = 64,
+  pattern = "water.transparent",
+}
+
+tile{
+  layer = 1,
+  x = 120,
+  y = 64,
+  width = 96,
+  height = 32,
+  pattern = "water.transparent",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 160,
+  width = 8,
+  height = 32,
+  pattern = "waterfall.3.bottom",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 48,
+  width = 8,
+  height = 32,
+  pattern = "waterfall.3.bottom",
 }
 
 wall{
   layer = 1,
-  x = 144,
+  x = 152,
   y = 56,
-  width = 32,
+  width = 16,
   height = 8,
 }
 
 wall{
   layer = 1,
-  x = 64,
+  x = 72,
   y = 96,
-  width = 32,
+  width = 16,
   height = 8,
   stops_enemies = true,
 }
 
 wall{
   layer = 1,
-  x = 64,
+  x = 72,
   y = 136,
-  width = 32,
+  width = 16,
   height = 8,
 }
 
 wall{
   layer = 1,
-  x = 144,
+  x = 152,
   y = 176,
-  width = 32,
+  width = 16,
   height = 8,
 }
 
 dynamic_tile{
+  name = "treasure_open_chest",
   layer = 1,
   x = 248,
   y = 88,
+  pattern = "placeholder_treasure_open",
   width = 16,
   height = 16,
-  name = "treasure_open_chest",
-  pattern = "placeholder_treasure_open",
   enabled_at_start = true,
 }
 
 dynamic_tile{
+  name = "treasure_obstacle_chest",
   layer = 1,
   x = 248,
   y = 168,
+  pattern = "placeholder_treasure_obstacle",
   width = 16,
   height = 16,
-  name = "treasure_obstacle_chest",
-  pattern = "placeholder_treasure_obstacle",
   enabled_at_start = true,
 }
 
@@ -702,7 +678,6 @@ block{
   layer = 1,
   x = 272,
   y = 85,
-  direction = -1,
   sprite = "entities/block",
   pushable = true,
   pullable = false,
@@ -713,7 +688,6 @@ block{
   layer = 1,
   x = 272,
   y = 165,
-  direction = -1,
   sprite = "entities/block",
   pushable = true,
   pullable = false,
@@ -724,7 +698,6 @@ block{
   layer = 1,
   x = 240,
   y = 85,
-  direction = -1,
   sprite = "entities/block",
   pushable = true,
   pullable = false,
@@ -735,7 +708,6 @@ block{
   layer = 1,
   x = 240,
   y = 165,
-  direction = -1,
   sprite = "entities/block",
   pushable = true,
   pullable = false,
@@ -743,14 +715,286 @@ block{
 }
 
 dynamic_tile{
+  name = "enemy_1",
   layer = 1,
   x = 144,
   y = 104,
+  pattern = "placeholder_enemy",
   width = 32,
   height = 32,
-  name = "enemy_1",
-  pattern = "placeholder_enemy",
   enabled_at_start = true,
+}
+
+wall{
+  layer = 1,
+  x = 32,
+  y = 32,
+  width = 96,
+  height = 8,
+  stops_hero = true,
+  stops_npcs = true,
+  stops_enemies = true,
+  stops_blocks = true,
+}
+
+wall{
+  layer = 1,
+  x = 120,
+  y = 56,
+  width = 32,
+  height = 8,
+  stops_hero = true,
+  stops_npcs = true,
+  stops_enemies = true,
+  stops_blocks = true,
+}
+
+wall{
+  layer = 1,
+  x = 168,
+  y = 56,
+  width = 56,
+  height = 8,
+  stops_hero = true,
+  stops_npcs = true,
+  stops_enemies = true,
+  stops_blocks = true,
+}
+
+wall{
+  layer = 1,
+  x = 32,
+  y = 96,
+  width = 40,
+  height = 8,
+  stops_hero = true,
+  stops_npcs = true,
+  stops_enemies = true,
+  stops_blocks = true,
+}
+
+wall{
+  layer = 1,
+  x = 88,
+  y = 96,
+  width = 136,
+  height = 8,
+  stops_hero = true,
+  stops_npcs = true,
+  stops_enemies = true,
+  stops_blocks = true,
+}
+
+wall{
+  layer = 1,
+  x = 32,
+  y = 136,
+  width = 40,
+  height = 8,
+  stops_hero = true,
+  stops_npcs = true,
+  stops_enemies = true,
+  stops_blocks = true,
+}
+
+wall{
+  layer = 1,
+  x = 88,
+  y = 136,
+  width = 136,
+  height = 8,
+  stops_hero = true,
+  stops_npcs = true,
+  stops_enemies = true,
+  stops_blocks = true,
+}
+
+wall{
+  layer = 1,
+  x = 32,
+  y = 200,
+  width = 96,
+  height = 8,
+  stops_hero = true,
+  stops_npcs = true,
+  stops_enemies = true,
+  stops_blocks = true,
+}
+
+wall{
+  layer = 1,
+  x = 120,
+  y = 176,
+  width = 32,
+  height = 8,
+  stops_hero = true,
+  stops_npcs = true,
+  stops_enemies = true,
+  stops_blocks = true,
+}
+
+wall{
+  layer = 1,
+  x = 168,
+  y = 176,
+  width = 56,
+  height = 8,
+  stops_hero = true,
+  stops_npcs = true,
+  stops_enemies = true,
+  stops_blocks = true,
+}
+
+wall{
+  layer = 1,
+  x = 32,
+  y = 40,
+  width = 8,
+  height = 56,
+  stops_hero = true,
+  stops_npcs = true,
+  stops_enemies = true,
+  stops_blocks = true,
+}
+
+wall{
+  layer = 1,
+  x = 120,
+  y = 40,
+  width = 8,
+  height = 16,
+  stops_hero = true,
+  stops_npcs = true,
+  stops_enemies = true,
+  stops_blocks = true,
+}
+
+wall{
+  layer = 1,
+  x = 216,
+  y = 64,
+  width = 8,
+  height = 32,
+  stops_hero = true,
+  stops_npcs = true,
+  stops_enemies = true,
+  stops_blocks = true,
+}
+
+wall{
+  layer = 1,
+  x = 32,
+  y = 144,
+  width = 8,
+  height = 56,
+  stops_hero = true,
+  stops_npcs = true,
+  stops_enemies = true,
+  stops_blocks = true,
+}
+
+wall{
+  layer = 1,
+  x = 120,
+  y = 184,
+  width = 8,
+  height = 16,
+  stops_hero = true,
+  stops_npcs = true,
+  stops_enemies = true,
+  stops_blocks = true,
+}
+
+wall{
+  layer = 1,
+  x = 216,
+  y = 144,
+  width = 8,
+  height = 32,
+  stops_hero = true,
+  stops_npcs = true,
+  stops_enemies = true,
+  stops_blocks = true,
+}
+
+jumper{
+  layer = 1,
+  x = 40,
+  y = 96,
+  width = 32,
+  height = 8,
+  direction = 2,
+  jump_length = 40,
+}
+
+jumper{
+  layer = 1,
+  x = 40,
+  y = 136,
+  width = 32,
+  height = 8,
+  direction = 6,
+  jump_length = 40,
+}
+
+jumper{
+  layer = 1,
+  x = 168,
+  y = 176,
+  width = 48,
+  height = 8,
+  direction = 2,
+  jump_length = 40,
+}
+
+jumper{
+  layer = 1,
+  x = 88,
+  y = 136,
+  width = 128,
+  height = 8,
+  direction = 6,
+  jump_length = 40,
+}
+
+jumper{
+  layer = 1,
+  x = 88,
+  y = 96,
+  width = 128,
+  height = 8,
+  direction = 2,
+  jump_length = 40,
+}
+
+jumper{
+  layer = 1,
+  x = 168,
+  y = 56,
+  width = 48,
+  height = 8,
+  direction = 6,
+  jump_length = 40,
+}
+
+jumper{
+  layer = 1,
+  x = 136,
+  y = 56,
+  width = 16,
+  height = 8,
+  direction = 6,
+  jump_length = 40,
+}
+
+jumper{
+  layer = 1,
+  x = 136,
+  y = 176,
+  width = 16,
+  height = 8,
+  direction = 2,
+  jump_length = 40,
 }
 
 tile{
