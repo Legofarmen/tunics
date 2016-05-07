@@ -10,9 +10,9 @@ properties{
 tile{
   layer = 1,
   x = 120,
-  y = 32,
+  y = 40,
   width = 80,
-  height = 176,
+  height = 160,
   pattern = "floor_border.2",
 }
 
@@ -23,24 +23,6 @@ tile{
   width = 64,
   height = 168,
   pattern = "stage_big_fill",
-}
-
-tile{
-  layer = 1,
-  x = 120,
-  y = 32,
-  width = 80,
-  height = 8,
-  pattern = "wall_border.1",
-}
-
-tile{
-  layer = 1,
-  x = 184,
-  y = 32,
-  width = 16,
-  height = 8,
-  pattern = "wall_border.1",
 }
 
 tile{
@@ -369,9 +351,9 @@ tile{
 
 tile{
   layer = 1,
-  x = 120,
+  x = 128,
   y = 200,
-  width = 80,
+  width = 64,
   height = 8,
   pattern = "wall_border.2",
 }
@@ -503,13 +485,13 @@ tile{
 }
 
 dynamic_tile{
+  name = "door_open",
   layer = 1,
   x = 152,
   y = 16,
+  pattern = "door.1",
   width = 16,
   height = 16,
-  name = "door_open",
-  pattern = "door.1",
   enabled_at_start = true,
 }
 
@@ -523,12 +505,12 @@ wall{
 }
 
 sensor{
+  name = "sensor",
   layer = 1,
   x = 160,
   y = 45,
   width = 16,
   height = 16,
-  name = "sensor",
 }
 
 stream{

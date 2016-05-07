@@ -201,7 +201,7 @@ tile{
   x = 128,
   y = 72,
   width = 64,
-  height = 128,
+  height = 136,
   pattern = "floor_small.2",
 }
 
@@ -223,14 +223,23 @@ tile{
   pattern = "statue.1",
 }
 
+tile{
+  layer = 1,
+  x = 128,
+  y = 200,
+  width = 64,
+  height = 8,
+  pattern = "wall_border.2",
+}
+
 dynamic_tile{
+  name = "door_open",
   layer = 1,
   x = 152,
   y = 16,
+  pattern = "door.1",
   width = 16,
   height = 16,
-  name = "door_open",
-  pattern = "door.1",
   enabled_at_start = true,
 }
 
@@ -244,12 +253,12 @@ wall{
 }
 
 sensor{
+  name = "sensor",
   layer = 1,
   x = 160,
   y = 45,
   width = 16,
   height = 16,
-  name = "sensor",
 }
 
 stream{
