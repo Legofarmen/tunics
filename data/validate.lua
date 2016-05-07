@@ -212,6 +212,46 @@ local function validate_entity_alignment(fname, description, properties)
     end
 end
 
+local function validate_carpet_alignment(fname, description, properties)
+    local directions = {
+        north = {
+            outer = { x = 0, y = 0, width = 320, height = 32, },
+            middle = { x = 0, y = 0, width = 320, height = 40, },
+            inner = { x = 0, y = 0, width = 320, height = 48, },
+        },
+        south = {
+            outer = { x = 0, y = 208, width = 320, height = 32, },
+            middle = { x = 0, y = 200, width = 320, height = 40, },
+            inner = { x = 0, y = 192, width = 320, height = 48, },
+        },
+        east = {
+            outer = { x = 288, y = 0, width = 32, height = 240, },
+            middle = { x = 280, y = 0, width = 40, height = 240, },
+            inner = { x = 272, y = 0, width = 48, height = 240, },
+        },
+        west = {
+            outer = { x = 0, y = 0, width = 32, height = 240, },
+            middle = { x = 0, y = 0, width = 40, height = 240, },
+            inner = { x = 0, y = 0, width = 48, height = 240, },
+        },
+    }
+    if properties.pattern == 'floor_border.2' then
+        for dir, areas in pairs(directions) do
+            if intersects(areas.middle, properties) then
+                zentropy.debug(string.format("%s:  intersects with %s wall in component: %s", description, dir, fname))
+            end
+        end
+    elseif properties.pattern == 'floor_small.2' then
+        for dir, areas in pairs(directions) do
+            if intersects(areas.outer, properties) then
+                zentropy.debug(string.format("%s:  intersects with %s wall in component: %s", description, dir, fname))
+            elseif intersects(areas.inner, properties) and not intersects(areas.middle, properties) then
+                zentropy.debug(string.format("%s:  does not overlap %s wall border in component: %s", description, dir, fname))
+            end
+        end
+    end
+end
+
 local function mark_pike_tile(properties, pikes)
     if properties.pattern == 'pike' then
         local x, y = properties.x, properties.y
@@ -318,6 +358,7 @@ local function validate_map(fname, mask, tilesets, patterns)
         validate_entity_mask(fname, description, properties, sections)
         validate_entity_placeholder(fname, description, properties, placeholder_counts)
         validate_entity_alignment(fname, description, properties)
+        validate_carpet_alignment(fname, description, properties)
         mark_pike_tile(properties, pikes)
     end
     function mt.jumper(properties)
@@ -346,6 +387,7 @@ local function validate_map(fname, mask, tilesets, patterns)
         validate_entity_mask(fname, description, properties, sections)
         validate_entity_placeholder(fname, description, properties, placeholder_counts)
         validate_entity_alignment(fname, description, properties)
+        validate_carpet_alignment(fname, description, properties)
         mark_pike_tile(properties, pikes)
     end
     function mt.wall(properties)
