@@ -100,18 +100,18 @@ tile{
 tile{
   layer = 1,
   x = 72,
-  y = 184,
+  y = 168,
   width = 64,
-  height = 24,
+  height = 40,
   pattern = "hole",
 }
 
 tile{
   layer = 1,
   x = 184,
-  y = 184,
+  y = 168,
   width = 64,
-  height = 24,
+  height = 40,
   pattern = "hole",
 }
 
@@ -120,7 +120,7 @@ tile{
   x = 64,
   y = 56,
   width = 8,
-  height = 128,
+  height = 112,
   pattern = "hole.4",
 }
 
@@ -145,7 +145,7 @@ tile{
 tile{
   layer = 1,
   x = 72,
-  y = 184,
+  y = 168,
   width = 56,
   height = 8,
   pattern = "hole.1",
@@ -154,7 +154,7 @@ tile{
 tile{
   layer = 1,
   x = 192,
-  y = 184,
+  y = 168,
   width = 56,
   height = 8,
   pattern = "hole.1",
@@ -165,7 +165,7 @@ tile{
   x = 248,
   y = 56,
   width = 8,
-  height = 128,
+  height = 112,
   pattern = "hole.3",
 }
 
@@ -181,7 +181,7 @@ tile{
 tile{
   layer = 1,
   x = 64,
-  y = 184,
+  y = 168,
   width = 8,
   height = 8,
   pattern = "hole.corner_reverse.2",
@@ -199,7 +199,7 @@ tile{
 tile{
   layer = 1,
   x = 248,
-  y = 184,
+  y = 168,
   width = 8,
   height = 8,
   pattern = "hole.corner_reverse.1",
@@ -235,7 +235,7 @@ tile{
 tile{
   layer = 1,
   x = 184,
-  y = 184,
+  y = 168,
   width = 8,
   height = 8,
   pattern = "hole.corner.1",
@@ -244,7 +244,7 @@ tile{
 tile{
   layer = 1,
   x = 128,
-  y = 184,
+  y = 168,
   width = 8,
   height = 8,
   pattern = "hole.corner.2",
@@ -289,34 +289,25 @@ tile{
 tile{
   layer = 1,
   x = 184,
-  y = 192,
+  y = 176,
   width = 8,
-  height = 16,
+  height = 32,
   pattern = "hole.3",
 }
 
 tile{
   layer = 1,
   x = 128,
-  y = 192,
+  y = 176,
   width = 8,
-  height = 16,
+  height = 32,
   pattern = "hole.4",
 }
 
 tile{
   layer = 1,
   x = 272,
-  y = 144,
-  width = 16,
-  height = 32,
-  pattern = "wall_torch.4",
-}
-
-tile{
-  layer = 1,
-  x = 272,
-  y = 56,
+  y = 96,
   width = 16,
   height = 32,
   pattern = "wall_torch.4",
@@ -352,16 +343,7 @@ tile{
 tile{
   layer = 1,
   x = 32,
-  y = 64,
-  width = 16,
-  height = 32,
-  pattern = "wall_torch.3",
-}
-
-tile{
-  layer = 1,
-  x = 32,
-  y = 144,
+  y = 96,
   width = 16,
   height = 32,
   pattern = "wall_torch.3",
@@ -406,7 +388,7 @@ tile{
 tile{
   layer = 1,
   x = 136,
-  y = 96,
+  y = 88,
   width = 48,
   height = 48,
   pattern = "hole",
@@ -415,7 +397,7 @@ tile{
 tile{
   layer = 1,
   x = 144,
-  y = 96,
+  y = 88,
   width = 32,
   height = 8,
   pattern = "hole.1",
@@ -424,7 +406,7 @@ tile{
 tile{
   layer = 1,
   x = 136,
-  y = 96,
+  y = 88,
   width = 8,
   height = 8,
   pattern = "hole.corner.1",
@@ -433,7 +415,7 @@ tile{
 tile{
   layer = 1,
   x = 136,
-  y = 104,
+  y = 96,
   width = 8,
   height = 32,
   pattern = "hole.3",
@@ -442,7 +424,7 @@ tile{
 tile{
   layer = 1,
   x = 144,
-  y = 136,
+  y = 128,
   width = 32,
   height = 8,
   pattern = "hole.2",
@@ -451,7 +433,7 @@ tile{
 tile{
   layer = 1,
   x = 176,
-  y = 104,
+  y = 96,
   width = 8,
   height = 32,
   pattern = "hole.4",
@@ -460,7 +442,7 @@ tile{
 tile{
   layer = 1,
   x = 176,
-  y = 136,
+  y = 128,
   width = 8,
   height = 8,
   pattern = "hole.corner.4",
@@ -469,7 +451,7 @@ tile{
 tile{
   layer = 1,
   x = 176,
-  y = 96,
+  y = 88,
   width = 8,
   height = 8,
   pattern = "hole.corner.2",
@@ -478,70 +460,88 @@ tile{
 tile{
   layer = 1,
   x = 136,
-  y = 136,
+  y = 128,
   width = 8,
   height = 8,
   pattern = "hole.corner.3",
 }
 
+tile{
+  layer = 1,
+  x = 80,
+  y = 16,
+  width = 32,
+  height = 16,
+  pattern = "wall_torch.1",
+}
+
+tile{
+  layer = 1,
+  x = 208,
+  y = 16,
+  width = 32,
+  height = 16,
+  pattern = "wall_torch.1",
+}
+
+tile{
+  layer = 1,
+  x = 80,
+  y = 208,
+  width = 32,
+  height = 16,
+  pattern = "wall_torch.2",
+}
+
+tile{
+  layer = 1,
+  x = 208,
+  y = 208,
+  width = 32,
+  height = 16,
+  pattern = "wall_torch.2",
+}
+
 dynamic_tile{
+  name = "boss_2",
   layer = 1,
   x = 72,
-  y = 96,
+  y = 88,
+  pattern = "placeholder_boss_1",
   width = 48,
   height = 48,
-  name = "boss_2",
-  pattern = "placeholder_boss_1",
   enabled_at_start = false,
 }
 
 dynamic_tile{
+  name = "boss_3",
   layer = 1,
   x = 200,
-  y = 96,
+  y = 88,
+  pattern = "placeholder_boss_1",
   width = 48,
   height = 48,
-  name = "boss_3",
-  pattern = "placeholder_boss_1",
   enabled_at_start = false,
 }
 
 dynamic_tile{
+  name = "boss_1",
   layer = 1,
   x = 136,
   y = 32,
+  pattern = "placeholder_boss_1",
   width = 48,
   height = 48,
-  name = "boss_1",
-  pattern = "placeholder_boss_1",
   enabled_at_start = false,
 }
 
 enemy{
+  name = "agahnim",
   layer = 1,
   x = 160,
-  y = 85,
-  name = "agahnim",
+  y = 77,
   direction = 3,
   breed = "agahnim",
   savegame_variable = "room_boss",
-}
-
-tile{
-  layer = 2,
-  x = 8,
-  y = 8,
-  width = 16,
-  height = 224,
-  pattern = "ceiling",
-}
-
-tile{
-  layer = 2,
-  x = 296,
-  y = 8,
-  width = 16,
-  height = 224,
-  pattern = "ceiling",
 }
 
