@@ -545,3 +545,21 @@ enemy{
   savegame_variable = "room_boss",
 }
 
+tile{
+  layer = 2,
+  x = 8,
+  y = 8,
+  width = 16,
+  height = 224,
+  pattern = "ceiling",
+}
+
+tile{
+  layer = 2,
+  x = 296,
+  y = 8,
+  width = 16,
+  height = 224,
+  pattern = "ceiling",
+}
+
