@@ -450,24 +450,6 @@ tile{
 
 tile{
   layer = 1,
-  x = 40,
-  y = 200,
-  width = 80,
-  height = 8,
-  pattern = "door_cache_low.2",
-}
-
-tile{
-  layer = 1,
-  x = 40,
-  y = 32,
-  width = 80,
-  height = 8,
-  pattern = "door_cache_low.1",
-}
-
-tile{
-  layer = 1,
   x = 32,
   y = 160,
   width = 8,
@@ -586,7 +568,7 @@ tile{
 tile{
   layer = 1,
   x = 40,
-  y = 40,
+  y = 32,
   width = 80,
   height = 64,
   pattern = "water.transparent",
@@ -617,6 +599,24 @@ tile{
   width = 8,
   height = 32,
   pattern = "waterfall.3.bottom",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 200,
+  width = 80,
+  height = 8,
+  pattern = "door_cache_low.2",
+}
+
+tile{
+  layer = 1,
+  x = 40,
+  y = 32,
+  width = 80,
+  height = 8,
+  pattern = "door_cache_low.1",
 }
 
 wall{
