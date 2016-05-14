@@ -35,6 +35,16 @@ function Menu:on_started()
         surface:set_xy(center_x, start_y)
         start_y = start_y + math.ceil(1.5 * item_height)
     end
+
+    local zentropy = require 'lib/zentropy'
+    self.debug = sol.text_surface.create{
+        font = "la",
+        horizontal_alignment = "left",
+        vertical_alignment = "bottom",
+        text = "S:" .. zentropy.game:get_seed() .. " T:" .. zentropy.game:get_tier() .. " V:" .. zentropy.version,
+    }
+    self.debug:set_xy(3, 240)
+    self.debug:set_color{64, 64, 64}
 end
 
 function Menu:on_command_pressed(command)
@@ -67,6 +77,7 @@ function Menu:on_draw(dst_surface)
         end
         surface:draw(dst_surface)
     end
+    self.debug:draw(dst_surface)
 end
 
 function Menu:on_finished()

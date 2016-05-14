@@ -15,6 +15,7 @@ local condition_manager = require 'lib/hero_condition'
 bit32 = bit32 or bit
 
 zentropy = zentropy or {
+    version = "0.2",
     db = {
         Project = {},
         Components = Class:new{
@@ -586,6 +587,14 @@ function zentropy.Room:sign(data)
     zentropy.debug(util.ijoin("\n", data))
     self.data_messages('error', 'cannot fit sign')
     return true
+end
+
+function zentropy.game.get_tier()
+    return zentropy.game.game:get_value('tier')
+end
+
+function zentropy.game.get_seed()
+    return zentropy.game.game:get_value('seed')
 end
 
 function zentropy.game.get_items_sequence(rng)
