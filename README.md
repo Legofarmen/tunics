@@ -11,9 +11,9 @@
 
 ## Windows
  
- 1. Install the latest Solarus 1.4.x engine from [http://www.solarus-games.org/engine/download/].
+ 1. Install the latest Solarus 1.4.x engine from http://www.solarus-games.org/engine/download/.
 
- 2. Download the Source code (zip) for Tunics 0.2 from [https://github.com/Legofarmen/tunics/releases/tag/v0.2].
+ 2. Download the Source code (zip) for Tunics.
 
  3. Extract the `data` folder from the Tunics zip and put it in the directory where you installed Solarus.
  
@@ -24,18 +24,18 @@
 
  1. Install the latest Solarus 1.4.x engine from http://www.solarus-games.org/engine/download/.
 
- 2. Download the Source code (tar.gz) for Tunics 0.2 from [https://github.com/Legofarmen/tunics/releases/tag/v0.2].
+ 2. Download the Source code (tar.gz) for Tunics.
 
  3. Extract the contents of the tar.gz into your home directory.
 
- 4. Run `solarus $HOME/tunics-0.2`
+ 4. Run `solarus $HOME/tunics-master`
 
 
 ## OS X
 
- 1. Install the latest Solarus 1.4.x engine from [http://www.solarus-games.org/engine/download/].
+ 1. Install the latest Solarus 1.4.x engine from http://www.solarus-games.org/engine/download/.
 
- 2. Download the Source code (tar.gz) for Tunics 0.2 from [https://github.com/Legofarmen/tunics/releases/tag/v0.2].
+ 2. Download the Source code (tar.gz) for Tunics.
 
  3. Copy the ”data” directory from the Tunics tar.gz.
 
