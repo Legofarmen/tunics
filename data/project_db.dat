@@ -1,340 +1,339 @@
-map{ id = "rooms/room1", description = "Room1" }
-map{ id = "dungeons/dungeon1", description = "Dungeon1" }
+map{ id = "components/door/door_bigkey_n_200777_1", description = "Door bigkey n 200777 1" }
+map{ id = "components/door/door_bigkey_n_200777_5", description = "Door bigkey n 200777 5" }
+map{ id = "components/door/door_bigkey_n_200777_6", description = "Door bigkey n 200777 6" }
+map{ id = "components/door/door_bigkey_n_202777_water", description = "Door bigkey n 202777 water" }
+map{ id = "components/door/door_bigkey_n_250777_2", description = "Door bigkey n 250777 2" }
+map{ id = "components/door/door_bigkey_n_250777_3", description = "Door bigkey n 250777 3" }
+map{ id = "components/door/door_bigkey_n_250777_4", description = "Door bigkey n 250777 4" }
+map{ id = "components/door/door_bigkey_s_002000_1", description = "Door bigkey s 002000 1" }
+map{ id = "components/door/door_closed_e_010000_1", description = "Door closed e 010000 1" }
+map{ id = "components/door/door_closed_n_200000_1", description = "Door closed n 200000 1" }
+map{ id = "components/door/door_closed_s_002000_1", description = "Door closed s 002000 1" }
+map{ id = "components/door/door_closed_w_040000_1", description = "Door closed w 040000 1" }
+map{ id = "components/door/door_entrance_s_002777_1", description = "Door entrance s 002777 1" }
+map{ id = "components/door/door_entrance_s_002777_2", description = "Door entrance s 002777 2" }
+map{ id = "components/door/door_entrance_s_002777_3", description = "Door entrance s 002777 3" }
+map{ id = "components/door/door_entrance_s_002777_4", description = "Door entrance s 002777 4" }
+map{ id = "components/door/door_entrance_s_002777_5", description = "Door entrance s 002777 5" }
+map{ id = "components/door/door_entrance_s_002777_6", description = "Door entrance s 002777 6" }
+map{ id = "components/door/door_entrance_s_002777_7", description = "Door entrance s 002777 7" }
+map{ id = "components/door/door_exit_n_200000_1", description = "Door exit" }
+map{ id = "components/door/door_open_e_010000_1", description = "Door open e 010000 1" }
 map{ id = "components/door/door_open_n_200000_1", description = "Door open n 200000 1" }
 map{ id = "components/door/door_open_s_002000_1", description = "Door open s 002000 1" }
 map{ id = "components/door/door_open_w_040000_1", description = " Door open w 040000 1" }
-map{ id = "components/door/door_open_e_010000_1", description = "Door open e 010000 1" }
-map{ id = "components/door/door_bigkey_n_200777_6", description = "Door bigkey n 200777 6" }
-map{ id = "components/door/door_weakwall_n_200000_1", description = "Door weakwall n 200000 1" }
-map{ id = "components/door/door_weakwall_s_002000_1", description = "Door weakwall s 002000 1" }
-map{ id = "components/filler/filler_000400_1", description = "Filler 000400 1" }
-map{ id = "components/filler/filler_000100_1", description = "Filler 000100 1" }
-map{ id = "components/filler/filler_000004_1", description = "Filler 000004 1" }
-map{ id = "components/filler/filler_000001_1", description = "Filler 000001 1" }
-map{ id = "components/filler/filler_200700_1", description = "Filler 200700 1" }
-map{ id = "components/filler/filler_002007_1", description = "Filler 002007 1" }
-map{ id = "components/filler/filler_040444_1", description = "Filler 040444 1" }
-map{ id = "components/filler/filler_010111_1", description = "Filler 010111 1" }
-map{ id = "components/treasure_bigkey/treasure_bigkey_000777_1", description = "Treasure bigkey 000777 1" }
-map{ id = "dev/best_practice", description = "Best practice" }
-map{ id = "components/enemy/enemy_fairy_000777_1", description = "Enemy fairy 000777 1 " }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_n_200700_1", description = "Obstacle hookshot n 200700 1" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_w_040444_1", description = "Obstacle hookshot w 040444 1" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_e_010111_1", description = "Obstacle hookshot e 010111 1" }
-map{ id = "components/door/door_bigkey_s_002000_1", description = "Door bigkey s 002000 1" }
-map{ id = "components/door/door_weakwall_e_010000_1", description = "Door weakwall e 010000 1" }
-map{ id = "components/door/door_weakwall_w_040000_1", description = "Door weakwall w 040000 1" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_s_002007_1", description = "Obstacle hookshot s 002007 1" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_ne_210711_1", description = "Obstacle hookshot ne 210711 1" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_nw_240774_1", description = "Obstacle hookshot nw 240774 1" }
-map{ id = "components/filler/filler_200700_2", description = "Filler 200700 2" }
-map{ id = "components/enemy/enemy_boss_000777_1", description = "Enemy boss 000777 1" }
-map{ id = "components/filler/filler_000001_2", description = "Filler 000001 2" }
-map{ id = "components/filler/filler_000004_2", description = "Filler 000004 2" }
-map{ id = "components/filler/filler_000100_2", description = "Filler 000100 2" }
-map{ id = "components/filler/filler_000400_2", description = "Filler 000400 2" }
-map{ id = "components/filler/filler_002007_2", description = "Filler 002007 2" }
-map{ id = "components/filler/filler_010111_2", description = "Filler 010111 2" }
-map{ id = "components/filler/filler_040444_2", description = "Filler 040444 2" }
 map{ id = "components/door/door_smallkey_e_010000_1", description = "Door small key e 010000 1" }
 map{ id = "components/door/door_smallkey_n_200000_1", description = "Door small key n 200000 1" }
 map{ id = "components/door/door_smallkey_s_002000_1", description = "Door small key s 002000 1" }
 map{ id = "components/door/door_smallkey_w_040000_1", description = "Door small key w 040000 1" }
-map{ id = "rooms/intro_3", description = "Intro 3" }
+map{ id = "components/door/door_veryweakwall_e_010000_1", description = "Door veryweakwall e 010000 1" }
+map{ id = "components/door/door_veryweakwall_n_200000_1", description = "Door veryweakwall n 200000 1" }
+map{ id = "components/door/door_veryweakwall_s_002000_1", description = "Door veryweakwall s 002000 1" }
+map{ id = "components/door/door_veryweakwall_w_040000_1", description = "Door veryweakwall w 040000 1" }
+map{ id = "components/door/door_weakwall_e_010000_1", description = "Door weakwall e 010000 1" }
+map{ id = "components/door/door_weakwall_n_200000_1", description = "Door weakwall n 200000 1" }
+map{ id = "components/door/door_weakwall_s_002000_1", description = "Door weakwall s 002000 1" }
+map{ id = "components/door/door_weakwall_w_040000_1", description = "Door weakwall w 040000 1" }
+map{ id = "components/enemy/enemy_boss_000777_1", description = "Enemy boss 000777 1" }
+map{ id = "components/enemy/enemy_boss_000777_2", description = "Enemy boss 000777 2" }
+map{ id = "components/enemy/enemy_boss_000777_3", description = "Enemy boss 000777 3" }
+map{ id = "components/enemy/enemy_fairy_000777_1", description = "Enemy fairy 000777 1 " }
+map{ id = "components/enemy/enemy_fairy_000777_2", description = "Enemy fairy 000777 2" }
+map{ id = "components/filler/filler_000001_1", description = "Filler 000001 1" }
+map{ id = "components/filler/filler_000001_12", description = "Filler 000001 12" }
+map{ id = "components/filler/filler_000001_12b", description = "Filler 000001 12b" }
+map{ id = "components/filler/filler_000001_19", description = "Filler 000001 19" }
+map{ id = "components/filler/filler_000001_1b", description = "Filler 000001 1b" }
+map{ id = "components/filler/filler_000001_2", description = "Filler 000001 2" }
+map{ id = "components/filler/filler_000001_3", description = "Filler 000001 3" }
+map{ id = "components/filler/filler_000001_3b", description = "Filler 000001 3b" }
+map{ id = "components/filler/filler_000001_5", description = "Filler 000001 5" }
+map{ id = "components/filler/filler_000001_6", description = "Filler 000001 6 enemy" }
+map{ id = "components/filler/filler_000001_holestones", description = "Filler 000001 holestones" }
+map{ id = "components/filler/filler_000001_statuestones", description = "Filler 000001 statuestones" }
+map{ id = "components/filler/filler_000001_stones", description = "Filler 000001 stones" }
+map{ id = "components/filler/filler_000001_torchstones", description = "Filler 000001 torchstones" }
+map{ id = "components/filler/filler_000004_1", description = "Filler 000004 1" }
+map{ id = "components/filler/filler_000004_12", description = "Filler 000004 12" }
+map{ id = "components/filler/filler_000004_12b", description = "Filler 000004 12b" }
+map{ id = "components/filler/filler_000004_19", description = "Filler 000004 19" }
+map{ id = "components/filler/filler_000004_1b", description = "Filler 000004 1b" }
+map{ id = "components/filler/filler_000004_2", description = "Filler 000004 2" }
+map{ id = "components/filler/filler_000004_3", description = "Filler 000004 3" }
+map{ id = "components/filler/filler_000004_3b", description = "Filler 000004 3b" }
+map{ id = "components/filler/filler_000004_5", description = "Filler 000004 5" }
+map{ id = "components/filler/filler_000004_6", description = "Filler 000004 6 enemy" }
+map{ id = "components/filler/filler_000004_holestones", description = "Filler 000004 holestones" }
+map{ id = "components/filler/filler_000004_statuestones", description = "Filler 000004 statuestones" }
+map{ id = "components/filler/filler_000004_stones", description = "Filler 000004 stones" }
+map{ id = "components/filler/filler_000004_torchstone", description = "Filler 000004 torchstone" }
+map{ id = "components/filler/filler_000007_1", description = "Filler 000007 1" }
+map{ id = "components/filler/filler_000007_barrierstones", description = "Filler 000007 barrierstones" }
+map{ id = "components/filler/filler_000020_1", description = "Filler 000020 1 enemy" }
+map{ id = "components/filler/filler_000100_1", description = "Filler 000100 1" }
+map{ id = "components/filler/filler_000100_12", description = "Filler 000100 12" }
+map{ id = "components/filler/filler_000100_12b", description = "Filler 000100 12b" }
+map{ id = "components/filler/filler_000100_19", description = "Filler 000100 19" }
+map{ id = "components/filler/filler_000100_1b", description = "Filler 000100 1b" }
+map{ id = "components/filler/filler_000100_2", description = "Filler 000100 2" }
+map{ id = "components/filler/filler_000100_3", description = "Filler 000100 3" }
+map{ id = "components/filler/filler_000100_3b", description = "Filler 000100 3b" }
+map{ id = "components/filler/filler_000100_5", description = "Filler 000100 5" }
+map{ id = "components/filler/filler_000100_6", description = "Filler 000100 6 empty" }
+map{ id = "components/filler/filler_000100_holestones", description = "Filler 000100 holestones" }
+map{ id = "components/filler/filler_000100_statuestones", description = "Filler 000100 statuestones" }
+map{ id = "components/filler/filler_000100_stones", description = "Filler 000100 stones" }
+map{ id = "components/filler/filler_000100_torchstones", description = "Filler 000100 torchstones" }
+map{ id = "components/filler/filler_000111_1", description = "Filler 000111 1 spikes" }
+map{ id = "components/filler/filler_000111_barrierstones", description = "Filler 000111 barrierstones" }
+map{ id = "components/filler/filler_000111_carpetstones", description = "Filler 000111 carpetstones" }
+map{ id = "components/filler/filler_000400_1", description = "Filler 000400 1" }
+map{ id = "components/filler/filler_000400_12", description = "Filler 000400 12" }
+map{ id = "components/filler/filler_000400_12b", description = "Filler 000400 12b" }
+map{ id = "components/filler/filler_000400_19", description = "Filler 000400 19" }
+map{ id = "components/filler/filler_000400_1b", description = "Filler 000400 1b" }
+map{ id = "components/filler/filler_000400_2", description = "Filler 000400 2" }
+map{ id = "components/filler/filler_000400_3", description = "Filler 000400 3" }
+map{ id = "components/filler/filler_000400_3b", description = "Filler 000400 3b" }
+map{ id = "components/filler/filler_000400_5", description = "Filler 000400 5" }
+map{ id = "components/filler/filler_000400_6", description = "Filler 000400 6 empty" }
+map{ id = "components/filler/filler_000400_holestones", description = "Filler 000400 holestones" }
+map{ id = "components/filler/filler_000400_statuestones", description = "Filler 000400 statuestones" }
+map{ id = "components/filler/filler_000400_stones", description = "Filler 000400 stones" }
+map{ id = "components/filler/filler_000400_torchstones", description = "Filler 000400 torchstones" }
+map{ id = "components/filler/filler_000444_1", description = "Filler 000444 1 spikes" }
+map{ id = "components/filler/filler_000444_barrierstones", description = "Filler 000444 barrierstones" }
+map{ id = "components/filler/filler_000444_carpetstones", description = "Filler 000444 carpetstones" }
+map{ id = "components/filler/filler_000700_1", description = "Filler 000700 1" }
+map{ id = "components/filler/filler_000700_barrierstones", description = "Filler 000700 barrierstones" }
+map{ id = "components/filler/filler_000777_10", description = "Filler 000777 10" }
+map{ id = "components/filler/filler_000777_3", description = "Filler 000777 3" }
+map{ id = "components/filler/filler_000777_4", description = "Filler 000777 4" }
+map{ id = "components/filler/filler_000777_6", description = "Filler 000777 6 Barriers" }
+map{ id = "components/filler/filler_000777_7", description = "Filler 000777 7" }
+map{ id = "components/filler/filler_000777_8", description = "Filler 000777 8" }
+map{ id = "components/filler/filler_000777_9", description = "Filler 000777 9" }
+map{ id = "components/filler/filler_002007_1", description = "Filler 002007 1" }
+map{ id = "components/filler/filler_002007_2", description = "Filler 002007 2" }
+map{ id = "components/filler/filler_002007_3", description = "Filler 002007 3" }
+map{ id = "components/filler/filler_002007_4", description = "Filler 002007 4" }
+map{ id = "components/filler/filler_010111_1", description = "Filler 010111 1" }
+map{ id = "components/filler/filler_010111_2", description = "Filler 010111 2" }
+map{ id = "components/filler/filler_010111_3", description = "Filler 010111 3" }
+map{ id = "components/filler/filler_010111_4", description = "Filler 010111 4" }
+map{ id = "components/filler/filler_012117_1", description = "Filler 012117 1 water corner" }
+map{ id = "components/filler/filler_012117_2", description = "Filler 012117 2" }
+map{ id = "components/filler/filler_040444_1", description = "Filler 040444 1" }
+map{ id = "components/filler/filler_040444_2", description = "Filler 040444 2" }
+map{ id = "components/filler/filler_040444_3", description = "Filler 040444 3" }
+map{ id = "components/filler/filler_040444_4", description = "Filler 040444 4" }
+map{ id = "components/filler/filler_042447_1", description = "Filler 042447 1 water corner" }
+map{ id = "components/filler/filler_042447_2", description = "Filler 042447 2" }
+map{ id = "components/filler/filler_050777_1", description = "Filler 050777 1" }
+map{ id = "components/filler/filler_050777_2", description = "Filler 050777 2 Rats room" }
+map{ id = "components/filler/filler_050777_6", description = "Filler 050777 6 Pikes and statues" }
+map{ id = "components/filler/filler_200700_1", description = "Filler 200700 1" }
+map{ id = "components/filler/filler_200700_2", description = "Filler 200700 2" }
+map{ id = "components/filler/filler_200700_3", description = "Filler 200700 3" }
+map{ id = "components/filler/filler_200700_4", description = "Filler 200700 4" }
+map{ id = "components/filler/filler_202777_1", description = "Filler 202777 1" }
+map{ id = "components/filler/filler_202777_2", description = "Filler 202777 2" }
+map{ id = "components/filler/filler_202777_4", description = "Filler 202777 4 pikes" }
+map{ id = "components/filler/filler_210711_1", description = "Filler 210711 1 water corner" }
+map{ id = "components/filler/filler_210711_4", description = "Filler 210711 2" }
+map{ id = "components/filler/filler_240744_1", description = "Filler 240744 1 water corner" }
+map{ id = "components/filler/filler_240744_4", description = "Filler 240744 2" }
 map{ id = "components/floor/floor_1", description = "Floor 1" }
 map{ id = "components/floor/floor_2", description = "Floor 2" }
 map{ id = "components/floor/floor_3", description = "Floor 3" }
 map{ id = "components/floor/floor_4", description = "Floor 4" }
 map{ id = "components/floor/floor_5", description = "Floor 5" }
 map{ id = "components/floor/floor_6", description = "Floor 6" }
-map{ id = "rooms/intro_2", description = "Intro 2" }
-map{ id = "rooms/cutscene", description = "Cutscene" }
-map{ id = "rooms/title", description = "Title" }
-map{ id = "components/filler/filler_200700_4", description = "Filler 200700 4" }
-map{ id = "components/filler/filler_040444_3", description = "Filler 040444 3" }
-map{ id = "components/filler/filler_010111_4", description = "Filler 010111 4" }
-map{ id = "components/filler/filler_002007_3", description = "Filler 002007 3" }
-map{ id = "dev/tileset_test", description = "Tileset test" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_ew_050777_2", description = "Obstacle hookshot ew 050777 2" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_ns_202777_1", description = "Obstacle hookshot ns 202777 1" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_ew_050777_1", description = "Obstacle hookshot ew 050777 1" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_n_200770_1", description = "Obstacle hookshot n 200770 1" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_s_002077_1", description = "Obstacle hookshot s 002077 1" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_n_200777_1", description = "Obstacle hookshot n 200777 1" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_n_250777_1", description = "Obstacle hookshot n 250777 1" }
+map{ id = "components/obstacle_bow/obstacle_bow_nsew_000111_1", description = "Obstacle bow nsew 000111 1" }
+map{ id = "components/obstacle_bow/obstacle_bow_nsew_000444_1", description = "Obstacle bow nsew 000444 1" }
+map{ id = "components/obstacle_bow/obstacle_bow_nsew_000700_1", description = "Obstacle bow nsew 000700 1" }
+map{ id = "components/obstacle_bow/obstacle_bow_nsew_000777_lampbow", description = "Obstacle bow nsew 000777 lampbow" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_e_010331_1", description = "Obstacle flippers e 010331 1" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_e_212777_1", description = "Obstacle flippers e 212777 1" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_ew_050777_1", description = "Obstacle flippers ew 050777 1" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_n_200700_2", description = "Obstacle flippers n 200700 2" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_ne_210777_1", description = "Obstacle flippers ne 210777 1" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_new_250477_1", description = "Obstacle flipperst new 250477 1" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_ns_202777_2", description = "Obstacle flippers ns 202777 2" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_nse_212777_1", description = "Obstacle flippers nse 212777 1" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_nsw_242777_1", description = "Obstacle flippers nsw 242777 1" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_nw_240777_1", description = "Obstacle flippers nw 240777 1" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_s_002477_1", description = "Obstacle flippers s 002477 1" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_se_012777_1", description = "Obstacle flippers se 012777 1" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_sew_052770_1", description = "Obstacle flippers sew 052770 1" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_sw_012777_1", description = "Obstacle flippers sw 012777 1" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_w_040666_1", description = "Obstacle flippers w 040666 1" }
+map{ id = "components/obstacle_flippers/obstacle_flippers_w_242777_1", description = "Obstacle flippers w 242777 1" }
+map{ id = "components/obstacle_glove/obstacle_glove_e_010111_1", description = "Obstacle glove e 010111 1" }
+map{ id = "components/obstacle_glove/obstacle_glove_e_010333_2", description = "Obstacle glove e 010333 2" }
+map{ id = "components/obstacle_glove/obstacle_glove_e_010333_3", description = "Obstacle glove e 010333 3" }
+map{ id = "components/obstacle_glove/obstacle_glove_ew_050777_3", description = "Obstacle glove ew 050777 3" }
+map{ id = "components/obstacle_glove/obstacle_glove_ew_050777_6", description = "Obstacle glove ew 050777 6" }
+map{ id = "components/obstacle_glove/obstacle_glove_n_200700_1", description = "Obstacle glove n 200700 1" }
+map{ id = "components/obstacle_glove/obstacle_glove_n_200700_2", description = "Obstacle glove n 200700 2" }
+map{ id = "components/obstacle_glove/obstacle_glove_n_200700_7", description = "Obstacle glove n 200700 7" }
+map{ id = "components/obstacle_glove/obstacle_glove_n_200770_3", description = "Obstacle glove n 200770 3" }
+map{ id = "components/obstacle_glove/obstacle_glove_ne_210731_4", description = "Obstacle glove ne 210731 4" }
+map{ id = "components/obstacle_glove/obstacle_glove_ne_210777_6", description = "Obstacle glove ne 210777 6" }
+map{ id = "components/obstacle_glove/obstacle_glove_new_250777_5", description = "Obstacle glove new 250777 5" }
+map{ id = "components/obstacle_glove/obstacle_glove_new_250777_8", description = "Obstacle glove new 250777 8" }
+map{ id = "components/obstacle_glove/obstacle_glove_ns_202777_3", description = "Obstacle glove ns 202777 3" }
+map{ id = "components/obstacle_glove/obstacle_glove_ns_202777_6", description = "Obstacle glove ns 202777 6" }
+map{ id = "components/obstacle_glove/obstacle_glove_nse_212777_1", description = "Obstacle glove nse 212777 1" }
+map{ id = "components/obstacle_glove/obstacle_glove_nsw_242777_1", description = "Obstacle glove nsw 242777 1" }
+map{ id = "components/obstacle_glove/obstacle_glove_nw_240777_4", description = "Obstacle glove nw 240777 4" }
+map{ id = "components/obstacle_glove/obstacle_glove_nw_240777_6", description = "Obstacle glove nw 240777 6" }
+map{ id = "components/obstacle_glove/obstacle_glove_s_002007_1", description = "Obstacle glove s 002007 1" }
+map{ id = "components/obstacle_glove/obstacle_glove_s_002007_7", description = "Obstacle glove s 002007 7" }
+map{ id = "components/obstacle_glove/obstacle_glove_s_002077_2", description = "Obstacle glove s 002077 2" }
+map{ id = "components/obstacle_glove/obstacle_glove_s_002077_3", description = "Obstacle glove s 002077 3" }
+map{ id = "components/obstacle_glove/obstacle_glove_se_012337_6", description = "Obstacle glove se 012337 6" }
+map{ id = "components/obstacle_glove/obstacle_glove_se_012777_4", description = "Obstacle glove se 012777 4" }
+map{ id = "components/obstacle_glove/obstacle_glove_sew_052777_5", description = "Obstacle glove sew 052777 5" }
+map{ id = "components/obstacle_glove/obstacle_glove_sew_052777_8", description = "Obstacle glove sew 052777 8" }
+map{ id = "components/obstacle_glove/obstacle_glove_sw_042777_4", description = "Obstacle glove sw 042777 4" }
+map{ id = "components/obstacle_glove/obstacle_glove_sw_042777_6", description = "Obstacle glove sw 042777 6" }
+map{ id = "components/obstacle_glove/obstacle_glove_w_040444_1", description = "Obstacle glove w 040444 1" }
+map{ id = "components/obstacle_glove/obstacle_glove_w_040666_2", description = "Obstacle glove w 040666 2" }
+map{ id = "components/obstacle_glove/obstacle_glove_w_040666_3", description = "Obstacle glove w 040666 3" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_e_010111_1", description = "Obstacle hookshot e 010111 1" }
 map{ id = "components/obstacle_hookshot/obstacle_hookshot_e_010333_1", description = "Obstacle hookshot e 010333 1" }
 map{ id = "components/obstacle_hookshot/obstacle_hookshot_e_212333_1", description = "Obstacle hookshot e 212333 1" }
-map{ id = "components/treasure_open/treasure_open_200700_1", description = "Treasure open 200700 1" }
-map{ id = "components/treasure_open/treasure_open_000111_1", description = "Treasure open 000111 1" }
-map{ id = "components/treasure_open/treasure_open_200770_1", description = "Treasure open 200770 1" }
-map{ id = "components/treasure_open/treasure_open_250777_1", description = "Treasure open 250777 1" }
-map{ id = "components/door/door_bigkey_n_200777_1", description = "Door bigkey n 200777 1" }
-map{ id = "dev/puzzles", description = "Puzzles" }
-map{ id = "components/treasure_open/treasure_open_000444_1", description = "Treasure open 000444 1" }
-map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000700_1", description = "Puzzle 000700 1" }
-map{ id = "dev/obstacles", description = "Obstacles" }
-map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000600_1", description = "Puzzle 000600 1" }
-map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000300_1", description = "Puzzle 000300 1 " }
-map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000111_2", description = "Puzzle 000111 2" }
-map{ id = "components/treasure_open/treasure_open_000770_1", description = "Treasure open 000770 1" }
-map{ id = "components/treasure_open/treasure_open_000077_1", description = "Treasure open 000077 1" }
-map{ id = "components/treasure_open/treasure_open_200770_2", description = "Treasure open 200770 2" }
-map{ id = "components/enemy/enemy_fairy_000777_2", description = "Enemy fairy 000777 2" }
-map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000777_1", description = "Puzzle 000777 1" }
-map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000006_1", description = "Puzzle 000006 1" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_ew_050777_1", description = "Obstacle hookshot ew 050777 1" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_ew_050777_2", description = "Obstacle hookshot ew 050777 2" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_n_200700_1", description = "Obstacle hookshot n 200700 1" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_n_200770_1", description = "Obstacle hookshot n 200770 1" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_n_200777_1", description = "Obstacle hookshot n 200777 1" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_n_250777_1", description = "Obstacle hookshot n 250777 1" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_ne_210711_1", description = "Obstacle hookshot ne 210711 1" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_ne_210777_1", description = "Obstacle hookshot ne 210777 1" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_new_250777", description = "Obstacle hookshot new 250777" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_ns_202777_1", description = "Obstacle hookshot ns 202777 1" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_nse_212777_1", description = "Obstacle hookshot nse 212777 1" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_nsw_242777_1", description = "Obstacle hookshot nsw 242777 1" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_nw_240774_1", description = "Obstacle hookshot nw 240774 1" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_nw_240777_1", description = "Obstacle hookshot nw 240777 1" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_s_002007_1", description = "Obstacle hookshot s 002007 1" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_s_002077_1", description = "Obstacle hookshot s 002077 1" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_se_012744_1", description = "Obstacle hookshot se 012744 1" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_sew_052777_1", description = "Obstacle hookshot sew 052777 1" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_sw_042777_1", description = "Obstacle hookshot sw 042777 1" }
+map{ id = "components/obstacle_hookshot/obstacle_hookshot_w_040444_1", description = "Obstacle hookshot w 040444 1" }
+map{ id = "components/obstacle_lamp/obstacle_lamp_nsew_000007_1", description = "Obstacle lamp nsew 000007 1" }
+map{ id = "components/obstacle_lamp/obstacle_lamp_nsew_000111_1", description = "Obstacle lamp nsew 000111 1" }
+map{ id = "components/obstacle_lamp/obstacle_lamp_nsew_000444_1", description = "Obstacle lamp nsew 000444 1" }
+map{ id = "components/obstacle_lamp/obstacle_lamp_nsew_000700_1", description = "Obstacle lamp nsew 000700 1" }
+map{ id = "components/obstacle_lamp/obstacle_lamp_nsew_000777_lampbow", description = "Obstacle lamp nsew 000777 lampbow" }
+map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000001_2", description = "Puzzle 000001 2" }
 map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000003_1", description = "Puzzle 000003 1 " }
-map{ id = "components/obstacle_weakwall/obstacle_weakwall_n_000400_1", description = "Obstacle weakwall n 000400 1" }
-map{ id = "components/obstacle_weakwall/obstacle_weakwall_ne_210100_1", description = "Obstacle weakwall ne 210100 1" }
-map{ id = "components/obstacle_weakwall/obstacle_weakwall_nw_240400_1", description = "Obstacle weakwall nw 240400 1" }
-map{ id = "components/obstacle_weakwall/obstacle_weakwall_new_250400_1", description = "Obstacle weakwall new 250400 1" }
-map{ id = "components/obstacle_weakwall/obstacle_weakwall_s_000004_1", description = "Obstacle weakwall s 000004 1" }
-map{ id = "components/obstacle_weakwall/obstacle_weakwall_se_000001_1", description = "Obstacle weakwall se 000001 1" }
-map{ id = "components/obstacle_weakwall/obstacle_weakwall_sw_042004_1", description = "Obstacle weakwall sw 042004 1" }
-map{ id = "components/obstacle_weakwall/obstacle_weakwall_sew_052004_1", description = "Obstacle weakwall sew 052004 1" }
-map{ id = "components/obstacle_weakwall/obstacle_weakwall_nse_212001_1", description = "Obstacle weakwall nse 212001 1" }
-map{ id = "components/obstacle_weakwall/obstacle_weakwall_nsw_242004_1", description = "Obstacle weakwall nsw 242004 1" }
-map{ id = "components/obstacle_weakwall/obstacle_weakwall_ew_050400_1", description = "Obstacle weakwall ew 050400 1" }
-map{ id = "components/obstacle_weakwall/obstacle_weakwall_e_000100_1", description = "Obstacle weakwall e 000100 1" }
-map{ id = "components/obstacle_weakwall/obstacle_weakwall_w_000004_1", description = "Obstacle weakwall w 000004 1" }
-map{ id = "components/filler/filler_202777_1", description = "Filler 202777 1" }
+map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000004_2", description = "Puzzle 000004 2" }
+map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000006_1", description = "Puzzle 000006 1" }
+map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000007_1", description = "Puzzle 000007 1" }
+map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000007_2", description = "Puzzle 000007 2w" }
+map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000007_3", description = "Puzzle 000007 3 pike" }
+map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000007_4", description = "Puzzle 000007 4 pike" }
+map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000077_1", description = "Puzzle 000077 1" }
+map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000100_2", description = "Puzzle 000100 2" }
+map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000111_1", description = "Puzzle 000111 1w" }
+map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000111_2", description = "Puzzle 000111 2" }
+map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000300_1", description = "Puzzle 000300 1 " }
+map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000333_1", description = "Puzzle 000333 1" }
+map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000400_2", description = "Puzzle 000400 2" }
+map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000444_1", description = "Puzzle 000444 1w" }
+map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000444_2", description = "Puzzle 000444 2" }
+map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000600_1", description = "Puzzle 000600 1" }
+map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000666_1", description = "Puzzle 000666 1" }
+map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000700_1", description = "Puzzle 000700 1" }
+map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000700_2", description = "Puzzle 000700 2" }
+map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000700_3", description = "Puzzle 000700 3w" }
+map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000700_4", description = "Puzzle 000700 4 pike" }
+map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000700_5", description = "Puzzle 000700 5 pike" }
+map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000770_1", description = "Puzzle 000770 1" }
+map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000777_1", description = "Puzzle 000777 1" }
+map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000777_2", description = "Puzzle 000777 2" }
+map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000777_3", description = "Puzzle 000777 3" }
+map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000777_4", description = "Puzzle 000777 4" }
+map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000777_5", description = "Puzzle 000777 5" }
+map{ id = "components/obstacle_puzzle/obstacle_puzzle_sw_210777_1", description = "Puzzle 210777 1" }
 map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_e_000111_1", description = "obstacle_veryweakwall_e_000111_1" }
 map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_ew_000444_1", description = "obstacle_veryweakwall_ew_000444_1" }
 map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_n_000700_1", description = "obstacle_veryweakwall_n_000700_1" }
 map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_ne_000700_1", description = "obstacle_veryweakwall_ne_000700_1" }
 map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_new_000700_1", description = "obstacle_veryweakwall_new_000700_1" }
 map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_ns_000700_1", description = "obstacle_veryweakwall_ns_000700_1" }
-map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_s_000007_1", description = "obstacle_veryweakwall_s_000007_1" }
-map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_w_000444_1", description = "obstacle_veryweakwall_w_000444_1" }
-map{ id = "components/door/door_veryweakwall_e_010000_1", description = "Door veryweakwall e 010000 1" }
-map{ id = "components/door/door_veryweakwall_w_040000_1", description = "Door veryweakwall w 040000 1" }
-map{ id = "components/door/door_veryweakwall_n_200000_1", description = "Door veryweakwall n 200000 1" }
-map{ id = "components/door/door_veryweakwall_s_002000_1", description = "Door veryweakwall s 002000 1" }
-map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_sw_000007_1", description = "obstacle_veryweakwall_sw_000007_1" }
-map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_sew_000007_1", description = "obstacle_veryweakwall_sew_000007_1" }
-map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_se_000007_1", description = "obstacle_veryweakwall_se_000007_1" }
-map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_nw_000700_1", description = "obstacle_veryweakwall_nw_000700_1" }
-map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_nsw_000444_1", description = "obstacle_veryweakwall_nsw_000444_1" }
 map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_nse_000111_1", description = "obstacle_veryweakwall_nse_000111_1" }
-map{ id = "components/door/door_closed_n_200000_1", description = "Door closed n 200000 1" }
-map{ id = "components/door/door_closed_s_002000_1", description = "Door closed s 002000 1" }
-map{ id = "components/door/door_closed_w_040000_1", description = "Door closed w 040000 1" }
-map{ id = "components/door/door_closed_e_010000_1", description = "Door closed e 010000 1" }
-map{ id = "components/obstacle_lamp/obstacle_lamp_nsew_000007_1", description = "Obstacle lamp nsew 000007 1" }
-map{ id = "components/obstacle_lamp/obstacle_lamp_nsew_000700_1", description = "Obstacle lamp nsew 000700 1" }
-map{ id = "components/obstacle_lamp/obstacle_lamp_nsew_000111_1", description = "Obstacle lamp nsew 000111 1" }
-map{ id = "components/obstacle_lamp/obstacle_lamp_nsew_000444_1", description = "Obstacle lamp nsew 000444 1" }
-map{ id = "components/obstacle_bow/obstacle_bow_nsew_000111_1", description = "Obstacle bow nsew 000111 1" }
-map{ id = "components/obstacle_bow/obstacle_bow_nsew_000700_1", description = "Obstacle bow nsew 000700 1" }
-map{ id = "components/obstacle_bow/obstacle_bow_nsew_000444_1", description = "Obstacle bow nsew 000444 1" }
-map{ id = "components/filler/filler_000001_3", description = "Filler 000001 3" }
-map{ id = "components/filler/filler_000004_3", description = "Filler 000004 3" }
-map{ id = "components/filler/filler_000007_1", description = "Filler 000007 1" }
-map{ id = "components/filler/filler_000100_3", description = "Filler 000100 3" }
-map{ id = "components/filler/filler_000400_3", description = "Filler 000400 3" }
-map{ id = "components/filler/filler_000700_1", description = "Filler 000700 1" }
-map{ id = "components/filler/filler_000777_7", description = "Filler 000777 7" }
-map{ id = "components/filler/filler_000777_8", description = "Filler 000777 8" }
-map{ id = "components/filler/filler_000777_9", description = "Filler 000777 9" }
-map{ id = "components/filler/filler_000777_3", description = "Filler 000777 3" }
-map{ id = "components/filler/filler_210711_1", description = "Filler 210711 1 water corner" }
-map{ id = "components/filler/filler_042447_1", description = "Filler 042447 1 water corner" }
-map{ id = "components/filler/filler_012117_1", description = "Filler 012117 1 water corner" }
-map{ id = "components/filler/filler_210711_4", description = "Filler 210711 2" }
-map{ id = "components/filler/filler_042447_2", description = "Filler 042447 2" }
-map{ id = "components/filler/filler_012117_2", description = "Filler 012117 2" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_sw_042777_1", description = "Obstacle hookshot sw 042777 1" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_se_012744_1", description = "Obstacle hookshot se 012744 1" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_nse_212777_1", description = "Obstacle hookshot nse 212777 1" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_nsw_242777_1", description = "Obstacle hookshot nsw 242777 1" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_new_250777", description = "Obstacle hookshot new 250777" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_sew_052777_1", description = "Obstacle hookshot sew 052777 1" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_nw_240777_1", description = "Obstacle hookshot nw 240777 1" }
-map{ id = "components/obstacle_hookshot/obstacle_hookshot_ne_210777_1", description = "Obstacle hookshot ne 210777 1" }
-map{ id = "components/filler/filler_000777_4", description = "Filler 000777 4" }
-map{ id = "rooms/intro_1", description = "Intro 1" }
-map{ id = "rooms/flippers_example", description = "Flippers example" }
-map{ id = "components/obstacle_flippers/obstacle_flippers_e_010331_1", description = "Obstacle flippers e 010331 1" }
-map{ id = "components/obstacle_flippers/obstacle_flippers_s_002477_1", description = "Obstacle flippers s 002477 1" }
-map{ id = "components/obstacle_flippers/obstacle_flippers_w_040666_1", description = "Obstacle flippers w 040666 1" }
-map{ id = "components/obstacle_flippers/obstacle_flippers_ew_050777_1", description = "Obstacle flippers ew 050777 1" }
-map{ id = "components/obstacle_flippers/obstacle_flippers_ne_210777_1", description = "Obstacle flippers ne 210777 1" }
-map{ id = "components/obstacle_flippers/obstacle_flippers_nw_240777_1", description = "Obstacle flippers nw 240777 1" }
-map{ id = "components/obstacle_flippers/obstacle_flippers_se_012777_1", description = "Obstacle flippers se 012777 1" }
-map{ id = "components/obstacle_flippers/obstacle_flippers_sw_012777_1", description = "Obstacle flippers sw 012777 1" }
-map{ id = "components/obstacle_flippers/obstacle_flippers_nsw_242777_1", description = "Obstacle flippers nsw 242777 1" }
-map{ id = "components/obstacle_flippers/obstacle_flippers_nse_212777_1", description = "Obstacle flippers nse 212777 1" }
-map{ id = "components/obstacle_flippers/obstacle_flippers_new_250477_1", description = "Obstacle flipperst new 250477 1" }
-map{ id = "rooms/game_over", description = "Game over" }
-map{ id = "components/filler/filler_240744_1", description = "Filler 240744 1 water corner" }
-map{ id = "components/filler/filler_240744_4", description = "Filler 240744 2" }
-map{ id = "components/filler/filler_000400_5", description = "Filler 000400 5" }
-map{ id = "components/filler/filler_000100_5", description = "Filler 000100 5" }
-map{ id = "components/filler/filler_000004_5", description = "Filler 000004 5" }
-map{ id = "components/obstacle_glove/obstacle_glove_n_200700_2", description = "Obstacle glove n 200700 2" }
-map{ id = "components/obstacle_glove/obstacle_glove_ew_050777_3", description = "Obstacle glove ew 050777 3" }
-map{ id = "components/obstacle_glove/obstacle_glove_ne_210731_4", description = "Obstacle glove ne 210731 4" }
-map{ id = "components/obstacle_glove/obstacle_glove_new_250777_5", description = "Obstacle glove new 250777 5" }
-map{ id = "components/obstacle_glove/obstacle_glove_ns_202777_6", description = "Obstacle glove ns 202777 6" }
-map{ id = "components/obstacle_glove/obstacle_glove_nse_212777_1", description = "Obstacle glove nse 212777 1" }
-map{ id = "components/obstacle_glove/obstacle_glove_e_010111_1", description = "Obstacle glove e 010111 1" }
-map{ id = "components/obstacle_glove/obstacle_glove_nsw_242777_1", description = "Obstacle glove nsw 242777 1" }
-map{ id = "components/obstacle_glove/obstacle_glove_nw_240777_4", description = "Obstacle glove nw 240777 4" }
-map{ id = "components/obstacle_glove/obstacle_glove_s_002007_7", description = "Obstacle glove s 002007 7" }
-map{ id = "components/obstacle_glove/obstacle_glove_se_012777_4", description = "Obstacle glove se 012777 4" }
-map{ id = "components/obstacle_glove/obstacle_glove_sew_052777_8", description = "Obstacle glove sew 052777 8" }
-map{ id = "components/obstacle_glove/obstacle_glove_sw_042777_4", description = "Obstacle glove sw 042777 4" }
-map{ id = "components/obstacle_glove/obstacle_glove_w_040444_1", description = "Obstacle glove w 040444 1" }
-map{ id = "components/obstacle_glove/obstacle_glove_e_010333_3", description = "Obstacle glove e 010333 3" }
-map{ id = "components/obstacle_glove/obstacle_glove_n_200770_3", description = "Obstacle glove n 200770 3" }
-map{ id = "components/obstacle_glove/obstacle_glove_s_002077_3", description = "Obstacle glove s 002077 3" }
-map{ id = "components/obstacle_glove/obstacle_glove_w_040666_3", description = "Obstacle glove w 040666 3" }
-map{ id = "components/obstacle_glove/obstacle_glove_e_010333_2", description = "Obstacle glove e 010333 2" }
-map{ id = "components/obstacle_glove/obstacle_glove_s_002077_2", description = "Obstacle glove s 002077 2" }
-map{ id = "components/obstacle_glove/obstacle_glove_w_040666_2", description = "Obstacle glove w 040666 2" }
-map{ id = "components/obstacle_glove/obstacle_glove_n_200700_1", description = "Obstacle glove n 200700 1" }
-map{ id = "components/obstacle_glove/obstacle_glove_s_002007_1", description = "Obstacle glove s 002007 1" }
-map{ id = "components/obstacle_glove/obstacle_glove_ns_202777_3", description = "Obstacle glove ns 202777 3" }
-map{ id = "components/obstacle_glove/obstacle_glove_sew_052777_5", description = "Obstacle glove sew 052777 5" }
-map{ id = "components/obstacle_glove/obstacle_glove_ew_050777_6", description = "Obstacle glove ew 050777 6" }
-map{ id = "components/obstacle_glove/obstacle_glove_ne_210777_6", description = "Obstacle glove ne 210777 6" }
-map{ id = "components/obstacle_glove/obstacle_glove_nw_240777_6", description = "Obstacle glove nw 240777 6" }
-map{ id = "components/obstacle_glove/obstacle_glove_se_012337_6", description = "Obstacle glove se 012337 6" }
-map{ id = "components/obstacle_glove/obstacle_glove_sw_042777_6", description = "Obstacle glove sw 042777 6" }
-map{ id = "components/obstacle_glove/obstacle_glove_new_250777_8", description = "Obstacle glove new 250777 8" }
-map{ id = "components/obstacle_glove/obstacle_glove_n_200700_7", description = "Obstacle glove n 200700 7" }
-map{ id = "components/obstacle_flippers/obstacle_flippers_sew_052770_1", description = "Obstacle flippers sew 052770 1" }
-map{ id = "components/filler/filler_050777_1", description = "Filler 050777 1" }
-map{ id = "components/filler/filler_202777_2", description = "Filler 202777 2" }
-map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000007_1", description = "Puzzle 000007 1" }
-map{ id = "components/treasure_open/treasure_open_000777_1", description = "Treasure open 000777 1" }
-map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000777_2", description = "Puzzle 000777 2" }
-map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000700_2", description = "Puzzle 000700 2" }
-map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000777_3", description = "Puzzle 000777 3" }
-map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000777_4", description = "Puzzle 000777 4" }
-map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000700_4", description = "Puzzle 000700 4 pike" }
-map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000700_5", description = "Puzzle 000700 5 pike" }
-map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000007_4", description = "Puzzle 000007 4 pike" }
-map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000007_3", description = "Puzzle 000007 3 pike" }
-map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000444_1", description = "Puzzle 000444 1w" }
-map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000007_2", description = "Puzzle 000007 2w" }
-map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000700_3", description = "Puzzle 000700 3w" }
-map{ id = "rooms/game_complete_1", description = "Game complete 1" }
-map{ id = "rooms/game_complete_2", description = "Game complete 2" }
-map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000100_2", description = "Puzzle 000100 2" }
-map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000001_2", description = "Puzzle 000001 2" }
-map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000004_2", description = "Puzzle 000004 2" }
-map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000400_2", description = "Puzzle 000400 2" }
-map{ id = "components/filler/filler_000001_5", description = "Filler 000001 5" }
-map{ id = "components/filler/filler_000400_6", description = "Filler 000400 6 empty" }
-map{ id = "components/filler/filler_000100_6", description = "Filler 000100 6 empty" }
-map{ id = "components/filler/filler_000001_6", description = "Filler 000001 6 enemy" }
-map{ id = "components/filler/filler_000004_6", description = "Filler 000004 6 enemy" }
-map{ id = "components/treasure_open/treasure_open_000777_2", description = "Treasure open 000777 2" }
-map{ id = "components/treasure_open/treasure_open_000777_3", description = "Treasure open 000777 3" }
-map{ id = "components/filler/filler_050777_2", description = "Filler 050777 2 Rats room" }
-map{ id = "components/filler/filler_000777_6", description = "Filler 000777 6 Barriers" }
-map{ id = "components/filler/filler_000020_1", description = "Filler 000020 1 enemy" }
-map{ id = "components/obstacle_flippers/obstacle_flippers_e_212777_1", description = "Obstacle flippers e 212777 1" }
-map{ id = "components/obstacle_flippers/obstacle_flippers_w_242777_1", description = "Obstacle flippers w 242777 1" }
-map{ id = "components/filler/filler_202777_4", description = "Filler 202777 4 pikes" }
-map{ id = "components/door/door_exit_n_200000_1", description = "Door exit" }
-map{ id = "components/filler/filler_050777_6", description = "Filler 050777 6 Pikes and statues" }
-map{ id = "components/door/door_bigkey_n_250777_2", description = "Door bigkey n 250777 2" }
-map{ id = "components/door/door_bigkey_n_250777_3", description = "Door bigkey n 250777 3" }
-map{ id = "components/door/door_bigkey_n_200777_5", description = "Door bigkey n 200777 5" }
-map{ id = "components/door/door_bigkey_n_250777_4", description = "Door bigkey n 250777 4" }
-map{ id = "components/door/door_entrance_s_002777_5", description = "Door entrance s 002777 5" }
-map{ id = "components/door/door_entrance_s_002777_6", description = "Door entrance s 002777 6" }
-map{ id = "components/door/door_entrance_s_002777_2", description = "Door entrance s 002777 2" }
-map{ id = "components/door/door_entrance_s_002777_3", description = "Door entrance s 002777 3" }
-map{ id = "components/door/door_entrance_s_002777_4", description = "Door entrance s 002777 4" }
-map{ id = "components/door/door_entrance_s_002777_1", description = "Door entrance s 002777 1" }
-map{ id = "components/door/door_entrance_s_002777_7", description = "Door entrance s 002777 7" }
-map{ id = "components/filler/filler_000400_12", description = "Filler 000400 12" }
-map{ id = "components/filler/filler_000100_12", description = "Filler 000100 12" }
-map{ id = "components/filler/filler_000004_12", description = "Filler 000004 12" }
-map{ id = "components/filler/filler_000001_12", description = "Filler 000001 12" }
-map{ id = "components/filler/filler_000400_19", description = "Filler 000400 19" }
-map{ id = "components/filler/filler_000100_19", description = "Filler 000100 19" }
-map{ id = "components/filler/filler_000004_19", description = "Filler 000004 19" }
-map{ id = "components/filler/filler_000001_19", description = "Filler 000001 19" }
-map{ id = "components/filler/filler_000001_1b", description = "Filler 000001 1b" }
-map{ id = "components/filler/filler_000004_1b", description = "Filler 000004 1b" }
-map{ id = "components/filler/filler_000400_1b", description = "Filler 000400 1b" }
-map{ id = "components/filler/filler_000100_1b", description = "Filler 000100 1b" }
-map{ id = "components/filler/filler_000001_3b", description = "Filler 000001 3b" }
-map{ id = "components/filler/filler_000004_3b", description = "Filler 000004 3b" }
-map{ id = "components/filler/filler_000400_3b", description = "Filler 000400 3b" }
-map{ id = "components/filler/filler_000100_3b", description = "Filler 000100 3b" }
-map{ id = "components/filler/filler_000001_12b", description = "Filler 000001 12b" }
-map{ id = "components/filler/filler_000004_12b", description = "Filler 000004 12b" }
-map{ id = "components/filler/filler_000100_12b", description = "Filler 000100 12b" }
-map{ id = "components/filler/filler_000400_12b", description = "Filler 000400 12b" }
-map{ id = "components/treasure_open/treasure_open_202777_1", description = "Treasure open 202777 1" }
-map{ id = "components/treasure_open/treasure_open_000777_5", description = "Treasure open 000777 5" }
-map{ id = "components/obstacle_puzzle/obstacle_puzzle_sw_210777_1", description = "Puzzle 210777 1" }
-map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000777_5", description = "Puzzle 000777 5" }
-map{ id = "components/treasure_open/treasure_open_000777_4", description = "Treasure open 000777 4" }
-map{ id = "components/filler/filler_000111_1", description = "Filler 000111 1 spikes" }
-map{ id = "dev/room_template", description = "Room1 template" }
-map{ id = "components/filler/filler_010111_3", description = "Filler 010111 3" }
-map{ id = "components/filler/filler_200700_3", description = "Filler 200700 3" }
-map{ id = "components/filler/filler_002007_4", description = "Filler 002007 4" }
-map{ id = "components/filler/filler_000444_1", description = "Filler 000444 1 spikes" }
-map{ id = "components/filler/filler_040444_4", description = "Filler 040444 4" }
+map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_nsw_000444_1", description = "obstacle_veryweakwall_nsw_000444_1" }
+map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_nw_000700_1", description = "obstacle_veryweakwall_nw_000700_1" }
+map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_s_000007_1", description = "obstacle_veryweakwall_s_000007_1" }
+map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_se_000007_1", description = "obstacle_veryweakwall_se_000007_1" }
+map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_sew_000007_1", description = "obstacle_veryweakwall_sew_000007_1" }
+map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_sw_000007_1", description = "obstacle_veryweakwall_sw_000007_1" }
+map{ id = "components/obstacle_veryweakwall/obstacle_veryweakwall_w_000444_1", description = "obstacle_veryweakwall_w_000444_1" }
+map{ id = "components/obstacle_weakwall/obstacle_weakwall_e_000100_1", description = "Obstacle weakwall e 000100 1" }
+map{ id = "components/obstacle_weakwall/obstacle_weakwall_ew_050400_1", description = "Obstacle weakwall ew 050400 1" }
+map{ id = "components/obstacle_weakwall/obstacle_weakwall_n_000400_1", description = "Obstacle weakwall n 000400 1" }
+map{ id = "components/obstacle_weakwall/obstacle_weakwall_ne_210100_1", description = "Obstacle weakwall ne 210100 1" }
+map{ id = "components/obstacle_weakwall/obstacle_weakwall_new_250400_1", description = "Obstacle weakwall new 250400 1" }
+map{ id = "components/obstacle_weakwall/obstacle_weakwall_nse_212001_1", description = "Obstacle weakwall nse 212001 1" }
+map{ id = "components/obstacle_weakwall/obstacle_weakwall_nsw_242004_1", description = "Obstacle weakwall nsw 242004 1" }
+map{ id = "components/obstacle_weakwall/obstacle_weakwall_nw_240400_1", description = "Obstacle weakwall nw 240400 1" }
+map{ id = "components/obstacle_weakwall/obstacle_weakwall_s_000004_1", description = "Obstacle weakwall s 000004 1" }
+map{ id = "components/obstacle_weakwall/obstacle_weakwall_se_000001_1", description = "Obstacle weakwall se 000001 1" }
+map{ id = "components/obstacle_weakwall/obstacle_weakwall_sew_052004_1", description = "Obstacle weakwall sew 052004 1" }
+map{ id = "components/obstacle_weakwall/obstacle_weakwall_sw_042004_1", description = "Obstacle weakwall sw 042004 1" }
+map{ id = "components/obstacle_weakwall/obstacle_weakwall_w_000004_1", description = "Obstacle weakwall w 000004 1" }
+map{ id = "components/treasure_bigkey/treasure_bigkey_000777_1", description = "Treasure bigkey 000777 1" }
+map{ id = "components/treasure_bigkey/treasure_bigkey_000777_2", description = "Treasure bigkey 000777 2" }
+map{ id = "components/treasure_bigkey/treasure_bigkey_000777_3", description = "Treasure bigkey 000777 3" }
+map{ id = "components/treasure_bigkey/treasure_bigkey_000777_4", description = "Treasure bigkey 000777 4" }
+map{ id = "components/treasure_bigkey/treasure_bigkey_000777_5", description = "Treasure bigkey 000777 5" }
+map{ id = "components/treasure_bigkey/treasure_bigkey_000777_6", description = "Treasure bigkey 000777 6 - Eight statues" }
 map{ id = "components/treasure_bigkey/treasure_bigkey_050777_1", description = "Treasure bigkey 050777 1" }
+map{ id = "components/treasure_bigkey/treasure_bigkey_052777_1", description = "Treasure bigkey 052777 1" }
 map{ id = "components/treasure_bigkey/treasure_bigkey_200777_1", description = "Treasure bigkey 200777 1" }
-map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000111_1", description = "Puzzle 000111 1w" }
-map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000444_2", description = "Puzzle 000444 2" }
-map{ id = "components/enemy/enemy_boss_000777_2", description = "Enemy boss 000777 2" }
-map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000770_1", description = "Puzzle 000770 1" }
-map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000077_1", description = "Puzzle 000077 1" }
-map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000333_1", description = "Puzzle 000333 1" }
-map{ id = "components/obstacle_puzzle/obstacle_puzzle_nsew_000666_1", description = "Puzzle 000666 1" }
-map{ id = "components/enemy/enemy_boss_000777_3", description = "Enemy boss 000777 3" }
-map{ id = "components/obstacle_flippers/obstacle_flippers_ns_202777_2", description = "Obstacle flippers ns 202777 2" }
+map{ id = "components/treasure_bigkey/treasure_bigkey_202777_1", description = "Treasure bigkey 202777 1" }
+map{ id = "components/treasure_bigkey/treasure_bigkey_202777_2", description = "Treasure bigkey 202777 2" }
+map{ id = "components/treasure_bigkey/treasure_bigkey_202777_3", description = "Treasure bigkey 202777 3" }
+map{ id = "components/treasure_bigkey/treasure_bigkey_202777_water", description = "Treasure bigkey 202777 water" }
 map{ id = "components/treasure_bigkey/treasure_bigkey_212777_1", description = "Treasure bigkey 212777 1" }
 map{ id = "components/treasure_bigkey/treasure_bigkey_242777_1", description = "Treasure bigkey 242777 1" }
 map{ id = "components/treasure_bigkey/treasure_bigkey_250777_1", description = "Treasure bigkey 250777 1" }
-map{ id = "components/treasure_bigkey/treasure_bigkey_052777_1", description = "Treasure bigkey 052777 1" }
-map{ id = "components/treasure_bigkey/treasure_bigkey_202777_1", description = "Treasure bigkey 202777 1" }
-map{ id = "components/treasure_bigkey/treasure_bigkey_000777_2", description = "Treasure bigkey 000777 2" }
-map{ id = "components/treasure_bigkey/treasure_bigkey_000777_3", description = "Treasure bigkey 000777 3" }
-map{ id = "components/treasure_bigkey/treasure_bigkey_202777_2", description = "Treasure bigkey 202777 2" }
-map{ id = "components/treasure_bigkey/treasure_bigkey_000777_4", description = "Treasure bigkey 000777 4" }
-map{ id = "components/treasure_bigkey/treasure_bigkey_000777_5", description = "Treasure bigkey 000777 5" }
-map{ id = "components/treasure_bigkey/treasure_bigkey_202777_3", description = "Treasure bigkey 202777 3" }
-map{ id = "components/filler/filler_000777_10", description = "Filler 000777 10" }
-map{ id = "components/treasure_bigkey/treasure_bigkey_000777_6", description = "Treasure bigkey 000777 6 - Eight statues" }
-map{ id = "components/obstacle_flippers/obstacle_flippers_n_200700_2", description = "Obstacle flippers n 200700 2" }
-map{ id = "components/filler/filler_000001_stones", description = "Filler 000001 stones" }
-map{ id = "components/filler/filler_000004_stones", description = "Filler 000004 stones" }
-map{ id = "components/filler/filler_000100_stones", description = "Filler 000100 stones" }
-map{ id = "components/filler/filler_000400_stones", description = "Filler 000400 stones" }
-map{ id = "components/treasure_bigkey/treasure_bigkey_202777_water", description = "Treasure bigkey 202777 water" }
-map{ id = "components/door/door_bigkey_n_202777_water", description = "Door bigkey n 202777 water" }
-map{ id = "components/obstacle_bow/obstacle_bow_nsew_000777_lampbow", description = "Obstacle bow nsew 000777 lampbow" }
-map{ id = "components/obstacle_lamp/obstacle_lamp_nsew_000777_lampbow", description = "Obstacle lamp nsew 000777 lampbow" }
-map{ id = "components/filler/filler_000444_carpetstones", description = "Filler 000444 carpetstones" }
-map{ id = "components/filler/filler_000111_carpetstones", description = "Filler 000111 carpetstones" }
-map{ id = "components/filler/filler_000001_statuestones", description = "Filler 000001 statuestones" }
-map{ id = "components/filler/filler_000100_statuestones", description = "Filler 000100 statuestones" }
-map{ id = "components/filler/filler_000004_statuestones", description = "Filler 000004 statuestones" }
-map{ id = "components/filler/filler_000400_statuestones", description = "Filler 000400 statuestones" }
-map{ id = "components/filler/filler_000001_holestones", description = "Filler 000001 holestones" }
-map{ id = "components/filler/filler_000004_holestones", description = "Filler 000004 holestones" }
-map{ id = "components/filler/filler_000100_holestones", description = "Filler 000100 holestones" }
-map{ id = "components/filler/filler_000400_holestones", description = "Filler 000400 holestones" }
-map{ id = "components/filler/filler_000444_barrierstones", description = "Filler 000444 barrierstones" }
-map{ id = "components/filler/filler_000111_barrierstones", description = "Filler 000111 barrierstones" }
-map{ id = "components/filler/filler_000007_barrierstones", description = "Filler 000007 barrierstones" }
-map{ id = "components/filler/filler_000700_barrierstones", description = "Filler 000700 barrierstones" }
-map{ id = "components/filler/filler_000001_torchstones", description = "Filler 000001 torchstones" }
-map{ id = "components/filler/filler_000004_torchstone", description = "Filler 000004 torchstone" }
-map{ id = "components/filler/filler_000100_torchstones", description = "Filler 000100 torchstones" }
-map{ id = "components/filler/filler_000400_torchstones", description = "Filler 000400 torchstones" }
+map{ id = "components/treasure_open/treasure_open_000077_1", description = "Treasure open 000077 1" }
+map{ id = "components/treasure_open/treasure_open_000111_1", description = "Treasure open 000111 1" }
+map{ id = "components/treasure_open/treasure_open_000444_1", description = "Treasure open 000444 1" }
+map{ id = "components/treasure_open/treasure_open_000770_1", description = "Treasure open 000770 1" }
+map{ id = "components/treasure_open/treasure_open_000777_1", description = "Treasure open 000777 1" }
+map{ id = "components/treasure_open/treasure_open_000777_2", description = "Treasure open 000777 2" }
+map{ id = "components/treasure_open/treasure_open_000777_3", description = "Treasure open 000777 3" }
+map{ id = "components/treasure_open/treasure_open_000777_4", description = "Treasure open 000777 4" }
+map{ id = "components/treasure_open/treasure_open_000777_5", description = "Treasure open 000777 5" }
+map{ id = "components/treasure_open/treasure_open_200700_1", description = "Treasure open 200700 1" }
+map{ id = "components/treasure_open/treasure_open_200770_1", description = "Treasure open 200770 1" }
+map{ id = "components/treasure_open/treasure_open_200770_2", description = "Treasure open 200770 2" }
+map{ id = "components/treasure_open/treasure_open_202777_1", description = "Treasure open 202777 1" }
+map{ id = "components/treasure_open/treasure_open_250777_1", description = "Treasure open 250777 1" }
+map{ id = "dev/best_practice", description = "Best practice" }
+map{ id = "dev/obstacles", description = "Obstacles" }
+map{ id = "dev/puzzles", description = "Puzzles" }
+map{ id = "dev/room_template", description = "Room1 template" }
+map{ id = "dev/tileset_test", description = "Tileset test" }
+map{ id = "dungeons/dungeon1", description = "Dungeon1" }
+map{ id = "rooms/cutscene", description = "Cutscene" }
+map{ id = "rooms/flippers_example", description = "Flippers example" }
+map{ id = "rooms/game_complete_1", description = "Game complete 1" }
+map{ id = "rooms/game_complete_2", description = "Game complete 2" }
+map{ id = "rooms/game_over", description = "Game over" }
+map{ id = "rooms/intro_1", description = "Intro 1" }
+map{ id = "rooms/intro_2", description = "Intro 2" }
+map{ id = "rooms/intro_3", description = "Intro 3" }
+map{ id = "rooms/room1", description = "Room1" }
+map{ id = "rooms/title", description = "Title" }
 
-tileset{ id = "light_world", description = "Light World" }
 tileset{ id = "dungeon_brick_blue_1", description = "Dungeon brick blue 1" }
 tileset{ id = "dungeon_brick_brown_1", description = "Dungeon brick brown 1" }
 tileset{ id = "dungeon_brick_gray_1", description = "Dungeon brick gray 1" }
@@ -348,28 +347,110 @@ tileset{ id = "dungeon_smoothbrick_brown_1", description = "Dungeon smoothbrick 
 tileset{ id = "dungeon_smoothbrick_gold_1", description = "Dungeon smoothbrick gold 1" }
 tileset{ id = "dungeon_smoothbrick_green_1", description = "Dungeon smoothbrick green 1" }
 tileset{ id = "dungeon_smoothbrick_pink_1", description = "Dungeon smoothbrick pink 1" }
+tileset{ id = "light_world", description = "Light World" }
 
+sprite{ id = "enemies/agahnim", description = "Agahnim" }
+sprite{ id = "enemies/bari_blue", description = "Bari blue" }
+sprite{ id = "enemies/bari_mini", description = "Bari mini" }
+sprite{ id = "enemies/bari_red", description = "Bari red" }
+sprite{ id = "enemies/blue_knight_soldier", description = "Blue knight soldier" }
+sprite{ id = "enemies/bubble", description = "Bubble" }
+sprite{ id = "enemies/crab", description = "Sand crab" }
+sprite{ id = "enemies/enemy_killed", description = "Enemy killed" }
+sprite{ id = "enemies/gibdo", description = "Gibdo" }
+sprite{ id = "enemies/green_knight_soldier", description = "Green knight soldier" }
+sprite{ id = "enemies/green_knight_soldier_sword", description = "Green knight soldier (sword)" }
+sprite{ id = "enemies/hardhat_beetle_blue", description = "Hardhat beetle blue" }
+sprite{ id = "enemies/keese", description = "Keese" }
+sprite{ id = "enemies/lanmola", description = "Lanmola" }
+sprite{ id = "enemies/lanmola_body", description = "Lanmola body" }
+sprite{ id = "enemies/lanmola_tail", description = "Lanmola tail" }
+sprite{ id = "enemies/octorok_red", description = "Octorok red" }
+sprite{ id = "enemies/pike_auto", description = "Pike auto" }
+sprite{ id = "enemies/pike_detect", description = "Pike detect" }
+sprite{ id = "enemies/poe", description = "Poe" }
+sprite{ id = "enemies/rat", description = "Rat" }
+sprite{ id = "enemies/red_hardhat_beetle", description = "Red hardhat beetle" }
+sprite{ id = "enemies/red_helmasaur", description = "Red helmasaur" }
+sprite{ id = "enemies/red_knight_soldier", description = "Red knight soldier" }
+sprite{ id = "enemies/rock_small", description = "Rock small" }
+sprite{ id = "enemies/ropa", description = "Ropa" }
+sprite{ id = "enemies/rope", description = "Rope" }
+sprite{ id = "enemies/simple_green_soldier", description = "Simple green soldier" }
+sprite{ id = "enemies/snap_dragon", description = "Snap dragon" }
+sprite{ id = "enemies/stalfos_head", description = "Stalfos head" }
+sprite{ id = "enemies/stalfos_knight", description = "Stalfos knight" }
+sprite{ id = "enemies/tentacle", description = "Tentacle" }
+sprite{ id = "entities/arrow", description = "Arrow" }
+sprite{ id = "entities/big_chest", description = "Big chest" }
 sprite{ id = "entities/block", description = "Block" }
+sprite{ id = "entities/bomb", description = "Bomb" }
+sprite{ id = "entities/boomerang1", description = "Boomerang 1" }
+sprite{ id = "entities/boomerang2", description = "Boomerang 2" }
+sprite{ id = "entities/bush", description = "Bush (from tileset)" }
+sprite{ id = "entities/bush_green", description = "Bush (green)" }
+sprite{ id = "entities/bush_purple", description = "Bush (purple)" }
+sprite{ id = "entities/bush_yellow", description = "Bush (yellow)" }
 sprite{ id = "entities/chest", description = "Chest" }
-sprite{ id = "entities/teletransporter", description = "Teletransporter" }
+sprite{ id = "entities/crystal", description = "Crystal" }
+sprite{ id = "entities/crystal_block", description = "Crystal block" }
 sprite{ id = "entities/destination", description = "Destination" }
+sprite{ id = "entities/door_big_key", description = "Door (big key)" }
 sprite{ id = "entities/door_normal", description = "Door (normal)" }
 sprite{ id = "entities/door_small_key", description = "Door (small key)" }
-sprite{ id = "entities/door_big_key", description = "Door (big key)" }
-sprite{ id = "entities/door_weak_wall", description = "Door (weak wall)" }
 sprite{ id = "entities/door_very_weak_wall", description = "Door (very weak wall)" }
 sprite{ id = "entities/door_weak_block", description = "Door (weak block)" }
+sprite{ id = "entities/door_weak_wall", description = "Door (weak wall)" }
+sprite{ id = "entities/explosion", description = "Explosion" }
+sprite{ id = "entities/fire", description = "Fire" }
+sprite{ id = "entities/grass", description = "Grass" }
+sprite{ id = "entities/hookshot", description = "Hookshot" }
+sprite{ id = "entities/items", description = "Items" }
+sprite{ id = "entities/shadow", description = "Shadow" }
+sprite{ id = "entities/sign", description = "Sign" }
+sprite{ id = "entities/solid_switch", description = "Solid switch" }
+sprite{ id = "entities/star", description = "Star" }
+sprite{ id = "entities/statue", description = "Statue" }
+sprite{ id = "entities/stone_black", description = "Stone (black)" }
+sprite{ id = "entities/stone_black_skull", description = "Stone (black skull)" }
+sprite{ id = "entities/stone_white", description = "Stone (white)" }
+sprite{ id = "entities/stone_white_skull", description = "Stone (white skull)" }
+sprite{ id = "entities/switch", description = "Switch" }
+sprite{ id = "entities/teletransporter", description = "Teletransporter" }
+sprite{ id = "entities/torch", description = "Torch" }
+sprite{ id = "entities/vase", description = "Vase" }
+sprite{ id = "entities/vase_skull", description = "Vase (skull)" }
+sprite{ id = "hero/ground1", description = "Grass under hero" }
+sprite{ id = "hero/ground2", description = "Shallow water under hero" }
+sprite{ id = "hero/shield1", description = "Hero shield 1" }
+sprite{ id = "hero/shield2", description = "Hero shield 2" }
+sprite{ id = "hero/shield3", description = "Hero shield 3" }
+sprite{ id = "hero/sword1", description = "Hero sword 1" }
+sprite{ id = "hero/sword2", description = "Hero sword 2" }
+sprite{ id = "hero/sword3", description = "Hero sword 3" }
+sprite{ id = "hero/sword4", description = "Hero sword 4" }
+sprite{ id = "hero/sword_stars1", description = "Hero sword stars 1" }
+sprite{ id = "hero/sword_stars2", description = "Hero sword stars 2" }
+sprite{ id = "hero/trail", description = "Hero trail" }
+sprite{ id = "hero/tunic1", description = "Hero tunic 1" }
+sprite{ id = "hero/tunic2", description = "Hero tunic 2" }
+sprite{ id = "hero/tunic3", description = "Hero tunic 3" }
+sprite{ id = "hud/dialog_box_message_end", description = "Dialog box message end" }
+sprite{ id = "hud/empty_heart", description = "Empty heart" }
+sprite{ id = "hud/gameover_fade", description = "HUD: Game-over fade" }
+sprite{ id = "hud/magic_bar", description = "Magic bar" }
+sprite{ id = "menus/hero_head", description = "Menu: hero head" }
+sprite{ id = "menus/pause_cursor", description = "Pause cursor" }
 sprite{ id = "npc/ganon", description = "Ganon" }
 sprite{ id = "npc/great_fairy", description = "Great Fairy" }
 sprite{ id = "npc/monkey", description = "Monkey" }
 sprite{ id = "npc/sahasrahla", description = "Sahasrahla" }
-sprite{ id = "npc/thief", description = "Thief" }
-sprite{ id = "npc/wizard", description = "Wizard" }
-sprite{ id = "npc/zelda", description = "Zelda" }
-sprite{ id = "npc/villager1", description = "ALTTP villager 1" }
-sprite{ id = "npc/villager2", description = "ALTTP villager 2" }
-sprite{ id = "npc/villager3", description = "ALTTP villager 3" }
 sprite{ id = "npc/static_villager1", description = "ALTTP static villager 1" }
+sprite{ id = "npc/static_villager10", description = "ALTTP static villager 10" }
+sprite{ id = "npc/static_villager11", description = "ALTTP static villager 11" }
+sprite{ id = "npc/static_villager12", description = "ALTTP static villager 12" }
+sprite{ id = "npc/static_villager13", description = "ALTTP static villager 13" }
+sprite{ id = "npc/static_villager14", description = "ALTTP static villager 14" }
 sprite{ id = "npc/static_villager2", description = "ALTTP static villager 2" }
 sprite{ id = "npc/static_villager3", description = "ALTTP static villager 3" }
 sprite{ id = "npc/static_villager4", description = "ALTTP static villager 4" }
@@ -378,93 +459,12 @@ sprite{ id = "npc/static_villager6", description = "ALTTP static villager 6" }
 sprite{ id = "npc/static_villager7", description = "ALTTP static villager 7" }
 sprite{ id = "npc/static_villager8", description = "ALTTP static villager 8" }
 sprite{ id = "npc/static_villager9", description = "ALTTP static villager 9" }
-sprite{ id = "npc/static_villager10", description = "ALTTP static villager 10" }
-sprite{ id = "npc/static_villager11", description = "ALTTP static villager 11" }
-sprite{ id = "npc/static_villager12", description = "ALTTP static villager 12" }
-sprite{ id = "npc/static_villager13", description = "ALTTP static villager 13" }
-sprite{ id = "npc/static_villager14", description = "ALTTP static villager 14" }
-sprite{ id = "entities/boomerang1", description = "Boomerang 1" }
-sprite{ id = "entities/boomerang2", description = "Boomerang 2" }
-sprite{ id = "entities/crystal", description = "Crystal" }
-sprite{ id = "entities/crystal_block", description = "Crystal block" }
-sprite{ id = "entities/bomb", description = "Bomb" }
-sprite{ id = "entities/explosion", description = "Explosion" }
-sprite{ id = "entities/fire", description = "Fire" }
-sprite{ id = "entities/grass", description = "Grass" }
-sprite{ id = "entities/bush", description = "Bush (from tileset)" }
-sprite{ id = "entities/bush_green", description = "Bush (green)" }
-sprite{ id = "entities/bush_purple", description = "Bush (purple)" }
-sprite{ id = "entities/bush_yellow", description = "Bush (yellow)" }
-sprite{ id = "entities/arrow", description = "Arrow" }
-sprite{ id = "entities/hookshot", description = "Hookshot" }
-sprite{ id = "entities/items", description = "Items" }
-sprite{ id = "entities/shadow", description = "Shadow" }
-sprite{ id = "entities/sign", description = "Sign" }
-sprite{ id = "entities/star", description = "Star" }
-sprite{ id = "entities/statue", description = "Statue" }
-sprite{ id = "entities/stone_black", description = "Stone (black)" }
-sprite{ id = "entities/stone_black_skull", description = "Stone (black skull)" }
-sprite{ id = "entities/stone_white", description = "Stone (white)" }
-sprite{ id = "entities/stone_white_skull", description = "Stone (white skull)" }
-sprite{ id = "entities/switch", description = "Switch" }
-sprite{ id = "entities/solid_switch", description = "Solid switch" }
-sprite{ id = "entities/vase", description = "Vase" }
-sprite{ id = "entities/vase_skull", description = "Vase (skull)" }
-sprite{ id = "hero/tunic1", description = "Hero tunic 1" }
-sprite{ id = "hero/tunic2", description = "Hero tunic 2" }
-sprite{ id = "hero/tunic3", description = "Hero tunic 3" }
-sprite{ id = "hero/sword1", description = "Hero sword 1" }
-sprite{ id = "hero/sword2", description = "Hero sword 2" }
-sprite{ id = "hero/sword3", description = "Hero sword 3" }
-sprite{ id = "hero/sword4", description = "Hero sword 4" }
-sprite{ id = "hero/sword_stars1", description = "Hero sword stars 1" }
-sprite{ id = "hero/sword_stars2", description = "Hero sword stars 2" }
-sprite{ id = "hero/shield1", description = "Hero shield 1" }
-sprite{ id = "hero/shield2", description = "Hero shield 2" }
-sprite{ id = "hero/shield3", description = "Hero shield 3" }
-sprite{ id = "hero/ground1", description = "Grass under hero" }
-sprite{ id = "hero/ground2", description = "Shallow water under hero" }
-sprite{ id = "hero/trail", description = "Hero trail" }
-sprite{ id = "hud/gameover_fade", description = "HUD: Game-over fade" }
-sprite{ id = "enemies/enemy_killed", description = "Enemy killed" }
-sprite{ id = "enemies/tentacle", description = "Tentacle" }
-sprite{ id = "menus/hero_head", description = "Menu: hero head" }
-sprite{ id = "entities/big_chest", description = "Big chest" }
-sprite{ id = "enemies/green_knight_soldier", description = "Green knight soldier" }
-sprite{ id = "enemies/green_knight_soldier_sword", description = "Green knight soldier (sword)" }
-sprite{ id = "entities/torch", description = "Torch" }
-sprite{ id = "enemies/ropa", description = "Ropa" }
-sprite{ id = "enemies/gibdo", description = "Gibdo" }
-sprite{ id = "enemies/bubble", description = "Bubble" }
-sprite{ id = "enemies/snap_dragon", description = "Snap dragon" }
-sprite{ id = "enemies/blue_knight_soldier", description = "Blue knight soldier" }
-sprite{ id = "enemies/red_knight_soldier", description = "Red knight soldier" }
-sprite{ id = "enemies/red_helmasaur", description = "Red helmasaur" }
-sprite{ id = "enemies/simple_green_soldier", description = "Simple green soldier" }
-sprite{ id = "enemies/red_hardhat_beetle", description = "Red hardhat beetle" }
-sprite{ id = "enemies/pike_auto", description = "Pike auto" }
-sprite{ id = "enemies/pike_detect", description = "Pike detect" }
-sprite{ id = "hud/dialog_box_message_end", description = "Dialog box message end" }
-sprite{ id = "enemies/bari_blue", description = "Bari blue" }
-sprite{ id = "enemies/bari_mini", description = "Bari mini" }
-sprite{ id = "enemies/bari_red", description = "Bari red" }
-sprite{ id = "enemies/crab", description = "Sand crab" }
-sprite{ id = "enemies/keese", description = "Keese" }
-sprite{ id = "enemies/lanmola", description = "Lanmola" }
-sprite{ id = "enemies/lanmola_body", description = "Lanmola body" }
-sprite{ id = "enemies/lanmola_tail", description = "Lanmola tail" }
-sprite{ id = "enemies/octorok_red", description = "Octorok red" }
-sprite{ id = "enemies/poe", description = "Poe" }
-sprite{ id = "enemies/rat", description = "Rat" }
-sprite{ id = "enemies/rock_small", description = "Rock small" }
-sprite{ id = "enemies/rope", description = "Rope" }
-sprite{ id = "enemies/stalfos_head", description = "Stalfos head" }
-sprite{ id = "enemies/stalfos_knight", description = "Stalfos knight" }
-sprite{ id = "enemies/hardhat_beetle_blue", description = "Hardhat beetle blue" }
-sprite{ id = "hud/magic_bar", description = "Magic bar" }
-sprite{ id = "hud/empty_heart", description = "Empty heart" }
-sprite{ id = "menus/pause_cursor", description = "Pause cursor" }
-sprite{ id = "enemies/agahnim", description = "Agahnim" }
+sprite{ id = "npc/thief", description = "Thief" }
+sprite{ id = "npc/villager1", description = "ALTTP villager 1" }
+sprite{ id = "npc/villager2", description = "ALTTP villager 2" }
+sprite{ id = "npc/villager3", description = "ALTTP villager 3" }
+sprite{ id = "npc/wizard", description = "Wizard" }
+sprite{ id = "npc/zelda", description = "Zelda" }
 
 music{ id = "agahnim", description = "Agahnim theme" }
 music{ id = "beginning", description = "Beginning" }
@@ -474,33 +474,33 @@ music{ id = "cave", description = "Cave" }
 music{ id = "credits", description = "Credits" }
 music{ id = "dark_mountain", description = "Dark Mountain" }
 music{ id = "dark_world", description = "Dark World" }
-music{ id = "light_world_dungeon", description = "Dungeon (light world)" }
 music{ id = "dark_world_dungeon", description = "Dungeon (dark world)" }
-music{ id = "finished", description = "Dungeon finished" }
+music{ id = "dungeon_castle", description = "Dungeon castle" }
+music{ id = "dungeon_cave", description = "dungeon_cave" }
+music{ id = "dungeon_dark", description = "Dungeon dark" }
+music{ id = "dungeon_light", description = "Dungeon light" }
+music{ id = "dungeon_village", description = "Dungeon village" }
 music{ id = "excalibur", description = "Excalibur" }
 music{ id = "fanfare", description = "Fanfare" }
+music{ id = "finished", description = "Dungeon finished" }
 music{ id = "fortune_teller", description = "Fortune Teller" }
+music{ id = "game_over", description = "Selection menu & Game Over" }
 music{ id = "ganon_appears", description = "Ganon appears" }
 music{ id = "ganon_battle", description = "Ganon battle" }
 music{ id = "ganon_theme", description = "Ganon theme" }
 music{ id = "great_fairy", description = "Great Fairy" }
 music{ id = "legend", description = "Legend" }
+music{ id = "light_world_dungeon", description = "Dungeon (light world)" }
 music{ id = "lost_woods", description = "Lost Woods" }
 music{ id = "mini_game", description = "Mini game" }
 music{ id = "overworld", description = "Overworld" }
-music{ id = "sanctuary", description = "Sanctuary" }
-music{ id = "game_over", description = "Selection menu & Game Over" }
-music{ id = "soldiers", description = "Soldiers" }
 music{ id = "rabbit", description = "Turned into a rabbit" }
+music{ id = "sanctuary", description = "Sanctuary" }
+music{ id = "soldiers", description = "Soldiers" }
 music{ id = "title_screen", description = "Title screen" }
 music{ id = "triforce", description = "Triforce" }
 music{ id = "victory", description = "Victory" }
 music{ id = "zelda", description = "Zelda theme" }
-music{ id = "dungeon_village", description = "Dungeon village" }
-music{ id = "dungeon_dark", description = "Dungeon dark" }
-music{ id = "dungeon_light", description = "Dungeon light" }
-music{ id = "dungeon_castle", description = "Dungeon castle" }
-music{ id = "dungeon_cave", description = "dungeon_cave" }
 
 sound{ id = "arrow_hit", description = "arrow_hit" }
 sound{ id = "bomb", description = "bomb" }
@@ -526,8 +526,8 @@ sound{ id = "enemy_killed", description = "enemy_killed" }
 sound{ id = "explosion", description = "explosion" }
 sound{ id = "external_stairs_down", description = "external_stairs_down" }
 sound{ id = "external_stairs_up", description = "external_stairs_up" }
-sound{ id = "heart_container", description = "heart_container" }
 sound{ id = "heart", description = "heart" }
+sound{ id = "heart_container", description = "heart_container" }
 sound{ id = "hero_dying", description = "hero_dying" }
 sound{ id = "hero_falls", description = "hero_falls" }
 sound{ id = "hero_hurt", description = "hero_hurt" }
@@ -541,6 +541,7 @@ sound{ id = "internal_stairs_up", description = "internal_stairs_up" }
 sound{ id = "intro", description = "intro" }
 sound{ id = "item_in_water", description = "item_in_water" }
 sound{ id = "jump", description = "jump" }
+sound{ id = "keese", description = "Keese" }
 sound{ id = "lamp", description = "lamp" }
 sound{ id = "lift", description = "lift" }
 sound{ id = "magic_bar", description = "magic_bar" }
@@ -558,10 +559,11 @@ sound{ id = "picked_small_key", description = "picked_small_key" }
 sound{ id = "piece_of_heart", description = "piece_of_heart" }
 sound{ id = "running", description = "running" }
 sound{ id = "running_obstacle", description = "running_obstacle" }
-sound{ id = "rupee_counter_end", description = "rupee_counter_end" }
 sound{ id = "rupee_counter", description = "rupee_counter" }
+sound{ id = "rupee_counter_end", description = "rupee_counter_end" }
 sound{ id = "secret", description = "secret" }
 sound{ id = "shield", description = "shield" }
+sound{ id = "shock", description = "shock" }
 sound{ id = "splash", description = "splash" }
 sound{ id = "stairs_down_end", description = "stairs_down_end" }
 sound{ id = "stairs_down_start", description = "stairs_down_start" }
@@ -578,8 +580,8 @@ sound{ id = "sword_spin_attack_release", description = "sword_spin_attack_releas
 sound{ id = "sword_tapping", description = "sword_tapping" }
 sound{ id = "sword_tapping_weak_wall", description = "sword_tapping_weak_wall" }
 sound{ id = "throw", description = "throw" }
-sound{ id = "timer_hurry", description = "timer_hurry" }
 sound{ id = "timer", description = "timer" }
+sound{ id = "timer_hurry", description = "timer_hurry" }
 sound{ id = "treasure", description = "treasure" }
 sound{ id = "victory", description = "victory" }
 sound{ id = "walk_on_grass", description = "walk_on_grass" }
@@ -588,66 +590,71 @@ sound{ id = "warp", description = "warp" }
 sound{ id = "world_warp", description = "world_warp" }
 sound{ id = "wrong", description = "wrong" }
 sound{ id = "zora", description = "zora" }
-sound{ id = "keese", description = "Keese" }
-sound{ id = "shock", description = "shock" }
 
-item{ id = "bomb", description = "Bomb" }
-item{ id = "hookshot", description = "Hookshot" }
-item{ id = "bigkey", description = "Big key" }
-item{ id = "compass", description = "Compass" }
-item{ id = "map", description = "Map" }
-item{ id = "smallkey", description = "Small key" }
-item{ id = "sword", description = "Sword" }
-item{ id = "heart", description = "Heart" }
-item{ id = "fairy", description = "Fairy" }
-item{ id = "tunic", description = "Tunic" }
-item{ id = "lamp", description = "Lamp" }
-item{ id = "magic_bar", description = "Magic bar" }
-item{ id = "bow", description = "Bow" }
-item{ id = "magic_flask", description = "Magic flask" }
 item{ id = "arrow", description = "Arrow" }
+item{ id = "bigkey", description = "Big key" }
+item{ id = "bomb", description = "Bomb" }
 item{ id = "bombs_counter", description = "Bombs counter" }
+item{ id = "bottle_1", description = "Bottle 1" }
+item{ id = "bow", description = "Bow" }
+item{ id = "compass", description = "Compass" }
+item{ id = "fairy", description = "Fairy" }
 item{ id = "flippers", description = "Flippers" }
 item{ id = "glove", description = "Glove" }
-item{ id = "bottle_1", description = "Bottle 1" }
+item{ id = "heart", description = "Heart" }
 item{ id = "heart_container", description = "Heart container" }
-item{ id = "shield", description = "Shield" }
+item{ id = "hookshot", description = "Hookshot" }
+item{ id = "lamp", description = "Lamp" }
+item{ id = "magic_bar", description = "Magic bar" }
+item{ id = "magic_flask", description = "Magic flask" }
+item{ id = "map", description = "Map" }
 item{ id = "random", description = "Random" }
+item{ id = "shield", description = "Shield" }
+item{ id = "smallkey", description = "Small key" }
+item{ id = "sword", description = "Sword" }
+item{ id = "tunic", description = "Tunic" }
 
-enemy{ id = "tentacle", description = "Tentacle" }
-enemy{ id = "green_knight_soldier", description = "Green knight soldier" }
-enemy{ id = "blue_knight_soldier", description = "Blue knight soldier" }
-enemy{ id = "red_knight_soldier", description = "Red knight soldier" }
-enemy{ id = "gibdo", description = "Gibdo" }
-enemy{ id = "red_hardhat_beetle", description = "Red hardhat beetle" }
-enemy{ id = "red_helmasaur", description = "Red helmasaur" }
-enemy{ id = "ropa", description = "Ropa" }
-enemy{ id = "simple_green_soldier", description = "Simple green soldier" }
-enemy{ id = "snap_dragon", description = "Snap dragon" }
-enemy{ id = "pike_auto", description = "Pike auto" }
-enemy{ id = "pike_detect", description = "Pike detect" }
-enemy{ id = "bubble", description = "Bubble" }
 enemy{ id = "agahnim", description = "Agahnim" }
-enemy{ id = "stalfos_head", description = "Stalfos head" }
-enemy{ id = "stalfos_knight", description = "Stalfos knight" }
-enemy{ id = "rope", description = "Rope" }
-enemy{ id = "rock_small", description = "Rock small" }
-enemy{ id = "rat", description = "Rat" }
-enemy{ id = "poe", description = "Poe" }
-enemy{ id = "octorok_red", description = "Octorok red" }
-enemy{ id = "lanmola_tail", description = "Lanmola tail" }
-enemy{ id = "lanmola_body", description = "Lanmola body" }
-enemy{ id = "lanmola", description = "Lanmola" }
-enemy{ id = "keese", description = "Keese" }
-enemy{ id = "crab", description = "Sand crab" }
 enemy{ id = "bari_blue", description = "Bari blue" }
-enemy{ id = "bari_red", description = "Bari red" }
 enemy{ id = "bari_mini", description = "Bari mini" }
-enemy{ id = "hardhat_beetle_blue", description = "Hardhat beetle blue" }
+enemy{ id = "bari_red", description = "Bari red" }
+enemy{ id = "blue_knight_soldier", description = "Blue knight soldier" }
+enemy{ id = "bubble", description = "Bubble" }
+enemy{ id = "crab", description = "Sand crab" }
 enemy{ id = "fireball_triple_blue", description = "Fireball triple (blue)" }
 enemy{ id = "fireball_triple_red", description = "Fireball triple (red)" }
+enemy{ id = "gibdo", description = "Gibdo" }
+enemy{ id = "green_knight_soldier", description = "Green knight soldier" }
+enemy{ id = "hardhat_beetle_blue", description = "Hardhat beetle blue" }
+enemy{ id = "keese", description = "Keese" }
+enemy{ id = "lanmola", description = "Lanmola" }
+enemy{ id = "lanmola_body", description = "Lanmola body" }
+enemy{ id = "lanmola_tail", description = "Lanmola tail" }
+enemy{ id = "octorok_red", description = "Octorok red" }
+enemy{ id = "pike_auto", description = "Pike auto" }
+enemy{ id = "pike_detect", description = "Pike detect" }
+enemy{ id = "poe", description = "Poe" }
+enemy{ id = "rat", description = "Rat" }
+enemy{ id = "red_hardhat_beetle", description = "Red hardhat beetle" }
+enemy{ id = "red_helmasaur", description = "Red helmasaur" }
+enemy{ id = "red_knight_soldier", description = "Red knight soldier" }
+enemy{ id = "rock_small", description = "Rock small" }
+enemy{ id = "ropa", description = "Ropa" }
+enemy{ id = "rope", description = "Rope" }
+enemy{ id = "simple_green_soldier", description = "Simple green soldier" }
+enemy{ id = "snap_dragon", description = "Snap dragon" }
+enemy{ id = "stalfos_head", description = "Stalfos head" }
+enemy{ id = "stalfos_knight", description = "Stalfos knight" }
+enemy{ id = "tentacle", description = "Tentacle" }
 
 entity{ id = "torch", description = "Torch" }
 
 language{ id = "en", description = "English" }
+
+font{ id = "8_bit", description = "8_bit" }
+font{ id = "alttp", description = "alttp" }
+font{ id = "green_digits", description = "green_digits" }
+font{ id = "la", description = "la" }
+font{ id = "minecraftia", description = "minecraftia" }
+font{ id = "white_digits", description = "white_digits" }
 

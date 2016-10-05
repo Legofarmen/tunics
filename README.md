@@ -2,7 +2,7 @@
 
  * Tunics is a roguelike-like Zelda game for the [Solarus](http://solarus-games.org) game engine.
 
- * Tunics requires Solarus 1.3.x.
+ * Tunics requires Solarus 1.4.x.
 
  * Tunics consists in part of materials under various free and open-source and public licenses, and in part of unlicensed materials under fair use. See license.txt for details.
 
@@ -11,45 +11,33 @@
 
 ## Windows
  
- 1. Clone the tunics repository.
+ 1. Install the latest Solarus 1.4.x engine from http://www.solarus-games.org/engine/download/.
 
- 2. Download the latest Solarus 1.3.x package from http://www.solarus-games.org/downloads/solarus/win32/ 
- 
- 3. Extract the content of the solarus folder in the Solarus package to the root of the cloned repository.
+ 2. Download the Source code (zip) for Tunics.
+
+ 3. Extract the `data` folder from the Tunics zip and put it in the directory where you installed Solarus.
  
  4. Run solarus.exe
 
+
 ## Ubuntu
 
- 1. Clone the tunics repository.
- 
- 2. Add repositories (to satisfy libluajit and libstdc++6 >= 4.9)
+ 1. Install the latest Solarus 1.4.x engine from http://www.solarus-games.org/engine/download/.
 
-        sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu $(lsb_release -sc) universe"
-        sudo add-apt-repository ppa:ubuntu-toolchain-r/test
-        sudo apt-get update
+ 2. Download the Source code (tar.gz) for Tunics.
 
- 3. Download and install the latest Solarus 1.3.x package from here:
-    * [amd64](http://www.solarus-games.org/downloads/solarus/debian-amd64) or
-    * [i386](http://www.solarus-games.org/downloads/solarus/debian-i386)
+ 3. Extract the contents of the tar.gz into your home directory.
 
- 4. Run the following commands:
-
-        $ solarus $PATH_TO_REPOSITORY
-
-    or
-
-        $ cd $PATH_TO_REPOSITORY
-        $ solarus
+ 4. Run `solarus $HOME/tunics-master`
 
 
 ## OS X
 
- 1. Clone the tunics repository.
+ 1. Install the latest Solarus 1.4.x engine from http://www.solarus-games.org/engine/download/.
 
- 2. Download the latest Solarus 1.3.x package from http://www.solarus-games.org/downloads/solarus/macosx/
+ 2. Download the Source code (tar.gz) for Tunics.
 
- 3. Copy the ”data” directory from the tunics repository.
+ 3. Copy the ”data” directory from the Tunics tar.gz.
 
  4. In the Solarus package, open the solars_bundle directory to find Solarus.app
 
