@@ -217,24 +217,6 @@ tile{
 tile{
   layer = 1,
   x = 80,
-  y = 104,
-  width = 160,
-  height = 32,
-  pattern = "water.transparent",
-}
-
-tile{
-  layer = 1,
-  x = 208,
-  y = 40,
-  width = 32,
-  height = 64,
-  pattern = "water.transparent",
-}
-
-tile{
-  layer = 1,
-  x = 80,
   y = 88,
   width = 112,
   height = 8,
@@ -288,15 +270,6 @@ tile{
 
 tile{
   layer = 1,
-  x = 208,
-  y = 40,
-  width = 32,
-  height = 8,
-  pattern = "waterfall.1.bottom",
-}
-
-tile{
-  layer = 1,
   x = 88,
   y = 176,
   width = 16,
@@ -306,11 +279,258 @@ tile{
 
 tile{
   layer = 1,
+  x = 72,
+  y = 96,
+  width = 48,
+  height = 112,
+  pattern = "floor_small.5",
+}
+
+tile{
+  layer = 1,
+  x = 200,
+  y = 32,
+  width = 48,
+  height = 112,
+  pattern = "floor_small.5",
+}
+
+tile{
+  layer = 1,
+  x = 120,
+  y = 96,
+  width = 80,
+  height = 48,
+  pattern = "floor_small.5",
+}
+
+tile{
+  layer = 1,
+  x = 80,
+  y = 104,
+  width = 160,
+  height = 32,
+  pattern = "water.transparent",
+}
+
+tile{
+  layer = 1,
+  x = 208,
+  y = 40,
+  width = 32,
+  height = 64,
+  pattern = "water.transparent",
+}
+
+tile{
+  layer = 1,
   x = 80,
   y = 136,
   width = 32,
   height = 64,
   pattern = "water.transparent",
+}
+
+tile{
+  layer = 1,
+  x = 208,
+  y = 40,
+  width = 32,
+  height = 8,
+  pattern = "waterfall.1.bottom",
+}
+
+wall{
+  layer = 1,
+  x = 112,
+  y = 168,
+  width = 8,
+  height = 16,
+  stops_enemies = true,
+}
+
+wall{
+  layer = 1,
+  x = 200,
+  y = 56,
+  width = 8,
+  height = 16,
+  stops_enemies = true,
+}
+
+dynamic_tile{
+  name = "treasure_obstacle_chest",
+  layer = 1,
+  x = 248,
+  y = 168,
+  pattern = "placeholder_treasure_obstacle",
+  width = 16,
+  height = 16,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  name = "treasure_open_chest",
+  layer = 1,
+  x = 56,
+  y = 56,
+  pattern = "placeholder_treasure_open",
+  width = 16,
+  height = 16,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  name = "enemy_1",
+  layer = 1,
+  x = 120,
+  y = 56,
+  pattern = "placeholder_enemy",
+  width = 32,
+  height = 32,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  name = "enemy_2",
+  layer = 1,
+  x = 40,
+  y = 176,
+  pattern = "placeholder_enemy",
+  width = 32,
+  height = 32,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  name = "enemy_4",
+  layer = 1,
+  x = 248,
+  y = 32,
+  pattern = "placeholder_enemy",
+  width = 32,
+  height = 32,
+  enabled_at_start = true,
+}
+
+wall{
+  layer = 1,
+  x = 200,
+  y = 32,
+  width = 8,
+  height = 24,
+  stops_hero = true,
+  stops_npcs = true,
+  stops_enemies = true,
+  stops_blocks = true,
+}
+
+wall{
+  layer = 1,
+  x = 200,
+  y = 72,
+  width = 8,
+  height = 32,
+  stops_hero = true,
+  stops_npcs = true,
+  stops_enemies = true,
+  stops_blocks = true,
+}
+
+wall{
+  layer = 1,
+  x = 240,
+  y = 32,
+  width = 8,
+  height = 112,
+  stops_hero = true,
+  stops_npcs = true,
+  stops_enemies = true,
+  stops_blocks = true,
+}
+
+wall{
+  layer = 1,
+  x = 112,
+  y = 136,
+  width = 8,
+  height = 32,
+  stops_hero = true,
+  stops_npcs = true,
+  stops_enemies = true,
+  stops_blocks = true,
+}
+
+wall{
+  layer = 1,
+  x = 112,
+  y = 184,
+  width = 8,
+  height = 24,
+  stops_hero = true,
+  stops_npcs = true,
+  stops_enemies = true,
+  stops_blocks = true,
+}
+
+wall{
+  layer = 1,
+  x = 72,
+  y = 96,
+  width = 8,
+  height = 112,
+  stops_hero = true,
+  stops_npcs = true,
+  stops_enemies = true,
+  stops_blocks = true,
+}
+
+wall{
+  layer = 1,
+  x = 80,
+  y = 96,
+  width = 120,
+  height = 8,
+  stops_hero = true,
+  stops_npcs = true,
+  stops_enemies = true,
+  stops_blocks = true,
+}
+
+wall{
+  layer = 1,
+  x = 80,
+  y = 200,
+  width = 32,
+  height = 8,
+  stops_hero = true,
+  stops_npcs = true,
+  stops_enemies = true,
+  stops_blocks = true,
+}
+
+wall{
+  layer = 1,
+  x = 120,
+  y = 136,
+  width = 120,
+  height = 8,
+  stops_hero = true,
+  stops_npcs = true,
+  stops_enemies = true,
+  stops_blocks = true,
+}
+
+wall{
+  layer = 1,
+  x = 208,
+  y = 32,
+  width = 32,
+  height = 8,
+  stops_hero = true,
+  stops_npcs = true,
+  stops_enemies = true,
+  stops_blocks = true,
 }
 
 jumper{
@@ -328,7 +548,7 @@ jumper{
   x = 112,
   y = 152,
   width = 8,
-  height = 8,
+  height = 16,
   direction = 4,
   jump_length = 40,
 }
@@ -348,7 +568,7 @@ jumper{
   x = 200,
   y = 40,
   width = 8,
-  height = 8,
+  height = 16,
   direction = 0,
   jump_length = 40,
 }
@@ -356,9 +576,9 @@ jumper{
 jumper{
   layer = 1,
   x = 112,
-  y = 192,
+  y = 184,
   width = 8,
-  height = 8,
+  height = 16,
   direction = 4,
   jump_length = 40,
 }
@@ -366,83 +586,10 @@ jumper{
 jumper{
   layer = 1,
   x = 200,
-  y = 80,
+  y = 72,
   width = 8,
-  height = 8,
+  height = 16,
   direction = 0,
   jump_length = 40,
-}
-
-wall{
-  layer = 1,
-  x = 112,
-  y = 160,
-  width = 8,
-  height = 32,
-  stops_enemies = true,
-}
-
-wall{
-  layer = 1,
-  x = 200,
-  y = 48,
-  width = 8,
-  height = 32,
-  stops_enemies = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 248,
-  y = 168,
-  width = 16,
-  height = 16,
-  name = "treasure_obstacle_chest",
-  pattern = "placeholder_treasure_obstacle",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 56,
-  y = 56,
-  width = 16,
-  height = 16,
-  name = "treasure_open_chest",
-  pattern = "placeholder_treasure_open",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 120,
-  y = 56,
-  width = 32,
-  height = 32,
-  name = "enemy_1",
-  pattern = "placeholder_enemy",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 40,
-  y = 176,
-  width = 32,
-  height = 32,
-  name = "enemy_2",
-  pattern = "placeholder_enemy",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 248,
-  y = 32,
-  width = 32,
-  height = 32,
-  name = "enemy_4",
-  pattern = "placeholder_enemy",
-  enabled_at_start = true,
 }
 

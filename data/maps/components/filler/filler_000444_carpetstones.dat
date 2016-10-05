@@ -44,68 +44,90 @@ tile{
 }
 
 dynamic_tile{
+  name = "stone_1",
   layer = 1,
   x = 80,
   y = 64,
+  pattern = "placeholder_stone",
   width = 16,
   height = 16,
-  name = "stone_1",
-  pattern = "placeholder_stone",
   enabled_at_start = true,
 }
 
 dynamic_tile{
-  layer = 1,
-  x = 64,
-  y = 80,
-  width = 16,
-  height = 16,
   name = "stone_2",
-  pattern = "placeholder_stone",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 96,
-  y = 80,
-  width = 16,
-  height = 16,
-  name = "stone_3",
-  pattern = "placeholder_stone",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
   layer = 1,
   x = 64,
-  y = 144,
+  y = 72,
+  pattern = "placeholder_stone",
   width = 16,
   height = 16,
-  name = "stone_4",
-  pattern = "placeholder_stone",
   enabled_at_start = true,
 }
 
 dynamic_tile{
+  name = "stone_3",
   layer = 1,
   x = 96,
-  y = 144,
+  y = 72,
+  pattern = "placeholder_stone",
   width = 16,
   height = 16,
-  name = "stone_5",
-  pattern = "placeholder_stone",
   enabled_at_start = true,
 }
 
 dynamic_tile{
+  name = "stone_4",
+  layer = 1,
+  x = 64,
+  y = 152,
+  pattern = "placeholder_stone",
+  width = 16,
+  height = 16,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  name = "stone_5",
+  layer = 1,
+  x = 96,
+  y = 152,
+  pattern = "placeholder_stone",
+  width = 16,
+  height = 16,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  name = "stone_6",
   layer = 1,
   x = 80,
   y = 160,
+  pattern = "placeholder_stone",
   width = 16,
   height = 16,
-  name = "stone_6",
-  pattern = "placeholder_stone",
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  name = "enemy_2",
+  layer = 1,
+  x = 96,
+  y = 40,
+  pattern = "placeholder_enemy",
+  width = 32,
+  height = 32,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  name = "enemy_3",
+  layer = 1,
+  x = 96,
+  y = 168,
+  pattern = "placeholder_enemy",
+  width = 32,
+  height = 32,
   enabled_at_start = true,
 }
 

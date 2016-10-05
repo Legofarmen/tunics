@@ -413,90 +413,90 @@ tile{
 }
 
 dynamic_tile{
+  name = "treasure_obstacle_canvas2_2",
   layer = 1,
   x = 56,
   y = 56,
+  pattern = "floor_border.2",
   width = 48,
   height = 48,
-  name = "treasure_obstacle_canvas2_2",
-  pattern = "floor_border.2",
   enabled_at_start = true,
 }
 
 dynamic_tile{
+  name = "treasure_open_canvas2_2",
   layer = 1,
   x = 216,
   y = 56,
+  pattern = "floor_border.2",
   width = 48,
   height = 48,
-  name = "treasure_open_canvas2_2",
-  pattern = "floor_border.2",
   enabled_at_start = true,
 }
 
 dynamic_tile{
+  name = "treasure_open_canvas1_2",
   layer = 1,
   x = 224,
   y = 64,
+  pattern = "floor_small.2",
   width = 32,
   height = 32,
-  name = "treasure_open_canvas1_2",
-  pattern = "floor_small.2",
   enabled_at_start = true,
 }
 
 dynamic_tile{
+  name = "treasure_obstacle_canvas1_2",
   layer = 1,
   x = 64,
   y = 64,
+  pattern = "floor_small.2",
   width = 32,
   height = 32,
-  name = "treasure_obstacle_canvas1_2",
-  pattern = "floor_small.2",
   enabled_at_start = true,
 }
 
 dynamic_tile{
+  name = "treasure_open_chest",
   layer = 1,
   x = 232,
   y = 72,
+  pattern = "placeholder_treasure_open",
   width = 16,
   height = 16,
-  name = "treasure_open_chest",
-  pattern = "placeholder_treasure_open",
   enabled_at_start = true,
 }
 
 dynamic_tile{
+  name = "treasure_obstacle_chest",
   layer = 1,
   x = 72,
   y = 72,
+  pattern = "placeholder_treasure_obstacle",
   width = 16,
   height = 16,
-  name = "treasure_obstacle_chest",
-  pattern = "placeholder_treasure_obstacle",
   enabled_at_start = true,
 }
 
 dynamic_tile{
+  name = "enemy_3",
   layer = 1,
   x = 64,
   y = 104,
+  pattern = "placeholder_enemy",
   width = 32,
   height = 32,
-  name = "enemy_3",
-  pattern = "placeholder_enemy",
   enabled_at_start = true,
 }
 
 dynamic_tile{
+  name = "enemy_2",
   layer = 1,
   x = 224,
   y = 104,
+  pattern = "placeholder_enemy",
   width = 32,
   height = 32,
-  name = "enemy_2",
-  pattern = "placeholder_enemy",
   enabled_at_start = true,
 }
 

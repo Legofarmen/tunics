@@ -154,7 +154,7 @@ tile{
 tile{
   layer = 1,
   x = 152,
-  y = 96,
+  y = 88,
   width = 16,
   height = 16,
   pattern = "tongue",
@@ -369,15 +369,6 @@ tile{
 
 tile{
   layer = 1,
-  x = 152,
-  y = 208,
-  width = 16,
-  height = 32,
-  pattern = "floor_small.2",
-}
-
-tile{
-  layer = 1,
   x = 144,
   y = 232,
   width = 8,
@@ -395,24 +386,24 @@ tile{
 }
 
 dynamic_tile{
+  name = "entrance_carpet",
   layer = 1,
   x = 144,
   y = 184,
+  pattern = "door_main.2.floor.1",
   width = 32,
   height = 24,
-  name = "entrance_carpet",
-  pattern = "door_main.2.floor.1",
   enabled_at_start = true,
 }
 
 dynamic_tile{
+  name = "tile_8",
   layer = 1,
   x = 144,
   y = 208,
+  pattern = "wall.2",
   width = 32,
   height = 24,
-  name = "tile_8",
-  pattern = "wall.2",
   enabled_at_start = true,
 }
 
@@ -428,23 +419,23 @@ stream{
 }
 
 dynamic_tile{
+  name = "tile_2",
   layer = 1,
   x = 120,
   y = 200,
+  pattern = "entrance_pillar.1.1.bottom",
   width = 24,
   height = 24,
-  name = "tile_2",
-  pattern = "entrance_pillar.1.1.bottom",
   enabled_at_start = true,
 }
 
 sensor{
+  name = "sensor",
   layer = 1,
   x = 160,
   y = 205,
   width = 16,
   height = 16,
-  name = "sensor",
 }
 
 stream{
@@ -459,54 +450,54 @@ stream{
 }
 
 dynamic_tile{
+  name = "tile_3",
   layer = 1,
   x = 144,
   y = 208,
+  pattern = "door.2.support.1",
   width = 8,
   height = 16,
-  name = "tile_3",
-  pattern = "door.2.support.1",
   enabled_at_start = true,
 }
 
 dynamic_tile{
+  name = "tile_4",
   layer = 1,
   x = 168,
   y = 208,
+  pattern = "door.2.support.2",
   width = 8,
   height = 16,
-  name = "tile_4",
-  pattern = "door.2.support.2",
   enabled_at_start = true,
 }
 
 dynamic_tile{
+  name = "tile_5",
   layer = 1,
   x = 176,
   y = 200,
+  pattern = "entrance_pillar.1.2.bottom",
   width = 24,
   height = 24,
-  name = "tile_5",
-  pattern = "entrance_pillar.1.2.bottom",
   enabled_at_start = true,
 }
 
 dynamic_tile{
+  name = "tile_6",
   layer = 1,
   x = 152,
   y = 208,
+  pattern = "door_main.2",
   width = 16,
   height = 32,
-  name = "tile_6",
-  pattern = "door_main.2",
   enabled_at_start = true,
 }
 
 door{
+  name = "door_entrance_2",
   layer = 1,
   x = 152,
   y = 208,
-  name = "door_entrance_2",
   direction = 3,
   sprite = "entities/door_normal",
 }

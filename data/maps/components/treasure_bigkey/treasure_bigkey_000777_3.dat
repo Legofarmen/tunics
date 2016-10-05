@@ -9,16 +9,16 @@ properties{
 
 tile{
   layer = 1,
-  x = 192,
+  x = 200,
   y = 56,
-  width = 72,
+  width = 64,
   height = 128,
   pattern = "hole",
 }
 
 tile{
   layer = 1,
-  x = 128,
+  x = 120,
   y = 56,
   width = 80,
   height = 32,
@@ -29,7 +29,7 @@ tile{
   layer = 1,
   x = 56,
   y = 56,
-  width = 72,
+  width = 64,
   height = 128,
   pattern = "hole",
 }
@@ -243,7 +243,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 112,
+  x = 120,
   y = 160,
   width = 16,
   height = 24,
@@ -252,7 +252,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 192,
+  x = 184,
   y = 160,
   width = 16,
   height = 24,
@@ -288,7 +288,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 208,
+  x = 200,
   y = 208,
   width = 32,
   height = 24,
@@ -332,13 +332,13 @@ tile{
 }
 
 dynamic_tile{
+  name = "chest",
   layer = 1,
   x = 144,
   y = 104,
+  pattern = "placeholder_bigchest",
   width = 32,
   height = 24,
-  name = "chest",
-  pattern = "placeholder_bigchest",
   enabled_at_start = true,
 }
 
