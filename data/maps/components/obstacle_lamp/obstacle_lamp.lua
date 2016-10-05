@@ -54,6 +54,13 @@ function lamp.init(map, data, timeout)
                 if data.treasure1 then
                     hidden_chest:set_enabled(true)
                     sound = 'chest_appears'
+                    sol.timer.start(100, function ()
+                        if hidden_chest:is_enabled() then
+                            hidden_chest:bounce_enemies()
+                        else
+                            return true
+                        end
+                    end)
                 end
                 for _, component in ipairs(doors) do
                     component:open()

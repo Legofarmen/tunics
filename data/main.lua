@@ -16,6 +16,7 @@ function sol.main:on_started()
     end
 
     entity_mixin.mixin(sol.main.get_metatable('enemy'))
+    entity_mixin.mixin(sol.main.get_metatable('chest'))
     bindings.mixin(solarus_logo)
     bindings.mixin(legofarmen_logo)
     bindings.mixin(title_screen)
