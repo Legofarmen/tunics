@@ -2,7 +2,7 @@
 
  * Tunics is a roguelike-like Zelda game for the [Solarus](http://solarus-games.org) game engine.
 
- * Tunics requires Solarus 1.4.x.
+ * Tunics requires Solarus 1.5.x.
 
  * Tunics consists in part of materials under various free and open-source and public licenses, and in part of unlicensed materials under fair use. See license.txt for details.
 
@@ -11,24 +11,24 @@
 
 ## Windows
  
- 1. Install the latest Solarus 1.4.x engine from http://www.solarus-games.org/engine/download/.
+ 1. Install the latest Solarus 1.5.x engine from http://www.solarus-games.org/engine/download/.
 
  2. Download the Source code (zip) for Tunics.
 
  3. Extract the `data` folder from the Tunics zip and put it in the directory where you installed Solarus.
  
- 4. Run solarus.exe
+ 4. Run solarus-run.exe
 
 
 ## Ubuntu
 
- 1. Install the latest Solarus 1.4.x engine from http://www.solarus-games.org/engine/download/.
+ 1. Install the latest Solarus 1.5.x engine from http://www.solarus-games.org/engine/download/.
 
  2. Download the Source code (tar.gz) for Tunics.
 
  3. Extract the contents of the tar.gz into your home directory.
 
- 4. Run `solarus $HOME/tunics-master`
+ 4. Run `solarus-run $HOME/tunics-master`
 
 
 ## OS X
