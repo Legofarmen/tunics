@@ -118,79 +118,79 @@ tile{
 }
 
 dynamic_tile{
+  name = "stone_1",
   layer = 1,
   x = 136,
-  y = 88,
+  y = 72,
+  pattern = "placeholder_stone",
   width = 16,
   height = 16,
-  name = "stone_1",
-  pattern = "placeholder_stone",
   enabled_at_start = true,
 }
 
 dynamic_tile{
+  name = "stone_2",
   layer = 1,
   x = 168,
-  y = 88,
+  y = 72,
+  pattern = "placeholder_stone",
   width = 16,
   height = 16,
-  name = "stone_2",
-  pattern = "placeholder_stone",
   enabled_at_start = true,
 }
 
 dynamic_tile{
+  name = "treasure_obstacle_chest",
   layer = 1,
   x = 152,
   y = 56,
+  pattern = "placeholder_treasure_obstacle",
   width = 16,
   height = 16,
-  name = "treasure_obstacle_chest",
-  pattern = "placeholder_treasure_obstacle",
   enabled_at_start = false,
 }
 
 dynamic_tile{
+  name = "treasure_open_chest",
   layer = 1,
   x = 72,
   y = 88,
+  pattern = "placeholder_treasure_open",
   width = 16,
   height = 16,
-  name = "treasure_open_chest",
-  pattern = "placeholder_treasure_open",
   enabled_at_start = false,
 }
 
 dynamic_tile{
+  name = "enemy_2",
   layer = 1,
   x = 232,
   y = 72,
+  pattern = "placeholder_enemy",
   width = 32,
   height = 32,
-  name = "enemy_2",
-  pattern = "placeholder_enemy",
   enabled_at_start = true,
 }
 
 dynamic_tile{
+  name = "enemy_3",
   layer = 1,
   x = 88,
   y = 72,
+  pattern = "placeholder_enemy",
   width = 32,
   height = 32,
-  name = "enemy_3",
-  pattern = "placeholder_enemy",
   enabled_at_start = true,
 }
 
 dynamic_tile{
+  name = "stone_3",
   layer = 1,
   x = 152,
-  y = 72,
+  y = 80,
+  pattern = "placeholder_stone",
   width = 16,
   height = 16,
-  name = "stone_3",
-  pattern = "placeholder_stone",
   enabled_at_start = true,
 }
 
