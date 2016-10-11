@@ -293,6 +293,7 @@ map{ id = "components/treasure_bigkey/treasure_bigkey_000777_3", description = "
 map{ id = "components/treasure_bigkey/treasure_bigkey_000777_4", description = "Treasure bigkey 000777 4" }
 map{ id = "components/treasure_bigkey/treasure_bigkey_000777_5", description = "Treasure bigkey 000777 5" }
 map{ id = "components/treasure_bigkey/treasure_bigkey_000777_6", description = "Treasure bigkey 000777 6 - Eight statues" }
+map{ id = "components/treasure_bigkey/treasure_bigkey_000777_7", description = "Treasure bigkey 000777 ring of fire" }
 map{ id = "components/treasure_bigkey/treasure_bigkey_050777_1", description = "Treasure bigkey 050777 1" }
 map{ id = "components/treasure_bigkey/treasure_bigkey_052777_1", description = "Treasure bigkey 052777 1" }
 map{ id = "components/treasure_bigkey/treasure_bigkey_200777_1", description = "Treasure bigkey 200777 1" }
