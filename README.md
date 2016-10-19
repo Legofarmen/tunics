@@ -24,17 +24,22 @@
 
  1. Install the latest Solarus 1.5.x engine from http://www.solarus-games.org/engine/download/.
 
- 2. Download the Source code (tar.gz) for Tunics.
+ 2. Download the Source code (zip) for Tunics.
 
- 3. Extract the contents of the tar.gz into your home directory.
+ 3. Extract the contents of the zip into your home directory.
 
  4. Run `solarus-run $HOME/tunics-master`
 
 
 ## OS X
 
-Sadly we cannot provide installation instructions for OS X at this time for lack of know-how.   
+ 1. Install the latest Solarus 1.5.x engine from http://www.solarus-games.org/engine/download/.
 
+ 2. Download and extract the Source code (zip) for Tunics.
+
+ 3. Copy the Solarus-run application from the Solarus bundle to the Tunics directory.
+ 
+ 4. Run the Solarus-run application.
 
 # Install Tunics!
 
