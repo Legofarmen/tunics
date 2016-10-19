@@ -33,7 +33,7 @@
 
 ## OS X
 
-Sadly we cannot provide installation instructions for OS X at this time for lack of know-how.  
+Sadly we cannot provide installation instructions for OS X at this time for lack of know-how.   
 
 
 # Install Tunics!
