@@ -68,6 +68,8 @@ function map:on_opening_transition_finished()
 			layer=1,
 			x = x,
 			y = y,
+			width = 16,
+			height = 16,
 		}
 
 		x=x-16

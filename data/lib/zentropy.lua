@@ -906,8 +906,8 @@ function zentropy.Room:inject_enemy(placeholder, rng)
         local breed, treshold = self.next_enemy(rng2:refine('breed'), zentropy.Room.enemies)
         local enemy = map:create_enemy{
             layer=layer,
-            x=x,
-            y=y,
+            x = x,
+            y = y + 2,
             direction=3,
             breed=breed,
             treasure_name='random',
@@ -935,8 +935,8 @@ function zentropy.inject_pot(placeholder, rng)
     local x, y, layer = placeholder:get_position()
     local entity = map:create_destructible{
         layer=layer,
-        x=x,
-        y=y,
+        x = x,
+        y = y + 2,
         destruction_sound='stone',
         sprite=zentropy.Room.destructibles.pot,
         treasure_name='random',
@@ -955,7 +955,7 @@ function zentropy.Room:inject_stone(placeholder)
     local stone = map:create_destructible{
         layer = layer,
         x = x,
-        y = y,
+        y = y + 2,
         destruction_sound = 'stone',
         sprite = sprite,
         weight = weight,
@@ -973,7 +973,7 @@ function zentropy.inject_block(placeholder)
     local entity = map:create_block{
         layer = 1,
         x = x,
-        y = y,
+        y = y + 2,
         direction = -1,
         sprite = "entities/block",
         pushable = false,
@@ -991,8 +991,8 @@ function zentropy.inject_chest(placeholder, data)
     local map = placeholder:get_map()
     local x, y, layer = placeholder:get_position()
     local chest = map:create_chest{
-        x=x,
-        y=y,
+        x = x,
+        y = y + 2,
         layer=layer,
         treasure_name=data.item_name,
         treasure_variant=data.variant,
@@ -1010,7 +1010,7 @@ function zentropy.inject_big_chest(placeholder, data)
     local x, y, layer = placeholder:get_position()
     local chest = map:create_chest{
         x = x,
-        y = y,
+        y = y + 2,
         layer=layer,
         treasure_name=data.item_name,
         treasure_variant=data.variant,

@@ -91,11 +91,11 @@ function fireball_triple.init(enemy)
 
         local v2 = la.Vect2:new{x - math.cos(angle) * 12, y + math.sin(angle) * 12}
         if is_outside(v2) then v2 = bounce.mirror:vmul(v2) end
-        self:get_map():draw_sprite(self.sprite2, v2[1], v2[2])
+        self:get_map():draw_visual(self.sprite2, v2[1], v2[2])
 
         local v3 = la.Vect2:new{x - math.cos(angle) * 24, y + math.sin(angle) * 24}
         if is_outside(v3) then v3 = bounce.mirror:vmul(v3) end
-        self:get_map():draw_sprite(self.sprite3, v3[1], v3[2])
+        self:get_map():draw_visual(self.sprite3, v3[1], v3[2])
     end
 
     -- Method called by other enemies.

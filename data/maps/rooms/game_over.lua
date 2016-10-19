@@ -27,6 +27,8 @@ function map:on_started()
 			layer=1,
 			x = x,
 			y = y,
+			width = 16,
+			height = 16,
 		}
 		x=x-16
 		if tiern % 6 == 0 then

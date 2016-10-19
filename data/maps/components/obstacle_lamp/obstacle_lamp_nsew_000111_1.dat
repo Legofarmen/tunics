@@ -3,6 +3,8 @@ properties{
   y = 0,
   width = 320,
   height = 240,
+  min_layer = 0,
+  max_layer = 2,
   tileset = "dungeon_brick_gray_1",
   music = "same",
 }
@@ -48,6 +50,8 @@ custom_entity{
   layer = 1,
   x = 232,
   y = 77,
+  width = 16,
+  height = 16,
   direction = 3,
   model = "torch",
 }
@@ -57,6 +61,8 @@ custom_entity{
   layer = 1,
   x = 232,
   y = 173,
+  width = 16,
+  height = 16,
   direction = 3,
   model = "torch",
 }

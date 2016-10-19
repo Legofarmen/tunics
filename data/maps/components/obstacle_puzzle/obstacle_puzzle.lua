@@ -66,6 +66,12 @@ function puzzle.init(map, data)
     if data.treasure1 or next(data.doors) then
         local hideout = zentropy.hideout(data.rng:refine('hideout'):seq(), map:get_entities('pot_'), map:get_entities('block_'))
         zentropy.hide_switch(switch, hideout)
+        if hideout:get_type() == 'block' then
+            switch:set_locked(true)
+            function hideout:on_moved()
+                switch:set_locked(false)
+            end
+        end
 
         data.room_events:add_door_sensor_activated_listener(function ()
             if not switch:is_activated() then

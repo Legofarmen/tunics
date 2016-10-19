@@ -1,6 +1,17 @@
 quest{
-  solarus_version = "1.4",
+  solarus_version = "1.5",
   write_dir = "tunics",
-  title_bar = "Tunics!",
+  title = "Tunics!",
+  short_description = "Tunics! is a roguelike-like Zelda game based of the look and mechanics of The legend of Zelda – A link to the past for SNES.",
+  long_description = [[
+Hyrule is at peace, there are no supervillains running amok but our hero has found himself in the unfortunate situation of having fallen down a hole and now he needs to get out. The only way out is through the dungeons.
+]],
+  author = "Mattias Päivärinta, Jan Sandström",
+  quest_version = "0.3",
+  release_date = "",
+  website = "http://tunics.legofarmen.se/",
+  normal_quest_size = "320x240",
+  min_quest_size = "320x240",
+  max_quest_size = "320x240",
 }
 
