@@ -35,7 +35,7 @@ zentropy = zentropy or {
     settings = {
         filename = 'tunics.dat',
         defaults = {
-            debug_filename = 'wdebug.txt',
+            debug_filename = '-',
             quest_sword_ability = 1,
             quest_seed = function () return os.time() end,
             quest_tier = 1,
@@ -59,9 +59,9 @@ end
 setmetatable(zentropy.settings, settings_meta)
 
 function zentropy.init()
-
-    io.open(zentropy.settings.debug_filename, "w"):close()
-
+	if zentropy.settings.debug_filename ~= '-' then
+    	assert(io.open(zentropy.settings.debug_filename, "w")):close()
+	end
     entries = zentropy.db.Project:parse()
     zentropy.components = zentropy.db.Components:new():parse(entries.map)
     zentropy.tilesets = zentropy.db.Tilesets:new():parse(entries.tileset)
