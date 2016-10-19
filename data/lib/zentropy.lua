@@ -33,7 +33,7 @@ zentropy = zentropy or {
         savefile = 'save.dat',
     },
     settings = {
-        filename = 'settings.dat',
+        filename = 'tunics.dat',
         defaults = {
             debug_filename = 'wdebug.txt',
             quest_sword_ability = 1,
