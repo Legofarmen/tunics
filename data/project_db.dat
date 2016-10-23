@@ -334,6 +334,7 @@ map{ id = "rooms/intro_3", description = "Intro 3" }
 map{ id = "rooms/room1", description = "Room1" }
 map{ id = "rooms/title", description = "Title" }
 
+tileset{ id = "Test", description = "Test for 1.5; new layout" }
 tileset{ id = "dungeon_brick_blue_1", description = "Dungeon brick blue 1" }
 tileset{ id = "dungeon_brick_brown_1", description = "Dungeon brick brown 1" }
 tileset{ id = "dungeon_brick_gray_1", description = "Dungeon brick gray 1" }
@@ -348,6 +349,7 @@ tileset{ id = "dungeon_smoothbrick_gold_1", description = "Dungeon smoothbrick g
 tileset{ id = "dungeon_smoothbrick_green_1", description = "Dungeon smoothbrick green 1" }
 tileset{ id = "dungeon_smoothbrick_pink_1", description = "Dungeon smoothbrick pink 1" }
 tileset{ id = "light_world", description = "Light World" }
+tileset{ id = "test", description = "Test 1.5; new tileset layout" }
 
 sprite{ id = "enemies/agahnim", description = "Agahnim" }
 sprite{ id = "enemies/bari_blue", description = "Bari blue" }
