@@ -350,8 +350,6 @@ tileset{ id = "dungeon_smoothbrick_gold_1", description = "Dungeon smoothbrick g
 tileset{ id = "dungeon_smoothbrick_green_1", description = "Dungeon smoothbrick green 1" }
 tileset{ id = "dungeon_smoothbrick_pink_1", description = "Dungeon smoothbrick pink 1" }
 tileset{ id = "light_world", description = "Light World" }
-tileset{ id = "test", description = "Test 1.5; new tileset layout" }
-tileset{ id = "test2", description = "test2" }
 
 sprite{ id = "enemies/agahnim", description = "Agahnim" }
 sprite{ id = "enemies/bari_blue", description = "Bari blue" }
