@@ -722,7 +722,7 @@ function zentropy.game.setup_quest_invariants()
 
     local handling = false
     function zentropy.game.game:on_command_pressed(command)
-        if self:get_map():get_id():find('^dungeons/') then
+        if not self:is_game_over_enabled() and self:get_map():get_id():find('^dungeons/') then
             if command == 'map' then
                 if sol.menu.is_started(map_menu) then
                     sol.menu.stop(map_menu)
@@ -730,9 +730,9 @@ function zentropy.game.setup_quest_invariants()
                     for i, menu in ipairs{map_menu, inventory_menu, save_menu} do
                         sol.menu.stop(menu)
                     end
-                    zentropy.game.game:set_paused(true)
-                    map_menu:start(zentropy.game.game, function ()
-                        zentropy.game.game:set_paused(false)
+                    self:set_paused(true)
+                    map_menu:start(self, function ()
+                        self:set_paused(false)
                     end)
                 end
                 return true
@@ -743,21 +743,21 @@ function zentropy.game.setup_quest_invariants()
                     for i, menu in ipairs{map_menu, inventory_menu, save_menu} do
                         sol.menu.stop(menu)
                     end
-                    zentropy.game.game:set_paused(true)
-                    inventory_menu:start(zentropy.game.game, function ()
-                        zentropy.game.game:set_paused(false)
+                    self:set_paused(true)
+                    inventory_menu:start(self, function ()
+                        self:set_paused(false)
                     end)
                 end
                 return true
             elseif command == 'escape' then
-                if zentropy.game.game:is_paused() then
+                if self:is_paused() then
                     for i, menu in ipairs{map_menu, inventory_menu, save_menu} do
                         sol.menu.stop(menu)
                     end
                 else
-                    zentropy.game.game:set_paused(true)
-                    save_menu:start(zentropy.game.game, function ()
-                        zentropy.game.game:set_paused(false)
+                    self:set_paused(true)
+                    save_menu:start(self, function ()
+                        self:set_paused(false)
                     end)
                 end
                 return true
@@ -876,12 +876,11 @@ function zentropy.game.init(game)
 		local map = zentropy.game.game:get_map()
         game_over_menu.game = zentropy.game.game
         zentropy.game.tier = zentropy.game.game:get_value('tier') - 1
-        zentropy.game.game = nil
 		sol.menu.start(map, game_over_menu)
 	end
 	
     function game:on_game_over_finished()
-        --sol.main.reset()
+        zentropy.game.game = nil
     end
 
     function game:on_finished()
