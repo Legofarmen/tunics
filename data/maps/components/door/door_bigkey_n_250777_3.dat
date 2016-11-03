@@ -21,9 +21,9 @@ tile{
 tile{
   layer = 1,
   x = 128,
-  y = 40,
+  y = 72,
   width = 64,
-  height = 168,
+  height = 128,
   pattern = "stage_big_fill",
 }
 

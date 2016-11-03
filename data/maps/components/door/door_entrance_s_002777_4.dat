@@ -110,6 +110,15 @@ tile{
 
 tile{
   layer = 1,
+  x = 152,
+  y = 208,
+  width = 16,
+  height = 32,
+  pattern = "floor_small.1",
+}
+
+tile{
+  layer = 1,
   x = 144,
   y = 232,
   width = 8,
