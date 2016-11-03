@@ -15,7 +15,7 @@ function map:on_started()
 end
 
 function map:on_opening_transition_finished()
-    zentropy.game.game = nil
+    zentropy.game.set_save_allowed(false)
     hero:freeze()
     sol.timer.start(500, function()
         map:start_intro()
@@ -39,7 +39,7 @@ function map:start_intro()
                     if answer == 1 then
                         hero:teleport('rooms/game_complete_2')
                     else
-                        zentropy.game.game = map:get_game()
+                        zentropy.game.set_save_allowed(true)
                         zentropy.game.next_tier()
                         sol.timer.start(500, function()
                             sol.audio.play_sound('door_closed')

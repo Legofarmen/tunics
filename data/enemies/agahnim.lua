@@ -4,38 +4,40 @@ local zentropy = require "lib/zentropy"
 
 -- Agahnim
 
+local tier = zentropy.game.get_tier()
+
 local nb_sons_created = 0
-local initial_life = 2 + zentropy.game.game:get_value('tier')
+local initial_life = 2 + tier
 
 local treasure, treasure_count
-if zentropy.game.game:get_value('tier') >= 18 then
+if tier >= 18 then
     treasure, treasure_count = "fairy", 3
 else
     treasure, treasure_count = "heart_container", 1
 end
 
 local blue_fireball_high_health_proba, blue_fireball_low_health_proba
-if zentropy.game.game:get_value('tier') >= 2 then
+if tier >= 2 then
     blue_fireball_high_health_proba, blue_fireball_low_health_proba = 0.33, 0.5
 else
     blue_fireball_high_health_proba, blue_fireball_low_health_proba = 0, 0
 end
 
 local low_health_fireball_count
-if zentropy.game.game:get_value('tier') >= 6 then
+if tier >= 6 then
     low_health_fireball_count = 3
-elseif zentropy.game.game:get_value('tier') >= 3 then
+elseif tier >= 3 then
     low_health_fireball_count = 2
 else
     low_health_fireball_count = 1
 end
 
 local fireball_bounces
-if zentropy.game.game:get_value('tier') >= 5 then
+if tier >= 5 then
     fireball_bounces = 4
-elseif zentropy.game.game:get_value('tier') >= 3 then
+elseif tier >= 3 then
     fireball_bounces = 3
-elseif zentropy.game.game:get_value('tier') >= 2 then
+elseif tier >= 2 then
     fireball_bounces = 2
 else
     fireball_bounces = 1
