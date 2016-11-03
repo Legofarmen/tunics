@@ -207,6 +207,24 @@ tile{
   pattern = "wall_border.corner.2",
 }
 
+tile{
+  layer = 1,
+  x = 80,
+  y = 80,
+  width = 8,
+  height = 8,
+  pattern = "wall_border.corner_reverse.1",
+}
+
+tile{
+  layer = 1,
+  x = 232,
+  y = 80,
+  width = 8,
+  height = 8,
+  pattern = "wall_border.corner_reverse.2",
+}
+
 dynamic_tile{
   name = "enemy_3",
   layer = 1,
