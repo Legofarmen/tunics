@@ -928,6 +928,16 @@ tile_pattern{
 }
 
 tile_pattern{
+  id = "ceiling",
+  ground = "traversable",
+  default_layer = 2,
+  x = 168,
+  y = 312,
+  width = 8,
+  height = 8,
+}
+
+tile_pattern{
   id = "chasm_wall.e",
   ground = "hole",
   default_layer = 0,
@@ -1091,45 +1101,121 @@ tile_pattern{
 tile_pattern{
   id = "cracked_wall.e",
   ground = "wall",
-  default_layer = 1,
+  default_layer = 0,
+  x = 152,
+  y = 280,
+  width = 16,
+  height = 16,
+}
+
+tile_pattern{
+  id = "cracked_wall.e.l",
+  ground = "wall",
+  default_layer = 0,
   x = 152,
   y = 272,
   width = 16,
-  height = 32,
-  repeat_mode = "none",
+  height = 8,
+}
+
+tile_pattern{
+  id = "cracked_wall.e.r",
+  ground = "wall",
+  default_layer = 0,
+  x = 152,
+  y = 296,
+  width = 16,
+  height = 8,
 }
 
 tile_pattern{
   id = "cracked_wall.n",
   ground = "wall",
-  default_layer = 1,
+  default_layer = 0,
+  x = 176,
+  y = 272,
+  width = 16,
+  height = 16,
+}
+
+tile_pattern{
+  id = "cracked_wall.n.l",
+  ground = "wall",
+  default_layer = 0,
   x = 168,
   y = 272,
-  width = 32,
+  width = 8,
   height = 16,
-  repeat_mode = "none",
+}
+
+tile_pattern{
+  id = "cracked_wall.n.r",
+  ground = "wall",
+  default_layer = 0,
+  x = 192,
+  y = 272,
+  width = 8,
+  height = 16,
 }
 
 tile_pattern{
   id = "cracked_wall.s",
   ground = "wall",
-  default_layer = 1,
+  default_layer = 0,
+  x = 176,
+  y = 288,
+  width = 16,
+  height = 16,
+}
+
+tile_pattern{
+  id = "cracked_wall.s.l",
+  ground = "wall",
+  default_layer = 0,
+  x = 192,
+  y = 288,
+  width = 8,
+  height = 16,
+}
+
+tile_pattern{
+  id = "cracked_wall.s.r",
+  ground = "wall",
+  default_layer = 0,
   x = 168,
   y = 288,
-  width = 32,
+  width = 8,
   height = 16,
-  repeat_mode = "none",
 }
 
 tile_pattern{
   id = "cracked_wall.w",
   ground = "wall",
-  default_layer = 1,
+  default_layer = 0,
+  x = 136,
+  y = 280,
+  width = 16,
+  height = 16,
+}
+
+tile_pattern{
+  id = "cracked_wall.w.l",
+  ground = "wall",
+  default_layer = 0,
+  x = 136,
+  y = 296,
+  width = 16,
+  height = 8,
+}
+
+tile_pattern{
+  id = "cracked_wall.w.r",
+  ground = "wall",
+  default_layer = 0,
   x = 136,
   y = 272,
   width = 16,
-  height = 32,
-  repeat_mode = "none",
+  height = 8,
 }
 
 tile_pattern{
@@ -3931,6 +4017,16 @@ tile_pattern{
 }
 
 tile_pattern{
+  id = "none",
+  ground = "traversable",
+  default_layer = 0,
+  x = 128,
+  y = 720,
+  width = 16,
+  height = 16,
+}
+
+tile_pattern{
   id = "nw",
   ground = "hole",
   default_layer = 0,
@@ -4005,6 +4101,16 @@ tile_pattern{
   width = 16,
   height = 16,
   repeat_mode = "none",
+}
+
+tile_pattern{
+  id = "pike",
+  ground = "prickles",
+  default_layer = 1,
+  x = 256,
+  y = 512,
+  width = 16,
+  height = 16,
 }
 
 tile_pattern{
@@ -5361,16 +5467,6 @@ tile_pattern{
 }
 
 tile_pattern{
-  id = "top",
-  ground = "traversable",
-  default_layer = 2,
-  x = 168,
-  y = 312,
-  width = 8,
-  height = 8,
-}
-
-tile_pattern{
   id = "wall_border.high.e",
   ground = "traversable",
   default_layer = 1,
@@ -5723,17 +5819,6 @@ tile_pattern{
 }
 
 tile_pattern{
-  id = "wall_pillar.1.",
-  ground = "wall",
-  default_layer = 1,
-  x = 368,
-  y = 16,
-  width = 16,
-  height = 32,
-  repeat_mode = "none",
-}
-
-tile_pattern{
   id = "wall_pillar.1.e",
   ground = "wall",
   default_layer = 1,
@@ -5741,6 +5826,17 @@ tile_pattern{
   y = 48,
   width = 32,
   height = 16,
+  repeat_mode = "none",
+}
+
+tile_pattern{
+  id = "wall_pillar.1.n",
+  ground = "wall",
+  default_layer = 1,
+  x = 368,
+  y = 16,
+  width = 16,
+  height = 32,
   repeat_mode = "none",
 }
 
