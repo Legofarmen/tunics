@@ -440,7 +440,8 @@ function zentropy.db.Tilesets:parse(tilesets)
     tilesets = tilesets or zentropy.db.Project:parse().tileset
 
     for k, v in util.pairs_by_keys(tilesets) do
-        local parts = string.gmatch(v.id, '[^_]+')
+        print(v.id)
+        local parts = string.gmatch(v.id, '[^.]+')
         local kind = parts()
         local family = parts()
         if self[kind] then
