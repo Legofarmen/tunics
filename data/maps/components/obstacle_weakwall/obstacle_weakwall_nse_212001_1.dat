@@ -11,8 +11,8 @@ properties{
 
 dynamic_tile{
   layer = 1,
-  x = 208,
-  y = 152,
+  x = 240,
+  y = 144,
   width = 32,
   height = 48,
   name = "treasure_obstacle_carpet",
@@ -22,8 +22,8 @@ dynamic_tile{
 
 door{
   layer = 1,
-  x = 216,
-  y = 176,
+  x = 248,
+  y = 168,
   name = "treasure_obstacle_block",
   direction = 1,
   sprite = "entities/door_weak_block",
@@ -32,8 +32,8 @@ door{
 
 dynamic_tile{
   layer = 1,
-  x = 248,
-  y = 152,
+  x = 208,
+  y = 144,
   width = 32,
   height = 48,
   name = "treasure_open_carpet",
@@ -43,8 +43,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 176,
-  y = 152,
+  x = 208,
+  y = 168,
   width = 32,
   height = 32,
   name = "enemy_1",
@@ -54,8 +54,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 256,
-  y = 160,
+  x = 216,
+  y = 152,
   width = 16,
   height = 16,
   name = "treasure_open_chest",
@@ -65,8 +65,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 216,
-  y = 160,
+  x = 248,
+  y = 152,
   width = 16,
   height = 16,
   name = "treasure_obstacle_chest",

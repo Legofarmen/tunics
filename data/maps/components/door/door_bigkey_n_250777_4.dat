@@ -92,9 +92,9 @@ tile{
 
 tile{
   layer = 1,
-  x = 16,
+  x = 0,
   y = 32,
-  width = 104,
+  width = 120,
   height = 176,
   pattern = "hole",
 }
@@ -103,7 +103,7 @@ tile{
   layer = 1,
   x = 200,
   y = 32,
-  width = 104,
+  width = 120,
   height = 176,
   pattern = "hole",
 }
@@ -253,13 +253,13 @@ tile{
 }
 
 dynamic_tile{
+  name = "door_open",
   layer = 1,
   x = 152,
   y = 16,
+  pattern = "door.1",
   width = 16,
   height = 16,
-  name = "door_open",
-  pattern = "door.1",
   enabled_at_start = true,
 }
 
@@ -273,12 +273,12 @@ wall{
 }
 
 sensor{
+  name = "sensor",
   layer = 1,
   x = 160,
   y = 45,
   width = 16,
   height = 16,
-  name = "sensor",
 }
 
 stream{

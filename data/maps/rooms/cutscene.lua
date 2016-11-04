@@ -3,9 +3,10 @@ local game = map:get_game()
 
 local zentropy = require 'lib/zentropy'
 
+local tier = game:get_value('tier')
 local cutscene = {}
 local text = sol.language.get_dialog('tier_complete') 
-local text_show = text.text:gsub("X", zentropy.game.game:get_value('tier'))
+local text_show = text.text:gsub("X", tier)
 
 local skip = false
 
@@ -54,7 +55,6 @@ function map:on_opening_transition_finished()
 	hero:set_animation("walking")
 	map:get_entity("zelda"):get_sprite():set_animation("walking")
 	local x, y, layer = map:get_entity('first'):get_position()
-	local tier = game:get_value('tier')
 	local tiern = 1
 
 	x = x + 8 
