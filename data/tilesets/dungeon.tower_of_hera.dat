@@ -3872,7 +3872,7 @@ tile_pattern{
 }
 
 tile_pattern{
-  id = "low_wall.e",
+  id = "wall.low.e",
   ground = "wall",
   default_layer = 0,
   x = 112,
@@ -3883,7 +3883,7 @@ tile_pattern{
 }
 
 tile_pattern{
-  id = "low_wall.n",
+  id = "wall.low.n",
   ground = "wall",
   default_layer = 0,
   x = 104,
@@ -3894,7 +3894,7 @@ tile_pattern{
 }
 
 tile_pattern{
-  id = "low_wall.ne.1",
+  id = "wall.low.ne.1",
   ground = "wall",
   default_layer = 0,
   x = 216,
@@ -3905,7 +3905,7 @@ tile_pattern{
 }
 
 tile_pattern{
-  id = "low_wall.ne.2",
+  id = "wall.low.ne.2",
   ground = "wall",
   default_layer = 0,
   x = 200,
@@ -3916,7 +3916,7 @@ tile_pattern{
 }
 
 tile_pattern{
-  id = "low_wall.nw.1",
+  id = "wall.low.nw.1",
   ground = "wall",
   default_layer = 0,
   x = 136,
@@ -3927,7 +3927,7 @@ tile_pattern{
 }
 
 tile_pattern{
-  id = "low_wall.nw.2",
+  id = "wall.low.nw.2",
   ground = "wall",
   default_layer = 0,
   x = 152,
@@ -3938,7 +3938,7 @@ tile_pattern{
 }
 
 tile_pattern{
-  id = "low_wall.s",
+  id = "wall.low.s",
   ground = "wall",
   default_layer = 0,
   x = 120,
@@ -3949,7 +3949,7 @@ tile_pattern{
 }
 
 tile_pattern{
-  id = "low_wall.se.1",
+  id = "wall.low.se.1",
   ground = "wall",
   default_layer = 0,
   x = 216,
@@ -3960,7 +3960,7 @@ tile_pattern{
 }
 
 tile_pattern{
-  id = "low_wall.se.2",
+  id = "wall.low.se.2",
   ground = "wall",
   default_layer = 0,
   x = 200,
@@ -3971,7 +3971,7 @@ tile_pattern{
 }
 
 tile_pattern{
-  id = "low_wall.sw.1",
+  id = "wall.low.sw.1",
   ground = "wall",
   default_layer = 0,
   x = 136,
@@ -3982,7 +3982,7 @@ tile_pattern{
 }
 
 tile_pattern{
-  id = "low_wall.sw.2",
+  id = "wall.low.sw.2",
   ground = "wall",
   default_layer = 0,
   x = 152,
@@ -3993,7 +3993,7 @@ tile_pattern{
 }
 
 tile_pattern{
-  id = "low_wall.w",
+  id = "wall.low.w",
   ground = "wall",
   default_layer = 0,
   x = 96,
@@ -4818,7 +4818,7 @@ tile_pattern{
 }
 
 tile_pattern{
-  id = "placeholder_boss.1",
+  id = "placeholder.boss.1",
   ground = "traversable",
   default_layer = 1,
   x = 160,
