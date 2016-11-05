@@ -342,6 +342,17 @@ door{
   sprite = "entities/door_normal",
 }
 
+dynamic_tile{
+  name = "entrance",
+  layer = 1,
+  x = 120,
+  y = 184,
+  pattern = "placeholder.entrance",
+  width = 80,
+  height = 48,
+  enabled_at_start = true,
+}
+
 tile{
   layer = 2,
   x = 136,
