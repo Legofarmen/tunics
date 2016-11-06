@@ -1,3 +1,7 @@
+tunics-0.3 (2016-11)
+ * Requires Solarus 1.5.
+ * Some random tweaks to room layouts.
+
 tunics-0.2 (2016-10)
  * Requires Solarus 1.4.
  * Debug info is shown in the menu. Knowing these numbers make it much easier to reproduce bugs.
