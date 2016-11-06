@@ -335,6 +335,7 @@ map{ id = "rooms/intro_3", description = "Intro 3" }
 map{ id = "rooms/room1", description = "Room1" }
 map{ id = "rooms/title", description = "Title" }
 
+tileset{ id = "dungeon.tower_of_hera", description = "dungeon.tower_of_hera" }
 tileset{ id = "dungeon_brick_blue_1", description = "Dungeon brick blue 1" }
 tileset{ id = "dungeon_brick_brown_1", description = "Dungeon brick brown 1" }
 tileset{ id = "dungeon_brick_gray_1", description = "Dungeon brick gray 1" }
