@@ -3,14 +3,16 @@ properties{
   y = 0,
   width = 320,
   height = 240,
+  min_layer = 0,
+  max_layer = 2,
   tileset = "dungeon_brick_gray_1",
   music = "same",
 }
 
 dynamic_tile{
   layer = 1,
-  x = 40,
-  y = 40,
+  x = 48,
+  y = 48,
   width = 32,
   height = 48,
   name = "treasure_obstacle_carpet",
@@ -20,8 +22,8 @@ dynamic_tile{
 
 door{
   layer = 1,
-  x = 48,
-  y = 64,
+  x = 56,
+  y = 72,
   name = "treasure_obstacle_block",
   direction = 1,
   sprite = "entities/door_weak_block",
@@ -31,7 +33,7 @@ door{
 dynamic_tile{
   layer = 1,
   x = 80,
-  y = 40,
+  y = 48,
   width = 32,
   height = 48,
   name = "treasure_open_carpet",
@@ -41,8 +43,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 112,
-  y = 40,
+  x = 80,
+  y = 72,
   width = 32,
   height = 32,
   name = "enemy_2",
@@ -53,7 +55,7 @@ dynamic_tile{
 dynamic_tile{
   layer = 1,
   x = 88,
-  y = 48,
+  y = 56,
   width = 16,
   height = 16,
   name = "treasure_open_chest",
@@ -63,8 +65,8 @@ dynamic_tile{
 
 dynamic_tile{
   layer = 1,
-  x = 48,
-  y = 48,
+  x = 56,
+  y = 56,
   width = 16,
   height = 16,
   name = "treasure_obstacle_chest",

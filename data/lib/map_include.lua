@@ -21,6 +21,26 @@ local function component_map(map_userdata, component_x, component_y, component_p
         function entity:set_position(x, y, ...)
             return entity_userdata:set_position(x + component_x, y + component_y, ...)
         end
+        function entity:get_center_position()
+            local x, y, layer = entity_userdata:get_center_position()
+            return x - component_x, y - component_y, layer
+        end
+        function entity:get_facing_position()
+            local x, y, layer = entity_userdata:get_facing_position()
+            return x - component_x, y - component_y, layer
+        end
+        function entity:get_ground_position()
+            local x, y, layer = entity_userdata:get_ground_position()
+            return x - component_x, y - component_y, layer
+        end
+        function entity:get_bounding_box()
+            local x, y, width, height = entity_userdata:get_bounding_box()
+            return x - component_x, y - component_y, width, height
+        end
+        function entity:get_max_bounding_box()
+            local x, y, width, height = entity_userdata:get_max_bounding_box()
+            return x - component_x, y - component_y, width, height
+        end
         function entity:get_userdata()
             return entity_userdata
         end
@@ -119,6 +139,9 @@ local function component_map(map_userdata, component_x, component_y, component_p
     end
     function o:set_doors_open(prefix, open)
         return map_userdata:set_doors_open(add_prefix(prefix), open)
+    end
+    function o:get_entities_in_rectangle(x, y, width, height)
+        return map_userdata:get_entities_in_rectangle(x + component_x, y + component_y, width, height)
     end
     function o:include(x, y, name, data)
         return map_userdata:include(x + component_x, y + component_y, name, data)

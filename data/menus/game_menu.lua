@@ -15,7 +15,7 @@ function game_menu:on_started()
     end
     bindings.mixin(help_menu)
     local function help_action()
-        help_menu:start(self, zentropy.game.game)
+        help_menu:start(self, self.game)
     end
     local function resume_action()
         zentropy.game.resume_game()

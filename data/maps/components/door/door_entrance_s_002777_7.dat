@@ -3,6 +3,8 @@ properties{
   y = 0,
   width = 320,
   height = 240,
+  min_layer = 0,
+  max_layer = 2,
   tileset = "dungeon_smoothbrick_pink_1",
   music = "same",
 }
@@ -194,6 +196,15 @@ tile{
   width = 32,
   height = 32,
   pattern = "door_main.2.floor.3",
+}
+
+tile{
+  layer = 1,
+  x = 152,
+  y = 208,
+  width = 16,
+  height = 32,
+  pattern = "floor_small.1",
 }
 
 tile{

@@ -3,6 +3,8 @@ properties{
   y = 0,
   width = 320,
   height = 240,
+  min_layer = 0,
+  max_layer = 2,
   tileset = "dungeon_brick_gray_1",
   music = "same",
 }
@@ -144,6 +146,15 @@ tile{
 
 tile{
   layer = 1,
+  x = 152,
+  y = 208,
+  width = 16,
+  height = 32,
+  pattern = "floor_small.1",
+}
+
+tile{
+  layer = 1,
   x = 144,
   y = 232,
   width = 8,
@@ -171,20 +182,20 @@ tile{
 
 tile{
   layer = 1,
-  x = 64,
-  y = 200,
-  width = 32,
-  height = 8,
-  pattern = "wall_border.2",
-}
-
-tile{
-  layer = 1,
   x = 224,
   y = 32,
   width = 32,
   height = 8,
   pattern = "wall_border.1",
+}
+
+tile{
+  layer = 1,
+  x = 64,
+  y = 200,
+  width = 32,
+  height = 8,
+  pattern = "wall_border.2",
 }
 
 tile{

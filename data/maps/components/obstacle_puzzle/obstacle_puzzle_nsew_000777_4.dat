@@ -3,6 +3,8 @@ properties{
   y = 0,
   width = 320,
   height = 240,
+  min_layer = 0,
+  max_layer = 2,
   tileset = "dungeon_brick_gray_1",
   music = "same",
 }
@@ -45,7 +47,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 88,
+  x = 184,
   y = 72,
   width = 8,
   height = 8,
@@ -54,7 +56,7 @@ tile{
 
 tile{
   layer = 1,
-  x = 144,
+  x = 208,
   y = 72,
   width = 8,
   height = 8,
@@ -63,66 +65,99 @@ tile{
 
 tile{
   layer = 1,
-  x = 144,
-  y = 160,
-  width = 8,
-  height = 8,
-  pattern = "barrier.1.border",
-}
-
-tile{
-  layer = 1,
-  x = 88,
-  y = 160,
-  width = 8,
-  height = 8,
-  pattern = "barrier.1.border",
-}
-
-tile{
-  layer = 1,
-  x = 88,
-  y = 80,
-  width = 8,
-  height = 80,
-  pattern = "barrier.1.2",
-}
-
-tile{
-  layer = 1,
-  x = 96,
+  x = 192,
   y = 72,
-  width = 48,
+  width = 16,
   height = 8,
   pattern = "barrier.1.1",
 }
 
 tile{
   layer = 1,
-  x = 96,
+  x = 184,
   y = 160,
-  width = 48,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+tile{
+  layer = 1,
+  x = 208,
+  y = 160,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+tile{
+  layer = 1,
+  x = 192,
+  y = 160,
+  width = 16,
+  height = 8,
+  pattern = "barrier.1.1",
+}
+
+tile{
+  layer = 1,
+  x = 104,
+  y = 72,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+tile{
+  layer = 1,
+  x = 128,
+  y = 72,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+tile{
+  layer = 1,
+  x = 112,
+  y = 72,
+  width = 16,
+  height = 8,
+  pattern = "barrier.1.1",
+}
+
+tile{
+  layer = 1,
+  x = 104,
+  y = 160,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+tile{
+  layer = 1,
+  x = 128,
+  y = 160,
+  width = 8,
+  height = 8,
+  pattern = "barrier.1.border",
+}
+
+tile{
+  layer = 1,
+  x = 112,
+  y = 160,
+  width = 16,
   height = 8,
   pattern = "barrier.1.1",
 }
 
 block{
+  name = "block_1",
   layer = 1,
   x = 224,
   y = 85,
-  name = "block_1",
-  direction = -1,
-  sprite = "entities/block",
-  pushable = true,
-  pullable = false,
-  maximum_moves = 1,
-}
-
-block{
-  layer = 1,
-  x = 208,
-  y = 85,
-  direction = -1,
   sprite = "entities/block",
   pushable = true,
   pullable = false,
@@ -133,7 +168,6 @@ block{
   layer = 1,
   x = 224,
   y = 101,
-  direction = -1,
   sprite = "entities/block",
   pushable = true,
   pullable = false,
@@ -141,11 +175,10 @@ block{
 }
 
 block{
+  name = "block_2",
   layer = 1,
   x = 224,
   y = 117,
-  name = "block_2",
-  direction = -1,
   sprite = "entities/block",
   pushable = true,
   pullable = false,
@@ -153,11 +186,10 @@ block{
 }
 
 block{
+  name = "block_3",
   layer = 1,
   x = 224,
   y = 133,
-  name = "block_3",
-  direction = -1,
   sprite = "entities/block",
   pushable = true,
   pullable = false,
@@ -168,7 +200,6 @@ block{
   layer = 1,
   x = 224,
   y = 149,
-  direction = -1,
   sprite = "entities/block",
   pushable = true,
   pullable = false,
@@ -176,22 +207,10 @@ block{
 }
 
 block{
+  name = "block_4",
   layer = 1,
   x = 224,
   y = 165,
-  name = "block_4",
-  direction = -1,
-  sprite = "entities/block",
-  pushable = true,
-  pullable = false,
-  maximum_moves = 1,
-}
-
-block{
-  layer = 1,
-  x = 208,
-  y = 165,
-  direction = -1,
   sprite = "entities/block",
   pushable = true,
   pullable = false,
@@ -199,10 +218,10 @@ block{
 }
 
 switch{
+  name = "switch",
   layer = 1,
   x = 0,
   y = 0,
-  name = "switch",
   subtype = "walkable",
   sprite = "entities/switch",
   needs_block = false,
@@ -210,68 +229,132 @@ switch{
 }
 
 dynamic_tile{
+  name = "enemy_7",
   layer = 1,
   x = 40,
   y = 104,
+  pattern = "placeholder_enemy",
   width = 32,
   height = 32,
-  name = "enemy_7",
-  pattern = "placeholder_enemy",
   enabled_at_start = true,
 }
 
 dynamic_tile{
+  name = "enemy_2",
   layer = 1,
   x = 248,
   y = 104,
+  pattern = "placeholder_enemy",
   width = 32,
   height = 32,
-  name = "enemy_2",
-  pattern = "placeholder_enemy",
   enabled_at_start = true,
 }
 
 dynamic_tile{
-  layer = 1,
-  x = 160,
-  y = 136,
-  width = 32,
-  height = 32,
   name = "enemy_3",
-  pattern = "placeholder_enemy",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  layer = 1,
-  x = 160,
-  y = 72,
-  width = 32,
-  height = 32,
-  name = "enemy_4",
-  pattern = "placeholder_enemy",
-  enabled_at_start = true,
-}
-
-dynamic_tile{
   layer = 1,
   x = 144,
-  y = 112,
-  width = 16,
-  height = 16,
-  name = "treasure_obstacle_chest",
-  pattern = "placeholder_treasure_puzzle",
+  y = 136,
+  pattern = "placeholder_enemy",
+  width = 32,
+  height = 32,
   enabled_at_start = true,
 }
 
 dynamic_tile{
+  name = "enemy_4",
   layer = 1,
-  x = 112,
+  x = 144,
+  y = 72,
+  pattern = "placeholder_enemy",
+  width = 32,
+  height = 32,
+  enabled_at_start = true,
+}
+
+dynamic_tile{
+  name = "treasure_obstacle_chest",
+  layer = 1,
+  x = 176,
   y = 112,
+  pattern = "placeholder_treasure_puzzle",
   width = 16,
   height = 16,
-  name = "treasure_open_chest",
-  pattern = "placeholder_treasure_open",
   enabled_at_start = true,
+}
+
+dynamic_tile{
+  name = "treasure_open_chest",
+  layer = 1,
+  x = 128,
+  y = 112,
+  pattern = "placeholder_treasure_open",
+  width = 16,
+  height = 16,
+  enabled_at_start = true,
+}
+
+block{
+  name = "block_5",
+  layer = 1,
+  x = 96,
+  y = 85,
+  sprite = "entities/block",
+  pushable = true,
+  pullable = false,
+  maximum_moves = 1,
+}
+
+block{
+  layer = 1,
+  x = 96,
+  y = 101,
+  sprite = "entities/block",
+  pushable = true,
+  pullable = false,
+  maximum_moves = 1,
+}
+
+block{
+  name = "block_6",
+  layer = 1,
+  x = 96,
+  y = 117,
+  sprite = "entities/block",
+  pushable = true,
+  pullable = false,
+  maximum_moves = 1,
+}
+
+block{
+  name = "block_7",
+  layer = 1,
+  x = 96,
+  y = 133,
+  sprite = "entities/block",
+  pushable = true,
+  pullable = false,
+  maximum_moves = 1,
+}
+
+block{
+  layer = 1,
+  x = 96,
+  y = 149,
+  sprite = "entities/block",
+  pushable = true,
+  pullable = false,
+  maximum_moves = 1,
+}
+
+block{
+  name = "block_8",
+  layer = 1,
+  x = 96,
+  y = 165,
+  sprite = "entities/block",
+  pushable = true,
+  pullable = false,
+  maximum_moves = 1,
 }
 

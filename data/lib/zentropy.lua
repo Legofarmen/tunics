@@ -12,6 +12,8 @@ local game_over_menu = require 'menus/game_over'
 local Menu = require 'menus/menu'
 local condition_manager = require 'lib/hero_condition'
 
+local the_game = nil
+
 bit32 = bit32 or bit
 
 zentropy = zentropy or {
@@ -33,9 +35,9 @@ zentropy = zentropy or {
         savefile = 'save.dat',
     },
     settings = {
-        filename = 'settings.dat',
+        filename = 'tunics.dat',
         defaults = {
-            debug_filename = 'wdebug.txt',
+            debug_filename = '-',
             quest_sword_ability = 1,
             quest_seed = function () return os.time() end,
             quest_tier = 1,
@@ -59,9 +61,9 @@ end
 setmetatable(zentropy.settings, settings_meta)
 
 function zentropy.init()
-
-    io.open(zentropy.settings.debug_filename, "w"):close()
-
+	if zentropy.settings.debug_filename ~= '-' then
+    	assert(io.open(zentropy.settings.debug_filename, "w")):close()
+	end
     entries = zentropy.db.Project:parse()
     zentropy.components = zentropy.db.Components:new():parse(entries.map)
     zentropy.tilesets = zentropy.db.Tilesets:new():parse(entries.tileset)
@@ -589,12 +591,26 @@ function zentropy.Room:sign(data)
     return true
 end
 
+function zentropy.game.save()
+    if zentropy.game.save_allowed then
+        the_game:save()
+    end
+end
+
+function zentropy.game.set_save_allowed(save_allowed)
+    zentropy.game.save_allowed = save_allowed
+end
+
 function zentropy.game.get_tier()
-    return zentropy.game.game:get_value('tier')
+    return the_game:get_value('tier')
 end
 
 function zentropy.game.get_seed()
-    return zentropy.game.game:get_value('seed')
+    return the_game:get_value('seed')
+end
+
+function zentropy.game.enable_shield()
+    the_game:set_ability('shield', 1)
 end
 
 function zentropy.game.get_items_sequence(rng)
@@ -632,19 +648,23 @@ function zentropy.game.has_savegame()
 end
 
 function zentropy.game.resume_game()
-    zentropy.game.game = zentropy.game.init(sol.game.load(zentropy.game.savefile))
+    zentropy.game.init(sol.game.load(zentropy.game.savefile))
+    zentropy.game.set_save_allowed(true)
+
     zentropy.game.setup_quest_invariants()
 
-    zentropy.game.game:set_starting_location('dungeons/dungeon1')
-    zentropy.game.game:start()
+    the_game:set_starting_location('dungeons/dungeon1')
+    the_game:start()
     sol.game.delete(zentropy.game.savefile)
 end
 
 function zentropy.game.new_game(is_retry)
     sol.game.delete(zentropy.game.savefile)
 
-    zentropy.game.game = zentropy.game.init(sol.game.load(zentropy.game.savefile))
-    zentropy.game.game:set_value('seed', zentropy.settings.quest_seed)
+    zentropy.game.init(sol.game.load(zentropy.game.savefile))
+    zentropy.game.set_save_allowed(true)
+
+    the_game:set_value('seed', zentropy.settings.quest_seed)
     zentropy.game.setup_quest_initial()
     zentropy.game.setup_quest_invariants()
 
@@ -664,23 +684,24 @@ function zentropy.game.new_game(is_retry)
     zentropy.game.setup_tier_initial(tier)
 
     if zentropy.settings.debug_starting_location then
-		zentropy.game.game:set_starting_location(zentropy.settings.debug_starting_location)
+		the_game:set_starting_location(zentropy.settings.debug_starting_location)
     elseif zentropy.settings.skip_cinematics then
-		zentropy.game.game:set_starting_location('dungeons/dungeon1')
+		the_game:set_starting_location('dungeons/dungeon1')
 	elseif is_retry then
-		zentropy.game.game:set_starting_location('rooms/intro_3', 'retry')
+		the_game:set_starting_location('rooms/intro_3', 'retry')
     else
-		zentropy.game.game:set_starting_location('rooms/intro_1')
+		the_game:set_starting_location('rooms/intro_1')
     end
-	zentropy.game.game:start()
+	the_game:start()
 end
 
 function zentropy.game.next_tier()
-    return zentropy.game.setup_tier_initial(zentropy.game.game:get_value('tier') + 1)
+    zentropy.game.setup_tier_initial(the_game:get_value('tier') + 1)
+    return the_game
 end
 
 function zentropy.game.get_rng(tier)
-    local master_rng = Prng:new{ path=zentropy.game.game:get_value('seed') }
+    local master_rng = Prng:new{ path=the_game:get_value('seed') }
     if tier then
         return master_rng:refine('tiers'):refine(tier)
     else
@@ -696,13 +717,13 @@ function zentropy.game.setup_quest_invariants()
         if action == 'Save & Exit' then
             sol.main.exit()
         elseif action == 'Controls' then
-            help_menu:start(self, zentropy.game.game)
+            help_menu:start(self, the_game)
         else
             sol.menu.stop(save_menu)
         end
     end
 
-    bindings.mixin(zentropy.game.game)
+    bindings.mixin(the_game)
     bindings.mixin(map_menu)
     bindings.mixin(inventory_menu)
     bindings.mixin(save_menu)
@@ -721,8 +742,8 @@ function zentropy.game.setup_quest_invariants()
     }
 
     local handling = false
-    function zentropy.game.game:on_command_pressed(command)
-        if self:get_map():get_id():find('^dungeons/') then
+    function the_game:on_command_pressed(command)
+        if not self:is_game_over_enabled() and self:get_map():get_id():find('^dungeons/') then
             if command == 'map' then
                 if sol.menu.is_started(map_menu) then
                     sol.menu.stop(map_menu)
@@ -730,9 +751,9 @@ function zentropy.game.setup_quest_invariants()
                     for i, menu in ipairs{map_menu, inventory_menu, save_menu} do
                         sol.menu.stop(menu)
                     end
-                    zentropy.game.game:set_paused(true)
-                    map_menu:start(zentropy.game.game, function ()
-                        zentropy.game.game:set_paused(false)
+                    self:set_paused(true)
+                    map_menu:start(self, function ()
+                        self:set_paused(false)
                     end)
                 end
                 return true
@@ -743,21 +764,21 @@ function zentropy.game.setup_quest_invariants()
                     for i, menu in ipairs{map_menu, inventory_menu, save_menu} do
                         sol.menu.stop(menu)
                     end
-                    zentropy.game.game:set_paused(true)
-                    inventory_menu:start(zentropy.game.game, function ()
-                        zentropy.game.game:set_paused(false)
+                    self:set_paused(true)
+                    inventory_menu:start(self, function ()
+                        self:set_paused(false)
                     end)
                 end
                 return true
             elseif command == 'escape' then
-                if zentropy.game.game:is_paused() then
+                if self:is_paused() then
                     for i, menu in ipairs{map_menu, inventory_menu, save_menu} do
                         sol.menu.stop(menu)
                     end
                 else
-                    zentropy.game.game:set_paused(true)
-                    save_menu:start(zentropy.game.game, function ()
-                        zentropy.game.game:set_paused(false)
+                    self:set_paused(true)
+                    save_menu:start(self, function ()
+                        self:set_paused(false)
                     end)
                 end
                 return true
@@ -772,7 +793,7 @@ function zentropy.game.setup_quest_invariants()
         return false
     end
 
-    function zentropy.game.game:on_command_released(command)
+    function the_game:on_command_released(command)
         if native[command] then
             if handling then
                 return false
@@ -787,39 +808,37 @@ function zentropy.game.setup_quest_invariants()
 end
 
 function zentropy.game.setup_quest_initial()
-    zentropy.game.game:set_ability('sword', zentropy.settings.quest_sword_ability)
-    zentropy.game.game:set_max_life(12)
-    zentropy.game.game:set_life(12)
+    the_game:set_ability('sword', zentropy.settings.quest_sword_ability)
+    the_game:set_max_life(12)
+    the_game:set_life(12)
 end
 
 function zentropy.game.catch_up_on_items(tier)
     for i = 1, tier - 1 do
         local item_name = zentropy.game.get_tier_treasure(i)
         if item_name then
-            local item = zentropy.game.game:get_item(item_name)
+            local item = the_game:get_item(item_name)
             item:set_variant(1)
             if item.on_obtained then
                 item:on_obtained()
             end
         end
     end
-    zentropy.game.game:set_max_life(4 * tier + 8)
-    zentropy.game.game:set_life(4 * tier + 8)
+    the_game:set_max_life(4 * tier + 8)
+    the_game:set_life(4 * tier + 8)
 end
 
 function zentropy.game.setup_tier_initial(tier)
-    local game = zentropy.game.game
-
     -- reset dungeon items
-    game:set_value(game:get_item('smallkey'):get_savegame_variable(), nil)
-    game:set_value(game:get_item('smallkey'):get_amount_savegame_variable(), 0)
-    game:set_value(game:get_item('bigkey'):get_savegame_variable(), nil)
-    game:set_value(game:get_item('map'):get_savegame_variable(), nil)
-    game:set_value(game:get_item('compass'):get_savegame_variable(), nil)
+    the_game:set_value(the_game:get_item('smallkey'):get_savegame_variable(), nil)
+    the_game:set_value(the_game:get_item('smallkey'):get_amount_savegame_variable(), 0)
+    the_game:set_value(the_game:get_item('bigkey'):get_savegame_variable(), nil)
+    the_game:set_value(the_game:get_item('map'):get_savegame_variable(), nil)
+    the_game:set_value(the_game:get_item('compass'):get_savegame_variable(), nil)
 
     -- reset all state related to rooms, doors and treasures
     local luafile = zentropy.game.savefile
-    game:save()
+    the_game:save()
     local luaf = sol.main.load_file(luafile)
     sol.game.delete(zentropy.game.savefile)
     if not luaf then
@@ -827,19 +846,17 @@ function zentropy.game.setup_tier_initial(tier)
     end
     local luaenv = setmetatable({}, {__newindex=function (table, key, value)
         if string.sub(key, 1, 5) == 'room_' then
-            game:set_value(key, nil)
+            the_game:set_value(key, nil)
         end
     end})
     setfenv(luaf, luaenv)(map, data)
 
     -- increment tier
-    game:set_value('tier', tier)
-
-    return game
+    the_game:set_value('tier', tier)
 end
 
 function zentropy.game.get_tier_treasure(tier)
-    return zentropy.game.items[tier or zentropy.game.game:get_value('tier')]
+    return zentropy.game.items[tier or the_game:get_value('tier')]
 end
 
 function zentropy.game.init(game)
@@ -873,17 +890,13 @@ function zentropy.game.init(game)
     end
 	
 	function game:on_game_over_started()
-		local map = zentropy.game.game:get_map()
-        game_over_menu.game = zentropy.game.game
-        zentropy.game.tier = zentropy.game.game:get_value('tier') - 1
-        zentropy.game.game = nil
+		local map = self:get_map()
+        game_over_menu.game = self
+        zentropy.game.tier = self:get_value('tier') - 1
+        zentropy.game.set_save_allowed(false)
 		sol.menu.start(map, game_over_menu)
 	end
 	
-    function game:on_game_over_finished()
-        --sol.main.reset()
-    end
-
     function game:on_finished()
         self:quit_hud()
         self.dialog_box:quit_dialog_box()
@@ -893,7 +906,7 @@ function zentropy.game.init(game)
         self:hud_on_map_changed(map)
     end
 
-    return game
+    the_game = game
 end
 
 function zentropy.Room:inject_enemy(placeholder, rng)
@@ -906,8 +919,8 @@ function zentropy.Room:inject_enemy(placeholder, rng)
         local breed, treshold = self.next_enemy(rng2:refine('breed'), zentropy.Room.enemies)
         local enemy = map:create_enemy{
             layer=layer,
-            x=x,
-            y=y,
+            x = x,
+            y = y + 2,
             direction=3,
             breed=breed,
             treasure_name='random',
@@ -917,7 +930,7 @@ function zentropy.Room:inject_enemy(placeholder, rng)
         local enemy_w, enemy_h = enemy:get_size()
         enemy:set_position(x + origin_x + (placeholder_w - enemy_w) / 2, y + origin_y + (placeholder_h - enemy_h) / 2)
         local base = math.pow(3, 1/5)
-        local tier = zentropy.game.game:get_value('tier')
+        local tier = zentropy.game.get_tier()
         local factor = math.pow(base, tier - treshold)
         local life_factor = math.pow(base, math.min(tier, 6) - treshold)
         enemy:set_damage(math.floor(factor * enemy:get_damage() + 0.5))
@@ -935,8 +948,8 @@ function zentropy.inject_pot(placeholder, rng)
     local x, y, layer = placeholder:get_position()
     local entity = map:create_destructible{
         layer=layer,
-        x=x,
-        y=y,
+        x = x,
+        y = y + 2,
         destruction_sound='stone',
         sprite=zentropy.Room.destructibles.pot,
         treasure_name='random',
@@ -955,7 +968,7 @@ function zentropy.Room:inject_stone(placeholder)
     local stone = map:create_destructible{
         layer = layer,
         x = x,
-        y = y,
+        y = y + 2,
         destruction_sound = 'stone',
         sprite = sprite,
         weight = weight,
@@ -973,7 +986,7 @@ function zentropy.inject_block(placeholder)
     local entity = map:create_block{
         layer = 1,
         x = x,
-        y = y,
+        y = y + 2,
         direction = -1,
         sprite = "entities/block",
         pushable = false,
@@ -991,8 +1004,8 @@ function zentropy.inject_chest(placeholder, data)
     local map = placeholder:get_map()
     local x, y, layer = placeholder:get_position()
     local chest = map:create_chest{
-        x=x,
-        y=y,
+        x = x,
+        y = y + 2,
         layer=layer,
         treasure_name=data.item_name,
         treasure_variant=data.variant,
@@ -1010,7 +1023,7 @@ function zentropy.inject_big_chest(placeholder, data)
     local x, y, layer = placeholder:get_position()
     local chest = map:create_chest{
         x = x,
-        y = y,
+        y = y + 2,
         layer=layer,
         treasure_name=data.item_name,
         treasure_variant=data.variant,
@@ -1045,7 +1058,7 @@ function zentropy.game.assign_item(item)
 end
 
 function zentropy.menu(text)
-    local menu = zentropy.game.game.dialog_box:new()
+    local menu = the_game.dialog_box:new()
     menu.dialog = {text = text}
     return menu
 end

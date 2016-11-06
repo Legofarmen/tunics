@@ -3,6 +3,8 @@ properties{
   y = 0,
   width = 3200,
   height = 2400,
+  min_layer = 0,
+  max_layer = 2,
   tileset = "dungeon_brick_gray_1",
   music = "same",
 }
