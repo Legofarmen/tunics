@@ -5,7 +5,7 @@ properties{
   height = 2400,
   min_layer = 0,
   max_layer = 2,
-  tileset = "dungeon_brick_gray_1",
+  tileset = "dungeon.tower_of_hera",
   music = "same",
 }
 
@@ -15,4 +15,5 @@ destination{
   y = 13,
   direction = 3,
 }
+
 

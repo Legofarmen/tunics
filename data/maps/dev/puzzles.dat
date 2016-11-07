@@ -5,7 +5,7 @@ properties{
   height = 1024,
   min_layer = 0,
   max_layer = 2,
-  tileset = "dungeon_smoothbrick_green_1",
+  tileset = "dungeon.tower_of_hera",
   music = "same",
 }
 
@@ -15,16 +15,7 @@ tile{
   y = 40,
   width = 256,
   height = 176,
-  pattern = "floor.18",
-}
-
-tile{
-  layer = 1,
-  x = 688,
-  y = 40,
-  width = 48,
-  height = 160,
-  pattern = "door_main.2.floor.2",
+  pattern = "placeholder.floor.high",
 }
 
 tile{
@@ -33,7 +24,7 @@ tile{
   y = 32,
   width = 256,
   height = 176,
-  pattern = "floor.18",
+  pattern = "placeholder.floor.high",
 }
 
 tile{
@@ -42,7 +33,7 @@ tile{
   y = 40,
   width = 48,
   height = 160,
-  pattern = "floor_small.2",
+  pattern = "carpet.1",
 }
 
 tile{
@@ -51,7 +42,7 @@ tile{
   y = 32,
   width = 256,
   height = 176,
-  pattern = "floor.18",
+  pattern = "placeholder.floor.high",
 }
 
 tile{
@@ -60,7 +51,7 @@ tile{
   y = 496,
   width = 256,
   height = 176,
-  pattern = "floor.18",
+  pattern = "placeholder.floor.high",
 }
 
 tile{
@@ -69,7 +60,7 @@ tile{
   y = 728,
   width = 256,
   height = 176,
-  pattern = "floor.18",
+  pattern = "placeholder.floor.high",
 }
 
 tile{
@@ -78,7 +69,7 @@ tile{
   y = 792,
   width = 96,
   height = 32,
-  pattern = "floor_small.2",
+  pattern = "carpet.1",
 }
 
 tile{
@@ -87,7 +78,7 @@ tile{
   y = 264,
   width = 256,
   height = 176,
-  pattern = "floor.18",
+  pattern = "placeholder.floor.high",
 }
 
 tile{
@@ -96,7 +87,7 @@ tile{
   y = 264,
   width = 256,
   height = 176,
-  pattern = "floor.18",
+  pattern = "placeholder.floor.high",
 }
 
 tile{
@@ -105,7 +96,7 @@ tile{
   y = 8,
   width = 256,
   height = 24,
-  pattern = "wall.1",
+  pattern = "high_wall.n",
 }
 
 tile{
@@ -114,7 +105,7 @@ tile{
   y = 208,
   width = 256,
   height = 24,
-  pattern = "wall.2",
+  pattern = "high_wall.s",
 }
 
 tile{
@@ -123,7 +114,7 @@ tile{
   y = 32,
   width = 24,
   height = 176,
-  pattern = "wall.3",
+  pattern = "high_wall.w",
 }
 
 tile{
@@ -132,7 +123,7 @@ tile{
   y = 32,
   width = 24,
   height = 176,
-  pattern = "wall.4",
+  pattern = "high_wall.e",
 }
 
 tile{
@@ -141,7 +132,7 @@ tile{
   y = 8,
   width = 24,
   height = 24,
-  pattern = "wall.corner.1",
+  pattern = "high_wall_inner_corner.nw",
 }
 
 tile{
@@ -150,7 +141,7 @@ tile{
   y = 8,
   width = 24,
   height = 24,
-  pattern = "wall.corner.2",
+  pattern = "high_wall_inner_corner.ne",
 }
 
 tile{
@@ -159,7 +150,7 @@ tile{
   y = 208,
   width = 24,
   height = 24,
-  pattern = "wall.corner.4",
+  pattern = "high_wall_inner_corner.se",
 }
 
 tile{
@@ -168,7 +159,7 @@ tile{
   y = 208,
   width = 24,
   height = 24,
-  pattern = "wall.corner.3",
+  pattern = "high_wall_inner_corner.sw",
 }
 
 tile{
@@ -177,7 +168,7 @@ tile{
   y = 32,
   width = 240,
   height = 8,
-  pattern = "wall_border.1",
+  pattern = "wall_border.high.n",
 }
 
 tile{
@@ -186,7 +177,7 @@ tile{
   y = 200,
   width = 240,
   height = 8,
-  pattern = "wall_border.2",
+  pattern = "wall_border.high.s",
 }
 
 tile{
@@ -195,7 +186,7 @@ tile{
   y = 40,
   width = 8,
   height = 160,
-  pattern = "wall_border.3",
+  pattern = "wall_border.high.w",
 }
 
 tile{
@@ -204,7 +195,7 @@ tile{
   y = 32,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.1",
+  pattern = "wall_border_inner_corner.high.nw",
 }
 
 tile{
@@ -213,7 +204,7 @@ tile{
   y = 200,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.3",
+  pattern = "wall_border_inner_corner.high.sw",
 }
 
 tile{
@@ -222,7 +213,7 @@ tile{
   y = 200,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.4",
+  pattern = "wall_border_inner_corner.high.se",
 }
 
 tile{
@@ -231,7 +222,7 @@ tile{
   y = 32,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.2",
+  pattern = "wall_border_inner_corner.high.ne",
 }
 
 tile{
@@ -240,7 +231,7 @@ tile{
   y = 104,
   width = 16,
   height = 32,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 tile{
@@ -249,7 +240,7 @@ tile{
   y = 104,
   width = 16,
   height = 32,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 tile{
@@ -258,7 +249,7 @@ tile{
   y = 0,
   width = 32,
   height = 16,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 tile{
@@ -267,7 +258,7 @@ tile{
   y = 224,
   width = 32,
   height = 16,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 tile{
@@ -276,7 +267,7 @@ tile{
   y = 40,
   width = 8,
   height = 160,
-  pattern = "wall_border.4",
+  pattern = "wall_border.high.e",
 }
 
 tile{
@@ -285,7 +276,7 @@ tile{
   y = 16,
   width = 16,
   height = 16,
-  pattern = "door_blast.2",
+  pattern = "blown_door_floor.s",
 }
 
 tile{
@@ -294,7 +285,7 @@ tile{
   y = 112,
   width = 16,
   height = 16,
-  pattern = "door_blast.3",
+  pattern = "blown_door_floor.w",
 }
 
 tile{
@@ -303,7 +294,7 @@ tile{
   y = 104,
   width = 16,
   height = 8,
-  pattern = "door.4.support.1",
+  pattern = "door_support.l.e",
 }
 
 tile{
@@ -312,7 +303,7 @@ tile{
   y = 128,
   width = 16,
   height = 8,
-  pattern = "door.4.support.2",
+  pattern = "door_support.r.e",
 }
 
 tile{
@@ -321,7 +312,7 @@ tile{
   y = 16,
   width = 8,
   height = 16,
-  pattern = "door.1.support.2",
+  pattern = "door_support.r.n",
 }
 
 tile{
@@ -330,7 +321,7 @@ tile{
   y = 16,
   width = 8,
   height = 16,
-  pattern = "door.1.support.1",
+  pattern = "door_support.l.n",
 }
 
 tile{
@@ -339,7 +330,7 @@ tile{
   y = 8,
   width = 256,
   height = 24,
-  pattern = "wall.1",
+  pattern = "high_wall.n",
 }
 
 tile{
@@ -348,7 +339,7 @@ tile{
   y = 208,
   width = 256,
   height = 24,
-  pattern = "wall.2",
+  pattern = "high_wall.s",
 }
 
 tile{
@@ -357,7 +348,7 @@ tile{
   y = 32,
   width = 24,
   height = 176,
-  pattern = "wall.3",
+  pattern = "high_wall.w",
 }
 
 tile{
@@ -366,7 +357,7 @@ tile{
   y = 32,
   width = 24,
   height = 176,
-  pattern = "wall.4",
+  pattern = "high_wall.e",
 }
 
 tile{
@@ -375,7 +366,7 @@ tile{
   y = 8,
   width = 24,
   height = 24,
-  pattern = "wall.corner.1",
+  pattern = "high_wall_inner_corner.nw",
 }
 
 tile{
@@ -384,7 +375,7 @@ tile{
   y = 8,
   width = 24,
   height = 24,
-  pattern = "wall.corner.2",
+  pattern = "high_wall_inner_corner.ne",
 }
 
 tile{
@@ -393,7 +384,7 @@ tile{
   y = 208,
   width = 24,
   height = 24,
-  pattern = "wall.corner.4",
+  pattern = "high_wall_inner_corner.se",
 }
 
 tile{
@@ -402,7 +393,7 @@ tile{
   y = 208,
   width = 24,
   height = 24,
-  pattern = "wall.corner.3",
+  pattern = "high_wall_inner_corner.sw",
 }
 
 tile{
@@ -411,7 +402,7 @@ tile{
   y = 32,
   width = 240,
   height = 8,
-  pattern = "wall_border.1",
+  pattern = "wall_border.high.n",
 }
 
 tile{
@@ -420,7 +411,7 @@ tile{
   y = 200,
   width = 240,
   height = 8,
-  pattern = "wall_border.2",
+  pattern = "wall_border.high.s",
 }
 
 tile{
@@ -429,7 +420,7 @@ tile{
   y = 40,
   width = 8,
   height = 160,
-  pattern = "wall_border.3",
+  pattern = "wall_border.high.w",
 }
 
 tile{
@@ -438,7 +429,7 @@ tile{
   y = 32,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.1",
+  pattern = "wall_border_inner_corner.high.nw",
 }
 
 tile{
@@ -447,7 +438,7 @@ tile{
   y = 200,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.3",
+  pattern = "wall_border_inner_corner.high.sw",
 }
 
 tile{
@@ -456,7 +447,7 @@ tile{
   y = 200,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.4",
+  pattern = "wall_border_inner_corner.high.se",
 }
 
 tile{
@@ -465,7 +456,7 @@ tile{
   y = 32,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.2",
+  pattern = "wall_border_inner_corner.high.ne",
 }
 
 tile{
@@ -474,7 +465,7 @@ tile{
   y = 104,
   width = 16,
   height = 32,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 tile{
@@ -483,7 +474,7 @@ tile{
   y = 104,
   width = 16,
   height = 32,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 tile{
@@ -492,7 +483,7 @@ tile{
   y = 8,
   width = 32,
   height = 16,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 tile{
@@ -501,7 +492,7 @@ tile{
   y = 224,
   width = 32,
   height = 16,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 tile{
@@ -510,7 +501,7 @@ tile{
   y = 40,
   width = 8,
   height = 160,
-  pattern = "wall_border.4",
+  pattern = "wall_border.high.e",
 }
 
 tile{
@@ -519,7 +510,7 @@ tile{
   y = 16,
   width = 16,
   height = 16,
-  pattern = "door_blast.2",
+  pattern = "blown_door_floor.s",
 }
 
 tile{
@@ -528,7 +519,7 @@ tile{
   y = 112,
   width = 16,
   height = 16,
-  pattern = "door_blast.3",
+  pattern = "blown_door_floor.w",
 }
 
 tile{
@@ -537,7 +528,7 @@ tile{
   y = 104,
   width = 16,
   height = 8,
-  pattern = "door.4.support.1",
+  pattern = "door_support.l.e",
 }
 
 tile{
@@ -546,7 +537,7 @@ tile{
   y = 128,
   width = 16,
   height = 8,
-  pattern = "door.4.support.2",
+  pattern = "door_support.r.e",
 }
 
 tile{
@@ -555,7 +546,7 @@ tile{
   y = 16,
   width = 8,
   height = 16,
-  pattern = "door.1.support.2",
+  pattern = "door_support.r.n",
 }
 
 tile{
@@ -564,7 +555,7 @@ tile{
   y = 16,
   width = 8,
   height = 16,
-  pattern = "door.1.support.1",
+  pattern = "door_support.l.n",
 }
 
 tile{
@@ -573,7 +564,7 @@ tile{
   y = 8,
   width = 256,
   height = 24,
-  pattern = "wall.1",
+  pattern = "high_wall.n",
 }
 
 tile{
@@ -582,7 +573,7 @@ tile{
   y = 208,
   width = 256,
   height = 24,
-  pattern = "wall.2",
+  pattern = "high_wall.s",
 }
 
 tile{
@@ -591,7 +582,7 @@ tile{
   y = 32,
   width = 24,
   height = 176,
-  pattern = "wall.3",
+  pattern = "high_wall.w",
 }
 
 tile{
@@ -600,7 +591,7 @@ tile{
   y = 32,
   width = 24,
   height = 176,
-  pattern = "wall.4",
+  pattern = "high_wall.e",
 }
 
 tile{
@@ -609,7 +600,7 @@ tile{
   y = 8,
   width = 24,
   height = 24,
-  pattern = "wall.corner.1",
+  pattern = "high_wall_inner_corner.nw",
 }
 
 tile{
@@ -618,7 +609,7 @@ tile{
   y = 8,
   width = 24,
   height = 24,
-  pattern = "wall.corner.2",
+  pattern = "high_wall_inner_corner.ne",
 }
 
 tile{
@@ -627,7 +618,7 @@ tile{
   y = 208,
   width = 24,
   height = 24,
-  pattern = "wall.corner.4",
+  pattern = "high_wall_inner_corner.se",
 }
 
 tile{
@@ -636,7 +627,7 @@ tile{
   y = 208,
   width = 24,
   height = 24,
-  pattern = "wall.corner.3",
+  pattern = "high_wall_inner_corner.sw",
 }
 
 tile{
@@ -645,7 +636,7 @@ tile{
   y = 32,
   width = 240,
   height = 8,
-  pattern = "wall_border.1",
+  pattern = "wall_border.high.n",
 }
 
 tile{
@@ -654,7 +645,7 @@ tile{
   y = 200,
   width = 240,
   height = 8,
-  pattern = "wall_border.2",
+  pattern = "wall_border.high.s",
 }
 
 tile{
@@ -663,7 +654,7 @@ tile{
   y = 40,
   width = 8,
   height = 160,
-  pattern = "wall_border.3",
+  pattern = "wall_border.high.w",
 }
 
 tile{
@@ -672,7 +663,7 @@ tile{
   y = 32,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.1",
+  pattern = "wall_border_inner_corner.high.nw",
 }
 
 tile{
@@ -681,7 +672,7 @@ tile{
   y = 200,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.3",
+  pattern = "wall_border_inner_corner.high.sw",
 }
 
 tile{
@@ -690,7 +681,7 @@ tile{
   y = 200,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.4",
+  pattern = "wall_border_inner_corner.high.se",
 }
 
 tile{
@@ -699,7 +690,7 @@ tile{
   y = 32,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.2",
+  pattern = "wall_border_inner_corner.high.ne",
 }
 
 tile{
@@ -708,7 +699,7 @@ tile{
   y = 104,
   width = 16,
   height = 32,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 tile{
@@ -717,7 +708,7 @@ tile{
   y = 104,
   width = 16,
   height = 32,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 tile{
@@ -726,7 +717,7 @@ tile{
   y = 8,
   width = 32,
   height = 16,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 tile{
@@ -735,7 +726,7 @@ tile{
   y = 224,
   width = 32,
   height = 16,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 tile{
@@ -744,7 +735,7 @@ tile{
   y = 40,
   width = 8,
   height = 160,
-  pattern = "wall_border.4",
+  pattern = "wall_border.high.e",
 }
 
 tile{
@@ -753,7 +744,7 @@ tile{
   y = 16,
   width = 16,
   height = 16,
-  pattern = "door_blast.2",
+  pattern = "blown_door_floor.s",
 }
 
 tile{
@@ -762,7 +753,7 @@ tile{
   y = 112,
   width = 16,
   height = 16,
-  pattern = "door_blast.3",
+  pattern = "blown_door_floor.w",
 }
 
 tile{
@@ -771,7 +762,7 @@ tile{
   y = 104,
   width = 16,
   height = 8,
-  pattern = "door.4.support.1",
+  pattern = "door_support.l.e",
 }
 
 tile{
@@ -780,7 +771,7 @@ tile{
   y = 128,
   width = 16,
   height = 8,
-  pattern = "door.4.support.2",
+  pattern = "door_support.r.e",
 }
 
 tile{
@@ -789,7 +780,7 @@ tile{
   y = 16,
   width = 8,
   height = 16,
-  pattern = "door.1.support.2",
+  pattern = "door_support.r.n",
 }
 
 tile{
@@ -798,7 +789,7 @@ tile{
   y = 16,
   width = 8,
   height = 16,
-  pattern = "door.1.support.1",
+  pattern = "door_support.l.n",
 }
 
 tile{
@@ -807,7 +798,7 @@ tile{
   y = 240,
   width = 256,
   height = 24,
-  pattern = "wall.1",
+  pattern = "high_wall.n",
 }
 
 tile{
@@ -816,7 +807,7 @@ tile{
   y = 440,
   width = 256,
   height = 24,
-  pattern = "wall.2",
+  pattern = "high_wall.s",
 }
 
 tile{
@@ -825,7 +816,7 @@ tile{
   y = 264,
   width = 24,
   height = 176,
-  pattern = "wall.3",
+  pattern = "high_wall.w",
 }
 
 tile{
@@ -834,7 +825,7 @@ tile{
   y = 264,
   width = 24,
   height = 176,
-  pattern = "wall.4",
+  pattern = "high_wall.e",
 }
 
 tile{
@@ -843,7 +834,7 @@ tile{
   y = 240,
   width = 24,
   height = 24,
-  pattern = "wall.corner.1",
+  pattern = "high_wall_inner_corner.nw",
 }
 
 tile{
@@ -852,7 +843,7 @@ tile{
   y = 240,
   width = 24,
   height = 24,
-  pattern = "wall.corner.2",
+  pattern = "high_wall_inner_corner.ne",
 }
 
 tile{
@@ -861,7 +852,7 @@ tile{
   y = 440,
   width = 24,
   height = 24,
-  pattern = "wall.corner.4",
+  pattern = "high_wall_inner_corner.se",
 }
 
 tile{
@@ -870,7 +861,7 @@ tile{
   y = 440,
   width = 24,
   height = 24,
-  pattern = "wall.corner.3",
+  pattern = "high_wall_inner_corner.sw",
 }
 
 tile{
@@ -879,7 +870,7 @@ tile{
   y = 264,
   width = 240,
   height = 8,
-  pattern = "wall_border.1",
+  pattern = "wall_border.high.n",
 }
 
 tile{
@@ -888,7 +879,7 @@ tile{
   y = 432,
   width = 240,
   height = 8,
-  pattern = "wall_border.2",
+  pattern = "wall_border.high.s",
 }
 
 tile{
@@ -897,7 +888,7 @@ tile{
   y = 272,
   width = 8,
   height = 160,
-  pattern = "wall_border.3",
+  pattern = "wall_border.high.w",
 }
 
 tile{
@@ -906,7 +897,7 @@ tile{
   y = 264,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.1",
+  pattern = "wall_border_inner_corner.high.nw",
 }
 
 tile{
@@ -915,7 +906,7 @@ tile{
   y = 432,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.3",
+  pattern = "wall_border_inner_corner.high.sw",
 }
 
 tile{
@@ -924,7 +915,7 @@ tile{
   y = 432,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.4",
+  pattern = "wall_border_inner_corner.high.se",
 }
 
 tile{
@@ -933,7 +924,7 @@ tile{
   y = 264,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.2",
+  pattern = "wall_border_inner_corner.high.ne",
 }
 
 tile{
@@ -942,7 +933,7 @@ tile{
   y = 336,
   width = 16,
   height = 32,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 tile{
@@ -951,7 +942,7 @@ tile{
   y = 336,
   width = 16,
   height = 32,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 tile{
@@ -960,7 +951,7 @@ tile{
   y = 240,
   width = 32,
   height = 16,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 tile{
@@ -969,7 +960,7 @@ tile{
   y = 456,
   width = 32,
   height = 16,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 tile{
@@ -978,7 +969,7 @@ tile{
   y = 272,
   width = 8,
   height = 160,
-  pattern = "wall_border.4",
+  pattern = "wall_border.high.e",
 }
 
 tile{
@@ -987,7 +978,7 @@ tile{
   y = 248,
   width = 16,
   height = 16,
-  pattern = "door_blast.2",
+  pattern = "blown_door_floor.s",
 }
 
 tile{
@@ -996,7 +987,7 @@ tile{
   y = 344,
   width = 16,
   height = 16,
-  pattern = "door_blast.3",
+  pattern = "blown_door_floor.w",
 }
 
 tile{
@@ -1005,7 +996,7 @@ tile{
   y = 336,
   width = 16,
   height = 8,
-  pattern = "door.4.support.1",
+  pattern = "door_support.l.e",
 }
 
 tile{
@@ -1014,7 +1005,7 @@ tile{
   y = 360,
   width = 16,
   height = 8,
-  pattern = "door.4.support.2",
+  pattern = "door_support.r.e",
 }
 
 tile{
@@ -1023,7 +1014,7 @@ tile{
   y = 248,
   width = 8,
   height = 16,
-  pattern = "door.1.support.2",
+  pattern = "door_support.r.n",
 }
 
 tile{
@@ -1032,7 +1023,7 @@ tile{
   y = 248,
   width = 8,
   height = 16,
-  pattern = "door.1.support.1",
+  pattern = "door_support.l.n",
 }
 
 tile{
@@ -1041,7 +1032,7 @@ tile{
   y = 240,
   width = 256,
   height = 24,
-  pattern = "wall.1",
+  pattern = "high_wall.n",
 }
 
 tile{
@@ -1050,7 +1041,7 @@ tile{
   y = 440,
   width = 256,
   height = 24,
-  pattern = "wall.2",
+  pattern = "high_wall.s",
 }
 
 tile{
@@ -1059,7 +1050,7 @@ tile{
   y = 264,
   width = 24,
   height = 176,
-  pattern = "wall.3",
+  pattern = "high_wall.w",
 }
 
 tile{
@@ -1068,7 +1059,7 @@ tile{
   y = 264,
   width = 24,
   height = 176,
-  pattern = "wall.4",
+  pattern = "high_wall.e",
 }
 
 tile{
@@ -1077,7 +1068,7 @@ tile{
   y = 240,
   width = 24,
   height = 24,
-  pattern = "wall.corner.1",
+  pattern = "high_wall_inner_corner.nw",
 }
 
 tile{
@@ -1086,7 +1077,7 @@ tile{
   y = 240,
   width = 24,
   height = 24,
-  pattern = "wall.corner.2",
+  pattern = "high_wall_inner_corner.ne",
 }
 
 tile{
@@ -1095,7 +1086,7 @@ tile{
   y = 440,
   width = 24,
   height = 24,
-  pattern = "wall.corner.4",
+  pattern = "high_wall_inner_corner.se",
 }
 
 tile{
@@ -1104,7 +1095,7 @@ tile{
   y = 440,
   width = 24,
   height = 24,
-  pattern = "wall.corner.3",
+  pattern = "high_wall_inner_corner.sw",
 }
 
 tile{
@@ -1113,7 +1104,7 @@ tile{
   y = 264,
   width = 240,
   height = 8,
-  pattern = "wall_border.1",
+  pattern = "wall_border.high.n",
 }
 
 tile{
@@ -1122,7 +1113,7 @@ tile{
   y = 432,
   width = 240,
   height = 8,
-  pattern = "wall_border.2",
+  pattern = "wall_border.high.s",
 }
 
 tile{
@@ -1131,7 +1122,7 @@ tile{
   y = 272,
   width = 8,
   height = 160,
-  pattern = "wall_border.3",
+  pattern = "wall_border.high.w",
 }
 
 tile{
@@ -1140,7 +1131,7 @@ tile{
   y = 264,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.1",
+  pattern = "wall_border_inner_corner.high.nw",
 }
 
 tile{
@@ -1149,7 +1140,7 @@ tile{
   y = 432,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.3",
+  pattern = "wall_border_inner_corner.high.sw",
 }
 
 tile{
@@ -1158,7 +1149,7 @@ tile{
   y = 432,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.4",
+  pattern = "wall_border_inner_corner.high.se",
 }
 
 tile{
@@ -1167,7 +1158,7 @@ tile{
   y = 264,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.2",
+  pattern = "wall_border_inner_corner.high.ne",
 }
 
 tile{
@@ -1176,7 +1167,7 @@ tile{
   y = 336,
   width = 16,
   height = 32,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 tile{
@@ -1185,7 +1176,7 @@ tile{
   y = 336,
   width = 16,
   height = 32,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 tile{
@@ -1194,7 +1185,7 @@ tile{
   y = 240,
   width = 32,
   height = 16,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 tile{
@@ -1203,7 +1194,7 @@ tile{
   y = 456,
   width = 32,
   height = 16,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 tile{
@@ -1212,7 +1203,7 @@ tile{
   y = 272,
   width = 8,
   height = 160,
-  pattern = "wall_border.4",
+  pattern = "wall_border.high.e",
 }
 
 tile{
@@ -1221,7 +1212,7 @@ tile{
   y = 248,
   width = 16,
   height = 16,
-  pattern = "door_blast.2",
+  pattern = "blown_door_floor.s",
 }
 
 tile{
@@ -1230,7 +1221,7 @@ tile{
   y = 344,
   width = 16,
   height = 16,
-  pattern = "door_blast.3",
+  pattern = "blown_door_floor.w",
 }
 
 tile{
@@ -1239,7 +1230,7 @@ tile{
   y = 336,
   width = 16,
   height = 8,
-  pattern = "door.4.support.1",
+  pattern = "door_support.l.e",
 }
 
 tile{
@@ -1248,7 +1239,7 @@ tile{
   y = 360,
   width = 16,
   height = 8,
-  pattern = "door.4.support.2",
+  pattern = "door_support.r.e",
 }
 
 tile{
@@ -1257,7 +1248,7 @@ tile{
   y = 248,
   width = 8,
   height = 16,
-  pattern = "door.1.support.2",
+  pattern = "door_support.r.n",
 }
 
 tile{
@@ -1266,7 +1257,7 @@ tile{
   y = 248,
   width = 8,
   height = 16,
-  pattern = "door.1.support.1",
+  pattern = "door_support.l.n",
 }
 
 tile{
@@ -1275,7 +1266,7 @@ tile{
   y = 272,
   width = 256,
   height = 176,
-  pattern = "floor.18",
+  pattern = "placeholder.floor.high",
 }
 
 tile{
@@ -1284,7 +1275,7 @@ tile{
   y = 240,
   width = 256,
   height = 24,
-  pattern = "wall.1",
+  pattern = "high_wall.n",
 }
 
 tile{
@@ -1293,7 +1284,7 @@ tile{
   y = 440,
   width = 256,
   height = 24,
-  pattern = "wall.2",
+  pattern = "high_wall.s",
 }
 
 tile{
@@ -1302,7 +1293,7 @@ tile{
   y = 264,
   width = 24,
   height = 176,
-  pattern = "wall.3",
+  pattern = "high_wall.w",
 }
 
 tile{
@@ -1311,7 +1302,7 @@ tile{
   y = 264,
   width = 24,
   height = 176,
-  pattern = "wall.4",
+  pattern = "high_wall.e",
 }
 
 tile{
@@ -1320,7 +1311,7 @@ tile{
   y = 240,
   width = 24,
   height = 24,
-  pattern = "wall.corner.1",
+  pattern = "high_wall_inner_corner.nw",
 }
 
 tile{
@@ -1329,7 +1320,7 @@ tile{
   y = 240,
   width = 24,
   height = 24,
-  pattern = "wall.corner.2",
+  pattern = "high_wall_inner_corner.ne",
 }
 
 tile{
@@ -1338,7 +1329,7 @@ tile{
   y = 440,
   width = 24,
   height = 24,
-  pattern = "wall.corner.4",
+  pattern = "high_wall_inner_corner.se",
 }
 
 tile{
@@ -1347,7 +1338,7 @@ tile{
   y = 440,
   width = 24,
   height = 24,
-  pattern = "wall.corner.3",
+  pattern = "high_wall_inner_corner.sw",
 }
 
 tile{
@@ -1356,7 +1347,7 @@ tile{
   y = 264,
   width = 240,
   height = 8,
-  pattern = "wall_border.1",
+  pattern = "wall_border.high.n",
 }
 
 tile{
@@ -1365,7 +1356,7 @@ tile{
   y = 432,
   width = 240,
   height = 8,
-  pattern = "wall_border.2",
+  pattern = "wall_border.high.s",
 }
 
 tile{
@@ -1374,7 +1365,7 @@ tile{
   y = 272,
   width = 8,
   height = 160,
-  pattern = "wall_border.3",
+  pattern = "wall_border.high.w",
 }
 
 tile{
@@ -1383,7 +1374,7 @@ tile{
   y = 264,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.1",
+  pattern = "wall_border_inner_corner.high.nw",
 }
 
 tile{
@@ -1392,7 +1383,7 @@ tile{
   y = 432,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.3",
+  pattern = "wall_border_inner_corner.high.sw",
 }
 
 tile{
@@ -1401,7 +1392,7 @@ tile{
   y = 432,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.4",
+  pattern = "wall_border_inner_corner.high.se",
 }
 
 tile{
@@ -1410,7 +1401,7 @@ tile{
   y = 264,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.2",
+  pattern = "wall_border_inner_corner.high.ne",
 }
 
 tile{
@@ -1419,7 +1410,7 @@ tile{
   y = 336,
   width = 16,
   height = 32,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 tile{
@@ -1428,7 +1419,7 @@ tile{
   y = 336,
   width = 16,
   height = 32,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 tile{
@@ -1437,7 +1428,7 @@ tile{
   y = 240,
   width = 32,
   height = 16,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 tile{
@@ -1446,7 +1437,7 @@ tile{
   y = 456,
   width = 32,
   height = 16,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 tile{
@@ -1455,7 +1446,7 @@ tile{
   y = 272,
   width = 8,
   height = 160,
-  pattern = "wall_border.4",
+  pattern = "wall_border.high.e",
 }
 
 tile{
@@ -1464,7 +1455,7 @@ tile{
   y = 248,
   width = 16,
   height = 16,
-  pattern = "door_blast.2",
+  pattern = "blown_door_floor.s",
 }
 
 tile{
@@ -1473,7 +1464,7 @@ tile{
   y = 344,
   width = 16,
   height = 16,
-  pattern = "door_blast.3",
+  pattern = "blown_door_floor.w",
 }
 
 tile{
@@ -1482,7 +1473,7 @@ tile{
   y = 336,
   width = 16,
   height = 8,
-  pattern = "door.4.support.1",
+  pattern = "door_support.l.e",
 }
 
 tile{
@@ -1491,7 +1482,7 @@ tile{
   y = 360,
   width = 16,
   height = 8,
-  pattern = "door.4.support.2",
+  pattern = "door_support.r.e",
 }
 
 tile{
@@ -1500,7 +1491,7 @@ tile{
   y = 248,
   width = 8,
   height = 16,
-  pattern = "door.1.support.2",
+  pattern = "door_support.r.n",
 }
 
 tile{
@@ -1509,7 +1500,7 @@ tile{
   y = 248,
   width = 8,
   height = 16,
-  pattern = "door.1.support.1",
+  pattern = "door_support.l.n",
 }
 
 tile{
@@ -1518,7 +1509,7 @@ tile{
   y = 496,
   width = 256,
   height = 176,
-  pattern = "floor.18",
+  pattern = "placeholder.floor.high",
 }
 
 tile{
@@ -1527,7 +1518,7 @@ tile{
   y = 472,
   width = 256,
   height = 24,
-  pattern = "wall.1",
+  pattern = "high_wall.n",
 }
 
 tile{
@@ -1536,7 +1527,7 @@ tile{
   y = 672,
   width = 256,
   height = 24,
-  pattern = "wall.2",
+  pattern = "high_wall.s",
 }
 
 tile{
@@ -1545,7 +1536,7 @@ tile{
   y = 496,
   width = 24,
   height = 176,
-  pattern = "wall.3",
+  pattern = "high_wall.w",
 }
 
 tile{
@@ -1554,7 +1545,7 @@ tile{
   y = 496,
   width = 24,
   height = 176,
-  pattern = "wall.4",
+  pattern = "high_wall.e",
 }
 
 tile{
@@ -1563,7 +1554,7 @@ tile{
   y = 472,
   width = 24,
   height = 24,
-  pattern = "wall.corner.1",
+  pattern = "high_wall_inner_corner.nw",
 }
 
 tile{
@@ -1572,7 +1563,7 @@ tile{
   y = 472,
   width = 24,
   height = 24,
-  pattern = "wall.corner.2",
+  pattern = "high_wall_inner_corner.ne",
 }
 
 tile{
@@ -1581,7 +1572,7 @@ tile{
   y = 672,
   width = 24,
   height = 24,
-  pattern = "wall.corner.4",
+  pattern = "high_wall_inner_corner.se",
 }
 
 tile{
@@ -1590,7 +1581,7 @@ tile{
   y = 672,
   width = 24,
   height = 24,
-  pattern = "wall.corner.3",
+  pattern = "high_wall_inner_corner.sw",
 }
 
 tile{
@@ -1599,7 +1590,7 @@ tile{
   y = 496,
   width = 240,
   height = 8,
-  pattern = "wall_border.1",
+  pattern = "wall_border.high.n",
 }
 
 tile{
@@ -1608,7 +1599,7 @@ tile{
   y = 664,
   width = 240,
   height = 8,
-  pattern = "wall_border.2",
+  pattern = "wall_border.high.s",
 }
 
 tile{
@@ -1617,7 +1608,7 @@ tile{
   y = 504,
   width = 8,
   height = 160,
-  pattern = "wall_border.3",
+  pattern = "wall_border.high.w",
 }
 
 tile{
@@ -1626,7 +1617,7 @@ tile{
   y = 496,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.1",
+  pattern = "wall_border_inner_corner.high.nw",
 }
 
 tile{
@@ -1635,7 +1626,7 @@ tile{
   y = 664,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.3",
+  pattern = "wall_border_inner_corner.high.sw",
 }
 
 tile{
@@ -1644,7 +1635,7 @@ tile{
   y = 664,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.4",
+  pattern = "wall_border_inner_corner.high.se",
 }
 
 tile{
@@ -1653,7 +1644,7 @@ tile{
   y = 496,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.2",
+  pattern = "wall_border_inner_corner.high.ne",
 }
 
 tile{
@@ -1662,7 +1653,7 @@ tile{
   y = 568,
   width = 16,
   height = 32,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 tile{
@@ -1671,7 +1662,7 @@ tile{
   y = 568,
   width = 16,
   height = 32,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 tile{
@@ -1680,7 +1671,7 @@ tile{
   y = 472,
   width = 32,
   height = 16,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 tile{
@@ -1689,7 +1680,7 @@ tile{
   y = 688,
   width = 32,
   height = 16,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 tile{
@@ -1698,7 +1689,7 @@ tile{
   y = 504,
   width = 8,
   height = 160,
-  pattern = "wall_border.4",
+  pattern = "wall_border.high.e",
 }
 
 tile{
@@ -1707,7 +1698,7 @@ tile{
   y = 480,
   width = 16,
   height = 16,
-  pattern = "door_blast.2",
+  pattern = "blown_door_floor.s",
 }
 
 tile{
@@ -1716,7 +1707,7 @@ tile{
   y = 576,
   width = 16,
   height = 16,
-  pattern = "door_blast.3",
+  pattern = "blown_door_floor.w",
 }
 
 tile{
@@ -1725,7 +1716,7 @@ tile{
   y = 568,
   width = 16,
   height = 8,
-  pattern = "door.4.support.1",
+  pattern = "door_support.l.e",
 }
 
 tile{
@@ -1734,7 +1725,7 @@ tile{
   y = 592,
   width = 16,
   height = 8,
-  pattern = "door.4.support.2",
+  pattern = "door_support.r.e",
 }
 
 tile{
@@ -1743,7 +1734,7 @@ tile{
   y = 480,
   width = 8,
   height = 16,
-  pattern = "door.1.support.2",
+  pattern = "door_support.r.n",
 }
 
 tile{
@@ -1752,7 +1743,7 @@ tile{
   y = 480,
   width = 8,
   height = 16,
-  pattern = "door.1.support.1",
+  pattern = "door_support.l.n",
 }
 
 tile{
@@ -1761,7 +1752,7 @@ tile{
   y = 704,
   width = 256,
   height = 24,
-  pattern = "wall.1",
+  pattern = "high_wall.n",
 }
 
 tile{
@@ -1770,7 +1761,7 @@ tile{
   y = 904,
   width = 256,
   height = 24,
-  pattern = "wall.2",
+  pattern = "high_wall.s",
 }
 
 tile{
@@ -1779,7 +1770,7 @@ tile{
   y = 728,
   width = 24,
   height = 176,
-  pattern = "wall.3",
+  pattern = "high_wall.w",
 }
 
 tile{
@@ -1788,7 +1779,7 @@ tile{
   y = 728,
   width = 24,
   height = 176,
-  pattern = "wall.4",
+  pattern = "high_wall.e",
 }
 
 tile{
@@ -1797,7 +1788,7 @@ tile{
   y = 704,
   width = 24,
   height = 24,
-  pattern = "wall.corner.1",
+  pattern = "high_wall_inner_corner.nw",
 }
 
 tile{
@@ -1806,7 +1797,7 @@ tile{
   y = 704,
   width = 24,
   height = 24,
-  pattern = "wall.corner.2",
+  pattern = "high_wall_inner_corner.ne",
 }
 
 tile{
@@ -1815,7 +1806,7 @@ tile{
   y = 904,
   width = 24,
   height = 24,
-  pattern = "wall.corner.4",
+  pattern = "high_wall_inner_corner.se",
 }
 
 tile{
@@ -1824,7 +1815,7 @@ tile{
   y = 904,
   width = 24,
   height = 24,
-  pattern = "wall.corner.3",
+  pattern = "high_wall_inner_corner.sw",
 }
 
 tile{
@@ -1833,7 +1824,7 @@ tile{
   y = 728,
   width = 240,
   height = 8,
-  pattern = "wall_border.1",
+  pattern = "wall_border.high.n",
 }
 
 tile{
@@ -1842,7 +1833,7 @@ tile{
   y = 896,
   width = 240,
   height = 8,
-  pattern = "wall_border.2",
+  pattern = "wall_border.high.s",
 }
 
 tile{
@@ -1851,7 +1842,7 @@ tile{
   y = 736,
   width = 8,
   height = 160,
-  pattern = "wall_border.3",
+  pattern = "wall_border.high.w",
 }
 
 tile{
@@ -1860,7 +1851,7 @@ tile{
   y = 728,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.1",
+  pattern = "wall_border_inner_corner.high.nw",
 }
 
 tile{
@@ -1869,7 +1860,7 @@ tile{
   y = 896,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.3",
+  pattern = "wall_border_inner_corner.high.sw",
 }
 
 tile{
@@ -1878,7 +1869,7 @@ tile{
   y = 896,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.4",
+  pattern = "wall_border_inner_corner.high.se",
 }
 
 tile{
@@ -1887,7 +1878,7 @@ tile{
   y = 728,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.2",
+  pattern = "wall_border_inner_corner.high.ne",
 }
 
 tile{
@@ -1896,7 +1887,7 @@ tile{
   y = 800,
   width = 16,
   height = 32,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 tile{
@@ -1905,7 +1896,7 @@ tile{
   y = 800,
   width = 16,
   height = 32,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 tile{
@@ -1914,7 +1905,7 @@ tile{
   y = 704,
   width = 32,
   height = 16,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 tile{
@@ -1923,7 +1914,7 @@ tile{
   y = 920,
   width = 32,
   height = 16,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 tile{
@@ -1932,7 +1923,7 @@ tile{
   y = 736,
   width = 8,
   height = 160,
-  pattern = "wall_border.4",
+  pattern = "wall_border.high.e",
 }
 
 tile{
@@ -1941,7 +1932,7 @@ tile{
   y = 712,
   width = 16,
   height = 16,
-  pattern = "door_blast.2",
+  pattern = "blown_door_floor.s",
 }
 
 tile{
@@ -1950,7 +1941,7 @@ tile{
   y = 808,
   width = 16,
   height = 16,
-  pattern = "door_blast.3",
+  pattern = "blown_door_floor.w",
 }
 
 tile{
@@ -1959,7 +1950,7 @@ tile{
   y = 800,
   width = 16,
   height = 8,
-  pattern = "door.4.support.1",
+  pattern = "door_support.l.e",
 }
 
 tile{
@@ -1968,7 +1959,7 @@ tile{
   y = 824,
   width = 16,
   height = 8,
-  pattern = "door.4.support.2",
+  pattern = "door_support.r.e",
 }
 
 tile{
@@ -1977,7 +1968,7 @@ tile{
   y = 712,
   width = 8,
   height = 16,
-  pattern = "door.1.support.2",
+  pattern = "door_support.r.n",
 }
 
 tile{
@@ -1986,7 +1977,7 @@ tile{
   y = 712,
   width = 8,
   height = 16,
-  pattern = "door.1.support.1",
+  pattern = "door_support.l.n",
 }
 
 tile{
@@ -1995,7 +1986,7 @@ tile{
   y = 472,
   width = 256,
   height = 24,
-  pattern = "wall.1",
+  pattern = "high_wall.n",
 }
 
 tile{
@@ -2004,7 +1995,7 @@ tile{
   y = 672,
   width = 256,
   height = 24,
-  pattern = "wall.2",
+  pattern = "high_wall.s",
 }
 
 tile{
@@ -2013,7 +2004,7 @@ tile{
   y = 496,
   width = 24,
   height = 176,
-  pattern = "wall.3",
+  pattern = "high_wall.w",
 }
 
 tile{
@@ -2022,7 +2013,7 @@ tile{
   y = 496,
   width = 24,
   height = 176,
-  pattern = "wall.4",
+  pattern = "high_wall.e",
 }
 
 tile{
@@ -2031,7 +2022,7 @@ tile{
   y = 472,
   width = 24,
   height = 24,
-  pattern = "wall.corner.1",
+  pattern = "high_wall_inner_corner.nw",
 }
 
 tile{
@@ -2040,7 +2031,7 @@ tile{
   y = 472,
   width = 24,
   height = 24,
-  pattern = "wall.corner.2",
+  pattern = "high_wall_inner_corner.ne",
 }
 
 tile{
@@ -2049,7 +2040,7 @@ tile{
   y = 672,
   width = 24,
   height = 24,
-  pattern = "wall.corner.4",
+  pattern = "high_wall_inner_corner.se",
 }
 
 tile{
@@ -2058,7 +2049,7 @@ tile{
   y = 672,
   width = 24,
   height = 24,
-  pattern = "wall.corner.3",
+  pattern = "high_wall_inner_corner.sw",
 }
 
 tile{
@@ -2067,7 +2058,7 @@ tile{
   y = 496,
   width = 240,
   height = 8,
-  pattern = "wall_border.1",
+  pattern = "wall_border.high.n",
 }
 
 tile{
@@ -2076,7 +2067,7 @@ tile{
   y = 664,
   width = 240,
   height = 8,
-  pattern = "wall_border.2",
+  pattern = "wall_border.high.s",
 }
 
 tile{
@@ -2085,7 +2076,7 @@ tile{
   y = 504,
   width = 8,
   height = 160,
-  pattern = "wall_border.3",
+  pattern = "wall_border.high.w",
 }
 
 tile{
@@ -2094,7 +2085,7 @@ tile{
   y = 496,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.1",
+  pattern = "wall_border_inner_corner.high.nw",
 }
 
 tile{
@@ -2103,7 +2094,7 @@ tile{
   y = 664,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.3",
+  pattern = "wall_border_inner_corner.high.sw",
 }
 
 tile{
@@ -2112,7 +2103,7 @@ tile{
   y = 664,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.4",
+  pattern = "wall_border_inner_corner.high.se",
 }
 
 tile{
@@ -2121,7 +2112,7 @@ tile{
   y = 496,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.2",
+  pattern = "wall_border_inner_corner.high.ne",
 }
 
 tile{
@@ -2130,7 +2121,7 @@ tile{
   y = 568,
   width = 16,
   height = 32,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 tile{
@@ -2139,7 +2130,7 @@ tile{
   y = 568,
   width = 16,
   height = 32,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 tile{
@@ -2148,7 +2139,7 @@ tile{
   y = 472,
   width = 32,
   height = 16,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 tile{
@@ -2157,7 +2148,7 @@ tile{
   y = 688,
   width = 32,
   height = 16,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 tile{
@@ -2166,7 +2157,7 @@ tile{
   y = 504,
   width = 8,
   height = 160,
-  pattern = "wall_border.4",
+  pattern = "wall_border.high.e",
 }
 
 tile{
@@ -2175,7 +2166,7 @@ tile{
   y = 480,
   width = 16,
   height = 16,
-  pattern = "door_blast.2",
+  pattern = "blown_door_floor.s",
 }
 
 tile{
@@ -2184,7 +2175,7 @@ tile{
   y = 576,
   width = 16,
   height = 16,
-  pattern = "door_blast.3",
+  pattern = "blown_door_floor.w",
 }
 
 tile{
@@ -2193,7 +2184,7 @@ tile{
   y = 568,
   width = 16,
   height = 8,
-  pattern = "door.4.support.1",
+  pattern = "door_support.l.e",
 }
 
 tile{
@@ -2202,7 +2193,7 @@ tile{
   y = 592,
   width = 16,
   height = 8,
-  pattern = "door.4.support.2",
+  pattern = "door_support.r.e",
 }
 
 tile{
@@ -2211,7 +2202,7 @@ tile{
   y = 480,
   width = 8,
   height = 16,
-  pattern = "door.1.support.2",
+  pattern = "door_support.r.n",
 }
 
 tile{
@@ -2220,7 +2211,7 @@ tile{
   y = 480,
   width = 8,
   height = 16,
-  pattern = "door.1.support.1",
+  pattern = "door_support.l.n",
 }
 
 tile{
@@ -2229,7 +2220,7 @@ tile{
   y = 496,
   width = 256,
   height = 176,
-  pattern = "floor.18",
+  pattern = "placeholder.floor.high",
 }
 
 tile{
@@ -2238,7 +2229,7 @@ tile{
   y = 472,
   width = 256,
   height = 24,
-  pattern = "wall.1",
+  pattern = "high_wall.n",
 }
 
 tile{
@@ -2247,7 +2238,7 @@ tile{
   y = 672,
   width = 256,
   height = 24,
-  pattern = "wall.2",
+  pattern = "high_wall.s",
 }
 
 tile{
@@ -2256,7 +2247,7 @@ tile{
   y = 496,
   width = 24,
   height = 176,
-  pattern = "wall.3",
+  pattern = "high_wall.w",
 }
 
 tile{
@@ -2265,7 +2256,7 @@ tile{
   y = 496,
   width = 24,
   height = 176,
-  pattern = "wall.4",
+  pattern = "high_wall.e",
 }
 
 tile{
@@ -2274,7 +2265,7 @@ tile{
   y = 472,
   width = 24,
   height = 24,
-  pattern = "wall.corner.1",
+  pattern = "high_wall_inner_corner.nw",
 }
 
 tile{
@@ -2283,7 +2274,7 @@ tile{
   y = 472,
   width = 24,
   height = 24,
-  pattern = "wall.corner.2",
+  pattern = "high_wall_inner_corner.ne",
 }
 
 tile{
@@ -2292,7 +2283,7 @@ tile{
   y = 672,
   width = 24,
   height = 24,
-  pattern = "wall.corner.4",
+  pattern = "high_wall_inner_corner.se",
 }
 
 tile{
@@ -2301,7 +2292,7 @@ tile{
   y = 672,
   width = 24,
   height = 24,
-  pattern = "wall.corner.3",
+  pattern = "high_wall_inner_corner.sw",
 }
 
 tile{
@@ -2310,7 +2301,7 @@ tile{
   y = 496,
   width = 240,
   height = 8,
-  pattern = "wall_border.1",
+  pattern = "wall_border.high.n",
 }
 
 tile{
@@ -2319,7 +2310,7 @@ tile{
   y = 664,
   width = 240,
   height = 8,
-  pattern = "wall_border.2",
+  pattern = "wall_border.high.s",
 }
 
 tile{
@@ -2328,7 +2319,7 @@ tile{
   y = 504,
   width = 8,
   height = 160,
-  pattern = "wall_border.3",
+  pattern = "wall_border.high.w",
 }
 
 tile{
@@ -2337,7 +2328,7 @@ tile{
   y = 496,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.1",
+  pattern = "wall_border_inner_corner.high.nw",
 }
 
 tile{
@@ -2346,7 +2337,7 @@ tile{
   y = 664,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.3",
+  pattern = "wall_border_inner_corner.high.sw",
 }
 
 tile{
@@ -2355,7 +2346,7 @@ tile{
   y = 664,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.4",
+  pattern = "wall_border_inner_corner.high.se",
 }
 
 tile{
@@ -2364,7 +2355,7 @@ tile{
   y = 496,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.2",
+  pattern = "wall_border_inner_corner.high.ne",
 }
 
 tile{
@@ -2373,7 +2364,7 @@ tile{
   y = 568,
   width = 16,
   height = 32,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 tile{
@@ -2382,7 +2373,7 @@ tile{
   y = 568,
   width = 16,
   height = 32,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 tile{
@@ -2391,7 +2382,7 @@ tile{
   y = 472,
   width = 32,
   height = 16,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 tile{
@@ -2400,7 +2391,7 @@ tile{
   y = 688,
   width = 32,
   height = 16,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 tile{
@@ -2409,7 +2400,7 @@ tile{
   y = 504,
   width = 8,
   height = 160,
-  pattern = "wall_border.4",
+  pattern = "wall_border.high.e",
 }
 
 tile{
@@ -2418,7 +2409,7 @@ tile{
   y = 480,
   width = 16,
   height = 16,
-  pattern = "door_blast.2",
+  pattern = "blown_door_floor.s",
 }
 
 tile{
@@ -2427,7 +2418,7 @@ tile{
   y = 576,
   width = 16,
   height = 16,
-  pattern = "door_blast.3",
+  pattern = "blown_door_floor.w",
 }
 
 tile{
@@ -2436,7 +2427,7 @@ tile{
   y = 568,
   width = 16,
   height = 8,
-  pattern = "door.4.support.1",
+  pattern = "door_support.l.e",
 }
 
 tile{
@@ -2445,7 +2436,7 @@ tile{
   y = 592,
   width = 16,
   height = 8,
-  pattern = "door.4.support.2",
+  pattern = "door_support.r.e",
 }
 
 tile{
@@ -2454,7 +2445,7 @@ tile{
   y = 480,
   width = 8,
   height = 16,
-  pattern = "door.1.support.2",
+  pattern = "door_support.r.n",
 }
 
 tile{
@@ -2463,7 +2454,7 @@ tile{
   y = 480,
   width = 8,
   height = 16,
-  pattern = "door.1.support.1",
+  pattern = "door_support.l.n",
 }
 
 tile{
@@ -2472,7 +2463,7 @@ tile{
   y = 728,
   width = 256,
   height = 176,
-  pattern = "floor.18",
+  pattern = "placeholder.floor.high",
 }
 
 tile{
@@ -2481,7 +2472,7 @@ tile{
   y = 704,
   width = 256,
   height = 24,
-  pattern = "wall.1",
+  pattern = "high_wall.n",
 }
 
 tile{
@@ -2490,7 +2481,7 @@ tile{
   y = 904,
   width = 256,
   height = 24,
-  pattern = "wall.2",
+  pattern = "high_wall.s",
 }
 
 tile{
@@ -2499,7 +2490,7 @@ tile{
   y = 728,
   width = 24,
   height = 176,
-  pattern = "wall.3",
+  pattern = "high_wall.w",
 }
 
 tile{
@@ -2508,7 +2499,7 @@ tile{
   y = 728,
   width = 24,
   height = 176,
-  pattern = "wall.4",
+  pattern = "high_wall.e",
 }
 
 tile{
@@ -2517,7 +2508,7 @@ tile{
   y = 704,
   width = 24,
   height = 24,
-  pattern = "wall.corner.1",
+  pattern = "high_wall_inner_corner.nw",
 }
 
 tile{
@@ -2526,7 +2517,7 @@ tile{
   y = 704,
   width = 24,
   height = 24,
-  pattern = "wall.corner.2",
+  pattern = "high_wall_inner_corner.ne",
 }
 
 tile{
@@ -2535,7 +2526,7 @@ tile{
   y = 904,
   width = 24,
   height = 24,
-  pattern = "wall.corner.4",
+  pattern = "high_wall_inner_corner.se",
 }
 
 tile{
@@ -2544,7 +2535,7 @@ tile{
   y = 904,
   width = 24,
   height = 24,
-  pattern = "wall.corner.3",
+  pattern = "high_wall_inner_corner.sw",
 }
 
 tile{
@@ -2553,7 +2544,7 @@ tile{
   y = 728,
   width = 240,
   height = 8,
-  pattern = "wall_border.1",
+  pattern = "wall_border.high.n",
 }
 
 tile{
@@ -2562,7 +2553,7 @@ tile{
   y = 896,
   width = 240,
   height = 8,
-  pattern = "wall_border.2",
+  pattern = "wall_border.high.s",
 }
 
 tile{
@@ -2571,7 +2562,7 @@ tile{
   y = 736,
   width = 8,
   height = 160,
-  pattern = "wall_border.3",
+  pattern = "wall_border.high.w",
 }
 
 tile{
@@ -2580,7 +2571,7 @@ tile{
   y = 728,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.1",
+  pattern = "wall_border_inner_corner.high.nw",
 }
 
 tile{
@@ -2589,7 +2580,7 @@ tile{
   y = 896,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.3",
+  pattern = "wall_border_inner_corner.high.sw",
 }
 
 tile{
@@ -2598,7 +2589,7 @@ tile{
   y = 896,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.4",
+  pattern = "wall_border_inner_corner.high.se",
 }
 
 tile{
@@ -2607,7 +2598,7 @@ tile{
   y = 728,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.2",
+  pattern = "wall_border_inner_corner.high.ne",
 }
 
 tile{
@@ -2616,7 +2607,7 @@ tile{
   y = 800,
   width = 16,
   height = 32,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 tile{
@@ -2625,7 +2616,7 @@ tile{
   y = 800,
   width = 16,
   height = 32,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 tile{
@@ -2634,7 +2625,7 @@ tile{
   y = 704,
   width = 32,
   height = 16,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 tile{
@@ -2643,7 +2634,7 @@ tile{
   y = 920,
   width = 32,
   height = 16,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 tile{
@@ -2652,7 +2643,7 @@ tile{
   y = 736,
   width = 8,
   height = 160,
-  pattern = "wall_border.4",
+  pattern = "wall_border.high.e",
 }
 
 tile{
@@ -2661,7 +2652,7 @@ tile{
   y = 712,
   width = 16,
   height = 16,
-  pattern = "door_blast.2",
+  pattern = "blown_door_floor.s",
 }
 
 tile{
@@ -2670,7 +2661,7 @@ tile{
   y = 808,
   width = 16,
   height = 16,
-  pattern = "door_blast.3",
+  pattern = "blown_door_floor.w",
 }
 
 tile{
@@ -2679,7 +2670,7 @@ tile{
   y = 800,
   width = 16,
   height = 8,
-  pattern = "door.4.support.1",
+  pattern = "door_support.l.e",
 }
 
 tile{
@@ -2688,7 +2679,7 @@ tile{
   y = 824,
   width = 16,
   height = 8,
-  pattern = "door.4.support.2",
+  pattern = "door_support.r.e",
 }
 
 tile{
@@ -2697,7 +2688,7 @@ tile{
   y = 712,
   width = 8,
   height = 16,
-  pattern = "door.1.support.2",
+  pattern = "door_support.r.n",
 }
 
 tile{
@@ -2706,7 +2697,7 @@ tile{
   y = 712,
   width = 8,
   height = 16,
-  pattern = "door.1.support.1",
+  pattern = "door_support.l.n",
 }
 
 tile{
@@ -2715,7 +2706,7 @@ tile{
   y = 728,
   width = 256,
   height = 176,
-  pattern = "floor.18",
+  pattern = "placeholder.floor.high",
 }
 
 tile{
@@ -2724,7 +2715,7 @@ tile{
   y = 704,
   width = 256,
   height = 24,
-  pattern = "wall.1",
+  pattern = "high_wall.n",
 }
 
 tile{
@@ -2733,7 +2724,7 @@ tile{
   y = 904,
   width = 256,
   height = 24,
-  pattern = "wall.2",
+  pattern = "high_wall.s",
 }
 
 tile{
@@ -2742,7 +2733,7 @@ tile{
   y = 728,
   width = 24,
   height = 176,
-  pattern = "wall.3",
+  pattern = "high_wall.w",
 }
 
 tile{
@@ -2751,7 +2742,7 @@ tile{
   y = 728,
   width = 24,
   height = 176,
-  pattern = "wall.4",
+  pattern = "high_wall.e",
 }
 
 tile{
@@ -2760,7 +2751,7 @@ tile{
   y = 704,
   width = 24,
   height = 24,
-  pattern = "wall.corner.1",
+  pattern = "high_wall_inner_corner.nw",
 }
 
 tile{
@@ -2769,7 +2760,7 @@ tile{
   y = 704,
   width = 24,
   height = 24,
-  pattern = "wall.corner.2",
+  pattern = "high_wall_inner_corner.ne",
 }
 
 tile{
@@ -2778,7 +2769,7 @@ tile{
   y = 904,
   width = 24,
   height = 24,
-  pattern = "wall.corner.4",
+  pattern = "high_wall_inner_corner.se",
 }
 
 tile{
@@ -2787,7 +2778,7 @@ tile{
   y = 904,
   width = 24,
   height = 24,
-  pattern = "wall.corner.3",
+  pattern = "high_wall_inner_corner.sw",
 }
 
 tile{
@@ -2796,7 +2787,7 @@ tile{
   y = 728,
   width = 240,
   height = 8,
-  pattern = "wall_border.1",
+  pattern = "wall_border.high.n",
 }
 
 tile{
@@ -2805,7 +2796,7 @@ tile{
   y = 896,
   width = 240,
   height = 8,
-  pattern = "wall_border.2",
+  pattern = "wall_border.high.s",
 }
 
 tile{
@@ -2814,7 +2805,7 @@ tile{
   y = 736,
   width = 8,
   height = 160,
-  pattern = "wall_border.3",
+  pattern = "wall_border.high.w",
 }
 
 tile{
@@ -2823,7 +2814,7 @@ tile{
   y = 728,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.1",
+  pattern = "wall_border_inner_corner.high.nw",
 }
 
 tile{
@@ -2832,7 +2823,7 @@ tile{
   y = 896,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.3",
+  pattern = "wall_border_inner_corner.high.sw",
 }
 
 tile{
@@ -2841,7 +2832,7 @@ tile{
   y = 896,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.4",
+  pattern = "wall_border_inner_corner.high.se",
 }
 
 tile{
@@ -2850,7 +2841,7 @@ tile{
   y = 728,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.2",
+  pattern = "wall_border_inner_corner.high.ne",
 }
 
 tile{
@@ -2859,7 +2850,7 @@ tile{
   y = 800,
   width = 16,
   height = 32,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 tile{
@@ -2868,7 +2859,7 @@ tile{
   y = 800,
   width = 16,
   height = 32,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 tile{
@@ -2877,7 +2868,7 @@ tile{
   y = 704,
   width = 32,
   height = 16,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 tile{
@@ -2886,7 +2877,7 @@ tile{
   y = 920,
   width = 32,
   height = 16,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 tile{
@@ -2895,7 +2886,7 @@ tile{
   y = 736,
   width = 8,
   height = 160,
-  pattern = "wall_border.4",
+  pattern = "wall_border.high.e",
 }
 
 tile{
@@ -2904,7 +2895,7 @@ tile{
   y = 712,
   width = 16,
   height = 16,
-  pattern = "door_blast.2",
+  pattern = "blown_door_floor.s",
 }
 
 tile{
@@ -2913,7 +2904,7 @@ tile{
   y = 808,
   width = 16,
   height = 16,
-  pattern = "door_blast.3",
+  pattern = "blown_door_floor.w",
 }
 
 tile{
@@ -2922,7 +2913,7 @@ tile{
   y = 800,
   width = 16,
   height = 8,
-  pattern = "door.4.support.1",
+  pattern = "door_support.l.e",
 }
 
 tile{
@@ -2931,7 +2922,7 @@ tile{
   y = 824,
   width = 16,
   height = 8,
-  pattern = "door.4.support.2",
+  pattern = "door_support.r.e",
 }
 
 tile{
@@ -2940,7 +2931,7 @@ tile{
   y = 712,
   width = 8,
   height = 16,
-  pattern = "door.1.support.2",
+  pattern = "door_support.r.n",
 }
 
 tile{
@@ -2949,25 +2940,7 @@ tile{
   y = 712,
   width = 8,
   height = 16,
-  pattern = "door.1.support.1",
-}
-
-tile{
-  layer = 1,
-  x = 56,
-  y = 272,
-  width = 8,
-  height = 160,
-  pattern = "floor_border.1",
-}
-
-tile{
-  layer = 1,
-  x = 112,
-  y = 272,
-  width = 8,
-  height = 160,
-  pattern = "floor_border.1",
+  pattern = "door_support.l.n",
 }
 
 tile{
@@ -2976,25 +2949,7 @@ tile{
   y = 272,
   width = 48,
   height = 160,
-  pattern = "floor_small.2",
-}
-
-tile{
-  layer = 1,
-  x = 368,
-  y = 272,
-  width = 8,
-  height = 160,
-  pattern = "floor_border.1",
-}
-
-tile{
-  layer = 1,
-  x = 424,
-  y = 272,
-  width = 8,
-  height = 160,
-  pattern = "floor_border.1",
+  pattern = "carpet.1",
 }
 
 tile{
@@ -3003,7 +2958,7 @@ tile{
   y = 272,
   width = 48,
   height = 160,
-  pattern = "floor_small.2",
+  pattern = "carpet.1",
 }
 
 tile{
@@ -3012,7 +2967,7 @@ tile{
   y = 392,
   width = 16,
   height = 16,
-  pattern = "torch_off",
+  pattern = "floor_torch",
 }
 
 tile{
@@ -3021,16 +2976,7 @@ tile{
   y = 296,
   width = 16,
   height = 16,
-  pattern = "torch_off",
-}
-
-tile{
-  layer = 1,
-  x = 736,
-  y = 40,
-  width = 8,
-  height = 160,
-  pattern = "floor_border.1",
+  pattern = "floor_torch",
 }
 
 tile{
@@ -3039,7 +2985,7 @@ tile{
   y = 32,
   width = 240,
   height = 8,
-  pattern = "wall_border.1",
+  pattern = "wall_border.high.n",
 }
 
 tile{
@@ -3048,7 +2994,7 @@ tile{
   y = 200,
   width = 240,
   height = 8,
-  pattern = "wall_border.2",
+  pattern = "wall_border.high.s",
 }
 
 tile{
@@ -3057,7 +3003,7 @@ tile{
   y = 40,
   width = 8,
   height = 160,
-  pattern = "wall_border.3",
+  pattern = "wall_border.high.w",
 }
 
 tile{
@@ -3066,7 +3012,7 @@ tile{
   y = 32,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.1",
+  pattern = "wall_border_inner_corner.high.nw",
 }
 
 tile{
@@ -3075,7 +3021,7 @@ tile{
   y = 200,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.3",
+  pattern = "wall_border_inner_corner.high.sw",
 }
 
 tile{
@@ -3084,7 +3030,7 @@ tile{
   y = 200,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.4",
+  pattern = "wall_border_inner_corner.high.se",
 }
 
 tile{
@@ -3093,7 +3039,7 @@ tile{
   y = 32,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.2",
+  pattern = "wall_border_inner_corner.high.ne",
 }
 
 tile{
@@ -3102,7 +3048,7 @@ tile{
   y = 40,
   width = 8,
   height = 160,
-  pattern = "wall_border.4",
+  pattern = "wall_border.high.e",
 }
 
 tile{
@@ -3111,7 +3057,7 @@ tile{
   y = 80,
   width = 16,
   height = 16,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
 }
 
 tile{
@@ -3120,7 +3066,7 @@ tile{
   y = 64,
   width = 16,
   height = 16,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
 }
 
 tile{
@@ -3129,7 +3075,7 @@ tile{
   y = 48,
   width = 16,
   height = 16,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
 }
 
 tile{
@@ -3138,7 +3084,7 @@ tile{
   y = 144,
   width = 16,
   height = 16,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
 }
 
 tile{
@@ -3147,7 +3093,7 @@ tile{
   y = 160,
   width = 16,
   height = 16,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
 }
 
 tile{
@@ -3156,7 +3102,7 @@ tile{
   y = 176,
   width = 16,
   height = 16,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
 }
 
 tile{
@@ -3165,25 +3111,7 @@ tile{
   y = 504,
   width = 48,
   height = 160,
-  pattern = "floor.20",
-}
-
-tile{
-  layer = 1,
-  x = 56,
-  y = 504,
-  width = 8,
-  height = 160,
-  pattern = "floor_border.1",
-}
-
-tile{
-  layer = 1,
-  x = 112,
-  y = 504,
-  width = 8,
-  height = 160,
-  pattern = "floor_border.1",
+  pattern = "floor.boss",
 }
 
 tile{
@@ -3192,43 +3120,7 @@ tile{
   y = 312,
   width = 80,
   height = 80,
-  pattern = "floor_small.2",
-}
-
-tile{
-  layer = 1,
-  x = 736,
-  y = 312,
-  width = 8,
-  height = 80,
-  pattern = "floor_border.1",
-}
-
-tile{
-  layer = 1,
-  x = 824,
-  y = 304,
-  width = 8,
-  height = 88,
-  pattern = "floor_border.1",
-}
-
-tile{
-  layer = 1,
-  x = 736,
-  y = 304,
-  width = 88,
-  height = 8,
-  pattern = "floor_border.1",
-}
-
-tile{
-  layer = 1,
-  x = 736,
-  y = 392,
-  width = 96,
-  height = 8,
-  pattern = "floor_border.1",
+  pattern = "carpet.1",
 }
 
 tile{
@@ -3237,7 +3129,7 @@ tile{
   y = 320,
   width = 16,
   height = 16,
-  pattern = "torch_off",
+  pattern = "floor_torch",
 }
 
 tile{
@@ -3246,7 +3138,7 @@ tile{
   y = 368,
   width = 16,
   height = 16,
-  pattern = "torch_off",
+  pattern = "floor_torch",
 }
 
 tile{
@@ -3255,7 +3147,7 @@ tile{
   y = 368,
   width = 16,
   height = 16,
-  pattern = "torch_off",
+  pattern = "floor_torch",
 }
 
 tile{
@@ -3264,7 +3156,7 @@ tile{
   y = 320,
   width = 16,
   height = 16,
-  pattern = "torch_off",
+  pattern = "floor_torch",
 }
 
 tile{
@@ -3273,7 +3165,7 @@ tile{
   y = 800,
   width = 16,
   height = 16,
-  pattern = "torch_off",
+  pattern = "floor_torch",
 }
 
 tile{
@@ -3282,7 +3174,7 @@ tile{
   y = 800,
   width = 16,
   height = 16,
-  pattern = "torch_off",
+  pattern = "floor_torch",
 }
 
 tile{
@@ -3291,43 +3183,7 @@ tile{
   y = 760,
   width = 16,
   height = 16,
-  pattern = "floor_pot",
-}
-
-tile{
-  layer = 1,
-  x = 104,
-  y = 792,
-  width = 8,
-  height = 32,
-  pattern = "floor_border.1",
-}
-
-tile{
-  layer = 1,
-  x = 104,
-  y = 824,
-  width = 112,
-  height = 8,
-  pattern = "floor_border.1",
-}
-
-tile{
-  layer = 1,
-  x = 208,
-  y = 792,
-  width = 8,
-  height = 32,
-  pattern = "floor_border.1",
-}
-
-tile{
-  layer = 1,
-  x = 104,
-  y = 784,
-  width = 112,
-  height = 8,
-  pattern = "floor_border.1",
+  pattern = "placeholder.pot",
 }
 
 tile{
@@ -3336,7 +3192,7 @@ tile{
   y = 760,
   width = 16,
   height = 16,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
 }
 
 tile{
@@ -3345,7 +3201,7 @@ tile{
   y = 760,
   width = 16,
   height = 16,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
 }
 
 tile{
@@ -3354,7 +3210,7 @@ tile{
   y = 840,
   width = 16,
   height = 16,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
 }
 
 tile{
@@ -3363,7 +3219,7 @@ tile{
   y = 840,
   width = 16,
   height = 16,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
 }
 
 tile{
@@ -3372,7 +3228,7 @@ tile{
   y = 840,
   width = 16,
   height = 16,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
 }
 
 tile{
@@ -3381,7 +3237,7 @@ tile{
   y = 56,
   width = 16,
   height = 16,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
 }
 
 tile{
@@ -3390,7 +3246,7 @@ tile{
   y = 56,
   width = 16,
   height = 16,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
 }
 
 tile{
@@ -3399,7 +3255,7 @@ tile{
   y = 72,
   width = 16,
   height = 16,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
 }
 
 tile{
@@ -3408,7 +3264,7 @@ tile{
   y = 168,
   width = 16,
   height = 16,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
 }
 
 tile{
@@ -3417,7 +3273,7 @@ tile{
   y = 152,
   width = 16,
   height = 16,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
 }
 
 tile{
@@ -3426,7 +3282,7 @@ tile{
   y = 152,
   width = 16,
   height = 16,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
 }
 
 tile{
@@ -3435,7 +3291,7 @@ tile{
   y = 168,
   width = 16,
   height = 16,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
 }
 
 tile{
@@ -3444,7 +3300,7 @@ tile{
   y = 120,
   width = 16,
   height = 16,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
 }
 
 tile{
@@ -3453,7 +3309,7 @@ tile{
   y = 104,
   width = 16,
   height = 16,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
 }
 
 tile{
@@ -3462,7 +3318,7 @@ tile{
   y = 104,
   width = 16,
   height = 16,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
 }
 
 tile{
@@ -3471,7 +3327,7 @@ tile{
   y = 120,
   width = 16,
   height = 16,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
 }
 
 tile{
@@ -3480,7 +3336,7 @@ tile{
   y = 816,
   width = 16,
   height = 16,
-  pattern = "torch_off",
+  pattern = "floor_torch",
 }
 
 tile{
@@ -3489,7 +3345,7 @@ tile{
   y = 816,
   width = 16,
   height = 16,
-  pattern = "torch_off",
+  pattern = "floor_torch",
 }
 
 tile{
@@ -3498,7 +3354,7 @@ tile{
   y = 784,
   width = 16,
   height = 16,
-  pattern = "torch_off",
+  pattern = "floor_torch",
 }
 
 tile{
@@ -3507,7 +3363,7 @@ tile{
   y = 800,
   width = 16,
   height = 16,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
 }
 
 tile{
@@ -3516,7 +3372,7 @@ tile{
   y = 784,
   width = 16,
   height = 16,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
 }
 
 tile{
@@ -3525,7 +3381,7 @@ tile{
   y = 816,
   width = 16,
   height = 16,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
 }
 
 tile{
@@ -3534,7 +3390,7 @@ tile{
   y = 800,
   width = 16,
   height = 16,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
 }
 
 tile{
@@ -3543,7 +3399,7 @@ tile{
   y = 784,
   width = 16,
   height = 16,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
 }
 
 tile{
@@ -3552,7 +3408,7 @@ tile{
   y = 816,
   width = 16,
   height = 16,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
 }
 
 tile{
@@ -3561,7 +3417,7 @@ tile{
   y = 816,
   width = 16,
   height = 16,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
 }
 
 tile{
@@ -3570,7 +3426,7 @@ tile{
   y = 832,
   width = 16,
   height = 16,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
 }
 
 tile{
@@ -3579,7 +3435,7 @@ tile{
   y = 832,
   width = 16,
   height = 16,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
 }
 
 tile{
@@ -3588,7 +3444,7 @@ tile{
   y = 768,
   width = 16,
   height = 16,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
 }
 
 tile{
@@ -3597,7 +3453,7 @@ tile{
   y = 768,
   width = 16,
   height = 16,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
 }
 
 tile{
@@ -3606,7 +3462,7 @@ tile{
   y = 784,
   width = 16,
   height = 16,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
 }
 
 tile{
@@ -3615,7 +3471,7 @@ tile{
   y = 496,
   width = 16,
   height = 16,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
 }
 
 tile{
@@ -3624,7 +3480,7 @@ tile{
   y = 648,
   width = 16,
   height = 16,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
 }
 
 tile{
@@ -3633,7 +3489,7 @@ tile{
   y = 648,
   width = 16,
   height = 16,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
 }
 
 tile{
@@ -3642,7 +3498,7 @@ tile{
   y = 504,
   width = 16,
   height = 16,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
 }
 
 tile{
@@ -3651,7 +3507,7 @@ tile{
   y = 576,
   width = 16,
   height = 16,
-  pattern = "tongue",
+  pattern = "small_statue.1",
 }
 
 tile{
@@ -3660,7 +3516,7 @@ tile{
   y = 576,
   width = 16,
   height = 16,
-  pattern = "tongue",
+  pattern = "small_statue.1",
 }
 
 tile{
@@ -3669,7 +3525,7 @@ tile{
   y = 744,
   width = 16,
   height = 16,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
 }
 
 tile{
@@ -3678,7 +3534,7 @@ tile{
   y = 744,
   width = 16,
   height = 16,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
 }
 
 tile{
@@ -3687,7 +3543,7 @@ tile{
   y = 744,
   width = 16,
   height = 16,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
 }
 
 tile{
@@ -3696,7 +3552,7 @@ tile{
   y = 744,
   width = 16,
   height = 16,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
 }
 
 tile{
@@ -3705,7 +3561,7 @@ tile{
   y = 744,
   width = 16,
   height = 16,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
 }
 
 tile{
@@ -3714,7 +3570,7 @@ tile{
   y = 744,
   width = 16,
   height = 16,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
 }
 
 tile{
@@ -3723,7 +3579,7 @@ tile{
   y = 744,
   width = 16,
   height = 16,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
 }
 
 tile{
@@ -3732,7 +3588,7 @@ tile{
   y = 744,
   width = 16,
   height = 16,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
 }
 
 tile{
@@ -3741,7 +3597,7 @@ tile{
   y = 784,
   width = 16,
   height = 16,
-  pattern = "tongue",
+  pattern = "small_statue.1",
 }
 
 tile{
@@ -3750,7 +3606,7 @@ tile{
   y = 848,
   width = 16,
   height = 16,
-  pattern = "tongue",
+  pattern = "small_statue.1",
 }
 
 tile{
@@ -3759,7 +3615,7 @@ tile{
   y = 752,
   width = 16,
   height = 16,
-  pattern = "tongue",
+  pattern = "small_statue.1",
 }
 
 tile{
@@ -3768,34 +3624,7 @@ tile{
   y = 848,
   width = 16,
   height = 16,
-  pattern = "tongue",
-}
-
-tile{
-  layer = 1,
-  x = 680,
-  y = 40,
-  width = 8,
-  height = 160,
-  pattern = "floor_border.1",
-}
-
-tile{
-  layer = 1,
-  x = 56,
-  y = 40,
-  width = 8,
-  height = 160,
-  pattern = "floor_border.1",
-}
-
-tile{
-  layer = 1,
-  x = 112,
-  y = 40,
-  width = 8,
-  height = 160,
-  pattern = "floor_border.1",
+  pattern = "small_statue.1",
 }
 
 tile{
@@ -3804,7 +3633,7 @@ tile{
   y = 40,
   width = 48,
   height = 160,
-  pattern = "floor_small.2",
+  pattern = "carpet.1",
 }
 
 tile{
@@ -3813,7 +3642,7 @@ tile{
   y = -784,
   width = 32,
   height = 16,
-  pattern = "lava",
+  pattern = "lava_hurt",
 }
 
 chest{
@@ -4096,7 +3925,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "pot_1",
-  pattern = "floor_small.2",
+  pattern = "carpet.1",
   enabled_at_start = true,
 }
 
@@ -4107,7 +3936,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "pot_6",
-  pattern = "floor_small.2",
+  pattern = "carpet.1",
   enabled_at_start = true,
 }
 
@@ -4118,7 +3947,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "pot_3",
-  pattern = "floor_small.2",
+  pattern = "carpet.1",
   enabled_at_start = true,
 }
 
@@ -4129,7 +3958,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "pot_4",
-  pattern = "floor_small.2",
+  pattern = "carpet.1",
   enabled_at_start = true,
 }
 
@@ -4140,7 +3969,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "pot_2",
-  pattern = "floor_small.2",
+  pattern = "carpet.1",
   enabled_at_start = true,
 }
 
@@ -4151,7 +3980,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "pot_5",
-  pattern = "floor_small.2",
+  pattern = "carpet.1",
   enabled_at_start = true,
 }
 
@@ -4162,7 +3991,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "pot_7",
-  pattern = "floor_small.2",
+  pattern = "carpet.1",
   enabled_at_start = true,
 }
 
@@ -4173,7 +4002,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "pot_8",
-  pattern = "floor_small.2",
+  pattern = "carpet.1",
   enabled_at_start = true,
 }
 
@@ -4184,7 +4013,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "block_1",
-  pattern = "floor_small.2",
+  pattern = "carpet.1",
   enabled_at_start = true,
 }
 
@@ -4195,7 +4024,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "block_2",
-  pattern = "floor_small.2",
+  pattern = "carpet.1",
   enabled_at_start = true,
 }
 
@@ -4206,7 +4035,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "block_3",
-  pattern = "floor_small.2",
+  pattern = "carpet.1",
   enabled_at_start = true,
 }
 
@@ -4217,7 +4046,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "block_4",
-  pattern = "floor_small.2",
+  pattern = "carpet.1",
   enabled_at_start = true,
 }
 
@@ -4228,7 +4057,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "block_5",
-  pattern = "floor_small.2",
+  pattern = "carpet.1",
   enabled_at_start = true,
 }
 
@@ -4239,7 +4068,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "block_6",
-  pattern = "floor_small.2",
+  pattern = "carpet.1",
   enabled_at_start = true,
 }
 
@@ -4250,7 +4079,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "block_7",
-  pattern = "floor_small.2",
+  pattern = "carpet.1",
   enabled_at_start = true,
 }
 
@@ -4261,7 +4090,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "block_8",
-  pattern = "floor_small.2",
+  pattern = "carpet.1",
   enabled_at_start = true,
 }
 
@@ -4272,7 +4101,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "chest",
-  pattern = "floor_small.2",
+  pattern = "carpet.1",
   enabled_at_start = true,
 }
 
@@ -4802,4 +4631,5 @@ tile{
   height = 8,
   pattern = "ceiling",
 }
+
 

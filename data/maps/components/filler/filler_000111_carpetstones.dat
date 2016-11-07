@@ -5,7 +5,7 @@ properties{
   height = 240,
   min_layer = 0,
   max_layer = 2,
-  tileset = "dungeon_brick_blue_1",
+  tileset = "dungeon.tower_of_hera",
   music = "same",
 }
 
@@ -15,7 +15,7 @@ tile{
   y = 48,
   width = 80,
   height = 144,
-  pattern = "floor_border.2",
+  pattern = "carpet_border",
 }
 
 tile{
@@ -24,7 +24,7 @@ tile{
   y = 56,
   width = 64,
   height = 128,
-  pattern = "floor_small.2",
+  pattern = "carpet.1",
 }
 
 tile{
@@ -33,7 +33,7 @@ tile{
   y = 80,
   width = 16,
   height = 16,
-  pattern = "torch",
+  pattern = "floor_torch.lit",
 }
 
 tile{
@@ -42,7 +42,7 @@ tile{
   y = 144,
   width = 16,
   height = 16,
-  pattern = "torch",
+  pattern = "floor_torch.lit",
 }
 
 dynamic_tile{
@@ -50,7 +50,7 @@ dynamic_tile{
   layer = 1,
   x = 224,
   y = 64,
-  pattern = "placeholder_stone",
+  pattern = "placeholder.stone",
   width = 16,
   height = 16,
   enabled_at_start = true,
@@ -61,7 +61,7 @@ dynamic_tile{
   layer = 1,
   x = 208,
   y = 72,
-  pattern = "placeholder_stone",
+  pattern = "placeholder.stone",
   width = 16,
   height = 16,
   enabled_at_start = true,
@@ -72,7 +72,7 @@ dynamic_tile{
   layer = 1,
   x = 240,
   y = 72,
-  pattern = "placeholder_stone",
+  pattern = "placeholder.stone",
   width = 16,
   height = 16,
   enabled_at_start = true,
@@ -83,7 +83,7 @@ dynamic_tile{
   layer = 1,
   x = 208,
   y = 152,
-  pattern = "placeholder_stone",
+  pattern = "placeholder.stone",
   width = 16,
   height = 16,
   enabled_at_start = true,
@@ -94,7 +94,7 @@ dynamic_tile{
   layer = 1,
   x = 240,
   y = 152,
-  pattern = "placeholder_stone",
+  pattern = "placeholder.stone",
   width = 16,
   height = 16,
   enabled_at_start = true,
@@ -105,7 +105,7 @@ dynamic_tile{
   layer = 1,
   x = 224,
   y = 160,
-  pattern = "placeholder_stone",
+  pattern = "placeholder.stone",
   width = 16,
   height = 16,
   enabled_at_start = true,
@@ -116,7 +116,7 @@ dynamic_tile{
   layer = 1,
   x = 192,
   y = 40,
-  pattern = "placeholder_enemy",
+  pattern = "placeholder.enemy",
   width = 32,
   height = 32,
   enabled_at_start = true,
@@ -127,9 +127,10 @@ dynamic_tile{
   layer = 1,
   x = 192,
   y = 168,
-  pattern = "placeholder_enemy",
+  pattern = "placeholder.enemy",
   width = 32,
   height = 32,
   enabled_at_start = true,
 }
+
 

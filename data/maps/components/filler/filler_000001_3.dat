@@ -5,7 +5,7 @@ properties{
   height = 240,
   min_layer = 0,
   max_layer = 2,
-  tileset = "dungeon_house_brown_1",
+  tileset = "dungeon.tower_of_hera",
   music = "same",
 }
 
@@ -15,7 +15,7 @@ tile{
   y = 208,
   width = 32,
   height = 24,
-  pattern = "wall_statue.1.2",
+  pattern = "placeholder.wall_statue.s",
 }
 
 tile{
@@ -24,7 +24,7 @@ tile{
   y = 168,
   width = 16,
   height = 16,
-  pattern = "torch_big.bottom",
+  pattern = "pedestal_torch_bottom",
 }
 
 tile{
@@ -33,7 +33,7 @@ tile{
   y = 168,
   width = 16,
   height = 16,
-  pattern = "torch_big.bottom",
+  pattern = "pedestal_torch_bottom",
 }
 
 dynamic_tile{
@@ -43,7 +43,7 @@ dynamic_tile{
   width = 32,
   height = 32,
   name = "enemy_1",
-  pattern = "placeholder_enemy",
+  pattern = "placeholder.enemy",
   enabled_at_start = true,
 }
 
@@ -53,7 +53,7 @@ tile{
   y = 152,
   width = 16,
   height = 16,
-  pattern = "torch_big.top",
+  pattern = "pedestal_torch_top",
 }
 
 tile{
@@ -62,6 +62,7 @@ tile{
   y = 152,
   width = 16,
   height = 16,
-  pattern = "torch_big.top",
+  pattern = "pedestal_torch_top",
 }
+
 

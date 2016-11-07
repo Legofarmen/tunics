@@ -5,7 +5,7 @@ properties{
   height = 240,
   min_layer = 0,
   max_layer = 2,
-  tileset = "dungeon_brick_blue_1",
+  tileset = "dungeon.tower_of_hera",
   music = "same",
 }
 
@@ -15,7 +15,7 @@ tile{
   y = 40,
   width = 80,
   height = 40,
-  pattern = "floor_border.2",
+  pattern = "carpet_border",
 }
 
 tile{
@@ -24,7 +24,7 @@ tile{
   y = 40,
   width = 64,
   height = 32,
-  pattern = "floor.20",
+  pattern = "floor.boss",
 }
 
 tile{
@@ -33,7 +33,7 @@ tile{
   y = 16,
   width = 8,
   height = 16,
-  pattern = "door.1.support.1",
+  pattern = "door_support.l.n",
 }
 
 tile{
@@ -42,7 +42,7 @@ tile{
   y = 16,
   width = 8,
   height = 16,
-  pattern = "door.1.support.2",
+  pattern = "door_support.r.n",
 }
 
 tile{
@@ -51,7 +51,7 @@ tile{
   y = 0,
   width = 16,
   height = 16,
-  pattern = "floor.1",
+  pattern = "placeholder.floor.high",
 }
 
 tile{
@@ -60,7 +60,7 @@ tile{
   y = 0,
   width = 8,
   height = 8,
-  pattern = "barrier.1.2",
+  pattern = "placeholder.barrier.2",
 }
 
 tile{
@@ -69,7 +69,7 @@ tile{
   y = 0,
   width = 8,
   height = 8,
-  pattern = "barrier.1.2",
+  pattern = "placeholder.barrier.2",
 }
 
 tile{
@@ -78,7 +78,7 @@ tile{
   y = 16,
   width = 16,
   height = 24,
-  pattern = "door_boss.1.pillar.2",
+  pattern = "boss_entrance_pillar.r.bottom",
 }
 
 tile{
@@ -87,7 +87,7 @@ tile{
   y = 16,
   width = 16,
   height = 24,
-  pattern = "door_boss.1.pillar.1",
+  pattern = "boss_entrance_pillar.l.bottom",
 }
 
 tile{
@@ -114,7 +114,7 @@ tile{
   y = 32,
   width = 16,
   height = 16,
-  pattern = "wall_hole.corner.2",
+  pattern = "chasm_wall_inner_corner.ne",
 }
 
 tile{
@@ -123,7 +123,7 @@ tile{
   y = 192,
   width = 16,
   height = 16,
-  pattern = "wall_hole.corner.4",
+  pattern = "chasm_wall_inner_corner.se",
 }
 
 tile{
@@ -132,7 +132,7 @@ tile{
   y = 48,
   width = 16,
   height = 144,
-  pattern = "wall_hole.4",
+  pattern = "chasm_wall.e",
 }
 
 tile{
@@ -141,7 +141,7 @@ tile{
   y = 32,
   width = 88,
   height = 16,
-  pattern = "wall_hole.1",
+  pattern = "chasm_wall.n",
 }
 
 tile{
@@ -150,7 +150,7 @@ tile{
   y = 32,
   width = 16,
   height = 16,
-  pattern = "wall_hole.corner.1",
+  pattern = "chasm_wall_inner_corner.nw",
 }
 
 tile{
@@ -159,7 +159,7 @@ tile{
   y = 192,
   width = 16,
   height = 16,
-  pattern = "wall_hole.corner.3",
+  pattern = "chasm_wall_inner_corner.sw",
 }
 
 tile{
@@ -168,7 +168,7 @@ tile{
   y = 48,
   width = 16,
   height = 144,
-  pattern = "wall_hole.3",
+  pattern = "chasm_wall.w",
 }
 
 tile{
@@ -177,7 +177,7 @@ tile{
   y = 192,
   width = 88,
   height = 16,
-  pattern = "wall_hole.2",
+  pattern = "chasm_wall.s",
 }
 
 tile{
@@ -186,7 +186,7 @@ tile{
   y = 32,
   width = 88,
   height = 16,
-  pattern = "wall_hole.1",
+  pattern = "chasm_wall.n",
 }
 
 tile{
@@ -195,7 +195,7 @@ tile{
   y = 96,
   width = 32,
   height = 32,
-  pattern = "statue.4",
+  pattern = "placeholder.statue",
 }
 
 tile{
@@ -204,7 +204,7 @@ tile{
   y = 96,
   width = 32,
   height = 32,
-  pattern = "statue.4",
+  pattern = "placeholder.statue",
 }
 
 tile{
@@ -213,7 +213,7 @@ tile{
   y = 128,
   width = 32,
   height = 16,
-  pattern = "wall_hole.1",
+  pattern = "chasm_wall.n",
 }
 
 tile{
@@ -222,7 +222,7 @@ tile{
   y = 128,
   width = 32,
   height = 16,
-  pattern = "wall_hole.1",
+  pattern = "chasm_wall.n",
 }
 
 tile{
@@ -231,7 +231,7 @@ tile{
   y = 192,
   width = 88,
   height = 16,
-  pattern = "wall_hole.2",
+  pattern = "chasm_wall.s",
 }
 
 tile{
@@ -240,7 +240,7 @@ tile{
   y = 8,
   width = 32,
   height = 24,
-  pattern = "wall_statue.4.1",
+  pattern = "placeholder.wall_statue.n",
 }
 
 tile{
@@ -249,7 +249,7 @@ tile{
   y = 8,
   width = 32,
   height = 24,
-  pattern = "wall_statue.4.1",
+  pattern = "placeholder.wall_statue.n",
 }
 
 dynamic_tile{
@@ -259,7 +259,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "door_open",
-  pattern = "door.1",
+  pattern = "door_floor.n",
   enabled_at_start = true,
 }
 
@@ -298,7 +298,7 @@ tile{
   y = 8,
   width = 48,
   height = 8,
-  pattern = "door_cache.1",
+  pattern = "high_wall_top.n",
 }
 
 tile{
@@ -307,7 +307,7 @@ tile{
   y = 8,
   width = 32,
   height = 8,
-  pattern = "door_top.closed.1",
+  pattern = "closed_door_top.n",
 }
 
 tile{
@@ -316,7 +316,7 @@ tile{
   y = 8,
   width = 16,
   height = 8,
-  pattern = "door_boss.1.pillar.1.top",
+  pattern = "boss_entrance_pillar.l.top",
 }
 
 tile{
@@ -325,7 +325,7 @@ tile{
   y = 8,
   width = 16,
   height = 8,
-  pattern = "door_boss.1.pillar.2.top",
+  pattern = "boss_entrance_pillar.r.top",
 }
 
 tile{
@@ -334,7 +334,7 @@ tile{
   y = 8,
   width = 32,
   height = 24,
-  pattern = "wall.1",
+  pattern = "high_wall.n",
 }
 
 tile{
@@ -343,7 +343,7 @@ tile{
   y = 8,
   width = 32,
   height = 24,
-  pattern = "wall.1",
+  pattern = "high_wall.n",
 }
 
 tile{
@@ -352,7 +352,7 @@ tile{
   y = 208,
   width = 32,
   height = 24,
-  pattern = "wall.2",
+  pattern = "high_wall.s",
 }
 
 tile{
@@ -361,7 +361,7 @@ tile{
   y = 208,
   width = 32,
   height = 24,
-  pattern = "wall.2",
+  pattern = "high_wall.s",
 }
 
 tile{
@@ -379,7 +379,7 @@ tile{
   y = 32,
   width = 16,
   height = 16,
-  pattern = "wall_hole.1",
+  pattern = "chasm_wall.n",
 }
 
 tile{
@@ -388,7 +388,7 @@ tile{
   y = 192,
   width = 16,
   height = 16,
-  pattern = "wall_hole.2",
+  pattern = "chasm_wall.s",
 }
 
 tile{
@@ -406,7 +406,7 @@ tile{
   y = 32,
   width = 16,
   height = 16,
-  pattern = "wall_hole.1",
+  pattern = "chasm_wall.n",
 }
 
 tile{
@@ -415,6 +415,7 @@ tile{
   y = 192,
   width = 16,
   height = 16,
-  pattern = "wall_hole.2",
+  pattern = "chasm_wall.s",
 }
+
 

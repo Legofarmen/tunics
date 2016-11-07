@@ -5,7 +5,7 @@ properties{
   height = 240,
   min_layer = 0,
   max_layer = 2,
-  tileset = "dungeon_brick_gray_1",
+  tileset = "dungeon.tower_of_hera",
   music = "same",
 }
 
@@ -24,7 +24,7 @@ tile{
   y = 32,
   width = 16,
   height = 16,
-  pattern = "wall_hole.corner.1",
+  pattern = "chasm_wall_inner_corner.nw",
 }
 
 tile{
@@ -33,7 +33,7 @@ tile{
   y = 32,
   width = 16,
   height = 16,
-  pattern = "wall_hole.corner.2",
+  pattern = "chasm_wall_inner_corner.ne",
 }
 
 tile{
@@ -42,7 +42,7 @@ tile{
   y = 32,
   width = 32,
   height = 16,
-  pattern = "wall_hole.1",
+  pattern = "chasm_wall.n",
 }
 
 tile{
@@ -51,7 +51,7 @@ tile{
   y = 48,
   width = 16,
   height = 56,
-  pattern = "wall_hole.4",
+  pattern = "chasm_wall.e",
 }
 
 tile{
@@ -60,7 +60,7 @@ tile{
   y = 48,
   width = 16,
   height = 56,
-  pattern = "wall_hole.3",
+  pattern = "chasm_wall.w",
 }
 
 tile{
@@ -69,7 +69,7 @@ tile{
   y = 48,
   width = 16,
   height = 16,
-  pattern = "wall_hole.1",
+  pattern = "chasm_wall.n",
 }
 
 tile{
@@ -78,7 +78,7 @@ tile{
   y = 48,
   width = 16,
   height = 16,
-  pattern = "wall_hole.1",
+  pattern = "chasm_wall.n",
 }
 
 tile{
@@ -87,7 +87,7 @@ tile{
   y = 96,
   width = 256,
   height = 8,
-  pattern = "hole.2",
+  pattern = "hole_border.s",
 }
 
 tile{
@@ -96,7 +96,7 @@ tile{
   y = 32,
   width = 16,
   height = 16,
-  pattern = "tongue",
+  pattern = "small_statue.1",
 }
 
 tile{
@@ -105,7 +105,7 @@ tile{
   y = 32,
   width = 16,
   height = 16,
-  pattern = "tongue",
+  pattern = "small_statue.1",
 }
 
 tile{
@@ -114,7 +114,7 @@ tile{
   y = 32,
   width = 64,
   height = 16,
-  pattern = "wall_hole.1",
+  pattern = "chasm_wall.n",
 }
 
 tile{
@@ -123,7 +123,7 @@ tile{
   y = 32,
   width = 32,
   height = 16,
-  pattern = "wall_hole.1",
+  pattern = "chasm_wall.n",
 }
 
 tile{
@@ -132,7 +132,7 @@ tile{
   y = 32,
   width = 16,
   height = 16,
-  pattern = "wall_hole.corner.2",
+  pattern = "chasm_wall_inner_corner.ne",
 }
 
 tile{
@@ -141,7 +141,7 @@ tile{
   y = 32,
   width = 16,
   height = 16,
-  pattern = "wall_hole.corner.2",
+  pattern = "chasm_wall_inner_corner.ne",
 }
 
 tile{
@@ -150,7 +150,7 @@ tile{
   y = 32,
   width = 16,
   height = 16,
-  pattern = "wall_hole.corner.1",
+  pattern = "chasm_wall_inner_corner.nw",
 }
 
 tile{
@@ -159,7 +159,7 @@ tile{
   y = 32,
   width = 16,
   height = 16,
-  pattern = "wall_hole.corner.1",
+  pattern = "chasm_wall_inner_corner.nw",
 }
 
 tile{
@@ -168,7 +168,7 @@ tile{
   y = 48,
   width = 16,
   height = 16,
-  pattern = "wall_hole.corner_reverse.1",
+  pattern = "chasm_wall_outer_corner.nw",
 }
 
 tile{
@@ -177,7 +177,7 @@ tile{
   y = 48,
   width = 16,
   height = 16,
-  pattern = "wall_hole.corner_reverse.1",
+  pattern = "chasm_wall_outer_corner.nw",
 }
 
 tile{
@@ -186,7 +186,7 @@ tile{
   y = 48,
   width = 16,
   height = 16,
-  pattern = "wall_hole.corner_reverse.2",
+  pattern = "chasm_wall_outer_corner.ne",
 }
 
 tile{
@@ -195,6 +195,7 @@ tile{
   y = 48,
   width = 16,
   height = 16,
-  pattern = "wall_hole.corner_reverse.2",
+  pattern = "chasm_wall_outer_corner.ne",
 }
+
 

@@ -5,7 +5,7 @@ properties{
   height = 240,
   min_layer = 0,
   max_layer = 2,
-  tileset = "dungeon_brick_gray_1",
+  tileset = "dungeon.tower_of_hera",
   music = "same",
 }
 
@@ -15,7 +15,7 @@ tile{
   y = 32,
   width = 24,
   height = 176,
-  pattern = "wall.4",
+  pattern = "high_wall.e",
 }
 
 tile{
@@ -24,7 +24,7 @@ tile{
   y = 8,
   width = 24,
   height = 24,
-  pattern = "wall.corner.2",
+  pattern = "high_wall_inner_corner.ne",
 }
 
 tile{
@@ -33,7 +33,7 @@ tile{
   y = 40,
   width = 8,
   height = 160,
-  pattern = "wall_border.4",
+  pattern = "wall_border.high.e",
 }
 
 tile{
@@ -42,7 +42,7 @@ tile{
   y = 32,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.2",
+  pattern = "wall_border_inner_corner.high.ne",
 }
 
 tile{
@@ -51,7 +51,7 @@ tile{
   y = 200,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.4",
+  pattern = "wall_border_inner_corner.high.se",
 }
 
 tile{
@@ -60,7 +60,7 @@ tile{
   y = 208,
   width = 24,
   height = 24,
-  pattern = "wall.corner.4",
+  pattern = "high_wall_inner_corner.se",
 }
 
 tile{
@@ -71,4 +71,5 @@ tile{
   height = 240,
   pattern = "ceiling",
 }
+
 

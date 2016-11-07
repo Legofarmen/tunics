@@ -834,7 +834,7 @@ tile{
   y = 136,
   width = 48,
   height = 48,
-  pattern = "water_shallow",
+  pattern = "floor.shallow_water",
 }
 
 tile{
@@ -1312,4 +1312,5 @@ destination{
   y = 77,
   direction = 0,
 }
+
 

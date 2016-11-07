@@ -5,7 +5,7 @@ properties{
   height = 240,
   min_layer = 0,
   max_layer = 2,
-  tileset = "dungeon_brick_gray_1",
+  tileset = "dungeon.tower_of_hera",
   music = "same",
 }
 
@@ -15,7 +15,7 @@ tile{
   y = 48,
   width = 48,
   height = 48,
-  pattern = "floor_border.2",
+  pattern = "carpet_border",
 }
 
 tile{
@@ -33,7 +33,7 @@ tile{
   y = 40,
   width = 16,
   height = 24,
-  pattern = "wall.1",
+  pattern = "high_wall.n",
 }
 
 tile{
@@ -42,7 +42,7 @@ tile{
   y = 40,
   width = 24,
   height = 24,
-  pattern = "wall.corner.2",
+  pattern = "high_wall_inner_corner.ne",
 }
 
 tile{
@@ -51,7 +51,7 @@ tile{
   y = 32,
   width = 24,
   height = 16,
-  pattern = "wall.4",
+  pattern = "high_wall.e",
 }
 
 tile{
@@ -60,7 +60,7 @@ tile{
   y = 8,
   width = 24,
   height = 24,
-  pattern = "wall.corner.2",
+  pattern = "high_wall_inner_corner.ne",
 }
 
 tile{
@@ -69,7 +69,7 @@ tile{
   y = 40,
   width = 24,
   height = 24,
-  pattern = "wall.corner_reverse.2",
+  pattern = "high_wall_outer_corner.ne",
 }
 
 tile{
@@ -78,7 +78,7 @@ tile{
   y = 64,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner_reverse.2",
+  pattern = "wall_border_outer_corner.high.ne",
 }
 
 tile{
@@ -87,7 +87,7 @@ tile{
   y = 64,
   width = 32,
   height = 8,
-  pattern = "wall_border.1",
+  pattern = "wall_border.high.n",
 }
 
 tile{
@@ -96,7 +96,7 @@ tile{
   y = 32,
   width = 8,
   height = 32,
-  pattern = "wall_border.4",
+  pattern = "wall_border.high.e",
 }
 
 tile{
@@ -105,7 +105,7 @@ tile{
   y = 32,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.2",
+  pattern = "wall_border_inner_corner.high.ne",
 }
 
 tile{
@@ -114,7 +114,7 @@ tile{
   y = 32,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.2",
+  pattern = "wall_border_inner_corner.high.ne",
 }
 
 tile{
@@ -123,7 +123,7 @@ tile{
   y = 64,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.2",
+  pattern = "wall_border_inner_corner.high.ne",
 }
 
 tile{
@@ -132,7 +132,7 @@ tile{
   y = 56,
   width = 32,
   height = 32,
-  pattern = "floor_small.2",
+  pattern = "carpet.1",
 }
 
 tile{
@@ -141,7 +141,7 @@ tile{
   y = 64,
   width = 16,
   height = 16,
-  pattern = "torch",
+  pattern = "floor_torch.lit",
 }
 
 dynamic_tile{
@@ -151,7 +151,8 @@ dynamic_tile{
   width = 32,
   height = 32,
   name = "enemy_",
-  pattern = "placeholder_enemy",
+  pattern = "placeholder.enemy",
   enabled_at_start = true,
 }
+
 

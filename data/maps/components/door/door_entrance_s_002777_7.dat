@@ -5,7 +5,7 @@ properties{
   height = 240,
   min_layer = 0,
   max_layer = 2,
-  tileset = "dungeon_smoothbrick_pink_1",
+  tileset = "dungeon.tower_of_hera",
   music = "same",
 }
 
@@ -15,7 +15,7 @@ tile{
   y = 208,
   width = 24,
   height = 24,
-  pattern = "wall.corner.3",
+  pattern = "high_wall_inner_corner.sw",
 }
 
 tile{
@@ -24,7 +24,7 @@ tile{
   y = 144,
   width = 24,
   height = 24,
-  pattern = "wall.corner.3",
+  pattern = "high_wall_inner_corner.sw",
 }
 
 tile{
@@ -33,7 +33,7 @@ tile{
   y = 208,
   width = 24,
   height = 24,
-  pattern = "wall.corner.4",
+  pattern = "high_wall_inner_corner.se",
 }
 
 tile{
@@ -42,7 +42,7 @@ tile{
   y = 144,
   width = 24,
   height = 24,
-  pattern = "wall.corner.4",
+  pattern = "high_wall_inner_corner.se",
 }
 
 tile{
@@ -51,7 +51,7 @@ tile{
   y = 144,
   width = 16,
   height = 16,
-  pattern = "torch_big.bottom",
+  pattern = "pedestal_torch_bottom",
 }
 
 tile{
@@ -60,7 +60,7 @@ tile{
   y = 144,
   width = 16,
   height = 16,
-  pattern = "torch_big.bottom",
+  pattern = "pedestal_torch_bottom",
 }
 
 tile{
@@ -69,7 +69,7 @@ tile{
   y = 144,
   width = 48,
   height = 24,
-  pattern = "wall.2",
+  pattern = "high_wall.s",
 }
 
 tile{
@@ -78,7 +78,7 @@ tile{
   y = 160,
   width = 24,
   height = 48,
-  pattern = "wall.3",
+  pattern = "high_wall.w",
 }
 
 tile{
@@ -87,7 +87,7 @@ tile{
   y = 144,
   width = 16,
   height = 24,
-  pattern = "wall.2",
+  pattern = "high_wall.s",
 }
 
 tile{
@@ -96,7 +96,7 @@ tile{
   y = 144,
   width = 48,
   height = 24,
-  pattern = "wall.2",
+  pattern = "high_wall.s",
 }
 
 tile{
@@ -114,7 +114,7 @@ tile{
   y = 144,
   width = 24,
   height = 24,
-  pattern = "wall.corner_reverse.3",
+  pattern = "high_wall_outer_corner.sw",
 }
 
 tile{
@@ -123,7 +123,7 @@ tile{
   y = 48,
   width = 64,
   height = 64,
-  pattern = "floor_border.2",
+  pattern = "carpet_border",
 }
 
 tile{
@@ -132,7 +132,7 @@ tile{
   y = 56,
   width = 48,
   height = 48,
-  pattern = "floor_small.2",
+  pattern = "carpet.1",
 }
 
 tile{
@@ -141,7 +141,7 @@ tile{
   y = 64,
   width = 32,
   height = 32,
-  pattern = "statue.1",
+  pattern = "placeholder.statue",
 }
 
 tile{
@@ -150,7 +150,7 @@ tile{
   y = 48,
   width = 64,
   height = 64,
-  pattern = "floor_border.2",
+  pattern = "carpet_border",
 }
 
 tile{
@@ -159,7 +159,7 @@ tile{
   y = 56,
   width = 48,
   height = 48,
-  pattern = "floor_small.2",
+  pattern = "carpet.1",
 }
 
 tile{
@@ -168,34 +168,7 @@ tile{
   y = 64,
   width = 32,
   height = 32,
-  pattern = "statue.1",
-}
-
-tile{
-  layer = 1,
-  x = 120,
-  y = 168,
-  width = 80,
-  height = 32,
-  pattern = "floor_border.1",
-}
-
-tile{
-  layer = 1,
-  x = 128,
-  y = 176,
-  width = 32,
-  height = 32,
-  pattern = "door_main.2.floor.2",
-}
-
-tile{
-  layer = 1,
-  x = 160,
-  y = 176,
-  width = 32,
-  height = 32,
-  pattern = "door_main.2.floor.3",
+  pattern = "placeholder.statue",
 }
 
 tile{
@@ -204,7 +177,7 @@ tile{
   y = 232,
   width = 8,
   height = 8,
-  pattern = "barrier.1.2",
+  pattern = "placeholder.barrier.2",
 }
 
 tile{
@@ -213,7 +186,7 @@ tile{
   y = 232,
   width = 8,
   height = 8,
-  pattern = "barrier.1.2",
+  pattern = "placeholder.barrier.2",
 }
 
 tile{
@@ -222,7 +195,7 @@ tile{
   y = 144,
   width = 8,
   height = 64,
-  pattern = "wall_border.3",
+  pattern = "wall_border.high.w",
 }
 
 tile{
@@ -231,7 +204,7 @@ tile{
   y = 136,
   width = 64,
   height = 8,
-  pattern = "wall_border.2",
+  pattern = "wall_border.high.s",
 }
 
 tile{
@@ -240,7 +213,7 @@ tile{
   y = 200,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.3",
+  pattern = "wall_border_inner_corner.high.sw",
 }
 
 tile{
@@ -249,7 +222,7 @@ tile{
   y = 136,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner_reverse.3",
+  pattern = "wall_border_outer_corner.high.sw",
 }
 
 tile{
@@ -258,7 +231,7 @@ tile{
   y = 136,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.3",
+  pattern = "wall_border_inner_corner.high.sw",
 }
 
 tile{
@@ -267,7 +240,7 @@ tile{
   y = 200,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.4",
+  pattern = "wall_border_inner_corner.high.se",
 }
 
 tile{
@@ -276,7 +249,7 @@ tile{
   y = 136,
   width = 8,
   height = 64,
-  pattern = "wall_border.4",
+  pattern = "wall_border.high.e",
 }
 
 tile{
@@ -285,7 +258,7 @@ tile{
   y = 136,
   width = 64,
   height = 8,
-  pattern = "wall_border.2",
+  pattern = "wall_border.high.s",
 }
 
 tile{
@@ -294,7 +267,7 @@ tile{
   y = 136,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner_reverse.4",
+  pattern = "wall_border_outer_corner.high.se",
 }
 
 tile{
@@ -303,7 +276,7 @@ tile{
   y = 136,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.4",
+  pattern = "wall_border_inner_corner.high.se",
 }
 
 tile{
@@ -312,7 +285,7 @@ tile{
   y = 160,
   width = 24,
   height = 48,
-  pattern = "wall.4",
+  pattern = "high_wall.e",
 }
 
 tile{
@@ -321,7 +294,7 @@ tile{
   y = 144,
   width = 24,
   height = 24,
-  pattern = "wall.corner_reverse.4",
+  pattern = "high_wall_outer_corner.se",
 }
 
 tile{
@@ -339,7 +312,7 @@ tile{
   y = 8,
   width = 16,
   height = 32,
-  pattern = "wall_pillar.1.1",
+  pattern = "placeholder.wall_pillar.n",
 }
 
 tile{
@@ -348,7 +321,7 @@ tile{
   y = 8,
   width = 16,
   height = 32,
-  pattern = "wall_pillar.1.1",
+  pattern = "placeholder.wall_pillar.n",
 }
 
 tile{
@@ -357,7 +330,7 @@ tile{
   y = 8,
   width = 16,
   height = 32,
-  pattern = "wall_pillar.1.1",
+  pattern = "placeholder.wall_pillar.n",
 }
 
 tile{
@@ -366,7 +339,7 @@ tile{
   y = 8,
   width = 16,
   height = 32,
-  pattern = "wall_pillar.1.1",
+  pattern = "placeholder.wall_pillar.n",
 }
 
 tile{
@@ -375,7 +348,7 @@ tile{
   y = 8,
   width = 16,
   height = 32,
-  pattern = "wall_pillar.1.1",
+  pattern = "placeholder.wall_pillar.n",
 }
 
 tile{
@@ -384,18 +357,7 @@ tile{
   y = 8,
   width = 16,
   height = 32,
-  pattern = "wall_pillar.1.1",
-}
-
-dynamic_tile{
-  name = "entrance_carpet",
-  layer = 1,
-  x = 144,
-  y = 184,
-  pattern = "door_main.2.floor.1",
-  width = 32,
-  height = 24,
-  enabled_at_start = true,
+  pattern = "placeholder.wall_pillar.n",
 }
 
 dynamic_tile{
@@ -403,7 +365,7 @@ dynamic_tile{
   layer = 1,
   x = 144,
   y = 208,
-  pattern = "wall.2",
+  pattern = "high_wall.s",
   width = 32,
   height = 24,
   enabled_at_start = true,
@@ -418,17 +380,6 @@ stream{
   allow_movement = false,
   allow_attack = false,
   allow_item = false,
-}
-
-dynamic_tile{
-  name = "tile_2",
-  layer = 1,
-  x = 120,
-  y = 200,
-  pattern = "entrance_pillar.1.1.bottom",
-  width = 24,
-  height = 24,
-  enabled_at_start = true,
 }
 
 sensor{
@@ -456,7 +407,7 @@ dynamic_tile{
   layer = 1,
   x = 144,
   y = 208,
-  pattern = "door.2.support.1",
+  pattern = "door_support.r.s",
   width = 8,
   height = 16,
   enabled_at_start = true,
@@ -467,31 +418,9 @@ dynamic_tile{
   layer = 1,
   x = 168,
   y = 208,
-  pattern = "door.2.support.2",
+  pattern = "door_support.l.s",
   width = 8,
   height = 16,
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  name = "tile_5",
-  layer = 1,
-  x = 176,
-  y = 200,
-  pattern = "entrance_pillar.1.2.bottom",
-  width = 24,
-  height = 24,
-  enabled_at_start = true,
-}
-
-dynamic_tile{
-  name = "tile_6",
-  layer = 1,
-  x = 152,
-  y = 208,
-  pattern = "door_main.2",
-  width = 16,
-  height = 32,
   enabled_at_start = true,
 }
 
@@ -521,7 +450,7 @@ tile{
   y = 224,
   width = 48,
   height = 8,
-  pattern = "door_cache.2",
+  pattern = "high_wall_top.s",
 }
 
 tile{
@@ -530,7 +459,7 @@ tile{
   y = 128,
   width = 16,
   height = 16,
-  pattern = "torch_big.top",
+  pattern = "pedestal_torch_top",
 }
 
 tile{
@@ -539,25 +468,7 @@ tile{
   y = 128,
   width = 16,
   height = 16,
-  pattern = "torch_big.top",
-}
-
-tile{
-  layer = 2,
-  x = 120,
-  y = 224,
-  width = 24,
-  height = 8,
-  pattern = "entrance_pillar.1.1.top",
-}
-
-tile{
-  layer = 2,
-  x = 176,
-  y = 224,
-  width = 24,
-  height = 8,
-  pattern = "entrance_pillar.1.2.top",
+  pattern = "pedestal_torch_top",
 }
 
 tile{
@@ -566,6 +477,7 @@ tile{
   y = 224,
   width = 32,
   height = 8,
-  pattern = "door_top.closed.2",
+  pattern = "closed_door_top.s",
 }
+
 

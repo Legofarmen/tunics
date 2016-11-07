@@ -5,7 +5,7 @@ properties{
   height = 240,
   min_layer = 0,
   max_layer = 2,
-  tileset = "dungeon_brick_blue_1",
+  tileset = "dungeon.tower_of_hera",
   music = "same",
 }
 
@@ -15,7 +15,7 @@ tile{
   y = 160,
   width = 32,
   height = 24,
-  pattern = "wall.2",
+  pattern = "high_wall.s",
 }
 
 tile{
@@ -24,7 +24,7 @@ tile{
   y = 208,
   width = 24,
   height = 24,
-  pattern = "wall.corner.4",
+  pattern = "high_wall_inner_corner.se",
 }
 
 tile{
@@ -33,7 +33,7 @@ tile{
   y = 176,
   width = 24,
   height = 32,
-  pattern = "wall.4",
+  pattern = "high_wall.e",
 }
 
 tile{
@@ -42,7 +42,7 @@ tile{
   y = 160,
   width = 24,
   height = 24,
-  pattern = "wall.corner_reverse.4",
+  pattern = "high_wall_outer_corner.se",
 }
 
 tile{
@@ -51,7 +51,7 @@ tile{
   y = 208,
   width = 24,
   height = 24,
-  pattern = "wall.corner.3",
+  pattern = "high_wall_inner_corner.sw",
 }
 
 tile{
@@ -60,7 +60,7 @@ tile{
   y = 176,
   width = 24,
   height = 32,
-  pattern = "wall.3",
+  pattern = "high_wall.w",
 }
 
 tile{
@@ -69,7 +69,7 @@ tile{
   y = 160,
   width = 32,
   height = 24,
-  pattern = "wall.2",
+  pattern = "high_wall.s",
 }
 
 tile{
@@ -78,7 +78,7 @@ tile{
   y = 208,
   width = 24,
   height = 24,
-  pattern = "wall.corner.4",
+  pattern = "high_wall_inner_corner.se",
 }
 
 tile{
@@ -87,7 +87,7 @@ tile{
   y = 176,
   width = 24,
   height = 32,
-  pattern = "wall.4",
+  pattern = "high_wall.e",
 }
 
 tile{
@@ -96,7 +96,7 @@ tile{
   y = 160,
   width = 24,
   height = 24,
-  pattern = "wall.corner_reverse.4",
+  pattern = "high_wall_outer_corner.se",
 }
 
 tile{
@@ -105,7 +105,7 @@ tile{
   y = 160,
   width = 24,
   height = 24,
-  pattern = "wall.corner_reverse.3",
+  pattern = "high_wall_outer_corner.sw",
 }
 
 tile{
@@ -114,7 +114,7 @@ tile{
   y = 208,
   width = 24,
   height = 24,
-  pattern = "wall.corner.3",
+  pattern = "high_wall_inner_corner.sw",
 }
 
 tile{
@@ -123,7 +123,7 @@ tile{
   y = 200,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.4",
+  pattern = "wall_border_inner_corner.high.se",
 }
 
 tile{
@@ -132,7 +132,7 @@ tile{
   y = 168,
   width = 8,
   height = 32,
-  pattern = "wall_border.4",
+  pattern = "wall_border.high.e",
 }
 
 tile{
@@ -141,7 +141,7 @@ tile{
   y = 152,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner_reverse.4",
+  pattern = "wall_border_outer_corner.high.se",
 }
 
 tile{
@@ -150,7 +150,7 @@ tile{
   y = 160,
   width = 8,
   height = 16,
-  pattern = "wall_border.4",
+  pattern = "wall_border.high.e",
 }
 
 tile{
@@ -159,7 +159,7 @@ tile{
   y = 152,
   width = 64,
   height = 8,
-  pattern = "wall_border.2",
+  pattern = "wall_border.high.s",
 }
 
 tile{
@@ -168,7 +168,7 @@ tile{
   y = 152,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner_reverse.3",
+  pattern = "wall_border_outer_corner.high.sw",
 }
 
 tile{
@@ -177,7 +177,7 @@ tile{
   y = 160,
   width = 8,
   height = 16,
-  pattern = "wall_border.3",
+  pattern = "wall_border.high.w",
 }
 
 tile{
@@ -186,7 +186,7 @@ tile{
   y = 168,
   width = 8,
   height = 32,
-  pattern = "wall_border.3",
+  pattern = "wall_border.high.w",
 }
 
 tile{
@@ -195,7 +195,7 @@ tile{
   y = 200,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.4",
+  pattern = "wall_border_inner_corner.high.se",
 }
 
 tile{
@@ -204,7 +204,7 @@ tile{
   y = 168,
   width = 8,
   height = 32,
-  pattern = "wall_border.4",
+  pattern = "wall_border.high.e",
 }
 
 tile{
@@ -213,7 +213,7 @@ tile{
   y = 152,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner_reverse.4",
+  pattern = "wall_border_outer_corner.high.se",
 }
 
 tile{
@@ -222,7 +222,7 @@ tile{
   y = 160,
   width = 8,
   height = 16,
-  pattern = "wall_border.4",
+  pattern = "wall_border.high.e",
 }
 
 tile{
@@ -231,7 +231,7 @@ tile{
   y = 152,
   width = 64,
   height = 8,
-  pattern = "wall_border.2",
+  pattern = "wall_border.high.s",
 }
 
 tile{
@@ -240,7 +240,7 @@ tile{
   y = 152,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner_reverse.3",
+  pattern = "wall_border_outer_corner.high.sw",
 }
 
 tile{
@@ -249,7 +249,7 @@ tile{
   y = 160,
   width = 8,
   height = 16,
-  pattern = "wall_border.3",
+  pattern = "wall_border.high.w",
 }
 
 tile{
@@ -258,7 +258,7 @@ tile{
   y = 168,
   width = 8,
   height = 32,
-  pattern = "wall_border.3",
+  pattern = "wall_border.high.w",
 }
 
 tile{
@@ -267,7 +267,7 @@ tile{
   y = 200,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.3",
+  pattern = "wall_border_inner_corner.high.sw",
 }
 
 tile{
@@ -276,7 +276,7 @@ tile{
   y = 208,
   width = 32,
   height = 16,
-  pattern = "wall_torch.2",
+  pattern = "wall_torch.s",
 }
 
 tile{
@@ -285,7 +285,7 @@ tile{
   y = 208,
   width = 32,
   height = 16,
-  pattern = "wall_torch.2",
+  pattern = "wall_torch.s",
 }
 
 tile{
@@ -294,7 +294,7 @@ tile{
   y = 176,
   width = 24,
   height = 32,
-  pattern = "wall.3",
+  pattern = "high_wall.w",
 }
 
 tile{
@@ -303,7 +303,7 @@ tile{
   y = 160,
   width = 24,
   height = 24,
-  pattern = "wall.corner_reverse.3",
+  pattern = "high_wall_outer_corner.sw",
 }
 
 tile{
@@ -312,7 +312,7 @@ tile{
   y = 200,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.3",
+  pattern = "wall_border_inner_corner.high.sw",
 }
 
 tile{
@@ -340,7 +340,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "pot_1",
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
   enabled_at_start = true,
 }
 
@@ -351,7 +351,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "pot_2",
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
   enabled_at_start = true,
 }
 
@@ -362,7 +362,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "pot_3",
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
   enabled_at_start = true,
 }
 
@@ -373,7 +373,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "pot_4",
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
   enabled_at_start = true,
 }
 
@@ -384,7 +384,7 @@ dynamic_tile{
   width = 32,
   height = 32,
   name = "enemy_",
-  pattern = "placeholder_enemy",
+  pattern = "placeholder.enemy",
   enabled_at_start = true,
 }
 
@@ -395,7 +395,8 @@ dynamic_tile{
   width = 32,
   height = 32,
   name = "enemy_2",
-  pattern = "placeholder_enemy",
+  pattern = "placeholder.enemy",
   enabled_at_start = true,
 }
+
 

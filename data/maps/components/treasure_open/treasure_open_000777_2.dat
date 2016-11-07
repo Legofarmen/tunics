@@ -5,7 +5,7 @@ properties{
   height = 240,
   min_layer = 0,
   max_layer = 2,
-  tileset = "dungeon_ganon_brown_1",
+  tileset = "dungeon.tower_of_hera",
   music = "same",
 }
 
@@ -15,7 +15,7 @@ tile{
   y = 64,
   width = 192,
   height = 112,
-  pattern = "water_shallow",
+  pattern = "floor.shallow_water",
 }
 
 tile{
@@ -24,7 +24,7 @@ tile{
   y = 96,
   width = 48,
   height = 48,
-  pattern = "floor_border.2",
+  pattern = "carpet_border",
 }
 
 tile{
@@ -33,7 +33,7 @@ tile{
   y = 104,
   width = 32,
   height = 32,
-  pattern = "floor_small.2",
+  pattern = "carpet.1",
 }
 
 tile{
@@ -42,7 +42,7 @@ tile{
   y = 8,
   width = 32,
   height = 24,
-  pattern = "wall_statue.1.1",
+  pattern = "placeholder.wall_statue.n",
 }
 
 tile{
@@ -51,7 +51,7 @@ tile{
   y = 8,
   width = 32,
   height = 24,
-  pattern = "wall_statue.1.1",
+  pattern = "placeholder.wall_statue.n",
 }
 
 tile{
@@ -60,7 +60,7 @@ tile{
   y = 56,
   width = 8,
   height = 8,
-  pattern = "water_shallow.corner.1",
+  pattern = "shallow_water_border_outer_corner.nw",
 }
 
 tile{
@@ -87,7 +87,7 @@ tile{
   y = 56,
   width = 8,
   height = 8,
-  pattern = "water_shallow.corner.2",
+  pattern = "shallow_water_border_outer_corner.ne",
 }
 
 tile{
@@ -96,7 +96,7 @@ tile{
   y = 176,
   width = 8,
   height = 8,
-  pattern = "water_shallow.corner.4",
+  pattern = "shallow_water_border_outer_corner.se",
 }
 
 tile{
@@ -105,7 +105,7 @@ tile{
   y = 176,
   width = 8,
   height = 8,
-  pattern = "water_shallow.corner.3",
+  pattern = "shallow_water_border_outer_corner.sw",
 }
 
 tile{
@@ -132,7 +132,7 @@ tile{
   y = 144,
   width = 8,
   height = 8,
-  pattern = "water_shallow.corner_reverse.1",
+  pattern = "shallow_water_border_inner_corner.nw",
 }
 
 tile{
@@ -141,7 +141,7 @@ tile{
   y = 144,
   width = 8,
   height = 8,
-  pattern = "water_shallow.corner_reverse.2",
+  pattern = "shallow_water_border_inner_corner.ne",
 }
 
 tile{
@@ -150,7 +150,7 @@ tile{
   y = 88,
   width = 8,
   height = 8,
-  pattern = "water_shallow.corner_reverse.4",
+  pattern = "shallow_water_border_inner_corner.se",
 }
 
 tile{
@@ -159,7 +159,7 @@ tile{
   y = 88,
   width = 8,
   height = 8,
-  pattern = "water_shallow.corner_reverse.3",
+  pattern = "shallow_water_border_inner_corner.sw",
 }
 
 tile{
@@ -205,7 +205,7 @@ dynamic_tile{
   width = 32,
   height = 32,
   name = "enemy_6",
-  pattern = "placeholder_enemy",
+  pattern = "placeholder.enemy",
   enabled_at_start = true,
 }
 
@@ -216,7 +216,7 @@ dynamic_tile{
   width = 32,
   height = 32,
   name = "enemy_7",
-  pattern = "placeholder_enemy",
+  pattern = "placeholder.enemy",
   enabled_at_start = true,
 }
 
@@ -227,7 +227,7 @@ dynamic_tile{
   width = 32,
   height = 32,
   name = "enemy_8",
-  pattern = "placeholder_enemy",
+  pattern = "placeholder.enemy",
   enabled_at_start = true,
 }
 
@@ -238,7 +238,7 @@ dynamic_tile{
   width = 32,
   height = 32,
   name = "enemy_9",
-  pattern = "placeholder_enemy",
+  pattern = "placeholder.enemy",
   enabled_at_start = true,
 }
 
@@ -249,7 +249,8 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "chest",
-  pattern = "placeholder_treasure_open",
+  pattern = "placeholder.treasure_open",
   enabled_at_start = true,
 }
+
 

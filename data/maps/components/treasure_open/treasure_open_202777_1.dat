@@ -5,7 +5,7 @@ properties{
   height = 240,
   min_layer = 0,
   max_layer = 2,
-  tileset = "dungeon_smoothbrick_gold_1",
+  tileset = "dungeon.tower_of_hera",
   music = "same",
 }
 
@@ -15,7 +15,7 @@ tile{
   y = 112,
   width = 32,
   height = 32,
-  pattern = "floor_border.2",
+  pattern = "carpet_border",
 }
 
 tile{
@@ -24,7 +24,7 @@ tile{
   y = 104,
   width = 32,
   height = 32,
-  pattern = "floor_small.2",
+  pattern = "carpet.1",
 }
 
 tile{
@@ -33,7 +33,7 @@ tile{
   y = 32,
   width = 48,
   height = 8,
-  pattern = "wall_border.1",
+  pattern = "wall_border.high.n",
 }
 
 tile{
@@ -42,7 +42,7 @@ tile{
   y = 200,
   width = 48,
   height = 8,
-  pattern = "wall_border.2",
+  pattern = "wall_border.high.s",
 }
 
 tile{
@@ -51,7 +51,7 @@ tile{
   y = 32,
   width = 16,
   height = 16,
-  pattern = "barrier_big.1.border.1",
+  pattern = "placeholder.big_barrier.1",
 }
 
 tile{
@@ -60,7 +60,7 @@ tile{
   y = 56,
   width = 16,
   height = 16,
-  pattern = "barrier_big.1.border.1",
+  pattern = "placeholder.big_barrier.1",
 }
 
 tile{
@@ -69,7 +69,7 @@ tile{
   y = 120,
   width = 16,
   height = 16,
-  pattern = "barrier_big.1.border.1",
+  pattern = "placeholder.big_barrier.1",
 }
 
 tile{
@@ -78,7 +78,7 @@ tile{
   y = 152,
   width = 16,
   height = 16,
-  pattern = "barrier_big.1.border.1",
+  pattern = "placeholder.big_barrier.1",
 }
 
 tile{
@@ -87,7 +87,7 @@ tile{
   y = 48,
   width = 16,
   height = 16,
-  pattern = "barrier_big.1.2",
+  pattern = "placeholder.big_barrier.4",
 }
 
 tile{
@@ -96,7 +96,7 @@ tile{
   y = 72,
   width = 16,
   height = 24,
-  pattern = "barrier_big.1.2",
+  pattern = "placeholder.big_barrier.4",
 }
 
 tile{
@@ -105,7 +105,7 @@ tile{
   y = 136,
   width = 16,
   height = 24,
-  pattern = "barrier_big.1.2",
+  pattern = "placeholder.big_barrier.4",
 }
 
 tile{
@@ -114,7 +114,7 @@ tile{
   y = 168,
   width = 16,
   height = 16,
-  pattern = "barrier_big.1.2",
+  pattern = "placeholder.big_barrier.4",
 }
 
 tile{
@@ -123,7 +123,7 @@ tile{
   y = 64,
   width = 16,
   height = 24,
-  pattern = "barrier_big.1.border.2",
+  pattern = "placeholder.big_barrier.3",
 }
 
 tile{
@@ -132,7 +132,7 @@ tile{
   y = 96,
   width = 16,
   height = 24,
-  pattern = "barrier_big.1.border.2",
+  pattern = "placeholder.big_barrier.3",
 }
 
 tile{
@@ -141,7 +141,7 @@ tile{
   y = 80,
   width = 16,
   height = 24,
-  pattern = "barrier_big.1.border.2",
+  pattern = "placeholder.big_barrier.3",
 }
 
 tile{
@@ -150,7 +150,7 @@ tile{
   y = 184,
   width = 16,
   height = 24,
-  pattern = "barrier_big.1.border.2",
+  pattern = "placeholder.big_barrier.3",
 }
 
 tile{
@@ -159,7 +159,7 @@ tile{
   y = 160,
   width = 16,
   height = 24,
-  pattern = "barrier_big.1.border.2",
+  pattern = "placeholder.big_barrier.3",
 }
 
 tile{
@@ -168,7 +168,7 @@ tile{
   y = 80,
   width = 16,
   height = 24,
-  pattern = "barrier_big.1.border.2",
+  pattern = "placeholder.big_barrier.3",
 }
 
 tile{
@@ -177,7 +177,7 @@ tile{
   y = 136,
   width = 16,
   height = 24,
-  pattern = "barrier_big.1.border.2",
+  pattern = "placeholder.big_barrier.3",
 }
 
 tile{
@@ -186,7 +186,7 @@ tile{
   y = 136,
   width = 16,
   height = 24,
-  pattern = "barrier_big.1.border.2",
+  pattern = "placeholder.big_barrier.3",
 }
 
 tile{
@@ -195,7 +195,7 @@ tile{
   y = 96,
   width = 16,
   height = 32,
-  pattern = "barrier_big.1.2",
+  pattern = "placeholder.big_barrier.4",
 }
 
 tile{
@@ -204,7 +204,7 @@ tile{
   y = 96,
   width = 16,
   height = 32,
-  pattern = "barrier_big.1.2",
+  pattern = "placeholder.big_barrier.4",
 }
 
 tile{
@@ -213,7 +213,7 @@ tile{
   y = 80,
   width = 16,
   height = 16,
-  pattern = "barrier_big.1.border.1",
+  pattern = "placeholder.big_barrier.1",
 }
 
 tile{
@@ -222,7 +222,7 @@ tile{
   y = 80,
   width = 16,
   height = 16,
-  pattern = "barrier_big.1.border.1",
+  pattern = "placeholder.big_barrier.1",
 }
 
 tile{
@@ -231,7 +231,7 @@ tile{
   y = 80,
   width = 32,
   height = 24,
-  pattern = "barrer_big.1.1",
+  pattern = "placeholder.big_barrier.2",
 }
 
 tile{
@@ -240,7 +240,7 @@ tile{
   y = 128,
   width = 16,
   height = 24,
-  pattern = "barrier_big.1.border.2",
+  pattern = "placeholder.big_barrier.3",
 }
 
 tile{
@@ -249,7 +249,7 @@ tile{
   y = 128,
   width = 16,
   height = 24,
-  pattern = "barrier_big.1.border.2",
+  pattern = "placeholder.big_barrier.3",
 }
 
 enemy{
@@ -281,7 +281,7 @@ dynamic_tile{
   layer = 1,
   x = 152,
   y = 112,
-  pattern = "placeholder_treasure_open",
+  pattern = "placeholder.treasure_open",
   width = 16,
   height = 16,
   enabled_at_start = true,
@@ -294,4 +294,5 @@ enemy{
   direction = 1,
   breed = "pike_auto",
 }
+
 

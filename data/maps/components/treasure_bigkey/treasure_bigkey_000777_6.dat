@@ -5,7 +5,7 @@ properties{
   height = 240,
   min_layer = 0,
   max_layer = 2,
-  tileset = "dungeon_brick_blue_1",
+  tileset = "dungeon.tower_of_hera",
   music = "same",
 }
 
@@ -15,7 +15,7 @@ tile{
   y = 88,
   width = 176,
   height = 64,
-  pattern = "floor_border.2",
+  pattern = "carpet_border",
 }
 
 tile{
@@ -24,7 +24,7 @@ tile{
   y = 96,
   width = 160,
   height = 48,
-  pattern = "floor_small.2",
+  pattern = "carpet.1",
 }
 
 tile{
@@ -33,7 +33,7 @@ tile{
   y = 16,
   width = 32,
   height = 16,
-  pattern = "wall_torch.1",
+  pattern = "wall_torch.n",
 }
 
 tile{
@@ -42,7 +42,7 @@ tile{
   y = 16,
   width = 32,
   height = 16,
-  pattern = "wall_torch.1",
+  pattern = "wall_torch.n",
 }
 
 tile{
@@ -51,7 +51,7 @@ tile{
   y = 16,
   width = 32,
   height = 16,
-  pattern = "wall_torch.1",
+  pattern = "wall_torch.n",
 }
 
 tile{
@@ -60,7 +60,7 @@ tile{
   y = 16,
   width = 32,
   height = 16,
-  pattern = "wall_torch.1",
+  pattern = "wall_torch.n",
 }
 
 tile{
@@ -69,7 +69,7 @@ tile{
   y = 208,
   width = 32,
   height = 16,
-  pattern = "wall_torch.2",
+  pattern = "wall_torch.s",
 }
 
 tile{
@@ -78,7 +78,7 @@ tile{
   y = 208,
   width = 32,
   height = 16,
-  pattern = "wall_torch.2",
+  pattern = "wall_torch.s",
 }
 
 tile{
@@ -87,7 +87,7 @@ tile{
   y = 208,
   width = 32,
   height = 16,
-  pattern = "wall_torch.2",
+  pattern = "wall_torch.s",
 }
 
 tile{
@@ -96,7 +96,7 @@ tile{
   y = 208,
   width = 32,
   height = 16,
-  pattern = "wall_torch.2",
+  pattern = "wall_torch.s",
 }
 
 tile{
@@ -105,7 +105,7 @@ tile{
   y = 56,
   width = 32,
   height = 32,
-  pattern = "statue.1",
+  pattern = "placeholder.statue",
 }
 
 tile{
@@ -114,7 +114,7 @@ tile{
   y = 56,
   width = 32,
   height = 32,
-  pattern = "statue.1",
+  pattern = "placeholder.statue",
 }
 
 tile{
@@ -123,7 +123,7 @@ tile{
   y = 56,
   width = 32,
   height = 32,
-  pattern = "statue.1",
+  pattern = "placeholder.statue",
 }
 
 tile{
@@ -132,7 +132,7 @@ tile{
   y = 56,
   width = 32,
   height = 32,
-  pattern = "statue.1",
+  pattern = "placeholder.statue",
 }
 
 tile{
@@ -141,7 +141,7 @@ tile{
   y = 152,
   width = 32,
   height = 32,
-  pattern = "statue.1",
+  pattern = "placeholder.statue",
 }
 
 tile{
@@ -150,7 +150,7 @@ tile{
   y = 152,
   width = 32,
   height = 32,
-  pattern = "statue.1",
+  pattern = "placeholder.statue",
 }
 
 tile{
@@ -159,7 +159,7 @@ tile{
   y = 152,
   width = 32,
   height = 32,
-  pattern = "statue.1",
+  pattern = "placeholder.statue",
 }
 
 tile{
@@ -168,7 +168,7 @@ tile{
   y = 152,
   width = 32,
   height = 32,
-  pattern = "statue.1",
+  pattern = "placeholder.statue",
 }
 
 dynamic_tile{
@@ -178,7 +178,8 @@ dynamic_tile{
   width = 32,
   height = 24,
   name = "chest",
-  pattern = "placeholder_bigchest",
+  pattern = "placeholder.big_chest",
   enabled_at_start = true,
 }
+
 

@@ -5,7 +5,7 @@ properties{
   height = 240,
   min_layer = 0,
   max_layer = 2,
-  tileset = "dungeon_brick_blue_1",
+  tileset = "dungeon.tower_of_hera",
   music = "same",
 }
 
@@ -42,7 +42,7 @@ tile{
   y = 8,
   width = 16,
   height = 16,
-  pattern = "wall_diag.2",
+  pattern = "high_wall.ne.1",
 }
 
 tile{
@@ -51,7 +51,7 @@ tile{
   y = 8,
   width = 16,
   height = 24,
-  pattern = "wall.1",
+  pattern = "high_wall.n",
 }
 
 tile{
@@ -60,7 +60,7 @@ tile{
   y = 16,
   width = 16,
   height = 16,
-  pattern = "wall_diag.2",
+  pattern = "high_wall.ne.1",
 }
 
 tile{
@@ -69,7 +69,7 @@ tile{
   y = 24,
   width = 16,
   height = 16,
-  pattern = "wall_diag.2",
+  pattern = "high_wall.ne.1",
 }
 
 tile{
@@ -78,7 +78,7 @@ tile{
   y = 32,
   width = 16,
   height = 16,
-  pattern = "wall_diag.2",
+  pattern = "high_wall.ne.1",
 }
 
 tile{
@@ -87,7 +87,7 @@ tile{
   y = 40,
   width = 16,
   height = 16,
-  pattern = "wall_diag.2",
+  pattern = "high_wall.ne.1",
 }
 
 tile{
@@ -96,7 +96,7 @@ tile{
   y = 216,
   width = 16,
   height = 16,
-  pattern = "wall_diag.4",
+  pattern = "high_wall.se.1",
 }
 
 tile{
@@ -105,7 +105,7 @@ tile{
   y = 208,
   width = 16,
   height = 16,
-  pattern = "wall_diag.4",
+  pattern = "high_wall.se.1",
 }
 
 tile{
@@ -114,7 +114,7 @@ tile{
   y = 200,
   width = 16,
   height = 16,
-  pattern = "wall_diag.4",
+  pattern = "high_wall.se.1",
 }
 
 tile{
@@ -123,7 +123,7 @@ tile{
   y = 192,
   width = 16,
   height = 16,
-  pattern = "wall_diag.4",
+  pattern = "high_wall.se.1",
 }
 
 tile{
@@ -132,7 +132,7 @@ tile{
   y = 184,
   width = 16,
   height = 16,
-  pattern = "wall_diag.4",
+  pattern = "high_wall.se.1",
 }
 
 tile{
@@ -141,7 +141,7 @@ tile{
   y = 176,
   width = 16,
   height = 16,
-  pattern = "wall_diag.4",
+  pattern = "high_wall.se.1",
 }
 
 tile{
@@ -150,7 +150,7 @@ tile{
   y = 208,
   width = 16,
   height = 24,
-  pattern = "wall.2",
+  pattern = "high_wall.s",
 }
 
 tile{
@@ -159,7 +159,7 @@ tile{
   y = 168,
   width = 16,
   height = 16,
-  pattern = "wall_diag.4",
+  pattern = "high_wall.se.1",
 }
 
 tile{
@@ -168,7 +168,7 @@ tile{
   y = 48,
   width = 16,
   height = 16,
-  pattern = "wall_diag.2",
+  pattern = "high_wall.ne.1",
 }
 
 tile{
@@ -177,7 +177,7 @@ tile{
   y = 56,
   width = 16,
   height = 16,
-  pattern = "wall_diag.2",
+  pattern = "high_wall.ne.1",
 }
 
 tile{
@@ -186,7 +186,7 @@ tile{
   y = 64,
   width = 24,
   height = 112,
-  pattern = "wall.4",
+  pattern = "high_wall.e",
 }
 
 tile{
@@ -195,7 +195,7 @@ tile{
   y = 32,
   width = 16,
   height = 16,
-  pattern = "wall_diag.border.2",
+  pattern = "wall_border.high.ne",
 }
 
 tile{
@@ -204,7 +204,7 @@ tile{
   y = 40,
   width = 16,
   height = 16,
-  pattern = "wall_diag.border.2",
+  pattern = "wall_border.high.ne",
 }
 
 tile{
@@ -213,7 +213,7 @@ tile{
   y = 48,
   width = 16,
   height = 16,
-  pattern = "wall_diag.border.2",
+  pattern = "wall_border.high.ne",
 }
 
 tile{
@@ -222,7 +222,7 @@ tile{
   y = 192,
   width = 16,
   height = 16,
-  pattern = "wall_diag.border.4",
+  pattern = "wall_border.high.se",
 }
 
 tile{
@@ -231,7 +231,7 @@ tile{
   y = 184,
   width = 16,
   height = 16,
-  pattern = "wall_diag.border.4",
+  pattern = "wall_border.high.se",
 }
 
 tile{
@@ -240,7 +240,7 @@ tile{
   y = 176,
   width = 16,
   height = 16,
-  pattern = "wall_diag.border.4",
+  pattern = "wall_border.high.se",
 }
 
 tile{
@@ -249,7 +249,7 @@ tile{
   y = 64,
   width = 8,
   height = 112,
-  pattern = "wall_border.4",
+  pattern = "wall_border.high.e",
 }
 
 tile{
@@ -258,7 +258,7 @@ tile{
   y = 104,
   width = 32,
   height = 32,
-  pattern = "statue.1",
+  pattern = "placeholder.statue",
 }
 
 dynamic_tile{
@@ -268,7 +268,7 @@ dynamic_tile{
   width = 32,
   height = 32,
   name = "enemy_3",
-  pattern = "placeholder_enemy",
+  pattern = "placeholder.enemy",
   enabled_at_start = true,
 }
 
@@ -279,7 +279,8 @@ dynamic_tile{
   width = 32,
   height = 32,
   name = "enemy_2",
-  pattern = "placeholder_enemy",
+  pattern = "placeholder.enemy",
   enabled_at_start = true,
 }
+
 

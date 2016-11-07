@@ -5,7 +5,7 @@ properties{
   height = 240,
   min_layer = 0,
   max_layer = 2,
-  tileset = "dungeon_brick_gray_1",
+  tileset = "dungeon.tower_of_hera",
   music = "same",
 }
 
@@ -15,7 +15,7 @@ tile{
   y = 80,
   width = 112,
   height = 80,
-  pattern = "water_shallow",
+  pattern = "floor.shallow_water",
 }
 
 tile{
@@ -24,7 +24,7 @@ tile{
   y = 72,
   width = 8,
   height = 8,
-  pattern = "water_shallow.corner_reverse.3",
+  pattern = "shallow_water_border_inner_corner.sw",
 }
 
 tile{
@@ -51,7 +51,7 @@ tile{
   y = 160,
   width = 8,
   height = 8,
-  pattern = "water_shallow.corner.4",
+  pattern = "shallow_water_border_outer_corner.se",
 }
 
 tile{
@@ -60,7 +60,7 @@ tile{
   y = 72,
   width = 8,
   height = 8,
-  pattern = "water_shallow.corner.2",
+  pattern = "shallow_water_border_outer_corner.ne",
 }
 
 tile{
@@ -78,7 +78,7 @@ tile{
   y = 72,
   width = 8,
   height = 8,
-  pattern = "water_shallow.corner.1",
+  pattern = "shallow_water_border_outer_corner.nw",
 }
 
 tile{
@@ -87,7 +87,7 @@ tile{
   y = 160,
   width = 8,
   height = 8,
-  pattern = "water_shallow.corner.3",
+  pattern = "shallow_water_border_outer_corner.sw",
 }
 
 tile{
@@ -122,4 +122,5 @@ pickable{
   name = "fairy3",
   treasure_name = "fairy",
 }
+
 

@@ -5,7 +5,7 @@ properties{
   height = 240,
   min_layer = 0,
   max_layer = 2,
-  tileset = "dungeon_brick_gray_1",
+  tileset = "dungeon.tower_of_hera",
   music = "same",
 }
 
@@ -15,6 +15,7 @@ tile{
   y = 24,
   width = 272,
   height = 192,
-  pattern = "floor.3",
+  pattern = "placeholder.floor.high",
 }
+
 

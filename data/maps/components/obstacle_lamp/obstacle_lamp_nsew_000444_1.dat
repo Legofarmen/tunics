@@ -5,7 +5,7 @@ properties{
   height = 240,
   min_layer = 0,
   max_layer = 2,
-  tileset = "dungeon_brick_gray_1",
+  tileset = "dungeon.tower_of_hera",
   music = "same",
 }
 
@@ -15,7 +15,7 @@ tile{
   y = 40,
   width = 64,
   height = 160,
-  pattern = "floor_border.2",
+  pattern = "carpet_border",
 }
 
 tile{
@@ -24,7 +24,7 @@ tile{
   y = 32,
   width = 48,
   height = 176,
-  pattern = "floor_small.2",
+  pattern = "carpet.1",
 }
 
 tile{
@@ -33,7 +33,7 @@ tile{
   y = 200,
   width = 48,
   height = 8,
-  pattern = "wall_border.2",
+  pattern = "wall_border.high.s",
 }
 
 tile{
@@ -42,7 +42,7 @@ tile{
   y = 32,
   width = 48,
   height = 8,
-  pattern = "wall_border.1",
+  pattern = "wall_border.high.n",
 }
 
 custom_entity{
@@ -72,7 +72,7 @@ dynamic_tile{
   layer = 1,
   x = 72,
   y = 80,
-  pattern = "placeholder_enemy",
+  pattern = "placeholder.enemy",
   width = 32,
   height = 32,
   enabled_at_start = true,
@@ -83,7 +83,7 @@ dynamic_tile{
   layer = 1,
   x = 72,
   y = 128,
-  pattern = "placeholder_enemy",
+  pattern = "placeholder.enemy",
   width = 32,
   height = 32,
   enabled_at_start = true,
@@ -94,7 +94,7 @@ dynamic_tile{
   layer = 1,
   x = 120,
   y = 112,
-  pattern = "placeholder_treasure_open",
+  pattern = "placeholder.treasure_open",
   width = 16,
   height = 16,
   enabled_at_start = true,
@@ -105,9 +105,10 @@ dynamic_tile{
   layer = 1,
   x = 80,
   y = 112,
-  pattern = "placeholder_treasure_obstacle",
+  pattern = "placeholder.treasure_obstacle",
   width = 16,
   height = 16,
   enabled_at_start = true,
 }
+
 

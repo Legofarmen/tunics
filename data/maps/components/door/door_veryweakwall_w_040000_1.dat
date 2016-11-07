@@ -5,7 +5,7 @@ properties{
   height = 240,
   min_layer = 0,
   max_layer = 2,
-  tileset = "dungeon_brick_gray_1",
+  tileset = "dungeon.tower_of_hera",
   music = "same",
 }
 
@@ -15,7 +15,7 @@ tile{
   y = 112,
   width = 16,
   height = 16,
-  pattern = "floor.1",
+  pattern = "placeholder.floor.high",
 }
 
 tile{
@@ -24,7 +24,7 @@ tile{
   y = 104,
   width = 8,
   height = 8,
-  pattern = "barrier.1.1",
+  pattern = "placeholder.barrier.3",
 }
 
 tile{
@@ -33,7 +33,7 @@ tile{
   y = 128,
   width = 8,
   height = 8,
-  pattern = "barrier.1.1",
+  pattern = "placeholder.barrier.3",
 }
 
 dynamic_tile{
@@ -43,7 +43,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "door_open",
-  pattern = "door_blast.3",
+  pattern = "blown_door_floor.w",
   enabled_at_start = true,
 }
 
@@ -72,7 +72,7 @@ dynamic_tile{
   width = 16,
   height = 8,
   name = "door_open_5",
-  pattern = "door_blast.3.support.1",
+  pattern = "blown_door_support.r.w",
   enabled_at_start = true,
 }
 
@@ -83,7 +83,7 @@ dynamic_tile{
   width = 16,
   height = 8,
   name = "door_open_3",
-  pattern = "door_blast.3.support.2",
+  pattern = "blown_door_support.l.w",
   enabled_at_start = true,
 }
 
@@ -93,7 +93,7 @@ tile{
   y = 88,
   width = 8,
   height = 64,
-  pattern = "door_cache.3",
+  pattern = "high_wall_top.w",
 }
 
 dynamic_tile{
@@ -103,7 +103,8 @@ dynamic_tile{
   width = 8,
   height = 32,
   name = "door_open_4",
-  pattern = "door_top.blast.3",
+  pattern = "blown_door_top.w",
   enabled_at_start = false,
 }
+
 

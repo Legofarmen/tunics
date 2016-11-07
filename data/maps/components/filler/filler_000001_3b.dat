@@ -5,7 +5,7 @@ properties{
   height = 240,
   min_layer = 0,
   max_layer = 2,
-  tileset = "dungeon_brick_gray_1",
+  tileset = "dungeon.tower_of_hera",
   music = "same",
 }
 
@@ -15,7 +15,7 @@ tile{
   y = 144,
   width = 80,
   height = 48,
-  pattern = "floor_border.2",
+  pattern = "carpet_border",
 }
 
 tile{
@@ -24,7 +24,7 @@ tile{
   y = 152,
   width = 64,
   height = 32,
-  pattern = "floor_small.2",
+  pattern = "carpet.1",
 }
 
 tile{
@@ -33,7 +33,7 @@ tile{
   y = 160,
   width = 16,
   height = 16,
-  pattern = "torch",
+  pattern = "floor_torch.lit",
 }
 
 tile{
@@ -42,7 +42,7 @@ tile{
   y = 160,
   width = 16,
   height = 16,
-  pattern = "torch",
+  pattern = "floor_torch.lit",
 }
 
 tile{
@@ -51,7 +51,7 @@ tile{
   y = 208,
   width = 32,
   height = 24,
-  pattern = "wall_statue.1.2",
+  pattern = "placeholder.wall_statue.s",
 }
 
 dynamic_tile{
@@ -61,7 +61,8 @@ dynamic_tile{
   width = 32,
   height = 32,
   name = "enemy_",
-  pattern = "placeholder_enemy",
+  pattern = "placeholder.enemy",
   enabled_at_start = true,
 }
+
 

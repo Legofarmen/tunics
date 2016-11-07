@@ -5,7 +5,7 @@ properties{
   height = 240,
   min_layer = 0,
   max_layer = 2,
-  tileset = "dungeon_brick_gray_1",
+  tileset = "dungeon.tower_of_hera",
   music = "same",
 }
 
@@ -15,7 +15,7 @@ tile{
   y = 96,
   width = 48,
   height = 48,
-  pattern = "floor_border.2",
+  pattern = "carpet_border",
 }
 
 tile{
@@ -150,7 +150,7 @@ tile{
   y = 104,
   width = 32,
   height = 32,
-  pattern = "floor_small.2",
+  pattern = "carpet.1",
 }
 
 block{
@@ -214,7 +214,8 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "chest",
-  pattern = "placeholder_treasure_open",
+  pattern = "placeholder.treasure_open",
   enabled_at_start = true,
 }
+
 

@@ -5,7 +5,7 @@ properties{
   height = 240,
   min_layer = 0,
   max_layer = 2,
-  tileset = "dungeon_brick_blue_1",
+  tileset = "dungeon.tower_of_hera",
   music = "same",
 }
 
@@ -24,7 +24,7 @@ tile{
   y = 152,
   width = 16,
   height = 16,
-  pattern = "torch",
+  pattern = "floor_torch.lit",
 }
 
 dynamic_tile{
@@ -34,7 +34,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "stone_3",
-  pattern = "placeholder_stone",
+  pattern = "placeholder.stone",
   enabled_at_start = true,
 }
 
@@ -45,7 +45,8 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "stone_2",
-  pattern = "placeholder_stone",
+  pattern = "placeholder.stone",
   enabled_at_start = true,
 }
+
 

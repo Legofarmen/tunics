@@ -5,7 +5,7 @@ properties{
   height = 240,
   min_layer = 0,
   max_layer = 2,
-  tileset = "dungeon_brick_blue_1",
+  tileset = "dungeon.tower_of_hera",
   music = "same",
 }
 
@@ -15,7 +15,7 @@ tile{
   y = 72,
   width = 8,
   height = 8,
-  pattern = "barrier.1.border",
+  pattern = "placeholder.barrier.1",
 }
 
 tile{
@@ -24,7 +24,7 @@ tile{
   y = 160,
   width = 8,
   height = 8,
-  pattern = "barrier.1.border",
+  pattern = "placeholder.barrier.1",
 }
 
 tile{
@@ -33,7 +33,7 @@ tile{
   y = 80,
   width = 8,
   height = 80,
-  pattern = "barrier.1.2",
+  pattern = "placeholder.barrier.2",
 }
 
 dynamic_tile{
@@ -43,7 +43,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "stone_1",
-  pattern = "placeholder_stone",
+  pattern = "placeholder.stone",
   enabled_at_start = true,
 }
 
@@ -54,7 +54,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "stone_2",
-  pattern = "placeholder_stone",
+  pattern = "placeholder.stone",
   enabled_at_start = true,
 }
 
@@ -65,7 +65,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "stone_3",
-  pattern = "placeholder_stone",
+  pattern = "placeholder.stone",
   enabled_at_start = true,
 }
 
@@ -76,7 +76,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "stone_4",
-  pattern = "placeholder_stone",
+  pattern = "placeholder.stone",
   enabled_at_start = true,
 }
 
@@ -87,7 +87,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "stone_5",
-  pattern = "placeholder_stone",
+  pattern = "placeholder.stone",
   enabled_at_start = true,
 }
 
@@ -98,7 +98,8 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "stone_6",
-  pattern = "placeholder_stone",
+  pattern = "placeholder.stone",
   enabled_at_start = true,
 }
+
 
