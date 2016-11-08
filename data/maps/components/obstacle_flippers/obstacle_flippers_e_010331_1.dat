@@ -24,7 +24,7 @@ tile{
   y = 32,
   width = 24,
   height = 24,
-  pattern = "wall_border_inner_corner.low.ne",
+  pattern = "low_wall_inner_corner.ne",
 }
 
 tile{
@@ -33,7 +33,7 @@ tile{
   y = 32,
   width = 24,
   height = 24,
-  pattern = "wall_border_inner_corner.low.nw",
+  pattern = "low_wall_inner_corner.nw",
 }
 
 tile{
@@ -42,7 +42,7 @@ tile{
   y = 184,
   width = 24,
   height = 24,
-  pattern = "wall_border_inner_corner.low.sw",
+  pattern = "low_wall_inner_corner.sw",
 }
 
 tile{
@@ -51,7 +51,7 @@ tile{
   y = 184,
   width = 24,
   height = 24,
-  pattern = "wall_border_inner_corner.low.se",
+  pattern = "low_wall_inner_corner.se",
 }
 
 tile{
