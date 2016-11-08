@@ -207,68 +207,66 @@ tile{
   pattern = "bow_target.bottom",
 }
 
-dynamic_tile{
+tile{
   layer = 1,
   x = 192,
   y = 48,
   width = 32,
   height = 32,
-  name = "treasure_obstacle_carpet",
-  pattern = "floor.boss",
-  enabled_at_start = true,
+  pattern = "statue.1",
 }
 
 switch{
+  name = "switch",
   layer = 1,
   x = 104,
   y = 56,
-  name = "switch",
   subtype = "arrow_target",
   needs_block = false,
   inactivate_when_leaving = false,
 }
 
 dynamic_tile{
+  name = "enemy_7",
   layer = 1,
   x = 128,
   y = 72,
+  pattern = "placeholder.enemy",
   width = 32,
   height = 32,
-  name = "enemy_7",
-  pattern = "placeholder.enemy",
   enabled_at_start = true,
 }
 
 dynamic_tile{
+  name = "enemy_2",
   layer = 1,
   x = 160,
   y = 72,
+  pattern = "placeholder.enemy",
   width = 32,
   height = 32,
-  name = "enemy_2",
-  pattern = "placeholder.enemy",
   enabled_at_start = true,
 }
 
 dynamic_tile{
-  layer = 1,
-  x = 200,
-  y = 56,
-  width = 16,
-  height = 16,
   name = "treasure_obstacle_chest",
+  layer = 1,
+  x = 168,
+  y = 48,
   pattern = "placeholder.treasure_obstacle",
+  width = 16,
+  height = 16,
   enabled_at_start = true,
 }
 
 dynamic_tile{
+  name = "treasure_open_chest",
   layer = 1,
-  x = 152,
-  y = 56,
+  x = 136,
+  y = 48,
+  pattern = "placeholder.treasure_open",
   width = 16,
   height = 16,
-  name = "treasure_open_chest",
-  pattern = "placeholder.treasure_open",
   enabled_at_start = true,
 }
 
@@ -289,5 +287,4 @@ tile{
   height = 64,
   pattern = "ceiling",
 }
-
 
