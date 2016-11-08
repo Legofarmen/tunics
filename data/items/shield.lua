@@ -1,7 +1,7 @@
 local item = ...
 
 function item:on_created()
-
+  self:set_brandish_when_picked(false)
   self:set_savegame_variable("i1130")
 end
 
