@@ -5,7 +5,7 @@ properties{
   height = 240,
   min_layer = 0,
   max_layer = 2,
-  tileset = "dungeon_brick_gray_1",
+  tileset = "dungeon.tower_of_hera",
   music = "same",
 }
 
@@ -42,7 +42,7 @@ tile{
   y = 80,
   width = 16,
   height = 16,
-  pattern = "wall_hole.corner.3",
+  pattern = "chasm_wall_inner_corner.sw",
 }
 
 tile{
@@ -51,7 +51,7 @@ tile{
   y = 144,
   width = 16,
   height = 16,
-  pattern = "wall_hole.corner.2",
+  pattern = "chasm_wall_inner_corner.ne",
 }
 
 tile{
@@ -60,7 +60,7 @@ tile{
   y = 144,
   width = 16,
   height = 16,
-  pattern = "wall_hole.corner.1",
+  pattern = "chasm_wall_inner_corner.nw",
 }
 
 tile{
@@ -69,7 +69,7 @@ tile{
   y = 80,
   width = 16,
   height = 16,
-  pattern = "wall_hole.corner.4",
+  pattern = "chasm_wall_inner_corner.se",
 }
 
 tile{
@@ -78,7 +78,7 @@ tile{
   y = 16,
   width = 16,
   height = 64,
-  pattern = "wall_hole.3",
+  pattern = "chasm_wall.w",
 }
 
 tile{
@@ -87,7 +87,7 @@ tile{
   y = 160,
   width = 16,
   height = 64,
-  pattern = "wall_hole.3",
+  pattern = "chasm_wall.w",
 }
 
 tile{
@@ -96,7 +96,7 @@ tile{
   y = 96,
   width = 16,
   height = 48,
-  pattern = "wall_hole.3",
+  pattern = "chasm_wall.w",
 }
 
 tile{
@@ -105,7 +105,7 @@ tile{
   y = 96,
   width = 16,
   height = 48,
-  pattern = "wall_hole.4",
+  pattern = "chasm_wall.e",
 }
 
 tile{
@@ -114,7 +114,7 @@ tile{
   y = 144,
   width = 8,
   height = 16,
-  pattern = "wall_hole.1",
+  pattern = "chasm_wall.n",
 }
 
 tile{
@@ -123,7 +123,7 @@ tile{
   y = 144,
   width = 8,
   height = 16,
-  pattern = "wall_hole.1",
+  pattern = "chasm_wall.n",
 }
 
 tile{
@@ -132,7 +132,7 @@ tile{
   y = 80,
   width = 8,
   height = 16,
-  pattern = "wall_hole.2",
+  pattern = "chasm_wall.s",
 }
 
 tile{
@@ -141,7 +141,7 @@ tile{
   y = 80,
   width = 8,
   height = 16,
-  pattern = "wall_hole.2",
+  pattern = "chasm_wall.s",
 }
 
 tile{
@@ -150,7 +150,7 @@ tile{
   y = 144,
   width = 16,
   height = 16,
-  pattern = "wall_hole.corner_reverse.2",
+  pattern = "chasm_wall_outer_corner.ne",
 }
 
 tile{
@@ -159,7 +159,7 @@ tile{
   y = 80,
   width = 16,
   height = 16,
-  pattern = "wall_hole.corner_reverse.4",
+  pattern = "chasm_wall_outer_corner.se",
 }
 
 tile{
@@ -168,7 +168,7 @@ tile{
   y = 80,
   width = 16,
   height = 16,
-  pattern = "wall_hole.corner_reverse.3",
+  pattern = "chasm_wall_outer_corner.sw",
 }
 
 tile{
@@ -177,7 +177,7 @@ tile{
   y = 144,
   width = 16,
   height = 16,
-  pattern = "wall_hole.corner_reverse.1",
+  pattern = "chasm_wall_outer_corner.nw",
 }
 
 tile{
@@ -186,7 +186,7 @@ tile{
   y = 104,
   width = 208,
   height = 32,
-  pattern = "floor_grid",
+  pattern = "floor_net",
 }
 
 tile{
@@ -195,7 +195,7 @@ tile{
   y = 16,
   width = 16,
   height = 64,
-  pattern = "wall_hole.4",
+  pattern = "chasm_wall.e",
 }
 
 tile{
@@ -204,7 +204,7 @@ tile{
   y = 160,
   width = 16,
   height = 64,
-  pattern = "wall_hole.4",
+  pattern = "chasm_wall.e",
 }
 
 tile{
@@ -213,7 +213,7 @@ tile{
   y = 96,
   width = 16,
   height = 8,
-  pattern = "barrier.1.1",
+  pattern = "placeholder.barrier.3",
 }
 
 tile{
@@ -222,7 +222,7 @@ tile{
   y = 136,
   width = 16,
   height = 8,
-  pattern = "barrier.1.1",
+  pattern = "placeholder.barrier.3",
 }
 
 tile{
@@ -231,7 +231,7 @@ tile{
   y = 96,
   width = 16,
   height = 8,
-  pattern = "barrier.1.1",
+  pattern = "placeholder.barrier.3",
 }
 
 tile{
@@ -240,7 +240,7 @@ tile{
   y = 136,
   width = 16,
   height = 8,
-  pattern = "barrier.1.1",
+  pattern = "placeholder.barrier.3",
 }
 
 tile{
@@ -249,7 +249,7 @@ tile{
   y = 96,
   width = 8,
   height = 8,
-  pattern = "barrier.1.border",
+  pattern = "placeholder.barrier.1",
 }
 
 tile{
@@ -258,7 +258,7 @@ tile{
   y = 136,
   width = 8,
   height = 8,
-  pattern = "barrier.1.border",
+  pattern = "placeholder.barrier.1",
 }
 
 tile{
@@ -267,7 +267,7 @@ tile{
   y = 96,
   width = 8,
   height = 8,
-  pattern = "barrier.1.border",
+  pattern = "placeholder.barrier.1",
 }
 
 tile{
@@ -276,7 +276,7 @@ tile{
   y = 96,
   width = 8,
   height = 8,
-  pattern = "barrier.1.border",
+  pattern = "placeholder.barrier.1",
 }
 
 tile{
@@ -285,7 +285,7 @@ tile{
   y = 96,
   width = 8,
   height = 8,
-  pattern = "barrier.1.border",
+  pattern = "placeholder.barrier.1",
 }
 
 tile{
@@ -294,7 +294,7 @@ tile{
   y = 136,
   width = 8,
   height = 8,
-  pattern = "barrier.1.border",
+  pattern = "placeholder.barrier.1",
 }
 
 tile{
@@ -303,7 +303,7 @@ tile{
   y = 136,
   width = 8,
   height = 8,
-  pattern = "barrier.1.border",
+  pattern = "placeholder.barrier.1",
 }
 
 tile{
@@ -312,7 +312,7 @@ tile{
   y = 136,
   width = 8,
   height = 8,
-  pattern = "barrier.1.border",
+  pattern = "placeholder.barrier.1",
 }
 
 tile{
@@ -321,7 +321,7 @@ tile{
   y = 152,
   width = 16,
   height = 32,
-  pattern = "wall_torch.3",
+  pattern = "wall_torch.w",
 }
 
 tile{
@@ -330,7 +330,7 @@ tile{
   y = 56,
   width = 16,
   height = 32,
-  pattern = "wall_torch.3",
+  pattern = "wall_torch.w",
 }
 
 tile{
@@ -339,7 +339,7 @@ tile{
   y = 152,
   width = 16,
   height = 32,
-  pattern = "wall_torch.4",
+  pattern = "wall_torch.e",
 }
 
 tile{
@@ -348,7 +348,7 @@ tile{
   y = 56,
   width = 16,
   height = 32,
-  pattern = "wall_torch.4",
+  pattern = "wall_torch.e",
 }
 
 tile{
@@ -357,7 +357,7 @@ tile{
   y = 16,
   width = 24,
   height = 16,
-  pattern = "wall.3",
+  pattern = "high_wall.w",
 }
 
 tile{
@@ -366,7 +366,7 @@ tile{
   y = 208,
   width = 24,
   height = 16,
-  pattern = "wall.3",
+  pattern = "high_wall.w",
 }
 
 tile{
@@ -375,7 +375,7 @@ tile{
   y = 16,
   width = 24,
   height = 16,
-  pattern = "wall.4",
+  pattern = "high_wall.e",
 }
 
 tile{
@@ -384,7 +384,7 @@ tile{
   y = 208,
   width = 24,
   height = 16,
-  pattern = "wall.4",
+  pattern = "high_wall.e",
 }
 
 dynamic_tile{
@@ -394,7 +394,7 @@ dynamic_tile{
   width = 32,
   height = 32,
   name = "enemy_3",
-  pattern = "placeholder_enemy",
+  pattern = "placeholder.enemy",
   enabled_at_start = true,
 }
 
@@ -405,7 +405,7 @@ dynamic_tile{
   width = 32,
   height = 32,
   name = "enemy_2",
-  pattern = "placeholder_enemy",
+  pattern = "placeholder.enemy",
   enabled_at_start = true,
 }
 
@@ -433,7 +433,7 @@ tile{
   y = 224,
   width = 16,
   height = 16,
-  pattern = "wall_hole.3",
+  pattern = "chasm_wall.w",
 }
 
 tile{
@@ -442,7 +442,7 @@ tile{
   y = 0,
   width = 16,
   height = 16,
-  pattern = "wall_hole.3",
+  pattern = "chasm_wall.w",
 }
 
 tile{
@@ -451,7 +451,7 @@ tile{
   y = 0,
   width = 16,
   height = 16,
-  pattern = "wall_hole.4",
+  pattern = "chasm_wall.e",
 }
 
 tile{
@@ -460,7 +460,7 @@ tile{
   y = 224,
   width = 16,
   height = 16,
-  pattern = "wall_hole.4",
+  pattern = "chasm_wall.e",
 }
 
 tile{
@@ -469,7 +469,7 @@ tile{
   y = 224,
   width = 24,
   height = 16,
-  pattern = "wall.3",
+  pattern = "high_wall.w",
 }
 
 tile{
@@ -478,7 +478,7 @@ tile{
   y = 0,
   width = 24,
   height = 16,
-  pattern = "wall.3",
+  pattern = "high_wall.w",
 }
 
 tile{
@@ -487,7 +487,7 @@ tile{
   y = 224,
   width = 24,
   height = 16,
-  pattern = "wall.4",
+  pattern = "high_wall.e",
 }
 
 tile{
@@ -496,6 +496,7 @@ tile{
   y = 0,
   width = 24,
   height = 16,
-  pattern = "wall.4",
+  pattern = "high_wall.e",
 }
+
 

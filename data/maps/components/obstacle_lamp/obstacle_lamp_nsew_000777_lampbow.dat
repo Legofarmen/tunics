@@ -5,7 +5,7 @@ properties{
   height = 240,
   min_layer = 0,
   max_layer = 2,
-  tileset = "dungeon_brick_blue_1",
+  tileset = "dungeon.tower_of_hera",
   music = "same",
 }
 
@@ -34,7 +34,7 @@ dynamic_tile{
   width = 32,
   height = 32,
   name = "enemy_5",
-  pattern = "placeholder_enemy",
+  pattern = "placeholder.enemy",
   enabled_at_start = true,
 }
 
@@ -45,7 +45,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "treasure_open_chest",
-  pattern = "placeholder_treasure_open",
+  pattern = "placeholder.treasure_open",
   enabled_at_start = true,
 }
 
@@ -56,7 +56,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "treasure_obstacle_chest",
-  pattern = "placeholder_treasure_obstacle",
+  pattern = "placeholder.treasure_obstacle",
   enabled_at_start = true,
 }
 
@@ -123,7 +123,7 @@ dynamic_tile{
   width = 32,
   height = 32,
   name = "enemy_2",
-  pattern = "placeholder_enemy",
+  pattern = "placeholder.enemy",
   enabled_at_start = true,
 }
 
@@ -134,7 +134,7 @@ dynamic_tile{
   width = 32,
   height = 32,
   name = "enemy_3",
-  pattern = "placeholder_enemy",
+  pattern = "placeholder.enemy",
   enabled_at_start = true,
 }
 
@@ -145,7 +145,7 @@ dynamic_tile{
   width = 32,
   height = 32,
   name = "enemy_4",
-  pattern = "placeholder_enemy",
+  pattern = "placeholder.enemy",
   enabled_at_start = true,
 }
 
@@ -156,7 +156,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "stone_3",
-  pattern = "placeholder_stone",
+  pattern = "placeholder.stone",
   enabled_at_start = true,
 }
 
@@ -167,7 +167,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "stone_2",
-  pattern = "placeholder_stone",
+  pattern = "placeholder.stone",
   enabled_at_start = true,
 }
 
@@ -178,7 +178,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "stone_4",
-  pattern = "placeholder_stone",
+  pattern = "placeholder.stone",
   enabled_at_start = true,
 }
 
@@ -189,7 +189,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "stone_5",
-  pattern = "placeholder_stone",
+  pattern = "placeholder.stone",
   enabled_at_start = true,
 }
 
@@ -200,7 +200,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "pot_5",
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
   enabled_at_start = true,
 }
 
@@ -211,7 +211,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "pot_2",
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
   enabled_at_start = true,
 }
 
@@ -222,7 +222,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "pot_3",
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
   enabled_at_start = true,
 }
 
@@ -233,7 +233,8 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "pot_4",
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
   enabled_at_start = true,
 }
+
 

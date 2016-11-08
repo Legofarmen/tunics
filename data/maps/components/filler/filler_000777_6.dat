@@ -5,7 +5,7 @@ properties{
   height = 240,
   min_layer = 0,
   max_layer = 2,
-  tileset = "dungeon_brick_gray_1",
+  tileset = "dungeon.tower_of_hera",
   music = "same",
 }
 
@@ -15,7 +15,7 @@ tile{
   y = 168,
   width = 8,
   height = 8,
-  pattern = "barrier.1.border",
+  pattern = "placeholder.barrier.1",
 }
 
 tile{
@@ -24,7 +24,7 @@ tile{
   y = 168,
   width = 8,
   height = 8,
-  pattern = "barrier.1.border",
+  pattern = "placeholder.barrier.1",
 }
 
 tile{
@@ -33,7 +33,7 @@ tile{
   y = 168,
   width = 112,
   height = 8,
-  pattern = "barrier.1.1",
+  pattern = "placeholder.barrier.3",
 }
 
 tile{
@@ -42,7 +42,7 @@ tile{
   y = 64,
   width = 8,
   height = 64,
-  pattern = "barrier.1.2",
+  pattern = "placeholder.barrier.2",
 }
 
 tile{
@@ -51,7 +51,7 @@ tile{
   y = 128,
   width = 8,
   height = 8,
-  pattern = "barrier.1.border",
+  pattern = "placeholder.barrier.1",
 }
 
 tile{
@@ -60,7 +60,7 @@ tile{
   y = 56,
   width = 8,
   height = 8,
-  pattern = "barrier.1.border",
+  pattern = "placeholder.barrier.1",
 }
 
 tile{
@@ -69,7 +69,7 @@ tile{
   y = 128,
   width = 8,
   height = 8,
-  pattern = "barrier.1.border",
+  pattern = "placeholder.barrier.1",
 }
 
 tile{
@@ -78,7 +78,7 @@ tile{
   y = 128,
   width = 8,
   height = 8,
-  pattern = "barrier.1.border",
+  pattern = "placeholder.barrier.1",
 }
 
 tile{
@@ -87,7 +87,7 @@ tile{
   y = 128,
   width = 8,
   height = 8,
-  pattern = "barrier.1.border",
+  pattern = "placeholder.barrier.1",
 }
 
 tile{
@@ -96,7 +96,7 @@ tile{
   y = 56,
   width = 8,
   height = 8,
-  pattern = "barrier.1.border",
+  pattern = "placeholder.barrier.1",
 }
 
 tile{
@@ -105,7 +105,7 @@ tile{
   y = 128,
   width = 16,
   height = 8,
-  pattern = "barrier.1.1",
+  pattern = "placeholder.barrier.3",
 }
 
 tile{
@@ -114,7 +114,7 @@ tile{
   y = 128,
   width = 16,
   height = 8,
-  pattern = "barrier.1.1",
+  pattern = "placeholder.barrier.3",
 }
 
 tile{
@@ -123,7 +123,7 @@ tile{
   y = 64,
   width = 8,
   height = 64,
-  pattern = "barrier.1.2",
+  pattern = "placeholder.barrier.2",
 }
 
 tile{
@@ -132,7 +132,7 @@ tile{
   y = 56,
   width = 8,
   height = 8,
-  pattern = "barrier.1.border",
+  pattern = "placeholder.barrier.1",
 }
 
 tile{
@@ -141,7 +141,7 @@ tile{
   y = 56,
   width = 8,
   height = 8,
-  pattern = "barrier.1.border",
+  pattern = "placeholder.barrier.1",
 }
 
 tile{
@@ -150,7 +150,7 @@ tile{
   y = 64,
   width = 8,
   height = 48,
-  pattern = "barrier.1.2",
+  pattern = "placeholder.barrier.2",
 }
 
 tile{
@@ -159,7 +159,7 @@ tile{
   y = 64,
   width = 8,
   height = 48,
-  pattern = "barrier.1.2",
+  pattern = "placeholder.barrier.2",
 }
 
 tile{
@@ -168,7 +168,7 @@ tile{
   y = 112,
   width = 8,
   height = 8,
-  pattern = "barrier.1.border",
+  pattern = "placeholder.barrier.1",
 }
 
 tile{
@@ -177,7 +177,7 @@ tile{
   y = 112,
   width = 8,
   height = 8,
-  pattern = "barrier.1.border",
+  pattern = "placeholder.barrier.1",
 }
 
 dynamic_tile{
@@ -187,7 +187,7 @@ dynamic_tile{
   width = 32,
   height = 32,
   name = "enemy_1",
-  pattern = "placeholder_enemy",
+  pattern = "placeholder.enemy",
   enabled_at_start = true,
 }
 
@@ -198,7 +198,7 @@ dynamic_tile{
   width = 32,
   height = 32,
   name = "enemy_2",
-  pattern = "placeholder_enemy",
+  pattern = "placeholder.enemy",
   enabled_at_start = true,
 }
 
@@ -209,7 +209,7 @@ dynamic_tile{
   width = 32,
   height = 32,
   name = "enemy_3",
-  pattern = "placeholder_enemy",
+  pattern = "placeholder.enemy",
   enabled_at_start = true,
 }
 
@@ -220,7 +220,7 @@ dynamic_tile{
   width = 32,
   height = 32,
   name = "enemy_4",
-  pattern = "placeholder_enemy",
+  pattern = "placeholder.enemy",
   enabled_at_start = true,
 }
 
@@ -231,7 +231,8 @@ dynamic_tile{
   width = 32,
   height = 32,
   name = "enemy_5",
-  pattern = "placeholder_enemy",
+  pattern = "placeholder.enemy",
   enabled_at_start = true,
 }
+
 

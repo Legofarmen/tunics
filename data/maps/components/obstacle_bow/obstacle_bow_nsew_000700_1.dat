@@ -5,7 +5,7 @@ properties{
   height = 240,
   min_layer = 0,
   max_layer = 2,
-  tileset = "dungeon_house_brown_1",
+  tileset = "dungeon.tower_of_hera",
   music = "same",
 }
 
@@ -15,7 +15,7 @@ tile{
   y = 72,
   width = 24,
   height = 24,
-  pattern = "wall.corner.1",
+  pattern = "high_wall_inner_corner.nw",
 }
 
 tile{
@@ -24,7 +24,7 @@ tile{
   y = 72,
   width = 32,
   height = 24,
-  pattern = "wall.1",
+  pattern = "high_wall.n",
 }
 
 tile{
@@ -33,7 +33,7 @@ tile{
   y = 72,
   width = 32,
   height = 24,
-  pattern = "wall.1",
+  pattern = "high_wall.n",
 }
 
 tile{
@@ -42,7 +42,7 @@ tile{
   y = 32,
   width = 24,
   height = 48,
-  pattern = "wall.3",
+  pattern = "high_wall.w",
 }
 
 tile{
@@ -51,7 +51,7 @@ tile{
   y = 32,
   width = 24,
   height = 48,
-  pattern = "wall.4",
+  pattern = "high_wall.e",
 }
 
 tile{
@@ -60,7 +60,7 @@ tile{
   y = 72,
   width = 24,
   height = 24,
-  pattern = "wall.corner_reverse.2",
+  pattern = "high_wall_outer_corner.ne",
 }
 
 tile{
@@ -69,7 +69,7 @@ tile{
   y = 72,
   width = 24,
   height = 24,
-  pattern = "wall.corner_reverse.1",
+  pattern = "high_wall_outer_corner.nw",
 }
 
 tile{
@@ -78,7 +78,7 @@ tile{
   y = 8,
   width = 24,
   height = 24,
-  pattern = "wall.corner.1",
+  pattern = "high_wall_inner_corner.nw",
 }
 
 tile{
@@ -87,7 +87,7 @@ tile{
   y = 8,
   width = 24,
   height = 24,
-  pattern = "wall.corner.2",
+  pattern = "high_wall_inner_corner.ne",
 }
 
 tile{
@@ -96,7 +96,7 @@ tile{
   y = 72,
   width = 24,
   height = 24,
-  pattern = "wall.corner.2",
+  pattern = "high_wall_inner_corner.ne",
 }
 
 tile{
@@ -105,7 +105,7 @@ tile{
   y = 96,
   width = 48,
   height = 8,
-  pattern = "wall_border.1",
+  pattern = "wall_border.high.n",
 }
 
 tile{
@@ -114,7 +114,7 @@ tile{
   y = 96,
   width = 48,
   height = 8,
-  pattern = "wall_border.1",
+  pattern = "wall_border.high.n",
 }
 
 tile{
@@ -123,7 +123,7 @@ tile{
   y = 32,
   width = 8,
   height = 64,
-  pattern = "wall_border.3",
+  pattern = "wall_border.high.w",
 }
 
 tile{
@@ -132,7 +132,7 @@ tile{
   y = 32,
   width = 8,
   height = 64,
-  pattern = "wall_border.4",
+  pattern = "wall_border.high.e",
 }
 
 tile{
@@ -141,7 +141,7 @@ tile{
   y = 96,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.1",
+  pattern = "wall_border_inner_corner.high.nw",
 }
 
 tile{
@@ -150,7 +150,7 @@ tile{
   y = 32,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.1",
+  pattern = "wall_border_inner_corner.high.nw",
 }
 
 tile{
@@ -159,7 +159,7 @@ tile{
   y = 32,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.2",
+  pattern = "wall_border_inner_corner.high.ne",
 }
 
 tile{
@@ -168,7 +168,7 @@ tile{
   y = 96,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.2",
+  pattern = "wall_border_inner_corner.high.ne",
 }
 
 tile{
@@ -177,7 +177,7 @@ tile{
   y = 96,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner_reverse.2",
+  pattern = "wall_border_outer_corner.high.ne",
 }
 
 tile{
@@ -186,7 +186,7 @@ tile{
   y = 96,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner_reverse.1",
+  pattern = "wall_border_outer_corner.high.nw",
 }
 
 tile{
@@ -214,7 +214,7 @@ dynamic_tile{
   width = 32,
   height = 32,
   name = "treasure_obstacle_carpet",
-  pattern = "floor.20",
+  pattern = "floor.boss",
   enabled_at_start = true,
 }
 
@@ -235,7 +235,7 @@ dynamic_tile{
   width = 32,
   height = 32,
   name = "enemy_7",
-  pattern = "placeholder_enemy",
+  pattern = "placeholder.enemy",
   enabled_at_start = true,
 }
 
@@ -246,7 +246,7 @@ dynamic_tile{
   width = 32,
   height = 32,
   name = "enemy_2",
-  pattern = "placeholder_enemy",
+  pattern = "placeholder.enemy",
   enabled_at_start = true,
 }
 
@@ -257,7 +257,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "treasure_obstacle_chest",
-  pattern = "placeholder_treasure_obstacle",
+  pattern = "placeholder.treasure_obstacle",
   enabled_at_start = true,
 }
 
@@ -268,7 +268,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "treasure_open_chest",
-  pattern = "placeholder_treasure_open",
+  pattern = "placeholder.treasure_open",
   enabled_at_start = true,
 }
 
@@ -289,4 +289,5 @@ tile{
   height = 64,
   pattern = "ceiling",
 }
+
 

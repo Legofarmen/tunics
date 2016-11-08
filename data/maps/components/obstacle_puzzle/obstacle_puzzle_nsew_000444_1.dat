@@ -5,7 +5,7 @@ properties{
   height = 240,
   min_layer = 0,
   max_layer = 2,
-  tileset = "dungeon_brick_gray_1",
+  tileset = "dungeon.tower_of_hera",
   music = "same",
 }
 
@@ -15,7 +15,7 @@ tile{
   y = 48,
   width = 80,
   height = 144,
-  pattern = "water_shallow",
+  pattern = "floor.shallow_water",
 }
 
 tile{
@@ -24,7 +24,7 @@ tile{
   y = 184,
   width = 8,
   height = 8,
-  pattern = "water_shallow.corner.3",
+  pattern = "shallow_water_border_outer_corner.sw",
 }
 
 tile{
@@ -51,7 +51,7 @@ tile{
   y = 184,
   width = 8,
   height = 8,
-  pattern = "water_shallow.corner.4",
+  pattern = "shallow_water_border_outer_corner.se",
 }
 
 tile{
@@ -69,7 +69,7 @@ tile{
   y = 48,
   width = 8,
   height = 8,
-  pattern = "water_shallow.corner.2",
+  pattern = "shallow_water_border_outer_corner.ne",
 }
 
 tile{
@@ -78,7 +78,7 @@ tile{
   y = 48,
   width = 8,
   height = 8,
-  pattern = "water_shallow.corner.1",
+  pattern = "shallow_water_border_outer_corner.nw",
 }
 
 tile{
@@ -96,7 +96,7 @@ tile{
   y = 144,
   width = 16,
   height = 16,
-  pattern = "tongue",
+  pattern = "small_statue.1",
 }
 
 tile{
@@ -105,7 +105,7 @@ tile{
   y = 80,
   width = 16,
   height = 16,
-  pattern = "tongue",
+  pattern = "small_statue.1",
 }
 
 switch{
@@ -124,7 +124,7 @@ dynamic_tile{
   layer = 1,
   x = 80,
   y = 160,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
   width = 16,
   height = 16,
   enabled_at_start = true,
@@ -135,7 +135,7 @@ dynamic_tile{
   layer = 1,
   x = 80,
   y = 64,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
   width = 16,
   height = 16,
   enabled_at_start = true,
@@ -146,7 +146,7 @@ dynamic_tile{
   layer = 1,
   x = 96,
   y = 80,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
   width = 16,
   height = 16,
   enabled_at_start = true,
@@ -157,7 +157,7 @@ dynamic_tile{
   layer = 1,
   x = 64,
   y = 80,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
   width = 16,
   height = 16,
   enabled_at_start = true,
@@ -168,7 +168,7 @@ dynamic_tile{
   layer = 1,
   x = 56,
   y = 112,
-  pattern = "placeholder_treasure_open",
+  pattern = "placeholder.treasure_open",
   width = 16,
   height = 16,
   enabled_at_start = true,
@@ -179,7 +179,7 @@ dynamic_tile{
   layer = 1,
   x = 80,
   y = 112,
-  pattern = "placeholder_treasure_puzzle",
+  pattern = "placeholder.treasure_puzzle",
   width = 16,
   height = 16,
   enabled_at_start = true,
@@ -190,7 +190,7 @@ dynamic_tile{
   layer = 1,
   x = 96,
   y = 48,
-  pattern = "placeholder_enemy",
+  pattern = "placeholder.enemy",
   width = 32,
   height = 32,
   enabled_at_start = true,
@@ -201,7 +201,7 @@ dynamic_tile{
   layer = 1,
   x = 64,
   y = 144,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
   width = 16,
   height = 16,
   enabled_at_start = true,
@@ -212,7 +212,7 @@ dynamic_tile{
   layer = 1,
   x = 96,
   y = 144,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
   width = 16,
   height = 16,
   enabled_at_start = true,
@@ -223,9 +223,10 @@ dynamic_tile{
   layer = 1,
   x = 96,
   y = 160,
-  pattern = "placeholder_enemy",
+  pattern = "placeholder.enemy",
   width = 32,
   height = 32,
   enabled_at_start = true,
 }
+
 

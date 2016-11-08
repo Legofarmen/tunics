@@ -5,7 +5,7 @@ properties{
   height = 240,
   min_layer = 0,
   max_layer = 2,
-  tileset = "dungeon_brick_gray_1",
+  tileset = "dungeon.tower_of_hera",
   music = "same",
 }
 
@@ -15,7 +15,7 @@ tile{
   y = 56,
   width = 16,
   height = 16,
-  pattern = "stage_big.corner.1",
+  pattern = "big_stage.nw",
 }
 
 tile{
@@ -24,7 +24,7 @@ tile{
   y = 56,
   width = 16,
   height = 16,
-  pattern = "stage_big.corner.2",
+  pattern = "big_stage.ne",
 }
 
 tile{
@@ -33,7 +33,7 @@ tile{
   y = 104,
   width = 8,
   height = 16,
-  pattern = "stage_big.end.1",
+  pattern = "big_stage.r",
 }
 
 tile{
@@ -42,7 +42,7 @@ tile{
   y = 104,
   width = 8,
   height = 16,
-  pattern = "stage_big.end.2",
+  pattern = "big_stage.l",
 }
 
 tile{
@@ -51,7 +51,7 @@ tile{
   y = 72,
   width = 16,
   height = 32,
-  pattern = "stage_big.4",
+  pattern = "big_stage.e",
 }
 
 tile{
@@ -60,7 +60,7 @@ tile{
   y = 104,
   width = 8,
   height = 16,
-  pattern = "stage_big.2",
+  pattern = "big_stage.s",
 }
 
 tile{
@@ -69,7 +69,7 @@ tile{
   y = 56,
   width = 48,
   height = 16,
-  pattern = "stage_big.1",
+  pattern = "big_stage.n",
 }
 
 tile{
@@ -78,7 +78,7 @@ tile{
   y = 72,
   width = 16,
   height = 32,
-  pattern = "stage_big.3",
+  pattern = "big_stage.w",
 }
 
 tile{
@@ -87,7 +87,7 @@ tile{
   y = 104,
   width = 16,
   height = 16,
-  pattern = "stage_big.corner.3",
+  pattern = "big_stage.sw",
 }
 
 tile{
@@ -96,7 +96,7 @@ tile{
   y = 104,
   width = 16,
   height = 16,
-  pattern = "stage_big.corner.4",
+  pattern = "big_stage.se",
 }
 
 tile{
@@ -105,7 +105,7 @@ tile{
   y = 104,
   width = 8,
   height = 16,
-  pattern = "stage_big.2",
+  pattern = "big_stage.s",
 }
 
 tile{
@@ -114,7 +114,7 @@ tile{
   y = 104,
   width = 16,
   height = 16,
-  pattern = "stage_big.steps",
+  pattern = "big_stage_stairs",
 }
 
 tile{
@@ -123,7 +123,7 @@ tile{
   y = 72,
   width = 8,
   height = 8,
-  pattern = "stage_big_fill.corner.1",
+  pattern = "big_stage_carpet.nw",
 }
 
 tile{
@@ -132,7 +132,7 @@ tile{
   y = 80,
   width = 8,
   height = 16,
-  pattern = "stage_big_fill.edge.4",
+  pattern = "big_stage_carpet.w",
 }
 
 tile{
@@ -141,7 +141,7 @@ tile{
   y = 72,
   width = 32,
   height = 8,
-  pattern = "stage_big_fill.edge.1",
+  pattern = "big_stage_carpet.n",
 }
 
 tile{
@@ -150,7 +150,7 @@ tile{
   y = 72,
   width = 8,
   height = 8,
-  pattern = "stage_big_fill.corner.2",
+  pattern = "big_stage_carpet.ne",
 }
 
 tile{
@@ -159,7 +159,7 @@ tile{
   y = 96,
   width = 8,
   height = 8,
-  pattern = "stage_big_fill.corner.4",
+  pattern = "big_stage_carpet.se",
 }
 
 tile{
@@ -168,7 +168,7 @@ tile{
   y = 96,
   width = 8,
   height = 8,
-  pattern = "stage_big_fill.corner.3",
+  pattern = "big_stage_carpet.sw",
 }
 
 tile{
@@ -177,7 +177,7 @@ tile{
   y = 80,
   width = 8,
   height = 16,
-  pattern = "stage_big_fill.edge.2",
+  pattern = "big_stage_carpet.e",
 }
 
 tile{
@@ -186,7 +186,7 @@ tile{
   y = 96,
   width = 32,
   height = 8,
-  pattern = "stage_big_fill.edge.3",
+  pattern = "big_stage_carpet.s",
 }
 
 tile{
@@ -195,7 +195,7 @@ tile{
   y = 80,
   width = 32,
   height = 16,
-  pattern = "stage_big_fill",
+  pattern = "big_stage_carpet",
 }
 
 dynamic_tile{
@@ -205,7 +205,7 @@ dynamic_tile{
   width = 32,
   height = 32,
   name = "enemy_4",
-  pattern = "placeholder_enemy",
+  pattern = "placeholder.enemy",
   enabled_at_start = true,
 }
 
@@ -216,7 +216,7 @@ dynamic_tile{
   width = 32,
   height = 32,
   name = "enemy_5",
-  pattern = "placeholder_enemy",
+  pattern = "placeholder.enemy",
   enabled_at_start = true,
 }
 
@@ -227,7 +227,8 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "chest",
-  pattern = "placeholder_treasure_open",
+  pattern = "placeholder.treasure_open",
   enabled_at_start = true,
 }
+
 

@@ -6,7 +6,7 @@ properties{
   world = "https://github.com/christopho/zsdx.git",
   min_layer = 0,
   max_layer = 2,
-  tileset = "dungeon_brick_gray_1",
+  tileset = "dungeon.tower_of_hera",
   music = "same",
 }
 
@@ -16,7 +16,7 @@ tile{
   y = 8,
   width = 256,
   height = 24,
-  pattern = "wall.1",
+  pattern = "high_wall.n",
 }
 
 tile{
@@ -25,7 +25,7 @@ tile{
   y = 208,
   width = 256,
   height = 24,
-  pattern = "wall.2",
+  pattern = "high_wall.s",
 }
 
 tile{
@@ -34,7 +34,7 @@ tile{
   y = 32,
   width = 24,
   height = 176,
-  pattern = "wall.3",
+  pattern = "high_wall.w",
 }
 
 tile{
@@ -43,7 +43,7 @@ tile{
   y = 32,
   width = 24,
   height = 176,
-  pattern = "wall.4",
+  pattern = "high_wall.e",
 }
 
 tile{
@@ -52,7 +52,7 @@ tile{
   y = 8,
   width = 24,
   height = 24,
-  pattern = "wall.corner.1",
+  pattern = "high_wall_inner_corner.nw",
 }
 
 tile{
@@ -61,7 +61,7 @@ tile{
   y = 8,
   width = 24,
   height = 24,
-  pattern = "wall.corner.2",
+  pattern = "high_wall_inner_corner.ne",
 }
 
 tile{
@@ -70,7 +70,7 @@ tile{
   y = 208,
   width = 24,
   height = 24,
-  pattern = "wall.corner.4",
+  pattern = "high_wall_inner_corner.se",
 }
 
 tile{
@@ -79,7 +79,7 @@ tile{
   y = 208,
   width = 24,
   height = 24,
-  pattern = "wall.corner.3",
+  pattern = "high_wall_inner_corner.sw",
 }
 
 tile{
@@ -88,7 +88,7 @@ tile{
   y = 32,
   width = 240,
   height = 8,
-  pattern = "wall_border.1",
+  pattern = "wall_border.high.n",
 }
 
 tile{
@@ -97,7 +97,7 @@ tile{
   y = 200,
   width = 240,
   height = 8,
-  pattern = "wall_border.2",
+  pattern = "wall_border.high.s",
 }
 
 tile{
@@ -106,7 +106,7 @@ tile{
   y = 40,
   width = 8,
   height = 160,
-  pattern = "wall_border.3",
+  pattern = "wall_border.high.w",
 }
 
 tile{
@@ -115,7 +115,7 @@ tile{
   y = 40,
   width = 8,
   height = 160,
-  pattern = "wall_border.4",
+  pattern = "wall_border.high.e",
 }
 
 tile{
@@ -124,7 +124,7 @@ tile{
   y = 32,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.1",
+  pattern = "wall_border_inner_corner.high.nw",
 }
 
 tile{
@@ -133,7 +133,7 @@ tile{
   y = 200,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.3",
+  pattern = "wall_border_inner_corner.high.sw",
 }
 
 tile{
@@ -142,7 +142,7 @@ tile{
   y = 200,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.4",
+  pattern = "wall_border_inner_corner.high.se",
 }
 
 tile{
@@ -151,7 +151,7 @@ tile{
   y = 32,
   width = 8,
   height = 8,
-  pattern = "wall_border.corner.2",
+  pattern = "wall_border_inner_corner.high.ne",
 }
 
 dynamic_tile{
@@ -161,7 +161,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "crack_north",
-  pattern = "crack_north",
+  pattern = "cracked_wall.n",
   enabled_at_start = false,
 }
 
@@ -172,7 +172,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "crack_east",
-  pattern = "crack_east",
+  pattern = "cracked_wall.e",
   enabled_at_start = false,
 }
 
@@ -183,7 +183,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "crack_south",
-  pattern = "crack_south",
+  pattern = "cracked_wall.s",
   enabled_at_start = false,
 }
 
@@ -194,7 +194,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "crack_west",
-  pattern = "crack_west",
+  pattern = "cracked_wall.w",
   enabled_at_start = false,
 }
 
@@ -233,4 +233,5 @@ tile{
   height = 8,
   pattern = "ceiling",
 }
+
 

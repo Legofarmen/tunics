@@ -5,7 +5,7 @@ properties{
   height = 240,
   min_layer = 0,
   max_layer = 2,
-  tileset = "dungeon_brick_gray_1",
+  tileset = "dungeon.tower_of_hera",
   music = "same",
 }
 
@@ -33,7 +33,7 @@ tile{
   y = 88,
   width = 16,
   height = 16,
-  pattern = "wall_hole.corner.2",
+  pattern = "chasm_wall_inner_corner.ne",
 }
 
 tile{
@@ -42,7 +42,7 @@ tile{
   y = 136,
   width = 16,
   height = 16,
-  pattern = "wall_hole.corner.4",
+  pattern = "chasm_wall_inner_corner.se",
 }
 
 tile{
@@ -51,7 +51,7 @@ tile{
   y = 104,
   width = 16,
   height = 32,
-  pattern = "wall_hole.4",
+  pattern = "chasm_wall.e",
 }
 
 tile{
@@ -60,7 +60,7 @@ tile{
   y = 88,
   width = 16,
   height = 16,
-  pattern = "wall_hole.corner_reverse.2",
+  pattern = "chasm_wall_outer_corner.ne",
 }
 
 tile{
@@ -69,7 +69,7 @@ tile{
   y = 48,
   width = 16,
   height = 40,
-  pattern = "wall_hole.4",
+  pattern = "chasm_wall.e",
 }
 
 tile{
@@ -78,7 +78,7 @@ tile{
   y = 136,
   width = 16,
   height = 16,
-  pattern = "wall_hole.corner_reverse.4",
+  pattern = "chasm_wall_outer_corner.se",
 }
 
 tile{
@@ -87,7 +87,7 @@ tile{
   y = 152,
   width = 16,
   height = 40,
-  pattern = "wall_hole.4",
+  pattern = "chasm_wall.e",
 }
 
 tile{
@@ -96,7 +96,7 @@ tile{
   y = 32,
   width = 16,
   height = 16,
-  pattern = "wall_hole.corner.2",
+  pattern = "chasm_wall_inner_corner.ne",
 }
 
 tile{
@@ -105,7 +105,7 @@ tile{
   y = 32,
   width = 48,
   height = 16,
-  pattern = "wall_hole.1",
+  pattern = "chasm_wall.n",
 }
 
 tile{
@@ -114,7 +114,7 @@ tile{
   y = 192,
   width = 16,
   height = 16,
-  pattern = "wall_hole.corner.4",
+  pattern = "chasm_wall_inner_corner.se",
 }
 
 tile{
@@ -123,7 +123,7 @@ tile{
   y = 192,
   width = 48,
   height = 16,
-  pattern = "wall_hole.2",
+  pattern = "chasm_wall.s",
 }
 
 tile{
@@ -132,7 +132,7 @@ tile{
   y = 8,
   width = 32,
   height = 24,
-  pattern = "wall_statue.1.1",
+  pattern = "placeholder.wall_statue.n",
 }
 
 tile{
@@ -141,7 +141,7 @@ tile{
   y = 208,
   width = 32,
   height = 24,
-  pattern = "wall_statue.1.2",
+  pattern = "placeholder.wall_statue.s",
 }
 
 tile{
@@ -150,7 +150,7 @@ tile{
   y = 32,
   width = 8,
   height = 176,
-  pattern = "hole.3",
+  pattern = "hole_border.w",
 }
 
 dynamic_tile{
@@ -160,7 +160,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "treasure_obstacle_chest",
-  pattern = "placeholder_treasure_obstacle",
+  pattern = "placeholder.treasure_obstacle",
   enabled_at_start = true,
 }
 
@@ -171,7 +171,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "treasure_open_chest",
-  pattern = "placeholder_treasure_open",
+  pattern = "placeholder.treasure_open",
   enabled_at_start = true,
 }
 
@@ -182,7 +182,7 @@ dynamic_tile{
   width = 32,
   height = 32,
   name = "enemy_1",
-  pattern = "placeholder_enemy",
+  pattern = "placeholder.enemy",
   enabled_at_start = true,
 }
 
@@ -193,7 +193,8 @@ dynamic_tile{
   width = 32,
   height = 32,
   name = "enemy_3",
-  pattern = "placeholder_enemy",
+  pattern = "placeholder.enemy",
   enabled_at_start = true,
 }
+
 

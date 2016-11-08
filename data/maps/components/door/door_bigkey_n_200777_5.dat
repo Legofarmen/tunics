@@ -5,7 +5,7 @@ properties{
   height = 240,
   min_layer = 0,
   max_layer = 2,
-  tileset = "dungeon_brick_gray_1",
+  tileset = "dungeon.tower_of_hera",
   music = "same",
 }
 
@@ -15,7 +15,7 @@ tile{
   y = 40,
   width = 80,
   height = 96,
-  pattern = "floor_border.2",
+  pattern = "carpet_border",
 }
 
 tile{
@@ -24,7 +24,7 @@ tile{
   y = 72,
   width = 64,
   height = 56,
-  pattern = "floor_small.2",
+  pattern = "carpet.1",
 }
 
 tile{
@@ -33,7 +33,7 @@ tile{
   y = 40,
   width = 64,
   height = 32,
-  pattern = "floor.20",
+  pattern = "floor.boss",
 }
 
 tile{
@@ -42,7 +42,7 @@ tile{
   y = 16,
   width = 8,
   height = 16,
-  pattern = "door.1.support.1",
+  pattern = "door_support.l.n",
 }
 
 tile{
@@ -51,7 +51,7 @@ tile{
   y = 16,
   width = 8,
   height = 16,
-  pattern = "door.1.support.2",
+  pattern = "door_support.r.n",
 }
 
 tile{
@@ -60,7 +60,7 @@ tile{
   y = 0,
   width = 16,
   height = 16,
-  pattern = "floor.1",
+  pattern = "placeholder.floor.high",
 }
 
 tile{
@@ -69,7 +69,7 @@ tile{
   y = 0,
   width = 8,
   height = 8,
-  pattern = "barrier.1.2",
+  pattern = "placeholder.barrier.2",
 }
 
 tile{
@@ -78,7 +78,7 @@ tile{
   y = 0,
   width = 8,
   height = 8,
-  pattern = "barrier.1.2",
+  pattern = "placeholder.barrier.2",
 }
 
 tile{
@@ -87,7 +87,7 @@ tile{
   y = 16,
   width = 16,
   height = 24,
-  pattern = "door_boss.1.pillar.2",
+  pattern = "boss_entrance_pillar.r.bottom",
 }
 
 tile{
@@ -96,7 +96,7 @@ tile{
   y = 16,
   width = 16,
   height = 24,
-  pattern = "door_boss.1.pillar.1",
+  pattern = "boss_entrance_pillar.l.bottom",
 }
 
 tile{
@@ -141,7 +141,7 @@ tile{
   y = 8,
   width = 16,
   height = 32,
-  pattern = "wall_pillar.5.1",
+  pattern = "placeholder.wall_pillar.n",
 }
 
 tile{
@@ -150,7 +150,7 @@ tile{
   y = 8,
   width = 16,
   height = 32,
-  pattern = "wall_pillar.5.1",
+  pattern = "placeholder.wall_pillar.n",
 }
 
 tile{
@@ -159,7 +159,7 @@ tile{
   y = 8,
   width = 16,
   height = 32,
-  pattern = "wall_pillar.5.1",
+  pattern = "placeholder.wall_pillar.n",
 }
 
 tile{
@@ -168,7 +168,7 @@ tile{
   y = 8,
   width = 16,
   height = 32,
-  pattern = "wall_pillar.5.1",
+  pattern = "placeholder.wall_pillar.n",
 }
 
 tile{
@@ -177,7 +177,7 @@ tile{
   y = 8,
   width = 32,
   height = 32,
-  pattern = "drapes.1.1",
+  pattern = "placeholder.drapes.n",
 }
 
 tile{
@@ -186,7 +186,7 @@ tile{
   y = 8,
   width = 32,
   height = 32,
-  pattern = "drapes.1.1",
+  pattern = "placeholder.drapes.n",
 }
 
 dynamic_tile{
@@ -194,7 +194,7 @@ dynamic_tile{
   layer = 1,
   x = 152,
   y = 16,
-  pattern = "door.1",
+  pattern = "door_floor.n",
   width = 16,
   height = 16,
   enabled_at_start = true,
@@ -234,7 +234,7 @@ dynamic_tile{
   layer = 1,
   x = 56,
   y = 88,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
   width = 16,
   height = 16,
   enabled_at_start = true,
@@ -245,7 +245,7 @@ dynamic_tile{
   layer = 1,
   x = 88,
   y = 88,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
   width = 16,
   height = 16,
   enabled_at_start = true,
@@ -256,7 +256,7 @@ dynamic_tile{
   layer = 1,
   x = 216,
   y = 88,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
   width = 16,
   height = 16,
   enabled_at_start = true,
@@ -267,7 +267,7 @@ dynamic_tile{
   layer = 1,
   x = 248,
   y = 88,
-  pattern = "floor_pot",
+  pattern = "placeholder.pot",
   width = 16,
   height = 16,
   enabled_at_start = true,
@@ -279,7 +279,7 @@ tile{
   y = 8,
   width = 48,
   height = 8,
-  pattern = "door_cache.1",
+  pattern = "high_wall_top.n",
 }
 
 tile{
@@ -288,7 +288,7 @@ tile{
   y = 8,
   width = 32,
   height = 8,
-  pattern = "door_top.closed.1",
+  pattern = "closed_door_top.n",
 }
 
 tile{
@@ -297,7 +297,7 @@ tile{
   y = 8,
   width = 16,
   height = 8,
-  pattern = "door_boss.1.pillar.1.top",
+  pattern = "boss_entrance_pillar.l.top",
 }
 
 tile{
@@ -306,7 +306,7 @@ tile{
   y = 8,
   width = 16,
   height = 8,
-  pattern = "door_boss.1.pillar.2.top",
+  pattern = "boss_entrance_pillar.r.top",
 }
 
 tile{
@@ -344,4 +344,5 @@ tile{
   height = 16,
   pattern = "pillar.top",
 }
+
 

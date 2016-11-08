@@ -3,7 +3,7 @@ properties{
   y = 0,
   width = 320,
   height = 240,
-  tileset = "dungeon_brick_gray_1",
+  tileset = "dungeon.tower_of_hera",
   music = "same",
 }
 
@@ -13,7 +13,7 @@ tile{
   y = 16,
   width = 8,
   height = 16,
-  pattern = "door_blast.1.support.1",
+  pattern = "blown_door_support.l.n",
 }
 
 tile{
@@ -22,7 +22,7 @@ tile{
   y = 16,
   width = 8,
   height = 16,
-  pattern = "door_blast.1.support.2",
+  pattern = "blown_door_support.r.n",
 }
 
 dynamic_tile{
@@ -32,7 +32,7 @@ dynamic_tile{
   width = 32,
   height = 24,
   name = "door_north_closed",
-  pattern = "wall.1",
+  pattern = "high_wall.n",
   enabled_at_start = true,
 }
 
@@ -53,7 +53,7 @@ dynamic_tile{
   width = 32,
   height = 48,
   name = "treasure_obstacle_carpet",
-  pattern = "floor_small.2",
+  pattern = "carpet.1",
   enabled_at_start = true,
 }
 
@@ -64,7 +64,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "treasure_obstacle_chest",
-  pattern = "floor_small.2",
+  pattern = "carpet.1",
   enabled_at_start = true,
 }
 
@@ -85,7 +85,7 @@ dynamic_tile{
   width = 32,
   height = 48,
   name = "treasure_open_carpet",
-  pattern = "floor_small.2",
+  pattern = "carpet.1",
   enabled_at_start = true,
 }
 
@@ -96,7 +96,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "treasure_open_chest",
-  pattern = "floor_small.2",
+  pattern = "carpet.1",
   enabled_at_start = true,
 }
 
@@ -107,7 +107,7 @@ dynamic_tile{
   width = 24,
   height = 32,
   name = "door_east_closed",
-  pattern = "wall.4",
+  pattern = "high_wall.e",
   enabled_at_start = true,
 }
 
@@ -128,7 +128,7 @@ dynamic_tile{
   width = 32,
   height = 8,
   name = "top_north_open",
-  pattern = "door_top.blast.1",
+  pattern = "blown_door_top.n",
   enabled_at_start = false,
 }
 
@@ -139,7 +139,8 @@ dynamic_tile{
   width = 8,
   height = 32,
   name = "top_east_open",
-  pattern = "door_top.blast.4",
+  pattern = "blown_door_top.e",
   enabled_at_start = false,
 }
+
 

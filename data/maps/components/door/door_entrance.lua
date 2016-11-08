@@ -4,6 +4,54 @@ local door_entrance = {}
 
 function door_entrance.init(map, data, direction)
 	
+    local placeholder = map:get_entity('entrance')
+    local x, y, layer = placeholder:get_position()
+
+    map:create_dynamic_tile({
+        layer=layer,
+        x=x+32,
+        y=y+24,
+        pattern='entrance_floor.1.1',
+        width=16,
+        height=48,
+        enabled_at_start=true,
+    })
+
+    map:create_dynamic_tile({
+        layer=layer,
+        x=x+24,
+        y=y,
+        pattern='entrance_floor.1.2',
+        width=32,
+        height=24,
+        enabled_at_start=true,
+    })
+
+    map:create_dynamic_tile({
+        layer=layer,
+        x=x+24,
+        y=y+24,
+        pattern='entrance_door_support.1.r',
+        width=8,
+        height=16,
+        enabled_at_start=true,
+    })
+
+    map:create_dynamic_tile({
+        layer=layer,
+        x=x+48,
+        y=y+24,
+        pattern='entrance_door_support.1.l',
+        width=8,
+        height=16,
+        enabled_at_start=true,
+    })
+
+    placeholder:remove()
+	for door in map:get_entities("door_entrance", true) do
+        door:bring_to_front()
+    end
+
     local sensor = map:get_entity('sensor')
 
     function sensor:on_activated()

@@ -5,7 +5,7 @@ properties{
   height = 240,
   min_layer = 0,
   max_layer = 2,
-  tileset = "dungeon_smoothbrick_green_1",
+  tileset = "dungeon.tower_of_hera",
   music = "same",
 }
 
@@ -15,7 +15,7 @@ tile{
   y = 16,
   width = 8,
   height = 16,
-  pattern = "door.1.support.2",
+  pattern = "door_support.r.n",
 }
 
 tile{
@@ -24,7 +24,7 @@ tile{
   y = 16,
   width = 8,
   height = 16,
-  pattern = "door.1.support.1",
+  pattern = "door_support.l.n",
 }
 
 tile{
@@ -33,7 +33,7 @@ tile{
   y = 0,
   width = 16,
   height = 16,
-  pattern = "floor.1",
+  pattern = "placeholder.floor.high",
 }
 
 tile{
@@ -42,7 +42,7 @@ tile{
   y = 0,
   width = 8,
   height = 8,
-  pattern = "barrier.1.2",
+  pattern = "placeholder.barrier.2",
 }
 
 tile{
@@ -51,7 +51,7 @@ tile{
   y = 0,
   width = 8,
   height = 8,
-  pattern = "barrier.1.2",
+  pattern = "placeholder.barrier.2",
 }
 
 sensor{
@@ -70,7 +70,7 @@ dynamic_tile{
   width = 16,
   height = 16,
   name = "door_open",
-  pattern = "door_stairs.spiral_up.1",
+  pattern = "wall_stairs_curved.up.n",
   enabled_at_start = true,
 }
 
@@ -107,7 +107,7 @@ tile{
   y = 8,
   width = 80,
   height = 8,
-  pattern = "door_cache.1",
+  pattern = "high_wall_top.n",
 }
 
 tile{
@@ -116,6 +116,7 @@ tile{
   y = 8,
   width = 32,
   height = 8,
-  pattern = "door_top.closed.1",
+  pattern = "closed_door_top.n",
 }
+
 

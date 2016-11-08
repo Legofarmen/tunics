@@ -1,38 +1,9 @@
 local family_tier = {
-    cave = 1,
-    brick = 2,
-    smoothbrick = 4,
-    ice = 4,
-    ganon = 6,
-    house = 10,
+    tower_of_hera = 1,
 }
 
 local family_music = {
-    brick = {
-        'dungeon_dark',
-        'dungeon_light',
-    },
-    smoothbrick = {
-        'dungeon_castle',
-        'dungeon_dark',
-        'dungeon_light',
-    },
-    cave = {
-        'dungeon_cave',
-        'dungeon_dark',
-        'dungeon_light',
-    },
-    ice = {
-        'dungeon_castle',
-        'dungeon_dark',
-        'dungeon_light',
-    },
-    house = {
-        'dungeon_castle',
-        'dungeon_village',
-    },
-    ganon = {
-        'dungeon_castle',
+    tower_of_hera = {
         'dungeon_dark',
     },
 }
@@ -65,32 +36,7 @@ local tier_complexity = {
 }
 
 local family_destructibles = {
-    smoothbrick = {
-        pot = 'entities/vase',
-        stone1 = 'entities/stone_white',
-        stone2 = 'entities/stone_black',
-    },
-    house = {
-        pot = 'entities/vase',
-        stone1 = 'entities/stone_white',
-        stone2 = 'entities/stone_black',
-    },
-    brick = {
-        pot = 'entities/vase_skull',
-        stone1 = 'entities/stone_white_skull',
-        stone2 = 'entities/stone_black_skull',
-    },
-    cave = {
-        pot = 'entities/vase_skull',
-        stone1 = 'entities/stone_white_skull',
-        stone2 = 'entities/stone_black_skull',
-    },
-    ganon = {
-        pot = 'entities/vase_skull',
-        stone1 = 'entities/stone_white_skull',
-        stone2 = 'entities/stone_black_skull',
-    },
-    ice = {
+    tower_of_hera = {
         pot = 'entities/vase_skull',
         stone1 = 'entities/stone_white_skull',
         stone2 = 'entities/stone_black_skull',
