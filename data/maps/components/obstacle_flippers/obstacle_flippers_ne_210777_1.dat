@@ -42,7 +42,7 @@ tile{
   y = 8,
   width = 32,
   height = 24,
-  pattern = "wall_statue.6.1",
+  pattern = "wall_statue.5.n",
 }
 
 tile{

@@ -294,7 +294,7 @@ tile{
   y = 208,
   width = 32,
   height = 24,
-  pattern = "wall_statue.6.2",
+  pattern = "wall_statue.5.s",
 }
 
 tile{
@@ -303,7 +303,7 @@ tile{
   y = 208,
   width = 32,
   height = 24,
-  pattern = "wall_statue.6.2",
+  pattern = "wall_statue.5.s",
 }
 
 tile{
