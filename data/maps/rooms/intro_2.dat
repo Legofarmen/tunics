@@ -834,7 +834,7 @@ tile{
   y = 136,
   width = 48,
   height = 48,
-  pattern = "floor.shallow_water",
+  pattern = "water_shallow",
 }
 
 tile{
@@ -1092,10 +1092,28 @@ tile{
 tile{
   layer = 1,
   x = 184,
+  y = 64,
+  width = 8,
+  height = 16,
+  pattern = "carpet.3",
+}
+
+tile{
+  layer = 1,
+  x = 184,
   y = 80,
   width = 8,
   height = 8,
   pattern = "carpet.corner.3",
+}
+
+tile{
+  layer = 1,
+  x = 192,
+  y = 56,
+  width = 16,
+  height = 8,
+  pattern = "carpet.1",
 }
 
 tile{
@@ -1105,6 +1123,24 @@ tile{
   width = 8,
   height = 8,
   pattern = "carpet.corner.2",
+}
+
+tile{
+  layer = 1,
+  x = 208,
+  y = 64,
+  width = 8,
+  height = 16,
+  pattern = "carpet.4",
+}
+
+tile{
+  layer = 1,
+  x = 192,
+  y = 80,
+  width = 16,
+  height = 8,
+  pattern = "carpet.2",
 }
 
 tile{
@@ -1312,5 +1348,4 @@ destination{
   y = 77,
   direction = 0,
 }
-
 
