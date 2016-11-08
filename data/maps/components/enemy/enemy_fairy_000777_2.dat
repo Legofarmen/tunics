@@ -30,24 +30,6 @@ tile{
 tile{
   layer = 1,
   x = 208,
-  y = 80,
-  width = 8,
-  height = 80,
-  pattern = "water_shallow.4",
-}
-
-tile{
-  layer = 1,
-  x = 104,
-  y = 160,
-  width = 104,
-  height = 8,
-  pattern = "water_shallow.2",
-}
-
-tile{
-  layer = 1,
-  x = 208,
   y = 160,
   width = 8,
   height = 8,
@@ -67,15 +49,6 @@ tile{
   layer = 1,
   x = 104,
   y = 72,
-  width = 104,
-  height = 8,
-  pattern = "water_shallow.1",
-}
-
-tile{
-  layer = 1,
-  x = 104,
-  y = 72,
   width = 8,
   height = 8,
   pattern = "shallow_water_border_outer_corner.nw",
@@ -88,15 +61,6 @@ tile{
   width = 8,
   height = 8,
   pattern = "shallow_water_border_outer_corner.sw",
-}
-
-tile{
-  layer = 1,
-  x = 104,
-  y = 80,
-  width = 8,
-  height = 80,
-  pattern = "water_shallow.3",
 }
 
 tile{
@@ -387,27 +351,63 @@ tile{
   pattern = "wall_border.high.ne",
 }
 
+tile{
+  layer = 1,
+  x = 112,
+  y = 72,
+  width = 96,
+  height = 8,
+  pattern = "shallow_water_border.n",
+}
+
+tile{
+  layer = 1,
+  x = 208,
+  y = 80,
+  width = 8,
+  height = 80,
+  pattern = "shallow_water_border.e",
+}
+
+tile{
+  layer = 1,
+  x = 104,
+  y = 80,
+  width = 8,
+  height = 80,
+  pattern = "shallow_water_border.w",
+}
+
+tile{
+  layer = 1,
+  x = 112,
+  y = 160,
+  width = 96,
+  height = 8,
+  pattern = "shallow_water_border.s",
+}
+
 pickable{
+  name = "fairy1_2",
   layer = 1,
   x = 128,
   y = 109,
-  name = "fairy1_2",
   treasure_name = "fairy",
 }
 
 pickable{
+  name = "fairy2_2",
   layer = 1,
   x = 184,
   y = 133,
-  name = "fairy2_2",
   treasure_name = "fairy",
 }
 
 pickable{
+  name = "fairy3_2",
   layer = 1,
   x = 136,
   y = 133,
-  name = "fairy3_2",
   treasure_name = "fairy",
 }
 
@@ -554,5 +554,4 @@ tile{
   height = 8,
   pattern = "ceiling",
 }
-
 

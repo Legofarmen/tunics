@@ -29,38 +29,11 @@ tile{
 
 tile{
   layer = 1,
-  x = 48,
-  y = 56,
-  width = 8,
-  height = 128,
-  pattern = "water_shallow.3",
-}
-
-tile{
-  layer = 1,
-  x = 56,
-  y = 184,
-  width = 64,
-  height = 8,
-  pattern = "water_shallow.2",
-}
-
-tile{
-  layer = 1,
   x = 120,
   y = 184,
   width = 8,
   height = 8,
   pattern = "shallow_water_border_outer_corner.se",
-}
-
-tile{
-  layer = 1,
-  x = 120,
-  y = 56,
-  width = 8,
-  height = 128,
-  pattern = "water_shallow.4",
 }
 
 tile{
@@ -83,15 +56,6 @@ tile{
 
 tile{
   layer = 1,
-  x = 56,
-  y = 48,
-  width = 64,
-  height = 8,
-  pattern = "water_shallow.1",
-}
-
-tile{
-  layer = 1,
   x = 80,
   y = 144,
   width = 16,
@@ -106,6 +70,42 @@ tile{
   width = 16,
   height = 16,
   pattern = "small_statue.1",
+}
+
+tile{
+  layer = 1,
+  x = 48,
+  y = 56,
+  width = 8,
+  height = 128,
+  pattern = "shallow_water_border.w",
+}
+
+tile{
+  layer = 1,
+  x = 120,
+  y = 56,
+  width = 8,
+  height = 128,
+  pattern = "shallow_water_border.e",
+}
+
+tile{
+  layer = 1,
+  x = 56,
+  y = 48,
+  width = 64,
+  height = 8,
+  pattern = "shallow_water_border.n",
+}
+
+tile{
+  layer = 1,
+  x = 56,
+  y = 184,
+  width = 64,
+  height = 8,
+  pattern = "shallow_water_border.s",
 }
 
 switch{
@@ -228,5 +228,4 @@ dynamic_tile{
   height = 32,
   enabled_at_start = true,
 }
-
 
