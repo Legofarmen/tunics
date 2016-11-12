@@ -1,10 +1,10 @@
 # About Tunics!
 
- * Tunics is a roguelike-like Zelda game for the [Solarus](http://solarus-games.org) game engine.
+ * Tunics! is a [roguelike-like](https://en.wikipedia.org/wiki/Roguelike) action role playing game based on the look and mechanics of 'The legend of Zelda – A link to the past' for SNES running on the [Solarus](http://solarus-games.org) game engine.
 
- * Tunics requires Solarus 1.5.x.
+ * Tunics! requires Solarus 1.5.x.
 
- * Tunics consists in part of materials under various free and open-source and public licenses, and in part of unlicensed materials under fair use. See license.txt for details.
+ * Tunics! consists in part of materials under various free and open-source and public licenses, and in part of unlicensed materials under fair use. See license.txt for details.
 
 
 # Play Tunics!
