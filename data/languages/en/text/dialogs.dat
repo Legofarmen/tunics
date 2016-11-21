@@ -23,7 +23,6 @@ Thank you for playing!
 dialog{
   id = "_treasure.shield.1",
   text = [[
-You got the shield!
 ]]
 }
 
