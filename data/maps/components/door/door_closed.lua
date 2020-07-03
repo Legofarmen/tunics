@@ -51,6 +51,10 @@ function door_closed.init(map, data, direction4)
         map:remove_entities('entering')
     end
 
+    if door:is_open() then
+        door:on_opened()
+    end
+
     return component
 end
 
